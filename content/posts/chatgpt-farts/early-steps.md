@@ -7,15 +7,22 @@ cover = ""
 tags = ["", ""]
 keywords = ["", ""]
 description = ""
-showFullContent = false
-readingTime = false
-hideComments = false
+categories = ["ML"]
 color = "" #color from the theme settings
+showFullContent = true
+readingTime = true
+hideComments = false
 +++
+
+{{< figure src="/images/manvsmachine.png" alt="Alt Text" caption="Men slowly starting to interface with the machines other men built for them. Glorious!" >}}
+
+I accidentally dropped out of society for a few years, and upon my return, I discovered the presence of peculiar machines that we can converse with, and which possess extensive knowledge about various subjects. I have no trepidation concerning GPUs, so let's embark on a deep exploration of this novel 'disruptive' technology together. Below, you will find a graveyard of both useful and useless scripts, composed individually by machines or with minimal assistance from this hairy monkey. It's worth noting that these scripts should not be executed, but rather studied by the vigilant, perhaps even the overly cautious..
 
 ## Working with Data
 
 ### Get random quote from .csv
+
+In case you need to manipulate CSV files with Python or access the data randomly or predictably during your travels, ChatGPT can assist you.
 
 `motivational-quotes.csv`
 ```csv
@@ -31,9 +38,7 @@ color = "" #color from the theme settings
 """You are never too old to set another goal or to dream a new dream."" - C.S. Lewis"
 ```
 
-
 `random-quote-from-csv.py`
-
 ```python
 import csv
 import random

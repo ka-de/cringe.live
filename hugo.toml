@@ -2,7 +2,40 @@ baseURL = 'https://kadelam.github.io/'
 languageCode = 'en-us'
 title = 'Unbound Epochs'
 theme = "theme"
+paginate = 10
+
+[taxonomies]
+category = "categories"
 
 [params]
   author = "Balazs Horvath"
   description = "Just doing what the machines told me to.."
+  contentTypeName = "posts"
+  themeColor = "blue"
+  showMenuItems = 2
+  fullWidthTheme = false
+  centerTheme = true
+  
+[languages]
+  [languages.en]
+    title = "Unbound Epochs"
+    subtitle = "Just doing what the machines told me to.."
+    keywords = "nerdy stuff, blog,"
+    copyright = "Balazs Horvath"
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "Unbound Epochs"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "showcase"
+        name = "Showcase"
+        url = "/showcase"

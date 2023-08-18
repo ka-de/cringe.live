@@ -6,9 +6,10 @@ authorTwitter = "" #do not include @
 cover = ""
 tags = ["", ""]
 keywords = ["", ""]
+categories = ["", ""]
 description = ""
-showFullContent = false
-readingTime = false
+showFullContent = true
+readingTime = true
 hideComments = false
 color = "" #color from the theme settings
 +++
