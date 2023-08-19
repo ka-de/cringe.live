@@ -6,7 +6,6 @@ authorTwitter = "" #do not include @
 cover = ""
 tags = ["", ""]
 keywords = ["", ""]
-categories = ["", ""]
 description = ""
 showFullContent = true
 readingTime = true

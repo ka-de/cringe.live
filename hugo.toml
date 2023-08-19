@@ -4,20 +4,17 @@ title = 'Unbound Epochs'
 theme = "theme"
 paginate = 10
 
-[taxonomies]
-category = "categories"
-
 [params]
   author = "Balazs Horvath"
   description = "Just doing what the machines told me to.."
   contentTypeName = "posts"
-  themeColor = "blue"
+  themeColor = "orange"
   showMenuItems = 2
   fullWidthTheme = false
   centerTheme = true
   
 [languages]
-  [languages.en]
+  [languages.en.params]
     title = "Unbound Epochs"
     subtitle = "Just doing what the machines told me to.."
     keywords = "nerdy stuff, blog,"
@@ -35,7 +32,3 @@ category = "categories"
         identifier = "about"
         name = "About"
         url = "/about"
-      [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
