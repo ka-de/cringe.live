@@ -22,7 +22,7 @@ function blog {
 
 Okay, he got a bit out of hand with this one, but.. I did torture ChatGPT today with some more Python and Excel.
 
-{{< figure src="rose-colorscheme.png" alt="Screenshot of an Excel spreadsheet." caption="This took me a really long time to make, okay?" >}}
+{{< figure src="images/rose-colorscheme.png" alt="Screenshot of an Excel spreadsheet." caption="This took me a really long time to make, okay?" >}}
 
 Let's make him extract color values from column A without the header and put them in a JSON file.
 
