@@ -14,20 +14,10 @@
 {{ template "_internal/google_analytics.html" . }}
 
 {{ $defaultStyles := resources.Get "css/style.scss" }}
-<!-- Local Theme Variables -->
-{{ if and (isset .Params "color") (not (eq .Params.color "")) }}
-  {{ $localColorCss := resources.Get (printf "css/color/%s.scss" .Params.color) }}
-  {{ $localCss := slice $localColorCss $defaultStyles | resources.Concat (printf "css/%s-local.scss" .Params.color) }}
-  {{ $localColorStyles := $localCss | resources.ToCSS }}
-  <link rel="stylesheet" href="{{ $localColorStyles.Permalink }}">
-{{ else }}
-  <!-- Theme Variables -->
-  {{ $colorCss := resources.Get (printf "css/color/%s.scss" ($.Site.Params.ThemeColor | default "orange")) }}
-  {{ $css := slice $colorCss $defaultStyles | resources.Concat "css/base.scss" }}
+  {{ $css := slice  $defaultStyles | resources.Concat "css/base.scss" }}
   {{ $options := (dict "targetPath" "styles.css" "outputStyle" "compressed" "enableSourceMap" true "precision" 6 "includePaths" (slice "node_modules")) }}
   {{ $styles := $css | resources.ToCSS $options }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}">
-{{ end }}
 
 <!-- Custom CSS to override theme properties (/static/style.css) -->
 {{ if (fileExists "static/style.css") -}}
@@ -40,8 +30,8 @@
 {{ if isset $.Site.Params "favicon" }}
   <link rel="shortcut icon" href="{{ $.Site.Params.favicon | absURL }}">
 {{ else }}
-  <link rel="shortcut icon" href="{{ printf "img/theme-colors/%s.png" (or .Params.color $.Site.Params.ThemeColor | default "orange") | absURL }}">
-  <link rel="apple-touch-icon" href="{{ printf "img/theme-colors/%s.png" (or .Params.color $.Site.Params.ThemeColor | default "orange") | absURL }}">
+  <link rel="shortcut icon" href="{{ printf "img/favicon.png" | absURL }}">
+  <link rel="apple-touch-icon" href="{{ printf "img/favicon.png" | absURL }}">
 {{ end }}
 
 <!-- Twitter Card -->
@@ -70,7 +60,7 @@
   {{ if isset $.Site.Params "favicon" }}
     <meta property="og:image" content="{{ $.Site.Params.favicon | absURL }}">
   {{ else }}
-    <meta property="og:image" content="{{ printf "img/favicon/%s.png" $.Site.Params.ThemeColor | absURL }}">
+    <meta property="og:image" content="{{ printf "img/favicon.png" | absURL }}">
   {{ end }}
 {{ end }}
 <meta property="og:image:width" content="1200">

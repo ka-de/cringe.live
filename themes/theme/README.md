@@ -173,9 +173,6 @@ paginate = 5
   # the list of set content will show up on your index page (baseurl).
   contentTypeName = "posts"
 
-  # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "orange"
-
   # if you set this to 0, only submenu trigger will be visible
   showMenuItems = 2
 
@@ -197,7 +194,6 @@ paginate = 5
   # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
   showLastUpdated = false
 
-  # set a custom favicon (default is a `themeColor` square)
   # favicon = "favicon.ico"
 
   # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author

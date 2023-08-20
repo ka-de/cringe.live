@@ -26,21 +26,37 @@
   &__logo {
     display: flex;
     flex: 1;
+    position: relative;
+    z-index: 0;
 
     &:after {
+      content: '⟁';
+      color: $accent;
+      font-size: 8rem;
+      position: absolute;
+      top: 50%;
+      left: -20%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:before {
       content: '';
       background: repeating-linear-gradient(-45deg, $accent, $accent 2px, transparent 0, transparent 20px);
       background-size: 200% 200%;
       animation: scrollGradient 30s linear infinite;
       display: block;
       width: 100%;
-      right: 10px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     a {
       flex: 0 0 auto;
       max-width: 100%;
       text-decoration: none;
+      z-index: 1;
     }
   }
 }
