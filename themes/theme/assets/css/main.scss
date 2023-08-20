@@ -243,7 +243,8 @@ table {
 table,
 th,
 td {
-  border: 1px dashed $accent;
+  border: 1px solid $accent;
+  text-align: center;
   padding: 10px;
 }
 
