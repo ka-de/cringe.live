@@ -4,6 +4,10 @@ title = 'Unbound Epochs'
 theme = "theme"
 paginate = 10
 
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+
 [params]
   author = "Balazs Horvath"
   description = "Just doing what the machines told me to.."

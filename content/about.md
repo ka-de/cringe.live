@@ -8,7 +8,7 @@ draft: false
 {
     "name": "Balazs Horvath",
     "native": "Hungary",
-    "birth": "1990-05-17",
+    "birth": "17/05/1990",
     "location": "Hesse, Germany",
     "problems": null,
     "languages": [
