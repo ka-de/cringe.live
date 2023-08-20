@@ -11,16 +11,16 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Fira Code', Monaco, Consolas, Ubuntu Mono, monospace;
-  font-size: 1rem;
+  font-family: 'Nunito ExtraLight', sans-serif !important;
+  font-size: 1.2rem;
   line-height: 1.54;
-  letter-spacing: -0.02em;
+  letter-spacing: 0em;
   background-color: $background;
   color: $color;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-feature-settings: "liga", "tnum", "zero", "ss01", "locl";
-  font-variant-ligatures: contextual;
+//  font-feature-settings: "liga", "tnum", "zero", "ss01", "locl";
+//  font-variant-ligatures: contextual;
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
 
