@@ -5,7 +5,7 @@ author = "Balazs Horvath"
 authorTwitter = "_ka_de"
 cover = ""
 tags = ["powershell", "chatgpt", "excel"]
-keywords = ["", ""]
+keywords = ["technology"]
 description = ""
 color = "" #color from the theme settings
 showFullContent = true
@@ -13,7 +13,7 @@ readingTime = true
 hideComments = false
 +++
 
-{{< figure src="/images/manvsmachine.png" alt="Alt Text" caption="Men slowly starting to interface with the machines other men built for them. Glorious!" >}}
+{{< figure src="/images/manvsmachine.png" alt="AI Generated caricature." caption="Men slowly starting to interface with the machines other men built for them. Glorious!" >}}
 
 I accidentally dropped out of society for a few years, and upon my return, I discovered the presence of peculiar machines that we can converse with, and which possess extensive knowledge about various subjects. I have no trepidation concerning GPUs, so let's embark on a deep exploration of this novel 'disruptive' technology together. Below, you will find a graveyard of both useful and useless scripts, composed individually by machines or with minimal assistance from this hairy monkey. It's worth noting that these scripts should not be executed, but rather studied by the vigilant, perhaps even the overly cautious..
 
@@ -73,11 +73,11 @@ fortune
 
 ### Color Excel tables by HEX
 
-So I found this neat VB Script that colors cells automatically.
+I found this neat VBA Script that colors cells automatically if you enter hex color codes in Excel:
 
 {{< video width="550" height="108" src="hexcolors-excel.mp4" muted="true" autoplay="true" loop="true" >}}
 
-```vb
+```vba
 Private Sub Worksheet_Change(ByVal Target As Range)
     On Error GoTo bm_Safe_Exit
     Application.EnableEvents = False
@@ -97,9 +97,9 @@ bm_Safe_Exit:
 End Sub
 ```
 
-So I asked ChatGPT nicely to make it match with the `#000000` format instead.
+I asked ChatGPT nicely to make it match with the `#000000` format instead.
 
-```vb
+```vba
 Private Sub Worksheet_Change(ByVal Target As Range)
     On Error GoTo bm_Safe_Exit
     Application.EnableEvents = False
@@ -123,7 +123,7 @@ A bit safer in case I ever end up using an instrument with 6 numbers for a name.
 But what I would never be able to figure out, because I never became a Visual Basic Instructor in a previous reincarnation, is how to run all this on column D.
 
 
-```powershell
+```vba
 Private Sub Worksheet_Change(ByVal Target As Range)
     Application.EnableEvents = False
     If Not Intersect(Target, Me.Range("D:D")) Is Nothing Then
@@ -146,7 +146,7 @@ In case you need to manipulate CSV files with Python or access the data randomly
 
 `motivational-quotes.csv`
 ```csv
-`"""The only way to do great work is to love what you do."" - Steve Jobs"
+"""The only way to do great work is to love what you do."" - Steve Jobs"
 """Success is not final, failure is not fatal: It is the courage to continue that counts."" - Winston Churchill"
 """Believe you can and you're halfway there."" - Theodore Roosevelt"
 """The future depends on what you do today."" - Mahatma Gandhi"
