@@ -44,7 +44,7 @@
   }
 
   &-title {
-    $border: 3px dotted $accent;
+    $border: 3px ridge $accent;
     position: relative;
     color: $accent;
     margin: 0 0 15px;

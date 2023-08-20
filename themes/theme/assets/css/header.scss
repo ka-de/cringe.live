@@ -1,3 +1,12 @@
+@keyframes scrollGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -9,6 +18,7 @@
 
   &__inner {
     display: flex;
+    line-height: 5;
     align-items: center;
     justify-content: space-between;
   }
@@ -19,7 +29,9 @@
 
     &:after {
       content: '';
-      background: repeating-linear-gradient(90deg, $accent, $accent 2px, transparent 0, transparent 10px);
+      background: repeating-linear-gradient(-45deg, $accent, $accent 2px, transparent 0, transparent 20px);
+      background-size: 200% 200%;
+      animation: scrollGradient 30s linear infinite;
       display: block;
       width: 100%;
       right: 10px;
