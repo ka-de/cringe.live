@@ -1,10 +1,10 @@
 +++
 title = "Early Steps"
 date = "2023-08-18T12:08:30+02:00"
-author = ""
-authorTwitter = "" #do not include @
+author = "Balazs Horvath"
+authorTwitter = "_ka_de"
 cover = ""
-tags = ["", ""]
+tags = ["powershell", "chatgpt", "excel"]
 keywords = ["", ""]
 description = ""
 color = "" #color from the theme settings
@@ -45,8 +45,6 @@ function serve {
     }
 }
 ```
-
-
 
 ```powershell
 # Get a random quote from a JSON file.

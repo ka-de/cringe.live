@@ -1,10 +1,10 @@
 +++
 title = "Alle Farben"
 date = "2023-08-20T11:27:05+02:00"
-author = ""
-authorTwitter = "" #do not include @
+author = "Balazs Horvath"
+authorTwitter = "_ka_de"
 cover = ""
-tags = ["", ""]
+tags = ["python", "chatgpt", "excel"]
 keywords = ["", ""]
 description = ""
 showFullContent = true
