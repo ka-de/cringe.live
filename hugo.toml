@@ -4,6 +4,9 @@ title = 'Unbound Epochs'
 theme = "theme"
 paginate = 10
 
+[outputs]
+  home = ['html', 'rss']
+
 [taxonomies]
   category = 'categories'
   tag = 'tags'
