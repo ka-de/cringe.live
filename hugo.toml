@@ -15,7 +15,6 @@ paginate = 10
   author = "Balazs Horvath"
   description = "Just doing what the machines told me to.."
   contentTypeName = "posts"
-  themeColor = "orange"
   showMenuItems = 2
   fullWidthTheme = false
   centerTheme = true
