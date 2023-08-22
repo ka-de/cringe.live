@@ -178,6 +178,12 @@ pre {
 }
 
 blockquote {
+  // Author names for quotes displayed on the about page. 
+  footer {
+    text-align: right;
+    line-height: 4;
+  }
+
   border-top: 1px solid $accent;
   border-bottom: 1px solid $accent;
   margin: 40px 0;

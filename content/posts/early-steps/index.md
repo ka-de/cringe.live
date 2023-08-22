@@ -120,7 +120,7 @@ End Sub
 
 A bit safer in case I ever end up using an instrument with 6 numbers for a name..
 
-But what I would never be able to figure out, because I never became a Visual Basic Instructor in a previous reincarnation, is how to run all this on column D.
+But what I would never be able to figure out, because I never became a Visual Basic Instructor in a previous reincarnation, is how to run all this on column D only.
 
 
 ```vba

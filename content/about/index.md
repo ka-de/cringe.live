@@ -2,7 +2,6 @@
 title: "About"
 draft: false
 ---
-{{< figure src="/images/about-me-pictures/1.png" alt="" caption="" >}}
 
 ```json
 {
@@ -28,3 +27,7 @@ draft: false
 >I ❤️ 🧠 + 💻 + 🍵 + 🎶 + 🎮 + 📖 + 🎨 + 🚴‍♂️ + 🧘‍♀️ + 🧁 + 🏞️.
 >
 >I dedicate this whole site to infecting people with them.
+
+{{< figure src="/images/about-me-pictures/1.png" alt="" caption="" >}}
+
+{{< motivation >}}
