@@ -1,10 +1,6 @@
 @keyframes scrollGradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
 }
 
 .header {
@@ -43,7 +39,6 @@
         display: none;
       }
     }
-
 
     &:before {
       content: '';

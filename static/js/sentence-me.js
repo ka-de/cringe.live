@@ -1,4 +1,3 @@
-// Define the container element
 const sentenceContainer = document.getElementById("sentenceContainer");
 const randomizeButton = document.getElementById("randomizeButton");
 const { gsap } = window;
@@ -24,9 +23,9 @@ function initializeSentences() {
 function createSentenceDiv(i) {
     const sentenceDiv = document.createElement("div");
     sentenceDiv.className = "sentence-container";
-    const leftArrow = createArrow("&#8701;", () => changeSentence(i, "left"));
+    const leftArrow = createArrow("\u2190", () => changeSentence(i, "left"));
     const sentenceText = createSentenceText(i);
-    const rightArrow = createArrow("&#8702;", () => changeSentence(i, "right"));
+    const rightArrow = createArrow("\u2192", () => changeSentence(i, "right"));
     sentenceDiv.appendChild(leftArrow);
     sentenceDiv.appendChild(sentenceText);
     sentenceDiv.appendChild(rightArrow);
