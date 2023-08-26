@@ -23,7 +23,7 @@ button, .button, a.button {
   appearance: none;
   cursor: pointer;
   outline: none;
-  transition: background-color 0.3s ease; /* Add transition effect */
+  transition: background-color 0.3s ease;
 
   &:hover {
     background: transparentize($accent, 0.2);
