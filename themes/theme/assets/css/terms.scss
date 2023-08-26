@@ -4,7 +4,7 @@
   }
 
   ul {
-    @include list-reset;
+    list-style: none;
 
     li {
       a {
@@ -12,6 +12,11 @@
       }
     }
 
-    @include list-bullet;
+    li:not(:empty):before {
+      content: '-';
+      position: absolute;
+      left: -20px;
+      color: $accent;
+    }
   }
 }

@@ -1,5 +1,5 @@
-.code.language-css,
-.code.language-scss,
+code.language-css,
+code.language-scss,
 .token.boolean,
 .token.string,
 .token.entity,
@@ -17,7 +17,7 @@
 .token.number,
 .token.inserted,
 .token.important {
-  @include code-colors($code-accent);
+  color: $accent !important;
 }
 
 .token.tag-id,
@@ -34,7 +34,7 @@
 .token.class-name,
 .token.constant,
 .token.symbol {
-  @include code-colors($code-translucent-accent);
+  color: transparentize($accent, .3) !important;
 }
 
 .token.property,
@@ -44,24 +44,24 @@
 code.language-javascript,
 code.language-html,
 .command-line-prompt > span:before {
-  @include code-colors($code-muted-accent);
+  color: mix($accent, #999, .9) !important;
 }
 
 .token.selector,
 .token.tag,
 .token.punctuation {
-  @include code-colors($code-white);
+  color: white;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @include code-colors(rgba(255, 255, 255, 0.3));
+  color: rgba(255, 255, 255, .3) !important;
 }
 
 .token.namespace {
-  opacity: 0.7 !important;
+  opacity: .7 !important;
 }
 
 pre[data-line] {
@@ -80,7 +80,7 @@ pre[class*="language-"] {
   right: 0;
   padding: 0;
   margin: 0;
-  @include line-highlight-colors($code-line-highlight-bg, $code-line-highlight-fg, $code-line-highlight-fg-text);
+  background: transparentize(mix($accent, #999, 90%), .92);
   pointer-events: none;
   line-height: inherit;
   white-space: pre;
@@ -90,23 +90,24 @@ pre[class*="language-"] {
 .line-highlight[data-end]:after {
   content: attr(data-start);
   position: absolute;
-  left: 0.6em;
+  /* top: .4em; */
+  left: .6em;
   min-width: 1em;
-  padding: 0 0.5em;
-  @include background-color($code-line-highlight-fg);
-  color: $code-line-highlight-bg;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%, .4);
+  color: hsl(24, 20%, 95%);
   font: bold 65%/1.5 sans-serif;
   text-align: center;
-  vertical-align: 0.3em;
+  vertical-align: .3em;
   border-radius: 999px;
   text-shadow: none;
-  box-shadow: 0 1px $code-white;
+  box-shadow: 0 1px white;
 }
 
 .line-highlight[data-end]:after {
   content: attr(data-end);
   top: auto;
-  bottom: 0.4em;
+  bottom: .4em;
 }
 
 .line-numbers .line-highlight:before,
@@ -116,42 +117,42 @@ pre[class*="language-"] {
 
 .code-toolbar {
   $code-margin: 40px;
-  position: relative;
-  margin: $code-margin 0;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+	position: relative;
+	margin: $code-margin 0;
+	padding: 20px;
+	border: 1px solid rgba(255, 255, 255, .1);
 
   &:hover {
-    border-color: $code-accent;
+    border-color: rgba(246, 193, 119, 1);
     @include border-color-transition;
   }
 
-  + .code-toolbar,
-  + .highlight,
-  + .highlight .code-toolbar {
-    border-top: 0;
-    margin-top: calc(-1 * $code-margin);
-  }
+	+ .code-toolbar,
+	+ .highlight,
+	+ .highlight .code-toolbar {
+		border-top: 0;
+		margin-top: calc(-1 * $code-margin);
+	}
 
-  pre, code {
-    border: none;
-  }
+	pre, code {
+		border: none;
+	}
 
-  code {
-    display: block;
-    color: inherit;
-  }
+	code {
+		display: block;
+		color: inherit;
+	}
 
   > .toolbar {
     button {
-      font-size: 0.8em !important;
-      @include background-color(rgba(224, 224, 224, 0.2));
+      font-size: .8em !important;
+      background: hsla(0,0%,87.8%,.2) !important;
       color: #bbb !important;
-      box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2) !important;
+      box-shadow: 0 2px 0 0 rgba(0,0,0,.2) !important;
       border-radius: 0 !important;
       margin: 6px !important;
       padding: 10px !important;
-      user-select: none;
+      user-select:none
     }
   }
 }
