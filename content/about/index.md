@@ -331,93 +331,12 @@ But, if you are looking for my [speaking in tongues](/works).. Let me indulge yo
 </style>
 
 <h2 style="text-align: center;">Sentence me</h2>
-<div id="sentenceContainer">
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(1, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence1">Your car breaks down in the middle of the desert road..</div>
-      <div class="changeSentence" onclick="changeSentence(1, 'right')">&#8702;</div>
-  </div>
-  
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(2, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence2">Before you could singe your fingertips lifting the searing metal hood up a strange mechanical elf pops out of the middle of the solid plate and tells you&colon;</div>
-      <div class="changeSentence" onclick="changeSentence(2, 'right')">&#8702;</div>
-  </div>
-  
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(3, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence3">&quot;Everything is going to be alright!&quot;</div>
-      <div class="changeSentence" onclick="changeSentence(3, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(4, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence4">Before you could even conceive an appropriate vulgarity for your surprise, it's positive outlook on life has already infected you.</div>
-      <div class="changeSentence" onclick="changeSentence(4, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(5, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence5">You don't know why, but you just know, that everything is going to be alright..</div>
-      <div class="changeSentence" onclick="changeSentence(5, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(6, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence6">You shake your head and try to reevaluate the situation again, but it is too late..</div>
-      <div class="changeSentence" onclick="changeSentence(6, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(7, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence7">The strange floating mechanical elf is gone, and it is only you and your broken ass car out here.</div>
-      <div class="changeSentence" onclick="changeSentence(7, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(8, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence8">You get back in the moment.</div>
-      <div class="changeSentence" onclick="changeSentence(8, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(9, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence9">You reach for the hood to lift it up and—FUCK!— Your stress rolls down the sandy hills and back up multiple times as your failure echoes into history.</div>
-      <div class="changeSentence" onclick="changeSentence(9, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(10, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence10">Your roasted fingers curl up into an angry fist to dole out retribution on your unwilful machine, and your simian phalanges reverberate in agony as flesh tries to join metal for the afternoon.</div>
-      <div class="changeSentence" onclick="changeSentence(10, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(11, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence11">You stop.</div>
-      <div class="changeSentence" onclick="changeSentence(11, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(12, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence12">You take a step back.</div>
-      <div class="changeSentence" onclick="changeSentence(12, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(13, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence13">You reach into your pocket for your handkerchief and use it to open up the hood.</div>
-      <div class="changeSentence" onclick="changeSentence(13, 'right')">&#8702;</div>
-  </div>
-
-  <div class="sentence-container">
-      <div class="changeSentence" onclick="changeSentence(14, 'left')">&#8701;</div>
-      <div class="sentence-text" id="sentence14">Oh! He was just thirsty!</div>
-      <div class="changeSentence" onclick="changeSentence(14, 'right')">&#8702;</div>
-  </div>
-</div>
+<div id="sentenceContainer"></div>
 
 <script>
+// Define the container element
+const sentenceContainer = document.getElementById("sentenceContainer");
+
 const { gsap } = window;
 let sentences;
 
@@ -425,38 +344,68 @@ fetch('/sentence-me.json')
   .then(response => response.json())
   .then(data => {
     sentences = data;
-    console.log(sentences);
+    // Call a function to set up the initial sentences after loading the data
+    initializeSentences();
   })
   .catch(error => {
     console.error('Error:', error);
   });
+
+function initializeSentences() {
+  // Loop through the sentences in the JSON data and create the HTML structure
+  for (let i = 1; sentences[i]; i++) {
+    const sentenceDiv = document.createElement("div");
+    sentenceDiv.className = "sentence-container";
+
+    const leftArrow = document.createElement("div");
+    leftArrow.className = "changeSentence";
+    leftArrow.innerHTML = "&#8701;";
+    leftArrow.onclick = () => changeSentence(i, "left");
+
+    const sentenceText = document.createElement("div");
+    sentenceText.className = "sentence-text";
+    sentenceText.id = `sentence${i}`;
+    sentenceText.textContent = sentences[i][0]; // Get the sentence from the JSON data
+
+    const rightArrow = document.createElement("div");
+    rightArrow.className = "changeSentence";
+    rightArrow.innerHTML = "&#8702;";
+    rightArrow.onclick = () => changeSentence(i, "right");
+
+    sentenceDiv.appendChild(leftArrow);
+    sentenceDiv.appendChild(sentenceText);
+    sentenceDiv.appendChild(rightArrow);
+
+    sentenceContainer.appendChild(sentenceDiv);
+  }
+}
 
 function changeSentence(sentenceNumber, direction) {
   const sentenceElement = document.getElementById(`sentence${sentenceNumber}`);
   let currentIndex = sentences[sentenceNumber].indexOf(sentenceElement.textContent);
 
   function animateSentence() {
-      if (direction === 'left') {
-          currentIndex = (currentIndex - 1 + sentences[sentenceNumber].length) % sentences[sentenceNumber].length;
-      } else {
-          currentIndex = (currentIndex + 1) % sentences[sentenceNumber].length;
+    if (direction === 'left') {
+      currentIndex = (currentIndex - 1 + sentences[sentenceNumber].length) % sentences[sentenceNumber].length;
+    } else {
+      currentIndex = (currentIndex + 1) % sentences[sentenceNumber].length;
+    }
+
+    const newSentence = sentences[sentenceNumber][currentIndex];
+
+    gsap.to(sentenceElement, {
+      duration: 2.0,
+      opacity: 0.6,
+      text: newSentence,
+
+      onComplete: function () {
+        gsap.to(sentenceElement, {
+          duration: 1.0,
+          opacity: 1,
+        });
+        sentenceElement.textContent = newSentence;
       }
-
-      const newSentence = sentences[sentenceNumber][currentIndex];
-
-      gsap.to(sentenceElement, {
-          duration: 2.0,
-          opacity: 0.6,
-          text: newSentence,
-
-          onComplete: function () {
-              gsap.to(sentenceElement, {
-                  duration: 1.0,
-                  opacity: 1,
-              });
-              sentenceElement.textContent = newSentence;
-          }
-      });
+    });
   }
 
   animateSentence();
