@@ -16,16 +16,17 @@ button, .button, a.button {
   text-align: center;
   border-radius: 8px;
   border: 1px solid $accent;
-  background: $accent;
+  background-color: $accent;
   color: $background;
   font: inherit;
   font-weight: bold;
   appearance: none;
   cursor: pointer;
   outline: none;
+  transition: background-color 0.3s ease; /* Add transition effect */
 
   &:hover {
-    background: transparentize($accent, 0.1);
+    background: transparentize($accent, 0.2);
   }
 
   &.outline {
@@ -67,22 +68,22 @@ a.read-more, a.read-more:hover, a.read-more:active {
 
 .code-toolbar {
   margin-bottom: 20px;
+}
 
-  .toolbar-item a {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 3px 8px;
-    margin-bottom: 5px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 500;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    appearance: none;
-    cursor: pointer;
-    outline: none;
-  }
+.code-toolbar .toolbar-item a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 8px;
+  margin-bottom: 5px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
 }

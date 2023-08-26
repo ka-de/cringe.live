@@ -27,7 +27,7 @@
       }
     }
 
-    ~ label .collapsable-code__toggle:after {
+    ~ label .collapsible-code__toggle:after {
       content: attr(data-label-expand);
     }
   }
@@ -72,7 +72,6 @@
 
   pre {
     margin-top: 0;
-
     &::first-line {
       line-height: 0;
     }

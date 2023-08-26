@@ -122,6 +122,11 @@ pre[class*="language-"] {
 	padding: 20px;
 	border: 1px solid rgba(255, 255, 255, .1);
 
+  &:hover {
+    border-color: rgba(246, 193, 119, 1);
+    @include border-color-transition;
+  }
+
 	+ .code-toolbar,
 	+ .highlight,
 	+ .highlight .code-toolbar {

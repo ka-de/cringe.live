@@ -129,13 +129,12 @@ pre {
   }
 }
 
-/* Blockquotes */
 blockquote {
   &:hover {
     outline: 1px solid transparent;
     outline-offset: -1px;
     border: 1px solid $accent;
-    transition: border 1s ease-in-out;
+    @include border-color-transition();
   }
 
   footer {
@@ -169,7 +168,7 @@ blockquote {
   
   &:hover {
     p:first-of-type:before {
-      animation: bounce 0.5s ease-in-out infinite;
+      @include bounce-animation;
     }
   }
 
