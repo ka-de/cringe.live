@@ -1,4 +1,4 @@
-$accent: rgba(246, 193, 119, 1);;
+$accent: rgba(246, 193, 119, 1);
 $color: rgba(224, 222, 244, 1);
 $subtle: rgba(144, 140, 170, 0.4);
 $border-color: rgba(31, 29, 46, 1);
@@ -16,7 +16,7 @@ $code_selector: rgba(204, 153, 205, 1);
 $code_token_inserted: rgba(0, 128, 0, 1);
 $code_token_operator: rgba(103, 205, 204, 1);
 $code_token_string: rgba(126, 198, 153, 1);
-$line_bg: rgba(128, 128, 128, .2);
+$line_bg: rgba(128, 128, 128, 0.2);
 $line_highlight_bg: rgba(204, 153, 153, 0.08);
 $line_highlight_bg_gradient: linear-gradient(to right, rgba(204, 153, 153, 0.1) 70%, rgba(204, 153, 153, 0));
 $line_highlight_bfbg: rgba(179, 153, 102, 0.4);
@@ -24,7 +24,36 @@ $line_highlight_bfg: rgb(239, 228, 200);
 $command_line_prompt_fg: $code_comment;
 $collapsible_border_mix: $code_comment;
 $toolbar_bg: rgba(224, 224, 224, 0.2);
-$toolbar_shadow: 0 2px 0 0 rgba(0,0,0,0.2);
+$toolbar_shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2);
+$code-accent: rgba(246, 193, 119, 1);
+$code-translucent-accent: rgba(246, 193, 119, 0.3);
+$code-muted-accent: rgba(246, 193, 119, 0.9);
+$code-background: transparent;
+$code-white: rgba(255, 255, 255, 1);
+$code-line-highlight-bg: rgba(248, 196, 134, 0.92);
+$code-line-highlight-fg: rgba(76, 195, 217, 1);
+$code-line-highlight-fg-text: rgba(224, 222, 244, 1);
+
+@mixin code-colors($color) {
+  color: $color !important;
+}
+
+@mixin background-color($color) {
+  background-color: $color !important;
+}
+
+@mixin line-highlight-colors($bg-color, $fg-color, $text-color) {
+  background-color: $bg-color;
+  color: $fg-color;
+  &:before {
+    background-color: $text-color;
+    color: $bg-color;
+  }
+}
+
+@mixin border-color-transition($duration: 2s, $timing-function: ease-in-out) {
+  transition: border-color $duration $timing-function;
+}
 
 $phone: "max-width: 684px";
 $tablet: "max-width: 900px";
@@ -67,3 +96,15 @@ $tablet: "max-width: 900px";
     box-shadow: $x $y $blur $spread $color;
   }
   
+  @mixin list-reset {
+    list-style: none;
+  }
+  
+  @mixin list-bullet($color: $accent, $position: -20px) {
+    li:not(:empty):before {
+      content: '-';
+      position: absolute;
+      left: $position;
+      color: $color;
+    }
+  }
