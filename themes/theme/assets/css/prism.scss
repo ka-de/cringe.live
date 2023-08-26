@@ -1,7 +1,7 @@
 code[class*="language-"],
 pre[class*="language-"] {
-  color: $code-foreground;
-  background: $background;
+  color: $code_fg;
+  background: none;
   font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1em;
   text-align: left;
@@ -27,7 +27,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: $code-background;
+  background: $code_bg;
 }
 
 :not(pre) > code[class*="language-"] {
@@ -41,35 +41,35 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: $code-comment
+  color: $code_comment
 }
 
 .token.punctuation {
-  color: $code-punctuation;
+  color: $code_punctuation;
 }
 
 .token.tag,
 .token.attr-name,
 .token.namespace,
 .token.deleted {
-  color: $code-namespace;
+  color: $code_namespace;
 }
 
 .token.function-name {
-  color: $code-function;
+  color: $code_function;
 }
 
 .token.boolean,
 .token.number,
 .token.function {
-  color: $code-boolean;
+  color: $code_boolean;
 }
 
 .token.property,
 .token.class-name,
 .token.constant,
 .token.symbol {
-  color: $code-property;
+  color: $code_property;
 }
 
 .token.selector,
@@ -77,7 +77,7 @@ pre[class*="language-"] {
 .token.atrule,
 .token.keyword,
 .token.builtin {
-  color: $code-selector;
+  color: $code_selector;
 }
 
 .token.string,
@@ -85,13 +85,13 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.regex,
 .token.variable {
-  color: $code-token-string;
+  color: $code_token_string;
 }
 
 .token.operator,
 .token.entity,
 .token.url {
-  color: $code-token-operator;
+  color: $code_token_operator;
 }
 
 .token.important,
@@ -108,7 +108,7 @@ pre[class*="language-"] {
 }
 
 .token.inserted {
-  color: $code-token-inserted;
+  color: $code_token_inserted;
 }
 
 pre[data-line] {
@@ -122,8 +122,8 @@ pre[data-line] {
   right: 0;
   padding: inherit 0;
   margin-top: 1em;
-  background: $background;
-  background: $background;
+  background: $line_highlight_bg;
+  background: $line_highlight_bg_gradient;
   pointer-events: none;
   line-height: inherit;
   white-space: pre;
@@ -145,8 +145,8 @@ pre[data-line] {
   left: .6em;
   min-width: 1em;
   padding: 0 .5em;
-  background-color: $background;
-  color: $line-highlight-bfg;
+  background-color: $line_highlight_bfbg;
+  color: $line_highlight_bfg;
   font: bold 65%/1.5 sans-serif;
   text-align: center;
   vertical-align: .3em;
@@ -175,7 +175,7 @@ pre[id].linkable-line-numbers span.line-numbers-rows > span:before {
 }
 
 pre[id].linkable-line-numbers span.line-numbers-rows > span:hover:before {
-  background-color: $background;
+  background-color: $line_bg;
 }
 
 pre[class*="language-"].line-numbers {
@@ -232,7 +232,7 @@ pre[class*="language-"].line-numbers > code {
 }
 
 .command-line-prompt > span:before {
-  color: $command-line-prompt-foreground;
+  color: $command_line_prompt_fg;
   content: ' ';
   display: block;
   padding-right: 0.8em;
@@ -279,7 +279,7 @@ div.code-toolbar > .toolbar > .toolbar-item > a {
 }
 
 div.code-toolbar > .toolbar > .toolbar-item > button {
-  background: $background;
+  background: none;
   border: 0;
   color: inherit;
   font: inherit;
@@ -298,8 +298,8 @@ div.code-toolbar > .toolbar > .toolbar-item > span {
   color: #bbb;
   font-size: .8em;
   padding: 0 .5em;
-  background: $background;
-  box-shadow: $toolbar-shadow;
+  background: $toolbar_bg;
+  box-shadow: $toolbar_shadow;
   border-radius: .5em;
 }
 
