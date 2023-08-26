@@ -1,0 +1,39 @@
+.sentence-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    overflow-y: hidden;
+    transition: max-height 0.3s ease-in-out;
+}
+
+#randomizeButton {
+    margin: 35px auto 0 auto;
+}
+.changeSentence {
+    cursor: pointer;
+    color: #f6c177;
+    padding: 0 10px;
+    white-space: nowrap;
+    transition: padding 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+    font-size: 1em;
+}
+
+.sentence-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    transition: flex-grow 0.3s ease-in-out, overflow 0.3s ease-in-out;
+    font-size: 1.2rem;
+}
+
+
+@media (max-width: 600px) {
+    .sentence-container span {
+        padding: 5px;
+    }
+    
+    .sentence-container span + span {
+        margin-left: 5px;
+    }
+}
