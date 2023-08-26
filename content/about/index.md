@@ -292,41 +292,40 @@ But, if you are looking for my [speaking in tongues](/works).. Let me indulge yo
 {{< html >}}
 <style>
   .sentence-container {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-      max-height: auto; /* Remove the fixed max-height */
-      overflow-y: hidden; /* Hide vertical overflow */
-      transition: max-height 0.3s ease-in-out; /* Add smooth transition */
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* Three columns: left arrow, sentence, right arrow */
+    align-items: flex-start;
+    margin-bottom: 10px;
+    overflow-y: hidden; /* Hide vertical overflow */
+    transition: max-height 0.3s ease-in-out; /* Add smooth transition */
   }
 
   .changeSentence {
-      cursor: pointer;
-      color: #f6c177;
-      padding: 0 10px;
-      white-space: nowrap;
-      transition: padding 0.3s ease-in-out, margin-left 0.3s ease-in-out;
-      font-size: 1em;
+    cursor: pointer;
+    color: #f6c177;
+    padding: 0 10px;
+    white-space: nowrap;
+    transition: padding 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+    font-size: 1em;
   }
 
   .sentence-text {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      flex-grow: 1; /* Allow sentences to grow horizontally */
-      transition: flex-grow 0.3s ease-in-out, overflow 0.3s ease-in-out; /* Add smooth transitions */
-      font-size: 1.2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1; /* Allow sentences to grow horizontally */
+    transition: flex-grow 0.3s ease-in-out, overflow 0.3s ease-in-out; /* Add smooth transitions */
+    font-size: 1.2rem;
   }
 
   /* Media query for small screens */
   @media (max-width: 600px) {
-      .sentence-container span {
-          padding: 5px;
-      }
+    .sentence-container span {
+      padding: 5px;
+    }
 
-      .sentence-container span + span {
-          margin-left: 5px;
-      }
+    .sentence-container span + span {
+      margin-left: 5px;
+    }
   }
 </style>
 
@@ -336,7 +335,6 @@ But, if you are looking for my [speaking in tongues](/works).. Let me indulge yo
 <script>
 // Define the container element
 const sentenceContainer = document.getElementById("sentenceContainer");
-
 const { gsap } = window;
 let sentences;
 
@@ -344,40 +342,47 @@ fetch('/sentence-me.json')
   .then(response => response.json())
   .then(data => {
     sentences = data;
-    // Call a function to set up the initial sentences after loading the data
     initializeSentences();
   })
   .catch(error => {
     console.error('Error:', error);
+    // Handle the error, e.g., display an error message to the user
   });
 
 function initializeSentences() {
   // Loop through the sentences in the JSON data and create the HTML structure
   for (let i = 1; sentences[i]; i++) {
-    const sentenceDiv = document.createElement("div");
-    sentenceDiv.className = "sentence-container";
-
-    const leftArrow = document.createElement("div");
-    leftArrow.className = "changeSentence";
-    leftArrow.innerHTML = "&#8701;";
-    leftArrow.onclick = () => changeSentence(i, "left");
-
-    const sentenceText = document.createElement("div");
-    sentenceText.className = "sentence-text";
-    sentenceText.id = `sentence${i}`;
-    sentenceText.textContent = sentences[i][0]; // Get the sentence from the JSON data
-
-    const rightArrow = document.createElement("div");
-    rightArrow.className = "changeSentence";
-    rightArrow.innerHTML = "&#8702;";
-    rightArrow.onclick = () => changeSentence(i, "right");
-
-    sentenceDiv.appendChild(leftArrow);
-    sentenceDiv.appendChild(sentenceText);
-    sentenceDiv.appendChild(rightArrow);
-
+    const sentenceDiv = createSentenceDiv(i);
     sentenceContainer.appendChild(sentenceDiv);
   }
+}
+
+function createSentenceDiv(i) {
+  const sentenceDiv = document.createElement("div");
+  sentenceDiv.className = "sentence-container";
+  const leftArrow = createArrow("&#8701;", () => changeSentence(i, "left"));
+  const sentenceText = createSentenceText(i);
+  const rightArrow = createArrow("&#8702;", () => changeSentence(i, "right"));
+  sentenceDiv.appendChild(leftArrow);
+  sentenceDiv.appendChild(sentenceText);
+  sentenceDiv.appendChild(rightArrow);
+  return sentenceDiv;
+}
+
+function createArrow(html, clickHandler) {
+  const arrow = document.createElement("div");
+  arrow.className = "changeSentence";
+  arrow.innerHTML = html;
+  arrow.onclick = clickHandler;
+  return arrow;
+}
+
+function createSentenceText(i) {
+  const sentenceText = document.createElement("div");
+  sentenceText.className = "sentence-text";
+  sentenceText.id = `sentence${i}`;
+  sentenceText.textContent = sentences[i][0];
+  return sentenceText;
 }
 
 function changeSentence(sentenceNumber, direction) {
