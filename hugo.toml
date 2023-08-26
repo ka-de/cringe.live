@@ -4,6 +4,14 @@ title = 'Unbound Epochs'
 theme = "theme"
 paginate = 10
 
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
 [outputs]
   home = ['html', 'rss']
 

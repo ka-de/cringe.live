@@ -15,10 +15,33 @@
 }
 
 @font-face {
-  font-display: swap;
-  font-family: 'Nunito ExtraLight';
-  font-style:  normal;
-  font-weight: 800;
-  src: url("../fonts/Nunito-ExtraLight.woff") format("woff");
+  font-family: 'Magdelin Bold';
+  src: url('../fonts/Magdelin-Bold.woff2') format('woff2');
 }
 
+/*
+@font-face {
+  font-family: 'Magdelin BoldItalic';
+  src: url('../fonts/Magdelin-BoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Magdelin Italic';
+  src: url('../fonts/Magdelin-Italic.woff2') format('woff2'),
+}
+*/
+@font-face {
+  font-family: 'Magdelin Light';
+  src: url('../fonts/Magdelin-Light.woff2') format('woff2')
+}
+/*
+@font-face {
+  font-family: 'Magdelin ThinItalic';
+  src: url('../fonts/Magdelin-ThinItalic.woff2') format('woff2');
+}
+*/
+
+@font-face {
+  font-family: 'Magdelin Thin';
+  src: url('../fonts/Magdelin-Thin.woff2') format('woff2'),
+}
