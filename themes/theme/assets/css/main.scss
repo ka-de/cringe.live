@@ -1,4 +1,3 @@
-/* Reset and Global Styles */
 html {
   box-sizing: border-box;
 }
@@ -10,11 +9,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Magdelin Thin', sans-serif !important;
-  font-size: 1.2rem;
-  line-height: 1.3;
-  font-weight: 400;
-  letter-spacing: 0em;
+  @include font-styles('Magdelin Thin', 1.2rem, 1.3, 400, 0em);
   background-color: $background;
   color: $color;
   -webkit-font-smoothing: antialiased;
@@ -27,11 +22,9 @@ body {
   }
 }
 
-/* Headings */
 .headings--one-size {
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.3;
-    font-family: 'Magdelin Light', sans-serif !important;
     &:not(:first-child) {
       margin-top: 40px;
     }
@@ -43,12 +36,10 @@ body {
   h4, h5, h6 { font-size: 1.2rem; }
 }
 
-/* Links */
 a {
   color: inherit;
 }
 
-/* Images */
 img {
   display: block;
   max-width: 100%;
@@ -58,7 +49,6 @@ img {
   &.right { margin-left: auto; }
 }
 
-/* Paragraphs and Figures */
 p {
   margin-bottom: 20px;
 }
@@ -76,7 +66,7 @@ figure {
     font-size: 1rem;
     padding: 5px 10px;
     margin-top: 5px;
-    background: $accent;
+    @include transparent-background($accent, 0.8);
     color: $background;
 
     &.left { text-align: left; }
@@ -85,15 +75,13 @@ figure {
   }
 }
 
-/* Code and Preformatted Text */
 code, kbd {
-  font-family: 'Fira Code', Monaco, Consolas, Ubuntu Mono, monospace !important;
+  @include font-styles('Fira Code', 0.95rem, normal, normal, normal);
   font-feature-settings: normal;
-  background: transparentize($accent, .8);
+  @include transparent-background($accent, 0.8);
   color: $accent;
   padding: 1px 6px;
   margin: 0 2px;
-  font-size: .95rem;
 
   code, kbd {
     background: transparent;
@@ -103,12 +91,10 @@ code, kbd {
 }
 
 pre {
-  background: transparent !important;
+  @include transparent-background($background, 1);
   padding: 20px 10px;
   margin: 40px 0;
-  font-size: .95rem !important;
-  overflow: auto;
-  border: 1px solid rgba(255, 255, 255, .1);
+  @include box-shadow(0, 0, 0, 1px, rgba(255, 255, 255, 0.1));
 
   + pre {
     border-top: 0;
@@ -168,13 +154,13 @@ blockquote {
   
   &:hover {
     p:first-of-type:before {
-      @include bounce-animation;
+      @include bounce-animation();
     }
   }
 
   &.twitter-tweet {
     position: relative;
-    background: transparentize($accent, .9);
+    @include transparent-background($accent, 0.9);
     font: inherit;
     color: inherit;
     border: 1px solid $accent;
@@ -194,16 +180,6 @@ blockquote {
   }
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-5px);
-  }
-}
-
-/* Tables */
 table {
   table-layout: auto;
   border-collapse: collapse;
@@ -217,9 +193,10 @@ table, th, td {
   padding: 10px;
 }
 
-th { color: $accent; }
+th {
+  color: $accent;
+}
 
-/* Lists */
 ul, ol {
   margin-left: 22px;
   padding: 0;
@@ -261,19 +238,17 @@ ol {
   }
 }
 
-/* Marked Text */
 mark {
-  background: $accent;
-  color: $background;
+  @include text-and-bg-color($accent, $background);
 }
 
-/* Page Container */
 .container {
   display: flex;
   flex-direction: column;
   padding: 40px;
   max-width: 864px;
   min-height: 100vh;
+  @include border-color-transition();
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 
   &.full, &.center {
@@ -292,7 +267,6 @@ mark {
   }
 }
 
-/* Content Container */
 .content {
   display: flex;
   flex-direction: column;
@@ -302,7 +276,6 @@ mark {
   }
 }
 
-/* Horizontal Rule */
 hr {
   width: 100%;
   border: none;
@@ -310,10 +283,10 @@ hr {
   height: 1px;
 }
 
-/* Hidden Elements */
 .hidden {
   display: none;
 }
 
-/* Superscript */
-sup { line-height: 0; }
+sup {
+  line-height: 0;
+}
