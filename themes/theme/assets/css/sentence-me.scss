@@ -13,7 +13,7 @@
 
 .changeSentence {
     cursor: pointer;
-    color: #f6c177;
+    color: $accent;
     padding: 0 10px;
     white-space: nowrap;
     transition: padding 0.3s ease-in-out, margin-left 0.3s ease-in-out;

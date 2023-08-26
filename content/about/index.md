@@ -9,6 +9,7 @@ draft: false
     "native": "Hungary",
     "birth": "17/05/1990",
     "location": "Hesse, Germany",
+    "𝕏": "@_ka_de",
     "problems": null,
     "languages": [
         "English",
