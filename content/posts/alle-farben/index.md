@@ -4,14 +4,13 @@ date = "2023-08-20T11:27:05+02:00"
 author = "Balazs Horvath"
 authorTwitter = "_ka_de"
 cover = ""
-tags = ["powershell", "excel", "chatgpt", "python"]
-keywords = ["ChatGPT", "Python Programming", "AI and Machine Learning"]
-categories = ["Technology", "Programming", "AI and Machine Learning"]
+tags = ["powershell script", "excel data extraction", "python programming", "color conversion", "data manipulation", "json", "excel spreadsheets", "data analysis"]
+keywords = ["PowerShell script", "Excel data extraction", "Python programming", "Color conversion", "Data manipulation", "JSON format", "Excel spreadsheets", "Data analysis", "RGB values", "HSL values", "Hexadecimal colors", "Excel macros", "Unicode characters", "Data conversion techniques", "Data extraction methods", "Excel automation", "Color analysis", "Spreadsheet manipulation", "Data transformation", "Excel workbook", "ChatGPT", "Python Programming", "AI and Machine Learning"]
+categories = ["Data Manipulation", "Excel", "PowerShell", "Python", "Data Extraction", "Data Conversion", "Color Analysis", "Technology", "Programming", "AI and Machine Learning"]
 description = "We continue abusing ChatGPT for Python scripts."
 showFullContent = true
 readingTime = true
 hideComments = false
-color = "" #color from the theme settings
 +++
 
 ```powershell

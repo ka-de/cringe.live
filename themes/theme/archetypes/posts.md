@@ -10,5 +10,4 @@ description = ""
 showFullContent = true
 readingTime = true
 hideComments = false
-color = "" #color from the theme settings
 +++

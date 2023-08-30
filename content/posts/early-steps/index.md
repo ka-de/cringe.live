@@ -4,10 +4,9 @@ date = "2023-08-18T12:08:30+02:00"
 author = "Balazs Horvath"
 authorTwitter = "_ka_de"
 cover = ""
-tags = ["powershell", "chatgpt", "excel"]
-keywords = ["Technology"]
-description = ""
-color = "" #color from the theme settings
+tags = ["technology", "programming", "powershell", "vba script", "excel", "data manipulation", "self-improvement", "addiction recovery", "health", "ai assistance", "powershell", "chatgpt", "excel"]
+keywords = ["PowerShell scripting", "VBA Script for Excel", "Data manipulation in Excel", "Self-improvement journey", "Addiction recovery process", "Health and technology", "AI assistance in programming", "Excel automation techniques", "Coding with AI", "Random quote generation", "CSV file manipulation", "Data analysis with Python", "Excel VBA scripting", "Technology tutorials", "Programming tips and tricks", "Self-education with AI", "Addiction recovery support", "Health and wellness journey", "Tech-savvy self-improvement", "AI-powered programming"]
+description = "Explore the world of technology and self-improvement with me. Dive into PowerShell scripting and VBA scripts for Excel, discover data manipulation tricks, and embark on a journey of self-improvement and addiction recovery. Learn how AI assistance can enhance your programming skills while also delving into the intersection of health and technology. Join this unique exploration of coding, automation, and personal growth."
 showFullContent = true
 readingTime = true
 hideComments = false
@@ -77,7 +76,7 @@ I found this neat VBA Script that colors cells automatically if you enter hex co
 
 {{< video width="550" height="108" src="hexcolors-excel.mp4" muted="true" autoplay="true" loop="true" >}}
 
-```vba
+```vb
 Private Sub Worksheet_Change(ByVal Target As Range)
     On Error GoTo bm_Safe_Exit
     Application.EnableEvents = False
@@ -99,7 +98,7 @@ End Sub
 
 I asked ChatGPT nicely to make it match with the `#000000` format instead.
 
-```vba
+```vb
 Private Sub Worksheet_Change(ByVal Target As Range)
     On Error GoTo bm_Safe_Exit
     Application.EnableEvents = False
@@ -123,7 +122,7 @@ A bit safer in case I ever end up using an instrument with 6 numbers for a name.
 But what I would never be able to figure out, because I never became a Visual Basic Instructor in a previous reincarnation, is how to run all this on column D only.
 
 
-```vba
+```vb
 Private Sub Worksheet_Change(ByVal Target As Range)
     Application.EnableEvents = False
     If Not Intersect(Target, Me.Range("D:D")) Is Nothing Then

@@ -28,10 +28,10 @@
     &:after {
       content: '⟁';
       color: $accent;
+      position: fixed;
+      left: 1.4em;
+      top: 4em;
       font-size: 8rem;
-      position: absolute;
-      top: 500%;
-      left: -20%;
       transform: translate(-50%, -50%);
       display: block;
 

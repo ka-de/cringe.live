@@ -119,8 +119,8 @@ blockquote {
   &:hover {
     outline: 1px solid transparent;
     outline-offset: -1px;
-    border: 1px solid $accent;
-    @include border-color-transition();
+    //border: 1px solid $accent;
+    //@include border-color-transition();
   }
 
   footer {
@@ -129,8 +129,8 @@ blockquote {
   }
 
   border: 1px solid transparent;
-  margin: 40px 0;
-  padding: 25px;
+  //margin: 40px 0;
+  //padding: 25px;
 
   @media ($phone) {
     padding-right: 0;
