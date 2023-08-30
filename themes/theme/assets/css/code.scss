@@ -1,5 +1,6 @@
 .collapsible-code {
-  $border-color: mix($accent, $collapsible_border_mix, 90%);
+  //$border-color: mix($accent, $collapsible_border_mix, 90%);
+  border: none;
 
   position: relative;
   width: 100%;
@@ -39,7 +40,8 @@
     min-width: 30px;
     min-height: 30px;
     margin: 0;
-    border-bottom: 1px solid $border-color;
+    border: none;
+    //border-bottom: 1px solid $border-color;
     cursor: pointer;
   }
 
@@ -54,7 +56,7 @@
 
   &__language {
     color: $accent;
-    border: 1px solid $border-color;
+    border: none;
     border-bottom: none;
     text-transform: uppercase;
     padding: 3px 10px;

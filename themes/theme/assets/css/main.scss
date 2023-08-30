@@ -77,7 +77,13 @@ figure {
 
 code, kbd {
   @include font-styles('Fira Code', 0.95rem, normal, normal, normal);
-  font-feature-settings: normal;
+  //font-feature-settings: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
+  font-variant-ligatures: contextual;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
   @include transparent-background($accent, 0.8);
   color: $accent;
   padding: 1px 6px;
