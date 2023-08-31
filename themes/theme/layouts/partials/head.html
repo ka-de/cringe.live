@@ -11,7 +11,15 @@
 {{ end }}
 <link rel="canonical" href="{{ .Permalink }}" />
 
-{{ template "_internal/google_analytics.html" . }}
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D69NRX5XH6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D69NRX5XH6');
+</script>
 
 {{ $defaultStyles := resources.Get "css/style.scss" }}
   {{ $css := slice  $defaultStyles | resources.Concat "css/base.scss" }}
