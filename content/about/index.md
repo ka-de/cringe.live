@@ -6,6 +6,7 @@ draft: false
 ```json
 {
     "name": "Balazs Horvath",
+    "job": "Complicated Systems Expert",
     "native": "Hungary",
     "birth": "17/05/1990",
     "location": "Hesse, Germany",

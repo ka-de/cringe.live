@@ -73,13 +73,13 @@ function pp {
     }
 }
 ```
-The function `p` is just a wrapper around Python, if I type `p mime .\winget.txt` it will run the Python executable you specify in `$PythonPath` use the script from the `$ScriptsFolder` you specify (without the file extension) with the arguments you typed.
+The `p` function serves as a Python wrapper. When you input `p mime .\winget.txt`, it executes the Python executable specified in $PythonPath, utilizing the script from the $ScriptsFolder (excluding the file extension) along with the arguments you provide.
 
-When you run `pp` it will do the same thing but also call `-m cProfile -o $outputFileName` to create a file called $ScriptName_$timestamp_d.prof, which it can open for you, or if you forgot you have your keyboard layout on German and accidentally pressed `z`, you can open up with snakeviz for a deep dive into insanity:
+Running `pp` performs the same tasks but additionally invokes `-m cProfile -o $outputFileName` to generate a file named `$ScriptName_$timestamp_d.prof`. If you forgot you have your keyboard layout on German and accidentally pressed `z`, access it using `snakeviz` for a more in-depth analysis of insanity.
 
 ```powershell
 pip install snakeviz
 snakeviz .\mime_2023-08-30_14-46_d.prof
 ```
 
-{{< figure src="/images/snakeviz.png" alt="An screenshot of snakewiz in action." caption="" >}}
+{{< figure src="/images/snakeviz.png" alt="An screenshot of snakeviz in action." caption="" >}}
