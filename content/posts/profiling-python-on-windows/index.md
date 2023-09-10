@@ -83,3 +83,63 @@ snakeviz .\mime_2023-08-30_14-46_d.prof
 ```
 
 {{< figure src="/images/snakeviz.png" alt="An screenshot of snakeviz in action." caption="" >}}
+
+PS: Here is a more streamlined version straight from the machine himself:
+
+```powershell
+$PythonPath = "$env:LOCALAPPDATA\Programs\Python\Python311\python.exe"
+$CodeFolder = Join-Path -Path $env:USERPROFILE -ChildPath "code"
+$ScriptsFolder = Join-Path -Path $CodeFolder -ChildPath "scripts"
+
+# Function to run Python script
+function RunPythonScript {
+    param (
+        [string]$ScriptName,
+        [string]$profile = $false
+    )
+
+    if (Test-Path $PythonPath) {
+        $ScriptPath = Join-Path -Path $ScriptsFolder -ChildPath "$ScriptName.py"
+        if (Test-Path $ScriptPath) {
+            if ($profile) {
+                # Get the current date and time in the "yyyy-MM-dd_HH-mm" format
+                $timestamp = Get-Date -Format "yyyy-MM-dd_HH-mm"
+                $outputFileName = "$ScriptName" + "_" + "$timestamp" + "_d.prof"
+                $profileCommand = "python -m cProfile -o $outputFileName $ScriptPath @args"
+                Invoke-Expression $profileCommand
+
+                $runSnakeViz = Read-Host "Run SnakeViz on the generated profile file? (y/n)"
+                if ($runSnakeViz -eq "Y" -or $runSnakeViz -eq "y") {
+                    Invoke-Expression "snakeviz $outputFileName"
+                }
+            } else {
+                & $PythonPath $ScriptPath @args
+            }
+        } else {
+            Write-Host "Error: The script file $ScriptPath does not exist."
+        }
+    } else {
+        Write-Host "Error: Python executable not found at $PythonPath."
+    }
+}
+
+# Function to run Python script
+function p {
+    param (
+        [string]$ScriptName
+    )
+
+    RunPythonScript -ScriptName $ScriptName
+}
+
+# Function to profile Python script
+function pp {
+    param (
+        [string]$ScriptName
+    )
+
+    RunPythonScript -ScriptName $ScriptName -profile $true
+}
+```
+
+Honestly, this does look a lot better. 🤓

@@ -140,6 +140,6 @@ print("Conversion from hex to RGB and HSL completed.")
 
 I'm looking forward to a bright future.
 
-You can find the full scripts and the example spreadsheet on my [Github](https://github.com/Kadelam/chatgpt-farts/tree/main/excel-to-json).
+You can find the full scripts and the example spreadsheet on my [Github](https://github.com/ka-de/chatgpt-farts/tree/main/excel-to-json).
 
 {{< spotify 0H5MVQwMcpm4KkPZz13KZr >}}

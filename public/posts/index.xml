@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Unbound Epochs</title>
-    <link>https://kadelam.github.io/posts/</link>
+    <link>https://ka-de.github.io/posts/</link>
     <description>Recent content in Posts on Unbound Epochs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Aug 2023 16:08:56 +0200</lastBuildDate><atom:link href="https://kadelam.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Aug 2023 16:08:56 +0200</lastBuildDate><atom:link href="https://ka-de.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tea</title>
-      <link>https://kadelam.github.io/posts/daily-life/tea/</link>
+      <link>https://ka-de.github.io/posts/daily-life/tea/</link>
       <pubDate>Fri, 18 Aug 2023 16:08:56 +0200</pubDate>
       
-      <guid>https://kadelam.github.io/posts/daily-life/tea/</guid>
+      <guid>https://ka-de.github.io/posts/daily-life/tea/</guid>
       <description> </description>
       <content>&lt;!-- raw HTML omitted --&gt;
 </content>
@@ -20,14 +20,15 @@
     
     <item>
       <title>Early Steps</title>
-      <link>https://kadelam.github.io/posts/chatgpt-farts/early-steps/</link>
+      <link>https://ka-de.github.io/posts/chatgpt-farts/early-steps/</link>
       <pubDate>Fri, 18 Aug 2023 12:08:30 +0200</pubDate>
       
-      <guid>https://kadelam.github.io/posts/chatgpt-farts/early-steps/</guid>
-      <description>Men slowly starting to interface with the machines other men built for them. Glorious!I accidentally dropped out of society for a few years, and upon my return, I discovered the presence of peculiar machines that we can converse with, and which possess extensive knowledge about various subjects. I have no trepidation concerning GPUs, so let&amp;rsquo;s embark on a deep exploration of this novel &amp;lsquo;disruptive&amp;rsquo; technology together. Below, you will find a graveyard of both useful and useless scripts, composed individually by machines or with minimal assistance from this hairy monkey.</description>
+      <guid>https://ka-de.github.io/posts/chatgpt-farts/early-steps/</guid>
+      <description>Men slowly starting to interface with the machines other men built for them. Glorious!
+I accidentally dropped out of society for a few years, and upon my return, I discovered the presence of peculiar machines that we can converse with, and which possess extensive knowledge about various subjects. I have no trepidation concerning GPUs, so let&amp;rsquo;s embark on a deep exploration of this novel &amp;lsquo;disruptive&amp;rsquo; technology together. Below, you will find a graveyard of both useful and useless scripts, composed individually by machines or with minimal assistance from this hairy monkey.</description>
       <content>
   &lt;figure class=&#34;left&#34; &gt;
-    &lt;img src=&#34;https://kadelam.github.io/images/manvsmachine.png&#34;  alt=&#34;Alt Text&#34;   /&gt;
+    &lt;img src=&#34;https://ka-de.github.io/images/manvsmachine.png&#34;  alt=&#34;Alt Text&#34;   /&gt;
     
       &lt;figcaption class=&#34;center&#34; &gt;Men slowly starting to interface with the machines other men built for them. Glorious!&lt;/figcaption&gt;
     

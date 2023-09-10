@@ -1,4 +1,4 @@
-baseURL = 'https://kadelam.github.io/'
+baseURL = 'https://ka-de.github.io/'
 languageCode = 'en-us'
 title = 'Unbound Epochs'
 theme = "theme"
