@@ -1,4 +1,4 @@
-baseURL = 'https://ka-de.github.io/'
+baseURL = 'https://blog.cringe.live/'
 languageCode = 'en-us'
 title = 'Unbound Epochs'
 theme = "theme"
@@ -22,6 +22,7 @@ paginate = 10
 [params]
   author = "Balazs Horvath"
   description = "Just doing what the machines told me to.."
+  keywords = "nerdy stuff, blog, powershell, python, machine learning"
   contentTypeName = "posts"
   showMenuItems = 2
   fullWidthTheme = false
@@ -33,9 +34,10 @@ paginate = 10
     subtitle = "Just doing what the machines told me to.."
     keywords = "nerdy stuff, blog,"
     copyright = "Balazs Horvath"
+    email = "acsipont@gmail.com"
     menuMore = "Show more"
     readMore = "Read more"
-    readOtherPosts = "Read other posts"
+    readOtherPosts = "These are relevant somehow"
 
     [languages.en.params.logo]
       logoText = "Unbound Epochs"
