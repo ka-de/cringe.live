@@ -2,12 +2,12 @@ name = "kade"
 license = "Unlicense"
 licenselink = ""
 description = "My theme for hugo."
-homepage = "https://blog.cringe.live/"
+homepage = "https://cringe.live/"
 tags = ["blog", "clean", "customizable", "dark", "highlighting", "minimal", "multilingual", "personal", "responsive", "simple", "technical", "retro"]
 features = ["blog", "shortcode", "syntax highlighting"]
 min_version = 0.90
 
 [author]
   name = "_ka_de"
-  homepage = "https://blog.cringe.live"
+  homepage = "https://cringe.live"
   twitter = "https://twitter.com/_ka_de"

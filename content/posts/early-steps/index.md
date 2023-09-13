@@ -28,7 +28,7 @@ function serve {
     )
 
     $hugoExecutable = "$env:LOCALAPPDATA\hugo-extended-0.117.0\hugo.exe"
-    $workingDirectory = "$env:USERPROFILE\code\ka-de.github.io\"
+    $workingDirectory = "$env:USERPROFILE\code\cringe.live\"
 
     if (Test-Path $hugoExecutable) {
         if (Test-Path $workingDirectory) {

@@ -1,4 +1,4 @@
-baseURL = 'https://blog.cringe.live/'
+baseURL = 'https://cringe.live/'
 languageCode = 'en-us'
 title = 'Unbound Epochs'
 theme = "theme"

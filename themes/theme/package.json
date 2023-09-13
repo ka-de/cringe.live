@@ -1,7 +1,7 @@
 {
-  "name": "terminal",
+  "name": "cringe.live",
   "version": "3.1.0",
-  "author": "Radosław Kozieł <@panr> <radoslaw.koziel@gmail.com>",
+  "author": "Balazs Horvath <acsipont@gmail.com> (@_ka_de)",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
