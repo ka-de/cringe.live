@@ -3,7 +3,7 @@ license = "Unlicense"
 licenselink = ""
 description = "My theme for hugo."
 homepage = "https://cringe.live/"
-tags = ["blog", "clean", "customizable", "dark", "highlighting", "minimal", "multilingual", "personal", "responsive", "simple", "technical", "retro"]
+tags = ["blog", "clean", "customizable", "dark", "highlighting", "minimal", "multilingual", "personal", "responsive", "simple", "technical"]
 features = ["blog", "shortcode", "syntax highlighting"]
 min_version = 0.90
 
