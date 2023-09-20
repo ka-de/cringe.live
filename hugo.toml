@@ -1,6 +1,6 @@
 baseURL = 'https://cringe.live/'
 languageCode = 'en-us'
-title = 'Unbound Epochs'
+title = 'cringe.live'
 theme = "theme"
 paginate = 10
 
@@ -40,10 +40,15 @@ paginate = 10
     readOtherPosts = "These are relevant somehow"
 
     [languages.en.params.logo]
-      logoText = "Unbound Epochs"
+      logoText = "cringe.live"
       logoHomeLink = "/"
 
     [languages.en.menu]
+      [[languages.en.menu.main]]
+          identifier = "blog"
+          name = "Blog"
+          url = "/blog"
+
       [[languages.en.menu.main]]
         identifier = "about"
         name = "About"

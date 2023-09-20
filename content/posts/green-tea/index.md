@@ -1,8 +1,8 @@
 +++
 title = "Green Tea"
 date = "2023-08-18T16:08:56+02:00"
-author = ""
-authorTwitter = "" #do not include @
+author = "Balazs Horvath"
+authorTwitter = "_ka_de"
 cover = ""
 tags = ["health", "addiction", "caffeine", "smoking", "substance abuse", "self-improvement", "tea", "alkaloids"]
 keywords = ["Green tea", "Caffeine addiction", "Substance abuse recovery", "Health awareness", "Self-improvement journey", "Addiction struggles", "Self-reflection", "Lifestyle changes", "Quitting smoking", "Health effects of smoking", "Addiction recovery process", "Personal growth and development", "Overcoming cravings", "Design flaws in human behavior", "Technology and addiction", "Substance dependency", "Craving management", "Chemical solutions", "Self-education", "University education in chemistry"]

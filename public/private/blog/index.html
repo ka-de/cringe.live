@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Blog :: Unbound Epochs</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Code Snippets {{ if .IsHome }} this is the home page {{ end }}
+{{ if ne .IsHome true }} this is not the home page {{ end }}
+Production Only &amp;#123;&amp;#123; if not .Site.IsServer &amp;#125;&amp;#125;&amp;lt;!-- production only --&amp;gt;&amp;#123;&amp;#123; end &amp;#125;&amp;#125;Local Only &amp;#123;&amp;#123; if .Site.IsServer &amp;#125;&amp;#125;&amp;lt;!-- local development --&amp;gt;&amp;#123;&amp;#123; end &amp;#125;&amp;#125;Post structure Creating summaries. ---title: Titletype: postdate: 1970-01-01T00:00:00&#43;00:00url: /example-post/---My Summary&amp;lt;!" />
+<meta name="keywords" content="nerdy stuff, blog," />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://cringe.live/private/blog/" />
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D69NRX5XH6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D69NRX5XH6');
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="https://cringe.live/styles.css">
+
+
+
+
+
+  <link rel="shortcut icon" href="https://cringe.live/img/favicon.png">
+  <link rel="apple-touch-icon" href="https://cringe.live/img/favicon.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Blog">
+<meta property="og:description" content="Code Snippets {{ if .IsHome }} this is the home page {{ end }}
+{{ if ne .IsHome true }} this is not the home page {{ end }}
+Production Only &amp;#123;&amp;#123; if not .Site.IsServer &amp;#125;&amp;#125;&amp;lt;!-- production only --&amp;gt;&amp;#123;&amp;#123; end &amp;#125;&amp;#125;Local Only &amp;#123;&amp;#123; if .Site.IsServer &amp;#125;&amp;#125;&amp;lt;!-- local development --&amp;gt;&amp;#123;&amp;#123; end &amp;#125;&amp;#125;Post structure Creating summaries. ---title: Titletype: postdate: 1970-01-01T00:00:00&#43;00:00url: /example-post/---My Summary&amp;lt;!" />
+<meta property="og:url" content="https://cringe.live/private/blog/" />
+<meta property="og:site_name" content="Unbound Epochs" />
+
+  
+    <meta property="og:image" content="https://cringe.live/img/favicon.png">
+  
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2023-08-20 11:23:38 &#43;0200 CEST" />
+
+
+<link rel="alternate" type="application/rss+xml" href="https://cringe.live/index.xml" title="Unbound Epochs">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+
+
+
+
+</head>
+<body class="line-numbers">
+
+
+<div class="container center headings--one-size">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Unbound Epochs
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+      
+    
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://cringe.live/private/blog/">Blog</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2023-08-20</time></div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="code-snippets">Code Snippets<a href="#code-snippets" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<p>{{ if .IsHome }}
+this is the home page
+{{ end }}</p>
+<p>{{ if ne .IsHome true }}
+this is not the home page
+{{ end }}</p>
+<p>Production Only
+
+<pre>
+&#123;&#123; if not .Site.IsServer &#125;&#125;
+    &lt;!-- production only --&gt;
+&#123;&#123; end &#125;&#125;
+</pre>
+</p>
+<p>Local Only
+
+<pre>
+&#123;&#123; if .Site.IsServer &#125;&#125;
+    &lt;!-- local development --&gt;
+&#123;&#123; end &#125;&#125;
+</pre>
+</p>
+<h2 id="post-structure">Post structure<a href="#post-structure" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h3 id="creating-summaries">Creating summaries.<a href="#creating-summaries" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+
+<pre><code class="language-haml">---
+title: Title
+type: post
+date: 1970-01-01T00:00:00+00:00
+url: /example-post/
+---
+My Summary&lt;!--more--&gt;
+More content
+</code></pre>
+
+<p>or..</p>
+
+<pre><code class="language-haml">---
+title: Example Post
+type: post
+date: 1970-01-01T00:00:00+00:00
+url: /example-post/
+summary: Completely different summary text.
+---
+How I start my post
+</code></pre>
+
+<h2 id="markdown">Markdown<a href="#markdown" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h3 id="strikethrough">Strikethrough<a href="#strikethrough" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+
+<pre>This sentence is ~~wrong~~.</pre>
+
+<p>This sentence is <del>wrong</del>.</p>
+<h3 id="code-blocks">Code Blocks<a href="#code-blocks" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+
+<pre>
+```scss
+* {
+    color-scheme: only dark;
+}
+```
+</pre>
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#f92672">*</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">color-scheme</span><span style="color:#f92672">:</span> only dark;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+<code class="language-lisp">
+<pre>
+(defun factorial (n)
+	(if (= n 0) 1
+		(* n (factorial (- n 1)))))
+</code>
+</pre>
+
+<pre class="command-line" data-user="kadelam" data-host="kadelam">
+<code>
+kadelam@kadelam:~$ cowsay "Sup, bitch!"
+ _____________
+< Sup, bitch! >
+ -------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+</code>
+</pre>
+
+<h2 id="shortcodes">Shortcodes<a href="#shortcodes" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+<h3 id="htmlhttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodeshtmlhtml"><a href="https://github.com/Kadelam/kadelam.github.io/blob/main/layouts/shortcodes/html.html">html</a><a href="#htmlhttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodeshtmlhtml" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Use this to insert raw html.</p>
+
+<pre>
+<span>{</span>{< html >}}
+&lt;p&gt;Apes together &lt;strong&gt;strong&lt;/strong&gt;.&lt;/p&gt;
+<span>{</span>{< /html >}}
+</pre>
+
+<h3 id="rimghttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodesrimghtml"><a href="https://github.com/Kadelam/kadelam.github.io/blob/main/layouts/shortcodes/rimg.html">rimg</a><a href="#rimghttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodesrimghtml" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<p>Use this to display retina images.</p>
+<p>{{&lt; rimg &ldquo;/img/candy.png&rdquo; &ldquo;/img/candy@2x.png&rdquo; &ldquo;Candy&rdquo; &gt;}}</p>
+<h3 id="spotifyhttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodesspotifyhtml"><a href="https://github.com/Kadelam/kadelam.github.io/blob/main/layouts/shortcodes/spotify.html">spotify</a><a href="#spotifyhttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodesspotifyhtml" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h3 id="videohttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodesvideohtml"><a href="https://github.com/Kadelam/kadelam.github.io/blob/main/layouts/shortcodes/video.html">video</a><a href="#videohttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodesvideohtml" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
+<h2 id="something-else">Something else<a href="#something-else" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h2>
+
+      </div></div>
+
+  
+
+  
+    
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2023 Balazs Horvath</span>
+    
+      <span>&#10177;&nbsp;&nbsp;&nbsp;Fallen far from the tree..</span>
+      </div>
+  </div>
+  <div class="footer__inner2">
+    <span><a href="/site-taxonomies/">Taxonomy</a></span>
+    <span><a href="/cookies/">Cookies</a></span>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

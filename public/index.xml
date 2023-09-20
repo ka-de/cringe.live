@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Unbound Epochs</title>
+    <link>https://cringe.live/</link>
+    <description>Recent content on Unbound Epochs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 06 Sep 2023 12:35:53 +0200</lastBuildDate><atom:link href="https://cringe.live/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blocked and Cocked</title>
+      <link>https://cringe.live/private/blocked/</link>
+      <pubDate>Wed, 06 Sep 2023 12:35:53 +0200</pubDate>
+      
+      <guid>https://cringe.live/private/blocked/</guid>
+      <description>Looks like you are trying to waste your time! Watch some Ableton tutorials dumbass!</description>
+      <content>&lt;h2 id=&#34;looks-like-you-are-trying-to-waste-your-time&#34;&gt;Looks like you are trying to waste your time!&lt;/h2&gt;
+&lt;p&gt;Watch some Ableton tutorials dumbass!&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Sentence me</title>
+      <link>https://cringe.live/sentence-me/</link>
+      <pubDate>Sat, 26 Aug 2023 12:40:20 +0200</pubDate>
+      
+      <guid>https://cringe.live/sentence-me/</guid>
+      <description>Randomize Sentences</description>
+      <content>
+&lt;div id=&#34;sentenceContainer&#34;&gt;&lt;/div&gt;
+&lt;button id=&#34;randomizeButton&#34;&gt;Randomize Sentences&lt;/button&gt;
+
+&lt;script src=&#34;https://cringe.live/js/sentence-me.js&#34; defer&gt;&lt;/script&gt;
+
+</content>
+    </item>
+    
+    <item>
+      <title>Works</title>
+      <link>https://cringe.live/works/</link>
+      <pubDate>Sat, 26 Aug 2023 12:40:20 +0200</pubDate>
+      
+      <guid>https://cringe.live/works/</guid>
+      <description>Demos Sentence Me A small little game created in collaboration with ChatGPT, you can find it on the bottom of my /about page or as a standalone version at /sentence-me</description>
+      <content>&lt;h2 id=&#34;demos&#34;&gt;Demos&lt;/h2&gt;
+&lt;h3 id=&#34;sentence-me&#34;&gt;Sentence Me&lt;/h3&gt;
+&lt;video controls preload=&#34;auto&#34; width=&#34;100%&#34;  autoplay loop muted playsinline class=&#34;html-video&#34;&gt;
+    &lt;source src=&#34;https://cringe.live/works/sentence-me-demo.mp4&#34; type=&#34;video/mp4&#34;&gt;
+  &lt;span&gt;&lt;/span&gt;
+&lt;/video&gt;
+&lt;p&gt;A small little game created in collaboration with ChatGPT, you can find it on the bottom of my &lt;a href=&#34;https://cringe.live/about&#34;&gt;/about&lt;/a&gt; page or as a standalone version at &lt;a href=&#34;https://cringe.live/sentence-me&#34;&gt;/sentence-me&lt;/a&gt;&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://cringe.live/private/blog/</link>
+      <pubDate>Sun, 20 Aug 2023 11:23:38 +0200</pubDate>
+      
+      <guid>https://cringe.live/private/blog/</guid>
+      <description>Code Snippets {{ if .IsHome }} this is the home page {{ end }}
+{{ if ne .IsHome true }} this is not the home page {{ end }}
+Production Only &amp;#123;&amp;#123; if not .Site.IsServer &amp;#125;&amp;#125;&amp;lt;!-- production only --&amp;gt;&amp;#123;&amp;#123; end &amp;#125;&amp;#125;Local Only &amp;#123;&amp;#123; if .Site.IsServer &amp;#125;&amp;#125;&amp;lt;!-- local development --&amp;gt;&amp;#123;&amp;#123; end &amp;#125;&amp;#125;Post structure Creating summaries. ---title: Titletype: postdate: 1970-01-01T00:00:00+00:00url: /example-post/---My Summary&amp;lt;!</description>
+      <content>&lt;h2 id=&#34;code-snippets&#34;&gt;Code Snippets&lt;/h2&gt;
+&lt;p&gt;{{ if .IsHome }}
+this is the home page
+{{ end }}&lt;/p&gt;
+&lt;p&gt;{{ if ne .IsHome true }}
+this is not the home page
+{{ end }}&lt;/p&gt;
+&lt;p&gt;Production Only
+
+&lt;pre&gt;
+&amp;#123;&amp;#123; if not .Site.IsServer &amp;#125;&amp;#125;
+    &amp;lt;!-- production only --&amp;gt;
+&amp;#123;&amp;#123; end &amp;#125;&amp;#125;
+&lt;/pre&gt;
+&lt;/p&gt;
+&lt;p&gt;Local Only
+
+&lt;pre&gt;
+&amp;#123;&amp;#123; if .Site.IsServer &amp;#125;&amp;#125;
+    &amp;lt;!-- local development --&amp;gt;
+&amp;#123;&amp;#123; end &amp;#125;&amp;#125;
+&lt;/pre&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;post-structure&#34;&gt;Post structure&lt;/h2&gt;
+&lt;h3 id=&#34;creating-summaries&#34;&gt;Creating summaries.&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-haml&#34;&gt;---
+title: Title
+type: post
+date: 1970-01-01T00:00:00+00:00
+url: /example-post/
+---
+My Summary&amp;lt;!--more--&amp;gt;
+More content
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;or..&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-haml&#34;&gt;---
+title: Example Post
+type: post
+date: 1970-01-01T00:00:00+00:00
+url: /example-post/
+summary: Completely different summary text.
+---
+How I start my post
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;markdown&#34;&gt;Markdown&lt;/h2&gt;
+&lt;h3 id=&#34;strikethrough&#34;&gt;Strikethrough&lt;/h3&gt;
+
+&lt;pre&gt;This sentence is ~~wrong~~.&lt;/pre&gt;
+
+&lt;p&gt;This sentence is &lt;del&gt;wrong&lt;/del&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;code-blocks&#34;&gt;Code Blocks&lt;/h3&gt;
+
+&lt;pre&gt;
+```scss
+* {
+    color-scheme: only dark;
+}
+```
+&lt;/pre&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-scss&#34; data-lang=&#34;scss&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;color-scheme&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; only dark;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;code class=&#34;language-lisp&#34;&gt;
+&lt;pre&gt;
+(defun factorial (n)
+	(if (= n 0) 1
+		(* n (factorial (- n 1)))))
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;pre class=&#34;command-line&#34; data-user=&#34;kadelam&#34; data-host=&#34;kadelam&#34;&gt;
+&lt;code&gt;
+kadelam@kadelam:~$ cowsay &#34;Sup, bitch!&#34;
+ _____________
+&lt; Sup, bitch! &gt;
+ -------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+&lt;/code&gt;
+&lt;/pre&gt;
+
+&lt;h2 id=&#34;shortcodes&#34;&gt;Shortcodes&lt;/h2&gt;
+&lt;h3 id=&#34;htmlhttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodeshtmlhtml&#34;&gt;&lt;a href=&#34;https://github.com/Kadelam/kadelam.github.io/blob/main/layouts/shortcodes/html.html&#34;&gt;html&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Use this to insert raw html.&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;span&gt;{&lt;/span&gt;{&lt; html &gt;}}
+&amp;lt;p&amp;gt;Apes together &amp;lt;strong&amp;gt;strong&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&lt;span&gt;{&lt;/span&gt;{&lt; /html &gt;}}
+&lt;/pre&gt;
+
+&lt;h3 id=&#34;rimghttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodesrimghtml&#34;&gt;&lt;a href=&#34;https://github.com/Kadelam/kadelam.github.io/blob/main/layouts/shortcodes/rimg.html&#34;&gt;rimg&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;Use this to display retina images.&lt;/p&gt;
+&lt;p&gt;{{&amp;lt; rimg &amp;ldquo;/img/candy.png&amp;rdquo; &amp;ldquo;/img/candy@2x.png&amp;rdquo; &amp;ldquo;Candy&amp;rdquo; &amp;gt;}}&lt;/p&gt;
+&lt;h3 id=&#34;spotifyhttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodesspotifyhtml&#34;&gt;&lt;a href=&#34;https://github.com/Kadelam/kadelam.github.io/blob/main/layouts/shortcodes/spotify.html&#34;&gt;spotify&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;videohttpsgithubcomkadelamkadelamgithubioblobmainlayoutsshortcodesvideohtml&#34;&gt;&lt;a href=&#34;https://github.com/Kadelam/kadelam.github.io/blob/main/layouts/shortcodes/video.html&#34;&gt;video&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&#34;something-else&#34;&gt;Something else&lt;/h2&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Music Theory for Lizards</title>
+      <link>https://cringe.live/private/music-theory-for-lizards/</link>
+      <pubDate>Sun, 20 Aug 2023 08:58:39 +0200</pubDate>
+      
+      <guid>https://cringe.live/private/music-theory-for-lizards/</guid>
+      <description>Chords!Music&amp;hellip;
+chord_progression = [ [60, 64, 67], # C Major (I) [55, 59, 62], # G Major (V) [57, 60, 64], # A Minor (vi) [53, 57, 60], # E Minor (IV) ] chord_progression = [ [62, 66, 69], # D minor 7 (ii) [55, 59, 62], # G7 (V) [60, 64, 67], # C Major 7 (I) ] chord_progression = [ [60, 63, 67], # C7 (I7) [55, 58, 62], # F7 (IV7) [60, 63, 67], # C7 (I7) [53, 57, 60], # G7 (V7) ] chord_progression = [ [60, 64, 67], # C Major (I) [62, 66, 69], # D minor (vi) [50, 54, 57], # E minor (ii) [53, 57, 60], # G Major (IV) [60, 64, 67], # C Major (I) [62, 66, 69], # D minor (vi) [53, 57, 60], # G Major (IV) [50, 54, 57], # E minor (ii) ] </description>
+      <content>
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;chords.png&#34;  alt=&#34;An image featuring chords&#34;   /&gt;
+    
+      &lt;figcaption class=&#34;center&#34; &gt;Chords!&lt;/figcaption&gt;
+    
+  &lt;/figure&gt;
+
+
+&lt;p&gt;Music&amp;hellip;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chord_progression &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;64&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;67&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# C Major (I)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;55&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;59&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;62&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# G Major (V)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;57&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;64&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# A Minor (vi)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;57&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# E Minor (IV)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chord_progression &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;62&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;66&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;69&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# D minor 7 (ii)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;55&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;59&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;62&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# G7 (V)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;64&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;67&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# C Major 7 (I)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chord_progression &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;63&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;67&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# C7 (I7)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;55&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;58&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;62&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# F7 (IV7)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;63&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;67&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# C7 (I7)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;57&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# G7 (V7)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chord_progression &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;64&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;67&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# C Major (I)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;62&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;66&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;69&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# D minor (vi)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;54&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;57&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# E minor (ii)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;57&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# G Major (IV)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;64&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;67&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# C Major (I)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;62&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;66&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;69&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# D minor (vi)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;53&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;57&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# G Major (IV)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    [&lt;span style=&#34;color:#ae81ff&#34;&gt;50&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;54&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;57&lt;/span&gt;],  &lt;span style=&#34;color:#75715e&#34;&gt;# E minor (ii)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+    </item>
+    
+    <item>
+      <title>Green Tea</title>
+      <link>https://cringe.live/posts/blog/</link>
+      <pubDate>Fri, 18 Aug 2023 16:08:56 +0200</pubDate>
+      
+      <guid>https://cringe.live/posts/blog/</guid>
+      <description></description>
+      <content></content>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://cringe.live/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cringe.live/about/</guid>
+      <description>{ &amp;#34;name&amp;#34;: &amp;#34;Balazs Horvath&amp;#34;, &amp;#34;job&amp;#34;: &amp;#34;Complicated Systems Expert&amp;#34;, &amp;#34;native&amp;#34;: &amp;#34;Hungary&amp;#34;, &amp;#34;birth&amp;#34;: &amp;#34;17/05/1990&amp;#34;, &amp;#34;location&amp;#34;: &amp;#34;Hesse, Germany&amp;#34;, &amp;#34;𝕏&amp;#34;: &amp;#34;@_ka_de&amp;#34;, &amp;#34;problems&amp;#34;: null, &amp;#34;languages&amp;#34;: [ &amp;#34;English&amp;#34;, &amp;#34;German&amp;#34;, &amp;#34;Hungarian&amp;#34; ] } &amp;ldquo;It is the shape of things to come, the pattern of death!&amp;rdquo;
+(Awkward silence.)
+You have entered the lair of a delinquent, born at precisely the right time.
+I ❤️ 🧠 + 💻 + 🍵 + 🎶 + 🎮 + 📖 + 🎨 + 🚴‍♂️ + 🧘‍♀️ + 🧁 + 🏞️.</description>
+      <content>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Balazs Horvath&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;job&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Complicated Systems Expert&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;native&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hungary&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;birth&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;17/05/1990&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;location&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hesse, Germany&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;𝕏&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;@_ka_de&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;problems&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;languages&amp;#34;&lt;/span&gt;: [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;English&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;German&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hungarian&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;It is the shape of things to come, the pattern of death!&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;(Awkward silence.)&lt;/p&gt;
+&lt;p&gt;You have entered the lair of a delinquent, born at precisely the right time.&lt;/p&gt;
+&lt;p&gt;I ❤️ 🧠 + 💻 + 🍵 + 🎶 + 🎮 + 📖 + 🎨 + 🚴‍♂️ + 🧘‍♀️ + 🧁 + 🏞️.&lt;/p&gt;
+&lt;p&gt;I dedicate this whole site to infecting people with them.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+  &lt;figure class=&#34;left&#34; &gt;
+    &lt;img src=&#34;https://cringe.live/images/about-me-pictures/1.png&#34;   /&gt;
+    
+  &lt;/figure&gt;
+
+
+
+&lt;div id=&#34;quote-container&#34;&gt;&lt;/div&gt;
+&lt;script&gt;
+const quotesJson = [
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;Zen does not confuse spirituality with thinking about God while one is peeling potatoes. Zen spirituality is just to peel the potatoes.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;Trying to define yourself is like trying to bite your own teeth.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;I have suggested that behind almost all myth lies the mono-plot of the game of hide-and-seek&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;To have faith is to trust yourself to the water. When you swim you don&#39;t grab hold of the water, because if you do you will sink and drown. Instead you relax, and float&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;This is the real secret of life—to be completely engaged with what you are doing in the here and now. And instead of calling it work, realize it is play.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;Religion is always falling apart&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;Doctors try to get rid of their patients — clergymen try to get them hooked on the medicine so that they will become addicts to the church.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;The more we struggle for life (as pleasure), the more we are actually killing what we love&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;The greater part of human activity is designed to make permanent those experiences and joys which are only lovable because they are changing.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;It must be obvious&amp;hellip; that there is a contradiction in wanting to be perfectly secure in a universe whose very nature is momentariness and fluidity.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;Running away from fear is fear; fighting pain is pain; trying to be brave is being scared. If the mind is in pain, the mind is pain. The thinker has no other form than his thought.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;To be free from convention is not to spurn it but not to be deceived by it. It is to be able to use it as an instrument instead of being used by it.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;If Christianity is wine and Islam coffee, Buddhism is most certainly tea.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;Buddhism &amp;hellip; is not a culture but a critique of culture, an enduring nonviolent revolution or “loyal opposition” to the culture in which it is involved&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;Sex is no longer a serious taboo. Teenagers sometimes know more about it than adults.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;The world is in an extremely dangerous situation, and serious diseases often require the risk of a dangerous cure — like the Pasteur serum for rabies.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;The most strongly enforced of all known taboos is the taboo against knowing who or what you really are behind the mask of your apparently separate, independent, and isolated ego.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;As a human being it is just my nature to enjoy and share philosophy. I do this in the same way that some birds are eagles and some doves, some flowers lilies and some roses.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;Everyone has a religion, whether admitted or not, because it is impossible to be human without having some basic assumptions (or intuitions) about existence and the good life.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;A person who thinks all the time has nothing to think about except thoughts. So he loses touch with reality, and lives in a world of illusion.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;If you know that \&#34;I\&#34;, in the sense of the person, the front, the ego, it really doesn&#39;t exist. Then...it won&#39;t go to your head too badly, if you wake up and discover that you&#39;re God.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;We have, as a result of two thousand years of Christianity, sex on the brain. Which isn&#39;t always the best place for it.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Alan Watts&#34;,
+    &#34;quote&#34;: &#34;The whole history of religion is a history of the failure of preaching. Preaching is moral violence.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;What we call imagination is actually the universal library of what&#39;s real. You couldn&#39;t imagine it if it weren&#39;t real somewhere, sometime.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;We are being sucked into the body of eternity.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;Life lived in the absence of the psychedelic experience that primordial shamanism is based on is life trivialized, life denied, life enslaved to the ego.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;A lot of people pass through the thinking I&#39;m a guru and take enough trips to understand that no, I was just a witness. I was just a witness.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;The real secret of magic is that the world is made of words, and that if you know the words that the world is made of, you can make of it whatever you wish.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;If the truth can be told so as to be understood, it will be believed.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;We are caged by our cultural programming. Culture is a mass hallucination, and when you step outside the mass hallucination, you see it for what it&#39;s worth.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;Thinkers are not a welcome addition to most social situations.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;Where is it writ in adamantine, \&#34;The troops of monkeys should comprehend the architectonics of the cosmos\&#34;?&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;History is the in-rushing toward what the Buddhists call the realm of the densely packed, a transformational realm where the opposites are unified.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;We have to claim anarchy and realize that systems have a life of their own that is anti-humanist. There is definitely an anti-humanist tendency in all systems.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;Somewhere around 1945, we began to loot the future as a strategy for survival. Some ethical norm was shattered.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;If we are all God&#39;s children, then why have we rigged the earth with dynamite and are flipping coins to see who gets to set it off?&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;We&#39;ve been infected with the idea of original sin, that&#39;s what keeps us infantile&amp;hellip;politics without responsibility is fascism.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;You need an ego. If you didn&#39;t have an ego, you wouldn&#39;t know whose mouth to put food in when eating in a restaurant.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;&amp;hellip;yes I mean these journeys into higher places, where-ever they are, seem to demand mathematical metaphors.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;&amp;hellip;intuition is intuition, &amp; noise is noise, so what you do is, cook it in your mind and go with what feels right&#34;
+  },
+  {
+    &#34;author&#34;: &#34;Terence McKenna&#34;,
+    &#34;quote&#34;: &#34;The main thing to understand is that we are imprisoned in some kind of work of art.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;It is in tune with the tempo of life — scattered yet welded into the whole, — broken, yet woven together.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;The job of the poet is to use language effectively, his own language, the only language which is to him authentic.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;Poetry demands a different material than prose. It uses another facet of the same fact &amp;hellip; the spontaneous conformation of language as it is heard.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;My first poem was a bolt from the blue &amp;hellip; it broke a spell of disillusion and suicidal despondence. &amp;hellip; it filled me with soul satisfying joy.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;There&#39;s a lot of bastards out there!&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;I liked this because of the elimination of the essential in the composition. I cut it down and down, and down. This squeezed up to make it vivid.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;Being an art form, verse cannot be \&#34;free\&#34; in the sense of having no limitations or guiding principle.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;So different, this man&lt;br&gt;And this woman:&lt;br&gt;A stream flowing&lt;br&gt;In a field.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;The earth cracks and&lt;br&gt;is shriveled up;&lt;br&gt;the wind moans piteously;&lt;br&gt;the sky goes out&lt;br&gt;if you should fail.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;the set pieces&lt;br&gt;of your faces stir me —&lt;br&gt;leading citizens —&lt;br&gt;but not&lt;br&gt;in the same way.&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;I lie here thinking of you:—&lt;br&gt;the stain of love&lt;br&gt;is upon the world!&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;It&#39;s a strange courage&lt;br&gt;you give me ancient star:&lt;br&gt;Shine alone in the sunrise&lt;br&gt;toward which you lend no part!&#34;
+  },
+  {
+    &#34;author&#34;: &#34;William Carlos Williams&#34;,
+    &#34;quote&#34;: &#34;Who shall say I am not&lt;br&gt;the happy genius of my household?&#34;
+  }
+];
+
+// Function to get a random quote from the JSON data in HTML format
+function getRandomQuoteHtml() {
+  // Generate a random index within the length of the JSON array
+  const randomIndex = Math.floor(Math.random() * quotesJson.length);
+  
+  // Get the random quote and author using the random index
+  const randomQuote = quotesJson[randomIndex];
+  
+  // Format the quote and author in HTML
+  const formattedHtml = `
+    &lt;blockquote&gt;
+      &lt;p&gt;${randomQuote.quote}&lt;/p&gt;
+      &lt;footer&gt;&amp;mdash; ${randomQuote.author}&lt;/footer&gt;
+    &lt;/blockquote&gt;
+  `;
+
+  return formattedHtml;
+}
+
+// Function to update the quote-container element with a random quote
+function updateQuoteContainer() {
+  const quoteContainer = document.getElementById(&#34;quote-container&#34;);
+  const randomQuoteHtml = getRandomQuoteHtml();
+  
+  // Set the content of the quote-container element to the random quote HTML
+  quoteContainer.innerHTML = randomQuoteHtml;
+}
+
+// Call the updateQuoteContainer function to initially display a random quote
+updateQuoteContainer();
+&lt;/script&gt;
+
+&lt;p&gt;So.. was that quote satisfying? If not, just refresh the page and try again.&lt;/p&gt;
+&lt;p&gt;But, if you are looking for my &lt;a href=&#34;https://cringe.live/works&#34;&gt;speaking in tongues&lt;/a&gt;.. Let me indulge you a bit further.&lt;/p&gt;
+
+&lt;h2 style=&#34;text-align: center;&#34;&gt;Sentence me&lt;/h2&gt;
+&lt;div id=&#34;sentenceContainer&#34;&gt;&lt;/div&gt;
+&lt;button id=&#34;randomizeButton&#34;&gt;Randomize Sentences&lt;/button&gt;
+
+&lt;script src=&#34;https://cringe.live/js/sentence-me.js&#34; defer&gt;&lt;/script&gt;
+
+</content>
+    </item>
+    
+    <item>
+      <title>Site Taxonomies</title>
+      <link>https://cringe.live/site-taxonomies/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cringe.live/site-taxonomies/</guid>
+      <description>Here is a listing of all categories and tags I have on this website, please enjoy, my dear human..
+Categories Tags </description>
+      <content>&lt;p&gt;Here is a listing of all categories and tags I have on this website, please enjoy, my dear human..&lt;/p&gt;
+&lt;h2 id=&#34;categoriescategories&#34;&gt;&lt;a href=&#34;https://cringe.live/categories/&#34;&gt;Categories&lt;/a&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+
+&lt;/ul&gt;
+&lt;h2 id=&#34;tagstags&#34;&gt;&lt;a href=&#34;https://cringe.live/tags/&#34;&gt;Tags&lt;/a&gt;&lt;/h2&gt;
+
+&lt;ul&gt;
+
+&lt;/ul&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
