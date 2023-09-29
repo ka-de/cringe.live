@@ -2,38 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cringe.live/private/blocked/</loc>
-    <lastmod>2023-09-06T12:35:53+02:00</lastmod>
-  </url><url>
-    <loc>https://cringe.live/private/</loc>
-    <lastmod>2023-09-06T12:35:53+02:00</lastmod>
-  </url><url>
     <loc>https://cringe.live/</loc>
-    <lastmod>2023-09-06T12:35:53+02:00</lastmod>
-  </url><url>
-    <loc>https://cringe.live/sentence-me/</loc>
-    <lastmod>2023-08-26T12:40:20+02:00</lastmod>
-  </url><url>
-    <loc>https://cringe.live/works/</loc>
-    <lastmod>2023-08-26T12:40:20+02:00</lastmod>
-  </url><url>
-    <loc>https://cringe.live/private/blog/</loc>
-    <lastmod>2023-08-20T11:23:38+02:00</lastmod>
-  </url><url>
-    <loc>https://cringe.live/private/music-theory-for-lizards/</loc>
-    <lastmod>2023-08-20T08:58:39+02:00</lastmod>
-  </url><url>
-    <loc>https://cringe.live/posts/blog/</loc>
-    <lastmod>2023-08-18T16:08:56+02:00</lastmod>
-  </url><url>
-    <loc>https://cringe.live/posts/</loc>
-    <lastmod>2023-08-18T16:08:56+02:00</lastmod>
-  </url><url>
-    <loc>https://cringe.live/about/</loc>
   </url><url>
     <loc>https://cringe.live/categories/</loc>
   </url><url>
-    <loc>https://cringe.live/site-taxonomies/</loc>
+    <loc>https://cringe.live/</loc>
   </url><url>
     <loc>https://cringe.live/tags/</loc>
   </url>

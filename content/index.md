@@ -11,24 +11,23 @@ showMeta: false
 
 <div id="workings">
 <pre>
-<code></code>
-    ├─── <a href='/blog'>Blog</a> [2023 - Undefined]
-    │   ├─── <a href='/latest'>/latest</a>
-    │   │ └─── The latest entry.
-    │   │
-    │   ├─── <a href='/categories/python/'>/python</a>
-    │   │  └─── Posts regarding the Python programming
-    │   ├─── <a href='/categories/powershell/'>/PowerShell</a>
-    │   └─── <a href='/categories/windows/'>/Windows</a>
-    │
-    ├─── <a href='/music'>Music</a>
-    ├─── <a href='/literature'>Literature</a>
-    │   ├─── <a href='/sentence-me/'>/sentence-me</a>
-    │
-    ├─── <a href='/games'>Games</a>
-<code></code>
+├─── <a href='/blog'>Blog</a> [2023 - Undefined]
+│   ├─── <a href='/latest'>/latest</a>
+│   │ └─── The latest entry.
+│   │
+│   ├─── <a href='/categories/python/'>/python</a>
+│   │  └── Posts about Python.
+│   ├─── <a href='/categories/powershell/'>/PowerShell</a>
+│   └─── <a href='/categories/windows/'>/Windows</a>
+│
+├─── <a href='/music'>Music</a>
+├─── <a href='/literature'>Literature</a>
+│   ├─── <a href='/sentence-me/'>/sentence-me</a>
+│
+├─── <a href='/games'>Games</a>
 </pre>
 </div>
+
 <script>
 // Array with greeting words
 let greetingWords = [
@@ -48,6 +47,7 @@ let greetingWords = [
 // Array with sentences to append
 let sentences = [
     "This is the home of machine organized chaos.",
+    "",
     "It was built with the help of machines, for the machines, but you are welcome to browse it too!",
 ];
 

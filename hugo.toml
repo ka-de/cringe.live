@@ -15,6 +15,7 @@ paginate = 10
 
 [permalinks]
   posts = '/:year/:month/:title/'
+  blogLatest = '/blog/latest/'
 
 [outputs]
   home = ['html', 'rss']
