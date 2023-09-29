@@ -12,6 +12,10 @@ paginate = 10
     [markup.goldmark.parser]
       autoHeadingID = true
       autoHeadingIDType = "github"
+
+[permalinks]
+  posts = '/:year/:month/:title/'
+
 [outputs]
   home = ['html', 'rss']
 
