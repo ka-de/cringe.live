@@ -13,7 +13,7 @@
       
       <guid>https://cringe.live/</guid>
       <description>Welcome, !
-⟶├─── Blog [2023 - Undefined]│ ├─── /latest│ │ └─── The latest entry.│ ││ ├─── /python│ │ └─── Posts regarding the Python programming│ ├─── /PowerShell│ └─── /Windows│├─── Music├─── Literature│ ├─── /sentence-me│├─── Games</description>
+⟶├─── Blog [2023 - Undefined]│</description>
       <content>
 &lt;div id=&#34;homeContainer&#34;&gt;
     &lt;p id=&#34;textContainer&#34;&gt;Welcome, &lt;span id=&#34;greetingWord&#34;&gt;&lt;/span&gt;!&lt;br&gt;&lt;br&gt;&lt;/p&gt;
@@ -22,22 +22,22 @@
 
 &lt;div id=&#34;workings&#34;&gt;
 &lt;pre&gt;
-&lt;code&gt;&lt;/code&gt;
-    ├─── &lt;a href=&#39;https://cringe.live/blog&#39;&gt;Blog&lt;/a&gt; [2023 - Undefined]
-    │   ├─── &lt;a href=&#39;https://cringe.live/latest&#39;&gt;/latest&lt;/a&gt;
-    │   │ └─── The latest entry.
-    │   │
-    │   ├─── &lt;a href=&#39;https://cringe.live/categories/python/&#39;&gt;/python&lt;/a&gt;
-    │   │  └─── Posts regarding the Python programming
-    │   ├─── &lt;a href=&#39;https://cringe.live/categories/powershell/&#39;&gt;/PowerShell&lt;/a&gt;
-    │   └─── &lt;a href=&#39;https://cringe.live/categories/windows/&#39;&gt;/Windows&lt;/a&gt;
-    │
-    ├─── &lt;a href=&#39;https://cringe.live/music&#39;&gt;Music&lt;/a&gt;
-    ├─── &lt;a href=&#39;https://cringe.live/literature&#39;&gt;Literature&lt;/a&gt;
-    │   ├─── &lt;a href=&#39;https://cringe.live/sentence-me/&#39;&gt;/sentence-me&lt;/a&gt;
-    │
-    ├─── &lt;a href=&#39;https://cringe.live/games&#39;&gt;Games&lt;/a&gt;
-&lt;code&gt;&lt;/code&gt;
+├─── &lt;a href=&#39;https://cringe.live/blog&#39;&gt;Blog&lt;/a&gt; [2023 - Undefined]
+&lt;!--
+│   ├─── &lt;a href=&#39;https://cringe.live/latest&#39;&gt;/latest&lt;/a&gt;
+│   │ └─── The latest entry.
+│   ├─── &lt;a href=&#39;https://cringe.live/categories/python/&#39;&gt;/python&lt;/a&gt;
+│   │  └── Posts about Python.
+│   ├─── &lt;a href=&#39;https://cringe.live/categories/powershell/&#39;&gt;/PowerShell&lt;/a&gt;
+│   └─── &lt;a href=&#39;https://cringe.live/categories/windows/&#39;&gt;/Windows&lt;/a&gt;
+│
+├─── &lt;a href=&#39;https://cringe.live/music&#39;&gt;Music&lt;/a&gt;
+├─── &lt;a href=&#39;https://cringe.live/literature&#39;&gt;Literature&lt;/a&gt;
+│   ├─── &lt;a href=&#39;https://cringe.live/sentence-me/&#39;&gt;/sentence-me&lt;/a&gt;
+│
+├─── &lt;a href=&#39;https://cringe.live/games&#39;&gt;Games&lt;/a&gt;
+--&gt;│
+
 &lt;/pre&gt;
 &lt;/div&gt;
 
@@ -101,7 +101,7 @@ function startTextAnimation() {
     // After the animation is finished, toggle the visibility of the &#39;workings&#39; element
     setTimeout(() =&gt; {
         workingsElement.style.display = &#34;block&#34;;
-    }, (sentences.length + 1) * 1000 /  0.8); // Adjust the timing as needed
+    }, (sentences.length + 1) * 1000 /  1); // Adjust the timing as needed
 }
 
 // Function to append sentences with typewriter-like animation
