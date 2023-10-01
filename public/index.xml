@@ -15,6 +15,7 @@
       <description>Welcome, !
 ⟶├─── Blog [2023 - Undefined]│</description>
       <content>
+
 &lt;div id=&#34;homeContainer&#34;&gt;
     &lt;p id=&#34;textContainer&#34;&gt;Welcome, &lt;span id=&#34;greetingWord&#34;&gt;&lt;/span&gt;!&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;/div&gt;
