@@ -5,6 +5,7 @@ showMeta: false
 ---
 
 {{< html >}}
+
 <div id="homeContainer">
     <p id="textContainer">Welcome, <span id="greetingWord"></span>!<br><br></p>
 </div>
