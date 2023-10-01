@@ -12,7 +12,6 @@ showFullContent = true
 readingTime = true
 hideComments = false
 +++
-
 I got really good at making portraits of subjects, I have a completely different frustration now, though&#x2025;
 
 There is a big event in the small city I live in currently and as I'm cooped up in my two bedroom apartment alone,

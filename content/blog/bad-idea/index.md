@@ -30,7 +30,6 @@ I took it a bit further and added my own `sudo` command in Windows and pops open
 
 Now, any other person would be satisfied endangering their data this much, but if I stopped here, with only this much power under my belt, I would be typing in commands into a terminal for the rest of my life. So lets create a `Task` that will do it for us:
 
-
 First, we need to enable the Administrator account and set a password for it:
 
 1. Access Command Prompt as an Administrator:

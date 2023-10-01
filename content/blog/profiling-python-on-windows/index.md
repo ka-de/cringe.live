@@ -73,6 +73,7 @@ function pp {
     }
 }
 ```
+
 The `p` function serves as a Python wrapper. When you input `p mime .\winget.txt`, it executes the Python executable specified in $PythonPath, utilizing the script from the $ScriptsFolder (excluding the file extension) along with the arguments you provide.
 
 Running `pp` performs the same tasks but additionally invokes `-m cProfile -o $outputFileName` to generate a file named `$ScriptName_$timestamp_d.prof`. If you forgot you have your keyboard layout on German and accidentally pressed `z`, access it using `snakeviz` for a more in-depth analysis of insanity.

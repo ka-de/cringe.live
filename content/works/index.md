@@ -11,4 +11,3 @@ draft: false
 {{< video width="" height="" src="sentence-me-demo.mp4" muted="true" autoplay="true" loop="true" >}}
 
 A small little game created in collaboration with ChatGPT, you can find it on the bottom of my [/about](https://cringe.live/about) page or as a standalone version at [/sentence-me](https://cringe.live/sentence-me)
-

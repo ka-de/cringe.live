@@ -121,7 +121,6 @@ A bit safer in case I ever end up using an instrument with 6 numbers for a name.
 
 But what I would never be able to figure out, because I never became a Visual Basic Instructor in a previous reincarnation, is how to run all this on column D only.
 
-
 ```vb
 Private Sub Worksheet_Change(ByVal Target As Range)
     Application.EnableEvents = False
@@ -144,6 +143,7 @@ End Sub
 In case you need to manipulate CSV files with Python or access the data randomly or predictably during your travels, ChatGPT can assist you.
 
 `motivational-quotes.csv`
+
 ```csv
 """The only way to do great work is to love what you do."" - Steve Jobs"
 """Success is not final, failure is not fatal: It is the courage to continue that counts."" - Winston Churchill"
@@ -158,6 +158,7 @@ In case you need to manipulate CSV files with Python or access the data randomly
 ```
 
 `random-quote-from-csv.py`
+
 ```python
 import csv
 import random
