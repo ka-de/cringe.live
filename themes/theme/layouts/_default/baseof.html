@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.Language }}">
 <head>
-  {{ block "title" . }}
-    <title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
-  {{ end }}
-  {{ partial "head.html" . }}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{{ block "title" . }}
+		<title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
+	{{ end }}
+	{{ partial "head.html" . }}
 </head>
 <body class="line-numbers">
 {{ $container := cond ($.Site.Params.FullWidthTheme | default false) "container full" (cond ($.Site.Params.CenterTheme | default false) "container center" "container") }}
 
 <div class="{{- $container -}}{{- cond ($.Site.Params.oneHeadingSize | default true) " headings--one-size" "" }}">
 
-  {{ partial "header.html" . }}
+	{{ partial "header.html" . }}
 
-  <div class="content">
-    {{ block "main" . }}
-    {{ end }}
-  </div>
+	<div class="content">
+		{{ block "main" . }}
+		{{ end }}
+	</div>
 
-  {{ block "footer" . }}
-    {{ partial "footer.html" . }}
-  {{ end }}
+	{{ block "footer" . }}
+		{{ partial "footer.html" . }}
+	{{ end }}
+</div>
+
+</body>
+</html>
+<html lang="{{ $.Site.Language }}">
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>{{ block "title" . }}
+		<title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
+	{{ end }}
+	{{ partial "head.html" . }}
+</head>
+<body class="line-numbers">
+{{ $container := cond ($.Site.Params.FullWidthTheme | default false) "container full" (cond ($.Site.Params.CenterTheme | default false) "container center" "container") }}
+
+<div class="{{- $container -}}{{- cond ($.Site.Params.oneHeadingSize | default true) " headings--one-size" "" }}">
+
+	{{ partial "header.html" . }}
+
+	<div class="content">
+		{{ block "main" . }}
+		{{ end }}
+	</div>
+
+	{{ block "footer" . }}
+		{{ partial "footer.html" . }}
+	{{ end }}
 </div>
 
 </body>
