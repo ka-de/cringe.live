@@ -12,9 +12,9 @@ showMeta: false
 <div id="workings">
 <pre>
 ├─── <a href='/blog'>Blog</a> [2023 - Undefined]
+<!--
 │   ├─── <a href='/latest'>/latest</a>
 │   │ └─── The latest entry.
-│   │
 │   ├─── <a href='/categories/python/'>/python</a>
 │   │  └── Posts about Python.
 │   ├─── <a href='/categories/powershell/'>/PowerShell</a>
@@ -25,6 +25,8 @@ showMeta: false
 │   ├─── <a href='/sentence-me/'>/sentence-me</a>
 │
 ├─── <a href='/games'>Games</a>
+-->│
+
 </pre>
 </div>
 
@@ -88,7 +90,7 @@ function startTextAnimation() {
     // After the animation is finished, toggle the visibility of the 'workings' element
     setTimeout(() => {
         workingsElement.style.display = "block";
-    }, (sentences.length + 1) * 1000 /  0.8); // Adjust the timing as needed
+    }, (sentences.length + 1) * 1000 /  1); // Adjust the timing as needed
 }
 
 // Function to append sentences with typewriter-like animation
