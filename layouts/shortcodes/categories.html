@@ -1,6 +1,0 @@
-{{ $categories := .Page.Site.Taxonomies.categories }}
-<ul>
-{{ range $categoryName, $category := $categories }}
-  <li><a href="{{ printf "/categories/%s" $categoryName | relURL }}">{{ $categoryName }}</a></li>
-{{ end }}
-</ul>

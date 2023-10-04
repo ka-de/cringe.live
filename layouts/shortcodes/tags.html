@@ -1,6 +1,0 @@
-{{ $tags := .Page.Site.Taxonomies.tags }}
-<ul>
-{{ range $tagName, $tag := $tags }}
-  <li><a href="{{ printf "/tags/%s" $tagName | relURL }}">{{ $tagName }}</a></li>
-{{ end }}
-</ul>
