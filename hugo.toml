@@ -1,5 +1,0 @@
-baseURL = 'https://cringe.live/'
-languageCode = 'en-us'
-title = 'cringe.live'
-theme = 'hugo-theme-stack'
-disableKinds = ['taxonomy']
