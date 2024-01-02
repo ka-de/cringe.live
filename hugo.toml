@@ -1,4 +1,4 @@
 baseURL = 'https://cringe.live/'
 languageCode = 'en-us'
 title = 'cringe.live'
-theme = 'Stack'
+theme = 'hugo-theme-stack'
