@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flobby Birb</title>
+</head>
+<body>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+
+  html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+  }
+
+  canvas {
+      display: block;
+  }
+  #gameCanvas {
+      border: 1px solid black;
+  }
+
+  #scoreDisplay {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+  }
+</style>
+    <canvas id="gameCanvas"></canvas>
+    <div id="scoreDisplay">
+        <span id="score">Score: 0</span>
+        <span id="highScore">High Score: 0</span>
+    </div>
+    <script>
+// Initialize canvas and game objects
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const CANVAS_WIDTH = 1920;
+const CANVAS_HEIGHT = 1080;
+canvas.width = CANVAS_WIDTH;
+canvas.height = CANVAS_HEIGHT;
+
+const birdRadius = 25;
+let birdX = 100;
+let birdY = CANVAS_HEIGHT / 2;
+let birdVelocity = 0;
+
+const pipeWidth = 50;
+const pipeGap = 200;
+const pipeSpeed = 5;
+let pipes = [];
+
+let score = 0;
+let highScore = 0;
+const scoreDisplay = document.getElementById('score');
+const highScoreDisplay = document.getElementById('highScore');
+
+let gameOver = false; // Flag to track game over state
+let levelDistance = 0; // Variable to track level's distance
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas(); // Call the function initially to set the canvas size
+
+// Game loop
+function gameLoop() {
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Check if game is over
+    if (gameOver) {
+        return;
+    }
+
+    // Update bird position
+    birdVelocity += 0.25;
+    birdY += birdVelocity;
+
+    // Draw bird
+    ctx.beginPath();
+    ctx.arc(birdX, birdY, birdRadius, 0, 2 * Math.PI);
+    ctx.fillStyle = 'black';
+    ctx.fill();
+
+    // Move pipes
+    for (let i = 0; i < pipes.length; i++) {
+        pipes[i].x -= pipeSpeed;
+    }
+
+    // Remove pipes that have gone off-screen
+    pipes = pipes.filter(pipe => pipe.x + pipeWidth > 0);
+
+    // Add new pipes
+    if (pipes.length === 0 || pipes[pipes.length - 1].x < CANVAS_WIDTH - (pipeWidth * 2 + pipeGap)) {
+        const pipeHeight = Math.random() * (CANVAS_HEIGHT - pipeGap - 100) + 50;
+        const bottomPipe = { x: CANVAS_WIDTH, y: CANVAS_HEIGHT - pipeHeight, height: pipeHeight };
+        const topPipe = { x: CANVAS_WIDTH, y: 0, height: CANVAS_HEIGHT - pipeHeight - pipeGap };
+        pipes.push(bottomPipe, topPipe);
+    }
+
+    // Draw pipes
+    for (let i = 0; i < pipes.length; i++) {
+        ctx.fillRect(pipes[i].x, pipes[i].y, pipeWidth, pipes[i].height);
+    }
+
+    // Check for collision with pipes
+    for (let i = 0; i < pipes.length; i += 2) {
+        const bottomPipe = pipes[i];
+        const topPipe = pipes[i + 1];
+
+        // Check collision with bottom pipe
+        if (
+            birdX + birdRadius > bottomPipe.x &&
+            birdX - birdRadius < bottomPipe.x + pipeWidth &&
+            birdY + birdRadius > bottomPipe.y
+        ) {
+            console.log('Collision with bottom pipe');
+            handleCollision();
+            return;
+        }
+
+        // Check collision with top pipe
+        if (
+            birdX + birdRadius > topPipe.x &&
+            birdX - birdRadius < topPipe.x + pipeWidth &&
+            birdY - birdRadius < topPipe.y + topPipe.height
+        ) {
+            console.log('Collision with top pipe');
+            handleCollision();
+            return;
+        }
+    }
+
+    // Check for collision with screen boundaries
+    if (birdY - birdRadius < 0 || birdY + birdRadius > CANVAS_HEIGHT) {
+        console.log('Collision with screen boundary');
+        handleCollision();
+        return;
+    }
+
+    // Update level distance and score
+    levelDistance += pipeSpeed;
+    score = Math.floor(levelDistance / 10);
+    scoreDisplay.textContent = `Score: ${score}`;
+    highScoreDisplay.textContent = `High Score: ${highScore}`;
+
+    // Request next animation frame
+    requestAnimationFrame(gameLoop);
+}
+
+// Handle collision
+function handleCollision() {
+    gameOver = true; // Set game over flag
+    highScore = Math.max(highScore, score);
+    resetGame();
+}
+
+// Reset game
+function resetGame() {
+    birdX = 100;
+    birdY = CANVAS_HEIGHT / 2;
+    birdVelocity = 0;
+    pipes = [];
+    score = 0;
+    levelDistance = 0; // Reset level distance
+    scoreDisplay.textContent = `Score: ${score}`;
+    highScoreDisplay.textContent = `High Score: ${highScore}`;
+    gameOver = false; // Reset game over flag
+    requestAnimationFrame(gameLoop); // Restart game loop
+}
+
+// Handle user input
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space') {
+        birdVelocity = -7;
+    }
+});
+
+// Start game loop
+requestAnimationFrame(gameLoop);
+    </script>
+</body>
+</html>
+
