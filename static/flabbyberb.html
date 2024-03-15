@@ -44,18 +44,16 @@
 // Initialize canvas and game objects
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
-const CANVAS_WIDTH = 1920;
-const CANVAS_HEIGHT = 1080;
-canvas.width = CANVAS_WIDTH;
-canvas.height = CANVAS_HEIGHT;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 const birdRadius = 25;
 let birdX = 100;
-let birdY = CANVAS_HEIGHT / 2;
+let birdY = canvas.height / 2;
 let birdVelocity = 0;
 
 const pipeWidth = 50;
-const pipeGap = 200;
+let pipeGap = 500; // Initial pipe gap
 const pipeSpeed = 5;
 let pipes = [];
 
@@ -66,14 +64,6 @@ const highScoreDisplay = document.getElementById('highScore');
 
 let gameOver = false; // Flag to track game over state
 let levelDistance = 0; // Variable to track level's distance
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas(); // Call the function initially to set the canvas size
 
 // Game loop
 function gameLoop() {
@@ -104,10 +94,10 @@ function gameLoop() {
     pipes = pipes.filter(pipe => pipe.x + pipeWidth > 0);
 
     // Add new pipes
-    if (pipes.length === 0 || pipes[pipes.length - 1].x < CANVAS_WIDTH - (pipeWidth * 2 + pipeGap)) {
-        const pipeHeight = Math.random() * (CANVAS_HEIGHT - pipeGap - 100) + 50;
-        const bottomPipe = { x: CANVAS_WIDTH, y: CANVAS_HEIGHT - pipeHeight, height: pipeHeight };
-        const topPipe = { x: CANVAS_WIDTH, y: 0, height: CANVAS_HEIGHT - pipeHeight - pipeGap };
+    if (pipes.length === 0 || pipes[pipes.length - 1].x < canvas.width - (pipeWidth * 2 + pipeGap)) {
+        const pipeHeight = Math.random() * (canvas.height - pipeGap - 100) + 50;
+        const bottomPipe = { x: canvas.width, y: canvas.height - pipeHeight, height: pipeHeight };
+        const topPipe = { x: canvas.width, y: 0, height: canvas.height - pipeHeight - pipeGap };
         pipes.push(bottomPipe, topPipe);
     }
 
@@ -145,7 +135,7 @@ function gameLoop() {
     }
 
     // Check for collision with screen boundaries
-    if (birdY - birdRadius < 0 || birdY + birdRadius > CANVAS_HEIGHT) {
+    if (birdY - birdRadius < 0 || birdY + birdRadius > canvas.height) {
         console.log('Collision with screen boundary');
         handleCollision();
         return;
@@ -154,6 +144,12 @@ function gameLoop() {
     // Update level distance and score
     levelDistance += pipeSpeed;
     score = Math.floor(levelDistance / 10);
+
+    // Adjust pipe gap based on score
+    if (score > 0 && score % 100 === 0 && pipeGap > 350) {
+        pipeGap -= 5;
+    }
+
     scoreDisplay.textContent = `Score: ${score}`;
     highScoreDisplay.textContent = `High Score: ${highScore}`;
 
@@ -171,11 +167,12 @@ function handleCollision() {
 // Reset game
 function resetGame() {
     birdX = 100;
-    birdY = CANVAS_HEIGHT / 2;
+    birdY = canvas.height / 2;
     birdVelocity = 0;
     pipes = [];
     score = 0;
     levelDistance = 0; // Reset level distance
+    pipeGap = 500; // Reset pipe gap to initial value
     scoreDisplay.textContent = `Score: ${score}`;
     highScoreDisplay.textContent = `High Score: ${highScore}`;
     gameOver = false; // Reset game over flag
@@ -188,6 +185,15 @@ document.addEventListener('keydown', (event) => {
         birdVelocity = -7;
     }
 });
+
+// Resize canvas to fit window
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas(); // Call the function initially to set the canvas size
 
 // Start game loop
 requestAnimationFrame(gameLoop);
