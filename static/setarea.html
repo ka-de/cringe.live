@@ -1,98 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Set Areas</title>
-<style>
-.container {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  cursor: move;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set Areas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .area-info {
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      color: white;
+      font-size: 10px;
+      font-family: monospace;
+      padding: 0.2rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0.2rem;
+    }
 
-.canvas {
-  position: relative;
-  width: 600px; /* Default canvas width */
-  height: 400px; /* Default canvas height */
-  border: 2px solid #000;
-}
+    .canvas {
+      position: relative;
+      border: 2px solid #000;
+    }
 
-.area {
-  position: absolute;
-  border: 1px solid #000;
-}
+    input {
+      width: 60px;
+    }
 
-.controls {
-  margin-top: 20px;
-}
+    .area {
+      position: absolute;
+      border: 1px solid #000;
+    }
 
-button {
-  margin-right: 10px;
-}
-
-input {
-  margin-right: 5px;
-}
-</style>
+    .floating-bar {
+      text-align: center;
+      position: absolute;
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 10;
+      cursor: move;
+    }
+  </style>
 </head>
-<body>
-<div class="container" id="container">
-  <label for="canvasWidth">Canvas Width:</label>
-  <input type="number" id="canvasWidth" value="600">
-  <label for="canvasHeight">Canvas Height:</label>
-  <input type="number" id="canvasHeight" value="400">
-  <button onclick="setCanvasSize()">Set Canvas Size</button><br>
-  <label for="areaWidth">Area Width:</label>
-  <input type="number" id="areaWidth" value="100">
-  <label for="areaHeight">Area Height:</label>
-  <input type="number" id="areaHeight" value="100">
-  <label for="areaX">X Coordinate:</label>
-  <input type="number" id="areaX" value="0">
-  <label for="areaY">Y Coordinate:</label>
-  <input type="number" id="areaY" value="0">
-  <button onclick="addArea()">Add Area</button>
-  <button onclick="removeArea()">Remove Area</button>
-</div>
-<div class="canvas" id="canvas"></div>
+<body class="bg-gray-100">
+  <div class="floating-bar" id="floating-bar">
+    <div class="flex items-center mb-2">
+      <label for="canvasWidth" class="mr-2">Width:</label>
+      <input type="number" id="canvasWidth" value="600" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+      <label for="canvasHeight" class="mr-2">Height:</label>
+      <input type="number" id="canvasHeight" value="400" class="border border-gray-300 rounded-md px-2 py-1">
+    </div>
+    <button onclick="setCanvasSize()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2">Set Canvas Size</button>
+    <div class="flex items-center mb-2">
+      <label for="areaWidth" class="mr-2">Width:</label>
+      <input type="number" id="areaWidth" value="100" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+      <label for="areaHeight" class="mr-2">Height:</label>
+      <input type="number" id="areaHeight" value="100" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+    </div>
+    <div class="flex items-center mb-2">
+      <label for="areaX" class="mr-2">X:</label>
+      <input type="number" id="areaX" value="0" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+      <label for="areaY" class="mr-2">Y:</label>
+      <input type="number" id="areaY" value="0" class="border border-gray-300 rounded-md px-2 py-1">
+    </div>
+    <button onclick="addArea()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">Add Area</button>
+    <button onclick="removeArea()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Remove Area</button>
+  </div>
+  <div class="canvas mx-auto mt-8" id="canvas"></div>
+
 <script>
 let areas = [];
-let container = document.getElementById('container');
+let floatingBar = document.getElementById('floating-bar');
 let isDragging = false;
+let currentX;
+let currentY;
 let initialX;
 let initialY;
+let xOffset = 0;
+let yOffset = 0;
+let isSelecting = false;
+let startX;
+let startY;
 
-container.addEventListener('mousedown', startDragging);
-container.addEventListener('mouseup', stopDragging);
-container.addEventListener('mousemove', drag);
+// Set the initial canvas size to 1024 x 1024
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('canvasWidth').value = 1024;
+  document.getElementById('canvasHeight').value = 1024;
+  setCanvasSize();
+});
 
-function startDragging(e) {
-  if (e.target === container) {
-    isDragging = true;
-    initialX = e.clientX - container.offsetLeft;
-    initialY = e.clientY - container.offsetTop;
-    container.style.cursor = 'grabbing';
+function elementDrag(e) {
+  e = e || window.event;
+  e.preventDefault(); // Prevent default behavior for all elements
+
+  let clickedElement = e.target;
+  if (clickedElement.tagName.toLowerCase() !== 'input') {
+    // Only perform dragging logic if the clicked element is not an input field
+    if (isDragging) {
+      currentX = e.clientX - initialX;
+      currentY = e.clientY - initialY;
+      xOffset = currentX;
+      yOffset = currentY;
+      setTranslate(currentX, currentY, floatingBar);
+    }
   }
 }
 
-function stopDragging() {
-  isDragging = false;
-  container.style.cursor = 'move';
-}
-
-function drag(e) {
-  if (isDragging) {
-    e.preventDefault();
-    let newX = e.clientX - initialX;
-    let newY = e.clientY - initialY;
-    container.style.left = newX + 'px';
-    container.style.top = newY + 'px';
-  }
+function setTranslate(xPos, yPos, el) {
+  el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
 }
 
 function setCanvasSize() {
@@ -104,7 +121,6 @@ function setCanvasSize() {
 }
 
 function addArea() {
-  const canvas = document.getElementById('canvas');
   const areaWidth = document.getElementById('areaWidth').value;
   const areaHeight = document.getElementById('areaHeight').value;
   const areaX = document.getElementById('areaX').value;
@@ -112,13 +128,17 @@ function addArea() {
   const color = getRandomColor();
 
   const area = document.createElement('div');
-  area.className = 'area';
+  area.className = 'area bg-gray-300 rounded-md';
   area.style.width = areaWidth + 'px';
   area.style.height = areaHeight + 'px';
   area.style.left = areaX + 'px';
   area.style.top = areaY + 'px';
   area.style.backgroundColor = color;
 
+  // Display width, height, and xy coordinates inside the area
+  area.innerHTML = `<span class="area-info">${areaWidth}x${areaHeight}<br>${areaX},${areaY}</span>`;
+
+  const canvas = document.getElementById('canvas');
   canvas.appendChild(area);
   areas.push(area);
 }
@@ -138,6 +158,85 @@ function getRandomColor() {
   }
   return color;
 }
+
+function handleMouseSelection(event) {
+  if (!isDragging) {
+    const canvas = document.getElementById('canvas');
+    const rect = canvas.getBoundingClientRect();
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    startX = event.clientX - rect.left + scrollLeft;
+    startY = event.clientY - rect.top + scrollTop;
+    isSelecting = true;
+  }
+}
+
+function handleMouseMovement(event) {
+  if (isSelecting) {
+    const canvas = document.getElementById('canvas');
+    const rect = canvas.getBoundingClientRect();
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const mouseX = event.clientX + scrollLeft;
+    const mouseY = event.clientY + scrollTop;
+
+    const offsetX = mouseX - rect.left;
+    const offsetY = mouseY - rect.top;
+
+    // Calculate the relative distances from edges
+    const widthFromEdge = Math.min(offsetX, rect.width - offsetX);
+    const heightFromEdge = Math.min(offsetY, rect.height - offsetY);
+
+    // Determine the width and height based on the closest edge
+    const width = 2 * Math.min(widthFromEdge, rect.width);
+    const height = 2 * Math.min(heightFromEdge, rect.height);
+
+    // Set the width and height of a temporary element to represent the selection
+    const tempSelection = document.getElementById('temp-selection');
+    tempSelection.style.width = width + 'px';
+    tempSelection.style.height = height + 'px';
+    tempSelection.style.left = (offsetX - width / 2) + 'px';
+    tempSelection.style.top = (offsetY - height / 2) + 'px';
+  }
+}
+
+
+function handleSelectionEnd(event) {
+  if (isSelecting) {
+    isSelecting = false;
+
+    const canvas = document.getElementById('canvas');
+    const rect = canvas.getBoundingClientRect();
+    const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const mouseX = event.clientX - rect.left + scrollLeft;
+    const mouseY = event.clientY - rect.top + scrollTop;
+
+    const width = mouseX - startX;
+    const height = mouseY - startY;
+
+    const area = document.createElement('div');
+    area.className = 'area bg-gray-300 rounded-md';
+    area.style.left = Math.min(startX, mouseX) + 'px';
+    area.style.top = Math.min(startY, mouseY) + 'px';
+    area.style.width = Math.abs(width) + 'px';
+    area.style.height = Math.abs(height) + 'px';
+    area.style.backgroundColor = getRandomColor();
+
+    // Add area info
+    area.innerHTML = `<span class="area-info">${Math.abs(width)}x${Math.abs(height)}<br>${Math.min(startX, mouseX)},${Math.min(startY, mouseY)}</span>`;
+
+    canvas.appendChild(area);
+    areas.push(area);
+  }
+}
+
+// Add event listeners for mouse down, mousemove, and mouseup
+document.getElementById('canvas').addEventListener('mousedown', handleMouseSelection);
+document.getElementById('canvas').addEventListener('mousemove', handleMouseMovement);
+document.getElementById('canvas').addEventListener('mouseup', handleSelectionEnd);
+
 </script>
+
 </body>
 </html>
