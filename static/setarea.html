@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Set Areas</title>
+<style>
+.container {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: move;
+}
+
+.canvas {
+  position: relative;
+  width: 600px; /* Default canvas width */
+  height: 400px; /* Default canvas height */
+  border: 2px solid #000;
+}
+
+.area {
+  position: absolute;
+  border: 1px solid #000;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  margin-right: 10px;
+}
+
+input {
+  margin-right: 5px;
+}
+</style>
+</head>
+<body>
+<div class="container" id="container">
+  <label for="canvasWidth">Canvas Width:</label>
+  <input type="number" id="canvasWidth" value="600">
+  <label for="canvasHeight">Canvas Height:</label>
+  <input type="number" id="canvasHeight" value="400">
+  <button onclick="setCanvasSize()">Set Canvas Size</button><br>
+  <label for="areaWidth">Area Width:</label>
+  <input type="number" id="areaWidth" value="100">
+  <label for="areaHeight">Area Height:</label>
+  <input type="number" id="areaHeight" value="100">
+  <label for="areaX">X Coordinate:</label>
+  <input type="number" id="areaX" value="0">
+  <label for="areaY">Y Coordinate:</label>
+  <input type="number" id="areaY" value="0">
+  <button onclick="addArea()">Add Area</button>
+  <button onclick="removeArea()">Remove Area</button>
+</div>
+<div class="canvas" id="canvas"></div>
+<script>
+let areas = [];
+let container = document.getElementById('container');
+let isDragging = false;
+let initialX;
+let initialY;
+
+container.addEventListener('mousedown', startDragging);
+container.addEventListener('mouseup', stopDragging);
+container.addEventListener('mousemove', drag);
+
+function startDragging(e) {
+  if (e.target === container) {
+    isDragging = true;
+    initialX = e.clientX - container.offsetLeft;
+    initialY = e.clientY - container.offsetTop;
+    container.style.cursor = 'grabbing';
+  }
+}
+
+function stopDragging() {
+  isDragging = false;
+  container.style.cursor = 'move';
+}
+
+function drag(e) {
+  if (isDragging) {
+    e.preventDefault();
+    let newX = e.clientX - initialX;
+    let newY = e.clientY - initialY;
+    container.style.left = newX + 'px';
+    container.style.top = newY + 'px';
+  }
+}
+
+function setCanvasSize() {
+  const canvasWidth = document.getElementById('canvasWidth').value;
+  const canvasHeight = document.getElementById('canvasHeight').value;
+  const canvas = document.getElementById('canvas');
+  canvas.style.width = canvasWidth + 'px';
+  canvas.style.height = canvasHeight + 'px';
+}
+
+function addArea() {
+  const canvas = document.getElementById('canvas');
+  const areaWidth = document.getElementById('areaWidth').value;
+  const areaHeight = document.getElementById('areaHeight').value;
+  const areaX = document.getElementById('areaX').value;
+  const areaY = document.getElementById('areaY').value;
+  const color = getRandomColor();
+
+  const area = document.createElement('div');
+  area.className = 'area';
+  area.style.width = areaWidth + 'px';
+  area.style.height = areaHeight + 'px';
+  area.style.left = areaX + 'px';
+  area.style.top = areaY + 'px';
+  area.style.backgroundColor = color;
+
+  canvas.appendChild(area);
+  areas.push(area);
+}
+
+function removeArea() {
+  const canvas = document.getElementById('canvas');
+  if (areas.length > 0) {
+    canvas.removeChild(areas.pop());
+  }
+}
+
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+</script>
+</body>
+</html>
