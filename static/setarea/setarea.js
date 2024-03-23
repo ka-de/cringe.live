@@ -1,3 +1,17 @@
+function setBackgroundImage(file) {
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const bgImageContainer = document.getElementById('bgImageContainer');
+            bgImageContainer.style.backgroundImage = `url(${e.target.result})`;
+            bgImageContainer.style.backgroundSize = 'contain';
+            bgImageContainer.style.backgroundRepeat = 'no-repeat';
+            bgImageContainer.style.backgroundPosition = 'center';
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
 // Load the workflow JSON files
 let twoWayWorkflowJSON, threeWayWorkflowJSON;
 
