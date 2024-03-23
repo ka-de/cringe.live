@@ -1,13 +1,22 @@
 function startSelection(e) {
+    const canvas = document.getElementById('canvas');
+    const canvasRect = canvas.getBoundingClientRect();
+    const canvasLeft = canvasRect.left + window.pageXOffset;
+    const canvasTop = canvasRect.top + window.pageYOffset;
+
     isSelecting = true;
-    startX = e.clientX;
-    startY = e.clientY;
+    startX = e.clientX - canvasLeft;
+    startY = e.clientY - canvasTop;
 }
 
 function updateSelection(e) {
     if (!isSelecting) return;
 
     const canvas = document.getElementById('canvas');
+    const canvasRect = canvas.getBoundingClientRect();
+    const canvasLeft = canvasRect.left + window.pageXOffset;
+    const canvasTop = canvasRect.top + window.pageYOffset;
+
     const selection = document.getElementById('selection');
 
     if (!selection) {
@@ -17,10 +26,11 @@ function updateSelection(e) {
         canvas.appendChild(newSelection);
     }
 
-    const minX = Math.min(startX, e.clientX);
-    const minY = Math.min(startY, e.clientY);
-    const maxX = Math.max(startX, e.clientX);
-    const maxY = Math.max(startY, e.clientY);
+    const selection = document.getElementById('selection');
+    const minX = Math.min(startX, e.clientX - canvasLeft);
+    const minY = Math.min(startY, e.clientY - canvasTop);
+    const maxX = Math.max(startX, e.clientX - canvasLeft);
+    const maxY = Math.max(startY, e.clientY - canvasTop);
     const width = maxX - minX;
     const height = maxY - minY;
 
@@ -40,19 +50,15 @@ function endSelection(e) {
     const left = parseInt(selection.style.left);
     const top = parseInt(selection.style.top);
 
-    const canvas = document.getElementById('canvas');
-    const canvasRect = canvas.getBoundingClientRect();
-    const canvasLeft = canvasRect.left;
-    const canvasTop = canvasRect.top;
-
     const area = document.createElement('div');
     area.className = 'area bg-gray-300 rounded-md';
     area.style.width = `${width}px`;
     area.style.height = `${height}px`;
-    area.style.left = `${left + canvasLeft}px`;
-    area.style.top = `${top + canvasTop}px`;
-    area.innerHTML = `<span class="area-info">${width}x${height}<br>${left + canvasLeft},${top + canvasTop}</span>`;
+    area.style.left = `${left}px`;
+    area.style.top = `${top}px`;
+    area.innerHTML = `<span class="area-info">${width}x${height}<br>${left},${top}</span>`;
 
+    const canvas = document.getElementById('canvas');
     canvas.appendChild(area);
     areas.push(area);
 
