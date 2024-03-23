@@ -102,6 +102,11 @@ floatingBar.addEventListener('mousemove', floatingBarDrag);
 floatingBar.addEventListener('mouseup', floatingBarDragEnd);
 floatingBar.addEventListener('mouseleave', floatingBarDragEnd);
 
+document.getElementById('bgImageOpacity').addEventListener('mousedown', function(e) {
+  // Prevent floating bar dragging when interacting with the opacity slider
+  e.stopPropagation();
+});
+
 function floatingBarDragStart(e) {
   isDraggingFloatingBar = true;
   floatingBarInitialX = e.clientX - floatingBar.offsetLeft;
