@@ -42,7 +42,8 @@ function updateSelection(e) {
 function endSelection(e) {
     if (!isSelecting) return;
     isSelecting = false;
-
+    
+    const color = getRandomRGBAColor();
     const selection = document.getElementById('selection');
     const width = parseInt(selection.style.width);
     const height = parseInt(selection.style.height);
@@ -55,8 +56,9 @@ function endSelection(e) {
     area.style.height = `${height}px`;
     area.style.left = `${left}px`;
     area.style.top = `${top}px`;
+    area.style.backgroundColor = color;
     area.innerHTML = `<span class="area-info">${width}x${height}<br>${left},${top}</span>`;
-
+    
     const canvas = document.getElementById('canvas');
     canvas.appendChild(area);
     areas.push(area);
