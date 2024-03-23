@@ -86,12 +86,15 @@ function debounce(func, wait) {
 const debouncedFloatingBarDrag = debounce(floatingBarDrag, 10);
 
 function floatingBarDragStart(e) {
-    isDraggingFloatingBar = true;
-    floatingBarInitialX = e.clientX - floatingBar.offsetLeft;
-    floatingBarInitialY = e.clientY - floatingBar.offsetTop;
+    const floatingBar = document.getElementById('floating-bar');
+    if (floatingBar) {
+        isDraggingFloatingBar = true;
+        floatingBarInitialX = e.clientX - floatingBar.offsetLeft;
+        floatingBarInitialY = e.clientY - floatingBar.offsetTop;
 
-    // Capture mousemove event globally
-    document.addEventListener('mousemove', debouncedFloatingBarDrag);
+        // Capture mousemove event globally
+        document.addEventListener('mousemove', debouncedFloatingBarDrag);
+    }
 }
 
 function floatingBarDrag(e) {
