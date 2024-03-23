@@ -26,7 +26,6 @@ function updateSelection(e) {
         canvas.appendChild(newSelection);
     }
 
-    const selection = document.getElementById('selection');
     const minX = Math.min(startX, e.clientX - canvasLeft);
     const minY = Math.min(startY, e.clientY - canvasTop);
     const maxX = Math.max(startX, e.clientX - canvasLeft);
