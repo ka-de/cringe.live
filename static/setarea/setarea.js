@@ -40,15 +40,19 @@ function endSelection(e) {
     const left = parseInt(selection.style.left);
     const top = parseInt(selection.style.top);
 
+    const canvas = document.getElementById('canvas');
+    const canvasRect = canvas.getBoundingClientRect();
+    const canvasLeft = canvasRect.left;
+    const canvasTop = canvasRect.top;
+
     const area = document.createElement('div');
     area.className = 'area bg-gray-300 rounded-md';
     area.style.width = `${width}px`;
     area.style.height = `${height}px`;
-    area.style.left = `${left}px`;
-    area.style.top = `${top}px`;
-    area.innerHTML = `<span class="area-info">${width}x${height}<br>${left},${top}</span>`;
+    area.style.left = `${left + canvasLeft}px`;
+    area.style.top = `${top + canvasTop}px`;
+    area.innerHTML = `<span class="area-info">${width}x${height}<br>${left + canvasLeft},${top + canvasTop}</span>`;
 
-    const canvas = document.getElementById('canvas');
     canvas.appendChild(area);
     areas.push(area);
 
