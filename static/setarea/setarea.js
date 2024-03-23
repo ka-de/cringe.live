@@ -1,3 +1,55 @@
+// Load the workflow JSON files
+let twoWayWorkflowJSON, threeWayWorkflowJSON;
+
+async function loadWorkflowFiles() {
+  try {
+    const twoWayResponse = await fetch('2way-conditional-workflow.json');
+    const threeWayResponse = await fetch('3way-conditional-workflow.json');
+    twoWayWorkflowJSON = await twoWayResponse.json();
+    threeWayWorkflowJSON = await threeWayResponse.json();
+  } catch (error) {
+    console.error('Error loading workflow files:', error);
+  }
+}
+
+// Call loadWorkflowFiles when the page loads
+document.addEventListener('DOMContentLoaded', loadWorkflowFiles);
+
+function updateConditioningSetAreaNodes(workflowJSON, numAreas) {
+  const conditioningSetAreaNodes = workflowJSON.nodes.filter(node => node.type === 'ConditioningSetArea');
+
+  for (let i = 0; i < numAreas; i++) {
+    const area = areas[i];
+    const width = parseInt(area.style.width);
+    const height = parseInt(area.style.height);
+    const x = parseInt(area.style.left);
+    const y = parseInt(area.style.top);
+
+    if (conditioningSetAreaNodes[i]) {
+      conditioningSetAreaNodes[i].widgets_values = [width, height, x, y];
+    }
+  }
+}
+
+function exportToWorkflow() {
+  const numAreas = areas.length;
+  if (numAreas === 2 || numAreas === 3) {
+    const workflowJSON = numAreas === 2 ? { ...twoWayWorkflowJSON } : { ...threeWayWorkflowJSON };
+    updateConditioningSetAreaNodes(workflowJSON, numAreas);
+
+    const workflowName = `${numAreas}way-conditional-workflow.json`;
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(workflowJSON, null, 2));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", workflowName);
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  } else {
+    alert("Please select 2 or 3 areas to export.");
+  }
+}
+
 let floatingBar = document.getElementById('floating-bar');
 let isDraggingFloatingBar = false;
 let floatingBarInitialX;
