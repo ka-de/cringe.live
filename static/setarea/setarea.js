@@ -1,3 +1,61 @@
+function startSelection(e) {
+    isSelecting = true;
+    startX = e.clientX;
+    startY = e.clientY;
+}
+
+function updateSelection(e) {
+    if (!isSelecting) return;
+
+    const canvas = document.getElementById('canvas');
+    const selection = document.getElementById('selection');
+
+    if (!selection) {
+        const newSelection = document.createElement('div');
+        newSelection.id = 'selection';
+        newSelection.classList.add('selection');
+        canvas.appendChild(newSelection);
+    }
+
+    const selection = document.getElementById('selection');
+    const minX = Math.min(startX, e.clientX);
+    const minY = Math.min(startY, e.clientY);
+    const maxX = Math.max(startX, e.clientX);
+    const maxY = Math.max(startY, e.clientY);
+    const width = maxX - minX;
+    const height = maxY - minY;
+
+    selection.style.left = `${minX}px`;
+    selection.style.top = `${minY}px`;
+    selection.style.width = `${width}px`;
+    selection.style.height = `${height}px`;
+}
+
+function endSelection(e) {
+    if (!isSelecting) return;
+    isSelecting = false;
+
+    const selection = document.getElementById('selection');
+    const width = parseInt(selection.style.width);
+    const height = parseInt(selection.style.height);
+    const left = parseInt(selection.style.left);
+    const top = parseInt(selection.style.top);
+
+    const area = document.createElement('div');
+    area.className = 'area bg-gray-300 rounded-md';
+    area.style.width = `${width}px`;
+    area.style.height = `${height}px`;
+    area.style.left = `${left}px`;
+    area.style.top = `${top}px`;
+    area.innerHTML = `<span class="area-info">${width}x${height}<br>${left},${top}</span>`;
+
+    const canvas = document.getElementById('canvas');
+    canvas.appendChild(area);
+    areas.push(area);
+
+    selection.remove();
+}
+
 function setBackgroundImage(file) {
     if (file) {
         const reader = new FileReader();
@@ -127,6 +185,11 @@ let startX;
 let startY;
 
 document.addEventListener('DOMContentLoaded', function() {
+    const canvas = document.getElementById('canvas');
+    canvas.addEventListener('mousedown', startSelection);
+    canvas.addEventListener('mousemove', updateSelection);
+    canvas.addEventListener('mouseup', endSelection);
+
     document.getElementById('bgImageOpacity').addEventListener('mousedown', function(e) {
       // Prevent floating bar dragging when interacting with the opacity slider
       e.stopPropagation();
