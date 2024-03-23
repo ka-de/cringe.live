@@ -1,3 +1,18 @@
+/* setarea.css */
+
+#exportWorkflowBtn {
+  background-color: #9f7aea;
+}
+
+#exportWorkflowBtn:hover {
+  background-color: #805ad5;
+}
+
+#exportWorkflowBtn:disabled {
+  background-color: #d8b4fe;
+  cursor: not-allowed;
+}
+
 #bgImageContainer {
   position: absolute;
   top: 0;
