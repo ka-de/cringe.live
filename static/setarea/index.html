@@ -1,14 +1,17 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Set Areas</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="setarea.css">
-    <script src="setarea.js"></script>
-  </head>
-  <body class="bg-gray-100">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set Areas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="setarea.css">
+  <script src="setarea.js"></script>
+  <script>
+    // Updated JavaScript code goes here
+  </script>
+</head>
+<body class="bg-gray-100">
   <div class="floating-bar" id="floating-bar">
     <div class="grid grid-cols-2 gap-4 mb-2">
       <div class="flex items-center">
@@ -47,11 +50,12 @@
     <button onclick="setCanvasSize()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2">Set Canvas Size</button>
     <button onclick="addArea()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">Add Area</button>
     <button onclick="removeArea()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2">Remove Area</button>
+    <button onclick="exportToWorkflow()" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mb-2" id="exportWorkflowBtn">Export to Workflow</button>
   </div>
 
   <div class="canvas mx-auto mt-8" id="canvas">
-      <div id="bgImageContainer"></div>
+    <div id="bgImageContainer"></div>
   </div>
 
-  </body>
-  </html>
+</body>
+</html>
