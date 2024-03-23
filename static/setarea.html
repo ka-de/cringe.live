@@ -11,11 +11,12 @@
       top: -1rem;
       right: -1rem;
       color: white;
-      font-size: 10px;
+      font-size: 14px;
       font-family: monospace;
       padding: 0.2rem;
       background-color: rgba(0, 0, 0, 0.5);
       border-radius: 0.2rem;
+      z-index: 100;
     }
 
     .canvas {
@@ -30,6 +31,7 @@
     .area {
       position: absolute;
       border: 1px solid #000;
+      background-color: rgba(200, 200, 200, 0.5); /* Semi-transparent gray background */
     }
 
     .floating-bar {
@@ -45,34 +47,119 @@
   </style>
 </head>
 <body class="bg-gray-100">
-  <div class="floating-bar" id="floating-bar">
-    <div class="flex items-center mb-2">
+<div class="floating-bar" id="floating-bar">
+  <div class="grid grid-cols-2 gap-4 mb-2">
+    <div class="flex items-center">
       <label for="canvasWidth" class="mr-2">Width:</label>
       <input type="number" id="canvasWidth" value="600" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+    </div>
+    <div class="flex items-center">
       <label for="canvasHeight" class="mr-2">Height:</label>
       <input type="number" id="canvasHeight" value="400" class="border border-gray-300 rounded-md px-2 py-1">
     </div>
-    <button onclick="setCanvasSize()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2">Set Canvas Size</button>
-    <div class="flex items-center mb-2">
+    <div class="flex items-center">
       <label for="areaWidth" class="mr-2">Width:</label>
       <input type="number" id="areaWidth" value="100" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+    </div>
+    <div class="flex items-center">
       <label for="areaHeight" class="mr-2">Height:</label>
       <input type="number" id="areaHeight" value="100" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
     </div>
-    <div class="flex items-center mb-2">
+    <div class="flex items-center">
       <label for="areaX" class="mr-2">X:</label>
       <input type="number" id="areaX" value="0" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+    </div>
+    <div class="flex items-center">
       <label for="areaY" class="mr-2">Y:</label>
       <input type="number" id="areaY" value="0" class="border border-gray-300 rounded-md px-2 py-1">
     </div>
-    <button onclick="addArea()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">Add Area</button>
-    <button onclick="removeArea()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Remove Area</button>
+    <div class="flex items-center">
+      <label for="bgImageFile" class="mr-2">BG Image:</label>
+      <input type="file" id="bgImageFile" accept="image/*" class="border border-gray-300 rounded-md px-2 py-1 mr-2" onchange="setBackgroundImage(this.files[0])">
+    </div>
+    <div class="flex items-center">
+      <label for="bgImageOpacity" class="mr-2">BG Opacity:</label>
+      <input type="range" id="bgImageOpacity" min="0" max="1" step="0.01" value="1" class="border border-gray-300 rounded-md px-2 py-1 mr-2" oninput="adjustImageOpacity(this.value)">
+    </div>
   </div>
-  <div class="canvas mx-auto mt-8" id="canvas"></div>
+  <button onclick="setCanvasSize()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2">Set Canvas Size</button>
+  <button onclick="addArea()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">Add Area</button>
+  <button onclick="removeArea()" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-2">Remove Area</button>
+</div>
+
+<div class="canvas mx-auto mt-8" id="canvas">
+    <div id="bgImageContainer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+</div>
 
 <script>
-let areas = [];
 let floatingBar = document.getElementById('floating-bar');
+let isDraggingFloatingBar = false;
+let floatingBarInitialX;
+let floatingBarInitialY;
+
+floatingBar.addEventListener('mousedown', floatingBarDragStart);
+floatingBar.addEventListener('mousemove', floatingBarDrag);
+floatingBar.addEventListener('mouseup', floatingBarDragEnd);
+floatingBar.addEventListener('mouseleave', floatingBarDragEnd);
+
+function floatingBarDragStart(e) {
+  isDraggingFloatingBar = true;
+  floatingBarInitialX = e.clientX - floatingBar.offsetLeft;
+  floatingBarInitialY = e.clientY - floatingBar.offsetTop;
+}
+
+function floatingBarDrag(e) {
+  if (isDraggingFloatingBar) {
+    let newX = e.clientX - floatingBarInitialX;
+    let newY = e.clientY - floatingBarInitialY;
+
+    floatingBar.style.left = newX + 'px';
+    floatingBar.style.top = newY + 'px';
+  }
+}
+
+function floatingBarDragEnd() {
+  isDraggingFloatingBar = false;
+}
+
+
+let backgroundImageOpacity = 1; // Initialize background image opacity
+
+function setBackgroundImage(file) {
+  const canvas = document.getElementById('canvas');
+  const bgImageContainer = document.getElementById('bgImageContainer');
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function() {
+      const img = new Image();
+      img.src = reader.result;
+      img.onload = function() {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        bgImageContainer.style.backgroundImage = `url(${reader.result})`;
+        bgImageContainer.style.backgroundSize = 'cover';
+        bgImageContainer.style.backgroundRepeat = 'no-repeat';
+        bgImageContainer.style.backgroundPosition = 'center';
+        // Reset background image opacity when setting a new background image
+        bgImageContainer.style.opacity = 1;
+      };
+    };
+    reader.readAsDataURL(file);
+  } else {
+    canvas.width = parseInt(document.getElementById('canvasWidth').value, 10);
+    canvas.height = parseInt(document.getElementById('canvasHeight').value, 10);
+    bgImageContainer.style.backgroundImage = 'none';
+    bgImageContainer.style.opacity = 1;
+  }
+}
+
+function adjustImageOpacity(opacity) {
+  const bgImageContainer = document.getElementById('bgImageContainer');
+  bgImageContainer.style.opacity = opacity;
+}
+
+let areas = [];
 let isDragging = false;
 let currentX;
 let currentY;
@@ -125,7 +212,7 @@ function addArea() {
   const areaHeight = document.getElementById('areaHeight').value;
   const areaX = document.getElementById('areaX').value;
   const areaY = document.getElementById('areaY').value;
-  const color = getRandomColor();
+  const color = getRandomRGBAColor(); // Use the new function to get rgba color
 
   const area = document.createElement('div');
   area.className = 'area bg-gray-300 rounded-md';
@@ -133,7 +220,7 @@ function addArea() {
   area.style.height = areaHeight + 'px';
   area.style.left = areaX + 'px';
   area.style.top = areaY + 'px';
-  area.style.backgroundColor = color;
+  area.style.backgroundColor = color; // Set background color
 
   // Display width, height, and xy coordinates inside the area
   area.innerHTML = `<span class="area-info">${areaWidth}x${areaHeight}<br>${areaX},${areaY}</span>`;
@@ -143,6 +230,7 @@ function addArea() {
   areas.push(area);
 }
 
+
 function removeArea() {
   const canvas = document.getElementById('canvas');
   if (areas.length > 0) {
@@ -150,13 +238,13 @@ function removeArea() {
   }
 }
 
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
+function getRandomRGBAColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  // Set alpha value to 0.5
+  const a = 0.5;
+  return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
 
 function handleMouseSelection(event) {
@@ -177,29 +265,48 @@ function handleMouseMovement(event) {
     const rect = canvas.getBoundingClientRect();
     const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const mouseX = event.clientX + scrollLeft;
-    const mouseY = event.clientY + scrollTop;
+    const mouseX = event.clientX - rect.left + scrollLeft;
+    const mouseY = event.clientY - rect.top + scrollTop;
 
-    const offsetX = mouseX - rect.left;
-    const offsetY = mouseY - rect.top;
+    const offsetX = mouseX - startX;
+    const offsetY = mouseY - startY;
 
-    // Calculate the relative distances from edges
-    const widthFromEdge = Math.min(offsetX, rect.width - offsetX);
-    const heightFromEdge = Math.min(offsetY, rect.height - offsetY);
+    // Calculate position and dimensions relative to canvas edges
+    let newX = Math.min(startX, mouseX);
+    let newY = Math.min(startY, mouseY);
+    let newWidth = Math.abs(offsetX);
+    let newHeight = Math.abs(offsetY);
 
-    // Determine the width and height based on the closest edge
-    const width = 2 * Math.min(widthFromEdge, rect.width);
-    const height = 2 * Math.min(heightFromEdge, rect.height);
+    // Ensure that the selection area stays within the canvas boundaries
+    if (newX < 0) {
+      newWidth += newX;
+      newX = 0;
+    }
+    if (newY < 0) {
+      newHeight += newY;
+      newY = 0;
+    }
+    if (newX + newWidth > canvas.offsetWidth) {
+      newWidth = canvas.offsetWidth - newX;
+    }
+    if (newY + newHeight > canvas.offsetHeight) {
+      newHeight = canvas.offsetHeight - newY;
+    }
 
-    // Set the width and height of a temporary element to represent the selection
-    const tempSelection = document.getElementById('temp-selection');
-    tempSelection.style.width = width + 'px';
-    tempSelection.style.height = height + 'px';
-    tempSelection.style.left = (offsetX - width / 2) + 'px';
-    tempSelection.style.top = (offsetY - height / 2) + 'px';
+    // Create or update the temporary selection area
+    let selectionArea = document.getElementById('selectionArea');
+    if (!selectionArea) {
+      selectionArea = document.createElement('div');
+      selectionArea.id = 'selectionArea';
+      selectionArea.className = 'area bg-blue-300 bg-opacity-50 rounded-md';
+      canvas.appendChild(selectionArea);
+    }
+    selectionArea.style.left = newX + 'px';
+    selectionArea.style.top = newY + 'px';
+    selectionArea.style.width = newWidth + 'px';
+    selectionArea.style.height = newHeight + 'px';
   }
 }
-
 
 function handleSelectionEnd(event) {
   if (isSelecting) {
@@ -221,13 +328,19 @@ function handleSelectionEnd(event) {
     area.style.top = Math.min(startY, mouseY) + 'px';
     area.style.width = Math.abs(width) + 'px';
     area.style.height = Math.abs(height) + 'px';
-    area.style.backgroundColor = getRandomColor();
+    area.style.backgroundColor = getRandomRGBAColor();
 
     // Add area info
     area.innerHTML = `<span class="area-info">${Math.abs(width)}x${Math.abs(height)}<br>${Math.min(startX, mouseX)},${Math.min(startY, mouseY)}</span>`;
 
     canvas.appendChild(area);
     areas.push(area);
+
+    // Remove the temporary selection area
+    const selectionArea = document.getElementById('selectionArea');
+    if (selectionArea) {
+      canvas.removeChild(selectionArea);
+    }
   }
 }
 
