@@ -12,18 +12,17 @@ function startSelection(e) {
 function updateSelection(e) {
     if (!isSelecting) return;
 
-    const canvas = document.getElementById('canvas');
     const canvasRect = canvas.getBoundingClientRect();
     const canvasLeft = canvasRect.left + window.pageXOffset;
     const canvasTop = canvasRect.top + window.pageYOffset;
 
-    const selection = document.getElementById('selection');
+    let selection = document.getElementById('selection');
 
     if (!selection) {
-        const newSelection = document.createElement('div');
-        newSelection.id = 'selection';
-        newSelection.classList.add('selection');
-        canvas.appendChild(newSelection);
+        selection = document.createElement('div');
+        selection.id = 'selection';
+        selection.classList.add('selection');
+        document.body.appendChild(selection);
     }
 
     const minX = Math.min(startX, e.clientX - canvasLeft);
@@ -33,8 +32,9 @@ function updateSelection(e) {
     const width = maxX - minX;
     const height = maxY - minY;
 
-    selection.style.left = `${minX}px`;
-    selection.style.top = `${minY}px`;
+    selection.style.position = 'absolute';
+    selection.style.left = `${minX + canvasLeft}px`;
+    selection.style.top = `${minY + canvasTop}px`;
     selection.style.width = `${width}px`;
     selection.style.height = `${height}px`;
 }
