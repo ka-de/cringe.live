@@ -5,13 +5,14 @@ function startSelection(e) {
     const canvasTop = canvasRect.top + window.pageYOffset;
 
     isSelecting = true;
-    startX = e.clientX - canvasLeft;
-    startY = e.clientY - canvasTop;
+    startX = e.pageX - canvasLeft;
+    startY = e.pageY - canvasTop;
 }
 
 function updateSelection(e) {
     if (!isSelecting) return;
 
+    const canvas = document.getElementById('canvas');
     const canvasRect = canvas.getBoundingClientRect();
     const canvasLeft = canvasRect.left + window.pageXOffset;
     const canvasTop = canvasRect.top + window.pageYOffset;
@@ -25,10 +26,10 @@ function updateSelection(e) {
         document.body.appendChild(selection);
     }
 
-    const minX = Math.min(startX, e.clientX - canvasLeft);
-    const minY = Math.min(startY, e.clientY - canvasTop);
-    const maxX = Math.max(startX, e.clientX - canvasLeft);
-    const maxY = Math.max(startY, e.clientY - canvasTop);
+    const minX = Math.min(startX, e.pageX - canvasLeft);
+    const minY = Math.min(startY, e.pageY - canvasTop);
+    const maxX = Math.max(startX, e.pageX - canvasLeft);
+    const maxY = Math.max(startY, e.pageY - canvasTop);
     const width = maxX - minX;
     const height = maxY - minY;
 
