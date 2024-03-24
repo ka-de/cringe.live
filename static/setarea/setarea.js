@@ -135,7 +135,21 @@ function endSelection(e) {
     area.style.backgroundColor = color;
     area.innerHTML = `<span class="area-info">${width}x${height}<br>${left},${top}</span>`;
 
-    canvas.appendChild(area);
+    // Find the parent area, if any
+    let parentArea = null;
+    const areasUnderMouse = document.elementsFromPoint(e.clientX, e.clientY)
+        .filter(elem => elem.classList.contains('area'));
+    if (areasUnderMouse.length > 0) {
+        parentArea = areasUnderMouse[areasUnderMouse.length - 1];
+    }
+
+    // Append the new area to the parent area or the canvas
+    if (parentArea) {
+        parentArea.appendChild(area);
+    } else {
+        canvas.appendChild(area);
+    }
+
     areas.push(area);
 
     area.addEventListener('mousedown', startDragArea);
