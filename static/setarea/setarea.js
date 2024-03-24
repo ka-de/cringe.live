@@ -171,12 +171,25 @@ function exportToWorkflow() {
   }
 }
 
+// Get the floating bar element.
 let floatingBar = document.getElementById('floating-bar');
+
+// A flag to indicate whether the user is currently dragging the floating bar.
 let isDraggingFloatingBar = false;
+
+// The initial x-coordinate of the mouse when the user starts dragging the floating bar.
 let floatingBarInitialX;
+
+// The initial y-coordinate of the mouse when the user starts dragging the floating bar.
 let floatingBarInitialY;
 
-// Define debounce function
+
+/**
+ * Debounces a function to limit the rate at which it fires.
+ * @param {Function} func - The function to debounce.
+ * @param {number} wait - The number of milliseconds to delay.
+ * @returns {Function} - The debounced function.
+ */
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -232,35 +245,38 @@ function floatingBarDragEnd() {
     document.removeEventListener('mousemove', debouncedFloatingBarDrag);
 }
 
-let areas = [];
-let isDragging = false;
-let currentX;
-let currentY;
-let initialX;
-let initialY;
-let xOffset = 0;
-let yOffset = 0;
-let isSelecting = false;
-let startX;
-let startY;
+// Variables for storing the state of the canvas and the selection process.
+let areas = []; // An array to store the areas on the canvas.
+let isDragging = false; // A flag to indicate whether the user is currently dragging the mouse.
+let currentX; // The current x-coordinate of the mouse.
+let currentY; // The current y-coordinate of the mouse.
+let initialX; // The initial x-coordinate of the mouse when the user starts dragging.
+let initialY; // The initial y-coordinate of the mouse when the user starts dragging.
+let xOffset = 0; // The x-offset of the mouse from the initial x-coordinate.
+let yOffset = 0; // The y-offset of the mouse from the initial y-coordinate.
+let isSelecting = false; // A flag to indicate whether the user is currently selecting an area on the canvas.
+let startX; // The x-coordinate of the mouse when the user starts selecting an area.
+let startY; // The y-coordinate of the mouse when the user starts selecting an area.
 
+// Event listeners for the canvas and other elements are added when the DOM is fully loaded.
 document.addEventListener('DOMContentLoaded', function() {
+    // Get the canvas element and add event listeners for mousedown, mousemove, and mouseup events.
     const canvas = document.getElementById('canvas');
     canvas.addEventListener('mousedown', startSelection);
     canvas.addEventListener('mousemove', updateSelection);
     canvas.addEventListener('mouseup', endSelection);
 
+    // Add a mousedown event listener to the bgImageOpacity element to prevent the floating bar from dragging when interacting with the opacity slider.
     document.getElementById('bgImageOpacity').addEventListener('mousedown', function(e) {
-      // Prevent floating bar dragging when interacting with the opacity slider
       e.stopPropagation();
     });
 
-    // Set the initial canvas size to 1024 x 1024
+    // Set the initial canvas size to 1024 x 1024.
     document.getElementById('canvasWidth').value = 1024;
     document.getElementById('canvasHeight').value = 1024;
     setCanvasSize();
 
-    // Your code here
+    // Add event listeners for mousedown, mousemove, mouseup, and mouseleave events to the floating bar.
     let floatingBar = document.getElementById('floating-bar');
     floatingBar.addEventListener('mousedown', floatingBarDragStart);
     floatingBar.addEventListener('mousemove', floatingBarDrag);
