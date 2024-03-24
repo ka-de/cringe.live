@@ -4,6 +4,25 @@
  * and handling the drag functionality of a floating bar.
  */
 
+function copyToClipboard() {
+  const numAreas = areas.length;
+  if (numAreas === 2 || numAreas === 3) {
+    const workflowJSON = numAreas === 2 ? { ...twoWayWorkflowJSON } : { ...threeWayWorkflowJSON };
+    updateConditioningSetAreaNodes(workflowJSON, numAreas);
+
+    const workflowData = JSON.stringify(workflowJSON, null, 2);
+    navigator.clipboard.writeText(workflowData)
+      .then(() => {
+        alert(`${numAreas}way-conditional-workflow.json copied to clipboard`);
+      })
+      .catch((err) => {
+        console.error('Failed to copy workflow data: ', err);
+      });
+  } else {
+    alert("Please select 2 or 3 areas to copy workflow data.");
+  }
+}
+
 /**
  * Starts the selection process on the canvas.
  * @param {Event} e - The mousedown event.
