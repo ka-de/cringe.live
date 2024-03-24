@@ -57,30 +57,42 @@ function copyToClipboard() {
 }
 
 /**
- * Starts the selection process on the canvas.
+ * Starts the selection process on the canvas or within an area.
  * @param {Event} e - The mousedown event.
  */
 function startSelection(e) {
     const canvas = document.getElementById('canvas');
     const canvasRect = canvas.getBoundingClientRect();
-    const canvasLeft = canvas.offsetLeft;
-    const canvasTop = canvas.offsetTop;
+    const canvasLeft = canvasRect.left + window.pageXOffset;
+    const canvasTop = canvasRect.top + window.pageYOffset;
 
     isSelecting = true;
-    startX = e.pageX - canvasLeft;
-    startY = e.pageY - canvasTop;
+
+    // Find the parent area, if any
+    let parentArea = null;
+    const areasUnderMouse = document.elementsFromPoint(e.clientX, e.clientY)
+        .filter(elem => elem.classList.contains('area'));
+    if (areasUnderMouse.length > 0) {
+        parentArea = areasUnderMouse[areasUnderMouse.length - 1];
+    }
+
+    // Calculate startX and startY relative to the parent area or canvas
+    if (parentArea) {
+        const parentAreaRect = parentArea.getBoundingClientRect();
+        startX = e.clientX - parentAreaRect.left;
+        startY = e.clientY - parentAreaRect.top;
+    } else {
+        startX = e.pageX - canvasLeft;
+        startY = e.pageY - canvasTop;
+    }
 }
 
 /**
- * Updates the selection on the canvas while the mouse is moving.
+ * Updates the selection on the canvas or within an area while the mouse is moving.
  * @param {Event} e - The mousemove event.
  */
 function updateSelection(e) {
     if (!isSelecting) return;
-
-    const canvas = document.getElementById('canvas');
-    const canvasLeft = canvas.offsetLeft;
-    const canvasTop = canvas.offsetTop;
 
     let selection = document.getElementById('selection');
 
@@ -91,42 +103,87 @@ function updateSelection(e) {
         document.body.appendChild(selection);
     }
 
-    const minX = Math.min(startX, e.pageX - canvasLeft);
-    const minY = Math.min(startY, e.pageY - canvasTop);
-    const maxX = Math.max(startX, e.pageX - canvasLeft);
-    const maxY = Math.max(startY, e.pageY - canvasTop);
-    const width = maxX - minX;
-    const height = maxY - minY;
+    // Find the parent area, if any
+    let parentArea = null;
+    const areasUnderMouse = document.elementsFromPoint(e.clientX, e.clientY)
+        .filter(elem => elem.classList.contains('area'));
+    if (areasUnderMouse.length > 0) {
+        parentArea = areasUnderMouse[areasUnderMouse.length - 1];
+    }
 
-    selection.style.position = 'absolute';
-    selection.style.left = `${minX + canvasLeft}px`;
-    selection.style.top = `${minY + canvasTop}px`;
-    selection.style.width = `${width}px`;
-    selection.style.height = `${height}px`;
+    // Calculate minX, minY, maxX, maxY relative to the parent area or canvas
+    if (parentArea) {
+        const parentAreaRect = parentArea.getBoundingClientRect();
+        const minX = Math.min(startX, e.clientX - parentAreaRect.left);
+        const minY = Math.min(startY, e.clientY - parentAreaRect.top);
+        const maxX = Math.max(startX, e.clientX - parentAreaRect.left);
+        const maxY = Math.max(startY, e.clientY - parentAreaRect.top);
+        const width = maxX - minX;
+        const height = maxY - minY;
+
+        selection.style.position = 'absolute';
+        selection.style.left = `${minX + parentAreaRect.left}px`;
+        selection.style.top = `${minY + parentAreaRect.top}px`;
+        selection.style.width = `${width}px`;
+        selection.style.height = `${height}px`;
+    } else {
+        const canvas = document.getElementById('canvas');
+        const canvasRect = canvas.getBoundingClientRect();
+        const canvasLeft = canvasRect.left + window.pageXOffset;
+        const canvasTop = canvasRect.top + window.pageYOffset;
+
+        const minX = Math.min(startX, e.pageX - canvasLeft);
+        const minY = Math.min(startY, e.pageY - canvasTop);
+        const maxX = Math.max(startX, e.pageX - canvasLeft);
+        const maxY = Math.max(startY, e.pageY - canvasTop);
+        const width = maxX - minX;
+        const height = maxY - minY;
+
+        selection.style.position = 'absolute';
+        selection.style.left = `${minX + canvasLeft}px`;
+        selection.style.top = `${minY + canvasTop}px`;
+        selection.style.width = `${width}px`;
+        selection.style.height = `${height}px`;
+    }
 }
 
 /**
- * Ends the selection process on the canvas.
+ * Ends the selection process on the canvas or within an area.
  * @param {Event} e - The mouseup event.
  */
 function endSelection(e) {
     if (!isSelecting) return;
     isSelecting = false;
 
-    const canvas = document.getElementById('canvas');
-    const canvasRect = canvas.getBoundingClientRect();
-    const canvasLeft = canvasRect.left + window.pageXOffset;
-    const canvasTop = canvasRect.top + window.pageYOffset;
-
     const selection = document.getElementById('selection');
     if (selection) {
-      selection.remove();
+        selection.remove();
+    }
+
+    // Find the parent area, if any
+    let parentArea = null;
+    const areasUnderMouse = document.elementsFromPoint(e.clientX, e.clientY)
+        .filter(elem => elem.classList.contains('area'));
+    if (areasUnderMouse.length > 0) {
+        parentArea = areasUnderMouse[areasUnderMouse.length - 1];
     }
 
     const width = parseInt(selection.style.width);
     const height = parseInt(selection.style.height);
-    const left = parseInt(selection.style.left) - canvasLeft;
-    const top = parseInt(selection.style.top) - canvasTop;
+    let left, top;
+
+    if (parentArea) {
+        const parentAreaRect = parentArea.getBoundingClientRect();
+        left = parseInt(selection.style.left) - parentAreaRect.left;
+        top = parseInt(selection.style.top) - parentAreaRect.top;
+    } else {
+        const canvas = document.getElementById('canvas');
+        const canvasRect = canvas.getBoundingClientRect();
+        const canvasLeft = canvasRect.left + window.pageXOffset;
+        const canvasTop = canvasRect.top + window.pageYOffset;
+        left = parseInt(selection.style.left) - canvasLeft;
+        top = parseInt(selection.style.top) - canvasTop;
+    }
 
     const color = getRandomRGBAColor();
     const area = document.createElement('div');
@@ -138,14 +195,6 @@ function endSelection(e) {
     area.style.backgroundColor = color;
     area.innerHTML = `<span class="area-info">${width}x${height}<br>${left},${top}</span>`;
 
-    // Find the parent area, if any
-    let parentArea = null;
-    const areasUnderMouse = document.elementsFromPoint(e.clientX, e.clientY)
-        .filter(elem => elem.classList.contains('area'));
-    if (areasUnderMouse.length > 0) {
-        parentArea = areasUnderMouse[areasUnderMouse.length - 1];
-    }
-
     // Append the new area to the parent area or the canvas
     if (parentArea) {
         parentArea.appendChild(area);
@@ -156,8 +205,6 @@ function endSelection(e) {
     areas.push(area);
 
     area.addEventListener('mousedown', startDragArea);
-
-    selection.remove();
 }
 
 /**
