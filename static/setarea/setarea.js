@@ -100,39 +100,43 @@ function updateSelection(e) {
         document.body.appendChild(selection);
     }
 
-    // Find all parent areas under the mouse pointer
-    const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
-        .filter(elem => elem.classList.contains('area'));
+    const canvas = document.getElementById('canvas');
+    const canvasRect = canvas.getBoundingClientRect();
+    const canvasLeft = canvasRect.left + window.pageXOffset;
+    const canvasTop = canvasRect.top + window.pageYOffset;
 
-    // Calculate minX, minY, maxX, maxY relative to the innermost parent area or canvas
-    if (parentAreas.length > 0) {
-        const innermost = parentAreas[parentAreas.length - 1];
-        const innermostRect = innermost.getBoundingClientRect();
-        const minX = Math.min(startX, e.clientX - innermostRect.left);
-        const minY = Math.min(startY, e.clientY - innermostRect.top);
-        const maxX = Math.max(startX, e.clientX - innermostRect.left);
-        const maxY = Math.max(startY, e.clientY - innermostRect.top);
-        const width = maxX - minX;
-        const height = maxY - minY;
+    let minX = Math.min(startX, e.pageX - canvasLeft);
+    let minY = Math.min(startY, e.pageY - canvasTop);
+    let maxX = Math.max(startX, e.pageX - canvasLeft);
+    let maxY = Math.max(startY, e.pageY - canvasTop);
+    let width = maxX - minX;
+    let height = maxY - minY;
+
+    const parentArea = areas.find(area => {
+        const areaRect = area.getBoundingClientRect();
+        return (
+            e.clientX >= areaRect.left &&
+            e.clientX <= areaRect.right &&
+            e.clientY >= areaRect.top &&
+            e.clientY <= areaRect.bottom
+        );
+    });
+
+    if (parentArea) {
+        const areaRect = parentArea.getBoundingClientRect();
+        minX = Math.min(startX, e.clientX - areaRect.left);
+        minY = Math.min(startY, e.clientY - areaRect.top);
+        maxX = Math.max(startX, e.clientX - areaRect.left);
+        maxY = Math.max(startY, e.clientY - areaRect.top);
+        width = maxX - minX;
+        height = maxY - minY;
 
         selection.style.position = 'absolute';
-        selection.style.left = `${minX + innermostRect.left}px`;
-        selection.style.top = `${minY + innermostRect.top}px`;
+        selection.style.left = `${minX + areaRect.left}px`;
+        selection.style.top = `${minY + areaRect.top}px`;
         selection.style.width = `${width}px`;
         selection.style.height = `${height}px`;
     } else {
-        const canvas = document.getElementById('canvas');
-        const canvasRect = canvas.getBoundingClientRect();
-        const canvasLeft = canvasRect.left + window.pageXOffset;
-        const canvasTop = canvasRect.top + window.pageYOffset;
-
-        const minX = Math.min(startX, e.pageX - canvasLeft);
-        const minY = Math.min(startY, e.pageY - canvasTop);
-        const maxX = Math.max(startX, e.pageX - canvasLeft);
-        const maxY = Math.max(startY, e.pageY - canvasTop);
-        const width = maxX - minX;
-        const height = maxY - minY;
-
         selection.style.position = 'absolute';
         selection.style.left = `${minX + canvasLeft}px`;
         selection.style.top = `${minY + canvasTop}px`;
