@@ -43,14 +43,19 @@ function updateSelection(e) {
 function endSelection(e) {
     if (!isSelecting) return;
     isSelecting = false;
-    
-    const color = getRandomRGBAColor();
+
+    const canvas = document.getElementById('canvas');
+    const canvasRect = canvas.getBoundingClientRect();
+    const canvasLeft = canvasRect.left + window.pageXOffset;
+    const canvasTop = canvasRect.top + window.pageYOffset;
+
     const selection = document.getElementById('selection');
     const width = parseInt(selection.style.width);
     const height = parseInt(selection.style.height);
-    const left = parseInt(selection.style.left);
-    const top = parseInt(selection.style.top);
+    const left = parseInt(selection.style.left) - canvasLeft;
+    const top = parseInt(selection.style.top) - canvasTop;
 
+    const color = getRandomRGBAColor();
     const area = document.createElement('div');
     area.className = 'area bg-gray-300 rounded-md';
     area.style.width = `${width}px`;
@@ -59,8 +64,7 @@ function endSelection(e) {
     area.style.top = `${top}px`;
     area.style.backgroundColor = color;
     area.innerHTML = `<span class="area-info">${width}x${height}<br>${left},${top}</span>`;
-    
-    const canvas = document.getElementById('canvas');
+
     canvas.appendChild(area);
     areas.push(area);
 
