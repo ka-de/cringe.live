@@ -245,8 +245,20 @@ function floatingBarDragStart(e) {
  */
 function floatingBarDrag(e) {
     if (isDraggingFloatingBar) {
-        let newX = e.pageX - floatingBarInitialX;
-        let newY = e.pageY - floatingBarInitialY;
+        let newX = e.clientX - floatingBarInitialX;
+        let newY = e.clientY - floatingBarInitialY;
+
+        // Get the canvas element and its dimensions
+        const canvas = document.getElementById('canvas');
+        const canvasRect = canvas.getBoundingClientRect();
+
+        // Calculate the maximum allowed position for the floating bar
+        const maxX = canvasRect.right - floatingBar.offsetWidth;
+        const maxY = canvasRect.bottom - floatingBar.offsetHeight;
+
+        // Clamp the new position to stay within the canvas bounds
+        newX = Math.max(canvasRect.left, Math.min(newX, maxX));
+        newY = Math.max(canvasRect.top, Math.min(newY, maxY));
 
         floatingBar.style.left = newX + 'px';
         floatingBar.style.top = newY + 'px';
