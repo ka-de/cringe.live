@@ -4,6 +4,39 @@
  * and handling the drag functionality of a floating bar.
  */
 
+let twoWayWorkflowJSON, threeWayWorkflowJSON;
+
+// Variables for storing the state of the canvas and the selection process.
+let areas = []; // An array to store the areas on the canvas.
+let isDragging = false; // A flag to indicate whether the user is currently dragging the mouse.
+let currentX; // The current x-coordinate of the mouse.
+let currentY; // The current y-coordinate of the mouse.
+let initialX; // The initial x-coordinate of the mouse when the user starts dragging.
+let initialY; // The initial y-coordinate of the mouse when the user starts dragging.
+let xOffset = 0; // The x-offset of the mouse from the initial x-coordinate.
+let yOffset = 0; // The y-offset of the mouse from the initial y-coordinate.\
+
+// Event variables for creating new areas
+let isSelecting = false;
+let startX, startY;
+
+// Event variables for dragging existing areas
+let isDraggingArea = false;
+let currentArea = null;
+let currentAreaOffsetX, currentAreaOffsetY;
+
+// Get the floating bar element.
+let floatingBar = document.getElementById('floating-bar');
+
+// A flag to indicate whether the user is currently dragging the floating bar.
+let isDraggingFloatingBar = false;
+
+// The initial x-coordinate of the mouse when the user starts dragging the floating bar.
+let floatingBarInitialX;
+
+// The initial y-coordinate of the mouse when the user starts dragging the floating bar.
+let floatingBarInitialY;
+
 function copyToClipboard() {
   const numAreas = areas.length;
   if (numAreas === 2 || numAreas === 3) {
@@ -105,6 +138,8 @@ function endSelection(e) {
     canvas.appendChild(area);
     areas.push(area);
 
+    area.addEventListener('mousedown', startDragArea);
+
     selection.remove();
 }
 
@@ -129,8 +164,6 @@ function setBackgroundImage(file) {
 /**
  * Loads the workflow JSON files.
  */
-let twoWayWorkflowJSON, threeWayWorkflowJSON;
-
 async function loadWorkflowFiles() {
   try {
     const twoWayResponse = await fetch('2way-conditional-workflow.json');
@@ -190,18 +223,6 @@ function exportToWorkflow() {
   }
 }
 
-// Get the floating bar element.
-let floatingBar = document.getElementById('floating-bar');
-
-// A flag to indicate whether the user is currently dragging the floating bar.
-let isDraggingFloatingBar = false;
-
-// The initial x-coordinate of the mouse when the user starts dragging the floating bar.
-let floatingBarInitialX;
-
-// The initial y-coordinate of the mouse when the user starts dragging the floating bar.
-let floatingBarInitialY;
-
 /**
  * Starts the drag functionality of the floating bar.
  * @param {Event} e - The mousedown event.
@@ -241,19 +262,6 @@ function floatingBarDragEnd() {
     // Remove global mousemove event listener
     document.removeEventListener('mousemove', floatingBarDrag);
 }
-
-// Variables for storing the state of the canvas and the selection process.
-let areas = []; // An array to store the areas on the canvas.
-let isDragging = false; // A flag to indicate whether the user is currently dragging the mouse.
-let currentX; // The current x-coordinate of the mouse.
-let currentY; // The current y-coordinate of the mouse.
-let initialX; // The initial x-coordinate of the mouse when the user starts dragging.
-let initialY; // The initial y-coordinate of the mouse when the user starts dragging.
-let xOffset = 0; // The x-offset of the mouse from the initial x-coordinate.
-let yOffset = 0; // The y-offset of the mouse from the initial y-coordinate.
-let isSelecting = false; // A flag to indicate whether the user is currently selecting an area on the canvas.
-let startX; // The x-coordinate of the mouse when the user starts selecting an area.
-let startY; // The y-coordinate of the mouse when the user starts selecting an area.
 
 // Event listeners for the canvas and other elements are added when the DOM is fully loaded.
 document.addEventListener('DOMContentLoaded', function() {
