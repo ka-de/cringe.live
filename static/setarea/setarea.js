@@ -120,6 +120,10 @@ function endSelection(e) {
     const canvasTop = canvasRect.top + window.pageYOffset;
 
     const selection = document.getElementById('selection');
+    if (selection) {
+      selection.remove();
+    }
+
     const width = parseInt(selection.style.width);
     const height = parseInt(selection.style.height);
     const left = parseInt(selection.style.left) - canvasLeft;
@@ -242,7 +246,7 @@ function exportToWorkflow() {
  * @param {Event} e - The mousedown event.
  */
 function floatingBarDragStart(e) {
-    const floatingBar = document.getElementById('floating-bar');
+    const floatingBar = e.currentTarget;
     if (floatingBar) {
         isDraggingFloatingBar = true;
         floatingBarInitialX = e.clientX - floatingBar.offsetLeft;
