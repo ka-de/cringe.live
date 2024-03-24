@@ -1,3 +1,13 @@
+/**
+ * This JavaScript file contains functions for creating, updating, and exporting areas on a canvas.
+ * It also includes functions for setting the background image of the canvas, loading workflow files,
+ * and handling the drag functionality of a floating bar.
+ */
+
+/**
+ * Starts the selection process on the canvas.
+ * @param {Event} e - The mousedown event.
+ */
 function startSelection(e) {
     const canvas = document.getElementById('canvas');
     const canvasRect = canvas.getBoundingClientRect();
@@ -9,6 +19,10 @@ function startSelection(e) {
     startY = e.pageY - canvasTop;
 }
 
+/**
+ * Updates the selection on the canvas while the mouse is moving.
+ * @param {Event} e - The mousemove event.
+ */
 function updateSelection(e) {
     if (!isSelecting) return;
 
@@ -40,6 +54,10 @@ function updateSelection(e) {
     selection.style.height = `${height}px`;
 }
 
+/**
+ * Ends the selection process on the canvas.
+ * @param {Event} e - The mouseup event.
+ */
 function endSelection(e) {
     if (!isSelecting) return;
     isSelecting = false;
@@ -71,6 +89,10 @@ function endSelection(e) {
     selection.remove();
 }
 
+/**
+ * Sets the background image of the canvas.
+ * @param {File} file - The image file to be set as the background.
+ */
 function setBackgroundImage(file) {
     if (file) {
         const reader = new FileReader();
@@ -85,7 +107,9 @@ function setBackgroundImage(file) {
     }
 }
 
-// Load the workflow JSON files
+/**
+ * Loads the workflow JSON files.
+ */
 let twoWayWorkflowJSON, threeWayWorkflowJSON;
 
 async function loadWorkflowFiles() {
@@ -99,9 +123,16 @@ async function loadWorkflowFiles() {
   }
 }
 
-// Call loadWorkflowFiles when the page loads
+/**
+ * Call loadWorkflowFiles when the page loads
+ */
 document.addEventListener('DOMContentLoaded', loadWorkflowFiles);
 
+/**
+ * Updates the ConditioningSetArea nodes in the workflow JSON based on the areas on the canvas.
+ * @param {Object} workflowJSON - The workflow JSON object.
+ * @param {number} numAreas - The number of areas on the canvas.
+ */
 function updateConditioningSetAreaNodes(workflowJSON, numAreas) {
   const conditioningSetAreaNodes = workflowJSON.nodes.filter(node => node.type === 'ConditioningSetArea');
 
@@ -118,6 +149,9 @@ function updateConditioningSetAreaNodes(workflowJSON, numAreas) {
   }
 }
 
+/**
+ * Exports the areas on the canvas to a workflow.
+ */
 function exportToWorkflow() {
   const numAreas = areas.length;
   if (numAreas === 2 || numAreas === 3) {
@@ -158,6 +192,10 @@ function debounce(func, wait) {
 // Debounce the floatingBarDrag function
 const debouncedFloatingBarDrag = debounce(floatingBarDrag, 10);
 
+/**
+ * Starts the drag functionality of the floating bar.
+ * @param {Event} e - The mousedown event.
+ */
 function floatingBarDragStart(e) {
     const floatingBar = document.getElementById('floating-bar');
     if (floatingBar) {
@@ -170,6 +208,10 @@ function floatingBarDragStart(e) {
     }
 }
 
+/**
+ * Handles the drag functionality of the floating bar while the mouse is moving.
+ * @param {Event} e - The mousemove event.
+ */
 function floatingBarDrag(e) {
     if (isDraggingFloatingBar) {
         let newX = e.pageX - floatingBarInitialX;
@@ -180,6 +222,9 @@ function floatingBarDrag(e) {
     }
 }
 
+/**
+ * Ends the drag functionality of the floating bar.
+ */
 function floatingBarDragEnd() {
     isDraggingFloatingBar = false;
 
@@ -223,6 +268,9 @@ document.addEventListener('DOMContentLoaded', function() {
     floatingBar.addEventListener('mouseleave', floatingBarDragEnd);
 });
 
+/**
+ * Sets the size of the canvas.
+ */
 function setCanvasSize() {
     const canvasWidth = document.getElementById('canvasWidth').value;
     const canvasHeight = document.getElementById('canvasHeight').value;
@@ -231,6 +279,10 @@ function setCanvasSize() {
     canvas.style.height = canvasHeight + 'px';
 }
 
+/**
+ * Handles the drag functionality of an element.
+ * @param {Event} e - The mousedown event.
+ */
 function elementDrag(e) {
     e = e || window.event;
     e.preventDefault(); // Prevent default behavior for all elements
@@ -248,10 +300,19 @@ function elementDrag(e) {
     }
 }
 
+/**
+ * Translates an element to a new position.
+ * @param {number} xPos - The new x-position.
+ * @param {number} yPos - The new y-position.
+ * @param {HTMLElement} el - The element to be translated.
+ */
 function setTranslate(xPos, yPos, el) {
     el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
 }
 
+/**
+ * Adds a new area to the canvas.
+ */
 function addArea() {
     const areaWidth = document.getElementById('areaWidth').value;
     const areaHeight = document.getElementById('areaHeight').value;
@@ -275,7 +336,9 @@ function addArea() {
     areas.push(area);
 }
 
-
+/**
+ * Removes the last added area from the canvas.
+ */
 function removeArea() {
     const canvas = document.getElementById('canvas');
     if (areas.length > 0) {
@@ -283,6 +346,10 @@ function removeArea() {
     }
 }
 
+/**
+ * Returns a random RGBA color.
+ * @returns {string} A string representing a random RGBA color.
+ */
 function getRandomRGBAColor() {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
