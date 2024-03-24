@@ -57,7 +57,7 @@ function copyToClipboard() {
 }
 
 /**
- * Starts the selection process on the canvas or within an area.
+ * Starts the selection process on the canvas or within nested areas.
  * @param {Event} e - The mousedown event.
  */
 function startSelection(e) {
@@ -68,19 +68,16 @@ function startSelection(e) {
 
     isSelecting = true;
 
-    // Find the parent area, if any
-    let parentArea = null;
-    const areasUnderMouse = document.elementsFromPoint(e.clientX, e.clientY)
+    // Find all parent areas under the mouse pointer
+    const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
         .filter(elem => elem.classList.contains('area'));
-    if (areasUnderMouse.length > 0) {
-        parentArea = areasUnderMouse[areasUnderMouse.length - 1];
-    }
 
-    // Calculate startX and startY relative to the parent area or canvas
-    if (parentArea) {
-        const parentAreaRect = parentArea.getBoundingClientRect();
-        startX = e.clientX - parentAreaRect.left;
-        startY = e.clientY - parentAreaRect.top;
+    // Calculate startX and startY relative to the innermost parent area or canvas
+    if (parentAreas.length > 0) {
+        const innermost = parentAreas[parentAreas.length - 1];
+        const innermostRect = innermost.getBoundingClientRect();
+        startX = e.clientX - innermostRect.left;
+        startY = e.clientY - innermostRect.top;
     } else {
         startX = e.pageX - canvasLeft;
         startY = e.pageY - canvasTop;
@@ -88,7 +85,7 @@ function startSelection(e) {
 }
 
 /**
- * Updates the selection on the canvas or within an area while the mouse is moving.
+ * Updates the selection on the canvas or within nested areas while the mouse is moving.
  * @param {Event} e - The mousemove event.
  */
 function updateSelection(e) {
@@ -103,27 +100,24 @@ function updateSelection(e) {
         document.body.appendChild(selection);
     }
 
-    // Find the parent area, if any
-    let parentArea = null;
-    const areasUnderMouse = document.elementsFromPoint(e.clientX, e.clientY)
+    // Find all parent areas under the mouse pointer
+    const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
         .filter(elem => elem.classList.contains('area'));
-    if (areasUnderMouse.length > 0) {
-        parentArea = areasUnderMouse[areasUnderMouse.length - 1];
-    }
 
-    // Calculate minX, minY, maxX, maxY relative to the parent area or canvas
-    if (parentArea) {
-        const parentAreaRect = parentArea.getBoundingClientRect();
-        const minX = Math.min(startX, e.clientX - parentAreaRect.left);
-        const minY = Math.min(startY, e.clientY - parentAreaRect.top);
-        const maxX = Math.max(startX, e.clientX - parentAreaRect.left);
-        const maxY = Math.max(startY, e.clientY - parentAreaRect.top);
+    // Calculate minX, minY, maxX, maxY relative to the innermost parent area or canvas
+    if (parentAreas.length > 0) {
+        const innermost = parentAreas[parentAreas.length - 1];
+        const innermostRect = innermost.getBoundingClientRect();
+        const minX = Math.min(startX, e.clientX - innermostRect.left);
+        const minY = Math.min(startY, e.clientY - innermostRect.top);
+        const maxX = Math.max(startX, e.clientX - innermostRect.left);
+        const maxY = Math.max(startY, e.clientY - innermostRect.top);
         const width = maxX - minX;
         const height = maxY - minY;
 
         selection.style.position = 'absolute';
-        selection.style.left = `${minX + parentAreaRect.left}px`;
-        selection.style.top = `${minY + parentAreaRect.top}px`;
+        selection.style.left = `${minX + innermostRect.left}px`;
+        selection.style.top = `${minY + innermostRect.top}px`;
         selection.style.width = `${width}px`;
         selection.style.height = `${height}px`;
     } else {
@@ -148,7 +142,7 @@ function updateSelection(e) {
 }
 
 /**
- * Ends the selection process on the canvas or within an area.
+ * Ends the selection process on the canvas or within nested areas.
  * @param {Event} e - The mouseup event.
  */
 function endSelection(e) {
@@ -160,22 +154,19 @@ function endSelection(e) {
         selection.remove();
     }
 
-    // Find the parent area, if any
-    let parentArea = null;
-    const areasUnderMouse = document.elementsFromPoint(e.clientX, e.clientY)
+    // Find all parent areas under the mouse pointer
+    const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
         .filter(elem => elem.classList.contains('area'));
-    if (areasUnderMouse.length > 0) {
-        parentArea = areasUnderMouse[areasUnderMouse.length - 1];
-    }
 
     const width = parseInt(selection.style.width);
     const height = parseInt(selection.style.height);
     let left, top;
 
-    if (parentArea) {
-        const parentAreaRect = parentArea.getBoundingClientRect();
-        left = parseInt(selection.style.left) - parentAreaRect.left;
-        top = parseInt(selection.style.top) - parentAreaRect.top;
+    if (parentAreas.length > 0) {
+        const innermost = parentAreas[parentAreas.length - 1];
+        const innermostRect = innermost.getBoundingClientRect();
+        left = parseInt(selection.style.left) - innermostRect.left;
+        top = parseInt(selection.style.top) - innermostRect.top;
     } else {
         const canvas = document.getElementById('canvas');
         const canvasRect = canvas.getBoundingClientRect();
@@ -195,10 +186,12 @@ function endSelection(e) {
     area.style.backgroundColor = color;
     area.innerHTML = `<span class="area-info">${width}x${height}<br>${left},${top}</span>`;
 
-    // Append the new area to the parent area or the canvas
-    if (parentArea) {
-        parentArea.appendChild(area);
+    // Append the new area to the innermost parent area or the canvas
+    if (parentAreas.length > 0) {
+        const innermost = parentAreas[parentAreas.length - 1];
+        innermost.appendChild(area);
     } else {
+        const canvas = document.getElementById('canvas');
         canvas.appendChild(area);
     }
 
