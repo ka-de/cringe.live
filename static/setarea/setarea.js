@@ -183,28 +183,6 @@ let floatingBarInitialX;
 // The initial y-coordinate of the mouse when the user starts dragging the floating bar.
 let floatingBarInitialY;
 
-
-/**
- * Debounces a function to limit the rate at which it fires.
- * @param {Function} func - The function to debounce.
- * @param {number} wait - The number of milliseconds to delay.
- * @returns {Function} - The debounced function.
- */
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Debounce the floatingBarDrag function
-const debouncedFloatingBarDrag = debounce(floatingBarDrag, 10);
-
 /**
  * Starts the drag functionality of the floating bar.
  * @param {Event} e - The mousedown event.
@@ -217,7 +195,7 @@ function floatingBarDragStart(e) {
         floatingBarInitialY = e.clientY - floatingBar.offsetTop;
 
         // Capture mousemove event globally
-        document.addEventListener('mousemove', debouncedFloatingBarDrag);
+        document.addEventListener('mousemove', floatingBarDrag);
     }
 }
 
@@ -242,7 +220,7 @@ function floatingBarDragEnd() {
     isDraggingFloatingBar = false;
 
     // Remove global mousemove event listener
-    document.removeEventListener('mousemove', debouncedFloatingBarDrag);
+    document.removeEventListener('mousemove', floatingBarDrag);
 }
 
 // Variables for storing the state of the canvas and the selection process.
@@ -279,7 +257,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add event listeners for mousedown, mousemove, mouseup, and mouseleave events to the floating bar.
     let floatingBar = document.getElementById('floating-bar');
     floatingBar.addEventListener('mousedown', floatingBarDragStart);
-    floatingBar.addEventListener('mousemove', floatingBarDrag);
     floatingBar.addEventListener('mouseup', floatingBarDragEnd);
     floatingBar.addEventListener('mouseleave', floatingBarDragEnd);
 });
