@@ -63,8 +63,8 @@ function copyToClipboard() {
 function startSelection(e) {
     const canvas = document.getElementById('canvas');
     const canvasRect = canvas.getBoundingClientRect();
-    const canvasLeft = canvasRect.left + window.pageXOffset;
-    const canvasTop = canvasRect.top + window.pageYOffset;
+    const canvasLeft = canvas.offsetLeft;
+    const canvasTop = canvas.offsetTop;
 
     isSelecting = true;
     startX = e.pageX - canvasLeft;
@@ -79,9 +79,8 @@ function updateSelection(e) {
     if (!isSelecting) return;
 
     const canvas = document.getElementById('canvas');
-    const canvasRect = canvas.getBoundingClientRect();
-    const canvasLeft = canvasRect.left + window.pageXOffset;
-    const canvasTop = canvasRect.top + window.pageYOffset;
+    const canvasLeft = canvas.offsetLeft;
+    const canvasTop = canvas.offsetTop;
 
     let selection = document.getElementById('selection');
 
