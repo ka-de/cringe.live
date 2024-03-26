@@ -1,7 +1,7 @@
 /**
  * This JavaScript file contains functions for creating, updating, and exporting areas on a canvas.
  * It also includes functions for setting the background image of the canvas, loading workflow files,
- * and handling the drag functionalit  y of a floating bar.
+ * and handling the drag functionality of a floating bar.
  */
 
 let twoWayWorkflowJSON, threeWayWorkflowJSON, fourWayWorkflowJSON, fiveWayWorkflowJSON;
