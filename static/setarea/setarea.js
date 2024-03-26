@@ -1,7 +1,7 @@
 /**
  * This JavaScript file contains functions for creating, updating, and exporting areas on a canvas.
  * It also includes functions for setting the background image of the canvas, loading workflow files,
- * and handling the drag functionality of a floating bar.
+ * and handling the drag functionalit  y of a floating bar.
  */
 
 let twoWayWorkflowJSON, threeWayWorkflowJSON, fourWayWorkflowJSON, fiveWayWorkflowJSON;
@@ -182,30 +182,28 @@ function endSelection(e) {
     isSelecting = false;
 
     const selection = document.getElementById('selection');
-    if (selection) {
-        selection.remove();
-    }
+    if (!selection) return; // Exit the function if the selection element is not found
 
     // Find all parent areas under the mouse pointer
     const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
         .filter(elem => elem.classList.contains('area'));
 
-    const width = parseInt(selection.style.width);
-    const height = parseInt(selection.style.height);
+    const width = parseInt(selection.style.width, 10) || 0; // Use 0 as a fallback value
+    const height = parseInt(selection.style.height, 10) || 0; // Use 0 as a fallback value
     let left, top;
 
     if (parentAreas.length > 0) {
         const innermost = parentAreas[parentAreas.length - 1];
         const innermostRect = innermost.getBoundingClientRect();
-        left = parseInt(selection.style.left) - innermostRect.left;
-        top = parseInt(selection.style.top) - innermostRect.top;
+        left = parseInt(selection.style.left, 10) - innermostRect.left;
+        top = parseInt(selection.style.top, 10) - innermostRect.top;
     } else {
         const canvas = document.getElementById('canvas');
         const canvasRect = canvas.getBoundingClientRect();
         const canvasLeft = canvasRect.left + window.pageXOffset;
         const canvasTop = canvasRect.top + window.pageYOffset;
-        left = parseInt(selection.style.left) - canvasLeft;
-        top = parseInt(selection.style.top) - canvasTop;
+        left = parseInt(selection.style.left, 10) - canvasLeft;
+        top = parseInt(selection.style.top, 10) - canvasTop;
     }
 
     const color = getRandomRGBAColor();
@@ -229,7 +227,10 @@ function endSelection(e) {
 
     areas.push(area);
 
-    area.addEventListener('mousedown', startDragArea);
+    // Remove the reference to startDragArea, as it is not defined
+    // area.addEventListener('mousedown', startDragArea);
+
+    selection.remove();
 }
 
 /**
