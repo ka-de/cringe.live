@@ -14,7 +14,7 @@ let currentY; // The current y-coordinate of the mouse.
 let initialX; // The initial x-coordinate of the mouse when the user starts dragging.
 let initialY; // The initial y-coordinate of the mouse when the user starts dragging.
 let xOffset = 0; // The x-offset of the mouse from the initial x-coordinate.
-let yOffset = 0; // The y-offset of the mouse from the initial y-coordinate.\
+let yOffset = 0; // The y-offset of the mouse from the initial y-coordinate.
 
 // Event variables for creating new areas
 let isSelecting = false;
@@ -36,6 +36,53 @@ let floatingBarInitialX;
 
 // The initial y-coordinate of the mouse when the user starts dragging the floating bar.
 let floatingBarInitialY;
+
+/**
+ * Starts the drag functionality of an existing area.
+ * @param {Event} e - The mousedown event.
+ */
+function startDragArea(e) {
+    isDraggingArea = true;
+    currentArea = e.currentTarget;
+    const rect = currentArea.getBoundingClientRect();
+    currentAreaOffsetX = e.clientX - rect.left;
+    currentAreaOffsetY = e.clientY - rect.top;
+
+    document.addEventListener('mousemove', dragArea);
+    document.addEventListener('mouseup', stopDragArea);
+}
+
+/**
+ * Handles the drag functionality of an existing area while the mouse is moving.
+ * @param {Event} e - The mousemove event.
+ */
+function dragArea(e) {
+    if (!isDraggingArea) return;
+
+    const canvasWidth = canvas.offsetWidth;
+    const canvasHeight = canvas.offsetHeight;
+
+    let newX = e.clientX - currentAreaOffsetX;
+    let newY = e.clientY - currentAreaOffsetY;
+
+    // Clamp the new position to stay within the canvas bounds
+    newX = Math.max(0, Math.min(newX, canvasWidth - currentArea.offsetWidth));
+    newY = Math.max(0, Math.min(newY, canvasHeight - currentArea.offsetHeight));
+
+    currentArea.style.left = `${newX}px`;
+    currentArea.style.top = `${newY}px`;
+}
+
+/**
+ * Ends the drag functionality of an existing area.
+ * @param {Event} e - The mouseup event.
+ */
+function stopDragArea(e) {
+    isDraggingArea = false;
+
+    document.removeEventListener('mousemove', dragArea);
+    document.removeEventListener('mouseup', stopDragArea);
+}
 
 function copyToClipboard() {
   const numAreas = areas.length;
@@ -133,38 +180,35 @@ function updateSelection(e) {
     const canvasLeft = canvasRect.left + window.pageXOffset;
     const canvasTop = canvasRect.top + window.pageYOffset;
 
-    let minX = Math.min(startX, e.pageX - canvasLeft);
-    let minY = Math.min(startY, e.pageY - canvasTop);
-    let maxX = Math.max(startX, e.pageX - canvasLeft);
-    let maxY = Math.max(startY, e.pageY - canvasTop);
-    let width = maxX - minX;
-    let height = maxY - minY;
+    // Find all parent areas under the mouse pointer
+    const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
+        .filter(elem => elem.classList.contains('area'));
 
-    const parentArea = areas.find(area => {
-        const areaRect = area.getBoundingClientRect();
-        return (
-            e.clientX >= areaRect.left &&
-            e.clientX <= areaRect.right &&
-            e.clientY >= areaRect.top &&
-            e.clientY <= areaRect.bottom
-        );
-    });
+    let minX, minY, maxX, maxY, width, height;
 
-    if (parentArea) {
-        const areaRect = parentArea.getBoundingClientRect();
-        minX = Math.min(startX, e.clientX - areaRect.left);
-        minY = Math.min(startY, e.clientY - areaRect.top);
-        maxX = Math.max(startX, e.clientX - areaRect.left);
-        maxY = Math.max(startY, e.clientY - areaRect.top);
+    if (parentAreas.length > 0) {
+        const innermost = parentAreas[parentAreas.length - 1];
+        const innermostRect = innermost.getBoundingClientRect();
+        minX = Math.min(startX, e.clientX - innermostRect.left);
+        minY = Math.min(startY, e.clientY - innermostRect.top);
+        maxX = Math.max(startX, e.clientX - innermostRect.left);
+        maxY = Math.max(startY, e.clientY - innermostRect.top);
         width = maxX - minX;
         height = maxY - minY;
 
         selection.style.position = 'absolute';
-        selection.style.left = `${minX + areaRect.left}px`;
-        selection.style.top = `${minY + areaRect.top}px`;
+        selection.style.left = `${minX + innermostRect.left}px`;
+        selection.style.top = `${minY + innermostRect.top}px`;
         selection.style.width = `${width}px`;
         selection.style.height = `${height}px`;
     } else {
+        minX = Math.min(startX, e.pageX - canvasLeft);
+        minY = Math.min(startY, e.pageY - canvasTop);
+        maxX = Math.max(startX, e.pageX - canvasLeft);
+        maxY = Math.max(startY, e.pageY - canvasTop);
+        width = maxX - minX;
+        height = maxY - minY;
+
         selection.style.position = 'absolute';
         selection.style.left = `${minX + canvasLeft}px`;
         selection.style.top = `${minY + canvasTop}px`;
@@ -188,8 +232,9 @@ function endSelection(e) {
     const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
         .filter(elem => elem.classList.contains('area'));
 
-    const width = parseInt(selection.style.width, 10) || 0; // Use 0 as a fallback value
-    const height = parseInt(selection.style.height, 10) || 0; // Use 0 as a fallback value
+    const width = parseInt(selection.style.width, 10);
+    const height = parseInt(selection.style.height, 10);
+
     let left, top;
 
     if (parentAreas.length > 0) {
@@ -204,6 +249,15 @@ function endSelection(e) {
         const canvasTop = canvasRect.top + window.pageYOffset;
         left = parseInt(selection.style.left, 10) - canvasLeft;
         top = parseInt(selection.style.top, 10) - canvasTop;
+    }
+
+    // Check if the new area is within the canvas boundaries
+    const canvasWidth = canvas.offsetWidth;
+    const canvasHeight = canvas.offsetHeight;
+    if (left + width > canvasWidth || top + height > canvasHeight || left < 0 || top < 0) {
+        // Area is outside the canvas boundaries, don't create it
+        selection.remove();
+        return;
     }
 
     const color = getRandomRGBAColor();
@@ -227,8 +281,8 @@ function endSelection(e) {
 
     areas.push(area);
 
-    // Remove the reference to startDragArea, as it is not defined
-    // area.addEventListener('mousedown', startDragArea);
+    // Add event listener for dragging the new area
+    area.addEventListener('mousedown', startDragArea);
 
     selection.remove();
 }
