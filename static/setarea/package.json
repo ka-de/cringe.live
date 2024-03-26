@@ -1,0 +1,14 @@
+{
+  "name": "setarea",
+  "version": "1.0.0",
+  "description": "Allows creating areas on a canvas and exports them to a ComfyUI workflow.",
+  "main": "setarea.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "comfyui"
+  ],
+  "author": "_ka_de",
+  "license": "MIT"
+}
