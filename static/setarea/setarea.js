@@ -226,7 +226,7 @@ function endSelection(e) {
     isSelecting = false;
 
     const selection = document.getElementById('selection');
-    if (!selection) return; // Exit the function if the selection element is not found
+    if (!selection) return;
 
     // Find all parent areas under the mouse pointer
     const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
@@ -249,15 +249,6 @@ function endSelection(e) {
         const canvasTop = canvasRect.top + window.pageYOffset;
         left = parseInt(selection.style.left, 10) - canvasLeft;
         top = parseInt(selection.style.top, 10) - canvasTop;
-    }
-
-    // Check if the new area is within the canvas boundaries
-    const canvasWidth = canvas.offsetWidth;
-    const canvasHeight = canvas.offsetHeight;
-    if (left + width > canvasWidth || top + height > canvasHeight || left < 0 || top < 0) {
-        // Area is outside the canvas boundaries, don't create it
-        selection.remove();
-        return;
     }
 
     const color = getRandomRGBAColor();
