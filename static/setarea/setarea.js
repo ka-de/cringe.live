@@ -45,6 +45,9 @@ function startDragArea(e) {
     // Check if the enableAreaDrag checkbox is checked
     if (!enableAreaDragCheckbox.checked) return;
 
+    // Prevent selection while dragging
+    e.preventDefault();
+
     isDraggingArea = true;
     currentArea = e.currentTarget;
     const rect = currentArea.getBoundingClientRect();
@@ -401,48 +404,6 @@ function floatingBarDragEnd() {
     document.removeEventListener('mousemove', floatingBarDrag);
 }
 
-// Event listeners for the canvas and other elements are added when the DOM is fully loaded.
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the checkbox element
-    const enableAreaDragCheckbox = document.getElementById('enableAreaDrag');
-
-    // Add an event listener to the checkbox
-    enableAreaDragCheckbox.addEventListener('change', function() {
-      const areas = document.querySelectorAll('.area');
-    
-      // Enable or disable the drag functionality for all areas
-      areas.forEach(area => {
-        if (this.checked) {
-          area.addEventListener('mousedown', startDragArea);
-        } else {
-          area.removeEventListener('mousedown', startDragArea);
-        }
-      });
-    });
-
-    // Get the canvas element and add event listeners for mousedown, mousemove, and mouseup events.
-    const canvas = document.getElementById('canvas');
-    canvas.addEventListener('mousedown', startSelection);
-    canvas.addEventListener('mousemove', updateSelection);
-    canvas.addEventListener('mouseup', endSelection);
-
-    // Add a mousedown event listener to the bgImageOpacity element to prevent the floating bar from dragging when interacting with the opacity slider.
-    document.getElementById('bgImageOpacity').addEventListener('mousedown', function(e) {
-      e.stopPropagation();
-    });
-
-    // Set the initial canvas size to 1024 x 1024.
-    document.getElementById('canvasWidth').value = 1024;
-    document.getElementById('canvasHeight').value = 1024;
-    setCanvasSize();
-
-    // Add event listeners for mousedown, mousemove, mouseup, and mouseleave events to the floating bar.
-    let floatingBar = document.getElementById('floating-bar');
-    floatingBar.addEventListener('mousedown', floatingBarDragStart);
-    floatingBar.addEventListener('mouseup', floatingBarDragEnd);
-    floatingBar.addEventListener('mouseleave', floatingBarDragEnd);
-});
-
 /**
  * Sets the size of the canvas.
  */
@@ -533,3 +494,46 @@ function getRandomRGBAColor() {
     const a = 0.5;
     return `rgba(${r}, ${g}, ${b}, ${a})`;
 }
+
+// Event listeners for the canvas and other elements are added when the DOM is fully loaded.
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the checkbox element
+    const enableAreaDragCheckbox = document.getElementById('enableAreaDrag');
+
+    // Add an event listener to the checkbox
+    enableAreaDragCheckbox.addEventListener('change', function() {
+      const areas = document.querySelectorAll('.area');
+
+      // Enable or disable the drag functionality for all areas
+      areas.forEach(area => {
+        if (this.checked) {
+          area.addEventListener('mousedown', startDragArea);
+        } else {
+          area.removeEventListener('mousedown', startDragArea);
+          area.style.cursor = 'default'; // Reset cursor style
+        }
+      });
+    });
+
+    // Get the canvas element and add event listeners for mousedown, mousemove, and mouseup events.
+    const canvas = document.getElementById('canvas');
+    canvas.addEventListener('mousedown', startSelection);
+    canvas.addEventListener('mousemove', updateSelection);
+    canvas.addEventListener('mouseup', endSelection);
+
+    // Add a mousedown event listener to the bgImageOpacity element to prevent the floating bar from dragging when interacting with the opacity slider.
+    document.getElementById('bgImageOpacity').addEventListener('mousedown', function(e) {
+      e.stopPropagation();
+    });
+
+    // Set the initial canvas size to 1024 x 1024.
+    document.getElementById('canvasWidth').value = 1024;
+    document.getElementById('canvasHeight').value = 1024;
+    setCanvasSize();
+
+    // Add event listeners for mousedown, mousemove, mouseup, and mouseleave events to the floating bar.
+    let floatingBar = document.getElementById('floating-bar');
+    floatingBar.addEventListener('mousedown', floatingBarDragStart);
+    floatingBar.addEventListener('mouseup', floatingBarDragEnd);
+    floatingBar.addEventListener('mouseleave', floatingBarDragEnd);
+});
