@@ -518,16 +518,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add an event listener to the checkbox
     enableAreaDragCheckbox.addEventListener('change', function() {
-      const areas = document.querySelectorAll('.area');
+        const areas = document.querySelectorAll('.area');
 
-    // Enable or disable the drag functionality for all areas
-    areas.forEach(area => {
-        if (this.checked) {
-            area.addEventListener('mousedown', (e) => startDragArea(e, this));
-        } else {
-            area.removeEventListener('mousedown', startDragArea);
-            area.style.cursor = 'default';
-        }
+        // Enable or disable the drag functionality for all areas
+        areas.forEach(area => {
+            if (this.checked) {
+                area.addEventListener('mousedown', (e) => startDragArea(e, this));
+            } else {
+                area.removeEventListener('mousedown', startDragArea);
+                area.style.cursor = 'default';
+            }
+        });
     });
 
     // Get the canvas element and add event listeners for mousedown, mousemove, and mouseup events.
@@ -538,7 +539,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Add a mousedown event listener to the bgImageOpacity element to prevent the floating bar from dragging when interacting with the opacity slider.
     document.getElementById('bgImageOpacity').addEventListener('mousedown', function(e) {
-      e.stopPropagation();
+        e.stopPropagation();
     });
 
     // Set the initial canvas size to 1024 x 1024.
