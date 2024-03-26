@@ -41,8 +41,7 @@ let floatingBarInitialY;
  * Starts the drag functionality of an existing area.
  * @param {Event} e - The mousedown event.
  */
-function startDragArea(e) {
-    // Check if the enableAreaDrag checkbox is checked
+function startDragArea(e, enableAreaDragCheckbox) {
     if (!enableAreaDragCheckbox.checked) return;
 
     // Prevent selection while dragging
@@ -91,53 +90,58 @@ function stopDragArea(e) {
 }
 
 /**
- * Copies the workflow data to the clipboard based on the number of selected areas.
+ * Handles the workflow data based on whether it should be exported or copied to the clipboard.
+ * If exporting, the workflow data is downloaded as a JSON file with the appropriate filename.
+ * If copying, the workflow data is copied to the clipboard.
+ * @param {boolean} shouldExport - A boolean indicating whether the workflow data should be exported.
  */
-function copyToClipboard() {
-  const numAreas = areas.length;
-  if (numAreas === 2 || numAreas === 3 || numAreas === 4 || numAreas === 5) {
-    const workflowJSON = numAreas === 2 ? { ...twoWayWorkflowJSON } :
-                         numAreas === 3 ? { ...threeWayWorkflowJSON } :
-                         numAreas === 4 ? { ...fourWayWorkflowJSON } :
-                         { ...fiveWayWorkflowJSON };
-    updateConditioningSetAreaNodes(workflowJSON, numAreas);
+function handleWorkflowData(shouldExport) {
+    const numAreas = areas.length;
+    if (numAreas === 2 || numAreas === 3 || numAreas === 4 || numAreas === 5) {
+        const workflowJSON = numAreas === 2 ? { ...twoWayWorkflowJSON } :
+                             numAreas === 3 ? { ...threeWayWorkflowJSON } :
+                             numAreas === 4 ? { ...fourWayWorkflowJSON } :
+                             { ...fiveWayWorkflowJSON };
+        updateConditioningSetAreaNodes(workflowJSON, numAreas);
 
-    const workflowData = JSON.stringify(workflowJSON, null, 2);
-    navigator.clipboard.writeText(workflowData)
-      .then(() => {
-        alert(`${numAreas}way-conditional-workflow.json copied to clipboard`);
-      })
-      .catch((err) => {
-        console.error('Failed to copy workflow data: ', err);
-      });
-  } else {
-    alert("Please select 2, 3, 4, or 5 areas to copy workflow data.");
-  }
+        const workflowData = JSON.stringify(workflowJSON, null, 2);
+
+        if (shouldExport) {
+            const workflowName = `${numAreas}way-conditional-workflow.json`;
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(workflowData);
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", workflowName);
+            document.body.appendChild(downloadAnchorNode);
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+        } else {
+            navigator.clipboard.writeText(workflowData)
+                .then(() => {
+                    alert(`${numAreas}way-conditional-workflow.json copied to clipboard`);
+                })
+                .catch((err) => {
+                    console.error('Failed to copy workflow data: ', err);
+                });
+        }
+    } else {
+        const action = shouldExport ? 'export' : 'copy';
+        alert(`Please select 2, 3, 4, or 5 areas to ${action} workflow data.`);
+    }
 }
 
 /**
- * Exports the areas on the canvas to a workflow.
+ * Copies the workflow data to the clipboard.
+ */
+function copyToClipboard() {
+    handleWorkflowData(false);
+}
+
+/**
+ * Exports the workflow data to a JSON file.
  */
 function exportToWorkflow() {
-  const numAreas = areas.length;
-  if (numAreas === 2 || numAreas === 3 || numAreas === 4 || numAreas === 5) {
-    const workflowJSON = numAreas === 2 ? { ...twoWayWorkflowJSON } :
-                         numAreas === 3 ? { ...threeWayWorkflowJSON } :
-                         numAreas === 4 ? { ...fourWayWorkflowJSON } :
-                         { ...fiveWayWorkflowJSON };
-    updateConditioningSetAreaNodes(workflowJSON, numAreas);
-
-    const workflowName = `${numAreas}way-conditional-workflow.json`;
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(workflowJSON, null, 2));
-    const downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", workflowName);
-    document.body.appendChild(downloadAnchorNode);
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
-  } else {
-    alert("Please select 2, 3, 4, or 5 areas to export.");
-  }
+    handleWorkflowData(true);
 }
 
 /**
@@ -312,18 +316,23 @@ function setBackgroundImage(file) {
  * Loads the workflow JSON files.
  */
 async function loadWorkflowFiles() {
-  try {
-    const fourWayResponse = await fetch('4way-conditional-workflow.json');
-    const fiveWayResponse = await fetch('5way-conditional-workflow.json');
-    const twoWayResponse = await fetch('2way-conditional-workflow.json');
-    const threeWayResponse = await fetch('3way-conditional-workflow.json');
-    twoWayWorkflowJSON = await twoWayResponse.json();
-    threeWayWorkflowJSON = await threeWayResponse.json();
-    fourWayWorkflowJSON = await fourWayResponse.json();
-    fiveWayWorkflowJSON = await fiveWayResponse.json();
-  } catch (error) {
-    console.error('Error loading workflow files:', error);
-  }
+    try {
+        const fourWayResponse = await fetch('4way-conditional-workflow.json');
+        const fiveWayResponse = await fetch('5way-conditional-workflow.json');
+        const twoWayResponse = await fetch('2way-conditional-workflow.json');
+        const threeWayResponse = await fetch('3way-conditional-workflow.json');
+
+        if (!fourWayResponse.ok || !fiveWayResponse.ok || !twoWayResponse.ok || !threeWayResponse.ok) {
+            throw new Error('Failed to load one or more workflow files.');
+        }
+
+        twoWayWorkflowJSON = await twoWayResponse.json();
+        threeWayWorkflowJSON = await threeWayResponse.json();
+        fourWayWorkflowJSON = await fourWayResponse.json();
+        fiveWayWorkflowJSON = await fiveWayResponse.json();
+    } catch (error) {
+        console.error('Error loading workflow files:', error);
+    }
 }
 
 /**
@@ -450,10 +459,17 @@ function setTranslate(xPos, yPos, el) {
  * Adds a new area to the canvas.
  */
 function addArea() {
-    const areaWidth = document.getElementById('areaWidth').value;
-    const areaHeight = document.getElementById('areaHeight').value;
-    const areaX = document.getElementById('areaX').value;
-    const areaY = document.getElementById('areaY').value;
+    const areaWidth = parseInt(document.getElementById('areaWidth').value);
+    const areaHeight = parseInt(document.getElementById('areaHeight').value);
+    const areaX = parseInt(document.getElementById('areaX').value);
+    const areaY = parseInt(document.getElementById('areaY').value);
+
+    // Check if the input values are valid numbers
+    if (isNaN(areaWidth) || isNaN(areaHeight) || isNaN(areaX) || isNaN(areaY)) {
+        alert('Please enter valid numeric values for area dimensions and position.');
+        return;
+    }
+
     const color = getRandomRGBAColor(); // Use the new function to get rgba color
 
     const area = document.createElement('div');
@@ -504,15 +520,14 @@ document.addEventListener('DOMContentLoaded', function() {
     enableAreaDragCheckbox.addEventListener('change', function() {
       const areas = document.querySelectorAll('.area');
 
-      // Enable or disable the drag functionality for all areas
-      areas.forEach(area => {
+    // Enable or disable the drag functionality for all areas
+    areas.forEach(area => {
         if (this.checked) {
-          area.addEventListener('mousedown', startDragArea);
+            area.addEventListener('mousedown', (e) => startDragArea(e, this));
         } else {
-          area.removeEventListener('mousedown', startDragArea);
-          area.style.cursor = 'default'; // Reset cursor style
+            area.removeEventListener('mousedown', startDragArea);
+            area.style.cursor = 'default';
         }
-      });
     });
 
     // Get the canvas element and add event listeners for mousedown, mousemove, and mouseup events.
