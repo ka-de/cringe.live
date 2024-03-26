@@ -4,7 +4,7 @@
  * and handling the drag functionality of a floating bar.
  */
 
-let twoWayWorkflowJSON, threeWayWorkflowJSON;
+let twoWayWorkflowJSON, threeWayWorkflowJSON, fourWayWorkflowJSON, fiveWayWorkflowJSON;
 
 // Variables for storing the state of the canvas and the selection process.
 let areas = []; // An array to store the areas on the canvas.
@@ -39,8 +39,11 @@ let floatingBarInitialY;
 
 function copyToClipboard() {
   const numAreas = areas.length;
-  if (numAreas === 2 || numAreas === 3) {
-    const workflowJSON = numAreas === 2 ? { ...twoWayWorkflowJSON } : { ...threeWayWorkflowJSON };
+  if (numAreas === 2 || numAreas === 3 || numAreas === 4 || numAreas === 5) {
+    const workflowJSON = numAreas === 2 ? { ...twoWayWorkflowJSON } :
+                         numAreas === 3 ? { ...threeWayWorkflowJSON } :
+                         numAreas === 4 ? { ...fourWayWorkflowJSON } :
+                         { ...fiveWayWorkflowJSON };
     updateConditioningSetAreaNodes(workflowJSON, numAreas);
 
     const workflowData = JSON.stringify(workflowJSON, null, 2);
@@ -52,7 +55,32 @@ function copyToClipboard() {
         console.error('Failed to copy workflow data: ', err);
       });
   } else {
-    alert("Please select 2 or 3 areas to copy workflow data.");
+    alert("Please select 2, 3, 4, or 5 areas to copy workflow data.");
+  }
+}
+
+/**
+ * Exports the areas on the canvas to a workflow.
+ */
+function exportToWorkflow() {
+  const numAreas = areas.length;
+  if (numAreas === 2 || numAreas === 3 || numAreas === 4 || numAreas === 5) {
+    const workflowJSON = numAreas === 2 ? { ...twoWayWorkflowJSON } :
+                         numAreas === 3 ? { ...threeWayWorkflowJSON } :
+                         numAreas === 4 ? { ...fourWayWorkflowJSON } :
+                         { ...fiveWayWorkflowJSON };
+    updateConditioningSetAreaNodes(workflowJSON, numAreas);
+
+    const workflowName = `${numAreas}way-conditional-workflow.json`;
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(workflowJSON, null, 2));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", workflowName);
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  } else {
+    alert("Please select 2, 3, 4, or 5 areas to export.");
   }
 }
 
@@ -227,10 +255,14 @@ function setBackgroundImage(file) {
  */
 async function loadWorkflowFiles() {
   try {
+    const fourWayResponse = await fetch('4way-conditional-workflow.json');
+    const fiveWayResponse = await fetch('5way-conditional-workflow.json');
     const twoWayResponse = await fetch('2way-conditional-workflow.json');
     const threeWayResponse = await fetch('3way-conditional-workflow.json');
     twoWayWorkflowJSON = await twoWayResponse.json();
     threeWayWorkflowJSON = await threeWayResponse.json();
+    fourWayWorkflowJSON = await fourWayResponse.json();
+    fiveWayWorkflowJSON = await fiveWayResponse.json();
   } catch (error) {
     console.error('Error loading workflow files:', error);
   }
@@ -259,28 +291,6 @@ function updateConditioningSetAreaNodes(workflowJSON, numAreas) {
     if (conditioningSetAreaNodes[i]) {
       conditioningSetAreaNodes[i].widgets_values = [width, height, x, y];
     }
-  }
-}
-
-/**
- * Exports the areas on the canvas to a workflow.
- */
-function exportToWorkflow() {
-  const numAreas = areas.length;
-  if (numAreas === 2 || numAreas === 3) {
-    const workflowJSON = numAreas === 2 ? { ...twoWayWorkflowJSON } : { ...threeWayWorkflowJSON };
-    updateConditioningSetAreaNodes(workflowJSON, numAreas);
-
-    const workflowName = `${numAreas}way-conditional-workflow.json`;
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(workflowJSON, null, 2));
-    const downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", workflowName);
-    document.body.appendChild(downloadAnchorNode);
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
-  } else {
-    alert("Please select 2 or 3 areas to export.");
   }
 }
 
