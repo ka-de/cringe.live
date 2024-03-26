@@ -42,6 +42,9 @@ let floatingBarInitialY;
  * @param {Event} e - The mousedown event.
  */
 function startDragArea(e) {
+    // Check if the enableAreaDrag checkbox is checked
+    if (!enableAreaDragCheckbox.checked) return;
+
     isDraggingArea = true;
     currentArea = e.currentTarget;
     const rect = currentArea.getBoundingClientRect();
@@ -139,6 +142,9 @@ function exportToWorkflow() {
  * @param {Event} e - The mousedown event.
  */
 function startSelection(e) {
+    // Check if the user is already dragging an area
+    if (isDraggingArea) return;
+
     const canvas = document.getElementById('canvas');
     const canvasRect = canvas.getBoundingClientRect();
     const canvasLeft = canvasRect.left + window.pageXOffset;
@@ -397,6 +403,23 @@ function floatingBarDragEnd() {
 
 // Event listeners for the canvas and other elements are added when the DOM is fully loaded.
 document.addEventListener('DOMContentLoaded', function() {
+    // Get the checkbox element
+    const enableAreaDragCheckbox = document.getElementById('enableAreaDrag');
+
+    // Add an event listener to the checkbox
+    enableAreaDragCheckbox.addEventListener('change', function() {
+      const areas = document.querySelectorAll('.area');
+    
+      // Enable or disable the drag functionality for all areas
+      areas.forEach(area => {
+        if (this.checked) {
+          area.addEventListener('mousedown', startDragArea);
+        } else {
+          area.removeEventListener('mousedown', startDragArea);
+        }
+      });
+    });
+
     // Get the canvas element and add event listeners for mousedown, mousemove, and mouseup events.
     const canvas = document.getElementById('canvas');
     canvas.addEventListener('mousedown', startSelection);
