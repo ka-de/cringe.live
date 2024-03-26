@@ -84,6 +84,9 @@ function stopDragArea(e) {
     document.removeEventListener('mouseup', stopDragArea);
 }
 
+/**
+ * Copies the workflow data to the clipboard based on the number of selected areas.
+ */
 function copyToClipboard() {
   const numAreas = areas.length;
   if (numAreas === 2 || numAreas === 3 || numAreas === 4 || numAreas === 5) {
