@@ -39,6 +39,65 @@ let floatingBarInitialX
 let floatingBarInitialY
 
 /**
+ * Checks if the area should be snapped to a nearby area or the canvas edges.
+ * @param {number} x - The x-coordinate of the area.
+ * @param {number} y - The y-coordinate of the area.
+ * @param {number} width - The width of the area.
+ * @param {number} height - The height of the area.
+ * @returns {Object} An object containing the snapped x and y coordinates.
+ */
+function shouldSnapArea (x, y, width, height) {
+  const canvas = document.getElementById('canvas')
+  const canvasWidth = canvas.offsetWidth
+  const canvasHeight = canvas.offsetHeight
+  const snappingRadius = parseInt(document.getElementById('snappingRadius').value)
+  const enableSnapping = document.getElementById('enableSnapping').checked
+
+  if (!enableSnapping) {
+    return { x, y }
+  }
+
+  let snappedX = x
+  let snappedY = y
+
+  // Check for nearby areas
+  for (const area of areas) {
+    const areaX = parseInt(area.style.left)
+    const areaY = parseInt(area.style.top)
+    const areaWidth = parseInt(area.style.width)
+    const areaHeight = parseInt(area.style.height)
+
+    // Check if the new area is within the snapping radius of the existing area
+    if (
+      Math.abs(x - (areaX + areaWidth)) <= snappingRadius ||
+      Math.abs(x - areaX) <= snappingRadius ||
+      Math.abs(y - (areaY + areaHeight)) <= snappingRadius ||
+      Math.abs(y - areaY) <= snappingRadius
+    ) {
+      // Snap the new area to the existing area
+      snappedX = x > areaX + areaWidth / 2 ? areaX + areaWidth : areaX
+      snappedY = y > areaY + areaHeight / 2 ? areaY + areaHeight : areaY
+      break
+    }
+  }
+
+  // Check for canvas edges
+  if (x <= snappingRadius) {
+    snappedX = 0
+  } else if (x + width >= canvasWidth - snappingRadius) {
+    snappedX = canvasWidth - width
+  }
+
+  if (y <= snappingRadius) {
+    snappedY = 0
+  } else if (y + height >= canvasHeight - snappingRadius) {
+    snappedY = canvasHeight - height
+  }
+
+  return { x: snappedX, y: snappedY }
+}
+
+/**
  * Starts the drag functionality of an existing area.
  * @param {Event} e - The mousedown event.
  */
@@ -474,18 +533,20 @@ function addArea () {
     return
   }
 
-  const color = getRandomRGBAColor() // Use the new function to get rgba color
+  const { x, y } = shouldSnapArea(areaX, areaY, areaWidth, areaHeight)
+
+  const color = getRandomRGBAColor()
 
   const area = document.createElement('div')
   area.className = 'area bg-gray-300 rounded-md'
   area.style.width = areaWidth + 'px'
   area.style.height = areaHeight + 'px'
-  area.style.left = areaX + 'px'
-  area.style.top = areaY + 'px'
-  area.style.backgroundColor = color // Set background color
+  area.style.left = x + 'px'
+  area.style.top = y + 'px'
+  area.style.backgroundColor = color
 
   // Display width, height, and xy coordinates inside the area
-  area.innerHTML = `<span class="area-info">${areaWidth}x${areaHeight}<br>${areaX},${areaY}</span>`
+  area.innerHTML = `<span class="area-info">${areaWidth}x${areaHeight}<br>${x},${y}</span>`
 
   const canvas = document.getElementById('canvas')
   canvas.appendChild(area)
