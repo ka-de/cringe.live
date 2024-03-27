@@ -125,10 +125,26 @@ function resizeArea (e) {
   newWidth = Math.max(minSize, Math.min(newWidth, canvasWidth - (newX - resizeStartX)))
   newHeight = Math.max(minSize, Math.min(newHeight, canvasHeight - (newY - resizeStartY)))
 
+  // Update the parent area dimensions and position
   currentArea.style.width = `${newWidth}px`
   currentArea.style.height = `${newHeight}px`
   currentArea.style.left = `${newX}px`
   currentArea.style.top = `${newY}px`
+
+  // Update the child areas dimensions and positions relative to the parent area
+  const childAreas = Array.from(currentArea.querySelectorAll('.area'))
+  childAreas.forEach((child) => {
+    const childRect = child.getBoundingClientRect()
+    const childRelativeLeft = childRect.left - rect.left
+    const childRelativeTop = childRect.top - rect.top
+    const childRelativeRight = childRect.right - rect.right
+    const childRelativeBottom = childRect.bottom - rect.bottom
+
+    child.style.width = `${childRect.width + (newWidth - rect.width) * (childRelativeRight / rect.width)}px`
+    child.style.height = `${childRect.height + (newHeight - rect.height) * (childRelativeBottom / rect.height)}px`
+    child.style.left = `${newX + childRelativeLeft}px`
+    child.style.top = `${newY + childRelativeTop}px`
+  })
 
   // Update the area-info span with the new dimensions and coordinates
   currentArea.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
@@ -267,14 +283,14 @@ function dragArea (e) {
   // Get the dimensions of the current area and its child areas
   const currentAreaRect = currentArea.getBoundingClientRect()
   const childAreas = Array.from(currentArea.querySelectorAll('.area'))
-  const childAreasRects = childAreas.map(child => child.getBoundingClientRect())
+  const childAreasRects = childAreas.map((child) => child.getBoundingClientRect())
   const allAreasRects = [currentAreaRect, ...childAreasRects]
 
   // Calculate the maximum and minimum coordinates of all areas
-  const maxX = Math.max(...allAreasRects.map(rect => rect.right))
-  const maxY = Math.max(...allAreasRects.map(rect => rect.bottom))
-  const minX = Math.min(...allAreasRects.map(rect => rect.left))
-  const minY = Math.min(...allAreasRects.map(rect => rect.top))
+  const maxX = Math.max(...allAreasRects.map((rect) => rect.right))
+  const maxY = Math.max(...allAreasRects.map((rect) => rect.bottom))
+  const minX = Math.min(...allAreasRects.map((rect) => rect.left))
+  const minY = Math.min(...allAreasRects.map((rect) => rect.top))
 
   // Clamp the new position to stay within the canvas bounds and prevent child areas from leaving the canvas
   newX = Math.max(0, Math.min(newX, canvasWidth - (maxX - minX)))
