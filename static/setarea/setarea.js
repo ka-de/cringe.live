@@ -78,10 +78,7 @@ function startResizeArea (e) {
  * @param {Event} e - The mousemove event.
  */
 function resizeArea (e) {
-  const area = document.elementFromPoint(e.clientX, e.clientY)
-  if (!isResizingArea || !area || !area.classList.contains('area')) return
-
-  currentArea = area
+  if (!isResizingArea || !currentArea) return
 
   const canvas = document.getElementById('canvas')
   const canvasRect = canvas.getBoundingClientRect()
@@ -90,12 +87,7 @@ function resizeArea (e) {
   const canvasWidth = canvasRect.width
   const canvasHeight = canvasRect.height
 
-  const rect = area.getBoundingClientRect()
-  const areaLeft = rect.left - canvasLeft
-  const areaTop = rect.top - canvasTop
-  const areaWidth = rect.width
-  const areaHeight = rect.height
-
+  const rect = currentArea.getBoundingClientRect()
   let newWidth = resizeStartWidth
   let newHeight = resizeStartHeight
   let newX = resizeStartX
@@ -103,43 +95,43 @@ function resizeArea (e) {
 
   switch (resizeDirection) {
     case RESIZE_DIRECTIONS.TOP_LEFT:
-      newWidth = resizeStartWidth - (e.clientX - canvasLeft - resizeStartX)
-      newHeight = resizeStartHeight - (e.clientY - canvasTop - resizeStartY)
+      newWidth = resizeStartWidth - (e.clientX - resizeStartX)
+      newHeight = resizeStartHeight - (e.clientY - resizeStartY)
       newX = e.clientX - canvasLeft
       newY = e.clientY - canvasTop
       break
     case RESIZE_DIRECTIONS.TOP_RIGHT:
-      newWidth = e.clientX - canvasLeft - areaLeft
-      newHeight = resizeStartHeight - (e.clientY - canvasTop - resizeStartY)
-      newX = areaLeft
+      newWidth = e.clientX - canvasLeft - resizeStartX
+      newHeight = resizeStartHeight - (e.clientY - resizeStartY)
+      newX = resizeStartX
       newY = resizeStartY
       break
     case RESIZE_DIRECTIONS.BOTTOM_LEFT:
-      newWidth = resizeStartWidth - (e.clientX - canvasLeft - resizeStartX)
-      newHeight = e.clientY - canvasTop - areaTop
+      newWidth = resizeStartWidth - (e.clientX - resizeStartX)
+      newHeight = e.clientY - canvasTop - resizeStartY
       newX = e.clientX - canvasLeft
-      newY = areaTop
+      newY = resizeStartY
       break
     case RESIZE_DIRECTIONS.BOTTOM_RIGHT:
-      newWidth = e.clientX - canvasLeft - areaLeft
-      newHeight = e.clientY - canvasTop - areaTop
-      newX = areaLeft
-      newY = areaTop
+      newWidth = e.clientX - canvasLeft - resizeStartX
+      newHeight = e.clientY - canvasTop - resizeStartY
+      newX = resizeStartX
+      newY = resizeStartY
       break
   }
 
   // Clamp the new dimensions within the canvas bounds and prevent resizing below 64x64 pixels
   const minSize = 64
-  newWidth = Math.max(minSize, Math.min(newWidth, canvasWidth - (newX - areaLeft)))
-  newHeight = Math.max(minSize, Math.min(newHeight, canvasHeight - (newY - areaTop)))
+  newWidth = Math.max(minSize, Math.min(newWidth, canvasWidth - (newX - resizeStartX)))
+  newHeight = Math.max(minSize, Math.min(newHeight, canvasHeight - (newY - resizeStartY)))
 
-  area.style.width = `${newWidth}px`
-  area.style.height = `${newHeight}px`
-  area.style.left = `${newX}px`
-  area.style.top = `${newY}px`
+  currentArea.style.width = `${newWidth}px`
+  currentArea.style.height = `${newHeight}px`
+  currentArea.style.left = `${newX}px`
+  currentArea.style.top = `${newY}px`
 
   // Update the area-info span with the new dimensions and coordinates
-  area.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
+  currentArea.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
 }
 
 /**
@@ -243,30 +235,20 @@ function shouldSnapArea (x, y, width, height) {
  */
 function startDragArea (e) {
   const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
-  const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
-  if (!enableAreaDragCheckbox.checked || !enableAreaResizeCheckbox.checked) return
+  if (!enableAreaDragCheckbox.checked) return
 
   // Prevent selection while dragging
   e.preventDefault()
 
   const area = e.currentTarget
-  const rect = area.getBoundingClientRect()
-  const resizeDirection = getResizeDirection(e.clientX - rect.left, e.clientY - rect.top, rect.width, rect.height)
+  isDraggingArea = true
+  currentArea = area
+  const canvasRect = document.getElementById('canvas').getBoundingClientRect()
+  currentAreaOffsetX = e.clientX - (area.offsetLeft - canvasRect.left)
+  currentAreaOffsetY = e.clientY - (area.offsetTop - canvasRect.top)
 
-  // If the cursor is not near the edges, enable area dragging
-  if (!resizeDirection) {
-    isDraggingArea = true
-    currentArea = area
-    const canvasRect = document.getElementById('canvas').getBoundingClientRect()
-    currentAreaOffsetX = e.clientX - (rect.left - canvasRect.left)
-    currentAreaOffsetY = e.clientY - (rect.top - canvasRect.top)
-
-    document.addEventListener('mousemove', dragArea)
-    document.addEventListener('mouseup', stopDragArea)
-  } else {
-    // If the cursor is near the edges, enable area resizing
-    startResizeArea(e)
-  }
+  document.addEventListener('mousemove', dragArea)
+  document.addEventListener('mouseup', stopDragArea)
 }
 
 /**
