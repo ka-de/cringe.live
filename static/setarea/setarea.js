@@ -388,22 +388,18 @@ function startSelection (e) {
   const canvasLeft = canvasRect.left + window.pageXOffset
   const canvasTop = canvasRect.top + window.pageYOffset
 
-  isSelecting = true
-
   // Find all parent areas under the mouse pointer
   const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
     .filter(elem => elem.classList.contains('area'))
 
-  // Calculate startX and startY relative to the innermost parent area or canvas
-  if (parentAreas.length > 0) {
-    const innermost = parentAreas[parentAreas.length - 1]
-    const innermostRect = innermost.getBoundingClientRect()
-    startX = e.clientX - innermostRect.left
-    startY = e.clientY - innermostRect.top
-  } else {
-    startX = e.pageX - canvasLeft
-    startY = e.pageY - canvasTop
-  }
+  // If the user clicked on an existing area, return early
+  if (parentAreas.length > 0) return
+
+  isSelecting = true
+
+  // Calculate startX and startY relative to the canvas
+  startX = e.pageX - canvasLeft
+  startY = e.pageY - canvasTop
 }
 
 /**
