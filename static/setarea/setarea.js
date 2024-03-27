@@ -41,7 +41,8 @@ let floatingBarInitialY
  * Starts the drag functionality of an existing area.
  * @param {Event} e - The mousedown event.
  */
-function startDragArea (e, enableAreaDragCheckbox) {
+function startDragArea (e) {
+  const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
   if (!enableAreaDragCheckbox.checked) return
 
   // Prevent selection while dragging
@@ -496,9 +497,8 @@ function addArea () {
 }
 
 /**
- * Removes the last added area from the canvas.
+ * Removes the last added area from the canvas or its parent area.
  */
-// eslint-disable-next-line no-unused-vars
 function removeArea () {
   if (areas.length > 0) {
     const areaToRemove = areas.pop()
@@ -510,6 +510,9 @@ function removeArea () {
       const canvas = document.getElementById('canvas')
       canvas.removeChild(areaToRemove)
     }
+
+    // Remove event listener for the removed area
+    areaToRemove.removeEventListener('mousedown', startDragArea)
   }
 }
 
