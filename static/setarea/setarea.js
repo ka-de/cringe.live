@@ -83,6 +83,8 @@ function resizeArea (e) {
   const area = document.elementFromPoint(e.clientX, e.clientY)
   if (!area || !area.classList.contains('area')) return
 
+  area.style.cursor = 'grabbing'
+
   const rect = area.getBoundingClientRect()
   const canvasWidth = canvas.offsetWidth
   const canvasHeight = canvas.offsetHeight
@@ -336,6 +338,9 @@ function exportToWorkflow () {
  * @param {Event} e - The mousedown event.
  */
 function startSelection (e) {
+  // Check if the user is already resizing an area
+  if (isResizingArea) return
+
   // Check if the user is already dragging an area
   if (isDraggingArea) return
 
@@ -722,11 +727,10 @@ document.addEventListener('DOMContentLoaded', function () {
   enableAreaResizeCheckbox.addEventListener('change', function () {
     const areas = document.querySelectorAll('.area')
 
-    // Enable or disable the resize functionality for all areas
     areas.forEach(area => {
       if (this.checked) {
         area.addEventListener('mousedown', startResizeArea)
-        area.style.cursor = 'grab'
+        area.style.cursor = 'grab' // Changed cursor to 'grab'
       } else {
         area.removeEventListener('mousedown', startResizeArea)
         area.style.cursor = 'default'
