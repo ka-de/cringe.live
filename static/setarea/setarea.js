@@ -41,20 +41,21 @@ let floatingBarInitialY
  * Starts the drag functionality of an existing area.
  * @param {Event} e - The mousedown event.
  */
-function startDragArea (e, enableAreaDragCheckbox) {
-  if (!enableAreaDragCheckbox.checked) return
+function startDragArea(e, enableAreaDragCheckbox) {
+  if (!enableAreaDragCheckbox.checked) return;
 
   // Prevent selection while dragging
-  e.preventDefault()
+  e.preventDefault();
 
-  isDraggingArea = true
-  currentArea = e.currentTarget
-  const rect = currentArea.getBoundingClientRect()
-  currentAreaOffsetX = e.clientX - rect.left
-  currentAreaOffsetY = e.clientY - rect.top
+  isDraggingArea = true;
+  currentArea = e.currentTarget;
+  const rect = currentArea.getBoundingClientRect();
+  const canvasRect = document.getElementById('canvas').getBoundingClientRect();
+  currentAreaOffsetX = e.clientX - (rect.left - canvasRect.left);
+  currentAreaOffsetY = e.clientY - (rect.top - canvasRect.top);
 
-  document.addEventListener('mousemove', dragArea)
-  document.addEventListener('mouseup', stopDragArea)
+  document.addEventListener('mousemove', dragArea);
+  document.addEventListener('mouseup', stopDragArea);
 }
 
 /**
