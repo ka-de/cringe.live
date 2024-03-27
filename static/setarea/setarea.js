@@ -235,18 +235,22 @@ function startDragArea (e) {
   const area = e.currentTarget
   isDraggingArea = true
   currentArea = area
-  const canvasRect = document.getElementById('canvas').getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.pageXOffset
-  const canvasTop = canvasRect.top + window.pageYOffset
-  currentAreaOffsetX = e.clientX - (area.offsetLeft - canvasLeft)
-  currentAreaOffsetY = e.clientY - (area.offsetTop - canvasTop)
 
-  // Add currentAreaOffsetX and currentAreaOffsetY as properties to the currentArea object
-  currentArea.currentAreaOffsetX = currentAreaOffsetX
-  currentArea.currentAreaOffsetY = currentAreaOffsetY
+  // Get the area's position relative to the viewport
+  const areaRect = area.getBoundingClientRect()
+  const viewportX = e.clientX - areaRect.left
+  const viewportY = e.clientY - areaRect.top
+
+  // Set the initial offset based on the viewport position
+  currentAreaOffsetX = viewportX
+  currentAreaOffsetY = viewportY
 
   document.addEventListener('mousemove', dragArea)
   document.addEventListener('mouseup', stopDragArea)
+}
+
+function handleResizeMouseDown (e) {
+  startResizeArea(e)
 }
 
 /**
@@ -835,6 +839,7 @@ document.addEventListener('DOMContentLoaded', function () {
     area.addEventListener('mousedown', handleMouseDown)
     area.addEventListener('mousemove', handleMouseMove)
     area.addEventListener('mouseup', handleMouseUp)
+    area.addEventListener('mousedown', handleResizeMouseDown, true) // Add this line
   })
 
   enableAreaDragCheckbox.addEventListener('change', () => {
