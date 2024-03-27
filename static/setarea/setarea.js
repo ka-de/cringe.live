@@ -78,7 +78,7 @@ function startResizeArea (e) {
  * @param {Event} e - The mousemove event.
  */
 function resizeArea (e) {
-  if (!isResizingArea) return
+  if (!isResizingArea || !currentArea || !currentArea.classList.contains('area')) return
 
   const area = currentArea
   if (!area || !area.classList.contains('area')) return
@@ -129,8 +129,9 @@ function resizeArea (e) {
   }
 
   // Clamp the new dimensions within the canvas bounds
-  newWidth = Math.max(64, Math.min(newWidth, canvasWidth - newX))
-  newHeight = Math.max(64, Math.min(newHeight, canvasHeight - newY))
+  const minSize = 64
+  newWidth = Math.max(minSize, newWidth)
+  newHeight = Math.max(minSize, newHeight)
 
   area.style.width = `${newWidth}px`
   area.style.height = `${newHeight}px`
@@ -268,9 +269,21 @@ function dragArea (e) {
   let newX = e.clientX - currentAreaOffsetX
   let newY = e.clientY - currentAreaOffsetY
 
-  // Clamp the new position to stay within the canvas bounds
-  newX = Math.max(0, Math.min(newX, canvasWidth - currentArea.offsetWidth))
-  newY = Math.max(0, Math.min(newY, canvasHeight - currentArea.offsetHeight))
+  // Get the dimensions of the current area and its child areas
+  const currentAreaRect = currentArea.getBoundingClientRect()
+  const childAreas = Array.from(currentArea.querySelectorAll('.area'))
+  const childAreasRects = childAreas.map(child => child.getBoundingClientRect())
+  const allAreasRects = [currentAreaRect, ...childAreasRects]
+
+  // Calculate the maximum and minimum coordinates of all areas
+  const maxX = Math.max(...allAreasRects.map(rect => rect.right))
+  const maxY = Math.max(...allAreasRects.map(rect => rect.bottom))
+  const minX = Math.min(...allAreasRects.map(rect => rect.left))
+  const minY = Math.min(...allAreasRects.map(rect => rect.top))
+
+  // Clamp the new position to stay within the canvas bounds and prevent child areas from leaving the canvas
+  newX = Math.max(0, Math.min(newX, canvasWidth - (maxX - minX)))
+  newY = Math.max(0, Math.min(newY, canvasHeight - (maxY - minY)))
 
   currentArea.style.left = `${newX}px`
   currentArea.style.top = `${newY}px`
