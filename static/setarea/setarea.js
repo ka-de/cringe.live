@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add an event listener to the checkbox
   enableAreaDragCheckbox.addEventListener('change', function () {
     const areas = document.querySelectorAll('.area')
-  
+
     // Enable or disable the drag functionality for all areas
     areas.forEach(area => {
       if (this.checked) {
@@ -532,6 +532,12 @@ document.addEventListener('DOMContentLoaded', function () {
         area.style.cursor = 'default'
       }
     })
+  })
+
+  // Add event listeners for mousedown on area elements
+  const areas = document.querySelectorAll('.area')
+  areas.forEach(area => {
+    area.addEventListener('mousedown', (e) => startDragArea(e, enableAreaDragCheckbox))
   })
 
   // Get the canvas element and add event listeners for mousedown, mousemove, and mouseup events.
