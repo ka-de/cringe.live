@@ -202,41 +202,26 @@ function updateSelection (e) {
   const canvasLeft = canvasRect.left + window.pageXOffset
   const canvasTop = canvasRect.top + window.pageYOffset
 
-  // Find all parent areas under the mouse pointer
-  const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
-    .filter(elem => elem.classList.contains('area'))
+  let minX = Math.min(startX, e.clientX - canvasLeft)
+  let minY = Math.min(startY, e.clientY - canvasTop)
+  let maxX = Math.max(startX, e.clientX - canvasLeft)
+  let maxY = Math.max(startY, e.clientY - canvasTop)
+  let width = maxX - minX
+  let height = maxY - minY
 
-  let minX, minY, maxX, maxY, width, height
+  // Clamp the selection within the canvas bounds
+  minX = Math.max(0, minX)
+  minY = Math.max(0, minY)
+  maxX = Math.min(canvasRect.width, maxX)
+  maxY = Math.min(canvasRect.height, maxY)
+  width = maxX - minX
+  height = maxY - minY
 
-  if (parentAreas.length > 0) {
-    const innermost = parentAreas[parentAreas.length - 1]
-    const innermostRect = innermost.getBoundingClientRect()
-    minX = Math.min(startX, e.clientX - innermostRect.left)
-    minY = Math.min(startY, e.clientY - innermostRect.top)
-    maxX = Math.max(startX, e.clientX - innermostRect.left)
-    maxY = Math.max(startY, e.clientY - innermostRect.top)
-    width = maxX - minX
-    height = maxY - minY
-
-    selection.style.position = 'absolute'
-    selection.style.left = `${minX + innermostRect.left}px`
-    selection.style.top = `${minY + innermostRect.top}px`
-    selection.style.width = `${width}px`
-    selection.style.height = `${height}px`
-  } else {
-    minX = Math.min(startX, e.pageX - canvasLeft)
-    minY = Math.min(startY, e.pageY - canvasTop)
-    maxX = Math.max(startX, e.pageX - canvasLeft)
-    maxY = Math.max(startY, e.pageY - canvasTop)
-    width = maxX - minX
-    height = maxY - minY
-
-    selection.style.position = 'absolute'
-    selection.style.left = `${minX + canvasLeft}px`
-    selection.style.top = `${minY + canvasTop}px`
-    selection.style.width = `${width}px`
-    selection.style.height = `${height}px`
-  }
+  selection.style.position = 'absolute'
+  selection.style.left = `${minX + canvasLeft}px`
+  selection.style.top = `${minY + canvasTop}px`
+  selection.style.width = `${width}px`
+  selection.style.height = `${height}px`
 }
 
 /**
@@ -478,6 +463,12 @@ function addArea () {
   // Check if the input values are valid numbers
   if (isNaN(areaWidth) || isNaN(areaHeight) || isNaN(areaX) || isNaN(areaY)) {
     alert('Please enter valid numeric values for area dimensions and position.')
+    return
+  }
+
+  // Check if the area dimensions are at least 64x64 pixels
+  if (areaWidth < 64 || areaHeight < 64) {
+    alert('Area dimensions must be at least 64x64 pixels.')
     return
   }
 
