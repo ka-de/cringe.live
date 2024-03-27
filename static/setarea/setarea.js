@@ -236,14 +236,16 @@ function startDragArea (e) {
   isDraggingArea = true
   currentArea = area
 
-  // Get the area's position relative to the viewport
+  // Get the area's position relative to the canvas
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.pageXOffset
+  const canvasTop = canvasRect.top + window.pageYOffset
   const areaRect = area.getBoundingClientRect()
-  const viewportX = e.clientX - areaRect.left
-  const viewportY = e.clientY - areaRect.top
 
-  // Set the initial offset based on the viewport position
-  currentAreaOffsetX = viewportX
-  currentAreaOffsetY = viewportY
+  // Set the initial offset based on the canvas position
+  currentAreaOffsetX = e.clientX - (areaRect.left - canvasLeft)
+  currentAreaOffsetY = e.clientY - (areaRect.top - canvasTop)
 
   document.addEventListener('mousemove', dragArea)
   document.addEventListener('mouseup', stopDragArea)
@@ -264,30 +266,18 @@ function dragArea (e) {
   const canvasWidth = canvas.offsetWidth
   const canvasHeight = canvas.offsetHeight
 
-  let newX = e.clientX - currentArea.currentAreaOffsetX
-  let newY = e.clientY - currentArea.currentAreaOffsetY
+  let newX = e.clientX - currentAreaOffsetX
+  let newY = e.clientY - currentAreaOffsetY
 
-  // Get the dimensions of the current area and its child areas
-  const currentAreaRect = currentArea.getBoundingClientRect()
-  const childAreas = Array.from(currentArea.querySelectorAll('.area'))
-  const childAreasRects = childAreas.map((child) => child.getBoundingClientRect())
-  const allAreasRects = [currentAreaRect, ...childAreasRects]
-
-  // Calculate the maximum and minimum coordinates of all areas
-  const maxX = Math.max(...allAreasRects.map((rect) => rect.right))
-  const maxY = Math.max(...allAreasRects.map((rect) => rect.bottom))
-  const minX = Math.min(...allAreasRects.map((rect) => rect.left))
-  const minY = Math.min(...allAreasRects.map((rect) => rect.top))
-
-  // Clamp the new position to stay within the canvas bounds and prevent child areas from leaving the canvas
-  newX = Math.max(0, Math.min(newX, canvasWidth - (maxX - minX)))
-  newY = Math.max(0, Math.min(newY, canvasHeight - (maxY - minY)))
+  // Clamp the new position to stay within the canvas bounds
+  newX = Math.max(0, Math.min(newX, canvasWidth - currentArea.offsetWidth))
+  newY = Math.max(0, Math.min(newY, canvasHeight - currentArea.offsetHeight))
 
   currentArea.style.left = `${newX}px`
   currentArea.style.top = `${newY}px`
 
   // Update the area-info span with the new coordinates
-  currentArea.querySelector('.area-info').textContent = `${currentArea.offsetWidth}x${currentArea.offsetHeight}\n${currentArea.offsetLeft},${currentArea.offsetTop}`
+  currentArea.querySelector('.area-info').textContent = `${currentArea.offsetWidth}x${currentArea.offsetHeight}\n${newX},${newY}`
 }
 
 /**
