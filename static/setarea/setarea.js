@@ -60,7 +60,12 @@ function startResizeArea (e) {
   if (!enableAreaResizeCheckbox.checked) return
 
   isResizingArea = true
-  const area = e.currentTarget
+
+  // Find the closest parent .area element
+  const area = e.target.closest('.area')
+  if (!area) return // If no .area element is found, return early
+
+  currentArea = area
   const rect = area.getBoundingClientRect()
 
   resizeDirection = getResizeDirection(e.clientX - rect.left, e.clientY - rect.top, rect.width, rect.height)
@@ -829,7 +834,7 @@ document.addEventListener('DOMContentLoaded', function () {
     area.addEventListener('mousedown', handleMouseDown)
     area.addEventListener('mousemove', handleMouseMove)
     area.addEventListener('mouseup', handleMouseUp)
-    area.addEventListener('mousedown', handleResizeMouseDown, true) // Add this line
+    area.addEventListener('mousedown', handleResizeMouseDown)
   })
 
   enableAreaDragCheckbox.addEventListener('change', () => {
