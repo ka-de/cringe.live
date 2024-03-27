@@ -107,24 +107,32 @@ function resizeArea (e) {
       newHeight = resizeStartHeight - (e.clientY - canvasTop - resizeStartY)
       newX = e.clientX - canvasLeft
       newY = e.clientY - canvasTop
+      // Update the area-info span with the new dimensions and coordinates
+      area.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
       break
     case RESIZE_DIRECTIONS.TOP_RIGHT:
       newWidth = e.clientX - canvasLeft - areaLeft
       newHeight = resizeStartHeight - (e.clientY - canvasTop - resizeStartY)
       newX = areaLeft
       newY = resizeStartY
+      // Update the area-info span with the new dimensions and coordinates
+      area.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
       break
     case RESIZE_DIRECTIONS.BOTTOM_LEFT:
       newWidth = resizeStartWidth - (e.clientX - canvasLeft - resizeStartX)
       newHeight = e.clientY - canvasTop - areaTop
       newX = e.clientX - canvasLeft
       newY = areaTop
+      // Update the area-info span with the new dimensions and coordinates
+      area.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
       break
     case RESIZE_DIRECTIONS.BOTTOM_RIGHT:
       newWidth = e.clientX - canvasLeft - areaLeft
       newHeight = e.clientY - canvasTop - areaTop
       newX = areaLeft
       newY = areaTop
+      // Update the area-info span with the new dimensions and coordinates
+      area.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
       break
   }
 
@@ -287,6 +295,9 @@ function dragArea (e) {
 
   currentArea.style.left = `${newX}px`
   currentArea.style.top = `${newY}px`
+
+  // Update the area-info span with the new coordinates
+  currentArea.querySelector('.area-info').textContent = `${currentArea.offsetWidth}x${currentArea.offsetHeight}\n${currentArea.offsetLeft},${currentArea.offsetTop}`
 }
 
 /**
@@ -704,8 +715,10 @@ function addArea () {
   area.style.top = y + 'px'
   area.style.backgroundColor = color
 
-  // Display width, height, and xy coordinates inside the area
-  area.innerHTML = `<span class="area-info">${areaWidth}x${areaHeight}<br>${x},${y}</span>`
+  const areaInfo = document.createElement('span')
+  areaInfo.className = 'area-info'
+  areaInfo.textContent = `${areaWidth}x${areaHeight}\n${x},${y}`
+  area.appendChild(areaInfo)
 
   const canvas = document.getElementById('canvas')
   canvas.appendChild(area)
