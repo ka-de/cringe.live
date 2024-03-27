@@ -430,6 +430,13 @@ function endSelection (e) {
   const width = parseInt(selection.style.width, 10)
   const height = parseInt(selection.style.height, 10)
 
+  // Check if the area dimensions are at least 64x64 pixels
+  if (width < 64 || height < 64) {
+    alert('Area dimensions must be at least 64x64 pixels.')
+    selection.remove()
+    return
+  }
+
   let left, top
 
   if (parentAreas.length > 0) {
