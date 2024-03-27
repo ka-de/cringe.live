@@ -243,20 +243,30 @@ function shouldSnapArea (x, y, width, height) {
  */
 function startDragArea (e) {
   const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
-  if (!enableAreaDragCheckbox.checked) return
+  const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
+  if (!enableAreaDragCheckbox.checked || !enableAreaResizeCheckbox.checked) return
 
   // Prevent selection while dragging
   e.preventDefault()
 
-  isDraggingArea = true
-  currentArea = e.currentTarget
-  const rect = currentArea.getBoundingClientRect()
-  const canvasRect = document.getElementById('canvas').getBoundingClientRect()
-  currentAreaOffsetX = e.clientX - (rect.left - canvasRect.left)
-  currentAreaOffsetY = e.clientY - (rect.top - canvasRect.top)
+  const area = e.currentTarget
+  const rect = area.getBoundingClientRect()
+  const resizeDirection = getResizeDirection(e.clientX - rect.left, e.clientY - rect.top, rect.width, rect.height)
 
-  document.addEventListener('mousemove', dragArea)
-  document.addEventListener('mouseup', stopDragArea)
+  // If the cursor is not near the edges, enable area dragging
+  if (!resizeDirection) {
+    isDraggingArea = true
+    currentArea = area
+    const canvasRect = document.getElementById('canvas').getBoundingClientRect()
+    currentAreaOffsetX = e.clientX - (rect.left - canvasRect.left)
+    currentAreaOffsetY = e.clientY - (rect.top - canvasRect.top)
+
+    document.addEventListener('mousemove', dragArea)
+    document.addEventListener('mouseup', stopDragArea)
+  } else {
+    // If the cursor is near the edges, enable area resizing
+    startResizeArea(e)
+  }
 }
 
 /**
