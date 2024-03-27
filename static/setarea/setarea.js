@@ -522,7 +522,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add an event listener to the checkbox
   enableAreaDragCheckbox.addEventListener('change', function () {
     const areas = document.querySelectorAll('.area')
-
+  
     // Enable or disable the drag functionality for all areas
     areas.forEach(area => {
       if (this.checked) {
