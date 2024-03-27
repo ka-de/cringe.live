@@ -41,21 +41,21 @@ let floatingBarInitialY
  * Starts the drag functionality of an existing area.
  * @param {Event} e - The mousedown event.
  */
-function startDragArea(e, enableAreaDragCheckbox) {
-  if (!enableAreaDragCheckbox.checked) return;
+function startDragArea (e, enableAreaDragCheckbox) {
+  if (!enableAreaDragCheckbox.checked) return
 
   // Prevent selection while dragging
-  e.preventDefault();
+  e.preventDefault()
 
-  isDraggingArea = true;
-  currentArea = e.currentTarget;
-  const rect = currentArea.getBoundingClientRect();
-  const canvasRect = document.getElementById('canvas').getBoundingClientRect();
-  currentAreaOffsetX = e.clientX - (rect.left - canvasRect.left);
-  currentAreaOffsetY = e.clientY - (rect.top - canvasRect.top);
+  isDraggingArea = true
+  currentArea = e.currentTarget
+  const rect = currentArea.getBoundingClientRect()
+  const canvasRect = document.getElementById('canvas').getBoundingClientRect()
+  currentAreaOffsetX = e.clientX - (rect.left - canvasRect.left)
+  currentAreaOffsetY = e.clientY - (rect.top - canvasRect.top)
 
-  document.addEventListener('mousemove', dragArea);
-  document.addEventListener('mouseup', stopDragArea);
+  document.addEventListener('mousemove', dragArea)
+  document.addEventListener('mouseup', stopDragArea)
 }
 
 /**
@@ -302,6 +302,7 @@ function endSelection (e) {
  * Sets the background image of the canvas.
  * @param {File} file - The image file to be set as the background.
  */
+// eslint-disable-next-line no-unused-vars
 function setBackgroundImage (file) {
   if (file) {
     const reader = new FileReader()
@@ -432,6 +433,7 @@ function setCanvasSize () {
  * Handles the drag functionality of an element.
  * @param {Event} e - The mousedown event.
  */
+// eslint-disable-next-line no-unused-vars
 function elementDrag (e) {
   e = e || window.event
   e.preventDefault() // Prevent default behavior for all elements
@@ -462,6 +464,7 @@ function setTranslate (xPos, yPos, el) {
 /**
  * Adds a new area to the canvas.
  */
+// eslint-disable-next-line no-unused-vars
 function addArea () {
   const areaWidth = parseInt(document.getElementById('areaWidth').value)
   const areaHeight = parseInt(document.getElementById('areaHeight').value)
@@ -495,10 +498,18 @@ function addArea () {
 /**
  * Removes the last added area from the canvas.
  */
+// eslint-disable-next-line no-unused-vars
 function removeArea () {
-  const canvas = document.getElementById('canvas')
   if (areas.length > 0) {
-    canvas.removeChild(areas.pop())
+    const areaToRemove = areas.pop()
+    const parentArea = areaToRemove.parentNode
+
+    if (parentArea.classList.contains('area')) {
+      parentArea.removeChild(areaToRemove)
+    } else {
+      const canvas = document.getElementById('canvas')
+      canvas.removeChild(areaToRemove)
+    }
   }
 }
 
