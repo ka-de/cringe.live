@@ -556,7 +556,6 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('canvasWidth').value = 1024
   document.getElementById('canvasHeight').value = 1024
   setCanvasSize()
-
   // Add event listeners for mousedown, mousemove, mouseup, and mouseleave events to the floating bar.
   const floatingBar = document.getElementById('floating-bar')
   floatingBar.addEventListener('mousedown', floatingBarDragStart)
