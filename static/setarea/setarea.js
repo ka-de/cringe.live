@@ -389,6 +389,7 @@ function floatingBarDragStart (e) {
  */
 function floatingBarDrag (e) {
   if (isDraggingFloatingBar) {
+    const floatingBar = document.getElementById('floating-bar')
     if (floatingBar) {
       let newX = e.clientX - floatingBarInitialX
       let newY = e.clientY - floatingBarInitialY
