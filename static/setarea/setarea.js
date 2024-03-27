@@ -152,7 +152,7 @@ function resizeArea (e) {
   })
 
   // Update the area-info span with the new dimensions and coordinates
-  currentArea.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
+  currentArea.querySelector('.area-info').textContent = `${newWidth}x${newHeight} ${newX},${newY}`
 }
 
 /**
@@ -282,7 +282,7 @@ function dragArea (e) {
   currentArea.style.top = `${newY}px`
 
   // Update the area-info span with the new coordinates
-  currentArea.querySelector('.area-info').textContent = `${currentArea.offsetWidth}x${currentArea.offsetHeight}\n${newX},${newY}`
+  currentArea.querySelector('.area-info').textContent = `${currentArea.offsetWidth}x${currentArea.offsetHeight} ${newX},${newY}`
 }
 
 /**
@@ -478,7 +478,7 @@ function endSelection (e) {
   area.style.left = `${left}px`
   area.style.top = `${top}px`
   area.style.backgroundColor = color
-  area.innerHTML = `<span class="area-info">${width}x${height}<br>${left},${top}</span>`
+  area.innerHTML = `<span class="area-info">${width}x${height} ${left},${top}</span>`
 
   // Append the new area to the innermost parent area or the canvas
   if (parentAreas.length > 0) {
@@ -698,7 +698,7 @@ function addArea () {
 
   const areaInfo = document.createElement('span')
   areaInfo.className = 'area-info'
-  areaInfo.textContent = `${areaWidth}x${areaHeight}\n${x},${y}`
+  areaInfo.textContent = `${areaWidth}x${areaHeight} ${x},${y}`
   area.appendChild(areaInfo)
 
   const canvas = document.getElementById('canvas')
