@@ -80,14 +80,15 @@ function startResizeArea (e) {
 function resizeArea (e) {
   if (!isResizingArea) return
 
-  const area = document.elementFromPoint(e.clientX, e.clientY)
+  const area = currentArea
   if (!area || !area.classList.contains('area')) return
 
   area.style.cursor = 'grabbing'
 
   const rect = area.getBoundingClientRect()
-  const canvasWidth = canvas.offsetWidth
-  const canvasHeight = canvas.offsetHeight
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasWidth = canvasRect.width
+  const canvasHeight = canvasRect.height
 
   let newWidth = resizeStartWidth
   let newHeight = resizeStartHeight
@@ -96,20 +97,20 @@ function resizeArea (e) {
 
   switch (resizeDirection) {
     case RESIZE_DIRECTIONS.TOP_LEFT:
-      newWidth = resizeStartWidth - (e.clientX - rect.right)
-      newHeight = resizeStartHeight - (e.clientY - rect.bottom)
-      newX = rect.right - newWidth
-      newY = rect.bottom - newHeight
+      newWidth = resizeStartWidth + resizeStartX - e.clientX
+      newHeight = resizeStartHeight + resizeStartY - e.clientY
+      newX = e.clientX - canvasRect.left
+      newY = e.clientY - canvasRect.top
       break
     case RESIZE_DIRECTIONS.TOP_RIGHT:
       newWidth = e.clientX - rect.left
-      newHeight = resizeStartHeight - (e.clientY - rect.bottom)
-      newY = rect.bottom - newHeight
+      newHeight = resizeStartHeight + resizeStartY - e.clientY
+      newY = resizeStartY
       break
     case RESIZE_DIRECTIONS.BOTTOM_LEFT:
-      newWidth = resizeStartWidth - (e.clientX - rect.right)
+      newWidth = resizeStartWidth + resizeStartX - e.clientX
       newHeight = e.clientY - rect.top
-      newX = rect.right - newWidth
+      newX = e.clientX - canvasRect.left
       break
     case RESIZE_DIRECTIONS.BOTTOM_RIGHT:
       newWidth = e.clientX - rect.left
