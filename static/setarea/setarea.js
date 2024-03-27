@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * This JavaScript file contains functions for creating, updating, and exporting areas on a canvas.
  * It also includes functions for setting the background image of the canvas, loading workflow files,
@@ -303,7 +304,6 @@ function endSelection (e) {
  * Sets the background image of the canvas.
  * @param {File} file - The image file to be set as the background.
  */
-// eslint-disable-next-line no-unused-vars
 function setBackgroundImage (file) {
   if (file) {
     const reader = new FileReader()
@@ -389,23 +389,27 @@ function floatingBarDragStart (e) {
  */
 function floatingBarDrag (e) {
   if (isDraggingFloatingBar) {
-    let newX = e.clientX - floatingBarInitialX
-    let newY = e.clientY - floatingBarInitialY
+    if (floatingBar) {
+      let newX = e.clientX - floatingBarInitialX
+      let newY = e.clientY - floatingBarInitialY
 
-    // Get the viewport dimensions
-    const viewportWidth = window.innerWidth
-    const viewportHeight = window.innerHeight
+      // Get the viewport dimensions
+      const viewportWidth = window.innerWidth
+      const viewportHeight = window.innerHeight
 
-    // Calculate the maximum allowed position for the floating bar
-    const maxX = viewportWidth - floatingBar.offsetWidth
-    const maxY = viewportHeight - floatingBar.offsetHeight
+      // Calculate the maximum allowed position for the floating bar
+      const maxX = viewportWidth - floatingBar.offsetWidth
+      const maxY = viewportHeight - floatingBar.offsetHeight
 
-    // Clamp the new position to stay within the viewport bounds
-    newX = Math.max(0, Math.min(newX, maxX))
-    newY = Math.max(0, Math.min(newY, maxY))
+      // Clamp the new position to stay within the viewport bounds
+      newX = Math.max(0, Math.min(newX, maxX))
+      newY = Math.max(0, Math.min(newY, maxY))
 
-    floatingBar.style.left = newX + 'px'
-    floatingBar.style.top = newY + 'px'
+      floatingBar.style.left = newX + 'px'
+      floatingBar.style.top = newY + 'px'
+    } else {
+      console.error('Floating bar element not found.')
+    }
   }
 }
 
@@ -434,7 +438,6 @@ function setCanvasSize () {
  * Handles the drag functionality of an element.
  * @param {Event} e - The mousedown event.
  */
-// eslint-disable-next-line no-unused-vars
 function elementDrag (e) {
   e = e || window.event
   e.preventDefault() // Prevent default behavior for all elements
@@ -465,7 +468,6 @@ function setTranslate (xPos, yPos, el) {
 /**
  * Adds a new area to the canvas.
  */
-// eslint-disable-next-line no-unused-vars
 function addArea () {
   const areaWidth = parseInt(document.getElementById('areaWidth').value)
   const areaHeight = parseInt(document.getElementById('areaHeight').value)
