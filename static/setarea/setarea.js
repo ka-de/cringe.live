@@ -78,10 +78,10 @@ function startResizeArea (e) {
  * @param {Event} e - The mousemove event.
  */
 function resizeArea (e) {
-  if (!isResizingArea || !currentArea || !currentArea.classList.contains('area')) return
+  const area = document.elementFromPoint(e.clientX, e.clientY)
+  if (!isResizingArea || !area || !area.classList.contains('area')) return
 
-  const area = currentArea
-  if (!area || !area.classList.contains('area')) return
+  currentArea = area
 
   const canvas = document.getElementById('canvas')
   const canvasRect = canvas.getBoundingClientRect()
