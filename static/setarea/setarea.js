@@ -10,21 +10,12 @@ let twoWayWorkflowJSON, threeWayWorkflowJSON, fourWayWorkflowJSON, fiveWayWorkfl
 // Variables for storing the state of the canvas and the selection process.
 const areas = [] // An array to store the areas on the canvas.
 const isDragging = false // A flag to indicate whether the user is currently dragging the mouse.
-let currentX // The current x-coordinate of the mouse.
-let currentY // The current y-coordinate of the mouse.
-let initialX // The initial x-coordinate of the mouse when the user starts dragging.
-let initialY // The initial y-coordinate of the mouse when the user starts dragging.
 let xOffset = 0 // The x-offset of the mouse from the initial x-coordinate.
 let yOffset = 0 // The y-offset of the mouse from the initial y-coordinate.
 
 // Event variables for creating new areas
 let isSelecting = false
 let startX, startY
-
-// Event variables for dragging existing areas
-let isDraggingArea = false
-let currentArea = null
-let currentAreaOffsetX, currentAreaOffsetY
 
 // Get the floating bar element.
 const floatingBar = document.getElementById('floating-bar')
@@ -38,10 +29,19 @@ let floatingBarInitialX
 // The initial y-coordinate of the mouse when the user starts dragging the floating bar.
 let floatingBarInitialY
 
-// Variables for area resizing
+// Event variables for dragging existing areas
+let isDraggingArea = false
+let currentArea = null
+let initialX, initialY
+let currentX, currentY
+
+// Event variables for resizing existing areas
 let isResizingArea = false
 let resizeDirection = null
-let resizeStartWidth, resizeStartHeight, resizeStartX, resizeStartY
+let resizeStartWidth, resizeStartHeight
+let resizeStartX, resizeStartY
+
+let currentAreaOffsetX, currentAreaOffsetY
 
 // Constants for resize direction
 const RESIZE_DIRECTIONS = {
@@ -163,30 +163,6 @@ function stopResizeArea (e) {
 }
 
 /**
- * Determines the resize direction based on the mouse position relative to the area.
- * @param {number} mouseX - The x-coordinate of the mouse relative to the area.
- * @param {number} mouseY - The y-coordinate of the mouse relative to the area.
- * @param {number} areaWidth - The width of the area.
- * @param {number} areaHeight - The height of the area.
- * @returns {string|null} The resize direction or null if not near a corner.
- */
-function getResizeDirection (mouseX, mouseY, areaWidth, areaHeight) {
-  const resizeRadius = 10 // Adjust this value to change the resize corner radius
-
-  if (mouseX < resizeRadius && mouseY < resizeRadius) {
-    return RESIZE_DIRECTIONS.TOP_LEFT
-  } else if (mouseX >= areaWidth - resizeRadius && mouseY < resizeRadius) {
-    return RESIZE_DIRECTIONS.TOP_RIGHT
-  } else if (mouseX < resizeRadius && mouseY >= areaHeight - resizeRadius) {
-    return RESIZE_DIRECTIONS.BOTTOM_LEFT
-  } else if (mouseX >= areaWidth - resizeRadius && mouseY >= areaHeight - resizeRadius) {
-    return RESIZE_DIRECTIONS.BOTTOM_RIGHT
-  }
-
-  return null
-}
-
-/**
  * Checks if the area should be snapped to a nearby area or the canvas edges.
  * @param {number} x - The x-coordinate of the area.
  * @param {number} y - The y-coordinate of the area.
@@ -260,8 +236,14 @@ function startDragArea (e) {
   isDraggingArea = true
   currentArea = area
   const canvasRect = document.getElementById('canvas').getBoundingClientRect()
-  currentAreaOffsetX = e.clientX - (area.offsetLeft - canvasRect.left)
-  currentAreaOffsetY = e.clientY - (area.offsetTop - canvasRect.top)
+  const canvasLeft = canvasRect.left + window.pageXOffset
+  const canvasTop = canvasRect.top + window.pageYOffset
+  currentAreaOffsetX = e.clientX - (area.offsetLeft - canvasLeft)
+  currentAreaOffsetY = e.clientY - (area.offsetTop - canvasTop)
+
+  // Add currentAreaOffsetX and currentAreaOffsetY as properties to the currentArea object
+  currentArea.currentAreaOffsetX = currentAreaOffsetX
+  currentArea.currentAreaOffsetY = currentAreaOffsetY
 
   document.addEventListener('mousemove', dragArea)
   document.addEventListener('mouseup', stopDragArea)
@@ -274,11 +256,12 @@ function startDragArea (e) {
 function dragArea (e) {
   if (!isDraggingArea) return
 
+  const canvas = document.getElementById('canvas')
   const canvasWidth = canvas.offsetWidth
   const canvasHeight = canvas.offsetHeight
 
-  let newX = e.clientX - currentAreaOffsetX
-  let newY = e.clientY - currentAreaOffsetY
+  let newX = e.clientX - currentArea.currentAreaOffsetX
+  let newY = e.clientY - currentArea.currentAreaOffsetY
 
   // Get the dimensions of the current area and its child areas
   const currentAreaRect = currentArea.getBoundingClientRect()
@@ -744,6 +727,90 @@ function removeArea () {
   }
 }
 
+function handleMouseDown (e) {
+  const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
+  const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
+
+  currentArea = e.currentTarget
+
+  if (enableAreaDragCheckbox.checked) {
+    isDraggingArea = true
+    initialX = e.clientX - currentArea.offsetLeft
+    initialY = e.clientY - currentArea.offsetTop
+  }
+
+  if (enableAreaResizeCheckbox.checked) {
+    isResizingArea = true
+    resizeDirection = getResizeDirection(e.clientX - currentArea.offsetLeft, e.clientY - currentArea.offsetTop, currentArea.offsetWidth, currentArea.offsetHeight)
+    resizeStartWidth = currentArea.offsetWidth
+    resizeStartHeight = currentArea.offsetHeight
+    resizeStartX = currentArea.offsetLeft
+    resizeStartY = currentArea.offsetTop
+  }
+}
+
+function handleMouseMove (e) {
+  if (isDraggingArea) {
+    currentX = e.clientX - initialX
+    currentY = e.clientY - initialY
+
+    currentArea.style.left = `${currentX}px`
+    currentArea.style.top = `${currentY}px`
+  }
+
+  if (isResizingArea) {
+    const newWidth = resizeStartWidth + (e.clientX - resizeStartX - currentArea.offsetLeft)
+    const newHeight = resizeStartHeight + (e.clientY - resizeStartY - currentArea.offsetTop)
+
+    currentArea.style.width = `${newWidth}px`
+    currentArea.style.height = `${newHeight}px`
+
+    switch (resizeDirection) {
+      case RESIZE_DIRECTIONS.TOP_LEFT:
+        currentArea.style.left = `${resizeStartX + currentArea.offsetLeft + (resizeStartWidth - newWidth)}px`
+        currentArea.style.top = `${resizeStartY + currentArea.offsetTop + (resizeStartHeight - newHeight)}px`
+        break
+      case RESIZE_DIRECTIONS.TOP_RIGHT:
+        currentArea.style.top = `${resizeStartY + currentArea.offsetTop + (resizeStartHeight - newHeight)}px`
+        break
+      case RESIZE_DIRECTIONS.BOTTOM_LEFT:
+        currentArea.style.left = `${resizeStartX + currentArea.offsetLeft + (resizeStartWidth - newWidth)}px`
+        break
+      case RESIZE_DIRECTIONS.BOTTOM_RIGHT:
+        break
+    }
+  }
+}
+
+function handleMouseUp (e) {
+  isDraggingArea = false
+  isResizingArea = false
+}
+
+/**
+ * Determines the resize direction based on the mouse position relative to the area.
+ * @param {number} mouseX - The x-coordinate of the mouse relative to the area.
+ * @param {number} mouseY - The y-coordinate of the mouse relative to the area.
+ * @param {number} areaWidth - The width of the area.
+ * @param {number} areaHeight - The height of the area.
+ * @returns {string|null} The resize direction or null if not near a corner.
+ */
+function getResizeDirection (mouseX, mouseY, areaWidth, areaHeight) {
+  const resizeRadius = 10 // Adjust this value to change the resize corner radius
+
+  if (mouseX < resizeRadius && mouseY < resizeRadius) {
+    return RESIZE_DIRECTIONS.TOP_LEFT
+  } else if (mouseX >= areaWidth - resizeRadius && mouseY < resizeRadius) {
+    return RESIZE_DIRECTIONS.TOP_RIGHT
+  } else if (mouseX < resizeRadius && mouseY >= areaHeight - resizeRadius) {
+    return RESIZE_DIRECTIONS.BOTTOM_LEFT
+  } else if (mouseX >= areaWidth - resizeRadius && mouseY >= areaHeight - resizeRadius) {
+    return RESIZE_DIRECTIONS.BOTTOM_RIGHT
+  }
+
+  return null
+}
+
 /**
  * Returns a random RGBA color.
  * @returns {string} A string representing a random RGBA color.
@@ -757,40 +824,36 @@ function getRandomRGBAColor () {
   return `rgba(${r}, ${g}, ${b}, ${a})`
 }
 
-// Event listeners for the canvas and other elements are added when the DOM is fully loaded.
+// Event listeners for dragging and resizing areas
 document.addEventListener('DOMContentLoaded', function () {
-  // Get the checkbox elements
   const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
   const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
 
-  // Set the default state of the checkboxes to unchecked
-  enableAreaDragCheckbox.checked = false
-  enableAreaResizeCheckbox.checked = false
+  const areas = document.querySelectorAll('.area')
 
-  // Add an event listener to the enableAreaResize checkbox
-  enableAreaResizeCheckbox.addEventListener('change', function () {
-    const areas = document.querySelectorAll('.area')
+  areas.forEach(area => {
+    area.addEventListener('mousedown', handleMouseDown)
+    area.addEventListener('mousemove', handleMouseMove)
+    area.addEventListener('mouseup', handleMouseUp)
+  })
 
+  enableAreaDragCheckbox.addEventListener('change', () => {
     areas.forEach(area => {
-      if (this.checked) {
-        area.addEventListener('mousedown', startResizeArea)
-        area.style.cursor = 'grab'
+      if (enableAreaDragCheckbox.checked) {
+        area.style.cursor = 'move'
       } else {
-        area.removeEventListener('mousedown', startResizeArea)
         area.style.cursor = 'default'
       }
     })
   })
 
-  // Add event listeners for mousedown on area elements
-  const areas = document.querySelectorAll('.area')
-  areas.forEach(area => {
-    area.addEventListener('mousedown', e => {
-      if (enableAreaDragCheckbox.checked) {
-        startDragArea(e, enableAreaDragCheckbox)
+  enableAreaResizeCheckbox.addEventListener('change', () => {
+    areas.forEach(area => {
+      if (enableAreaResizeCheckbox.checked) {
+        area.style.cursor = 'nw-resize'
+      } else {
+        area.style.cursor = 'default'
       }
-      // Enable area resizing even when area dragging is disabled
-      startResizeArea(e)
     })
   })
 
