@@ -201,6 +201,8 @@ function updateSelection (e) {
   const canvasRect = canvas.getBoundingClientRect()
   const canvasLeft = canvasRect.left + window.pageXOffset
   const canvasTop = canvasRect.top + window.pageYOffset
+  const canvasWidth = canvasRect.width
+  const canvasHeight = canvasRect.height
 
   let minX = Math.min(startX, e.clientX - canvasLeft)
   let minY = Math.min(startY, e.clientY - canvasTop)
@@ -212,8 +214,8 @@ function updateSelection (e) {
   // Clamp the selection within the canvas bounds
   minX = Math.max(0, minX)
   minY = Math.max(0, minY)
-  maxX = Math.min(canvasRect.width, maxX)
-  maxY = Math.min(canvasRect.height, maxY)
+  maxX = Math.min(canvasWidth, maxX)
+  maxY = Math.min(canvasHeight, maxY)
   width = maxX - minX
   height = maxY - minY
 
