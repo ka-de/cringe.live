@@ -107,44 +107,39 @@ function resizeArea (e) {
       newHeight = resizeStartHeight - (e.clientY - canvasTop - resizeStartY)
       newX = e.clientX - canvasLeft
       newY = e.clientY - canvasTop
-      // Update the area-info span with the new dimensions and coordinates
-      area.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
       break
     case RESIZE_DIRECTIONS.TOP_RIGHT:
       newWidth = e.clientX - canvasLeft - areaLeft
       newHeight = resizeStartHeight - (e.clientY - canvasTop - resizeStartY)
       newX = areaLeft
       newY = resizeStartY
-      // Update the area-info span with the new dimensions and coordinates
-      area.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
       break
     case RESIZE_DIRECTIONS.BOTTOM_LEFT:
       newWidth = resizeStartWidth - (e.clientX - canvasLeft - resizeStartX)
       newHeight = e.clientY - canvasTop - areaTop
       newX = e.clientX - canvasLeft
       newY = areaTop
-      // Update the area-info span with the new dimensions and coordinates
-      area.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
       break
     case RESIZE_DIRECTIONS.BOTTOM_RIGHT:
       newWidth = e.clientX - canvasLeft - areaLeft
       newHeight = e.clientY - canvasTop - areaTop
       newX = areaLeft
       newY = areaTop
-      // Update the area-info span with the new dimensions and coordinates
-      area.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
       break
   }
 
-  // Clamp the new dimensions within the canvas bounds
+  // Clamp the new dimensions within the canvas bounds and prevent resizing below 64x64 pixels
   const minSize = 64
-  newWidth = Math.max(minSize, newWidth)
-  newHeight = Math.max(minSize, newHeight)
+  newWidth = Math.max(minSize, Math.min(newWidth, canvasWidth - (newX - areaLeft)))
+  newHeight = Math.max(minSize, Math.min(newHeight, canvasHeight - (newY - areaTop)))
 
   area.style.width = `${newWidth}px`
   area.style.height = `${newHeight}px`
   area.style.left = `${newX}px`
   area.style.top = `${newY}px`
+
+  // Update the area-info span with the new dimensions and coordinates
+  area.querySelector('.area-info').textContent = `${newWidth}x${newHeight}\n${newX},${newY}`
 }
 
 /**
@@ -775,7 +770,7 @@ document.addEventListener('DOMContentLoaded', function () {
     areas.forEach(area => {
       if (this.checked) {
         area.addEventListener('mousedown', startResizeArea)
-        area.style.cursor = 'grab' // Changed cursor to 'grab'
+        area.style.cursor = 'grab'
       } else {
         area.removeEventListener('mousedown', startResizeArea)
         area.style.cursor = 'default'
@@ -786,12 +781,12 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add event listeners for mousedown on area elements
   const areas = document.querySelectorAll('.area')
   areas.forEach(area => {
-    area.addEventListener('mousedown', (e) => {
+    area.addEventListener('mousedown', e => {
       if (enableAreaDragCheckbox.checked) {
         startDragArea(e, enableAreaDragCheckbox)
-      } else if (enableAreaResizeCheckbox.checked) {
-        startResizeArea(e)
       }
+      // Enable area resizing even when area dragging is disabled
+      startResizeArea(e)
     })
   })
 
