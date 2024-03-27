@@ -77,46 +77,66 @@ function startResizeArea (e) {
  * Resizes the area while the mouse is moving.
  * @param {Event} e - The mousemove event.
  */
-function resizeArea (e) {
-  if (!isResizingArea) return
+function resizeArea(e) {
+  if (!isResizingArea) return;
 
-  const area = currentArea
-  if (!area || !area.classList.contains('area')) return
+  const area = currentArea;
+  if (!area || !area.classList.contains('area')) return;
 
-  area.style.cursor = 'grabbing'
+  const canvas = document.getElementById('canvas');
+  const canvasRect = canvas.getBoundingClientRect();
+  const canvasLeft = canvasRect.left + window.pageXOffset;
+  const canvasTop = canvasRect.top + window.pageYOffset;
+  const canvasWidth = canvasRect.width;
+  const canvasHeight = canvasRect.height;
 
-  const rect = area.getBoundingClientRect()
-  const canvasRect = canvas.getBoundingClientRect()
-  const canvasWidth = canvasRect.width
-  const canvasHeight = canvasRect.height
+  const rect = area.getBoundingClientRect();
+  const areaLeft = rect.left - canvasLeft;
+  const areaTop = rect.top - canvasTop;
+  const areaWidth = rect.width;
+  const areaHeight = rect.height;
 
-  let newWidth = resizeStartWidth
-  let newHeight = resizeStartHeight
-  let newX = resizeStartX
-  let newY = resizeStartY
+  let newWidth = resizeStartWidth;
+  let newHeight = resizeStartHeight;
+  let newX = resizeStartX;
+  let newY = resizeStartY;
 
   switch (resizeDirection) {
     case RESIZE_DIRECTIONS.TOP_LEFT:
-      newWidth = resizeStartWidth + resizeStartX - e.clientX
-      newHeight = resizeStartHeight + resizeStartY - e.clientY
-      newX = e.clientX - canvasRect.left
-      newY = e.clientY - canvasRect.top
-      break
+      newWidth = resizeStartWidth - (e.clientX - canvasLeft - resizeStartX);
+      newHeight = resizeStartHeight - (e.clientY - canvasTop - resizeStartY);
+      newX = e.clientX - canvasLeft;
+      newY = e.clientY - canvasTop;
+      break;
     case RESIZE_DIRECTIONS.TOP_RIGHT:
-      newWidth = e.clientX - rect.left
-      newHeight = resizeStartHeight + resizeStartY - e.clientY
-      newY = resizeStartY
-      break
+      newWidth = e.clientX - canvasLeft - areaLeft;
+      newHeight = resizeStartHeight - (e.clientY - canvasTop - resizeStartY);
+      newX = areaLeft;
+      newY = resizeStartY;
+      break;
     case RESIZE_DIRECTIONS.BOTTOM_LEFT:
-      newWidth = resizeStartWidth + resizeStartX - e.clientX
-      newHeight = e.clientY - rect.top
-      newX = e.clientX - canvasRect.left
-      break
+      newWidth = resizeStartWidth - (e.clientX - canvasLeft - resizeStartX);
+      newHeight = e.clientY - canvasTop - areaTop;
+      newX = e.clientX - canvasLeft;
+      newY = areaTop;
+      break;
     case RESIZE_DIRECTIONS.BOTTOM_RIGHT:
-      newWidth = e.clientX - rect.left
-      newHeight = e.clientY - rect.top
-      break
+      newWidth = e.clientX - canvasLeft - areaLeft;
+      newHeight = e.clientY - canvasTop - areaTop;
+      newX = areaLeft;
+      newY = areaTop;
+      break;
   }
+
+  // Clamp the new dimensions within the canvas bounds
+  newWidth = Math.max(64, Math.min(newWidth, canvasWidth - newX));
+  newHeight = Math.max(64, Math.min(newHeight, canvasHeight - newY));
+
+  area.style.width = `${newWidth}px`;
+  area.style.height = `${newHeight}px`;
+  area.style.left = `${newX}px`;
+  area.style.top = `${newY}px`;
+}
 
   // Clamp the new dimensions within the canvas bounds
   newWidth = Math.max(64, Math.min(newWidth, canvasWidth - newX))
@@ -134,6 +154,7 @@ function resizeArea (e) {
  */
 function stopResizeArea (e) {
   isResizingArea = false
+  currentArea = e.currentTarget
 
   document.removeEventListener('mousemove', resizeArea)
   document.removeEventListener('mouseup', stopResizeArea)
@@ -147,20 +168,20 @@ function stopResizeArea (e) {
  * @param {number} areaHeight - The height of the area.
  * @returns {string|null} The resize direction or null if not near a corner.
  */
-function getResizeDirection (mouseX, mouseY, areaWidth, areaHeight) {
-  const resizeRadius = 10 // Adjust this value to change the resize corner radius
+function getResizeDirection(mouseX, mouseY, areaWidth, areaHeight) {
+  const resizeRadius = 10; // Adjust this value to change the resize corner radius
 
   if (mouseX < resizeRadius && mouseY < resizeRadius) {
-    return RESIZE_DIRECTIONS.TOP_LEFT
+    return RESIZE_DIRECTIONS.TOP_LEFT;
   } else if (mouseX >= areaWidth - resizeRadius && mouseY < resizeRadius) {
-    return RESIZE_DIRECTIONS.TOP_RIGHT
+    return RESIZE_DIRECTIONS.TOP_RIGHT;
   } else if (mouseX < resizeRadius && mouseY >= areaHeight - resizeRadius) {
-    return RESIZE_DIRECTIONS.BOTTOM_LEFT
+    return RESIZE_DIRECTIONS.BOTTOM_LEFT;
   } else if (mouseX >= areaWidth - resizeRadius && mouseY >= areaHeight - resizeRadius) {
-    return RESIZE_DIRECTIONS.BOTTOM_RIGHT
+    return RESIZE_DIRECTIONS.BOTTOM_RIGHT;
   }
 
-  return null
+  return null;
 }
 
 /**
