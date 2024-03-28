@@ -707,9 +707,19 @@ function getRandomRGBAColor () {
 
 // Event listeners for dragging and resizing areas
 document.addEventListener('DOMContentLoaded', function () {
-  // Add click event listener for the "Add Area" button
+  // Add click event listener for the buttons
   const addAreaButton = document.querySelector('button[onclick="addArea()"]')
   addAreaButton.onclick = addArea
+  const removeAreaButton = document.querySelector('button[onclick="removeArea()"]')
+  removeAreaButton.onclick = removeArea
+  const setCanvasSizeButton = document.querySelector('button[onclick="setCanvasSize()"]')
+  setCanvasSizeButton.onclick = setCanvasSize
+  const exportToWorkflowButton = document.querySelector('button[onclick="exportToWorkflow()"]')
+  exportToWorkflowButton.onclick = exportToWorkflow
+  const copyToClipboardButton = document.querySelector('button[onclick="copyToClipboard()"]')
+  copyToClipboardButton.onclick = copyToClipboard
+  const setBackgroundImageButton = document.querySelector('button[onclick="setBackgroundImage()"]')
+  setBackgroundImageButton.onclick = setBackgroundImage
 
   const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
   const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
