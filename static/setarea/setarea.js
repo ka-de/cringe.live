@@ -611,12 +611,9 @@ function handleMouseDown (e) {
   const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
   const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
 
-  console.log('enableAreaDragCheckbox:', enableAreaDragCheckbox)
-  console.log('enableAreaResizeCheckbox:', enableAreaResizeCheckbox)
-
   resizeAreaUtils.currentArea = e.currentTarget
 
-  if (enableAreaDragCheckbox.checked) {
+  if (enableAreaDragCheckbox && enableAreaDragCheckbox.checked) {
     isDraggingArea = true
     initialX = e.clientX - resizeAreaUtils.currentArea.offsetLeft
     initialY = e.clientY - resizeAreaUtils.currentArea.offsetTop
@@ -723,7 +720,7 @@ document.addEventListener('DOMContentLoaded', function () {
     area.addEventListener('mousemove', handleMouseMove)
     area.addEventListener('mouseup', handleMouseUp)
     area.addEventListener('mousedown', (e) => {
-      if (enableAreaResizeCheckbox.checked) {
+      if (enableAreaResizeCheckbox && enableAreaResizeCheckbox.checked) {
         resizeAreaUtils.startResizeArea(e)
       }
     })
