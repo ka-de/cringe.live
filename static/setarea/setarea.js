@@ -8,6 +8,8 @@ import resizeAreaUtils from './resizeArea.js'
  * and handling the drag functionality of a floating bar.
  */
 
+const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
+
 let twoWayWorkflowJSON, threeWayWorkflowJSON, fourWayWorkflowJSON, fiveWayWorkflowJSON
 
 // Variables for storing the state of the canvas and the selection process.
@@ -619,7 +621,7 @@ function handleMouseDown (e) {
     initialY = e.clientY - resizeAreaUtils.currentArea.offsetTop
   }
 
-  if (enableAreaResizeCheckbox.checked) {
+  if (enableAreaResizeCheckbox && enableAreaResizeCheckbox.checked) {
     resizeAreaUtils.isResizingArea = true
     resizeAreaUtils.resizeDirection = resizeAreaUtils.getResizeDirection(
       e.clientX - resizeAreaUtils.currentArea.offsetLeft,
