@@ -125,25 +125,6 @@ function stopResizeArea (e) {
   document.removeEventListener('mouseup', stopResizeArea)
 }
 
-function startResizing (e) {
-  if (!e.target.classList.contains('area')) return
-
-  isResizing = true
-  currentResizeArea = e.target
-  const rect = currentResizeArea.getBoundingClientRect()
-  const isBottomRight = e.clientX >= rect.right - 10 && e.clientY >= rect.bottom - 10
-
-  if (!isBottomRight) return
-
-  resizeStartX = e.clientX
-  resizeStartY = e.clientY
-  resizeStartWidth = currentResizeArea.offsetWidth
-  resizeStartHeight = currentResizeArea.offsetHeight
-
-  document.addEventListener('mousemove', resize)
-  document.addEventListener('mouseup', stopResizing)
-}
-
 function resize (e) {
   if (!isResizing || !currentResizeArea) return
 
@@ -153,14 +134,6 @@ function resize (e) {
 
   currentResizeArea.style.width = `${newWidth}px`
   currentResizeArea.style.height = `${newHeight}px`
-}
-
-function stopResizing () {
-  isResizing = false
-  currentResizeArea = null
-
-  document.removeEventListener('mousemove', resize)
-  document.removeEventListener('mouseup', stopResizing)
 }
 
 /**
@@ -202,7 +175,6 @@ const resizeAreaUtils = {
   stopResizeArea,
   getResizeDirection,
   RESIZE_DIRECTIONS,
-  startResizing
 }
 
 export default resizeAreaUtils

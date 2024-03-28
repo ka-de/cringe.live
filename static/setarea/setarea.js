@@ -688,7 +688,7 @@ document.addEventListener('DOMContentLoaded', function () {
     area.addEventListener('mouseup', handleMouseUp)
     area.addEventListener('mousedown', (e) => {
       if (enableAreaResizeCheckbox.checked) {
-        resizeAreaUtils.startResizing(e)
+        resizeAreaUtils.startResizeArea(e)
       }
     })
   })
