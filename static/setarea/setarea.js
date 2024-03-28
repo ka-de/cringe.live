@@ -834,7 +834,7 @@ document.addEventListener('DOMContentLoaded', function () {
     area.addEventListener('mousedown', handleMouseDown)
     area.addEventListener('mousemove', handleMouseMove)
     area.addEventListener('mouseup', handleMouseUp)
-    area.addEventListener('mousedown', handleResizeMouseDown)
+    area.addEventListener('mousedown', startResizeArea)
   })
 
   enableAreaDragCheckbox.addEventListener('change', () => {
