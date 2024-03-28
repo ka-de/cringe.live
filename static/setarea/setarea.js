@@ -581,7 +581,7 @@ function addArea () {
 
   // Add event listeners for resizing the area
   area.addEventListener('mousedown', (e) => {
-    if (resizeAreaUtils.enableAreaResizeCheckbox.checked) {
+    if (resizeAreaUtils.enableAreaResizeCheckbox && resizeAreaUtils.enableAreaResizeCheckbox.checked) {
       resizeAreaUtils.startResizeArea(e)
     }
   })
