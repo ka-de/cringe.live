@@ -768,4 +768,4 @@ document.addEventListener('DOMContentLoaded', function () {
   floatingBar.addEventListener('mouseleave', floatingBarDragEnd)
 })
 
-export { setBackgroundImage, setCanvasSize }
+export { setBackgroundImage, setCanvasSize, exportToWorkflow, removeArea, copyToClipboard }
