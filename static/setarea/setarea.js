@@ -705,7 +705,7 @@ function getRandomRGBAColor () {
   return `rgba(${r}, ${g}, ${b}, ${a})`
 }
 
-// Event listeners for dragging and resizing areas
+// Event listeners
 document.addEventListener('DOMContentLoaded', function () {
   // Add click event listener for the buttons
   const addAreaButton = document.querySelector('button[onclick="addArea()"]')
