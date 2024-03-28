@@ -718,8 +718,10 @@ document.addEventListener('DOMContentLoaded', function () {
   exportToWorkflowButton.onclick = exportToWorkflow
   const copyToClipboardButton = document.querySelector('button[onclick="copyToClipboard()"]')
   copyToClipboardButton.onclick = copyToClipboard
-  const setBackgroundImageButton = document.querySelector('button[onclick="setBackgroundImage()"]')
-  setBackgroundImageButton.onclick = setBackgroundImage
+
+  document.getElementById('bgImageFile').onchange = function (event) {
+    setBackgroundImage(event.target.files[0])
+  }
 
   const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
   const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
