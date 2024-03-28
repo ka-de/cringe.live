@@ -69,6 +69,13 @@ function startResizeArea (e) {
   const rect = area.getBoundingClientRect()
 
   resizeDirection = getResizeDirection(e.clientX - rect.left, e.clientY - rect.top, rect.width, rect.height)
+
+  if (resizeDirection) {
+    currentArea.style.cursor = `${resizeDirection}-resize`
+  } else {
+    currentArea.style.cursor = 'default'
+  }
+
   resizeStartWidth = rect.width
   resizeStartHeight = rect.height
   resizeStartX = rect.left
@@ -92,11 +99,10 @@ function resizeArea (e) {
   const canvasWidth = canvasRect.width
   const canvasHeight = canvasRect.height
 
-  const rect = currentArea.getBoundingClientRect()
-  let newWidth = resizeStartWidth
-  let newHeight = resizeStartHeight
-  let newX = resizeStartX
-  let newY = resizeStartY
+  let newWidth = currentArea.offsetWidth
+  let newHeight = currentArea.offsetHeight
+  let newX = currentArea.offsetLeft
+  let newY = currentArea.offsetTop
 
   switch (resizeDirection) {
     case RESIZE_DIRECTIONS.TOP_LEFT:
@@ -125,31 +131,14 @@ function resizeArea (e) {
       break
   }
 
-  // Clamp the new dimensions within the canvas bounds and prevent resizing below 64x64 pixels
   const minSize = 64
-  newWidth = Math.max(minSize, Math.min(newWidth, canvasWidth - (newX - resizeStartX)))
-  newHeight = Math.max(minSize, Math.min(newHeight, canvasHeight - (newY - resizeStartY)))
+  newWidth = Math.max(minSize, Math.min(newWidth, canvasWidth - newX))
+  newHeight = Math.max(minSize, Math.min(newHeight, canvasHeight - newY))
 
-  // Update the parent area dimensions and position
   currentArea.style.width = `${newWidth}px`
   currentArea.style.height = `${newHeight}px`
   currentArea.style.left = `${newX}px`
   currentArea.style.top = `${newY}px`
-
-  // Update the child areas dimensions and positions relative to the parent area
-  const childAreas = Array.from(currentArea.querySelectorAll('.area'))
-  childAreas.forEach((child) => {
-    const childRect = child.getBoundingClientRect()
-    const childRelativeLeft = childRect.left - rect.left
-    const childRelativeTop = childRect.top - rect.top
-    const childRelativeRight = childRect.right - rect.right
-    const childRelativeBottom = childRect.bottom - rect.bottom
-
-    child.style.width = `${childRect.width + (newWidth - rect.width) * (childRelativeRight / rect.width)}px`
-    child.style.height = `${childRect.height + (newHeight - rect.height) * (childRelativeBottom / rect.height)}px`
-    child.style.left = `${newX + childRelativeLeft}px`
-    child.style.top = `${newY + childRelativeTop}px`
-  })
 
   // Update the area-info span with the new dimensions and coordinates
   currentArea.querySelector('.area-info').textContent = `${newWidth}x${newHeight} ${newX},${newY}`
