@@ -1,4 +1,7 @@
 /* eslint-disable no-unused-vars */
+
+import resizeAreaUtils from './resizeArea.js'
+
 /**
  * This JavaScript file contains functions for creating, updating, and exporting areas on a canvas.
  * It also includes functions for setting the background image of the canvas, loading workflow files,
@@ -31,133 +34,9 @@ let floatingBarInitialY
 
 // Event variables for dragging existing areas
 let isDraggingArea = false
-let currentArea = null
 let initialX, initialY
 let currentX, currentY
-
-// Event variables for resizing existing areas
-let isResizingArea = false
-let resizeDirection = null
-let resizeStartWidth, resizeStartHeight
-let resizeStartX, resizeStartY
-
 let currentAreaOffsetX, currentAreaOffsetY
-
-// Constants for resize direction
-const RESIZE_DIRECTIONS = {
-  TOP_LEFT: 'top-left',
-  TOP_RIGHT: 'top-right',
-  BOTTOM_LEFT: 'bottom-left',
-  BOTTOM_RIGHT: 'bottom-right'
-}
-
-/**
- * Starts the resizing process for an area.
- * @param {Event} e - The mousedown event.
- */
-function startResizeArea (e) {
-  // Stop event propagation
-  e.stopPropagation()
-
-  const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
-  if (!enableAreaResizeCheckbox.checked) return
-
-  isResizingArea = true
-
-  // Find the closest parent .area element
-  const area = e.target.closest('.area')
-  if (!area) return // If no .area element is found, return early
-
-  currentArea = area
-  const rect = area.getBoundingClientRect()
-
-  resizeDirection = getResizeDirection(e.clientX - rect.left, e.clientY - rect.top, rect.width, rect.height)
-
-  if (resizeDirection) {
-    currentArea.style.cursor = `${resizeDirection}-resize`
-  } else {
-    currentArea.style.cursor = 'default'
-  }
-
-  resizeStartWidth = rect.width
-  resizeStartHeight = rect.height
-  resizeStartX = rect.left
-  resizeStartY = rect.top
-
-  document.addEventListener('mousemove', resizeArea)
-  document.addEventListener('mouseup', stopResizeArea)
-}
-
-/**
- * Resizes the area while the mouse is moving.
- * @param {Event} e - The mousemove event.
- */
-function resizeArea (e) {
-  if (!isResizingArea || !currentArea) return
-
-  const canvas = document.getElementById('canvas')
-  const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.pageXOffset
-  const canvasTop = canvasRect.top + window.pageYOffset
-  const canvasWidth = canvasRect.width
-  const canvasHeight = canvasRect.height
-
-  let newWidth = currentArea.offsetWidth
-  let newHeight = currentArea.offsetHeight
-  let newX = currentArea.offsetLeft
-  let newY = currentArea.offsetTop
-
-  switch (resizeDirection) {
-    case RESIZE_DIRECTIONS.TOP_LEFT:
-      newWidth = resizeStartWidth - (e.clientX - resizeStartX)
-      newHeight = resizeStartHeight - (e.clientY - resizeStartY)
-      newX = e.clientX - canvasLeft
-      newY = e.clientY - canvasTop
-      break
-    case RESIZE_DIRECTIONS.TOP_RIGHT:
-      newWidth = e.clientX - canvasLeft - resizeStartX
-      newHeight = resizeStartHeight - (e.clientY - resizeStartY)
-      newX = resizeStartX
-      newY = resizeStartY
-      break
-    case RESIZE_DIRECTIONS.BOTTOM_LEFT:
-      newWidth = resizeStartWidth - (e.clientX - resizeStartX)
-      newHeight = e.clientY - canvasTop - resizeStartY
-      newX = e.clientX - canvasLeft
-      newY = resizeStartY
-      break
-    case RESIZE_DIRECTIONS.BOTTOM_RIGHT:
-      newWidth = e.clientX - canvasLeft - resizeStartX
-      newHeight = e.clientY - canvasTop - resizeStartY
-      newX = resizeStartX
-      newY = resizeStartY
-      break
-  }
-
-  const minSize = 64
-  newWidth = Math.max(minSize, Math.min(newWidth, canvasWidth - newX))
-  newHeight = Math.max(minSize, Math.min(newHeight, canvasHeight - newY))
-
-  currentArea.style.width = `${newWidth}px`
-  currentArea.style.height = `${newHeight}px`
-  currentArea.style.left = `${newX}px`
-  currentArea.style.top = `${newY}px`
-
-  // Update the area-info span with the new dimensions and coordinates
-  currentArea.querySelector('.area-info').textContent = `${newWidth}x${newHeight} ${newX},${newY}`
-}
-
-/**
- * Ends the resizing process for an area.
- * @param {Event} e - The mouseup event.
- */
-function stopResizeArea (e) {
-  isResizingArea = false
-  currentArea = e.currentTarget
-
-  document.removeEventListener('mousemove', resizeArea)
-  document.removeEventListener('mouseup', stopResizeArea)
-}
 
 /**
  * Checks if the area should be snapped to a nearby area or the canvas edges.
@@ -231,7 +110,7 @@ function startDragArea (e) {
 
   const area = e.currentTarget
   isDraggingArea = true
-  currentArea = area
+  resizeAreaUtils.currentArea = area
 
   // Get the area's position relative to the canvas
   const canvas = document.getElementById('canvas')
@@ -249,7 +128,7 @@ function startDragArea (e) {
 }
 
 function handleResizeMouseDown (e) {
-  startResizeArea(e)
+  resizeAreaUtils.startResizeArea(e)
 }
 
 /**
@@ -267,14 +146,14 @@ function dragArea (e) {
   let newY = e.clientY - currentAreaOffsetY
 
   // Clamp the new position to stay within the canvas bounds
-  newX = Math.max(0, Math.min(newX, canvasWidth - currentArea.offsetWidth))
-  newY = Math.max(0, Math.min(newY, canvasHeight - currentArea.offsetHeight))
+  newX = Math.max(0, Math.min(newX, canvasWidth - resizeAreaUtils.currentArea.offsetWidth))
+  newY = Math.max(0, Math.min(newY, canvasHeight - resizeAreaUtils.currentArea.offsetHeight))
 
-  currentArea.style.left = `${newX}px`
-  currentArea.style.top = `${newY}px`
+  resizeAreaUtils.currentArea.style.left = `${newX}px`
+  resizeAreaUtils.currentArea.style.top = `${newY}px`
 
   // Update the area-info span with the new coordinates
-  currentArea.querySelector('.area-info').textContent = `${currentArea.offsetWidth}x${currentArea.offsetHeight} ${newX},${newY}`
+  resizeAreaUtils.currentArea.querySelector('.area-info').textContent = `${resizeAreaUtils.currentArea.offsetWidth}x${resizeAreaUtils.currentArea.offsetHeight} ${newX},${newY}`
 }
 
 /**
@@ -352,7 +231,7 @@ function exportToWorkflow () {
  */
 function startSelection (e) {
   // Check if the user is already resizing an area
-  if (isResizingArea) return
+  if (resizeAreaUtils.isResizingArea) return
 
   // Check if the user is already dragging an area
   if (isDraggingArea) return
@@ -722,21 +601,26 @@ function handleMouseDown (e) {
   const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
   const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
 
-  currentArea = e.currentTarget
+  resizeAreaUtils.currentArea = e.currentTarget
 
   if (enableAreaDragCheckbox.checked) {
     isDraggingArea = true
-    initialX = e.clientX - currentArea.offsetLeft
-    initialY = e.clientY - currentArea.offsetTop
+    initialX = e.clientX - resizeAreaUtils.currentArea.offsetLeft
+    initialY = e.clientY - resizeAreaUtils.currentArea.offsetTop
   }
 
   if (enableAreaResizeCheckbox.checked) {
-    isResizingArea = true
-    resizeDirection = getResizeDirection(e.clientX - currentArea.offsetLeft, e.clientY - currentArea.offsetTop, currentArea.offsetWidth, currentArea.offsetHeight)
-    resizeStartWidth = currentArea.offsetWidth
-    resizeStartHeight = currentArea.offsetHeight
-    resizeStartX = currentArea.offsetLeft
-    resizeStartY = currentArea.offsetTop
+    resizeAreaUtils.isResizingArea = true
+    resizeAreaUtils.resizeDirection = resizeAreaUtils.getResizeDirection(
+      e.clientX - resizeAreaUtils.currentArea.offsetLeft,
+      e.clientY - resizeAreaUtils.currentArea.offsetTop,
+      resizeAreaUtils.currentArea.offsetWidth,
+      resizeAreaUtils.currentArea.offsetHeight
+    )
+    resizeAreaUtils.resizeStartWidth = resizeAreaUtils.currentArea.offsetWidth
+    resizeAreaUtils.resizeStartHeight = resizeAreaUtils.currentArea.offsetHeight
+    resizeAreaUtils.resizeStartX = resizeAreaUtils.currentArea.offsetLeft
+    resizeAreaUtils.resizeStartY = resizeAreaUtils.currentArea.offsetTop
   }
 }
 
@@ -745,29 +629,29 @@ function handleMouseMove (e) {
     currentX = e.clientX - initialX
     currentY = e.clientY - initialY
 
-    currentArea.style.left = `${currentX}px`
-    currentArea.style.top = `${currentY}px`
+    resizeAreaUtils.currentArea.style.left = `${currentX}px`
+    resizeAreaUtils.currentArea.style.top = `${currentY}px`
   }
 
-  if (isResizingArea) {
-    const newWidth = resizeStartWidth + (e.clientX - resizeStartX - currentArea.offsetLeft)
-    const newHeight = resizeStartHeight + (e.clientY - resizeStartY - currentArea.offsetTop)
+  if (resizeAreaUtils.isResizingArea) {
+    const newWidth = resizeAreaUtils.resizeStartWidth + (e.clientX - resizeAreaUtils.resizeStartX - resizeAreaUtils.currentArea.offsetLeft)
+    const newHeight = resizeAreaUtils.resizeStartHeight + (e.clientY - resizeAreaUtils.resizeStartY - resizeAreaUtils.currentArea.offsetTop)
 
-    currentArea.style.width = `${newWidth}px`
-    currentArea.style.height = `${newHeight}px`
+    resizeAreaUtils.currentArea.style.width = `${newWidth}px`
+    resizeAreaUtils.currentArea.style.height = `${newHeight}px`
 
-    switch (resizeDirection) {
-      case RESIZE_DIRECTIONS.TOP_LEFT:
-        currentArea.style.left = `${resizeStartX + currentArea.offsetLeft + (resizeStartWidth - newWidth)}px`
-        currentArea.style.top = `${resizeStartY + currentArea.offsetTop + (resizeStartHeight - newHeight)}px`
+    switch (resizeAreaUtils.resizeDirection) {
+      case resizeAreaUtils.RESIZE_DIRECTIONS.TOP_LEFT:
+        resizeAreaUtils.currentArea.style.left = `${resizeAreaUtils.resizeStartX + resizeAreaUtils.currentArea.offsetLeft + (resizeAreaUtils.resizeStartWidth - newWidth)}px`
+        resizeAreaUtils.currentArea.style.top = `${resizeAreaUtils.resizeStartY + resizeAreaUtils.currentArea.offsetTop + (resizeAreaUtils.resizeStartHeight - newHeight)}px`
         break
-      case RESIZE_DIRECTIONS.TOP_RIGHT:
-        currentArea.style.top = `${resizeStartY + currentArea.offsetTop + (resizeStartHeight - newHeight)}px`
+      case resizeAreaUtils.RESIZE_DIRECTIONS.TOP_RIGHT:
+        resizeAreaUtils.currentArea.style.top = `${resizeAreaUtils.resizeStartY + resizeAreaUtils.currentArea.offsetTop + (resizeAreaUtils.resizeStartHeight - newHeight)}px`
         break
-      case RESIZE_DIRECTIONS.BOTTOM_LEFT:
-        currentArea.style.left = `${resizeStartX + currentArea.offsetLeft + (resizeStartWidth - newWidth)}px`
+      case resizeAreaUtils.RESIZE_DIRECTIONS.BOTTOM_LEFT:
+        resizeAreaUtils.currentArea.style.left = `${resizeAreaUtils.resizeStartX + resizeAreaUtils.currentArea.offsetLeft + (resizeAreaUtils.resizeStartWidth - newWidth)}px`
         break
-      case RESIZE_DIRECTIONS.BOTTOM_RIGHT:
+      case resizeAreaUtils.RESIZE_DIRECTIONS.BOTTOM_RIGHT:
         break
     }
   }
@@ -775,31 +659,7 @@ function handleMouseMove (e) {
 
 function handleMouseUp (e) {
   isDraggingArea = false
-  isResizingArea = false
-}
-
-/**
- * Determines the resize direction based on the mouse position relative to the area.
- * @param {number} mouseX - The x-coordinate of the mouse relative to the area.
- * @param {number} mouseY - The y-coordinate of the mouse relative to the area.
- * @param {number} areaWidth - The width of the area.
- * @param {number} areaHeight - The height of the area.
- * @returns {string|null} The resize direction or null if not near a corner.
- */
-function getResizeDirection (mouseX, mouseY, areaWidth, areaHeight) {
-  const resizeRadius = 10 // Adjust this value to change the resize corner radius
-
-  if (mouseX < resizeRadius && mouseY < resizeRadius) {
-    return RESIZE_DIRECTIONS.TOP_LEFT
-  } else if (mouseX >= areaWidth - resizeRadius && mouseY < resizeRadius) {
-    return RESIZE_DIRECTIONS.TOP_RIGHT
-  } else if (mouseX < resizeRadius && mouseY >= areaHeight - resizeRadius) {
-    return RESIZE_DIRECTIONS.BOTTOM_LEFT
-  } else if (mouseX >= areaWidth - resizeRadius && mouseY >= areaHeight - resizeRadius) {
-    return RESIZE_DIRECTIONS.BOTTOM_RIGHT
-  }
-
-  return null
+  resizeAreaUtils.isResizingArea = false
 }
 
 /**
@@ -826,7 +686,11 @@ document.addEventListener('DOMContentLoaded', function () {
     area.addEventListener('mousedown', handleMouseDown)
     area.addEventListener('mousemove', handleMouseMove)
     area.addEventListener('mouseup', handleMouseUp)
-    area.addEventListener('mousedown', startResizeArea)
+    area.addEventListener('mousedown', (e) => {
+      if (enableAreaResizeCheckbox.checked) {
+        resizeAreaUtils.startResizing(e)
+      }
+    })
   })
 
   enableAreaDragCheckbox.addEventListener('change', () => {
