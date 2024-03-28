@@ -767,3 +767,5 @@ document.addEventListener('DOMContentLoaded', function () {
   floatingBar.addEventListener('mouseup', floatingBarDragEnd)
   floatingBar.addEventListener('mouseleave', floatingBarDragEnd)
 })
+
+export { setBackgroundImage, setCanvasSize }
