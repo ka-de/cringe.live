@@ -1,6 +1,6 @@
 // resizeArea.js
-let isResizing = false
-let currentResizeArea = null
+const isResizing = false
+const currentResizeArea = null
 let resizeStartX, resizeStartY
 let resizeStartWidth, resizeStartHeight
 
@@ -174,7 +174,7 @@ const resizeAreaUtils = {
   resizeArea,
   stopResizeArea,
   getResizeDirection,
-  RESIZE_DIRECTIONS,
+  RESIZE_DIRECTIONS
 }
 
 export default resizeAreaUtils

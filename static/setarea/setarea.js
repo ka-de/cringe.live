@@ -677,9 +677,12 @@ function getRandomRGBAColor () {
 
 // Event listeners for dragging and resizing areas
 document.addEventListener('DOMContentLoaded', function () {
+  // Add click event listener for the "Add Area" button
+  const addAreaButton = document.querySelector('button[onclick="addArea()"]')
+  addAreaButton.onclick = addArea
+
   const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
   const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
-
   const areas = document.querySelectorAll('.area')
 
   areas.forEach(area => {
