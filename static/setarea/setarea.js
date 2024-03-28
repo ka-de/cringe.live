@@ -575,6 +575,16 @@ function addArea () {
   const canvas = document.getElementById('canvas')
   canvas.appendChild(area)
   areas.push(area)
+
+  // Add event listeners for dragging the area
+  area.addEventListener('mousedown', startDragArea)
+
+  // Add event listeners for resizing the area
+  area.addEventListener('mousedown', (e) => {
+    if (resizeAreaUtils.enableAreaResizeCheckbox.checked) {
+      resizeAreaUtils.startResizeArea(e)
+    }
+  })
 }
 
 /**
