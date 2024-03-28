@@ -8,8 +8,6 @@ import resizeAreaUtils from './resizeArea.js'
  * and handling the drag functionality of a floating bar.
  */
 
-const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
-
 let twoWayWorkflowJSON, threeWayWorkflowJSON, fourWayWorkflowJSON, fiveWayWorkflowJSON
 
 // Variables for storing the state of the canvas and the selection process.
@@ -612,6 +610,9 @@ function removeArea () {
 function handleMouseDown (e) {
   const enableAreaDragCheckbox = document.getElementById('enableAreaDrag')
   const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
+
+  console.log('enableAreaDragCheckbox:', enableAreaDragCheckbox)
+  console.log('enableAreaResizeCheckbox:', enableAreaResizeCheckbox)
 
   resizeAreaUtils.currentArea = e.currentTarget
 
