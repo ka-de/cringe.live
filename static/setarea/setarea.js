@@ -624,6 +624,28 @@ function handleMouseDown (e) {
   }
 }
 
+function getNewCoordinates (resizeDirection, resizeStartX, resizeStartY, resizeStartWidth, resizeStartHeight, newWidth, newHeight) {
+  let newX = resizeStartX
+  let newY = resizeStartY
+
+  switch (resizeDirection) {
+    case resizeAreaUtils.RESIZE_DIRECTIONS.TOP_LEFT:
+      newX += resizeStartWidth - newWidth
+      newY += resizeStartHeight - newHeight
+      break
+    case resizeAreaUtils.RESIZE_DIRECTIONS.TOP_RIGHT:
+      newY += resizeStartHeight - newHeight
+      break
+    case resizeAreaUtils.RESIZE_DIRECTIONS.BOTTOM_LEFT:
+      newX += resizeStartWidth - newWidth
+      break
+    case resizeAreaUtils.RESIZE_DIRECTIONS.BOTTOM_RIGHT:
+      break
+  }
+
+  return { newX, newY }
+}
+
 function handleMouseMove (e) {
   if (isDraggingArea) {
     currentX = e.clientX - initialX
@@ -640,20 +662,18 @@ function handleMouseMove (e) {
     resizeAreaUtils.currentArea.style.width = `${newWidth}px`
     resizeAreaUtils.currentArea.style.height = `${newHeight}px`
 
-    switch (resizeAreaUtils.resizeDirection) {
-      case resizeAreaUtils.RESIZE_DIRECTIONS.TOP_LEFT:
-        resizeAreaUtils.currentArea.style.left = `${resizeAreaUtils.resizeStartX + resizeAreaUtils.currentArea.offsetLeft + (resizeAreaUtils.resizeStartWidth - newWidth)}px`
-        resizeAreaUtils.currentArea.style.top = `${resizeAreaUtils.resizeStartY + resizeAreaUtils.currentArea.offsetTop + (resizeAreaUtils.resizeStartHeight - newHeight)}px`
-        break
-      case resizeAreaUtils.RESIZE_DIRECTIONS.TOP_RIGHT:
-        resizeAreaUtils.currentArea.style.top = `${resizeAreaUtils.resizeStartY + resizeAreaUtils.currentArea.offsetTop + (resizeAreaUtils.resizeStartHeight - newHeight)}px`
-        break
-      case resizeAreaUtils.RESIZE_DIRECTIONS.BOTTOM_LEFT:
-        resizeAreaUtils.currentArea.style.left = `${resizeAreaUtils.resizeStartX + resizeAreaUtils.currentArea.offsetLeft + (resizeAreaUtils.resizeStartWidth - newWidth)}px`
-        break
-      case resizeAreaUtils.RESIZE_DIRECTIONS.BOTTOM_RIGHT:
-        break
-    }
+    const { newX, newY } = getNewCoordinates(
+      resizeAreaUtils.resizeDirection,
+      resizeAreaUtils.resizeStartX,
+      resizeAreaUtils.resizeStartY,
+      resizeAreaUtils.resizeStartWidth,
+      resizeAreaUtils.resizeStartHeight,
+      newWidth,
+      newHeight
+    )
+
+    resizeAreaUtils.currentArea.style.left = `${newX}px`
+    resizeAreaUtils.currentArea.style.top = `${newY}px`
   }
 }
 
