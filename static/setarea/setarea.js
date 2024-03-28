@@ -56,6 +56,9 @@ const RESIZE_DIRECTIONS = {
  * @param {Event} e - The mousedown event.
  */
 function startResizeArea (e) {
+  // Stop event propagation
+  e.stopPropagation()
+
   const enableAreaResizeCheckbox = document.getElementById('enableAreaResize')
   if (!enableAreaResizeCheckbox.checked) return
 
