@@ -28,7 +28,7 @@ DefaultContentLanguage: en
 hasCJKLanguage: false
 
 permalinks:
-    post: /p/:slug/
+    blog: /blog/:slug/
     page: /:slug/
 
 params:
