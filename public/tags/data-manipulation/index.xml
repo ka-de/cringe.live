@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Data Manipulation on cringe.live</title>
+        <link>https://cringe.live/tags/data-manipulation/</link>
+        <description>Recent content in Data Manipulation on cringe.live</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Balazs Horvath</copyright>
+        <lastBuildDate>Sun, 20 Aug 2023 11:27:05 +0200</lastBuildDate><atom:link href="https://cringe.live/tags/data-manipulation/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Alle Farben</title>
+        <link>https://cringe.live/blog/alle-farben/</link>
+        <pubDate>Sun, 20 Aug 2023 11:27:05 +0200</pubDate>
+        
+        <guid>https://cringe.live/blog/alle-farben/</guid>
+        <description>1 2 3 4 # Change directory to my blog in the most extravagant way. function blog { Set-Location -Path (Join-Path -Path $env:USERPROFILE -ChildPath &amp;#34;code\blog&amp;#34;) } Okay, he got a bit out of hand with this one, but.. I did torture ChatGPT today with some more Python and Excel.
+This took me a really long time to make, okay?
+Let&amp;rsquo;s make him extract color values from column A without the header and put them in a JSON file.</description>
+        </item>
+        <item>
+        <title>Early Steps</title>
+        <link>https://cringe.live/blog/early-steps/</link>
+        <pubDate>Fri, 18 Aug 2023 12:08:30 +0200</pubDate>
+        
+        <guid>https://cringe.live/blog/early-steps/</guid>
+        <description>Men slowly starting to interface with the machines other men built for them. Glorious!
+I accidentally dropped out of society for a few years, and upon my return, I discovered the presence of peculiar machines that we can converse with, and which possess extensive knowledge about various subjects. I have no trepidation concerning GPUs, so let&amp;rsquo;s embark on a deep exploration of this novel &amp;lsquo;disruptive&amp;rsquo; technology together. Below, you will find a graveyard of both useful and useless scripts, composed individually by machines or with minimal assistance from this hairy monkey.</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Flabby Borb</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+<div id="backgroundLayer"></div>
+<style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+canvas {
+  display: block;
+}
+
+#gameCanvas {
+    border: 1px solid black;
+}
+
+#scoreDisplay {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+}
+
+#debugDisplay {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+#startScreen {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+}
+
+#backgroundLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('assets/sky.png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  z-index: -3;
+}
+
+@media (max-width: 480px) {
+  #scoreDisplay {
+      top: 5px;
+      left: 5px;
+      font-size: 18px;
+  }
+}
+
+.cloud {
+  position: absolute;
+  top: 100px;
+  width: 200px;
+  height: auto;
+  animation: cloudMove linear infinite;
+  z-index: -2;
+}
+
+@keyframes cloudMove {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.coin {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: -1;
+}
+
+#cloud1 {
+  left: 0;
+}
+
+#cloud2 {
+  left: 50%;
+}
+
+#cloud3 {
+  left: 90%;
+}
+</style>
+    <canvas id="gameCanvas"></canvas>
+    <div id="scoreDisplay">
+        <span id="score">Score: 0</span>
+        <span id="highScore">High Score: 0</span>
+    </div>
+    <div id="debugDisplay">
+        <span id="debug"></span>
+    </div>
+    <div id="startScreen">
+        <button id="startButton">Start</button>
+        <label>
+            <input type="checkbox" id="hardcoreModeCheckbox"> Hardcore Mode
+        </label>
+    </div>
+    <script>
+let lastScoreUpdate = performance.now();
+    
+const coinSound = new Audio('assets/coin.ogg');
+let coins = []; // Array to store coin objects
+let coinTimer = 0; // Timer for spawning new coins
+
+// Coin sprite
+const coinSprite = new Image();
+coinSprite.src = 'assets/coin.png'; // Path to your coin sprite
+
+function addNewCoins() {
+    coinTimer += 1 / 60; // Increment timer based on frame rate
+    if (coinTimer >= 5) { // Spawn a new coin every 15 seconds
+        const coinX = canvas.width + 200; // Spawn coin off-screen to the right
+        let coinY;
+
+        let isCoinOverlappingPipe = false;
+
+        // Generate a random Y position for the coin that avoids pipes
+        do {
+            coinY = Math.random() * (canvas.height - 100) + 50; // Random Y position within canvas bounds
+            coinY = Math.max(coinY, 100); // Ensure coinY is at least 100 to avoid spawning on top of pipes
+
+            // Check if the new coin overlaps with any existing pipe
+            for (let i = 0; i < pipes.length; i++) {
+                const pipe = pipes[i];
+                if (
+                    coinX + 50 > pipe.x && // Right edge of coin is to the right of the left edge of the pipe
+                    coinX < pipe.x + pipeWidth && // Left edge of coin is to the left of the right edge of the pipe
+                    coinY + 50 > pipe.y && // Bottom edge of coin is below the top edge of the pipe
+                    coinY < pipe.y + pipe.height // Top edge of coin is above the bottom edge of the pipe
+                ) {
+                    isCoinOverlappingPipe = true;
+                    break;
+                }
+            }
+        } while (isCoinOverlappingPipe);
+
+        coins.push({ x: coinX, y: coinY });
+        coinTimer = 0; // Reset the timer
+    }
+}
+
+// Move coins
+function moveCoins() {
+    for (let i = 0; i < coins.length; i++) {
+        coins[i].x -= pipeSpeed;
+    }
+
+    // Remove coins that have gone off-screen
+    coins = coins.filter(coin => coin.x > -100);
+}
+
+// Draw coins
+function drawCoins() {
+    for (let i = 0; i < coins.length; i++) {
+        const coin = coins[i];
+        ctx.drawImage(coinSprite, coin.x, coin.y, 50, 50);
+    }
+}
+
+// Check for collision with coins
+function checkCoinCollision() {
+    for (let i = 0; i < coins.length; i++) {
+        const coin = coins[i];
+        const birdLeft = birdX - birdRadius + collisionBoxReductionLeft;
+        const birdRight = birdX + birdRadius - collisionBoxReductionRight;
+        const birdTop = birdY - birdRadius + collisionBoxReductionTop;
+        const birdBottom = birdY + birdRadius - collisionBoxReductionBottom;
+
+        if (
+            birdRight > coin.x &&
+            birdLeft < coin.x + 50 &&
+            birdBottom > coin.y &&
+            birdTop < coin.y + 50
+        ) {
+            score += 1000;
+            coinSound.currentTime = 0; // Reset the sound to the beginning
+            coinSound.play(); // Play the sound effect
+            coins.splice(i, 1); // Remove the collected coin
+            return; // Exit the loop after collecting a coin
+        }
+    }
+}
+
+// Start game when start button is clicked
+document.getElementById('startButton').addEventListener('click', startGame);
+
+// Listen for changes to the hardcore mode checkbox
+document.getElementById('hardcoreModeCheckbox').addEventListener('change', function() {
+    hardcoreMode = this.checked;
+    if (hardcoreMode) {
+        birdRadius = 80;
+        collisionBoxReductionLeft = 10;
+        collisionBoxReductionRight = 10;
+        collisionBoxReductionTop = 30;
+        collisionBoxReductionBottom = 30;
+    } else {
+        birdRadius = 25;
+        collisionBoxReductionLeft = 5;
+        collisionBoxReductionRight = 5;
+        collisionBoxReductionTop = 10;
+        collisionBoxReductionBottom = 10;
+    }
+});
+
+// Initialize canvas and game objects
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+ctx.imageSmoothingEnabled = false;
+
+// Cloud positions
+let cloud1X = canvas.width;
+let cloud2X = canvas.width / 2;
+let cloud3X = canvas.width * 0.9;
+
+let collisionBoxReductionLeft = 5;
+let collisionBoxReductionRight = 5;
+let collisionBoxReductionTop = 10;
+let collisionBoxReductionBottom = 10;
+
+let birdRadius = 25;
+let birdX = 100;
+let birdY = canvas.height / 2;
+let birdVelocity = 0;
+let birdFlap = false;
+
+let pipeWidth = 10;
+let pipeGap = 500; // Initial pipe gap
+let pipeSpeed = 8;
+let pipes = [];
+
+let score = 0;
+let highScore = 0;
+const scoreDisplay = document.getElementById('score');
+const highScoreDisplay = document.getElementById('highScore');
+const debugDisplay = document.getElementById('debug');
+
+let gameOver = false; // Flag to track game over state
+let levelDistance = 0; // Variable to track level's distance
+let hardcoreMode = false; // Flag to track hardcore mode
+
+// Bird sprite sheet
+const birdSprite = new Image();
+birdSprite.src = 'assets/birb.png'; // Path to your bird sprite sheet
+let frameIndex = 0;
+let tickCount = 0;
+const ticksPerFrame = 10; // Adjust animation speed
+// Initialize cloud images
+const cloud1 = new Image();
+const cloud2 = new Image();
+const cloud3 = new Image();
+
+cloud1.src = 'assets/cloud3.png';
+cloud2.src = 'assets/cloud3.png';
+cloud3.src = 'assets/cloud3.png';
+
+// Pipe sprites
+const pipeBodySprite = new Image();
+pipeBodySprite.src = 'assets/pipe_body.png'; // Path to the 1x50px pipe body sprite
+
+const pipeCapSprite = new Image();
+pipeCapSprite.src = 'assets/pipe_cap.png'; // Path to the 5x50px pipe cap sprite
+
+// Draw clouds function
+function drawClouds() {
+  ctx.drawImage(cloud1, cloud1X, 100);
+  ctx.drawImage(cloud2, cloud2X, 150);
+  ctx.drawImage(cloud3, cloud3X, 200);
+}
+
+// Update clouds position
+function updateClouds() {
+  cloud1X -= 0.2; // Adjust the speed based on your preference
+  cloud2X -= 0.3;
+  cloud3X -= 0.4;
+
+  // Reset cloud positions when they go off-screen
+  if (cloud1X + cloud1.width < 0) {
+    cloud1X = canvas.width;
+  }
+  if (cloud2X + cloud2.width < 0) {
+    cloud2X = canvas.width;
+  }
+  if (cloud3X + cloud3.width < 0) {
+    cloud3X = canvas.width;
+  }
+}
+
+// Game loop
+function gameLoop() {
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Check if game is over
+    if (gameOver) {
+        return;
+    }
+
+    // Check if one second has elapsed since the last score update
+    const now = performance.now();
+    if (now - lastScoreUpdate >= 1000) {
+        score += 1;
+        lastScoreUpdate = now;
+    }
+
+    addNewCoins(); // Add new coins randomly
+    moveCoins(); // Move existing coins
+    drawCoins(); // Draw coins
+    drawClouds();
+    updateClouds();
+    
+    // Update bird position
+    birdVelocity += 0.6;
+    birdY += birdVelocity;
+
+    // Draw bird
+    if (!gameOver) {
+        if (birdFlap) { // If space key is pressed
+            ctx.drawImage(birdSprite, 100, 0, 50, 50, birdX - birdRadius, birdY - birdRadius, birdRadius * 2, birdRadius * 2); // Display third section of sprite sheet
+            birdFlap = false; // Reset birdFlap to prevent continuous rendering
+        } else {
+            ctx.drawImage(birdSprite, frameIndex * 50, 0, 50, 50, birdX - birdRadius, birdY - birdRadius, birdRadius * 2, birdRadius * 2); // Display frames from sprite sheet
+        }
+    }
+
+    // Adjusting collision box for the bird
+    const birdLeft = birdX - birdRadius + collisionBoxReductionLeft; // Reduce left side
+    const birdRight = birdX + birdRadius - collisionBoxReductionRight; // Reduce right side
+    const birdTop = birdY - birdRadius + collisionBoxReductionTop; // Reduce top side
+    const birdBottom = birdY + birdRadius - collisionBoxReductionBottom; // Reduce bottom side
+
+    // Draw debug box for collision detection
+    /*
+    ctx.strokeStyle = 'red'; // Set debug box color
+    ctx.strokeRect(
+        birdLeft, 
+        birdTop, 
+        birdRadius * 2 - (collisionBoxReductionLeft + collisionBoxReductionRight), 
+        birdRadius * 2 - (collisionBoxReductionTop + collisionBoxReductionBottom)
+    );
+    */
+
+    // Move pipes
+    for (let i = 0; i < pipes.length; i++) {
+        pipes[i].x -= pipeSpeed;
+    }
+
+    // Remove pipes that have gone off-screen
+    pipes = pipes.filter(pipe => pipe.x + pipeWidth > -500);
+
+    // Update positions of existing pipes based on score (if hardcore mode is enabled)
+    if (hardcoreMode) {
+        for (let i = 0; i < pipes.length - 2; i += 2) {
+            const distanceReduction = Math.floor(score / 500); // Reduce distance every 500 points
+            pipes[i].x -= distanceReduction; // Adjust bottom pipe position
+            pipes[i + 1].x -= distanceReduction; // Adjust top pipe position
+        }
+    }
+
+    // Add new pipes
+    if (pipes.length === 0 || pipes[pipes.length - 1].x < canvas.width - (pipeWidth * 2 + pipeGap)) {
+        const pipeHeight = Math.random() * (canvas.height - pipeGap - 100) + 50;
+        const bottomPipe = { x: canvas.width, y: canvas.height - pipeHeight, height: pipeHeight };
+        const topPipe = { x: canvas.width, y: 0, height: canvas.height - pipeHeight - pipeGap };
+        pipes.push(bottomPipe, topPipe);
+    }
+
+    // Draw pipes
+    for (let i = 0; i < pipes.length; i++) {
+        const pipe = pipes[i];
+
+        // Draw pipe body
+        ctx.drawImage(pipeBodySprite, 0, 0, pipeBodySprite.width, pipeBodySprite.height, pipe.x, pipe.y, pipeWidth, pipe.height);
+
+        // Draw pipe cap
+        if (i % 2 === 0) { // Bottom pipe
+            ctx.drawImage(pipeCapSprite, 0, 0, pipeCapSprite.width, pipeCapSprite.height, pipe.x, pipe.y, pipeWidth, 5);
+        } else { // Top pipe
+            ctx.drawImage(pipeCapSprite, 0, 0, pipeCapSprite.width, pipeCapSprite.height, pipe.x, pipe.y + pipe.height - 5, pipeWidth, 5);
+        }
+
+        // Draw collision box (debug)
+        //ctx.strokeStyle = 'red';
+        //ctx.strokeRect(pipe.x, pipe.y, pipeWidth, pipe.height);
+    }
+
+    // Check for collision with pipes
+    for (let i = 0; i < pipes.length; i += 2) {
+        const bottomPipe = pipes[i];
+        const topPipe = pipes[i + 1];
+
+        // Adjusting collision box for the bird
+        const birdLeft = birdX - birdRadius + collisionBoxReductionLeft; // Reduce left side
+        const birdRight = birdX + birdRadius - collisionBoxReductionRight; // Reduce right side
+        const birdTop = birdY - birdRadius + collisionBoxReductionTop; // Reduce top side
+        const birdBottom = birdY + birdRadius - collisionBoxReductionBottom; // Reduce bottom side
+
+        // Check collision with bottom pipe
+        if (
+            birdRight > bottomPipe.x &&
+            birdLeft < bottomPipe.x + pipeWidth &&
+            birdBottom > bottomPipe.y &&
+            birdTop < bottomPipe.y + bottomPipe.height
+        ) {
+            console.log('Collision with bottom pipe');
+            handleCollision();
+            return;
+        }
+
+        // Check collision with top pipe
+        if (
+            birdRight > topPipe.x &&
+            birdLeft < topPipe.x + pipeWidth &&
+            birdTop < topPipe.y + topPipe.height &&
+            birdBottom > topPipe.y
+        ) {
+            console.log('Collision with top pipe');
+            handleCollision();
+            return;
+        }
+    }
+
+    // Check for collision with screen boundaries
+    if (
+        birdRight > canvas.width || birdLeft < 0 || birdTop < 0 || birdBottom > canvas.height
+    ) {
+        console.log('Collision with screen boundary');
+        handleCollision();
+        return;
+    }
+
+    // Update level distance
+    levelDistance += pipeSpeed;
+
+    // Update score based on level distance
+    //let distanceScore = Math.floor(levelDistance / 500);
+
+    // Adjust pipeGap based on score
+    if (score > 0 && score % 100 === 0 && pipeGap > 150) {
+        pipeGap -= 5;
+    }
+
+    // Adjust pipeSpeed based on score
+    if (score > 0 && score % 500 === 0 && pipeSpeed <= 10) {
+        pipeSpeed += 0.1;
+    }
+
+    checkCoinCollision();
+    //score = distanceScore + score;
+    scoreDisplay.textContent = `Score: ${score}`;
+    highScoreDisplay.textContent = `High Score: ${highScore}`;
+    if (hardcoreMode) {
+        debugDisplay.textContent = `☠️`;
+    } else {
+        debugDisplay.textContent = '';
+    }
+
+    // Update animation frame
+    if (tickCount > ticksPerFrame) {
+        tickCount = 0;
+        frameIndex = (frameIndex + 1) % 3; // 3 is the number of frames in the sprite sheet
+    } else {
+        tickCount++;
+    }
+
+    // Request next animation frame
+    requestAnimationFrame(gameLoop);
+}
+
+// Handle collision
+function handleCollision() {
+    gameOver = true; // Set game over flag
+    highScore = Math.max(highScore, score);
+    resetGame();
+}
+
+// Reset game
+function resetGame() {
+    birdX = 100;
+    birdY = canvas.height / 2;
+    birdVelocity = 0;
+    pipes = [];
+    pipeSpeed = 8;
+    score = 0;
+    levelDistance = 0;
+    pipeGap = 500;
+    scoreDisplay.textContent = `Score: ${score}`;
+    highScoreDisplay.textContent = `High Score: ${highScore}`;
+    if (document.getElementById('hardcoreModeCheckbox').checked) {
+        debugDisplay.textContent = `☠️`;
+    } else {
+        debugDisplay.textContent = ``;
+    }
+    gameOver = false;
+    hardcoreMode = document.getElementById('hardcoreModeCheckbox').checked;
+    requestAnimationFrame(gameLoop); // Restart game loop
+}
+
+// Handle user input to start the game
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space' && gameOver) {
+        startGame();
+    } else if (event.code === 'Space' && !gameOver) {
+        birdVelocity = -10;
+        birdFlap = true;
+    }
+});
+
+// Listen for touch events to start the game
+canvas.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    if (gameOver) {
+        startGame();
+    }
+});
+
+canvas.addEventListener('touchmove', (event) => {
+    event.preventDefault();
+});
+
+function resizeCanvas() {
+    // Get the browser's viewport dimensions
+    const vh = window.innerHeight * 0.01;
+    const vw = window.innerWidth * 0.01;
+
+    // Set the canvas dimensions to match the viewport
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Adjust the bird radius based on the viewport dimensions
+    birdRadius = Math.max(Math.min(3 * vh, 15 * vw), 10); // Minimum radius of 10
+
+    // Adjust the pipe width based on the viewport dimensions
+    pipeWidth = Math.max(Math.min(3 * vw, 30 * vh), 20); // Minimum width of 20
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// Start game loop
+const startScreen = document.getElementById('startScreen');
+const startText = document.getElementById('startText');
+
+function startGame() {
+    startScreen.style.display = 'none'; // Hide the start screen
+    requestAnimationFrame(gameLoop); // Start the game loop
+}
+
+// Listen for Space key press to start the game
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space' && gameOver) {
+        startGame();
+    }
+});
+
+// Listen for touch events to start the game
+canvas.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    if (gameOver) {
+        startGame();
+    }
+});
+
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Powershell on cringe.live</title>
+        <link>https://cringe.live/tags/powershell/</link>
+        <description>Recent content in Powershell on cringe.live</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en</language>
+        <copyright>Balazs Horvath</copyright>
+        <lastBuildDate>Wed, 30 Aug 2023 15:02:05 +0200</lastBuildDate><atom:link href="https://cringe.live/tags/powershell/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Profiling Python on Windows</title>
+        <link>https://cringe.live/blog/profiling-python-on-windows/</link>
+        <pubDate>Wed, 30 Aug 2023 15:02:05 +0200</pubDate>
+        
+        <guid>https://cringe.live/blog/profiling-python-on-windows/</guid>
+        <description>At some point in your life, you might wonder what your amazing script is spending it&amp;rsquo;s time on, if for some reason you can&amp;rsquo;t afford to buy a pendrive so you can install Linux on your laptop and you are stuck running Windows, please enjoy these PowerShell functions I&amp;rsquo;m letting loose on the world that lets me run python scripts and/or profile them the laziest way possible.
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 $PythonPath = &amp;#34;$env:LOCALAPPDATA\Programs\Python\Python311\python.</description>
+        </item>
+        <item>
+        <title>Bad Idea</title>
+        <link>https://cringe.live/blog/bad-idea/</link>
+        <pubDate>Mon, 28 Aug 2023 16:11:15 +0200</pubDate>
+        
+        <guid>https://cringe.live/blog/bad-idea/</guid>
+        <description>Is your data worthless? Did a hacker deposit some bitcoin in your wallet after he looked at your poor files when he tried to ransomware attack you? Well my friend, then you absolutely don&amp;rsquo;t need to run any Anti-Virus software!
+A bit back I found this perfect piece of juvenile neglectfulness, which turns off Real-Time protection if you enter it into a PowerShell running as Administrator.
+1 Set-MpPreference -DisableRealtimeMonitoring $true I took it a bit further and added my own sudo command in Windows and pops open an Administrator terminal, and since I added this line as a function, I can now accomplish in a few keystrokes what used to take:</description>
+        </item>
+        <item>
+        <title>Early Steps</title>
+        <link>https://cringe.live/blog/early-steps/</link>
+        <pubDate>Fri, 18 Aug 2023 12:08:30 +0200</pubDate>
+        
+        <guid>https://cringe.live/blog/early-steps/</guid>
+        <description>Men slowly starting to interface with the machines other men built for them. Glorious!
+I accidentally dropped out of society for a few years, and upon my return, I discovered the presence of peculiar machines that we can converse with, and which possess extensive knowledge about various subjects. I have no trepidation concerning GPUs, so let&amp;rsquo;s embark on a deep exploration of this novel &amp;lsquo;disruptive&amp;rsquo; technology together. Below, you will find a graveyard of both useful and useless scripts, composed individually by machines or with minimal assistance from this hairy monkey.</description>
+        </item>
+        
+    </channel>
+</rss>
