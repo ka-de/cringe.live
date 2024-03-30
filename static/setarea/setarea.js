@@ -230,10 +230,12 @@ function getCanvasOffsetRelativeToViewport () {
   const canvasRect = canvas.getBoundingClientRect()
   const viewportLeft = window.scrollX || document.documentElement.scrollLeft
   const viewportTop = window.scrollY || document.documentElement.scrollTop
+  const canvasOffsetLeft = canvasRect.left - viewportLeft + canvas.scrollLeft
+  const canvasOffsetTop = canvasRect.top - viewportTop + canvas.scrollTop
 
   return {
-    offsetLeft: canvasRect.left - viewportLeft,
-    offsetTop: canvasRect.top - viewportTop
+    offsetLeft: canvasOffsetLeft,
+    offsetTop: canvasOffsetTop
   }
 }
 
@@ -309,8 +311,9 @@ function endSelection (e) {
     return
   }
 
-  const left = parseInt(selection.style.left, 10)
-  const top = parseInt(selection.style.top, 10)
+  const { offsetLeft, offsetTop } = getCanvasOffsetRelativeToViewport()
+  const left = parseInt(selection.style.left, 10) - offsetLeft
+  const top = parseInt(selection.style.top, 10) - offsetTop
 
   const color = getRandomRGBAColor()
   const area = document.createElement('div')
