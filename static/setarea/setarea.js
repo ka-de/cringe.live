@@ -115,8 +115,8 @@ function startDragArea (e) {
   // Get the area's position relative to the canvas
   const canvas = document.getElementById('canvas')
   const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.scrollX
-  const canvasTop = canvasRect.top + window.scrollY
+  const canvasLeft = canvasRect.left + window.pageXOffset + canvas.scrollLeft
+  const canvasTop = canvasRect.top + window.pageYOffset + canvas.scrollTop
   const areaRect = area.getBoundingClientRect()
 
   // Set the initial offset based on the canvas position
@@ -319,13 +319,14 @@ function endSelection (e) {
     return
   }
 
-  const htmlRect = document.documentElement.getBoundingClientRect()
-  const htmlLeft = htmlRect.left + window.scrollX
-  const htmlTop = htmlRect.top + window.scrollY
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.pageXOffset + canvas.scrollLeft
+  const canvasTop = canvasRect.top + window.pageYOffset + canvas.scrollTop
 
   const selectionRect = selection.getBoundingClientRect()
-  const left = selectionRect.left - htmlLeft
-  const top = selectionRect.top - htmlTop
+  const left = selectionRect.left - canvasLeft
+  const top = selectionRect.top - canvasTop
 
   const color = getRandomRGBAColor()
   const area = document.createElement('div')
@@ -337,7 +338,6 @@ function endSelection (e) {
   area.style.backgroundColor = color
   area.innerHTML = `<span class="area-info">${width}x${height} ${left},${top}</span>`
 
-  const canvas = document.getElementById('canvas')
   canvas.appendChild(area)
   areas.push(area)
 
