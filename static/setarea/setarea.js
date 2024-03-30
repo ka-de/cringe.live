@@ -241,26 +241,11 @@ function startSelection (e) {
   const canvasLeft = canvasRect.left + window.scrollX
   const canvasTop = canvasRect.top + window.scrollY
 
-  // Find all parent areas under the mouse pointer
-  const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
-    .filter(elem => elem.classList.contains('area'))
-
-  // If the user clicked on an existing area, return early
-  if (parentAreas.length > 0) return
-
   isSelecting = true
 
   // Calculate startX and startY relative to the canvas, considering the scroll position
   startX = e.clientX - canvasLeft
   startY = e.clientY - canvasTop
-}
-
-/**
- * Updates the selection on the canvas or within nested areas while the mouse is moving.
- * @param {Event} e - The mousemove event.
- */
-function updateSelection (e) {
-  if (!isSelecting) return
 
   let selection = document.getElementById('selection')
 
@@ -271,6 +256,18 @@ function updateSelection (e) {
     document.body.appendChild(selection)
   }
 
+  // Update the selection area based on the mouse position
+  updateSelection(e)
+}
+
+/**
+ * Updates the selection on the canvas or within nested areas while the mouse is moving.
+ * @param {Event} e - The mousemove event.
+ */
+function updateSelection (e) {
+  if (!isSelecting) return
+
+  const selection = document.getElementById('selection')
   const canvas = document.getElementById('canvas')
   const canvasRect = canvas.getBoundingClientRect()
   const canvasLeft = canvasRect.left + window.scrollX
