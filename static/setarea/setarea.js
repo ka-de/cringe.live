@@ -274,12 +274,10 @@ function updateSelection (e) {
     document.body.appendChild(selection)
   }
 
-  const { offsetLeft, offsetTop } = getCanvasOffsetRelativeToViewport()
-
-  const minX = Math.min(startX, e.clientX - offsetLeft)
-  const minY = Math.min(startY, e.clientY - offsetTop)
-  const maxX = Math.max(startX, e.clientX - offsetLeft)
-  const maxY = Math.max(startY, e.clientY - offsetTop)
+  const minX = Math.min(startX, e.clientX)
+  const minY = Math.min(startY, e.clientY)
+  const maxX = Math.max(startX, e.clientX)
+  const maxY = Math.max(startY, e.clientY)
   const width = maxX - minX
   const height = maxY - minY
 
@@ -310,9 +308,8 @@ function endSelection (e) {
     return
   }
 
-  const { offsetLeft, offsetTop } = getCanvasOffsetRelativeToViewport()
-  const left = parseInt(selection.style.left, 10) - offsetLeft
-  const top = parseInt(selection.style.top, 10) - offsetTop
+  const left = parseInt(selection.style.left, 10)
+  const top = parseInt(selection.style.top, 10)
 
   const color = getRandomRGBAColor()
   const area = document.createElement('div')
