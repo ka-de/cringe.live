@@ -228,14 +228,12 @@ function exportToWorkflow () {
 function getCanvasOffsetRelativeToViewport () {
   const canvas = document.getElementById('canvas')
   const canvasRect = canvas.getBoundingClientRect()
-  const viewportLeft = window.scrollX || window.pageXOffset
-  const viewportTop = window.scrollY || window.pageYOffset
-  const canvasOffsetLeft = canvasRect.left + viewportLeft - canvas.scrollLeft
-  const canvasOffsetTop = canvasRect.top + viewportTop - canvas.scrollTop
+  const viewportLeft = window.pageXOffset || document.documentElement.scrollLeft
+  const viewportTop = window.pageYOffset || document.documentElement.scrollTop
 
   return {
-    offsetLeft: canvasOffsetLeft,
-    offsetTop: canvasOffsetTop
+    offsetLeft: canvasRect.left - viewportLeft,
+    offsetTop: canvasRect.top - viewportTop
   }
 }
 
