@@ -270,30 +270,20 @@ function updateSelection (e) {
     document.body.appendChild(selection)
   }
 
-  const htmlRect = document.documentElement.getBoundingClientRect()
-  const htmlLeft = htmlRect.left + window.scrollX
-  const htmlTop = htmlRect.top + window.scrollY
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.scrollX
+  const canvasTop = canvasRect.top + window.scrollY
 
-  let minX = Math.min(startX, e.clientX - htmlLeft)
-  let minY = Math.min(startY, e.clientY - htmlTop)
-  let maxX = Math.max(startX, e.clientX - htmlLeft)
-  let maxY = Math.max(startY, e.clientY - htmlTop)
-  let width = maxX - minX
-  let height = maxY - minY
+  const minX = Math.min(startX, e.clientX - canvasLeft)
+  const minY = Math.min(startY, e.clientY - canvasTop)
+  const maxX = Math.max(startX, e.clientX - canvasLeft)
+  const maxY = Math.max(startY, e.clientY - canvasTop)
+  const width = maxX - minX
+  const height = maxY - minY
 
-  // Clamp the selection within the document bounds
-  const viewportWidth = window.innerWidth
-  const viewportHeight = window.innerHeight
-  minX = Math.max(0, minX)
-  minY = Math.max(0, minY)
-  maxX = Math.min(viewportWidth, maxX)
-  maxY = Math.min(viewportHeight, maxY)
-  width = maxX - minX
-  height = maxY - minY
-
-  selection.style.position = 'absolute'
-  selection.style.left = `${minX + htmlLeft}px`
-  selection.style.top = `${minY + htmlTop}px`
+  selection.style.left = `${minX}px`
+  selection.style.top = `${minY}px`
   selection.style.width = `${width}px`
   selection.style.height = `${height}px`
 }
@@ -319,14 +309,8 @@ function endSelection (e) {
     return
   }
 
-  const canvas = document.getElementById('canvas')
-  const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.scrollX + canvas.scrollLeft
-  const canvasTop = canvasRect.top + window.scrollY + canvas.scrollTop
-
-  const selectionRect = selection.getBoundingClientRect()
-  const left = selectionRect.left - canvasLeft
-  const top = selectionRect.top - canvasTop
+  const left = parseInt(selection.style.left, 10)
+  const top = parseInt(selection.style.top, 10)
 
   const color = getRandomRGBAColor()
   const area = document.createElement('div')
@@ -338,6 +322,7 @@ function endSelection (e) {
   area.style.backgroundColor = color
   area.innerHTML = `<span class="area-info">${width}x${height} ${left},${top}</span>`
 
+  const canvas = document.getElementById('canvas')
   canvas.appendChild(area)
   areas.push(area)
 
