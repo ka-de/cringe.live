@@ -115,8 +115,8 @@ function startDragArea (e) {
   // Get the area's position relative to the canvas
   const canvas = document.getElementById('canvas')
   const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.pageXOffset
-  const canvasTop = canvasRect.top + window.pageYOffset
+  const canvasLeft = canvasRect.left + window.scrollX
+  const canvasTop = canvasRect.top + window.scrollY
   const areaRect = area.getBoundingClientRect()
 
   // Set the initial offset based on the canvas position
@@ -236,9 +236,10 @@ function startSelection (e) {
   // Check if the user is already dragging an area
   if (isDraggingArea) return
 
-  const htmlRect = document.documentElement.getBoundingClientRect()
-  const htmlLeft = htmlRect.left + window.pageXOffset
-  const htmlTop = htmlRect.top + window.pageYOffset
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.scrollX
+  const canvasTop = canvasRect.top + window.scrollY
 
   // Find all parent areas under the mouse pointer
   const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
@@ -249,9 +250,9 @@ function startSelection (e) {
 
   isSelecting = true
 
-  // Calculate startX and startY relative to the document
-  startX = e.clientX - htmlLeft
-  startY = e.clientY - htmlTop
+  // Calculate startX and startY relative to the canvas, considering the scroll position
+  startX = e.clientX - canvasLeft
+  startY = e.clientY - canvasTop
 }
 
 /**
@@ -272,8 +273,8 @@ function updateSelection (e) {
 
   const canvas = document.getElementById('canvas')
   const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.pageXOffset
-  const canvasTop = canvasRect.top + window.pageYOffset
+  const canvasLeft = canvasRect.left + window.scrollX
+  const canvasTop = canvasRect.top + window.scrollY
   const canvasWidth = canvasRect.width
   const canvasHeight = canvasRect.height
 
@@ -334,8 +335,8 @@ function endSelection (e) {
   } else {
     const canvas = document.getElementById('canvas')
     const canvasRect = canvas.getBoundingClientRect()
-    const canvasLeft = canvasRect.left + window.pageXOffset
-    const canvasTop = canvasRect.top + window.pageYOffset
+    const canvasLeft = canvasRect.left + window.scrollX
+    const canvasTop = canvasRect.top + window.scrollY
     left = parseInt(selection.style.left, 10) - canvasLeft
     top = parseInt(selection.style.top, 10) - canvasTop
   }
