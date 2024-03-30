@@ -236,22 +236,13 @@ function startSelection (e) {
   // Check if the user is already dragging an area
   if (isDraggingArea) return
 
-  const htmlRect = document.documentElement.getBoundingClientRect()
-  const htmlLeft = htmlRect.left + window.scrollX
-  const htmlTop = htmlRect.top + window.scrollY
-
-  // Find all parent areas under the mouse pointer
-  const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
-    .filter(elem => elem.classList.contains('area'))
-
-  // If the user clicked on an existing area, return early
-  if (parentAreas.length > 0) return
+  const { mouseX, mouseY } = getMousePositionRelativeToCanvas(e)
 
   isSelecting = true
 
-  // Calculate startX and startY relative to the document, considering the scroll position
-  startX = e.clientX - htmlLeft
-  startY = e.clientY - htmlTop
+  // Calculate startX and startY relative to the canvas
+  startX = mouseX
+  startY = mouseY
 }
 
 /**
@@ -270,15 +261,12 @@ function updateSelection (e) {
     document.body.appendChild(selection)
   }
 
-  const canvas = document.getElementById('canvas')
-  const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.scrollX
-  const canvasTop = canvasRect.top + window.scrollY
+  const { mouseX, mouseY } = getMousePositionRelativeToCanvas(e)
 
-  const minX = Math.min(startX, e.clientX - canvasLeft)
-  const minY = Math.min(startY, e.clientY - canvasTop)
-  const maxX = Math.max(startX, e.clientX - canvasLeft)
-  const maxY = Math.max(startY, e.clientY - canvasTop)
+  const minX = Math.min(startX, mouseX)
+  const minY = Math.min(startY, mouseY)
+  const maxX = Math.max(startX, mouseX)
+  const maxY = Math.max(startY, mouseY)
   const width = maxX - minX
   const height = maxY - minY
 
@@ -286,6 +274,18 @@ function updateSelection (e) {
   selection.style.top = `${minY}px`
   selection.style.width = `${width}px`
   selection.style.height = `${height}px`
+}
+
+function getMousePositionRelativeToCanvas (e) {
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.scrollX
+  const canvasTop = canvasRect.top + window.scrollY
+
+  const mouseX = e.clientX - canvasLeft
+  const mouseY = e.clientY - canvasTop
+
+  return { mouseX, mouseY }
 }
 
 /**
