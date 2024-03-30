@@ -115,8 +115,8 @@ function startDragArea (e) {
   // Get the area's position relative to the canvas
   const canvas = document.getElementById('canvas')
   const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.pageXOffset + canvas.scrollLeft
-  const canvasTop = canvasRect.top + window.pageYOffset + canvas.scrollTop
+  const canvasLeft = canvasRect.left + window.scrollX + canvas.scrollLeft
+  const canvasTop = canvasRect.top + window.scrollY + canvas.scrollTop
   const areaRect = area.getBoundingClientRect()
 
   // Set the initial offset based on the canvas position
@@ -321,8 +321,8 @@ function endSelection (e) {
 
   const canvas = document.getElementById('canvas')
   const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.pageXOffset + canvas.scrollLeft
-  const canvasTop = canvasRect.top + window.pageYOffset + canvas.scrollTop
+  const canvasLeft = canvasRect.left + window.scrollX + canvas.scrollLeft
+  const canvasTop = canvasRect.top + window.scrollY + canvas.scrollTop
 
   const selectionRect = selection.getBoundingClientRect()
   const left = selectionRect.left - canvasLeft
