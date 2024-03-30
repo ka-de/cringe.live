@@ -236,10 +236,9 @@ function startSelection (e) {
   // Check if the user is already dragging an area
   if (isDraggingArea) return
 
-  const canvas = document.getElementById('canvas')
-  const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.pageXOffset
-  const canvasTop = canvasRect.top + window.pageYOffset
+  const htmlRect = document.documentElement.getBoundingClientRect()
+  const htmlLeft = htmlRect.left + window.pageXOffset
+  const htmlTop = htmlRect.top + window.pageYOffset
 
   // Find all parent areas under the mouse pointer
   const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
@@ -250,9 +249,9 @@ function startSelection (e) {
 
   isSelecting = true
 
-  // Calculate startX and startY relative to the canvas
-  startX = e.pageX - canvasLeft
-  startY = e.pageY - canvasTop
+  // Calculate startX and startY relative to the document
+  startX = e.clientX - htmlLeft
+  startY = e.clientY - htmlTop
 }
 
 /**
