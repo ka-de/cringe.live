@@ -248,13 +248,14 @@ function startSelection (e) {
   // Check if the user is already dragging an area
   if (isDraggingArea) return
 
-  const { offsetLeft, offsetTop } = getCanvasOffsetRelativeToViewport()
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
 
   isSelecting = true
 
   // Calculate startX and startY relative to the canvas
-  startX = e.clientX - offsetLeft
-  startY = e.clientY - offsetTop
+  startX = e.clientX - canvasRect.left
+  startY = e.clientY - canvasRect.top
 }
 
 /**
