@@ -267,32 +267,39 @@ function startSelection (e) {
 function updateSelection (e) {
   if (!isSelecting) return
 
-  const selection = document.getElementById('selection')
-  const canvas = document.getElementById('canvas')
-  const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.scrollX
-  const canvasTop = canvasRect.top + window.scrollY
-  const canvasWidth = canvasRect.width
-  const canvasHeight = canvasRect.height
+  let selection = document.getElementById('selection')
 
-  let minX = Math.min(startX, e.clientX - canvasLeft)
-  let minY = Math.min(startY, e.clientY - canvasTop)
-  let maxX = Math.max(startX, e.clientX - canvasLeft)
-  let maxY = Math.max(startY, e.clientY - canvasTop)
+  if (!selection) {
+    selection = document.createElement('div')
+    selection.id = 'selection'
+    selection.classList.add('selection')
+    document.body.appendChild(selection)
+  }
+
+  const htmlRect = document.documentElement.getBoundingClientRect()
+  const htmlLeft = htmlRect.left + window.scrollX
+  const htmlTop = htmlRect.top + window.scrollY
+
+  let minX = Math.min(startX, e.clientX - htmlLeft)
+  let minY = Math.min(startY, e.clientY - htmlTop)
+  let maxX = Math.max(startX, e.clientX - htmlLeft)
+  let maxY = Math.max(startY, e.clientY - htmlTop)
   let width = maxX - minX
   let height = maxY - minY
 
-  // Clamp the selection within the canvas bounds
+  // Clamp the selection within the document bounds
+  const viewportWidth = window.innerWidth
+  const viewportHeight = window.innerHeight
   minX = Math.max(0, minX)
   minY = Math.max(0, minY)
-  maxX = Math.min(canvasWidth, maxX)
-  maxY = Math.min(canvasHeight, maxY)
+  maxX = Math.min(viewportWidth, maxX)
+  maxY = Math.min(viewportHeight, maxY)
   width = maxX - minX
   height = maxY - minY
 
   selection.style.position = 'absolute'
-  selection.style.left = `${minX + canvasLeft}px`
-  selection.style.top = `${minY + canvasTop}px`
+  selection.style.left = `${minX + htmlLeft}px`
+  selection.style.top = `${minY + htmlTop}px`
   selection.style.width = `${width}px`
   selection.style.height = `${height}px`
 }
