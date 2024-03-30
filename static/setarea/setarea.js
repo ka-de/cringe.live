@@ -236,28 +236,22 @@ function startSelection (e) {
   // Check if the user is already dragging an area
   if (isDraggingArea) return
 
-  const canvas = document.getElementById('canvas')
-  const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.scrollX
-  const canvasTop = canvasRect.top + window.scrollY
+  const htmlRect = document.documentElement.getBoundingClientRect()
+  const htmlLeft = htmlRect.left + window.scrollX
+  const htmlTop = htmlRect.top + window.scrollY
+
+  // Find all parent areas under the mouse pointer
+  const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
+    .filter(elem => elem.classList.contains('area'))
+
+  // If the user clicked on an existing area, return early
+  if (parentAreas.length > 0) return
 
   isSelecting = true
 
-  // Calculate startX and startY relative to the canvas, considering the scroll position
-  startX = e.clientX - canvasLeft
-  startY = e.clientY - canvasTop
-
-  let selection = document.getElementById('selection')
-
-  if (!selection) {
-    selection = document.createElement('div')
-    selection.id = 'selection'
-    selection.classList.add('selection')
-    document.body.appendChild(selection)
-  }
-
-  // Update the selection area based on the mouse position
-  updateSelection(e)
+  // Calculate startX and startY relative to the document, considering the scroll position
+  startX = e.clientX - htmlLeft
+  startY = e.clientY - htmlTop
 }
 
 /**
@@ -315,10 +309,6 @@ function endSelection (e) {
   const selection = document.getElementById('selection')
   if (!selection) return
 
-  // Find all parent areas under the mouse pointer
-  const parentAreas = document.elementsFromPoint(e.clientX, e.clientY)
-    .filter(elem => elem.classList.contains('area'))
-
   const width = parseInt(selection.style.width, 10)
   const height = parseInt(selection.style.height, 10)
 
@@ -329,21 +319,13 @@ function endSelection (e) {
     return
   }
 
-  let left, top
+  const htmlRect = document.documentElement.getBoundingClientRect()
+  const htmlLeft = htmlRect.left + window.scrollX
+  const htmlTop = htmlRect.top + window.scrollY
 
-  if (parentAreas.length > 0) {
-    const innermost = parentAreas[parentAreas.length - 1]
-    const innermostRect = innermost.getBoundingClientRect()
-    left = parseInt(selection.style.left, 10) - innermostRect.left
-    top = parseInt(selection.style.top, 10) - innermostRect.top
-  } else {
-    const canvas = document.getElementById('canvas')
-    const canvasRect = canvas.getBoundingClientRect()
-    const canvasLeft = canvasRect.left + window.scrollX
-    const canvasTop = canvasRect.top + window.scrollY
-    left = parseInt(selection.style.left, 10) - canvasLeft
-    top = parseInt(selection.style.top, 10) - canvasTop
-  }
+  const selectionRect = selection.getBoundingClientRect()
+  const left = selectionRect.left - htmlLeft
+  const top = selectionRect.top - htmlTop
 
   const color = getRandomRGBAColor()
   const area = document.createElement('div')
@@ -355,15 +337,8 @@ function endSelection (e) {
   area.style.backgroundColor = color
   area.innerHTML = `<span class="area-info">${width}x${height} ${left},${top}</span>`
 
-  // Append the new area to the innermost parent area or the canvas
-  if (parentAreas.length > 0) {
-    const innermost = parentAreas[parentAreas.length - 1]
-    innermost.appendChild(area)
-  } else {
-    const canvas = document.getElementById('canvas')
-    canvas.appendChild(area)
-  }
-
+  const canvas = document.getElementById('canvas')
+  canvas.appendChild(area)
   areas.push(area)
 
   // Add event listener for dragging the new area
