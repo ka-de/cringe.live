@@ -225,6 +225,18 @@ function exportToWorkflow () {
   handleWorkflowData(true)
 }
 
+function getCanvasOffsetRelativeToViewport () {
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const viewportLeft = window.scrollX || document.documentElement.scrollLeft
+  const viewportTop = window.scrollY || document.documentElement.scrollTop
+
+  return {
+    offsetLeft: canvasRect.left - viewportLeft,
+    offsetTop: canvasRect.top - viewportTop
+  }
+}
+
 /**
  * Starts the selection process on the canvas or within nested areas.
  * @param {Event} e - The mousedown event.
@@ -236,13 +248,13 @@ function startSelection (e) {
   // Check if the user is already dragging an area
   if (isDraggingArea) return
 
-  const { mouseX, mouseY } = getMousePositionRelativeToCanvas(e)
+  const { offsetLeft, offsetTop } = getCanvasOffsetRelativeToViewport()
 
   isSelecting = true
 
   // Calculate startX and startY relative to the canvas
-  startX = mouseX
-  startY = mouseY
+  startX = e.clientX - offsetLeft
+  startY = e.clientY - offsetTop
 }
 
 /**
@@ -261,12 +273,12 @@ function updateSelection (e) {
     document.body.appendChild(selection)
   }
 
-  const { mouseX, mouseY } = getMousePositionRelativeToCanvas(e)
+  const { offsetLeft, offsetTop } = getCanvasOffsetRelativeToViewport()
 
-  const minX = Math.min(startX, mouseX)
-  const minY = Math.min(startY, mouseY)
-  const maxX = Math.max(startX, mouseX)
-  const maxY = Math.max(startY, mouseY)
+  const minX = Math.min(startX, e.clientX - offsetLeft)
+  const minY = Math.min(startY, e.clientY - offsetTop)
+  const maxX = Math.max(startX, e.clientX - offsetLeft)
+  const maxY = Math.max(startY, e.clientY - offsetTop)
   const width = maxX - minX
   const height = maxY - minY
 
@@ -274,18 +286,6 @@ function updateSelection (e) {
   selection.style.top = `${minY}px`
   selection.style.width = `${width}px`
   selection.style.height = `${height}px`
-}
-
-function getMousePositionRelativeToCanvas (e) {
-  const canvas = document.getElementById('canvas')
-  const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.scrollX
-  const canvasTop = canvasRect.top + window.scrollY
-
-  const mouseX = e.clientX - canvasLeft
-  const mouseY = e.clientY - canvasTop
-
-  return { mouseX, mouseY }
 }
 
 /**
