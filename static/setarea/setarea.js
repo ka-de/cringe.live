@@ -140,10 +140,6 @@ function startDragArea (e) {
   document.addEventListener('mouseup', stopDragArea)
 }
 
-function handleResizeMouseDown (e) {
-  resizeAreaUtils.startResizeArea(e)
-}
-
 /**
  * Handles the drag functionality of an existing area while the mouse is moving.
  * @param {Event} e - The mousemove event.
@@ -376,12 +372,44 @@ function endSelection (e) {
 }
 
 function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
-  const conditioningSetAreaNodes = workflowJSON.nodes.filter(node => node.type === 'ConditioningSetArea')
-  const interpolatePredictionsNodes = workflowJSON.nodes.filter(node => node.type === 'InterpolatePredictions')
+  const conditioningSetAreaNodes = workflowJSON.nodes.filter(
+    (node) => node.type === 'ConditioningSetArea'
+  )
+  const interpolatePredictionsNodes = workflowJSON.nodes.filter(
+    (node) => node.type === 'InterpolatePredictions'
+  )
 
-  const enableScaleBRandomization = document.getElementById('enableScaleBRandomization').checked
+  const enableScaleBRandomization = document.getElementById(
+    'enableScaleBRandomization'
+  ).checked
   const scaleBMin = parseFloat(document.getElementById('scaleBMin').value)
   const scaleBMax = parseFloat(document.getElementById('scaleBMax').value)
+
+  const enableLogStepRandomization = document.getElementById(
+    'enableLogStepRandomization'
+  ).checked
+  const logStepMin = parseFloat(document.getElementById('logStepMin').value)
+  const logStepMax = parseFloat(document.getElementById('logStepMax').value)
+
+  const enableLogToleranceRandomization = document.getElementById(
+    'enableLogToleranceRandomization'
+  ).checked
+  const logToleranceMin = parseFloat(
+    document.getElementById('logToleranceMin').value
+  )
+  const logToleranceMax = parseFloat(
+    document.getElementById('logToleranceMax').value
+  )
+
+  const enableKeepToleranceRandomization = document.getElementById(
+    'enableKeepToleranceRandomization'
+  ).checked
+  const keepToleranceMin = parseInt(
+    document.getElementById('keepToleranceMin').value
+  )
+  const keepToleranceMax = parseInt(
+    document.getElementById('keepToleranceMax').value
+  )
 
   for (let i = 0; i < numAreas; i++) {
     const area = areas[i]
@@ -402,6 +430,24 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
   } else {
     for (const node of interpolatePredictionsNodes) {
       node.widgets_values[0] = getRandomFloat(0.60, 0.80)
+    }
+  }
+
+  if (enableLogStepRandomization) {
+    for (const node of interpolatePredictionsNodes) {
+      node.widgets_values[1] = getRandomFloat(logStepMin, logStepMax)
+    }
+  }
+
+  if (enableLogToleranceRandomization) {
+    for (const node of interpolatePredictionsNodes) {
+      node.widgets_values[2] = getRandomFloat(logToleranceMin, logToleranceMax)
+    }
+  }
+
+  if (enableKeepToleranceRandomization) {
+    for (const node of interpolatePredictionsNodes) {
+      node.widgets_values[3] = Math.floor(getRandomFloat(keepToleranceMin, keepToleranceMax))
     }
   }
 }
