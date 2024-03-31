@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 // Importing wolves 🐺
-import './setarea.css';
+import './setarea.sass'
 import resizeAreaUtils from './resizeArea.js'
 
 /**

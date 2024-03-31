@@ -12,11 +12,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/, // Apply loaders only to CSS files
+        test: /\.sass$/,
         use: [
-          'style-loader', // Inject CSS into the DOM
-          'css-loader', // Translate CSS into CommonJS
-          'postcss-loader', // Process CSS with PostCSS
+          'style-loader',
+          'css-loader',
+          'postcss-loader',
         ],
       },
     ],
