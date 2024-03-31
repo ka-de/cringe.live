@@ -125,17 +125,6 @@ function stopResizeArea (e) {
   document.removeEventListener('mouseup', stopResizeArea)
 }
 
-function resize (e) {
-  if (!isResizing || !currentResizeArea) return
-
-  const rect = currentResizeArea.getBoundingClientRect()
-  const newWidth = resizeStartWidth + e.clientX - rect.left - resizeStartX
-  const newHeight = resizeStartHeight + e.clientY - rect.top - resizeStartY
-
-  currentResizeArea.style.width = `${newWidth}px`
-  currentResizeArea.style.height = `${newHeight}px`
-}
-
 /**
  * Determines the resize direction based on the mouse position relative to the area.
  * @param {number} mouseX - The x-coordinate of the mouse relative to the area.
