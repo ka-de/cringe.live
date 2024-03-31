@@ -4,13 +4,9 @@
   "description": "Allows creating areas on a canvas and exports them to a ComfyUI workflow.",
   "main": "setarea.js",
   "scripts": {
-    "build:css": "node-sass --output-style compressed src/setarea.sass dist/setarea.css",
-    "build:tailwind": "tailwindcss build dist/setarea.css -o dist/css/tailwind.css",
-    "build": "npm run build:css && npm run build:tailwind",
-    "watch:sass": "watch 'npm run build:css' src",
-    "watch:tailwind": "watch 'npm run build:tailwind' dist/css",
-    "dev": "concurrently \"npm run watch:sass\" \"npm run watch:tailwind\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch:sass": "onchange 'src/**/*.sass' -- npm run build:css",
+    "watch:tailwind": "onchange 'dist/css/*.css' -- npm run build:tailwind",
+    "dev": "concurrently \"npm run watch:sass\" \"npm run watch:tailwind\""
   },
   "keywords": [
     "comfyui"
@@ -27,6 +23,7 @@
     "eslint-plugin-n": "^16.6.2",
     "eslint-plugin-promise": "^6.1.1",
     "node-sass": "^9.0.0",
+    "onchange": "^7.1.0",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
     "postcss-loader": "^8.1.1",
