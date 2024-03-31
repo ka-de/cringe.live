@@ -51,7 +51,7 @@ for row in worksheet.iter_rows(min_row=2, max_col=1, values_only=True):
 data_dict = {"colors": data}
 
 # Save the data as JSON
-output_json_path = "output.json"  # Replace with the desired output path
+output_json_path = "output.json"
 with open(output_json_path, "w") as json_file:
     json.dump(data_dict, json_file, indent=4)
 
@@ -105,11 +105,11 @@ import openpyxl
 import colorsys
 
 # Load the Excel workbook with macros
-workbook_path = "Rose Pine Colorscheme.xlsm"  # Replace with the actual path
+workbook_path = "Rose Pine Colorscheme.xlsm"
 workbook = openpyxl.load_workbook(workbook_path, read_only=True, data_only=True)
 
 # Specify the sheet name where your data is located
-sheet_name = "Rosé Pine"  # Change to your sheet name
+sheet_name = "Rosé Pine"
 
 # Get the active worksheet
 worksheet = workbook[sheet_name]
@@ -138,5 +138,3 @@ print("Conversion from hex to RGB and HSL completed.")
 ```
 
 You can find the full scripts and the example spreadsheet on my [Github](https://github.com/ka-de/_life_is_a_mess_/tree/main/excel-to-json).
-
-{{< spotify 0H5MVQwMcpm4KkPZz13KZr >}}
