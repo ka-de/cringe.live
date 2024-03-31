@@ -379,7 +379,7 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
   const conditioningSetAreaNodes = workflowJSON.nodes.filter(node => node.type === 'ConditioningSetArea')
   const interpolatePredictionsNodes = workflowJSON.nodes.filter(node => node.type === 'InterpolatePredictions')
 
-  const enableScaleBCustomization = document.getElementById('enableScaleBCustomization').checked
+  const enableScaleBRandomization = document.getElementById('enableScaleBRandomization').checked
   const scaleBMin = parseFloat(document.getElementById('scaleBMin').value)
   const scaleBMax = parseFloat(document.getElementById('scaleBMax').value)
 
@@ -395,7 +395,7 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
     }
   }
 
-  if (enableScaleBCustomization) {
+  if (enableScaleBRandomization) {
     for (const node of interpolatePredictionsNodes) {
       node.widgets_values[0] = getRandomFloat(scaleBMin, scaleBMax)
     }
