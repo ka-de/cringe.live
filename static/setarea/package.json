@@ -5,7 +5,7 @@
   "main": "setarea.js",
   "scripts": {
     "watch:sass": "onchange 'src/**/*.sass' -- npm run build:css",
-    "watch:tailwind": "onchange 'dist/css/*.css' -- npm run build:tailwind",
+    "watch:tailwind": "onchange 'dist/*.css' -- npm run build:tailwind",
     "dev": "concurrently \"npm run watch:sass\" \"npm run watch:tailwind\""
   },
   "keywords": [
