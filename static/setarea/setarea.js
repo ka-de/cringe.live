@@ -246,112 +246,85 @@ function exportToWorkflow () {
   handleWorkflowData(true)
 }
 
-function getElementPosition(element) {
-  const rect = element.getBoundingClientRect();
-  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+function getElementPosition (element) {
+  const rect = element.getBoundingClientRect()
+  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop
   return {
     x: rect.left + scrollLeft,
     y: rect.top + scrollTop
-  };
+  }
 }
 
-function getCanvasPosition() {
-  const canvas = document.getElementById('canvas');
-  return getElementPosition(canvas);
+function getCanvasPosition () {
+  const canvas = document.getElementById('canvas')
+  return getElementPosition(canvas)
 }
 
-function getMousePositionRelativeToCanvas(e) {
-  const { x: canvasX, y: canvasY } = getCanvasPosition();
+function getMousePositionRelativeToCanvas (e) {
+  const { x: canvasX, y: canvasY } = getCanvasPosition()
   return {
     x: e.clientX - canvasX,
     y: e.clientY - canvasY
-  };
+  }
 }
 
 /**
  * Starts the selection process on the canvas or within nested areas.
  * @param {Event} e - The mousedown event.
  */
-function startSelection(e) {
+function startSelection (e) {
   // Check if the user is already resizing an area
-  if (resizeAreaUtils.isResizingArea) return;
+  if (resizeAreaUtils.isResizingArea) return
 
   // Check if the user is already dragging an area
-  if (isDraggingArea) return;
+  if (isDraggingArea) return
 
-  const { x: canvasX, y: canvasY } = getCanvasPosition();
-  const { x: mouseX, y: mouseY } = getMousePositionRelativeToCanvas(e);
+  const { x: canvasX, y: canvasY } = getCanvasPosition()
+  const { x: mouseX, y: mouseY } = getMousePositionRelativeToCanvas(e)
 
-  isSelecting = true;
+  isSelecting = true
 
   // Calculate startX and startY relative to the canvas
-  startX = mouseX;
-  startY = mouseY;
-}
-
-function updateSelection(e) {
-  if (!isSelecting) return;
-
-  let selection = document.getElementById('selection');
-
-  if (!selection) {
-    selection = document.createElement('div');
-    selection.id = 'selection';
-    selection.classList.add('selection');
-    document.body.appendChild(selection);
-  }
-
-  const { x: mouseX, y: mouseY } = getMousePositionRelativeToCanvas(e);
-
-  const minX = Math.min(startX, mouseX);
-  const minY = Math.min(startY, mouseY);
-  const maxX = Math.max(startX, mouseX);
-  const maxY = Math.max(startY, mouseY);
-  const width = maxX - minX;
-  const height = maxY - minY;
-
-  selection.style.left = `${minX}px`;
-  selection.style.top = `${minY}px`;
-  selection.style.width = `${width}px`;
-  selection.style.height = `${height}px`;
+  startX = mouseX
+  startY = mouseY
 }
 
 /**
  * Updates the selection on the canvas or within nested areas while the mouse is moving.
  * @param {Event} e - The mousemove event.
  */
-function updateSelection(e) {
-  if (!isSelecting) return;
+function updateSelection (e) {
+  if (!isSelecting) return
 
-  let selection = document.getElementById('selection');
+  let selection = document.getElementById('selection')
 
   if (!selection) {
-    selection = document.createElement('div');
-    selection.id = 'selection';
-    selection.classList.add('selection');
-    document.body.appendChild(selection);
+    selection = document.createElement('div')
+    selection.id = 'selection'
+    selection.classList.add('selection')
+    document.body.appendChild(selection)
   }
 
-  const canvas = document.getElementById('canvas');
-  const canvasRect = canvas.getBoundingClientRect();
-  const canvasLeft = canvasRect.left + window.scrollX;
-  const canvasTop = canvasRect.top + window.scrollY;
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.scrollX
+  const canvasTop = canvasRect.top + window.scrollY
 
-  const mouseX = e.clientX - canvasLeft;
-  const mouseY = e.clientY - canvasTop;
+  const mouseX = e.clientX - canvasLeft
+  const mouseY = e.clientY - canvasTop
 
-  const minX = Math.min(startX, mouseX);
-  const minY = Math.min(startY, mouseY);
-  const maxX = Math.max(startX, mouseX);
-  const maxY = Math.max(startY, mouseY);
-  const width = maxX - minX;
-  const height = maxY - minY;
+  const minX = Math.min(startX, mouseX)
+  const minY = Math.min(startY, mouseY)
+  const maxX = Math.max(startX, mouseX)
+  const maxY = Math.max(startY, mouseY)
+  const width = maxX - minX
+  const height = maxY - minY
 
-  selection.style.left = `${minX}px`;
-  selection.style.top = `${minY}px`;
-  selection.style.width = `${width}px`;
-  selection.style.height = `${height}px`;
+  selection.style.left = `${minX}px`
+  selection.style.top = `${minY}px`
+  selection.style.width = `${width}px`
+  selection.style.height = `${height}px`
 }
 
 /**
