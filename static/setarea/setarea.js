@@ -39,6 +39,16 @@ let currentX, currentY
 let currentAreaOffsetX, currentAreaOffsetY
 
 /**
+ * Generates a random float within the specified range.
+ * @param {number} min - The minimum value of the range.
+ * @param {number} max - The maximum value of the range.
+ * @returns {number} A random float within the specified range.
+ */
+function getRandomFloat (min, max) {
+  return Math.random() * (max - min) + min
+}
+
+/**
  * Checks if the area should be snapped to a nearby area or the canvas edges.
  * @param {number} x - The x-coordinate of the area.
  * @param {number} y - The y-coordinate of the area.
@@ -173,6 +183,12 @@ function stopDragArea (e) {
  * If copying, the workflow data is copied to the clipboard.
  * @param {boolean} shouldExport - A boolean indicating whether the workflow data should be exported.
  */
+/**
+ * Handles the workflow data based on whether it should be exported or copied to the clipboard.
+ * If exporting, the workflow data is downloaded as a JSON file with the appropriate filename.
+ * If copying, the workflow data is copied to the clipboard.
+ * @param {boolean} shouldExport - A boolean indicating whether the workflow data should be exported.
+ */
 function handleWorkflowData (shouldExport) {
   const numAreas = areas.length
   if (numAreas === 2 || numAreas === 3 || numAreas === 4 || numAreas === 5) {
@@ -183,6 +199,8 @@ function handleWorkflowData (shouldExport) {
         : numAreas === 4
           ? { ...fourWayWorkflowJSON }
           : { ...fiveWayWorkflowJSON }
+
+    // Update the ConditioningSetArea nodes with the current area positions
     updateConditioningSetAreaNodes(workflowJSON, numAreas)
 
     const workflowData = JSON.stringify(workflowJSON, null, 2)
@@ -331,6 +349,37 @@ function endSelection (e) {
   selection.remove()
 }
 
+function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
+  const conditioningSetAreaNodes = workflowJSON.nodes.filter(node => node.type === 'ConditioningSetArea')
+  const interpolatePredictionsNodes = workflowJSON.nodes.filter(node => node.type === 'InterpolatePredictions')
+
+  const enableScaleBCustomization = document.getElementById('enableScaleBCustomization').checked
+  const scaleBMin = parseFloat(document.getElementById('scaleBMin').value)
+  const scaleBMax = parseFloat(document.getElementById('scaleBMax').value)
+
+  for (let i = 0; i < numAreas; i++) {
+    const area = areas[i]
+    const width = parseInt(area.style.width)
+    const height = parseInt(area.style.height)
+    const x = parseInt(area.style.left)
+    const y = parseInt(area.style.top)
+
+    if (conditioningSetAreaNodes[i]) {
+      conditioningSetAreaNodes[i].widgets_values = [width, height, x, y]
+    }
+  }
+
+  if (enableScaleBCustomization) {
+    for (const node of interpolatePredictionsNodes) {
+      node.widgets_values[0] = getRandomFloat(scaleBMin, scaleBMax)
+    }
+  } else {
+    for (const node of interpolatePredictionsNodes) {
+      node.widgets_values[0] = getRandomFloat(0.60, 0.80)
+    }
+  }
+}
+
 /**
  * Sets the background image of the canvas.
  * @param {File} file - The image file to be set as the background.
@@ -376,27 +425,6 @@ async function loadWorkflowFiles () {
  * Call loadWorkflowFiles when the page loads
  */
 document.addEventListener('DOMContentLoaded', loadWorkflowFiles)
-
-/**
- * Updates the ConditioningSetArea nodes in the workflow JSON based on the areas on the canvas.
- * @param {Object} workflowJSON - The workflow JSON object.
- * @param {number} numAreas - The number of areas on the canvas.
- */
-function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
-  const conditioningSetAreaNodes = workflowJSON.nodes.filter(node => node.type === 'ConditioningSetArea')
-
-  for (let i = 0; i < numAreas; i++) {
-    const area = areas[i]
-    const width = parseInt(area.style.width)
-    const height = parseInt(area.style.height)
-    const x = parseInt(area.style.left)
-    const y = parseInt(area.style.top)
-
-    if (conditioningSetAreaNodes[i]) {
-      conditioningSetAreaNodes[i].widgets_values = [width, height, x, y]
-    }
-  }
-}
 
 /**
  * Starts the drag functionality of the floating bar.

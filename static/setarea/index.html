@@ -69,7 +69,18 @@
       <label for="snappingRadius" class="mr-2">Snapping Radius:</label>
       <input type="number" id="snappingRadius" value="20" class="border border-gray-300 rounded-md px-2 py-1">
     </div>
+
+  <div class="flex items-center mb-2">
+    <input type="checkbox" id="enableScaleBRandomization">
+    <label for="enableScaleBCustomization" class="ml-2">Randomize Scale B for InterpolatePredictions</label>
   </div>
+  <div class="flex items-center mb-2">
+    <label for="scaleBMin" class="mr-2">Scale B Min:</label>
+    <input type="number" id="scaleBMin" value="0.60" class="border border-gray-300 rounded-md px-2 py-1" min="0" max="1" step="0.01">
+    <label for="scaleBMax" class="mr-2 ml-4">Scale B Max:</label>
+    <input type="number" id="scaleBMax" value="0.80" class="border border-gray-300 rounded-md px-2 py-1" min="0" max="1" step="0.01">
+  </div>
+</div>
 
   <div class="canvas mx-auto mt-8" id="canvas">
     <div id="bgImageContainer"></div>
