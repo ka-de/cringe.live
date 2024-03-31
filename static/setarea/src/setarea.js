@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 
+// Importing wolves 🐺
+import './styles.css';
 import resizeAreaUtils from './resizeArea.js'
 
 /**
