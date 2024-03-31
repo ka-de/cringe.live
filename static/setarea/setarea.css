@@ -58,6 +58,14 @@ input {
   background-color: rgba(200, 200, 200, 0.5); /* Semi-transparent gray background */
 }
 
+/**
+ * This might help space out stuff?
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+ */
+
 .floating-bar {
   text-align: center;
   position: absolute;

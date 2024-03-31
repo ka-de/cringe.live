@@ -424,31 +424,33 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
   }
 
   if (enableScaleBRandomization) {
-    for (const node of interpolatePredictionsNodes) {
+    interpolatePredictionsNodes.forEach((node) => {
       node.widgets_values[0] = getRandomFloat(scaleBMin, scaleBMax)
-    }
+    })
   } else {
-    for (const node of interpolatePredictionsNodes) {
-      node.widgets_values[0] = getRandomFloat(0.60, 0.80)
-    }
+    interpolatePredictionsNodes.forEach((node) => {
+      node.widgets_values[0] = getRandomFloat(0.6, 0.8)
+    })
   }
 
   if (enableLogStepRandomization) {
-    for (const node of interpolatePredictionsNodes) {
+    interpolatePredictionsNodes.forEach((node) => {
       node.widgets_values[1] = getRandomFloat(logStepMin, logStepMax)
-    }
+    })
   }
 
   if (enableLogToleranceRandomization) {
-    for (const node of interpolatePredictionsNodes) {
+    interpolatePredictionsNodes.forEach((node) => {
       node.widgets_values[2] = getRandomFloat(logToleranceMin, logToleranceMax)
-    }
+    })
   }
 
   if (enableKeepToleranceRandomization) {
-    for (const node of interpolatePredictionsNodes) {
-      node.widgets_values[3] = Math.floor(getRandomFloat(keepToleranceMin, keepToleranceMax))
-    }
+    interpolatePredictionsNodes.forEach((node) => {
+      node.widgets_values[3] = Math.floor(
+        getRandomFloat(keepToleranceMin, keepToleranceMax)
+      )
+    })
   }
 }
 
@@ -496,7 +498,9 @@ async function loadWorkflowFiles () {
 /**
  * Call loadWorkflowFiles when the page loads
  */
-document.addEventListener('DOMContentLoaded', loadWorkflowFiles)
+document.addEventListener('DOMContentLoaded', function () {
+  loadWorkflowFiles()
+})
 
 /**
  * Starts the drag functionality of the floating bar.
