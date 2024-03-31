@@ -58,6 +58,9 @@ function getRandomFloat (min, max) {
  */
 function shouldSnapArea (x, y, width, height) {
   const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.pageXOffset
+  const canvasTop = canvasRect.top + window.pageYOffset
   const canvasWidth = canvas.offsetWidth
   const canvasHeight = canvas.offsetHeight
   const snappingRadius = parseInt(document.getElementById('snappingRadius').value)
@@ -67,26 +70,26 @@ function shouldSnapArea (x, y, width, height) {
     return { x, y }
   }
 
-  let snappedX = x
-  let snappedY = y
+  let snappedX = x + canvasLeft
+  let snappedY = y + canvasTop
 
   // Check for nearby areas
   for (const area of areas) {
-    const areaX = parseInt(area.style.left)
-    const areaY = parseInt(area.style.top)
+    const areaX = parseInt(area.style.left) + canvasLeft
+    const areaY = parseInt(area.style.top) + canvasTop
     const areaWidth = parseInt(area.style.width)
     const areaHeight = parseInt(area.style.height)
 
     // Check if the new area is within the snapping radius of the existing area
     if (
-      Math.abs(x - (areaX + areaWidth)) <= snappingRadius ||
-      Math.abs(x - areaX) <= snappingRadius ||
-      Math.abs(y - (areaY + areaHeight)) <= snappingRadius ||
-      Math.abs(y - areaY) <= snappingRadius
+      Math.abs(x + canvasLeft - (areaX + areaWidth)) <= snappingRadius ||
+      Math.abs(x + canvasLeft - areaX) <= snappingRadius ||
+      Math.abs(y + canvasTop - (areaY + areaHeight)) <= snappingRadius ||
+      Math.abs(y + canvasTop - areaY) <= snappingRadius
     ) {
       // Snap the new area to the existing area
-      snappedX = x > areaX + areaWidth / 2 ? areaX + areaWidth : areaX
-      snappedY = y > areaY + areaHeight / 2 ? areaY + areaHeight : areaY
+      snappedX = x > areaX + areaWidth / 2 ? areaX + areaWidth - canvasLeft : areaX - canvasLeft
+      snappedY = y > areaY + areaHeight / 2 ? areaY + areaHeight - canvasTop : areaY - canvasTop
       break
     }
   }
@@ -104,7 +107,7 @@ function shouldSnapArea (x, y, width, height) {
     snappedY = canvasHeight - height
   }
 
-  return { x: snappedX, y: snappedY }
+  return { x: snappedX - canvasLeft, y: snappedY - canvasTop }
 }
 
 /**
@@ -268,12 +271,14 @@ function startSelection (e) {
 
   const canvas = document.getElementById('canvas')
   const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.pageXOffset
+  const canvasTop = canvasRect.top + window.pageYOffset
 
   isSelecting = true
 
   // Calculate startX and startY relative to the canvas
-  startX = e.clientX - canvasRect.left
-  startY = e.clientY - canvasRect.top
+  startX = e.clientX - canvasLeft
+  startY = e.clientY - canvasTop
 }
 
 /**
@@ -292,10 +297,18 @@ function updateSelection (e) {
     document.body.appendChild(selection)
   }
 
-  const minX = Math.min(startX, e.clientX)
-  const minY = Math.min(startY, e.clientY)
-  const maxX = Math.max(startX, e.clientX)
-  const maxY = Math.max(startY, e.clientY)
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.pageXOffset
+  const canvasTop = canvasRect.top + window.pageYOffset
+
+  const mouseX = e.clientX - canvasLeft
+  const mouseY = e.clientY - canvasTop
+
+  const minX = Math.min(startX, mouseX)
+  const minY = Math.min(startY, mouseY)
+  const maxX = Math.max(startX, mouseX)
+  const maxY = Math.max(startY, mouseY)
   const width = maxX - minX
   const height = maxY - minY
 
@@ -326,8 +339,13 @@ function endSelection (e) {
     return
   }
 
-  const left = parseInt(selection.style.left, 10)
-  const top = parseInt(selection.style.top, 10)
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.pageXOffset
+  const canvasTop = canvasRect.top + window.pageYOffset
+
+  const left = selection.offsetLeft - canvasLeft
+  const top = selection.offsetTop - canvasTop
 
   const color = getRandomRGBAColor()
   const area = document.createElement('div')
@@ -339,7 +357,6 @@ function endSelection (e) {
   area.style.backgroundColor = color
   area.innerHTML = `<span class="area-info">${width}x${height} ${left},${top}</span>`
 
-  const canvas = document.getElementById('canvas')
   canvas.appendChild(area)
   areas.push(area)
 
@@ -546,6 +563,11 @@ function addArea () {
     return
   }
 
+  const canvas = document.getElementById('canvas')
+  const canvasRect = canvas.getBoundingClientRect()
+  const canvasLeft = canvasRect.left + window.pageXOffset
+  const canvasTop = canvasRect.top + window.pageYOffset
+
   const { x, y } = shouldSnapArea(areaX, areaY, areaWidth, areaHeight)
 
   const color = getRandomRGBAColor()
@@ -554,8 +576,8 @@ function addArea () {
   area.className = 'area bg-gray-300 rounded-md'
   area.style.width = areaWidth + 'px'
   area.style.height = areaHeight + 'px'
-  area.style.left = x + 'px'
-  area.style.top = y + 'px'
+  area.style.left = (x + canvasLeft) + 'px'
+  area.style.top = (y + canvasTop) + 'px'
   area.style.backgroundColor = color
 
   const areaInfo = document.createElement('span')
@@ -563,7 +585,6 @@ function addArea () {
   areaInfo.textContent = `${areaWidth}x${areaHeight} ${x},${y}`
   area.appendChild(areaInfo)
 
-  const canvas = document.getElementById('canvas')
   canvas.appendChild(area)
   areas.push(area)
 
