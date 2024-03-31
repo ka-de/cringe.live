@@ -7,7 +7,7 @@
   <title>Set Areas</title>
   <script src="dist/app.bundle.js"></script>
   <script src="dist/resizeArea.bundle.js"></script>
-  <link rel="stylesheet" href="setarea.css">
+  <link rel="stylesheet" href="dist/setarea.css">
 <!--
   <script type="module" src="utils.js"></script>
   <script type="module" src="resizeArea.js"></script>
@@ -75,60 +75,61 @@
       <label for="snappingRadius" class="mr-2">Snapping Radius:</label>
       <input type="number" id="snappingRadius" value="20" class="border border-gray-300 rounded-md px-2 py-1">
     </div>
-
+<h3>🎲 Randomization 🎲</h3>
     <div class="flex items-center mb-2">
       <input type="checkbox" id="enableScaleBRandomization">
-      <label for="enableScaleBCustomization" class="ml-2">Randomize scale_B for Interpolate Predictions</label>
+      <label for="enableScaleBRandomization" class="ml-2">Randomize scale_B for Interpolate Predictions</label>
     </div>
     <div class="flex items-center mb-2">
-      <div class="flex items-center w-1/2"> <!-- Wrap labels and inputs in a flex container -->
-        <label for="scaleBMin" class="mr-2">Scale B Min:</label>
+      <div class="flex items-center w-1/2">
+        <label for="scaleBMin" class="mr-2">scale_B min:</label>
         <input type="number" id="scaleBMin" value="0.60" class="border border-gray-300 rounded-md px-2 py-1" min="0" max="1" step="0.01">
       </div>
-      <div class="flex items-center w-1/2"> <!-- Wrap labels and inputs in a flex container -->
-        <label for="scaleBMax" class="mr-2">Scale B Max:</label>
+      <div class="flex items-center w-1/2">
+        <label for="scaleBMax" class="mr-2">scale_B Max:</label>
         <input type="number" id="scaleBMax" value="0.80" class="border border-gray-300 rounded-md px-2 py-1" min="0" max="1" step="0.01">
       </div>
     </div>
+    <b>Characteristic Guidance Prediction</b>
     <div class="flex items-center mb-2">
       <input type="checkbox" id="enableLogStepRandomization">
-      <label for="enableLogStepRandomization" class="ml-2">Randomize log_step_size for Characteristic Guidance Prediction</label>
+      <label for="enableLogStepRandomization" class="ml-2">Randomize log_step_size.</label>
     </div>
     <div class="flex items-center mb-2">
-      <div class="flex items-center w-1/2"> <!-- Wrap labels and inputs in a flex container -->
+      <div class="flex items-center w-1/2">
         <label for="logStepMin" class="mr-2">Log Step Size Min:</label>
         <input type="number" id="logStepMin" value="-3.0" class="border border-gray-300 rounded-md px-2 py-1" min="-3.0" max="-1.0" step="0.01">
       </div>
-      <div class="flex items-center w-1/2"> <!-- Wrap labels and inputs in a flex container -->
+      <div class="flex items-center w-1/2">
         <label for="logStepMax" class="mr-2">Log Step Size Max:</label>
         <input type="number" id="logStepMax" value="-1.0" class="border border-gray-300 rounded-md px-2 py-1" min="-3.0" max="-1.0" step="0.01">
       </div>
     </div>
     <div class="flex items-center mb-2">
       <input type="checkbox" id="enableLogToleranceRandomization">
-      <label for="enableLogToleranceRandomization" class="ml-2">Randomize log_tolerance for Characteristic Guidance Prediction</label>
+      <label for="enableLogToleranceRandomization" class="ml-2">Randomize log_tolerance.</label>
     </div>
     <div class="flex items-center mb-2">
-      <div class="flex items-center w-1/2"> <!-- Wrap labels and inputs in a flex container -->
-        <label for="logToleranceMin" class="mr-2">Log Tolerance Min:</label>
+      <div class="flex items-center w-1/2">
+        <label for="logToleranceMin" class="mr-2">log_tolerance min:</label>
         <input type="number" id="logToleranceMin" value="-5.0" class="border border-gray-300 rounded-md px-2 py-1" min="-5.0" max="-3.0" step="0.01">
       </div>
-      <div class="flex items-center w-1/2"> <!-- Wrap labels and inputs in a flex container -->
-        <label for="logToleranceMax" class="mr-2">Log Tolerance Max:</label>
+      <div class="flex items-center w-1/2">
+        <label for="logToleranceMax" class="mr-2">log_tolerance max:</label>
         <input type="number" id="logToleranceMax" value="-3.0" class="border border-gray-300 rounded-md px-2 py-1" min="-5.0" max="-3.0" step="0.01">
       </div>
     </div>
     <div class="flex items-center mb-2">
       <input type="checkbox" id="enableKeepToleranceRandomization">
-      <label for="enableKeepToleranceRandomization" class="ml-2">Randomize keep_tolerance for Characteristic Guidance Prediction</label>
+      <label for="enableKeepToleranceRandomization" class="ml-2">Randomize keep_tolerance.</label>
     </div>
     <div class="flex items-center mb-2">
-      <div class="flex items-center w-1/2"> <!-- Wrap labels and inputs in a flex container -->
-        <label for="keepToleranceMin" class="mr-2">Keep Tolerance Min:</label>
+      <div class="flex items-center w-1/2">
+        <label for="keepToleranceMin" class="mr-2">keep_tolerance min:</label>
         <input type="number" id="keepToleranceMin" value="8" class="border border-gray-300 rounded-md px-2 py-1" min="8" max="10" step="1">
       </div>
-      <div class="flex items-center w-1/2"> <!-- Wrap labels and inputs in a flex container -->
-        <label for="keepToleranceMax" class="mr-2">Keep Tolerance Max:</label>
+      <div class="flex items-center w-1/2">
+        <label for="keepToleranceMax" class="mr-2">keep_tolerance max:</label>
         <input type="number" id="keepToleranceMax" value="10" class="border border-gray-300 rounded-md px-2 py-1" min="8" max="10" step="1">
       </div>
     </div>
