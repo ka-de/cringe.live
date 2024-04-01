@@ -201,8 +201,11 @@ function handleWorkflowData (shouldExport) {
           ? { ...fourWayWorkflowJSON }
           : { ...fiveWayWorkflowJSON }
 
-    // Update the ConditioningSetArea nodes with the current area positions
-    updateConditioningSetAreaNodes(workflowJSON, numAreas)
+    // Update the ConditioningSetArea and InterpolatePredictions nodes
+    updateConditioningSetAreaNodes(workflowJSON, numAreas);
+
+    // Update the CharacteristicGuidancePrediction nodes
+    updateCharacteristicGuidancePredictionNodes(workflowJSON);
 
     const workflowData = JSON.stringify(workflowJSON, null, 2)
 
@@ -373,6 +376,38 @@ function endSelection (e) {
   selection.remove()
 }
 
+function updateCharacteristicGuidancePredictionNodes (workflowJSON) {
+  const characteristicGuidancePredictionNodes = workflowJSON.nodes.filter(
+    (node) => node.type === 'CharacteristicGuidancePrediction'
+  )
+
+  const enableLogStepRandomization = document.getElementById('enableLogStepRandomization').checked
+  const logStepMin = parseFloat(document.getElementById('logStepMin').value)
+  const logStepMax = parseFloat(document.getElementById('logStepMax').value)
+
+  const enableLogToleranceRandomization = document.getElementById('enableLogToleranceRandomization').checked
+  const logToleranceMin = parseFloat(document.getElementById('logToleranceMin').value)
+  const logToleranceMax = parseFloat(document.getElementById('logToleranceMax').value)
+
+  const enableKeepToleranceRandomization = document.getElementById('enableKeepToleranceRandomization').checked
+  const keepToleranceMin = parseInt(document.getElementById('keepToleranceMin').value)
+  const keepToleranceMax = parseInt(document.getElementById('keepToleranceMax').value)
+
+  characteristicGuidancePredictionNodes.forEach((node) => {
+    if (enableLogStepRandomization) {
+      node.widgets_values[2] = getRandomFloat(logStepMin, logStepMax)
+    }
+
+    if (enableLogToleranceRandomization) {
+      node.widgets_values[3] = getRandomFloat(logToleranceMin, logToleranceMax)
+    }
+
+    if (enableKeepToleranceRandomization) {
+      node.widgets_values[4] = Math.floor(getRandomFloat(keepToleranceMin, keepToleranceMax))
+    }
+  })
+}
+
 function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
   const conditioningSetAreaNodes = workflowJSON.nodes.filter(
     (node) => node.type === 'ConditioningSetArea'
@@ -380,39 +415,12 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
   const interpolatePredictionsNodes = workflowJSON.nodes.filter(
     (node) => node.type === 'InterpolatePredictions'
   )
-  const characteristicGuidancePredictionNodes = workflowJSON.nodes.filter(
-    (node) => node.type === 'CharacteristicGuidancePrediction'
-  )
 
   const enableScaleBRandomization = document.getElementById(
     'enableScaleBRandomization'
   ).checked
   const scaleBMin = parseFloat(document.getElementById('scaleBMin').value)
   const scaleBMax = parseFloat(document.getElementById('scaleBMax').value)
-
-  const enableLogStepRandomization = document.getElementById('enableLogStepRandomization').checked
-  const logStepMin = parseFloat(document.getElementById('logStepMin').value)
-  const logStepMax = parseFloat(document.getElementById('logStepMax').value)
-
-  const enableLogToleranceRandomization = document.getElementById(
-    'enableLogToleranceRandomization'
-  ).checked
-  const logToleranceMin = parseFloat(
-    document.getElementById('logToleranceMin').value
-  )
-  const logToleranceMax = parseFloat(
-    document.getElementById('logToleranceMax').value
-  )
-
-  const enableKeepToleranceRandomization = document.getElementById(
-    'enableKeepToleranceRandomization'
-  ).checked
-  const keepToleranceMin = parseInt(
-    document.getElementById('keepToleranceMin').value
-  )
-  const keepToleranceMax = parseInt(
-    document.getElementById('keepToleranceMax').value
-  )
 
   for (let i = 0; i < numAreas; i++) {
     const area = areas[i]
@@ -435,20 +443,6 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
       node.widgets_values[0] = getRandomFloat(0.6, 0.8)
     })
   }
-
-  characteristicGuidancePredictionNodes.forEach((node) => {
-    if (enableLogStepRandomization) {
-      node.widgets_values[2] = getRandomFloat(logStepMin, logStepMax)
-    }
-
-    if (enableLogToleranceRandomization) {
-      node.widgets_values[3] = getRandomFloat(logToleranceMin, logToleranceMax)
-    }
-
-    if (enableKeepToleranceRandomization) {
-      node.widgets_values[4] = Math.floor(getRandomFloat(keepToleranceMin, keepToleranceMax))
-    }
-  })
 }
 
 /**
