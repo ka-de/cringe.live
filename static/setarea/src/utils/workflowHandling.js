@@ -42,6 +42,8 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas, areas) {
     (node) => node.type === 'ConditioningSetArea'
   )
 
+  console.log('Number of Conditioning (Set Area) Nodes: ', conditioningSetAreaNodes.length)
+
   for (let i = 0; i < numAreas; i++) {
     const area = areas[i]
     const width = parseInt(area.style.width)
