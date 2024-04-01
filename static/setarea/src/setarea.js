@@ -380,6 +380,9 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
   const interpolatePredictionsNodes = workflowJSON.nodes.filter(
     (node) => node.type === 'InterpolatePredictions'
   )
+  const characteristicGuidancePredictionNodes = workflowJSON.nodes.filter(
+    (node) => node.type === 'CharacteristicGuidancePrediction'
+  )
 
   const enableScaleBRandomization = document.getElementById(
     'enableScaleBRandomization'
@@ -387,9 +390,7 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
   const scaleBMin = parseFloat(document.getElementById('scaleBMin').value)
   const scaleBMax = parseFloat(document.getElementById('scaleBMax').value)
 
-  const enableLogStepRandomization = document.getElementById(
-    'enableLogStepRandomization'
-  ).checked
+  const enableLogStepRandomization = document.getElementById('enableLogStepRandomization').checked
   const logStepMin = parseFloat(document.getElementById('logStepMin').value)
   const logStepMax = parseFloat(document.getElementById('logStepMax').value)
 
@@ -435,25 +436,19 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas) {
     })
   }
 
-  if (enableLogStepRandomization) {
-    interpolatePredictionsNodes.forEach((node) => {
-      node.widgets_values[1] = getRandomFloat(logStepMin, logStepMax)
-    })
-  }
+  characteristicGuidancePredictionNodes.forEach((node) => {
+    if (enableLogStepRandomization) {
+      node.widgets_values[2] = getRandomFloat(logStepMin, logStepMax)
+    }
 
-  if (enableLogToleranceRandomization) {
-    interpolatePredictionsNodes.forEach((node) => {
-      node.widgets_values[2] = getRandomFloat(logToleranceMin, logToleranceMax)
-    })
-  }
+    if (enableLogToleranceRandomization) {
+      node.widgets_values[3] = getRandomFloat(logToleranceMin, logToleranceMax)
+    }
 
-  if (enableKeepToleranceRandomization) {
-    interpolatePredictionsNodes.forEach((node) => {
-      node.widgets_values[3] = Math.floor(
-        getRandomFloat(keepToleranceMin, keepToleranceMax)
-      )
-    })
-  }
+    if (enableKeepToleranceRandomization) {
+      node.widgets_values[4] = Math.floor(getRandomFloat(keepToleranceMin, keepToleranceMax))
+    }
+  })
 }
 
 /**
