@@ -41,13 +41,6 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas, areas) {
   const conditioningSetAreaNodes = workflowJSON.nodes.filter(
     (node) => node.type === 'ConditioningSetArea'
   )
-  const interpolatePredictionsNodes = workflowJSON.nodes.filter(
-    (node) => node.type === 'InterpolatePredictions'
-  )
-
-  const enableScaleBRandomization = document.getElementById('enableScaleBRandomization').checked
-  const scaleBMin = parseFloat(document.getElementById('scaleBMin').value)
-  const scaleBMax = parseFloat(document.getElementById('scaleBMax').value)
 
   for (let i = 0; i < numAreas; i++) {
     const area = areas[i]
@@ -60,6 +53,16 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas, areas) {
       conditioningSetAreaNodes[i].widgets_values = [width, height, x, y]
     }
   }
+}
+
+function updateInterpolatePredictionsNodes (workflowJSON) {
+  const enableScaleBRandomization = document.getElementById('enableScaleBRandomization').checked
+  const scaleBMin = parseFloat(document.getElementById('scaleBMin').value)
+  const scaleBMax = parseFloat(document.getElementById('scaleBMax').value)
+
+  const interpolatePredictionsNodes = workflowJSON.nodes.filter(
+    (node) => node.type === 'InterpolatePredictions'
+  )
 
   if (enableScaleBRandomization) {
     interpolatePredictionsNodes.forEach((node) => {
@@ -116,8 +119,11 @@ function handleWorkflowData (shouldExport) {
             ? { ...fourWayWorkflowJSON }
             : { ...fiveWayWorkflowJSON }
 
-    // Update the ConditioningSetArea and InterpolatePredictions nodes
-    updateConditioningSetAreaNodes(workflowJSON, numAreas)
+    // Update the ConditioningSetArea nodes
+    updateConditioningSetAreaNodes(workflowJSON, numAreas, areas)
+
+    // Update the InterpolatePredictions nodes
+    updateInterpolatePredictionsNodes(workflowJSON)
 
     // Update the CharacteristicGuidancePrediction nodes
     updateCharacteristicGuidancePredictionNodes(workflowJSON)
@@ -157,4 +163,4 @@ function exportToWorkflow () {
   handleWorkflowData(true)
 }
 
-export { handleWorkflowData, copyToClipboard, exportToWorkflow, updateCharacteristicGuidancePredictionNodes, updateConditioningSetAreaNodes, loadWorkflowFiles }
+export { handleWorkflowData, copyToClipboard, exportToWorkflow, updateCharacteristicGuidancePredictionNodes, updateConditioningSetAreaNodes, updateInterpolatePredictionsNodes, loadWorkflowFiles }
