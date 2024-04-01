@@ -93,17 +93,21 @@ function updateCharacteristicGuidancePredictionNodes (workflowJSON) {
   const keepToleranceMax = parseInt(document.getElementById('keepToleranceMax').value)
 
   characteristicGuidancePredictionNodes.forEach((node) => {
+    const widgetsValues = node.widgets_values
+
     if (enableLogStepRandomization) {
-      node.widgets_values[2] = getRandomFloat(logStepMin, logStepMax)
+      widgetsValues[2] = getRandomFloat(logStepMin, logStepMax)
     }
 
     if (enableLogToleranceRandomization) {
-      node.widgets_values[3] = getRandomFloat(logToleranceMin, logToleranceMax)
+      widgetsValues[3] = getRandomFloat(logToleranceMin, logToleranceMax)
     }
 
     if (enableKeepToleranceRandomization) {
-      node.widgets_values[4] = Math.floor(getRandomFloat(keepToleranceMin, keepToleranceMax))
+      widgetsValues[4] = Math.floor(getRandomFloat(keepToleranceMin, keepToleranceMax))
     }
+
+    node.widgets_values = widgetsValues
   })
 }
 
