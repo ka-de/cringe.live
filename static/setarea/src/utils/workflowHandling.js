@@ -1,8 +1,43 @@
 // utils/workflowHandling.js
 
-import { areas, twoWayWorkflowJSON, threeWayWorkflowJSON, fourWayWorkflowJSON, fiveWayWorkflowJSON } from '../setarea.js'
+import { areas } from '../setarea.js'
 
-function updateConditioningSetAreaNodes (workflowJSON, numAreas, areas, getRandomFloat) {
+let twoWayWorkflowJSON, threeWayWorkflowJSON, fourWayWorkflowJSON, fiveWayWorkflowJSON
+
+/**
+ * Loads the workflow JSON files.
+ */
+async function loadWorkflowFiles () {
+  try {
+    const fourWayResponse = await fetch('4way-conditional-workflow.json')
+    const fiveWayResponse = await fetch('5way-conditional-workflow.json')
+    const twoWayResponse = await fetch('2way-conditional-workflow.json')
+    const threeWayResponse = await fetch('3way-conditional-workflow.json')
+
+    if (!fourWayResponse.ok || !fiveWayResponse.ok || !twoWayResponse.ok || !threeWayResponse.ok) {
+      throw new Error('Failed to load one or more workflow files.')
+    }
+
+    twoWayWorkflowJSON = await twoWayResponse.json()
+    threeWayWorkflowJSON = await threeWayResponse.json()
+    fourWayWorkflowJSON = await fourWayResponse.json()
+    fiveWayWorkflowJSON = await fiveWayResponse.json()
+  } catch (error) {
+    console.error('Error loading workflow files:', error)
+  }
+}
+
+/**
+ * Generates a random float within the specified range.
+ * @param {number} min - The minimum value of the range.
+ * @param {number} max - The maximum value of the range.
+ * @returns {number} A random float within the specified range.
+ */
+function getRandomFloat (min, max) {
+  return Math.random() * (max - min) + min
+}
+
+function updateConditioningSetAreaNodes (workflowJSON, numAreas, areas) {
   const conditioningSetAreaNodes = workflowJSON.nodes.filter(
     (node) => node.type === 'ConditioningSetArea'
   )
@@ -37,7 +72,7 @@ function updateConditioningSetAreaNodes (workflowJSON, numAreas, areas, getRando
   }
 }
 
-function updateCharacteristicGuidancePredictionNodes (workflowJSON, getRandomFloat) {
+function updateCharacteristicGuidancePredictionNodes (workflowJSON) {
   const characteristicGuidancePredictionNodes = workflowJSON.nodes.filter(
     (node) => node.type === 'CharacteristicGuidancePrediction'
   )
@@ -122,4 +157,4 @@ function exportToWorkflow () {
   handleWorkflowData(true)
 }
 
-export { handleWorkflowData, copyToClipboard, exportToWorkflow, updateCharacteristicGuidancePredictionNodes, updateConditioningSetAreaNodes }
+export { handleWorkflowData, copyToClipboard, exportToWorkflow, updateCharacteristicGuidancePredictionNodes, updateConditioningSetAreaNodes, loadWorkflowFiles }

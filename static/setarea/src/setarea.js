@@ -3,15 +3,16 @@
 // Importing wolves 🐺
 import './setarea.sass'
 import resizeAreaUtils from './utils/resizeArea.js'
-import { handleWorkflowData, copyToClipboard, exportToWorkflow, updateCharacteristicGuidancePredictionNodes, updateConditioningSetAreaNodes } from './utils/workflowHandling.js'
+import { copyToClipboard, exportToWorkflow, loadWorkflowFiles } from './utils/workflowHandling.js'
+import getRandomRGBAColor from './utils/colorTools.js'
+import { getCanvasPosition, getMousePositionRelativeToCanvas } from './utils/position.js'
+import shouldSnapArea from './utils/areaLayout.js'
 
 /**
  * This JavaScript file contains functions for creating, updating, and exporting areas on a canvas.
  * It also includes functions for setting the background image of the canvas, loading workflow files,
  * and handling the drag functionality of a floating bar.
  */
-
-let twoWayWorkflowJSON, threeWayWorkflowJSON, fourWayWorkflowJSON, fiveWayWorkflowJSON
 
 // Variables for storing the state of the canvas and the selection process.
 const areas = [] // An array to store the areas on the canvas.
@@ -40,78 +41,6 @@ let isDraggingArea = false
 let initialX, initialY
 let currentX, currentY
 let currentAreaOffsetX, currentAreaOffsetY
-
-/**
- * Generates a random float within the specified range.
- * @param {number} min - The minimum value of the range.
- * @param {number} max - The maximum value of the range.
- * @returns {number} A random float within the specified range.
- */
-function getRandomFloat (min, max) {
-  return Math.random() * (max - min) + min
-}
-
-/**
- * Checks if the area should be snapped to a nearby area or the canvas edges.
- * @param {number} x - The x-coordinate of the area.
- * @param {number} y - The y-coordinate of the area.
- * @param {number} width - The width of the area.
- * @param {number} height - The height of the area.
- * @returns {Object} An object containing the snapped x and y coordinates.
- */
-function shouldSnapArea (x, y, width, height) {
-  const canvas = document.getElementById('canvas')
-  const canvasRect = canvas.getBoundingClientRect()
-  const canvasLeft = canvasRect.left + window.pageXOffset
-  const canvasTop = canvasRect.top + window.pageYOffset
-  const canvasWidth = canvas.offsetWidth
-  const canvasHeight = canvas.offsetHeight
-  const snappingRadius = parseInt(document.getElementById('snappingRadius').value)
-  const enableSnapping = document.getElementById('enableSnapping').checked
-
-  if (!enableSnapping) {
-    return { x, y }
-  }
-
-  let snappedX = x + canvasLeft
-  let snappedY = y + canvasTop
-
-  // Check for nearby areas
-  for (const area of areas) {
-    const areaX = parseInt(area.style.left) + canvasLeft
-    const areaY = parseInt(area.style.top) + canvasTop
-    const areaWidth = parseInt(area.style.width)
-    const areaHeight = parseInt(area.style.height)
-
-    // Check if the new area is within the snapping radius of the existing area
-    if (
-      Math.abs(x + canvasLeft - (areaX + areaWidth)) <= snappingRadius ||
-      Math.abs(x + canvasLeft - areaX) <= snappingRadius ||
-      Math.abs(y + canvasTop - (areaY + areaHeight)) <= snappingRadius ||
-      Math.abs(y + canvasTop - areaY) <= snappingRadius
-    ) {
-      // Snap the new area to the existing area
-      snappedX = x > areaX + areaWidth / 2 ? areaX + areaWidth - canvasLeft : areaX - canvasLeft
-      snappedY = y > areaY + areaHeight / 2 ? areaY + areaHeight - canvasTop : areaY - canvasTop
-      break
-    }
-  }
-
-  // Check for canvas edges
-  if (x <= snappingRadius) {
-    snappedX = 0
-  } else if (x + width >= canvasWidth - snappingRadius) {
-    snappedX = canvasWidth - width
-  }
-
-  if (y <= snappingRadius) {
-    snappedY = 0
-  } else if (y + height >= canvasHeight - snappingRadius) {
-    snappedY = canvasHeight - height
-  }
-
-  return { x: snappedX - canvasLeft, y: snappedY - canvasTop }
-}
 
 /**
  * Starts the drag functionality of an existing area.
@@ -177,29 +106,6 @@ function stopDragArea (e) {
 
   document.removeEventListener('mousemove', dragArea)
   document.removeEventListener('mouseup', stopDragArea)
-}
-
-function getElementPosition (element) {
-  const rect = element.getBoundingClientRect()
-  const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-  return {
-    x: rect.left + scrollLeft,
-    y: rect.top + scrollTop
-  }
-}
-
-function getCanvasPosition () {
-  const canvas = document.getElementById('canvas')
-  return getElementPosition(canvas)
-}
-
-function getMousePositionRelativeToCanvas (e) {
-  const { x: canvasX, y: canvasY } = getCanvasPosition()
-  return {
-    x: e.clientX - canvasX,
-    y: e.clientY - canvasY
-  }
 }
 
 /**
@@ -323,29 +229,6 @@ function setBackgroundImage (file) {
       bgImageContainer.style.backgroundPosition = 'center'
     }
     reader.readAsDataURL(file)
-  }
-}
-
-/**
- * Loads the workflow JSON files.
- */
-async function loadWorkflowFiles () {
-  try {
-    const fourWayResponse = await fetch('4way-conditional-workflow.json')
-    const fiveWayResponse = await fetch('5way-conditional-workflow.json')
-    const twoWayResponse = await fetch('2way-conditional-workflow.json')
-    const threeWayResponse = await fetch('3way-conditional-workflow.json')
-
-    if (!fourWayResponse.ok || !fiveWayResponse.ok || !twoWayResponse.ok || !threeWayResponse.ok) {
-      throw new Error('Failed to load one or more workflow files.')
-    }
-
-    twoWayWorkflowJSON = await twoWayResponse.json()
-    threeWayWorkflowJSON = await threeWayResponse.json()
-    fourWayWorkflowJSON = await fourWayResponse.json()
-    fiveWayWorkflowJSON = await fiveWayResponse.json()
-  } catch (error) {
-    console.error('Error loading workflow files:', error)
   }
 }
 
@@ -615,19 +498,6 @@ function handleMouseMove (e) {
 function handleMouseUp (e) {
   isDraggingArea = false
   resizeAreaUtils.isResizingArea = false
-}
-
-/**
- * Returns a random RGBA color.
- * @returns {string} A string representing a random RGBA color.
- */
-function getRandomRGBAColor () {
-  const r = Math.floor(Math.random() * 256)
-  const g = Math.floor(Math.random() * 256)
-  const b = Math.floor(Math.random() * 256)
-  // Set alpha value to 0.5
-  const a = 0.5
-  return `rgba(${r}, ${g}, ${b}, ${a})`
 }
 
 // Event listeners
