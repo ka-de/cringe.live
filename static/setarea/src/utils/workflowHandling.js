@@ -64,6 +64,8 @@ function updateInterpolatePredictionsNodes (workflowJSON) {
     (node) => node.type === 'InterpolatePredictions'
   )
 
+  console.log('Number of  Interpolate Prediction Nodes: ', interpolatePredictionsNodes.length)
+
   if (enableScaleBRandomization) {
     interpolatePredictionsNodes.forEach((node) => {
       node.widgets_values[0] = getRandomFloat(scaleBMin, scaleBMax)
@@ -80,29 +82,29 @@ function updateCharacteristicGuidancePredictionNodes (workflowJSON) {
     (node) => node.type === 'CharacteristicGuidancePrediction'
   )
 
-  const enableLogStepRandomization = document.getElementById('enableLogStepRandomization').checked
-  const logStepMin = parseFloat(document.getElementById('logStepMin').value)
-  const logStepMax = parseFloat(document.getElementById('logStepMax').value)
-
-  const enableLogToleranceRandomization = document.getElementById('enableLogToleranceRandomization').checked
-  const logToleranceMin = parseFloat(document.getElementById('logToleranceMin').value)
-  const logToleranceMax = parseFloat(document.getElementById('logToleranceMax').value)
-
-  const enableKeepToleranceRandomization = document.getElementById('enableKeepToleranceRandomization').checked
-  const keepToleranceMin = parseInt(document.getElementById('keepToleranceMin').value)
-  const keepToleranceMax = parseInt(document.getElementById('keepToleranceMax').value)
-
   characteristicGuidancePredictionNodes.forEach((node) => {
     const widgetsValues = node.widgets_values
 
+    // Randomize log step size
+    const enableLogStepRandomization = document.getElementById('enableLogStepRandomization').checked
+    const logStepMin = parseFloat(document.getElementById('logStepMin').value)
+    const logStepMax = parseFloat(document.getElementById('logStepMax').value)
     if (enableLogStepRandomization) {
       widgetsValues[2] = getRandomFloat(logStepMin, logStepMax)
     }
 
+    // Randomize log tolerance
+    const enableLogToleranceRandomization = document.getElementById('enableLogToleranceRandomization').checked
+    const logToleranceMin = parseFloat(document.getElementById('logToleranceMin').value)
+    const logToleranceMax = parseFloat(document.getElementById('logToleranceMax').value)
     if (enableLogToleranceRandomization) {
       widgetsValues[3] = getRandomFloat(logToleranceMin, logToleranceMax)
     }
 
+    // Randomize keep tolerance
+    const enableKeepToleranceRandomization = document.getElementById('enableKeepToleranceRandomization').checked
+    const keepToleranceMin = parseInt(document.getElementById('keepToleranceMin').value)
+    const keepToleranceMax = parseInt(document.getElementById('keepToleranceMax').value)
     if (enableKeepToleranceRandomization) {
       widgetsValues[4] = Math.floor(getRandomFloat(keepToleranceMin, keepToleranceMax))
     }
