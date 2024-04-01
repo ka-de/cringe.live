@@ -2,7 +2,7 @@
 
 // Importing wolves 🐺
 import './setarea.sass'
-import resizeAreaUtils from './resizeArea.js'
+import resizeAreaUtils from './utils/resizeArea.js'
 
 /**
  * This JavaScript file contains functions for creating, updating, and exporting areas on a canvas.
