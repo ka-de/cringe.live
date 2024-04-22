@@ -1,0 +1,142 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set Areas</title>
+  <script src="dist/app.bundle.js"></script>
+  <script src="dist/resizeArea.bundle.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="dist/setarea.css">
+<!--
+  <script type="module" src="utils.js"></script>
+  <script type="module" src="resizeArea.js"></script>
+  <script type="module" src="setarea.js"></script>
+-->
+</head>
+<body class="bg-gray-100">
+  <div class="floating-bar" id="floating-bar">
+    <div class="grid grid-cols-2 gap-4 mb-2">
+      <div class="flex items-center">
+        <label for="canvasWidth" class="mr-2">Width:</label>
+        <input type="number" id="canvasWidth" value="1024" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+      </div>
+      <div class="flex items-center">
+        <label for="canvasHeight" class="mr-2">Height:</label>
+        <input type="number" id="canvasHeight" value="1024" class="border border-gray-300 rounded-md px-2 py-1">
+      </div>
+      <div class="flex items-center">
+        <label for="areaWidth" class="mr-2">Width:</label>
+        <input type="number" id="areaWidth" value="100" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+      </div>
+      <div class="flex items-center">
+        <label for="areaHeight" class="mr-2">Height:</label>
+        <input type="number" id="areaHeight" value="100" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+      </div>
+      <div class="flex items-center">
+        <label for="areaX" class="mr-2">X:</label>
+        <input type="number" id="areaX" value="0" class="border border-gray-300 rounded-md px-2 py-1 mr-2">
+      </div>
+      <div class="flex items-center">
+        <label for="areaY" class="mr-2">Y:</label>
+        <input type="number" id="areaY" value="0" class="border border-gray-300 rounded-md px-2 py-1">
+      </div>
+      <div class="flex items-center">
+        <label for="bgImageFile" class="mr-2">BG Image:</label>
+        <input type="file" id="bgImageFile" accept="image/*" class="border border-gray-300 rounded-md px-2 py-1 mr-2" onchange="setBackgroundImage(this.files[0])">
+      </div>
+      <div class="flex items-center">
+        <label for="bgImageOpacity" class="mr-2">BG Opacity:</label>
+        <input type="range" id="bgImageOpacity" min="0" max="1" step="0.01" value="1" class="border border-gray-300 rounded-md px-2 py-1 mr-2" oninput="adjustImageOpacity(this.value)">
+      </div>
+    </div>
+    <div class="flex flex-col space-y-2 mb-2">
+      <button onclick="setCanvasSize()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Set Canvas Size</button>
+      <button onclick="addArea()" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add Area</button>
+      <button onclick="removeArea()" class="bg-red-500 hover:bg-red-700 text-white font-bold py -2 px-4 rounded">Remove Area</button>
+      <button onclick="exportToWorkflow()" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" id="exportWorkflowBtn">Export to Workflow</button>
+      <button onclick="copyToClipboard()" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded" id="copyWorkflowBtn">Copy Workflow to Clipboard</button>
+    </div>
+
+    <div class="flex items-center mb-2">
+      <input type="checkbox" id="enableAreaDrag" checked>
+      <label for="enableAreaDrag" class="ml-2">Enable Area Drag</label>
+    </div>
+    <div class="flex items-center mb-2">
+      <input type="checkbox" id="enableAreaResize">
+      <label for="enableAreaResize" class="ml-2">Enable Area Resize (BAD)</label>
+    </div>
+
+    <div class="flex items-center mb-2">
+      <input type="checkbox" id="enableSnapping" checked>
+      <label for="enableSnapping" class="ml-2">Enable Snapping</label>
+    </div>
+    <div class="flex items-center mb-2">
+      <label for="snappingRadius" class="mr-2">Snapping Radius:</label>
+      <input type="number" id="snappingRadius" value="20" class="border border-gray-300 rounded-md px-2 py-1">
+    </div>
+<h3>🎲 Randomization 🎲</h3>
+    <div class="flex items-center mb-2">
+      <input type="checkbox" id="enableScaleBRandomization">
+      <label for="enableScaleBRandomization" class="ml-2">Randomize scale_B for Interpolate Predictions</label>
+    </div>
+    <div class="flex items-center mb-2">
+      <div class="flex items-center w-1/2">
+        <label for="scaleBMin" class="mr-2">scale_B min:</label>
+        <input type="number" id="scaleBMin" value="0.60" class="border border-gray-300 rounded-md px-2 py-1" min="0" max="1" step="0.01">
+      </div>
+      <div class="flex items-center w-1/2">
+        <label for="scaleBMax" class="mr-2">scale_B Max:</label>
+        <input type="number" id="scaleBMax" value="0.80" class="border border-gray-300 rounded-md px-2 py-1" min="0" max="1" step="0.01">
+      </div>
+    </div>
+    <b>Characteristic Guidance Prediction</b>
+    <div class="flex items-center mb-2">
+      <input type="checkbox" id="enableLogStepRandomization">
+      <label for="enableLogStepRandomization" class="ml-2">Randomize log_step_size.</label>
+    </div>
+    <div class="flex items-center mb-2">
+      <div class="flex items-center w-1/2">
+        <label for="logStepMin" class="mr-2">Log Step Size Min:</label>
+        <input type="number" id="logStepMin" value="-3.0" class="border border-gray-300 rounded-md px-2 py-1" min="-3.0" max="-1.0" step="0.01">
+      </div>
+      <div class="flex items-center w-1/2">
+        <label for="logStepMax" class="mr-2">Log Step Size Max:</label>
+        <input type="number" id="logStepMax" value="-1.0" class="border border-gray-300 rounded-md px-2 py-1" min="-3.0" max="-1.0" step="0.01">
+      </div>
+    </div>
+    <div class="flex items-center mb-2">
+      <input type="checkbox" id="enableLogToleranceRandomization">
+      <label for="enableLogToleranceRandomization" class="ml-2">Randomize log_tolerance.</label>
+    </div>
+    <div class="flex items-center mb-2">
+      <div class="flex items-center w-1/2">
+        <label for="logToleranceMin" class="mr-2">log_tolerance min:</label>
+        <input type="number" id="logToleranceMin" value="-5.0" class="border border-gray-300 rounded-md px-2 py-1" min="-5.0" max="-3.0" step="0.01">
+      </div>
+      <div class="flex items-center w-1/2">
+        <label for="logToleranceMax" class="mr-2">log_tolerance max:</label>
+        <input type="number" id="logToleranceMax" value="-3.0" class="border border-gray-300 rounded-md px-2 py-1" min="-5.0" max="-3.0" step="0.01">
+      </div>
+    </div>
+    <div class="flex items-center mb-2">
+      <input type="checkbox" id="enableKeepToleranceRandomization">
+      <label for="enableKeepToleranceRandomization" class="ml-2">Randomize keep_tolerance.</label>
+    </div>
+    <div class="flex items-center mb-2">
+      <div class="flex items-center w-1/2">
+        <label for="keepToleranceMin" class="mr-2">keep_tolerance min:</label>
+        <input type="number" id="keepToleranceMin" value="8" class="border border-gray-300 rounded-md px-2 py-1" min="8" max="10" step="1">
+      </div>
+      <div class="flex items-center w-1/2">
+        <label for="keepToleranceMax" class="mr-2">keep_tolerance max:</label>
+        <input type="number" id="keepToleranceMax" value="10" class="border border-gray-300 rounded-md px-2 py-1" min="8" max="10" step="1">
+      </div>
+    </div>
+</div>
+  <div class="canvas mx-auto mt-8" id="canvas">
+    <div id="bgImageContainer"></div>
+  </div>
+</body>
+</html>

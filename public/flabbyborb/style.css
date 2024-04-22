@@ -1,0 +1,108 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+canvas {
+  display: block;
+}
+
+#gameCanvas {
+    border: 1px solid black;
+}
+
+#scoreDisplay {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+}
+
+#debugDisplay {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+#startScreen {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+}
+
+#backgroundLayer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('assets/sky.png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  z-index: -3;
+}
+
+@media (max-width: 480px) {
+  #scoreDisplay {
+      top: 5px;
+      left: 5px;
+      font-size: 18px;
+  }
+}
+
+.cloud {
+  position: absolute;
+  top: 100px;
+  width: 200px;
+  height: auto;
+  animation: cloudMove linear infinite;
+  z-index: -2;
+}
+
+@keyframes cloudMove {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.coin {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: -1;
+}
+
+#cloud1 {
+  left: 0;
+}
+
+#cloud2 {
+  left: 50%;
+}
+
+#cloud3 {
+  left: 90%;
+}

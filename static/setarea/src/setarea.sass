@@ -1,0 +1,62 @@
+// setarea.sass - Sass for wolves.
+
+.selection
+    position: absolute
+    background-color: rgba(0, 0, 0, 0.2)
+    border: 1px dashed #000
+    z-index: 1
+
+#exportWorkflowBtn
+    background-color: #9f7aea
+
+    &:hover
+        background-color: #805ad5
+
+    &:disabled
+        background-color: #d8b4fe
+        cursor: not-allowed
+
+#bgImageContainer
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+.area-info
+    position: absolute
+    top: -2.5rem
+    right: 0rem
+    color: white
+    font-size: 14px
+    font-family: monospace
+    padding: 0.2rem
+    background-color: rgba(0, 0, 0, 0.5)
+    border-radius: 0.2rem
+    z-index: 100
+    -webkit-user-select: none
+    user-select: none
+
+.canvas
+    position: relative
+    border: 2px solid #000
+
+input
+    width: 60px
+
+.area
+    position: absolute
+    border: 1px solid #000
+    background-color: rgba(200, 200, 200, 0.5) // Semi-transparent gray background
+
+.floating-bar
+    max-width: 300px
+    text-align: center
+    position: absolute
+    background-color: #fff
+    padding: 1rem
+    border-radius: 0.5rem
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+    z-index: 10
+    cursor: move
+
