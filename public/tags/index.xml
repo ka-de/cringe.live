@@ -6,8 +6,120 @@
     <description>Recent content in Tags on Cringe Live</description>
     <generator>Hugo 0.125.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Aug 2023 12:08:30 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 20 Aug 2023 11:27:05 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Color Conversion</title>
+      <link>http://localhost:1313/tags/color-conversion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/color-conversion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Analysis</title>
+      <link>http://localhost:1313/tags/data-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/data-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Manipulation</title>
+      <link>http://localhost:1313/tags/data-manipulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/data-manipulation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Excel Data Extraction</title>
+      <link>http://localhost:1313/tags/excel-data-extraction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/excel-data-extraction/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Excel Spreadsheets</title>
+      <link>http://localhost:1313/tags/excel-spreadsheets/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/excel-spreadsheets/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Json</title>
+      <link>http://localhost:1313/tags/json/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/json/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Powershell Script</title>
+      <link>http://localhost:1313/tags/powershell-script/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/powershell-script/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python Programming</title>
+      <link>http://localhost:1313/tags/python-programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/python-programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Addiction</title>
+      <link>http://localhost:1313/tags/addiction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/addiction/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alkaloids</title>
+      <link>http://localhost:1313/tags/alkaloids/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/alkaloids/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Caffeine</title>
+      <link>http://localhost:1313/tags/caffeine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/caffeine/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Health</title>
+      <link>http://localhost:1313/tags/health/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/health/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self-Improvement</title>
+      <link>http://localhost:1313/tags/self-improvement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/self-improvement/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Smoking</title>
+      <link>http://localhost:1313/tags/smoking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/smoking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Substance Abuse</title>
+      <link>http://localhost:1313/tags/substance-abuse/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/substance-abuse/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tea</title>
+      <link>http://localhost:1313/tags/tea/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/tea/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Addiction Recovery</title>
       <link>http://localhost:1313/tags/addiction-recovery/</link>
@@ -30,24 +142,10 @@
       <description></description>
     </item>
     <item>
-      <title>Data Manipulation</title>
-      <link>http://localhost:1313/tags/data-manipulation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data-manipulation/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Excel</title>
       <link>http://localhost:1313/tags/excel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/excel/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Health</title>
-      <link>http://localhost:1313/tags/health/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/health/</guid>
       <description></description>
     </item>
     <item>
@@ -62,13 +160,6 @@
       <link>http://localhost:1313/tags/programming/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/programming/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Self-Improvement</title>
-      <link>http://localhost:1313/tags/self-improvement/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/self-improvement/</guid>
       <description></description>
     </item>
     <item>

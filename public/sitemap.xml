@@ -2,115 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/code-performance-analysis/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/code-profiling/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/performance-optimization/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/powershell/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/powershell-automation/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/powershell-functions/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/profiling/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/profiling-python-on-windows/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/python/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/python-development/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/python-profiling/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/python-scripting/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/snakeviz-tool/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/windows/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windows-environment/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/windows-scripting/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/windows-scripting/</loc>
-    <lastmod>2023-08-30T15:02:05+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/administrator-account/</loc>
-    <lastmod>2023-08-28T16:11:15+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/anti-virus/</loc>
-    <lastmod>2023-08-28T16:11:15+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/bad-idea/</loc>
-    <lastmod>2023-08-28T16:11:15+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cybersecurity/</loc>
-    <lastmod>2023-08-28T16:11:15+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/productivity/</loc>
-    <lastmod>2023-08-28T16:11:15+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/security/</loc>
-    <lastmod>2023-08-28T16:11:15+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/task-scheduler/</loc>
-    <lastmod>2023-08-28T16:11:15+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/technology/</loc>
-    <lastmod>2023-08-28T16:11:15+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/tutorials/</loc>
-    <lastmod>2023-08-28T16:11:15+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/windows-tips/</loc>
-    <lastmod>2023-08-28T16:11:15+02:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/categories/ai-and-machine-learning/</loc>
     <lastmod>2023-08-20T11:27:05+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/alle-farben/</loc>
     <lastmod>2023-08-20T11:27:05+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2023-08-20T11:27:05+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/color-analysis/</loc>
     <lastmod>2023-08-20T11:27:05+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/color-conversion/</loc>
+    <lastmod>2023-08-20T11:27:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2023-08-20T11:27:05+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/data-analysis/</loc>
@@ -140,6 +47,9 @@
     <loc>http://localhost:1313/tags/json/</loc>
     <lastmod>2023-08-20T11:27:05+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2023-08-20T11:27:05+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/categories/powershell/</loc>
     <lastmod>2023-08-20T11:27:05+02:00</lastmod>
   </url><url>
@@ -149,7 +59,16 @@
     <loc>http://localhost:1313/categories/programming/</loc>
     <lastmod>2023-08-20T11:27:05+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/python/</loc>
+    <lastmod>2023-08-20T11:27:05+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/python-programming/</loc>
+    <lastmod>2023-08-20T11:27:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2023-08-20T11:27:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/technology/</loc>
     <lastmod>2023-08-20T11:27:05+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/addiction/</loc>
@@ -212,6 +131,9 @@
     <loc>http://localhost:1313/tags/excel/</loc>
     <lastmod>2023-08-18T12:08:30+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/powershell/</loc>
+    <lastmod>2023-08-18T12:08:30+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/programming/</loc>
     <lastmod>2023-08-18T12:08:30+02:00</lastmod>
   </url><url>
@@ -220,7 +142,5 @@
   </url><url>
     <loc>http://localhost:1313/tags/vba-script/</loc>
     <lastmod>2023-08-18T12:08:30+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/prompt-graveyard/</loc>
   </url>
 </urlset>

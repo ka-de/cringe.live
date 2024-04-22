@@ -6,6 +6,119 @@
     <description>Recent content in Categories on Cringe Live</description>
     <generator>Hugo 0.125.0</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 20 Aug 2023 11:27:05 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI and Machine Learning</title>
+      <link>http://localhost:1313/categories/ai-and-machine-learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/ai-and-machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Color Analysis</title>
+      <link>http://localhost:1313/categories/color-analysis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/color-analysis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Conversion</title>
+      <link>http://localhost:1313/categories/data-conversion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/data-conversion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Extraction</title>
+      <link>http://localhost:1313/categories/data-extraction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/data-extraction/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Manipulation</title>
+      <link>http://localhost:1313/categories/data-manipulation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/data-manipulation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Excel</title>
+      <link>http://localhost:1313/categories/excel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/excel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PowerShell</title>
+      <link>http://localhost:1313/categories/powershell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/powershell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming</title>
+      <link>http://localhost:1313/categories/programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/programming/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/categories/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technology</title>
+      <link>http://localhost:1313/categories/technology/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/technology/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Addiction Recovery</title>
+      <link>http://localhost:1313/categories/addiction-recovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/addiction-recovery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Daily Life</title>
+      <link>http://localhost:1313/categories/daily-life/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/daily-life/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Health and Wellness</title>
+      <link>http://localhost:1313/categories/health-and-wellness/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/health-and-wellness/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lifestyle</title>
+      <link>http://localhost:1313/categories/lifestyle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/lifestyle/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Personal Growth</title>
+      <link>http://localhost:1313/categories/personal-growth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/personal-growth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self-Reflection</title>
+      <link>http://localhost:1313/categories/self-reflection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/self-reflection/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lifestyle on Cringe Live</title>
+    <link>http://localhost:1313/categories/lifestyle/</link>
+    <description>Recent content in Lifestyle on Cringe Live</description>
+    <generator>Hugo 0.125.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Aug 2023 16:08:56 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/lifestyle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Green Tea</title>
+      <link>http://localhost:1313/posts/green-tea/</link>
+      <pubDate>Fri, 18 Aug 2023 16:08:56 +0200</pubDate>
+      <guid>http://localhost:1313/posts/green-tea/</guid>
+      <description>Embracing comfort has been the highlight of my midlife crisis!&#xA;I switched from slurping coffee to sipping green tea, and let me tell you, it has been an amazing experience. While I know people usually discard their first infusions because of its strength, I just dose it out for a 5 minute hot water bath. But I also tried out crushing up the leaves with mortar and pestle and gulping down the resulting &amp;ldquo;snuff&amp;rdquo;.</description>
+    </item>
+  </channel>
+</rss>
