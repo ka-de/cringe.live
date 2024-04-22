@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Bad Idea | Cringe Live</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="We disable the real-time protection for good.">
+    <meta name="generator" content="Hugo 0.125.0">
+    
+    
+    
+    
+      <meta name="robots" content="noindex, nofollow">
+    
+    
+      <meta name="author" content = "Balazs Horvath">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+    
+
+    
+      
+
+    
+
+    
+
+    
+      <link rel="canonical" href="http://localhost:1313/posts/bad-idea/">
+    
+
+    <meta property="og:url" content="http://localhost:1313/posts/bad-idea/">
+  <meta property="og:site_name" content="Cringe Live">
+  <meta property="og:title" content="Bad Idea">
+  <meta property="og:description" content="We disable the real-time protection for good.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+  <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-08-28T16:11:15+02:00">
+    <meta property="article:modified_time" content="2023-08-28T16:11:15+02:00">
+    <meta property="article:tag" content="Cybersecurity">
+    <meta property="article:tag" content="Windows">
+    <meta property="article:tag" content="Anti-Virus">
+    <meta property="article:tag" content="Powershell">
+    <meta property="article:tag" content="Administrator Account">
+    <meta property="article:tag" content="Task Scheduler">
+
+  <meta itemprop="name" content="Bad Idea">
+  <meta itemprop="description" content="We disable the real-time protection for good.">
+  <meta itemprop="datePublished" content="2023-08-28T16:11:15+02:00">
+  <meta itemprop="dateModified" content="2023-08-28T16:11:15+02:00">
+  <meta itemprop="wordCount" content="364">
+  <meta itemprop="keywords" content="Data security,Ransomware,Anti-Virus software,PowerShell command,Administrator terminal,Windows Defender,Task automation,Administrator account,Task creation,Cybersecurity tips,Windows tips,Productivity hacks,Data protection,Password management,Windows Task Scheduler"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Bad Idea">
+<meta name="twitter:description" content="We disable the real-time protection for good.">
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Cringe Live
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+<div class="ananke-socials">
+  
+</div>
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked ttu">
+          
+        Posts
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Bad Idea</h1>
+      
+      <p class="tracked">
+        By <strong>Balazs Horvath</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2023-08-28T16:11:15+02:00">August 28, 2023</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><p>Is your data worthless? Did a hacker deposit some bitcoin in your wallet after he looked at your poor files when he tried to ransomware attack you? Well my friend, then you absolutely don&rsquo;t need to run any Anti-Virus software!</p>
+<p>A bit back I found this perfect piece of juvenile neglectfulness, which turns off Real-Time protection if you enter it into a PowerShell running as Administrator.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>Set-MpPreference -DisableRealtimeMonitoring $true
+</span></span></code></pre></div><p>I took it a bit further and added my own <code>sudo</code> command in Windows and pops open an Administrator terminal, and since I added this line as a function, I can now accomplish in a few keystrokes what used to take:</p>
+<ol>
+<li>Find the tiny Windows Defender icon on the Taskbar</li>
+<li>Click it..</li>
+<li>Wait for it to load the Control Panel which for some reason is a website now..</li>
+<li>You can imagine the rest of the steps it takes to toggle a button, somewhere.</li>
+</ol>
+<p>Now, any other person would be satisfied endangering their data this much, but if I stopped here, with only this much power under my belt, I would be typing in commands into a terminal for the rest of my life. So lets create a <code>Task</code> that will do it for us:</p>
+<p>First, we need to enable the Administrator account and set a password for it:</p>
+<ol>
+<li>Access Command Prompt as an Administrator:</li>
+<li>Press the Windows + X keys simultaneously.</li>
+<li>Select &ldquo;Terminal (Admin)&rdquo; or &ldquo;Command Prompt (Admin)&rdquo; from the menu that appears.</li>
+<li>In the Command Prompt window, type the following command and press Enter:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net user administrator /active:yes
+</span></span></code></pre></div><ol start="5">
+<li>To set a password for the Administrator account, type the following command and press Enter:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>net user administrator <span style="color:#f92672">[</span>password<span style="color:#f92672">]</span>
+</span></span></code></pre></div><p>Replace [password] with the password you want to set for the Administrator account.</p>
+<p>Now all we need to do is create a task, open <strong>Task Scheduler</strong>:</p>
+<ol>
+<li>Press Windows + S to open the Windows search bar.</li>
+<li>Type &ldquo;Task Scheduler&rdquo; and press Enter.</li>
+<li>In the Task Scheduler window, on the right-hand side, click on &ldquo;Create Basic Task&hellip;&rdquo; or &ldquo;Create Task&hellip;&rdquo; (for more advanced options).</li>
+</ol>
+<p>Now fill it out with these:</p>
+<figure><img src="/images/avoff-startup-1.png">
+</figure>
+
+<p>For Program/script:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#ae81ff">\W</span>indows<span style="color:#ae81ff">\S</span>ystem32<span style="color:#ae81ff">\W</span>indowsPowerShell<span style="color:#ae81ff">\v</span>1.0<span style="color:#ae81ff">\p</span>owershell.exe
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>-ExecutionPolicy Bypass -Command <span style="color:#e6db74">&#34;Set-MpPreference -DisableRealtimeMonitoring </span>$true<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><figure><img src="/images/avoff-startup-2.png">
+</figure>
+
+<figure><img src="/images/avoff-startup-3.png">
+</figure>
+
+<figure><img src="/images/avoff-startup-4.png">
+</figure>
+
+<p>Boom! Your keygens, cracks and porn are safer now!</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/cybersecurity/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Cybersecurity</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/windows/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Windows</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/anti-virus/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Anti-Virus</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/powershell/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Powershell</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/administrator-account/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Administrator Account</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/task-scheduler/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Task Scheduler</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3">Related</p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/early-steps/">Early Steps</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy;  Cringe Live 2024 
+  </a>
+    <div>
+<div class="ananke-socials">
+  
+</div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
