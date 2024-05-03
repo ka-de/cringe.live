@@ -13,98 +13,98 @@
 <a href=/tags/powershell/>Powershell</a>,
 <a href=/tags/chatgpt/>Chatgpt</a>,
 <a href=/tags/excel/>Excel</a></div><figure><img src=/images/manvsmachine.png alt="AI Generated caricature."><figcaption><p>Men slowly starting to interface with the machines other men built for them. Glorious!</p></figcaption></figure><p>I accidentally dropped out of society for a few years, and upon my return, I discovered the presence of peculiar machines that we can converse with, and which possess extensive knowledge about various subjects. I have no trepidation concerning GPUs, so let&rsquo;s embark on a deep exploration of this novel &lsquo;disruptive&rsquo; technology together. Below, you will find a graveyard of both useful and useless scripts, composed individually by machines or with minimal assistance from this hairy monkey. It&rsquo;s worth noting that these scripts should not be executed, but rather studied by the vigilant, perhaps even the overly cautious..</p><h2 id=powershell>PowerShell
-<a class=anchor href=#powershell>#</a></h2><p>I was too lazy to figure out this new scripting language people use now by the traditional learning methods, so I asked GPT to help me with these useful snippets.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#75715e># Start my hugo blog locally.</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> serve {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>param</span>(
-</span></span><span style=display:flex><span>        [<span style=color:#66d9ef>int</span>]$Port = <span style=color:#ae81ff>1313</span>
+<a class=anchor href=#powershell>#</a></h2><p>I was too lazy to figure out this new scripting language people use now by the traditional learning methods, so I asked GPT to help me with these useful snippets.</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Start my hugo blog locally.</span>
+</span></span><span style=display:flex><span><span style=color:#d20f39>function</span> <span style=color:#04a5e5>serve</span> {
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>param</span>(
+</span></span><span style=display:flex><span>        [<span style=color:#df8e1d>int</span>]<span style=color:#dc8a78>$Port</span> = <span style=color:#fe640b>1313</span>
 </span></span><span style=display:flex><span>    )
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    $hugoExecutable = <span style=color:#e6db74>&#34;</span>$env:LOCALAPPDATA<span style=color:#e6db74>\hugo-extended-0.117.0\hugo.exe&#34;</span>
-</span></span><span style=display:flex><span>    $workingDirectory = <span style=color:#e6db74>&#34;</span>$env:USERPROFILE<span style=color:#e6db74>\code\cringe.live\&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#dc8a78>$hugoExecutable</span> = <span style=color:#40a02b>&#34;</span><span style=color:#dc8a78>$env:LOCALAPPDATA</span><span style=color:#40a02b>\hugo-extended-0.117.0\hugo.exe&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#dc8a78>$workingDirectory</span> = <span style=color:#40a02b>&#34;</span><span style=color:#dc8a78>$env:USERPROFILE</span><span style=color:#40a02b>\code\cringe.live\&#34;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (Test-Path $hugoExecutable) {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (Test-Path $workingDirectory) {
-</span></span><span style=display:flex><span>            Set-Location -Path $workingDirectory
-</span></span><span style=display:flex><span>            &amp; $hugoExecutable server -p $Port
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>if</span> (<span style=color:#04a5e5>Test-Path</span> <span style=color:#dc8a78>$hugoExecutable</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>if</span> (<span style=color:#04a5e5>Test-Path</span> <span style=color:#dc8a78>$workingDirectory</span>) {
+</span></span><span style=display:flex><span>            <span style=color:#04a5e5>Set-Location</span> -Path <span style=color:#dc8a78>$workingDirectory</span>
+</span></span><span style=display:flex><span>            &amp; <span style=color:#dc8a78>$hugoExecutable</span> server -p <span style=color:#dc8a78>$Port</span>
 </span></span><span style=display:flex><span>        }
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span> {
-</span></span><span style=display:flex><span>            Write-Host <span style=color:#e6db74>&#34;Working directory not found at </span>$workingDirectory<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>else</span> {
+</span></span><span style=display:flex><span>            <span style=color:#04a5e5>Write-Host</span> <span style=color:#40a02b>&#34;Working directory not found at </span><span style=color:#dc8a78>$workingDirectory</span><span style=color:#40a02b>&#34;</span>
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span> {
-</span></span><span style=display:flex><span>        Write-Host <span style=color:#e6db74>&#34;Hugo executable not found at </span>$hugoExecutable<span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>else</span> {
+</span></span><span style=display:flex><span>        <span style=color:#04a5e5>Write-Host</span> <span style=color:#40a02b>&#34;Hugo executable not found at </span><span style=color:#dc8a78>$hugoExecutable</span><span style=color:#40a02b>&#34;</span>
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#75715e># Get a random quote from a JSON file.</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> fortune {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>param</span> (
-</span></span><span style=display:flex><span>        [<span style=color:#66d9ef>string</span>]$JsonFilePath = <span style=color:#e6db74>&#34;</span>$env:USERPROFILE<span style=color:#e6db74>\code\motivation.json&#34;</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Get a random quote from a JSON file.</span>
+</span></span><span style=display:flex><span><span style=color:#d20f39>function</span> <span style=color:#04a5e5>fortune</span> {
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>param</span> (
+</span></span><span style=display:flex><span>        [<span style=color:#df8e1d>string</span>]<span style=color:#dc8a78>$JsonFilePath</span> = <span style=color:#40a02b>&#34;</span><span style=color:#dc8a78>$env:USERPROFILE</span><span style=color:#40a02b>\code\motivation.json&#34;</span>
 </span></span><span style=display:flex><span>    )
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e># Read the JSON file</span>
-</span></span><span style=display:flex><span>    $jsonContent = Get-Content -Raw -Path $JsonFilePath
-</span></span><span style=display:flex><span>    $quotes = ConvertFrom-Json $jsonContent
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic># Read the JSON file</span>
+</span></span><span style=display:flex><span>    <span style=color:#dc8a78>$jsonContent</span> = <span style=color:#04a5e5>Get-Content</span> -Raw -Path <span style=color:#dc8a78>$JsonFilePath</span>
+</span></span><span style=display:flex><span>    <span style=color:#dc8a78>$quotes</span> = <span style=color:#04a5e5>ConvertFrom-Json</span> <span style=color:#dc8a78>$jsonContent</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e># Get a random index within the range of quotes</span>
-</span></span><span style=display:flex><span>    $randomIndex = Get-Random -Minimum <span style=color:#ae81ff>0</span> -Maximum $quotes.Count
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic># Get a random index within the range of quotes</span>
+</span></span><span style=display:flex><span>    <span style=color:#dc8a78>$randomIndex</span> = <span style=color:#04a5e5>Get-Random</span> -Minimum <span style=color:#fe640b>0</span> -Maximum <span style=color:#dc8a78>$quotes</span>.<span style=color:#fe640b>Count</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e># Retrieve the random quote and display it</span>
-</span></span><span style=display:flex><span>    $randomQuote = $quotes[$randomIndex]
-</span></span><span style=display:flex><span>    Write-Output <span style=color:#e6db74>&#34;</span><span style=color:#ae81ff>`n</span><span style=color:#e6db74>  </span>$($randomQuote.Quote)<span style=color:#ae81ff>`n</span><span style=color:#e6db74>     -- </span>$($randomQuote.Author)<span style=color:#ae81ff>`n</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic># Retrieve the random quote and display it</span>
+</span></span><span style=display:flex><span>    <span style=color:#dc8a78>$randomQuote</span> = <span style=color:#dc8a78>$quotes</span>[<span style=color:#dc8a78>$randomIndex</span>]
+</span></span><span style=display:flex><span>    <span style=color:#04a5e5>Write-Output</span> <span style=color:#40a02b>&#34;</span><span style=color:#1e66f5>`n</span><span style=color:#40a02b>  </span>$(<span style=color:#dc8a78>$randomQuote</span>.Quote)<span style=color:#1e66f5>`n</span><span style=color:#40a02b>     -- </span>$(<span style=color:#dc8a78>$randomQuote</span>.Author)<span style=color:#1e66f5>`n</span><span style=color:#40a02b>&#34;</span>
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Present a random quote for motivation</span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Present a random quote for motivation</span>
 </span></span><span style=display:flex><span>fortune
 </span></span></code></pre></div><h2 id=working-with-data>Working with Data
 <a class=anchor href=#working-with-data>#</a></h2><h3 id=color-excel-tables-by-hex>Color Excel tables by HEX
 <a class=anchor href=#color-excel-tables-by-hex>#</a></h3><p>I found this neat VBA Script that colors cells automatically if you enter hex color codes in Excel:</p><div class=video-wrapper><video controls src=hexcolors-excel.mp4 autoplay><p>Your browser doesn't support HTML5 video. Here is a
-<a href=hexcolors-excel.mp4>link to the video</a> instead.</p></video></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vb data-lang=vb><span style=display:flex><span><span style=color:#66d9ef>Private</span> <span style=color:#66d9ef>Sub</span> <span style=color:#a6e22e>Worksheet_Change</span>(<span style=color:#66d9ef>ByVal</span> Target <span style=color:#f92672>As</span> Range)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>On</span> <span style=color:#66d9ef>Error</span> <span style=color:#66d9ef>GoTo</span> bm_Safe_Exit
-</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>Dim</span> rng <span style=color:#f92672>As</span> Range, clr <span style=color:#f92672>As</span> <span style=color:#66d9ef>String</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>For</span> <span style=color:#66d9ef>Each</span> rng <span style=color:#f92672>In</span> Target
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>If</span> Len(rng.Value2) <span style=color:#f92672>=</span> 6 <span style=color:#66d9ef>Then</span>
-</span></span><span style=display:flex><span>            clr <span style=color:#f92672>=</span> rng.Value2
-</span></span><span style=display:flex><span>            rng.Interior.Color <span style=color:#f92672>=</span> _
+<a href=hexcolors-excel.mp4>link to the video</a> instead.</p></video></div><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vb data-lang=vb><span style=display:flex><span><span style=color:#8839ef>Private</span> <span style=color:#8839ef>Sub</span> <span style=color:#1e66f5>Worksheet_Change</span>(<span style=color:#8839ef>ByVal</span> Target <span style=color:#04a5e5;font-weight:700>As</span> Range)
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>On</span> <span style=color:#8839ef>Error</span> <span style=color:#8839ef>GoTo</span> bm_Safe_Exit
+</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#8839ef>False</span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>Dim</span> rng <span style=color:#04a5e5;font-weight:700>As</span> Range, clr <span style=color:#04a5e5;font-weight:700>As</span> <span style=color:#d20f39>String</span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>For</span> <span style=color:#8839ef>Each</span> rng <span style=color:#04a5e5;font-weight:700>In</span> Target
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>If</span> Len(rng.Value2) <span style=color:#04a5e5;font-weight:700>=</span> 6 <span style=color:#8839ef>Then</span>
+</span></span><span style=display:flex><span>            clr <span style=color:#04a5e5;font-weight:700>=</span> rng.Value2
+</span></span><span style=display:flex><span>            rng.Interior.Color <span style=color:#04a5e5;font-weight:700>=</span> _
 </span></span><span style=display:flex><span>              RGB(Application.Hex2Dec(Left(clr, 2)), _
 </span></span><span style=display:flex><span>                  Application.Hex2Dec(Mid(clr, 3, 2)), _
 </span></span><span style=display:flex><span>                  Application.Hex2Dec(Right(clr, 2)))
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>End</span> <span style=color:#66d9ef>If</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>Next</span> rng
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>End</span> <span style=color:#8839ef>If</span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>Next</span> rng
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>bm_Safe_Exit:
-</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>End</span> <span style=color:#66d9ef>Sub</span>
-</span></span></code></pre></div><p>I asked ChatGPT nicely to make it match with the <code>#000000</code> format instead.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vb data-lang=vb><span style=display:flex><span><span style=color:#66d9ef>Private</span> <span style=color:#66d9ef>Sub</span> <span style=color:#a6e22e>Worksheet_Change</span>(<span style=color:#66d9ef>ByVal</span> Target <span style=color:#f92672>As</span> Range)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>On</span> <span style=color:#66d9ef>Error</span> <span style=color:#66d9ef>GoTo</span> bm_Safe_Exit
-</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>Dim</span> rng <span style=color:#f92672>As</span> Range, clr <span style=color:#f92672>As</span> <span style=color:#66d9ef>String</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>For</span> <span style=color:#66d9ef>Each</span> rng <span style=color:#f92672>In</span> Target
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>If</span> Left(rng.Value2, 1) <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#&#34;</span> <span style=color:#f92672>And</span> Len(rng.Value2) <span style=color:#f92672>=</span> 7 <span style=color:#66d9ef>Then</span>
-</span></span><span style=display:flex><span>            clr <span style=color:#f92672>=</span> Mid(rng.Value2, 2)
-</span></span><span style=display:flex><span>            rng.Interior.Color <span style=color:#f92672>=</span> RGB(Application.Hex2Dec(Left(clr, 2)), _
+</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#8839ef>True</span>
+</span></span><span style=display:flex><span><span style=color:#8839ef>End</span> <span style=color:#8839ef>Sub</span>
+</span></span></code></pre></div><p>I asked ChatGPT nicely to make it match with the <code>#000000</code> format instead.</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vb data-lang=vb><span style=display:flex><span><span style=color:#8839ef>Private</span> <span style=color:#8839ef>Sub</span> <span style=color:#1e66f5>Worksheet_Change</span>(<span style=color:#8839ef>ByVal</span> Target <span style=color:#04a5e5;font-weight:700>As</span> Range)
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>On</span> <span style=color:#8839ef>Error</span> <span style=color:#8839ef>GoTo</span> bm_Safe_Exit
+</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#8839ef>False</span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>Dim</span> rng <span style=color:#04a5e5;font-weight:700>As</span> Range, clr <span style=color:#04a5e5;font-weight:700>As</span> <span style=color:#d20f39>String</span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>For</span> <span style=color:#8839ef>Each</span> rng <span style=color:#04a5e5;font-weight:700>In</span> Target
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>If</span> Left(rng.Value2, 1) <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#40a02b>&#34;#&#34;</span> <span style=color:#04a5e5;font-weight:700>And</span> Len(rng.Value2) <span style=color:#04a5e5;font-weight:700>=</span> 7 <span style=color:#8839ef>Then</span>
+</span></span><span style=display:flex><span>            clr <span style=color:#04a5e5;font-weight:700>=</span> Mid(rng.Value2, 2)
+</span></span><span style=display:flex><span>            rng.Interior.Color <span style=color:#04a5e5;font-weight:700>=</span> RGB(Application.Hex2Dec(Left(clr, 2)), _
 </span></span><span style=display:flex><span>                                     Application.Hex2Dec(Mid(clr, 3, 2)), _
 </span></span><span style=display:flex><span>                                     Application.Hex2Dec(Right(clr, 2)))
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>End</span> <span style=color:#66d9ef>If</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>Next</span> rng
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>End</span> <span style=color:#8839ef>If</span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>Next</span> rng
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>bm_Safe_Exit:
-</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>End</span> <span style=color:#66d9ef>Sub</span>
-</span></span></code></pre></div><p>A bit safer in case I ever end up using an instrument with 6 numbers for a name..</p><p>But what I would never be able to figure out, because I never became a Visual Basic Instructor in a previous reincarnation, is how to run all this on column D only.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vb data-lang=vb><span style=display:flex><span><span style=color:#66d9ef>Private</span> <span style=color:#66d9ef>Sub</span> <span style=color:#a6e22e>Worksheet_Change</span>(<span style=color:#66d9ef>ByVal</span> Target <span style=color:#f92672>As</span> Range)
-</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>If</span> <span style=color:#66d9ef>Not</span> Intersect(Target, <span style=color:#66d9ef>Me</span>.Range(<span style=color:#e6db74>&#34;D:D&#34;</span>)) <span style=color:#f92672>Is</span> <span style=color:#66d9ef>Nothing</span> <span style=color:#66d9ef>Then</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>Dim</span> rng <span style=color:#f92672>As</span> Range
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>For</span> <span style=color:#66d9ef>Each</span> rng <span style=color:#f92672>In</span> Target
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>If</span> Left(rng.Value2, 1) <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;#&#34;</span> <span style=color:#f92672>And</span> Len(rng.Value2) <span style=color:#f92672>=</span> 7 <span style=color:#66d9ef>Then</span>
-</span></span><span style=display:flex><span>                rng.Interior.Color <span style=color:#f92672>=</span> RGB(Application.Hex2Dec(Mid(rng.Value2, 2, 2)), _
+</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#8839ef>True</span>
+</span></span><span style=display:flex><span><span style=color:#8839ef>End</span> <span style=color:#8839ef>Sub</span>
+</span></span></code></pre></div><p>A bit safer in case I ever end up using an instrument with 6 numbers for a name..</p><p>But what I would never be able to figure out, because I never became a Visual Basic Instructor in a previous reincarnation, is how to run all this on column D only.</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vb data-lang=vb><span style=display:flex><span><span style=color:#8839ef>Private</span> <span style=color:#8839ef>Sub</span> <span style=color:#1e66f5>Worksheet_Change</span>(<span style=color:#8839ef>ByVal</span> Target <span style=color:#04a5e5;font-weight:700>As</span> Range)
+</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#8839ef>False</span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>If</span> <span style=color:#8839ef>Not</span> Intersect(Target, <span style=color:#8839ef>Me</span>.Range(<span style=color:#40a02b>&#34;D:D&#34;</span>)) <span style=color:#04a5e5;font-weight:700>Is</span> <span style=color:#8839ef>Nothing</span> <span style=color:#8839ef>Then</span>
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>Dim</span> rng <span style=color:#04a5e5;font-weight:700>As</span> Range
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>For</span> <span style=color:#8839ef>Each</span> rng <span style=color:#04a5e5;font-weight:700>In</span> Target
+</span></span><span style=display:flex><span>            <span style=color:#8839ef>If</span> Left(rng.Value2, 1) <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#40a02b>&#34;#&#34;</span> <span style=color:#04a5e5;font-weight:700>And</span> Len(rng.Value2) <span style=color:#04a5e5;font-weight:700>=</span> 7 <span style=color:#8839ef>Then</span>
+</span></span><span style=display:flex><span>                rng.Interior.Color <span style=color:#04a5e5;font-weight:700>=</span> RGB(Application.Hex2Dec(Mid(rng.Value2, 2, 2)), _
 </span></span><span style=display:flex><span>                                         Application.Hex2Dec(Mid(rng.Value2, 4, 2)), _
 </span></span><span style=display:flex><span>                                         Application.Hex2Dec(Right(rng.Value2, 2)))
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>End</span> <span style=color:#66d9ef>If</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>Next</span> rng
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>End</span> <span style=color:#66d9ef>If</span>
-</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>End</span> <span style=color:#66d9ef>Sub</span>
+</span></span><span style=display:flex><span>            <span style=color:#8839ef>End</span> <span style=color:#8839ef>If</span>
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>Next</span> rng
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>End</span> <span style=color:#8839ef>If</span>
+</span></span><span style=display:flex><span>    Application.EnableEvents <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#8839ef>True</span>
+</span></span><span style=display:flex><span><span style=color:#8839ef>End</span> <span style=color:#8839ef>Sub</span>
 </span></span></code></pre></div><h3 id=get-random-quote-from-csv>Get random quote from .csv
 <a class=anchor href=#get-random-quote-from-csv>#</a></h3><p>In case you need to manipulate CSV files with Python or access the data randomly or predictably during your travels, ChatGPT can assist you.</p><p><code>motivational-quotes.csv</code></p><pre tabindex=0><code class=language-csv data-lang=csv>&#34;&#34;&#34;The only way to do great work is to love what you do.&#34;&#34; - Steve Jobs&#34;
 &#34;&#34;&#34;Success is not final, failure is not fatal: It is the courage to continue that counts.&#34;&#34; - Winston Churchill&#34;
@@ -116,23 +116,23 @@
 &#34;&#34;&#34;The only limit to our realization of tomorrow will be our doubts of today.&#34;&#34; - Franklin D. Roosevelt&#34;
 &#34;&#34;&#34;Your time is limited, don&#39;t waste it living someone else&#39;s life.&#34;&#34; - Steve Jobs&#34;
 &#34;&#34;&#34;You are never too old to set another goal or to dream a new dream.&#34;&#34; - C.S. Lewis&#34;
-</code></pre><p><code>random-quote-from-csv.py</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> csv
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> random
+</code></pre><p><code>random-quote-from-csv.py</code></p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>csv</span>
+</span></span><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>random</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>get_random_quote</span>(csv_file):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>with</span> open(csv_file, <span style=color:#e6db74>&#39;r&#39;</span>, newline<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;&#39;</span>, encoding<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;utf-8&#39;</span>) <span style=color:#66d9ef>as</span> file:
-</span></span><span style=display:flex><span>        reader <span style=color:#f92672>=</span> csv<span style=color:#f92672>.</span>reader(file)
-</span></span><span style=display:flex><span>        quotes <span style=color:#f92672>=</span> list(reader)
+</span></span><span style=display:flex><span><span style=color:#8839ef>def</span> <span style=color:#1e66f5>get_random_quote</span>(csv_file):
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>with</span> <span style=color:#04a5e5>open</span>(csv_file, <span style=color:#40a02b>&#39;r&#39;</span>, newline<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;&#39;</span>, encoding<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;utf-8&#39;</span>) <span style=color:#8839ef>as</span> file:
+</span></span><span style=display:flex><span>        reader <span style=color:#04a5e5;font-weight:700>=</span> csv<span style=color:#04a5e5;font-weight:700>.</span>reader(file)
+</span></span><span style=display:flex><span>        quotes <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#04a5e5>list</span>(reader)
 </span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> len(quotes) <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;No quotes found in the CSV file.&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>if</span> <span style=color:#04a5e5>len</span>(quotes) <span style=color:#04a5e5;font-weight:700>==</span> <span style=color:#fe640b>0</span>:
+</span></span><span style=display:flex><span>            <span style=color:#8839ef>return</span> <span style=color:#40a02b>&#34;No quotes found in the CSV file.&#34;</span>
 </span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        random_quote <span style=color:#f92672>=</span> random<span style=color:#f92672>.</span>choice(quotes)[<span style=color:#ae81ff>0</span>]
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> random_quote
+</span></span><span style=display:flex><span>        random_quote <span style=color:#04a5e5;font-weight:700>=</span> random<span style=color:#04a5e5;font-weight:700>.</span>choice(quotes)[<span style=color:#fe640b>0</span>]
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>return</span> random_quote
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>csv_filename <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;motivational-quotes.csv&#34;</span>
-</span></span><span style=display:flex><span>random_quote <span style=color:#f92672>=</span> get_random_quote(csv_filename)
-</span></span><span style=display:flex><span>print(random_quote)
+</span></span><span style=display:flex><span>csv_filename <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#40a02b>&#34;motivational-quotes.csv&#34;</span>
+</span></span><span style=display:flex><span>random_quote <span style=color:#04a5e5;font-weight:700>=</span> get_random_quote(csv_filename)
+</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(random_quote)
 </span></span></code></pre></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/commit/603ecea60102546b80dd7dcff54ee80acd57c28d title='Last modified by Balazs Horvath | Apr 22, 2024' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt>
 <span>Apr 22, 2024</span></a></div><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/edit/main/cringe.live/content/posts/early-steps/index.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt>
 <span>Edit this page</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#powershell>PowerShell</a></li><li><a href=#working-with-data>Working with Data</a><ul><li><a href=#color-excel-tables-by-hex>Color Excel tables by HEX</a></li><li><a href=#get-random-quote-from-csv>Get random quote from .csv</a></li></ul></li></ul></nav></div></aside></main></body></html>

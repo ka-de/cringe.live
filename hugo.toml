@@ -9,7 +9,7 @@ enableGitInfo = true
 #disableKinds = ['taxonomy', 'taxonomyTerm']
 
 [markup]
-    [highlight]
+    [markup.highlight]
         style = 'catppuccin-latte'
 
 [params]
