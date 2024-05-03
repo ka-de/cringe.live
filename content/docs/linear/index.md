@@ -12,7 +12,7 @@ Linear Algebra is a branch of mathematics that deals with vectors, vector spaces
 
 Vectors are mathematical objects that have both magnitude (size) and direction. They can represent physical quantities like force, velocity or displacement. For example, if you're a furry running in a park, your velocity is a vector - it has a speed (magnitude) and a direction you're running in.
 
-<img src="https://github.com/ka-de/FLA/blob/main/static/furry-running.jpg?raw=true" alt="A furry running in a park." width="512" height="512"/>
+<img src="/furry-running.jpg?raw=true" alt="A furry running in a park."/>
 
 *This furry has a velocity.*
 
@@ -40,7 +40,7 @@ The magnitude of a vector {{< katex >}}g = [a, b]{{< /katex >}} is given by the 
 
 ---
 
-A matrix is a rectangular array of numbers arranged in rows and columns. Matrices are used to represent and manipulate linear equations. Each number in the matrix is called an element or entry. The position of an element is defined by its row number and column number.
+A matrix is a rectangular array of numbers arranged in rows and columns. Matrices are used to represent and manipulate linear transformations, which are functions that map vectors to vectors while preserving vector addition and scalar multiplication. Each number in the matrix is called an element or entry. The position of an element is defined by its row number and column number.
 
 A `2x2` matrix can be represented as follows:
 
@@ -54,6 +54,12 @@ It can be represented as:
 
 {{< katex display=true >}}A + B = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} + \begin{bmatrix} a2 & b2 \\ c2 & d2 \end{bmatrix} = \begin{bmatrix} a1+a2 & b1+b2 \\ c1+c2 & d1+d2 \end{bmatrix}{{< /katex >}}
 
+If we have two matrices A and B of the same size representing linear transformations, their sum A + B also represents a linear transformation. The sum transformation (A + B) applied to any vector v is equal to A(v) + B(v). This property is known as linear separability.
+
+{{< katex display=true >}}
+(A + B)(v) = A(v) + B(v)
+{{< /katex >}}
+
 #### Scalar Multiplication of a Matrix
 
 A matrix can be multiplied by a scalar. This is done by multiplying each element of the matrix by the scalar.
@@ -65,6 +71,10 @@ A matrix can be multiplied by a scalar. This is done by multiplying each element
 The multiplication of two matrices is more complex than their addition. For two matrices to be multiplied, the number of columns in the first matrix must be equal to the number of rows in the second matrix.
 
 {{< katex display=true >}}AB = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} \cdot \begin{bmatrix} a2 & b2 \\ c2 & d2 \end{bmatrix} = \begin{bmatrix} a1*a2 + b1*c2 & a1*b2 + b1*d2 \\ c1*a2 + d1*c2 & c1*b2 + d1*d2 \end{bmatrix}{{< /katex >}}
+
+Matrix multiplication corresponds to function composition of linear transformations. If {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} are matrices representing linear transformations, then {{< katex >}}AB{{< /katex >}} represents the transformation that first applies {{< katex >}}B{{< /katex >}} and then applies {{< katex >}}A{{< /katex >}}.
+
+For two matrices to be multiplied, the number of columns in the first matrix must equal the number of rows in the second matrix.
 
 #### Identity Matrix
 
