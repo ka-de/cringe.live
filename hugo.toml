@@ -8,11 +8,16 @@ enableGitInfo = true
 
 #disableKinds = ['taxonomy', 'taxonomyTerm']
 
+[markup]
+    [highlight]
+        style = 'catppuccin-latte'
+
 [params]
     BookTheme = 'auto'
     BookToC = true
     #BookLogo = 'logo.png'
-    BookSection = '*'
+    BookSection = 'docs'
+    BookMenuBundle = '/menu'
     BookRepo = 'https://github.com/ka-de/cringe.live'
     BookCommitPath = 'commit'
     BookEditPath = 'edit/main/cringe.live'
