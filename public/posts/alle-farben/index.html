@@ -1,323 +1,118 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <title>Alle Farben | Cringe Live</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Dive into the world of data manipulation, color conversion, and automation with Balazs Horvath&#39;s blog post, &#39;Alle Farben.&#39; Explore the power of PowerShell scripting and Python programming as Balazs extracts color values from Excel spreadsheets, converts them to various formats, and saves the data as JSON. Discover the magic of Unicode characters in sheet names and the art of transforming data from multiple sheets into a unified JSON file. Join the journey of making manual data entry feel irrelevant while exploring the intricacies of color analysis and data conversion techniques. Explore the intersection of technology, programming, and AI in this insightful blog post.">
-    <meta name="generator" content="Hugo 0.125.0">
-    
-    
-    
-    
-      <meta name="robots" content="noindex, nofollow">
-    
-    
-      <meta name="author" content = "Balazs Horvath">
-    
-
-    
-<link rel="stylesheet" href="/ananke/css/main.min.css" >
-
-
-
-    
-
-    
-      
-
-    
-
-    
-
-    
-      <link rel="canonical" href="http://localhost:1313/posts/alle-farben/">
-    
-
-    <meta property="og:url" content="http://localhost:1313/posts/alle-farben/">
-  <meta property="og:site_name" content="Cringe Live">
-  <meta property="og:title" content="Alle Farben">
-  <meta property="og:description" content="Dive into the world of data manipulation, color conversion, and automation with Balazs Horvath&#39;s blog post, &#39;Alle Farben.&#39; Explore the power of PowerShell scripting and Python programming as Balazs extracts color values from Excel spreadsheets, converts them to various formats, and saves the data as JSON. Discover the magic of Unicode characters in sheet names and the art of transforming data from multiple sheets into a unified JSON file. Join the journey of making manual data entry feel irrelevant while exploring the intricacies of color analysis and data conversion techniques. Explore the intersection of technology, programming, and AI in this insightful blog post.">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-  <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2023-08-20T11:27:05+02:00">
-    <meta property="article:modified_time" content="2023-08-20T11:27:05+02:00">
-    <meta property="article:tag" content="Powershell Script">
-    <meta property="article:tag" content="Excel Data Extraction">
-    <meta property="article:tag" content="Python Programming">
-    <meta property="article:tag" content="Color Conversion">
-    <meta property="article:tag" content="Data Manipulation">
-    <meta property="article:tag" content="Json">
-
-  <meta itemprop="name" content="Alle Farben">
-  <meta itemprop="description" content="Dive into the world of data manipulation, color conversion, and automation with Balazs Horvath&#39;s blog post, &#39;Alle Farben.&#39; Explore the power of PowerShell scripting and Python programming as Balazs extracts color values from Excel spreadsheets, converts them to various formats, and saves the data as JSON. Discover the magic of Unicode characters in sheet names and the art of transforming data from multiple sheets into a unified JSON file. Join the journey of making manual data entry feel irrelevant while exploring the intricacies of color analysis and data conversion techniques. Explore the intersection of technology, programming, and AI in this insightful blog post.">
-  <meta itemprop="datePublished" content="2023-08-20T11:27:05+02:00">
-  <meta itemprop="dateModified" content="2023-08-20T11:27:05+02:00">
-  <meta itemprop="wordCount" content="616">
-  <meta itemprop="keywords" content="PowerShell script,Excel data extraction,Python programming,Color conversion,Data manipulation,JSON format,Excel spreadsheets,Data analysis,RGB values,HSL values,Hexadecimal colors,Excel macros,Unicode characters,Data conversion techniques,Data extraction methods,Excel automation,Color analysis,Spreadsheet manipulation,Data transformation,Excel workbook,ChatGPT,Python Programming,AI and Machine Learning"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Alle Farben">
-<meta name="twitter:description" content="Dive into the world of data manipulation, color conversion, and automation with Balazs Horvath&#39;s blog post, &#39;Alle Farben.&#39; Explore the power of PowerShell scripting and Python programming as Balazs extracts color values from Excel spreadsheets, converts them to various formats, and saves the data as JSON. Discover the magic of Unicode characters in sheet names and the art of transforming data from multiple sheets into a unified JSON file. Join the journey of making manual data entry feel irrelevant while exploring the intricacies of color analysis and data conversion techniques. Explore the intersection of technology, programming, and AI in this insightful blog post.">
-
-	
-  </head>
-
-  <body class="ma0 avenir bg-near-white">
-
-    
-   
-  
-
-  <header>
-    <div class="bg-black">
-      <nav class="pv3 ph3 ph4-ns" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
-      
-        Cringe Live
-      
-    </a>
-    <div class="flex-l items-center">
-      
-
-      
-      
-<div class="ananke-socials">
-  
-</div>
-
-    </div>
-  </div>
-</nav>
-
-    </div>
-  </header>
-
-
-
-    <main class="pb7" role="main">
-      
-  
-  <article class="flex-l flex-wrap justify-between mw8 center ph3">
-    <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked ttu">
-          
-        Posts
-      </aside>
-      
-
-
-
-
-
-
-
-
-
-
-  <div id="sharing" class="mt3 ananke-socials">
-    
-  </div>
-
-
-      <h1 class="f1 athelas mt3 mb1">Alle Farben</h1>
-      
-      <p class="tracked">
-        By <strong>Balazs Horvath</strong>
-      </p>
-      
-      
-      
-      <time class="f6 mv4 dib tracked" datetime="2023-08-20T11:27:05+02:00">August 20, 2023</time>
-      
-
-      
-      
-    </header>
-    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span><span style="color:#75715e"># Change directory to my blog in the most extravagant way.</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> blog {
-</span></span><span style="display:flex;"><span>    Set-Location -Path (Join-Path -Path $env:USERPROFILE -ChildPath <span style="color:#e6db74">&#34;code\blog&#34;</span>)
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Okay, he got a bit out of hand with this one, but.. I did torture ChatGPT today with some more Python and Excel.</p>
-<figure><img src="/images/rose-colorscheme.png"
-    alt="Screenshot of an Excel spreadsheet."><figcaption>
-      <p>This took me a really long time to make, okay?</p>
-    </figcaption>
-</figure>
-
-<p>Let&rsquo;s make him extract color values from column A without the header and put them in a JSON file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> openpyxl
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load the Excel workbook with macros</span>
-</span></span><span style="display:flex;"><span>workbook_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Rose Pine Colorscheme.xlsm&#34;</span>
-</span></span><span style="display:flex;"><span>workbook <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>load_workbook(workbook_path, read_only<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, data_only<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Specify the sheet name where your data is located</span>
-</span></span><span style="display:flex;"><span>sheet_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Rosé Pine&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get the active worksheet</span>
-</span></span><span style="display:flex;"><span>worksheet <span style="color:#f92672">=</span> workbook[sheet_name]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Extract data from the first column (column A) starting from the second row (row 2)</span>
-</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> worksheet<span style="color:#f92672">.</span>iter_rows(min_row<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, max_col<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, values_only<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
-</span></span><span style="display:flex;"><span>    cell_value <span style="color:#f92672">=</span> row[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> cell_value <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
-</span></span><span style="display:flex;"><span>        data<span style="color:#f92672">.</span>append(cell_value)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a dictionary to store the data</span>
-</span></span><span style="display:flex;"><span>data_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;colors&#34;</span>: data}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save the data as JSON</span>
-</span></span><span style="display:flex;"><span>output_json_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;output.json&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(output_json_path, <span style="color:#e6db74">&#34;w&#34;</span>) <span style="color:#66d9ef">as</span> json_file:
-</span></span><span style="display:flex;"><span>    json<span style="color:#f92672">.</span>dump(data_dict, json_file, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Data extracted and saved as JSON successfully.&#34;</span>)
-</span></span></code></pre></div><p>Great, now do it for every sheet, but watch out, I put unicode in the sheet name!</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Create a dictionary to store data from all sheets</span>
-</span></span><span style="display:flex;"><span>all_data <span style="color:#f92672">=</span> {}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Loop through all sheets in the workbook</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> sheet <span style="color:#f92672">in</span> workbook:
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Extract data from the first column (column A) starting from the second row</span>
-</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> []
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> sheet<span style="color:#f92672">.</span>iter_rows(min_row<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, max_col<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, values_only<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
-</span></span><span style="display:flex;"><span>        cell_value <span style="color:#f92672">=</span> row[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> cell_value <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
-</span></span><span style="display:flex;"><span>            data<span style="color:#f92672">.</span>append(cell_value)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Store the data in the dictionary using the sheet name as the key</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Use sheet.title.encode(&#39;utf-8&#39;) to encode the sheet name to UTF-8</span>
-</span></span><span style="display:flex;"><span>    all_data[sheet<span style="color:#f92672">.</span>title<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)] <span style="color:#f92672">=</span> data
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Save all data as JSON with ensure_ascii=False to preserve Unicode characters</span>
-</span></span><span style="display:flex;"><span>output_json_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;output.json&#34;</span>  <span style="color:#75715e"># Replace with the desired output path</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(output_json_path, <span style="color:#e6db74">&#34;w&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>) <span style="color:#66d9ef">as</span> json_file:
-</span></span><span style="display:flex;"><span>    json<span style="color:#f92672">.</span>dump(all_data, json_file, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>, ensure_ascii<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Data from all sheets extracted and saved as JSON successfully.&#34;</span>)
-</span></span></code></pre></div><p>Amazing job so far, lets use the color names in column B as keys for the color values.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Loop through all sheets in the workbook</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> sheet <span style="color:#f92672">in</span> workbook:
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Extract data from columns A and B starting from the second row (row 2)</span>
-</span></span><span style="display:flex;"><span>    data <span style="color:#f92672">=</span> {}
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> sheet<span style="color:#f92672">.</span>iter_rows(min_row<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, max_col<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, values_only<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
-</span></span><span style="display:flex;"><span>        color_name, color_value <span style="color:#f92672">=</span> row[<span style="color:#ae81ff">0</span>], row[<span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> color_name <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">and</span> color_value <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
-</span></span><span style="display:flex;"><span>            data[color_value] <span style="color:#f92672">=</span> color_name  <span style="color:#75715e"># Reversed order</span>
-</span></span></code></pre></div><p>Now be a good machine an take those hexadecimal color values from column A and convert them to RGB and HSL values, making whoever entered them manually feel irrelevant at his work:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> openpyxl
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> colorsys
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load the Excel workbook with macros</span>
-</span></span><span style="display:flex;"><span>workbook_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Rose Pine Colorscheme.xlsm&#34;</span>
-</span></span><span style="display:flex;"><span>workbook <span style="color:#f92672">=</span> openpyxl<span style="color:#f92672">.</span>load_workbook(workbook_path, read_only<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, data_only<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Specify the sheet name where your data is located</span>
-</span></span><span style="display:flex;"><span>sheet_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Rosé Pine&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get the active worksheet</span>
-</span></span><span style="display:flex;"><span>worksheet <span style="color:#f92672">=</span> workbook[sheet_name]
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Iterate through the rows starting from the second row (row 2)</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> row <span style="color:#f92672">in</span> worksheet<span style="color:#f92672">.</span>iter_rows(min_row<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>, max_col<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, values_only<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>):
-</span></span><span style="display:flex;"><span>    cell_value <span style="color:#f92672">=</span> row[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> cell_value <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Convert hex color value to RGB</span>
-</span></span><span style="display:flex;"><span>        hex_color <span style="color:#f92672">=</span> cell_value<span style="color:#f92672">.</span>lstrip(<span style="color:#e6db74">&#39;#&#39;</span>)
-</span></span><span style="display:flex;"><span>        rgb_color <span style="color:#f92672">=</span> tuple(int(hex_color[i:i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>], <span style="color:#ae81ff">16</span>) <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> (<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>))
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Convert RGB to HSL</span>
-</span></span><span style="display:flex;"><span>        r, g, b <span style="color:#f92672">=</span> [x <span style="color:#f92672">/</span> <span style="color:#ae81ff">255.0</span> <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> rgb_color]
-</span></span><span style="display:flex;"><span>        h, l, s <span style="color:#f92672">=</span> colorsys<span style="color:#f92672">.</span>rgb_to_hls(r, g, b)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Format HSL values as integers in the range 0-360 (hue) and 0-100 (saturation and lightness)</span>
-</span></span><span style="display:flex;"><span>        h <span style="color:#f92672">=</span> int(h <span style="color:#f92672">*</span> <span style="color:#ae81ff">360</span>)
-</span></span><span style="display:flex;"><span>        s <span style="color:#f92672">=</span> int(s <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>)
-</span></span><span style="display:flex;"><span>        l <span style="color:#f92672">=</span> int(l <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Print Hex, RGB, and HSL values</span>
-</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Hex: </span><span style="color:#e6db74">{</span>cell_value<span style="color:#e6db74">}</span><span style="color:#e6db74">, RGB: </span><span style="color:#e6db74">{</span>rgb_color<span style="color:#e6db74">}</span><span style="color:#e6db74">, HSL: </span><span style="color:#e6db74">{</span>h<span style="color:#e6db74">}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">{</span>s<span style="color:#e6db74">}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">{</span>l<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Conversion from hex to RGB and HSL completed.&#34;</span>)
-</span></span></code></pre></div><p>You can find the full scripts and the example spreadsheet on my <a href="https://github.com/ka-de/_life_is_a_mess_/tree/main/excel-to-json">Github</a>.</p>
-<ul class="pa0">
-  
-   <li class="list di">
-     <a href="/tags/powershell-script/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Powershell Script</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/excel-data-extraction/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Excel Data Extraction</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/python-programming/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Python Programming</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/color-conversion/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Color Conversion</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/data-manipulation/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Data Manipulation</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/json/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Json</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/excel-spreadsheets/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Excel Spreadsheets</a>
-   </li>
-  
-   <li class="list di">
-     <a href="/tags/data-analysis/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Data Analysis</a>
-   </li>
-  
-</ul>
-<div class="mt6 instapaper_ignoref">
-      
-      
-      </div>
-    </div>
-
-    <aside class="w-30-l mt6-l">
-
-
-
-
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">Related</p>
-    <ul class="pa0 list">
-	   
-	     <li  class="mb2">
-          <a href="/posts/early-steps/">Early Steps</a>
-        </li>
-	    
-    </ul>
-</div>
-
-</aside>
-
-  </article>
-
-    </main>
-    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
-  <div class="flex justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
-    &copy;  Cringe Live 2024 
-  </a>
-    <div>
-<div class="ananke-socials">
-  
-</div>
-</div>
-  </div>
-</footer>
-
-  </body>
-</html>
+<!doctype html><html lang=en-us dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Dive into the world of data manipulation, color conversion, and automation with Balazs Horvath's blog post, 'Alle Farben.' Explore the power of PowerShell scripting and Python programming as Balazs extracts color values from Excel spreadsheets, converts them to various formats, and saves the data as JSON. Discover the magic of Unicode characters in sheet names and the art of transforming data from multiple sheets into a unified JSON file. Join the journey of making manual data entry feel irrelevant while exploring the intricacies of color analysis and data conversion techniques. Explore the intersection of technology, programming, and AI in this insightful blog post."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/posts/alle-farben/"><meta property="og:site_name" content="Cringe Live"><meta property="og:title" content="Alle Farben"><meta property="og:description" content="Dive into the world of data manipulation, color conversion, and automation with Balazs Horvath's blog post, 'Alle Farben.' Explore the power of PowerShell scripting and Python programming as Balazs extracts color values from Excel spreadsheets, converts them to various formats, and saves the data as JSON. Discover the magic of Unicode characters in sheet names and the art of transforming data from multiple sheets into a unified JSON file. Join the journey of making manual data entry feel irrelevant while exploring the intricacies of color analysis and data conversion techniques. Explore the intersection of technology, programming, and AI in this insightful blog post."><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-08-20T11:27:05+02:00"><meta property="article:modified_time" content="2023-08-20T11:27:05+02:00"><meta property="article:tag" content="Powershell Script"><meta property="article:tag" content="Excel Data Extraction"><meta property="article:tag" content="Python Programming"><meta property="article:tag" content="Color Conversion"><meta property="article:tag" content="Data Manipulation"><meta property="article:tag" content="Json"><title>Alle Farben | Cringe Live</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=canonical href=http://localhost:1313/posts/alle-farben/><link rel=stylesheet href=/book.min.309b7ed028807cdb68d8d61e26d609f48369c098dbf5e4d8c0dcf4cdf49feafc.css integrity="sha256-MJt+0CiAfNto2NYeJtYJ9INpwJjb9eTYwNz0zfSf6vw=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.cbda81f970eb311a6a5cf30aacfba261021ef7a0a440f85e122d985e5d48da11.js integrity="sha256-y9qB+XDrMRpqXPMKrPuiYQIe96CkQPheEi2YXl1I2hE=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Cringe Live</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
+</label><strong>Alle Farben</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class="markdown book-post"><h1><a href=/posts/alle-farben/>Alle Farben</a></h1><h5>August 20, 2023</h5><div><a href=/categories/data-manipulation/>Data Manipulation</a>,
+<a href=/categories/excel/>Excel</a>,
+<a href=/categories/powershell/>PowerShell</a>,
+<a href=/categories/python/>Python</a>,
+<a href=/categories/data-extraction/>Data Extraction</a>,
+<a href=/categories/data-conversion/>Data Conversion</a>,
+<a href=/categories/color-analysis/>Color Analysis</a>,
+<a href=/categories/technology/>Technology</a>,
+<a href=/categories/programming/>Programming</a>,
+<a href=/categories/ai-and-machine-learning/>AI and Machine Learning</a></div><div><a href=/tags/powershell-script/>Powershell Script</a>,
+<a href=/tags/excel-data-extraction/>Excel Data Extraction</a>,
+<a href=/tags/python-programming/>Python Programming</a>,
+<a href=/tags/color-conversion/>Color Conversion</a>,
+<a href=/tags/data-manipulation/>Data Manipulation</a>,
+<a href=/tags/json/>Json</a>,
+<a href=/tags/excel-spreadsheets/>Excel Spreadsheets</a>,
+<a href=/tags/data-analysis/>Data Analysis</a></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=display:flex><span><span style=color:#75715e># Change directory to my blog in the most extravagant way.</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> blog {
+</span></span><span style=display:flex><span>    Set-Location -Path (Join-Path -Path $env:USERPROFILE -ChildPath <span style=color:#e6db74>&#34;code\blog&#34;</span>)
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Okay, he got a bit out of hand with this one, but.. I did torture ChatGPT today with some more Python and Excel.</p><figure><img src=/images/rose-colorscheme.png alt="Screenshot of an Excel spreadsheet."><figcaption><p>This took me a really long time to make, okay?</p></figcaption></figure><p>Let&rsquo;s make him extract color values from column A without the header and put them in a JSON file.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> openpyxl
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> json
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Load the Excel workbook with macros</span>
+</span></span><span style=display:flex><span>workbook_path <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Rose Pine Colorscheme.xlsm&#34;</span>
+</span></span><span style=display:flex><span>workbook <span style=color:#f92672>=</span> openpyxl<span style=color:#f92672>.</span>load_workbook(workbook_path, read_only<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>, data_only<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Specify the sheet name where your data is located</span>
+</span></span><span style=display:flex><span>sheet_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Rosé Pine&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get the active worksheet</span>
+</span></span><span style=display:flex><span>worksheet <span style=color:#f92672>=</span> workbook[sheet_name]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Extract data from the first column (column A) starting from the second row (row 2)</span>
+</span></span><span style=display:flex><span>data <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> worksheet<span style=color:#f92672>.</span>iter_rows(min_row<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, max_col<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>, values_only<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>):
+</span></span><span style=display:flex><span>    cell_value <span style=color:#f92672>=</span> row[<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> cell_value <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span>:
+</span></span><span style=display:flex><span>        data<span style=color:#f92672>.</span>append(cell_value)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Create a dictionary to store the data</span>
+</span></span><span style=display:flex><span>data_dict <span style=color:#f92672>=</span> {<span style=color:#e6db74>&#34;colors&#34;</span>: data}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Save the data as JSON</span>
+</span></span><span style=display:flex><span>output_json_path <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;output.json&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(output_json_path, <span style=color:#e6db74>&#34;w&#34;</span>) <span style=color:#66d9ef>as</span> json_file:
+</span></span><span style=display:flex><span>    json<span style=color:#f92672>.</span>dump(data_dict, json_file, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>4</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Data extracted and saved as JSON successfully.&#34;</span>)
+</span></span></code></pre></div><p>Great, now do it for every sheet, but watch out, I put unicode in the sheet name!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Create a dictionary to store data from all sheets</span>
+</span></span><span style=display:flex><span>all_data <span style=color:#f92672>=</span> {}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Loop through all sheets in the workbook</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> sheet <span style=color:#f92672>in</span> workbook:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Extract data from the first column (column A) starting from the second row</span>
+</span></span><span style=display:flex><span>    data <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> sheet<span style=color:#f92672>.</span>iter_rows(min_row<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, max_col<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>, values_only<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>):
+</span></span><span style=display:flex><span>        cell_value <span style=color:#f92672>=</span> row[<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> cell_value <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span>:
+</span></span><span style=display:flex><span>            data<span style=color:#f92672>.</span>append(cell_value)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Store the data in the dictionary using the sheet name as the key</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Use sheet.title.encode(&#39;utf-8&#39;) to encode the sheet name to UTF-8</span>
+</span></span><span style=display:flex><span>    all_data[sheet<span style=color:#f92672>.</span>title<span style=color:#f92672>.</span>encode(<span style=color:#e6db74>&#39;utf-8&#39;</span>)<span style=color:#f92672>.</span>decode(<span style=color:#e6db74>&#39;utf-8&#39;</span>)] <span style=color:#f92672>=</span> data
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Save all data as JSON with ensure_ascii=False to preserve Unicode characters</span>
+</span></span><span style=display:flex><span>output_json_path <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;output.json&#34;</span>  <span style=color:#75715e># Replace with the desired output path</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>with</span> open(output_json_path, <span style=color:#e6db74>&#34;w&#34;</span>, encoding<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;utf-8&#34;</span>) <span style=color:#66d9ef>as</span> json_file:
+</span></span><span style=display:flex><span>    json<span style=color:#f92672>.</span>dump(all_data, json_file, indent<span style=color:#f92672>=</span><span style=color:#ae81ff>4</span>, ensure_ascii<span style=color:#f92672>=</span><span style=color:#66d9ef>False</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Data from all sheets extracted and saved as JSON successfully.&#34;</span>)
+</span></span></code></pre></div><p>Amazing job so far, lets use the color names in column B as keys for the color values.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Loop through all sheets in the workbook</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> sheet <span style=color:#f92672>in</span> workbook:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Extract data from columns A and B starting from the second row (row 2)</span>
+</span></span><span style=display:flex><span>    data <span style=color:#f92672>=</span> {}
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> sheet<span style=color:#f92672>.</span>iter_rows(min_row<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, max_col<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, values_only<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>):
+</span></span><span style=display:flex><span>        color_name, color_value <span style=color:#f92672>=</span> row[<span style=color:#ae81ff>0</span>], row[<span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> color_name <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span> <span style=color:#f92672>and</span> color_value <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span>:
+</span></span><span style=display:flex><span>            data[color_value] <span style=color:#f92672>=</span> color_name  <span style=color:#75715e># Reversed order</span>
+</span></span></code></pre></div><p>Now be a good machine an take those hexadecimal color values from column A and convert them to RGB and HSL values, making whoever entered them manually feel irrelevant at his work:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> openpyxl
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> colorsys
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Load the Excel workbook with macros</span>
+</span></span><span style=display:flex><span>workbook_path <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Rose Pine Colorscheme.xlsm&#34;</span>
+</span></span><span style=display:flex><span>workbook <span style=color:#f92672>=</span> openpyxl<span style=color:#f92672>.</span>load_workbook(workbook_path, read_only<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>, data_only<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Specify the sheet name where your data is located</span>
+</span></span><span style=display:flex><span>sheet_name <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Rosé Pine&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Get the active worksheet</span>
+</span></span><span style=display:flex><span>worksheet <span style=color:#f92672>=</span> workbook[sheet_name]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Iterate through the rows starting from the second row (row 2)</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>for</span> row <span style=color:#f92672>in</span> worksheet<span style=color:#f92672>.</span>iter_rows(min_row<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>, max_col<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>, values_only<span style=color:#f92672>=</span><span style=color:#66d9ef>True</span>):
+</span></span><span style=display:flex><span>    cell_value <span style=color:#f92672>=</span> row[<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> cell_value <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#66d9ef>None</span>:
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Convert hex color value to RGB</span>
+</span></span><span style=display:flex><span>        hex_color <span style=color:#f92672>=</span> cell_value<span style=color:#f92672>.</span>lstrip(<span style=color:#e6db74>&#39;#&#39;</span>)
+</span></span><span style=display:flex><span>        rgb_color <span style=color:#f92672>=</span> tuple(int(hex_color[i:i<span style=color:#f92672>+</span><span style=color:#ae81ff>2</span>], <span style=color:#ae81ff>16</span>) <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> (<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>2</span>, <span style=color:#ae81ff>4</span>))
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Convert RGB to HSL</span>
+</span></span><span style=display:flex><span>        r, g, b <span style=color:#f92672>=</span> [x <span style=color:#f92672>/</span> <span style=color:#ae81ff>255.0</span> <span style=color:#66d9ef>for</span> x <span style=color:#f92672>in</span> rgb_color]
+</span></span><span style=display:flex><span>        h, l, s <span style=color:#f92672>=</span> colorsys<span style=color:#f92672>.</span>rgb_to_hls(r, g, b)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Format HSL values as integers in the range 0-360 (hue) and 0-100 (saturation and lightness)</span>
+</span></span><span style=display:flex><span>        h <span style=color:#f92672>=</span> int(h <span style=color:#f92672>*</span> <span style=color:#ae81ff>360</span>)
+</span></span><span style=display:flex><span>        s <span style=color:#f92672>=</span> int(s <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>)
+</span></span><span style=display:flex><span>        l <span style=color:#f92672>=</span> int(l <span style=color:#f92672>*</span> <span style=color:#ae81ff>100</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Print Hex, RGB, and HSL values</span>
+</span></span><span style=display:flex><span>        print(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Hex: </span><span style=color:#e6db74>{</span>cell_value<span style=color:#e6db74>}</span><span style=color:#e6db74>, RGB: </span><span style=color:#e6db74>{</span>rgb_color<span style=color:#e6db74>}</span><span style=color:#e6db74>, HSL: </span><span style=color:#e6db74>{</span>h<span style=color:#e6db74>}</span><span style=color:#e6db74>, </span><span style=color:#e6db74>{</span>s<span style=color:#e6db74>}</span><span style=color:#e6db74>, </span><span style=color:#e6db74>{</span>l<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>print(<span style=color:#e6db74>&#34;Conversion from hex to RGB and HSL completed.&#34;</span>)
+</span></span></code></pre></div><p>You can find the full scripts and the example spreadsheet on my <a href=https://github.com/ka-de/_life_is_a_mess_/tree/main/excel-to-json>Github</a>.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>

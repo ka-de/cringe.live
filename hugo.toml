@@ -1,4 +1,22 @@
 baseURL = 'https://cringe.live/'
 languageCode = 'en-us'
 title = 'Cringe Live'
-theme = 'cringe-live'
+theme = 'hugo-book'
+googleAnalytics = ""
+disablePathToLower = true
+enableGitInfo = true
+
+#disableKinds = ['taxonomy', 'taxonomyTerm']
+
+[params]
+    BookTheme = 'auto'
+    BookToC = true
+    #BookLogo = 'logo.png'
+    BookSection = '*'
+    BookRepo = 'https://github.com/ka-de/cringe.live'
+    BookCommitPath = 'commit'
+    BookEditPath = 'edit/main/cringe.live'
+    BookDateFormat = 'Jan 2, 2006'
+    BookSearch = true
+    BookComments = false
+
