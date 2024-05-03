@@ -12,7 +12,7 @@ Linear Algebra is a branch of mathematics that deals with vectors, vector spaces
 
 Vectors are mathematical objects that have both magnitude (size) and direction. They can represent physical quantities like force, velocity or displacement. For example, if you're a furry running in a park, your velocity is a vector - it has a speed (magnitude) and a direction you're running in.
 
-<img src="/furry-running.jpg?raw=true" alt="A furry running in a park."/>
+![A furry running in a park](/images/furry-running.jpg)
 
 *This furry has a velocity.*
 
@@ -26,7 +26,7 @@ If you have two vectors, you can add them together to get a new vector. This is 
 
 #### Scalar Multiplication
 
-You can multiply a vector by a scalar (regular number) to get a new vector. This is done by multiplying each component of the vector by the scalar. For example if {{< katex >}}c = 2{{< /katex >}} and {{< katex >}}b = [1,4 ]{{< /katex >}} then {{< katex >}}c * d = [2*3, 2 *4]  = [6, 8]{{< /katex >}}.
+You can multiply a vector by a scalar (regular number) to get a new vector. This is done by multiplying each component of the vector by the scalar. For example if {{< katex >}}c = 2{{< /katex >}} and {{< katex >}}b = [1,4 ]{{< /katex >}} then {{< katex >}}c * b = [2*3, 2 *4]  = [6, 8]{{< /katex >}}.
 
 #### Dot Product
 
@@ -54,7 +54,7 @@ It can be represented as:
 
 {{< katex display=true >}}A + B = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} + \begin{bmatrix} a2 & b2 \\ c2 & d2 \end{bmatrix} = \begin{bmatrix} a1+a2 & b1+b2 \\ c1+c2 & d1+d2 \end{bmatrix}{{< /katex >}}
 
-If we have two matrices A and B of the same size representing linear transformations, their sum A + B also represents a linear transformation. The sum transformation (A + B) applied to any vector v is equal to A(v) + B(v). This property is known as linear separability.
+If we have two matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} of the same size representing linear transformations, their sum {{< katex >}}A + B{{< /katex >}} also represents a linear transformation. The sum transformation {{< katex >}}(A + B){{< /katex >}} applied to any vector {{< katex >}}v{{< /katex >}} is equal to {{< katex >}}A(v) + B(v){{< /katex >}}. This property is known as linear separability.
 
 {{< katex display=true >}}
 (A + B)(v) = A(v) + B(v)
