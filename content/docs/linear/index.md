@@ -106,6 +106,78 @@ The transpose of a matrix is a new matrix whose rows are the columns of the orig
 
 ---
 
+## The Cross Product
+
+The cross product, also known as the vector product, is a binary operation on two vectors in three-dimensional space. It's denoted by the symbol {{< katex >}}\times{{< /katex >}} and results in a vector that is perpendicular (or orthogonal) to the plane containing the two original vectors.
+
+If you have two vectors {{< katex >}}a = [a1, a2, a3]{{< /katex >}} and {{< katex >}}b = [b1, b2, b3]{{< /katex >}}, their cross product, denoted as {{< katex >}}a \times b{{< /katex >}} is defined as:
+
+{{< katex display=true >}}\mathbf{a} \times \mathbf{b} = \begin{bmatrix} a2b3 - a3b2 \\ a3b1 - a1b3 \\ a1b2 - a2b1 \end{bmatrix}{{< /katex >}}
+
+The cross product is only defined in three dimensions. In higher dimensions, one typically uses the more general concept of the exterior product. The cross product is used in various fields such as physics (torque, angular momentum), computer graphics (finding normals to surfaces), and engineering (moment of forces).
+
+### Geometric Interpretation
+
+Geometrically, the magnitude (or length) of the cross product vector equals the area of the parallelogram formed by the two original vectors. The direction of the cross product vector is given by the right-hand rule: if you point your open right hand in the direction of {{< katex >}}a{{< /katex >}} and then curl your fingers towards {{< katex >}}b{{< /katex >}}, your thumb points in the direction of {{< katex >}}a \times b{{< /katex >}}.
+
+### Properties
+
+The cross product has several important properties, including:
+
+#### Anticommutativity
+
+The property of anticommutativity means that the order in which the vectors are crossed matters. If you have two vectors {{< katex >}}a{{< /katex >}} and {{< katex >}}b{{< /katex >}}, the cross product {{< katex >}}a \times b{{< /katex >}} is the negative of {{< katex >}}b \times a{{< /katex >}}. In other words:
+
+{{< katex display=true >}}\mathbf{a} \times \mathbf{b} = -(\mathbf{b} \times \mathbf{a}){{< /katex >}}
+
+This is different from the dot product, which is commutative. (i.e., {{< katex >}}a \cdot b = b \cdot a{{< /katex >}})
+
+#### Distributivity over addition
+
+The distributive property of the cross product states that the cross product distributes over vector addition. That is, if you have three vectors {{< katex >}}a{{< /katex >}}, {{< katex >}}b{{< /katex >}} and {{< katex >}}c{{< /katex >}}, then the cross product of {{< katex >}}a{{< /katex >}} with the sum of {{< katex >}}b{{< /katex >}} and {{< katex >}}c{{< /katex >}} is equal to the sum of the cross product of {{< katex >}}a{{< /katex >}} and {{< katex >}}b{{< /katex >}} and the cross product of {{< katex >}}a{{< /katex >}} and {{< katex >}}c{{< /katex >}}. Mathematically this is expressed as:
+
+{{< katex display=true >}}\mathbf{a} \times (\mathbf{b} + \mathbf{c}) = \mathbf{a} \times \mathbf{b} + \mathbf{a} \times \mathbf{c}{{< /katex >}}
+
+#### Scalar multiplication
+
+The property of scalar multiplication states that the cross product is compatible with scalar multiplication. If you multiply a vector {{< katex >}}a{{< /katex >}} by a scalar {{< katex >}}k{{< /katex >}} and then take the cross product of this with a vector {{< katex >}}b{{< /katex >}}, it's the same as if you took the cross product of {{< katex >}}a{{< /katex >}} and {{< katex >}}b{{< /katex >}} first and then multiplied the result by {{< katex >}}k{{< /katex >}}. Similarly, it's also the same as if you multiplied {{< katex >}}b{{< /katex >}} by {{< katex >}}k{{< /katex >}} before taking the cross product. This can be written as:
+
+{{< katex display=true >}}(k\mathbf{a}) \times \mathbf{b} = k(\mathbf{a} \times \mathbf{b}) = \mathbf{a} \times (k\mathbf{b}){{< /katex >}}
+
+Where {{< katex >}}k{{< /katex >}} is a scalar.
+
+### Relation to Other Vector Operations
+
+While the cross product is a useful operation, it's important to understand when it's appropriate to use it and when other vector operations, such as the dot product or scalar triple product, might be more suitable. The dot product, for instance, is useful for determining the angle between two vectors or projecting one vector onto another, while the scalar triple product is used to find the scalar triple product of three vectors.
+
+### Examples
+
+Let's calculate the cross product of two simple vectors, {{< katex >}}\mathbf{a} = [1, 0, 0]{{< /katex >}} and {{< katex >}}\mathbf{b} = [0, 1, 0]{{< /katex >}}:
+
+{{< katex display=true >}}
+\mathbf{a} \times \mathbf{b} = \begin{bmatrix}
+0 \times 0 - 0 \times 1 \\
+0 \times 0 - 0 \times 0 \\
+1 \times 1 - 0 \times 0
+\end{bmatrix} = \begin{bmatrix}
+0 \\
+0 \\
+1
+\end{bmatrix}
+{{< /katex >}}
+
+So, the cross product of {{< katex >}}[1, 0, 0]{{< /katex >}} and {{< katex >}}[0, 1, 0]{{< /katex >}} is {{< katex >}}[0, 0, 1]{{< /katex >}}, which is a vector pointing in the positive z-direction with a magnitude of 1.
+
+### Practice Problems
+
+1. Calculate the cross product of {{< katex >}}\mathbf{a} = [2, 1, -3]{{< /katex >}} and {{< katex >}}\mathbf{b} = [4, -2, 1]{{< /katex >}}.
+
+2. Find the cross product of {{< katex >}}\mathbf{u} = [1, 2, 3]{{< /katex >}} and {{< katex >}}\mathbf{v} = [4, 5, 6]{{< /katex >}}.
+
+3. If the position vector of a force {{< katex >}}\mathbf{F} = [10, 20, 0]{{< /katex >}} is {{< katex >}}\mathbf{r} = [2, 1, 3]{{< /katex >}}, calculate the torque about the origin using the cross product.
+
+---
+
 ## Kolmogorov-Arnold Representation Theorem
 
 The Kolmogorov-Arnold Representation Theorem, also known as the superposition theorem, is a significant result in real analysis and approximation theory.
