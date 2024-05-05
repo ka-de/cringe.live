@@ -1,17 +1,51 @@
-+++
-title = "Green Tea"
-date = "2023-08-18T16:08:56+02:00"
-author = "Balazs Horvath"
-authorTwitter = "_ka_de"
-cover = ""
-tags = ["health", "addiction", "caffeine", "smoking", "substance abuse", "self-improvement", "tea", "alkaloids"]
-keywords = ["Green tea", "Caffeine addiction", "Substance abuse recovery", "Health awareness", "Self-improvement journey", "Addiction struggles", "Self-reflection", "Lifestyle changes", "Quitting smoking", "Health effects of smoking", "Addiction recovery process", "Personal growth and development", "Overcoming cravings", "Design flaws in human behavior", "Technology and addiction", "Substance dependency", "Craving management", "Chemical solutions", "Self-education", "University education in chemistry"]
-categories = ["Daily Life", "Health and Wellness", "Addiction Recovery", "Self-Reflection", "Personal Growth", "Lifestyle"]
-description = "Join Balazs Horvath on a transformative journey of self-discovery and addiction recovery in his blog post, 'Green Tea.' Delve into his personal insights as he shares his switch from coffee to green tea and explores the intriguing world of alkaloids. Discover how lifestyle changes, self-reflection, and the pursuit of health awareness have shaped his path. Gain valuable perspectives on overcoming cravings, substance dependency, and the pursuit of self-improvement. Explore the fascinating connection between plants, human behavior, and the quest for a healthier, more balanced life."
-showFullContent = true
-readingTime = true
-hideComments = false
-+++
+---
+title: "Green Tea"
+date: 2023-08-18T16:08:56+02:00
+author: "Balazs Horvath"
+authorTwitter: "_ka_de"
+cover: ""
+tags:
+ - health
+ - addiction
+ - caffeine
+ - smoking
+ - "substance abuse"
+ - self-improvement
+ - tea
+ - alkaloids
+keywords:
+ - "Green tea"
+ - "Caffeine addiction"
+ - "Substance abuse recovery"
+ - "Health awareness"
+ - "Self-improvement journey"
+ - "Addiction struggles"
+ - "Self-reflection"
+ - "Lifestyle changes"
+ - "Quitting smoking"
+ - "Health effects of smoking"
+ - "Addiction recovery process"
+ - "Personal growth and development"
+ - "Overcoming cravings"
+ - "Design flaws in human behavior"
+ - "Technology and addiction"
+ - "Substance dependency"
+ - "Craving management"
+ - "Chemical solutions"
+ - "Self-education"
+ - "University education in chemistry"
+categories:
+ - "Daily Life"
+ - "Health and Wellness"
+ - "Addiction Recovery"
+ - "Self-Reflection"
+ - "Personal Growth"
+ - "Lifestyle"
+showFullContent: true
+description: "In this introspective and thought-provoking piece, the author shares their journey of self-discovery and personal growth. They delve into their struggles with substance abuse, particularly caffeine addiction and smoking, and how a shift towards healthier alternatives like green tea has been transformative. Through vivid anecdotes and insightful observations, the writer explores the complex relationship between humans and plant-based substances, questioning the evolutionary design flaws that make us susceptible to addictions. Alongside their newfound appreciation for a mindful lifestyle, they grapple with the profound impact of past choices and the desire to break free from harmful patterns. This honest and introspective account offers a relatable perspective on the challenges of addiction recovery, self-improvement, and the pursuit of a balanced, fulfilling life."
+readingTime: true
+hideComments: false
+---
 
 {{< figure src="/images/teacupandpot.png" alt="Alt Text" caption="Embracing comfort has been the highlight of my midlife crisis!" >}}
 
@@ -34,5 +68,3 @@ Something in our brain is wired quite strangely, possibly because the engineer w
 Well fuck this shit, I say it's time for our race to become smarter, deciding for the good of everyone, whether stupid or smart, to limit our access to this plant. At the very least, we shouldn't allow people to profit from it. It's crazy to think we've let this happen for well over a century.
 
 With all these amazing new technologies, there's no way we can't find a molecule that lets us turn off these cravings for good, fixing a design flaw in us. Do I really need to go to a university and learn chemistry so I can fix this myself?
-
-{{< spotify 3zNxUVRAb2x7HLg1Ofs1uL >}}

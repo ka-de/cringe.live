@@ -1,16 +1,49 @@
-+++
-title = "Early Steps"
-date = "2023-08-18T12:08:30+02:00"
-author = "Balazs Horvath"
-authorTwitter = "_ka_de"
-cover = ""
-tags = ["technology", "programming", "powershell", "vba script", "excel", "data manipulation", "self-improvement", "addiction recovery", "health", "ai assistance", "powershell", "chatgpt", "excel"]
-keywords = ["PowerShell scripting", "VBA Script for Excel", "Data manipulation in Excel", "Self-improvement journey", "Addiction recovery process", "Health and technology", "AI assistance in programming", "Excel automation techniques", "Coding with AI", "Random quote generation", "CSV file manipulation", "Data analysis with Python", "Excel VBA scripting", "Technology tutorials", "Programming tips and tricks", "Self-education with AI", "Addiction recovery support", "Health and wellness journey", "Tech-savvy self-improvement", "AI-powered programming"]
-description = "Explore the world of technology and self-improvement with me. Dive into PowerShell scripting and VBA scripts for Excel, discover data manipulation tricks, and embark on a journey of self-improvement and addiction recovery. Learn how AI assistance can enhance your programming skills while also delving into the intersection of health and technology. Join this unique exploration of coding, automation, and personal growth."
-showFullContent = true
-readingTime = true
-hideComments = false
-+++
+---
+title: "Early Steps"
+date: 2023-08-18T12:08:30+02:00
+author: "Balazs Horvath"
+authorTwitter: "_ka_de"
+cover: ""
+tags:
+ - technology
+ - programming
+ - powershell
+ - vba script
+ - excel
+ - data manipulation
+ - self-improvement
+ - addiction recovery
+ - health
+ - ai assistance
+ - powershell
+ - chatgpt
+ - excel
+keywords:
+ - PowerShell scripting
+ - VBA Script for Excel
+ - Data manipulation in Excel
+ - Self-improvement journey
+ - Addiction recovery process
+ - Health and technology
+ - AI assistance in programming
+ - Excel automation techniques
+ - Coding with AI
+ - Random quote generation
+ - CSV file manipulation
+ - Data analysis with Python
+ - Excel VBA scripting
+ - Technology tutorials
+ - Programming tips and tricks
+ - Self-education with AI
+ - Addiction recovery support
+ - Health and wellness journey
+ - Tech-savvy self-improvement
+ - AI-powered programming
+showFullContent: false
+description: ""
+readingTime: true
+hideComments: false
+---
 
 {{< figure src="/images/manvsmachine.png" alt="AI Generated caricature." caption="Men slowly starting to interface with the machines other men built for them. Glorious!" >}}
 

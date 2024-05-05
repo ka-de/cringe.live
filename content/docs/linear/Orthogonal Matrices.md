@@ -8,18 +8,95 @@ title: "Orthogonal Matrices"
 
 # Orthogonal Matrices
 
-An orthogonal matrix is a square matrix whose rows and columns are orthogonal unit vectors. In other words, it is a matrix whose columns (and rows) form an orthonormal basis for the vector space they span.
+An orthogonal matrix is a square matrix whose rows and columns are orthogonal unit vectors. In other words, it is a matrix whose columns (and rows) form an orthonormal basis for the vector space they span, meaning they are mutually perpendicular unit vectors.
+
 More precisely, a matrix {{< katex >}}Q{{< /katex >}} is orthogonal if it satisfies the following condition:
 
 {{< katex display=true >}}
 Q^T Q = Q Q^T = I
-{{< katex >}}
+{{< /katex >}}
 
 Where {{< katex >}}Q^T{{< /katex >}} is the transpose of {{< katex >}}Q{{< /katex >}}, and {{< katex >}}I{{< /katex >}} is the identity matrix of the same dimensions.
 
-Some key properties of orthogonal matrices:
+This property implies that orthogonal matrices are **invertible**, and their inverse is simply their transpose.
 
-- The columns (and rows) are orthonormal, meaning they are mutually perpendicular unit vectors.
-- The inverse of an orthogonal matrix is equal to its transpose: {{< katex >}}Q^-1 = Q^T{{< /katex >}}
-- Multiplying a vector by an orthogonal matrix preserves its length (norm).
-- The determinant of an orthogonal matrix is either +1 or -1.
+{{< katex display=true >}}
+Q = \begin{bmatrix}
+1 & 0 \\
+0 & 1
+\end{bmatrix}
+{{< /katex >}}
+
+This matrix represents the identity matrix in two-dimensional space. This matrix is significant because it serves as the multiplicative identity in linear algebra, meaning any vector multiplied by this matrix will remain unchanged.
+
+![A diagram of orthogonal matrices](/images/orthogonal-unit-vectors.png)
+
+The accompanying diagram illustrates two orthogonal unit vectors in a two-dimensional coordinate system. These vectors are represented as arrows originating from the origin {{< katex >}}(0,0){{< /katex >}} and extending to the points {{< katex >}}(1,0){{< /katex >}} and {{< katex >}}(0,1){{< /katex >}}, respectively.
+
+Both vectors have a magnitude of 1, which positions them on the unit circle—a green dashed circle with a radius of 1 that encompasses both vectors. The unit circle is a fundamental concept in trigonometry and complex analysis, as it represents all possible angles and their corresponding points in the Cartesian plane.
+
+## The Inverse of an Orthogonal Matrix
+
+One of the properties of an orthogonal matrix is that its inverse is equal to its transpose:
+
+{{< katex display=true >}}
+Q^{-1} = Q^T
+{{< /katex >}}
+
+This means that to find the inverse of an orthogonal matrix, one simply needs to transpose the matrix—switch the rows and columns.
+
+Consider the following orthogonal matrix:
+
+{{< katex display=true >}}
+Q = \begin{bmatrix}
+\cos(\theta) & -\sin(\theta) \\
+\sin(\theta) & \cos(\theta)
+\end{bmatrix}
+{{< /katex >}}
+
+The inverse of this matrix, which represents a rotation by angle {{< katex >}}\theta{{< /katex >}}, is given by:
+
+{{< katex display=true >}}
+Q^{-1} = Q^T = \begin{bmatrix}
+\cos(\theta) & \sin(\theta) \\
+-\sin(\theta) & \cos(\theta)
+\end{bmatrix}
+{{< /katex >}}
+
+This inverse matrix represents a rotation in the opposite direction, effectively undoing the original rotation.
+
+## Preserving Vector Norms
+
+When an orthogonal matrix multiplies a vector, the length (or norm) of the vector is preserved. This is why orthogonal transformations are also called **isometries**. Mathematically, for any vector {{< katex >}}v{{< /katex >}}, we have:
+
+{{< katex display=true >}}
+||Qv|| = ||v||
+{{< /katex >}}
+
+## Determinant of Orthogonal Matrices
+
+The determinant of an orthogonal matrix is always either +1 or -1. This is a direct consequence of the matrix being a product of reflections and rotations, both of which preserve the area (in 2D) or volume (in 3D) up to a sign. Thus:
+
+{{< katex display=true >}}
+\text{det}(Q) = \pm 1
+{{< /katex >}}
+
+## Eigenvalues and Eigenvectors
+
+The eigenvalues of an orthogonal matrix are always of absolute value 1. They can be either real ({{< katex >}}\pm 1{{< /katex >}}) or complex numbers with a magnitude of 1. This reflects the fact that orthogonal matrices correspond to rotations and reflections, which do not change the magnitude of vectors. For an orthogonal matrix, the eigenvalues are values that satisfy the equation:
+
+{{< katex display=true >}} Qv =   \lambda v {{< /katex >}}
+
+where {{< katex >}}v{{< /katex >}} is a non-zero vector (eigenvector), and {{< katex >}}\lambda{{< /katex >}} is a scalar (eigenvalue). Since orthogonal matrices represent rotations and reflections, their eigenvalues are of absolute value 1, which means they lie on the unit circle in the complex plane.
+
+Consider the orthogonal matrix representing a rotation by angle {{< katex >}}\theta{{< /katex >}}:
+
+{{< katex display=true >}} Q = \begin{bmatrix} \cos(\theta) & -\sin(\theta) \ \sin(\theta) & \cos(\theta) \end{bmatrix} {{< /katex >}}
+
+The eigenvalues of this matrix are complex numbers {{< katex >}}e^{i\theta}{{< /katex >}} and {{< katex >}}e^{-i\theta}{{< /katex >}}, which correspond to rotations by {{< katex >}}\theta{{< /katex >}} and {{< katex >}}-\theta{{< /katex >}} respectively. The eigenvectors associated with these eigenvalues are also complex and represent the directions that are invariant under the rotation.
+
+In physical terms, the eigenvectors of an orthogonal matrix represent the axes of rotation or reflection, and the eigenvalues describe the nature of the transformation along those axes. For instance, an eigenvalue of +1 indicates that the vector remains unchanged, while -1 indicates a reflection.
+
+## Application in Complex Systems
+
+Orthogonal matrices play a crucial role in simplifying complex systems. For instance, in the diagonalization of a matrix, orthogonal matrices can be used to transform a matrix into a diagonal form, which is much easier to analyze and work with.

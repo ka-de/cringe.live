@@ -1,17 +1,58 @@
-+++
-title = "Alle Farben"
-date = "2023-08-20T11:27:05+02:00"
-author = "Balazs Horvath"
-authorTwitter = "_ka_de"
-cover = ""
-tags = ["powershell script", "excel data extraction", "python programming", "color conversion", "data manipulation", "json", "excel spreadsheets", "data analysis"]
-keywords = ["PowerShell script", "Excel data extraction", "Python programming", "Color conversion", "Data manipulation", "JSON format", "Excel spreadsheets", "Data analysis", "RGB values", "HSL values", "Hexadecimal colors", "Excel macros", "Unicode characters", "Data conversion techniques", "Data extraction methods", "Excel automation", "Color analysis", "Spreadsheet manipulation", "Data transformation", "Excel workbook", "ChatGPT", "Python Programming", "AI and Machine Learning"]
-categories = ["Data Manipulation", "Excel", "PowerShell", "Python", "Data Extraction", "Data Conversion", "Color Analysis", "Technology", "Programming", "AI and Machine Learning"]
-description = "Dive into the world of data manipulation, color conversion, and automation with Balazs Horvath's blog post, 'Alle Farben.' Explore the power of PowerShell scripting and Python programming as Balazs extracts color values from Excel spreadsheets, converts them to various formats, and saves the data as JSON. Discover the magic of Unicode characters in sheet names and the art of transforming data from multiple sheets into a unified JSON file. Join the journey of making manual data entry feel irrelevant while exploring the intricacies of color analysis and data conversion techniques. Explore the intersection of technology, programming, and AI in this insightful blog post."
-showFullContent = true
-readingTime = true
-hideComments = false
-+++
+---
+title: "Alle Farben"
+date: 2023-08-20T11:27:05+02:00
+author: "Balazs Horvath"
+authorTwitter: "_ka_de"
+cover: ""
+tags:
+ - powershell script
+ - excel data extraction
+ - python programming
+ - color conversion
+ - data manipulation
+ - json
+ - excel spreadsheets
+ - data analysis
+keywords:
+ - PowerShell script
+ - Excel data extraction
+ - Python programming
+ - Color conversion
+ - Data manipulation
+ - JSON format
+ - Excel spreadsheets
+ - Data analysis
+ - RGB values
+ - HSL values
+ - Hexadecimal colors
+ - Excel macros
+ - Unicode characters
+ - Data conversion techniques
+ - Data extraction methods
+ - Excel automation
+ - Color analysis
+ - Spreadsheet manipulation
+ - Data transformation
+ - Excel workbook
+ - ChatGPT
+ - Python Programming
+ - AI and Machine Learning
+categories:
+ - Data Manipulation
+ - Excel
+ - PowerShell
+ - Python
+ - Data Extraction
+ - Data Conversion
+ - Color Analysis
+ - Technology
+ - Programming
+ - AI and Machine Learning
+description: "This humorous blog post chronicles the author's adventures in coding, as they showcase their PowerShell, Python, and Excel skills through a series of increasingly complex tasks. Starting with a whimsical PowerShell function, the post then delves into extracting color values from an Excel spreadsheet using Python scripts, converting them to different formats, and even rendering manual data entry seemingly \"irrelevant.\" With a playful tone and self-deprecating humor, the author shares their coding exploits, complete with a screenshot of the spreadsheet they painstakingly crafted, ultimately providing readers with the full scripts and example files on their GitHub repository."
+showFullContent: false
+readingTime: true
+hideComments: false
+---
 
 ```powershell
 # Change directory to my blog in the most extravagant way.
