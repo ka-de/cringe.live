@@ -1,0 +1,94 @@
+<!doctype html><html lang=en-us dir=ltr><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Singular Value Decomposition # SVD is a matrix factorization technique that decomposes a real or complex matrix into three matrices: two orthogonal matrices and one diagonal matrix. The SVD of a matrix \(A\) (m × n) is given by:
+\[A = U \Sigma V^T\] Where:
+\(A\) is an m × n matrix \(U\) is an m × m orthogonal matrix ( \(U^T U = I\) ) \(\Sigma\) (Sigma) is an m × n diagonal matrix with non-negative real numbers on the diagonal \(V^T\) is the transpose of an n × n orthogonal matrix \(V\) ( \(V^T V = I\) ) The diagonal entries of \(\Sigma\) are called the singular values of \(A\) , denoted by \(\sigma_i\) :"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="http://localhost:1313/docs/linear/Singular-Value-Decomposition/"><meta property="og:site_name" content="Cringe Live"><meta property="og:title" content="Singular Value Decomposition"><meta property="og:description" content="Singular Value Decomposition # SVD is a matrix factorization technique that decomposes a real or complex matrix into three matrices: two orthogonal matrices and one diagonal matrix. The SVD of a matrix \(A\) (m × n) is given by:
+\[A = U \Sigma V^T\] Where:
+\(A\) is an m × n matrix \(U\) is an m × m orthogonal matrix ( \(U^T U = I\) ) \(\Sigma\) (Sigma) is an m × n diagonal matrix with non-negative real numbers on the diagonal \(V^T\) is the transpose of an n × n orthogonal matrix \(V\) ( \(V^T V = I\) ) The diagonal entries of \(\Sigma\) are called the singular values of \(A\) , denoted by \(\sigma_i\) :"><meta property="og:locale" content="en-us"><meta property="og:type" content="article"><meta property="article:section" content="docs"><title>Singular Value Decomposition | Cringe Live</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=canonical href=http://localhost:1313/docs/linear/Singular-Value-Decomposition/><link rel=stylesheet href=/book.min.4964903a822a7acb10dac6d1ab524833c97fb5f99b141976bcb8a47d539be9c0.css integrity="sha256-SWSQOoIqessQ2sbRq1JIM8l/tfmbFBl2vLikfVOb6cA=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.6347ac504a83258bdca265e50d7d9d90e209b37afffa885bfa0068fcc084e52b.js integrity="sha256-Y0esUEqDJYvcomXlDX2dkOIJs3r/+ohb+gBo/MCE5Ss=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-D69NRX5XH6"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-D69NRX5XH6")}</script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Cringe Live</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/docs/linear/>Linear Algebra for Furries</a><ul><li><a href=/docs/linear/Kolmogorov-Arnold-Representation-Theorem/>Kolmogorov-Arnold Representation Theorem</a></li><li><a href=/docs/linear/Orthogonal-Matrices/>Orthogonal Matrices</a></li><li><a href=/docs/linear/Singular-Value-Decomposition/ class=active>Singular Value Decomposition</a></li></ul></li></ul><ul><li><a href=/posts/>Blog</a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
+</label><strong>Singular Value Decomposition</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents></nav></aside></header><article class="markdown book-article"><h1 id=singular-value-decomposition>Singular Value Decomposition
+<a class=anchor href=#singular-value-decomposition>#</a></h1><p>SVD is a matrix factorization technique that decomposes a real or complex matrix into three matrices: two orthogonal matrices and one diagonal matrix. The SVD of a matrix
+<link rel=stylesheet href=/katex/katex.min.css><script defer src=/katex/katex.min.js></script><script defer src=/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><span>\(A\)
+</span>(m × n) is given by:</p><span>\[
+A = U \Sigma V^T
+\]</span><p>Where:</p><ul><li><span>\(A\)
+</span>is an m × n matrix</li><li><span>\(U\)
+</span>is an m × m orthogonal matrix (<span>
+\(U^T U = I\)
+</span>)</li><li><span>\(\Sigma\)
+</span>(Sigma) is an m × n diagonal matrix with non-negative real numbers on the diagonal</li><li><span>\(V^T\)
+</span>is the transpose of an n × n orthogonal matrix <span>\(V\)
+</span>(<span>
+\(V^T V = I\)
+</span>)</li></ul><p>The diagonal entries of <span>\(\Sigma\)
+</span>are called the singular values of <span>\(A\)
+</span>, denoted by <span>\(\sigma_i\)
+</span>:</p><p>The singular values in <span>\(\Sigma\)
+</span>are arranged in descending order, and they represent the importance or &ldquo;energy&rdquo; of each corresponding pair of singular vectors in <span>\(U\)
+</span>and <span>\(V\)
+</span>. The larger singular values capture more important information about the original matrix A, while smaller singular values capture less important or &ldquo;noisy&rdquo; information.</p><p>Here&rsquo;s how the SVD is computed:</p><ul><li>Calculate the matrix product <span>\(A^T A\)
+</span>, which is an n × n matrix.</li><li>Find the eigenvalues and eigenvectors of <span>\(A^T A\)
+</span>.</li><li>The eigenvectors of <span>\(A^T A\)
+</span>are the columns of <span>\(V\)
+</span>.</li><li>The singular values <span>\(σ_i\)
+</span>are the square roots of the eigenvalues of <span>\(A^T A\)
+</span>.</li><li>The columns of <span>\(U\)
+</span>are obtained by multiplying <span>\(A\)
+</span>with the corresponding columns of <span>\(V\)
+</span>, and then dividing by the corresponding singular values.</li></ul><p>Mathematically, it can be expressed as:</p><span>\[
+A^T A = V \Lambda V^T
+\]</span><p>Where <span>\(\Lambda\)
+</span>is a diagonal matrix containing the eigenvalues of <span>\(A^T A\)
+</span>.
+The singular values <span>\(σ_i\)
+</span>are the square roots of the diagonal elements of <span>\(\Lambda\)
+</span>:</p><span>\[
+\Sigma = \sqrt{\Lambda}
+\]</span><p>And the columns of U are given by:</p><span>\[
+U = A V \Sigma^{-1}
+\]</span><p>The SVD has several important properties and applications:</p><p>Low-rank approximation: By keeping only the k largest singular values and their corresponding singular vectors, we can approximate the original matrix A as A ≈ U_k Σ_k V_k^T, where U_k, Σ_k, and V_k^T are the truncated matrices containing the top k singular values and vectors. This is known as the low-rank approximation of A, and it is useful for data compression, noise reduction, and dimensionality reduction.
+Matrix inversion and pseudoinverse: The SVD can be used to compute the inverse or pseudoinverse of a matrix, which is useful in linear algebra and least-squares problems.
+Data analysis and dimensionality reduction: The SVD is used in techniques like Principal Component Analysis (PCA) and Latent Semantic Analysis (LSA) for dimensionality reduction and data analysis.
+Image compression and processing: The SVD is used in image compression algorithms like JPEG and in various image processing tasks, such as watermarking and noise removal.
+Signal processing: The SVD is used in signal processing applications like signal denoising, feature extraction, and subspace tracking.</p><p>In the context of the provided script, the SVD is used to perform a low-rank approximation of the merged LoRA weights. By keeping only the top k singular values and vectors, the script extracts a low-rank representation of the merged weights, which can be more efficient and compact than the original merged weights. This low-rank representation is then used as the new LoRA weights for the merged model.
+The truncation of singular values and vectors is controlled by the &ndash;new_rank and &ndash;new_conv_rank arguments, which specify the desired rank (or dimension) of the output LoRA model. The script also applies clamping to the singular vectors to prevent them from becoming too large or too small, which can help improve numerical stability and convergence during training or fine-tuning.</p><span>\[
+\Sigma = \begin{bmatrix}
+\sigma_1 & 0 & \cdots & 0 \\
+0 & \sigma_2 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \sigma_r
+\end{bmatrix}
+\]</span><p>Where <span>\(r\)
+</span>is the rank of <span>\(A\)
+</span>, and the singular values are arranged in descending order:</p><span>\[
+\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_r \geq 0
+\]</span><p>The columns of <span>\(U\)
+</span>and <span>\(V\)
+</span>are called the left and right singular vectors of <span>\(A\)
+</span>, respectively:</p><span>\[
+U = \begin{bmatrix}
+| & | & & | \\
+u_1 & u_2 & \cdots & u_m \\
+| & | & & |
+\end{bmatrix}
+\]
+</span><span>\[
+V = \begin{bmatrix}
+| & | & & | \\
+v_1 & v_2 & \cdots & v_n \\
+| & | & & |
+\end{bmatrix}
+\]</span><p>The SVD can be expressed in terms of the sum of rank-1 matrices:</p><span>\[
+A = \sum_{i=1}^r \sigma_i u_i v_i^T
+\]</span><p>Where <span>\(u_i\)
+</span>and <span>\(v_i\)
+</span>are the i-th columns of <span>\(U\)
+</span>and <span>\(V\)
+</span>, respectively.
+The low-rank approximation of <span>\(A\)
+</span>, using the top k singular values and vectors, is given by:</p><span>\[
+A_k = \sum_{i=1}^k \sigma_i u_i v_i^T
+\]</span><p>Where <span>\(A_k\)
+</span>is the best rank-k approximation of <span>\(A\)
+</span>in the least-squares sense.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/edit/main/content/docs/linear/Singular%20Value%20Decomposition.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt>
+<span>Edit this page</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents></nav></div></aside></main></body></html>

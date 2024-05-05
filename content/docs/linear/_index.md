@@ -1,6 +1,12 @@
-# Linear Algebra for Furries
+---
+weight: 1
+bookFlatSection: false
+title: "Linear Algebra for Furries"
+---
 
-<!--markdownlint-disable MD033 -->
+<!--markdownlint-disable MD033 MD025 -->
+
+# Linear Algebra for Furries
 
 ## Linear Algebra Basics
 
@@ -52,7 +58,9 @@ Matrices can be added or subtracted element by element if they are of the same s
 
 It can be represented as:
 
-{{< katex display=true >}}A + B = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} + \begin{bmatrix} a2 & b2 \\ c2 & d2 \end{bmatrix} = \begin{bmatrix} a1+a2 & b1+b2 \\ c1+c2 & d1+d2 \end{bmatrix}{{< /katex >}}
+{{< katex display=true >}}
+A + B = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} + \begin{bmatrix} a2 & b2 \\ c2 & d2 \end{bmatrix} = \begin{bmatrix} a1+a2 & b1+b2 \\ c1+c2 & d1+d2 \end{bmatrix}
+{{< /katex >}}
 
 If we have two matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} of the same size representing linear transformations, their sum {{< katex >}}A + B{{< /katex >}} also represents a linear transformation. The sum transformation {{< katex >}}(A + B){{< /katex >}} applied to any vector {{< katex >}}v{{< /katex >}} is equal to {{< katex >}}A(v) + B(v){{< /katex >}}. This property is known as linear separability.
 
@@ -177,24 +185,6 @@ So, the cross product of {{< katex >}}[1, 0, 0]{{< /katex >}} and {{< katex >}}[
 3. If the position vector of a force {{< katex >}}\mathbf{F} = [10, 20, 0]{{< /katex >}} is {{< katex >}}\mathbf{r} = [2, 1, 3]{{< /katex >}}, calculate the torque about the origin using the cross product.
 
 ---
-
-## Kolmogorov-Arnold Representation Theorem
-
-The Kolmogorov-Arnold Representation Theorem, also known as the superposition theorem, is a significant result in real analysis and approximation theory.
-
-It was first proved by Andrey Kolmogorov in 1956 and later extended by his student Vladimir Arnold in 1957.
-
-The theorem states that every multivariate continuous function can be represented as a superposition of continuous functions of one variable. More specifically, if {{< katex >}}f{{< /katex >}} is a multivariate continuous function, then {{< katex >}}f{{< /katex >}} can be written as a finite composition of continuous functions of a single variable and the binary operation of addition.
-
-The mathematical representation is as follows:
-
-{{< katex display=true >}}f(x_1, \ldots, x_m) = \sum_{i=1}^{2m+1} \Phi_i \left( \sum_{j=1}^{m} \phi_{i,j}(x_j) \right){{< /katex >}}
-
-Where {{< katex >}}\Phi_i{{< /katex >}} and {{< katex >}}\phi_{i,j}{{< /katex >}} are continuous monotonically increasing functions on the interval {{< katex >}}[0,1]{{< /katex >}}
-
-This theorem solved a more constrained form of Hilbert’s thirteenth problem, so the original Hilbert’s thirteenth problem is a corollary. In a sense, they showed that the only true multivariate function is the sum, since every other function can be written using univariate functions and summing.
-
-There is a longstanding debate whether the Kolmogorov-Arnold representation theorem can explain the use of more than one hidden layer in neural networks. The Kolmogorov-Arnold representation decomposes a multivariate function into an interior and an outer function and therefore has indeed a similar structure as a neural network with two hidden layers.
 
 ## Kolmogorov-Arnold Networks
 
