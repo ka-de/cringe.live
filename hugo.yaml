@@ -31,6 +31,6 @@ menu:
     - name: "Github"
       url: "https://github.com/ka-de"
       weight: 10
-    - name: "𝕏"
-      url: "https://x.com/"
+    - name: "Twitter"
+      url: "https://twitter.com/_ka_de"
       weight: 20
