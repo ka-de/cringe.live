@@ -1,0 +1,36 @@
+
+baseURL: 'https://cringe.live/'
+languageCode: 'en-us'
+title: 'Cringe Live'
+theme: 'cringe-theme'
+googleAnalytics: 'G-D69NRX5XH6'
+disablePathToLower: true
+enableGitInfo: true
+#disableKinds: ['taxonomy', 'taxonomyTerm']
+markup:
+  highlight:
+    style: 'catppuccin-latte'
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    startLevel: 1
+params:
+  BookTheme: 'auto'
+  BookToC: true
+  #BookLogo: 'logo.png'
+  BookSection: 'docs'
+  BookRepo: 'https://github.com/ka-de/cringe.live'
+  BookCommitPath: 'commit'
+  BookEditPath: 'edit/main'
+  BookDateFormat: 'Jan 2, 2006'
+  BookSearch: true
+  BookComments: false
+menu:
+  after:
+    - name: "Github"
+      url: "https://github.com/ka-de"
+      weight: 10
+    - name: "𝕏"
+      url: "https://x.com/"
+      weight: 20
