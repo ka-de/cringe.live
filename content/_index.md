@@ -9,4 +9,6 @@ type: docs
 
 ![An AI generated image.](/images/kade-point-up-not-a-furry.png)
 
-Stay cringe
+Now that it is out of the way. Let's talk about math or something.
+But don't call me math wolf! It sounds like meth wolf.
+
