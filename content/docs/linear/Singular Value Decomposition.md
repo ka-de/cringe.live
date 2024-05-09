@@ -111,7 +111,6 @@ U = A V \Sigma^{-1}
 
 This script extends the visualization by comparing different ranks of matrix approximations. It quantifies the approximation quality using the Frobenius norm, providing a clear metric to evaluate how well each low-rank approximation represents the original matrix.
 
-<!--{{< expand "Show Code" >}}-->
 ```python
 """
 This script generates a random 10x10 matrix, computes its SVD, and visualizes both the original matrix and its rank-2 approximation. It also prints the matrices to the console.
@@ -153,8 +152,6 @@ plt.show()
 print("Original matrix:\n", A)
 print(f"\nLow-rank approximation (rank {k}):\n", A_approx)
 ```
-
-<!--{{< /expand >}}-->
 
 ### Example Output
 

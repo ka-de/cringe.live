@@ -100,3 +100,65 @@ In physical terms, the eigenvectors of an orthogonal matrix represent the axes o
 ## Application in Complex Systems
 
 Orthogonal matrices play a crucial role in simplifying complex systems. For instance, in the diagonalization of a matrix, orthogonal matrices can be used to transform a matrix into a diagonal form, which is much easier to analyze and work with.
+
+## Example #1
+
+```python
+"""
+This script demonstrates the properties of orthogonal matrices in linear algebra using a 3x3 matrix.
+
+It defines a 3x3 orthogonal matrix 'Q', calculates its transpose 'Q_T' and its inverse 'Q_inv'. 
+It then checks if the transpose is equal to the inverse, which is the defining property of an orthogonal matrix. 
+If 'Q' is orthogonal, it prints 'Q is orthogonal: True', otherwise it prints 'Q is orthogonal: False'.
+
+Note: This script uses the numpy library for matrix operations.
+"""
+import numpy as np
+
+# Define a 3x3 orthogonal matrix
+Q = np.array([[0, 0, 1],
+              [1, 0, 0],
+              [0, 1, 0]])
+
+# Calculate its transpose
+Q_T = Q.T
+
+# Calculate its inverse
+Q_inv = np.linalg.inv(Q)
+
+# Check if the transpose is equal to the inverse
+print("Q is orthogonal:", np.allclose(Q_T, Q_inv))
+```
+
+## Example #2
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def generate_orthogonal(n):
+    """
+    Generate a random n x n orthogonal matrix.
+    """
+    H = np.random.randn(n, n)
+    Q, R = np.linalg.qr(H)
+    return Q
+
+def is_orthogonal(Q):
+    """
+    Check if a matrix is orthogonal.
+    """
+    return np.allclose(Q.T, np.linalg.inv(Q))
+
+# Generate and check 20 orthogonal matrices
+for i in range(1, 21):
+    Q = generate_orthogonal(3)
+    print(f"Matrix {i} is orthogonal: {is_orthogonal(Q)}")
+
+    # Plot the matrix
+    plt.figure(figsize=(6, 6))
+    plt.imshow(Q, cmap='gray')
+    plt.title(f"Orthogonal Matrix {i}")
+    plt.colorbar()
+    plt.show()
+```
