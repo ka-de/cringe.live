@@ -30,9 +30,11 @@ import os from PIL import Image import glob import multiprocessing # Set the max
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    None
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    &#34;&#34;&#34;</span>
 </span></span><span style=display:flex><span>    <span style=color:#8839ef>try</span>:
+</span></span><span style=display:flex><span>        <span style=color:#04a5e5>print</span>(<span style=color:#d20f39>f</span><span style=color:#40a02b>&#34;Opening image: </span><span style=color:#40a02b>{</span>image_path<span style=color:#40a02b>}</span><span style=color:#40a02b>&#34;</span>)
 </span></span><span style=display:flex><span>        <span style=color:#8839ef>with</span> Image<span style=color:#04a5e5;font-weight:700>.</span>open(image_path) <span style=color:#8839ef>as</span> image:
-</span></span><span style=display:flex><span>            <span style=color:#8839ef>if</span> image<span style=color:#04a5e5;font-weight:700>.</span>mode <span style=color:#04a5e5;font-weight:700>==</span> <span style=color:#40a02b>&#39;RGBA&#39;</span>:
-</span></span><span style=display:flex><span>                rgb_image <span style=color:#04a5e5;font-weight:700>=</span> image<span style=color:#04a5e5;font-weight:700>.</span>convert(<span style=color:#40a02b>&#39;RGB&#39;</span>)
+</span></span><span style=display:flex><span>            <span style=color:#04a5e5>print</span>(<span style=color:#d20f39>f</span><span style=color:#40a02b>&#34;Image mode: </span><span style=color:#40a02b>{</span>image<span style=color:#04a5e5;font-weight:700>.</span>mode<span style=color:#40a02b>}</span><span style=color:#40a02b>&#34;</span>)
+</span></span><span style=display:flex><span>            <span style=color:#8839ef>if</span> image<span style=color:#04a5e5;font-weight:700>.</span>mode <span style=color:#04a5e5;font-weight:700>==</span> <span style=color:#40a02b>&#34;RGBA&#34;</span>:
+</span></span><span style=display:flex><span>                rgb_image <span style=color:#04a5e5;font-weight:700>=</span> image<span style=color:#04a5e5;font-weight:700>.</span>convert(<span style=color:#40a02b>&#34;RGB&#34;</span>)
 </span></span><span style=display:flex><span>                rgb_image<span style=color:#04a5e5;font-weight:700>.</span>save(image_path)
 </span></span><span style=display:flex><span>                <span style=color:#04a5e5>print</span>(<span style=color:#d20f39>f</span><span style=color:#40a02b>&#34;Converted </span><span style=color:#40a02b>{</span>image_path<span style=color:#40a02b>}</span><span style=color:#40a02b> to RGB.&#34;</span>)
 </span></span><span style=display:flex><span>            <span style=color:#8839ef>else</span>:
@@ -51,19 +53,25 @@ import os from PIL import Image import glob import multiprocessing # Set the max
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    Returns:
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    None
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>    directory <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#d20f39>r</span><span style=color:#40a02b>&#39;E:\training_dir&#39;</span>
+</span></span><span style=display:flex><span>    directory <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#d20f39>r</span><span style=color:#40a02b>&#34;E:\training_dir&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#04a5e5>print</span>(<span style=color:#d20f39>f</span><span style=color:#40a02b>&#34;Directory set to: </span><span style=color:#40a02b>{</span>directory<span style=color:#40a02b>}</span><span style=color:#40a02b>&#34;</span>)
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic># Get all .png files in the directory recursively</span>
-</span></span><span style=display:flex><span>    files <span style=color:#04a5e5;font-weight:700>=</span> glob<span style=color:#04a5e5;font-weight:700>.</span>glob(os<span style=color:#04a5e5;font-weight:700>.</span>path<span style=color:#04a5e5;font-weight:700>.</span>join(directory, <span style=color:#40a02b>&#39;**&#39;</span>, <span style=color:#40a02b>&#39;*.png&#39;</span>), recursive<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#fe640b>True</span>)
-</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    files <span style=color:#04a5e5;font-weight:700>=</span> glob<span style=color:#04a5e5;font-weight:700>.</span>glob(os<span style=color:#04a5e5;font-weight:700>.</span>path<span style=color:#04a5e5;font-weight:700>.</span>join(directory, <span style=color:#40a02b>&#34;**&#34;</span>, <span style=color:#40a02b>&#34;*.png&#34;</span>), recursive<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#fe640b>True</span>)
+</span></span><span style=display:flex><span>    <span style=color:#04a5e5>print</span>(<span style=color:#d20f39>f</span><span style=color:#40a02b>&#34;Found </span><span style=color:#40a02b>{</span><span style=color:#04a5e5>len</span>(files)<span style=color:#40a02b>}</span><span style=color:#40a02b> .png files in directory and subdirectories.&#34;</span>)
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic># Determine the number of processes based on the available CPUs</span>
 </span></span><span style=display:flex><span>    num_processes <span style=color:#04a5e5;font-weight:700>=</span> multiprocessing<span style=color:#04a5e5;font-weight:700>.</span>cpu_count()
+</span></span><span style=display:flex><span>    <span style=color:#04a5e5>print</span>(<span style=color:#d20f39>f</span><span style=color:#40a02b>&#34;Number of processes set to the number of available CPUs: </span><span style=color:#40a02b>{</span>num_processes<span style=color:#40a02b>}</span><span style=color:#40a02b>&#34;</span>)
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic># Create a pool of processes</span>
 </span></span><span style=display:flex><span>    <span style=color:#8839ef>with</span> multiprocessing<span style=color:#04a5e5;font-weight:700>.</span>Pool(num_processes) <span style=color:#8839ef>as</span> pool:
+</span></span><span style=display:flex><span>        <span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;Pool of processes created.&#34;</span>)
 </span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic># Map the convert_rgba_to_rgb function to the files</span>
 </span></span><span style=display:flex><span>        pool<span style=color:#04a5e5;font-weight:700>.</span>map(convert_rgba_to_rgb, files)
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;Conversion complete.&#34;</span>)
+</span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#8839ef>if</span> <span style=color:#dc8a78>__name__</span> <span style=color:#04a5e5;font-weight:700>==</span> <span style=color:#40a02b>&#34;__main__&#34;</span>:
 </span></span><span style=display:flex><span>    main()

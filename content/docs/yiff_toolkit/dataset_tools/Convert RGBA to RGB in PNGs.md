@@ -36,9 +36,11 @@ def convert_rgba_to_rgb(image_path):
     None
     """
     try:
+        print(f"Opening image: {image_path}")
         with Image.open(image_path) as image:
-            if image.mode == 'RGBA':
-                rgb_image = image.convert('RGB')
+            print(f"Image mode: {image.mode}")
+            if image.mode == "RGBA":
+                rgb_image = image.convert("RGB")
                 rgb_image.save(image_path)
                 print(f"Converted {image_path} to RGB.")
             else:
@@ -57,19 +59,25 @@ def main():
     Returns:
     None
     """
-    directory = r'E:\training_dir'
+    directory = r"E:\training_dir"
+    print(f"Directory set to: {directory}")
+
     # Get all .png files in the directory recursively
-    files = glob.glob(os.path.join(directory, '**', '*.png'), recursive=True)
-    
+    files = glob.glob(os.path.join(directory, "**", "*.png"), recursive=True)
+    print(f"Found {len(files)} .png files in directory and subdirectories.")
+
     # Determine the number of processes based on the available CPUs
     num_processes = multiprocessing.cpu_count()
+    print(f"Number of processes set to the number of available CPUs: {num_processes}")
 
     # Create a pool of processes
     with multiprocessing.Pool(num_processes) as pool:
+        print("Pool of processes created.")
         # Map the convert_rgba_to_rgb function to the files
         pool.map(convert_rgba_to_rgb, files)
 
     print("Conversion complete.")
+
 
 if __name__ == "__main__":
     main()
