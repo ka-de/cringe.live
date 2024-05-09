@@ -10,30 +10,35 @@ title: "Convert RGBA to RGB in PNGs"
 
 ---
 
-A Python script that automates the conversion of RGBA images to RGB. The script utilizes the Python Imaging Library (PIL) to handle the image processing and is designed to work through a directory of PNG files, converting each one as needed. Whether you’re preparing images for a website or cleaning up a dataset for machine learning.
+This Python script automates the process of converting `.png` images from RGBA to RGB format in a specified directory, utilizing multiprocessing to enhance efficiency.
 
 ```python
 import os
 from PIL import Image
 import glob
+import multiprocessing
 
-# Increase the maximum allowed pixels, or set to None to disable the check
+# Set the maximum number of pixels allowed in an image to prevent DecompressionBombWarning.
 Image.MAX_IMAGE_PIXELS = 139211472
 
 def convert_rgba_to_rgb(image_path):
     """
-    Convert an RGBA image to an RGB image.
+    Convert an RGBA image to RGB format.
+
+    This function opens an image from a given path and checks if it's in RGBA mode.
+    If it is, the image is converted to RGB mode and saved back to the same path.
+    Any errors encountered during processing are caught and printed.
 
     Parameters:
-    image_path (str): The file path to the RGBA image.
+    - image_path (str): The file path of the image to be converted.
+
+    Returns:
+    None
     """
     try:
         with Image.open(image_path) as image:
-            # Check if the image has transparency
             if image.mode == 'RGBA':
-                # Convert the image to RGB
                 rgb_image = image.convert('RGB')
-                # Save the new image over the original one
                 rgb_image.save(image_path)
                 print(f"Converted {image_path} to RGB.")
             else:
@@ -43,14 +48,26 @@ def convert_rgba_to_rgb(image_path):
 
 def main():
     """
-    Main function that converts all RGBA images to RGB in a given directory.
+    Main function to convert all RGBA images to RGB in a directory.
+
+    This function searches for all .png files in a specified directory and its subdirectories.
+    It then creates a pool of processes equal to the number of available CPUs and uses them
+    to convert each RGBA image to RGB format concurrently.
+
+    Returns:
+    None
     """
     directory = r'E:\training_dir'
+    # Get all .png files in the directory recursively
+    files = glob.glob(os.path.join(directory, '**', '*.png'), recursive=True)
+    
+    # Determine the number of processes based on the available CPUs
+    num_processes = multiprocessing.cpu_count()
 
-    # Using glob to find all .png files in the directory recursively
-    for file_path in glob.glob(os.path.join(directory, '**', '*.png'), recursive=True):
-        # Convert the image
-        convert_rgba_to_rgb(file_path)
+    # Create a pool of processes
+    with multiprocessing.Pool(num_processes) as pool:
+        # Map the convert_rgba_to_rgb function to the files
+        pool.map(convert_rgba_to_rgb, files)
 
     print("Conversion complete.")
 
