@@ -113,6 +113,9 @@ This script extends the visualization by comparing different ranks of matrix app
 
 <!--{{< expand "Show Code" >}}-->
 ```python
+"""
+This script generates a random 10x10 matrix, computes its SVD, and visualizes both the original matrix and its rank-2 approximation. It also prints the matrices to the console.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -164,6 +167,11 @@ print(f"\nLow-rank approximation (rank {k}):\n", A_approx)
 Calculates the error between the original matrix and its approximations for different ranks. This error is the Frobenius norm of the difference between the original and approximated matrices, normalized by the Frobenius norm of the original matrix.
 
 ```python
+"""
+Performs SVD on a random matrix, visualizes low-rank approximations, and computes approximation errors.
+
+The script generates a random 10x10 matrix, computes its SVD, and creates visualizations for different rank approximations. It also calculates and prints the Frobenius norm of the error for each approximation.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 
