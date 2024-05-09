@@ -15,7 +15,7 @@ At its core, SVD decomposes a real or complex matrix into three matrices: two or
 The beauty of SVD lies in its ability to capture the essential information within a matrix while filtering out noise or less significant components. This property makes SVD an invaluable tool for applications such as data compression, dimensionality reduction, and low-rank approximations.
 One notable application of SVD is in the field of natural language processing, where it is used in techniques like Latent Semantic Analysis (LSA) to uncover the underlying semantic relationships between words and documents. Similarly, in computer vision and image processing, SVD is employed for tasks like image compression (e.g., JPEG) and watermarking.
 
-The SVD of a matrix {{< katex >}}A{{< /katex >}} (m × n) is given by:
+The SVD of a matrix {{< katex >}}A{{< /katex >}} ({{< katex >}}m \times n{{< /katex >}}) is given by:
 
 {{< katex display=true >}}
 A = U \Sigma V^T
@@ -23,10 +23,10 @@ A = U \Sigma V^T
 
 Where:
 
-- {{< katex >}}A{{< /katex >}} is an m × n matrix
-- {{< katex >}}U{{< /katex >}} is an m × m orthogonal matrix ({{< katex >}}U^T U = I{{< /katex >}})
-- {{< katex >}}\Sigma{{< /katex >}} (Sigma) is an m × n diagonal matrix with non-negative real numbers on the diagonal
-- {{< katex >}}V^T{{< /katex >}} is the transpose of an n × n orthogonal matrix {{< katex >}}V{{< /katex >}} ({{< katex >}}V^T V = I{{< /katex >}})
+- {{< katex >}}A{{< /katex >}} is an {{< katex >}}m \times n{{< /katex >}} matrix
+- {{< katex >}}U{{< /katex >}} is an {{< katex >}}m \times m{{< /katex >}} orthogonal matrix ({{< katex >}}U^T U = I{{< /katex >}})
+- {{< katex >}}\Sigma{{< /katex >}} (Sigma) is an {{< katex >}}m \times n{{< /katex >}} diagonal matrix with non-negative real numbers on the diagonal
+- {{< katex >}}V^T{{< /katex >}} is the transpose of an {{< katex >}}m \times m{{< /katex >}} orthogonal matrix {{< katex >}}V{{< /katex >}} ({{< katex >}}V^T V = I{{< /katex >}})
 
 The diagonal entries of {{< katex >}}\Sigma{{< /katex >}} are called the singular values of {{< katex >}}A{{< /katex >}}, denoted by {{< katex >}}\sigma_i{{< /katex >}}:
 
@@ -67,7 +67,7 @@ The singular values in {{< katex >}}\Sigma{{< /katex >}} are arranged in descend
 
 ## How the SVD is computed
 
-- Calculate the matrix product {{< katex >}}A^T A{{< /katex >}}, which is an n × n matrix.
+- Calculate the matrix product {{< katex >}}A^T A{{< /katex >}}, which is an {{< katex >}}m \times m{{< /katex >}} matrix.
 - Find the eigenvalues and eigenvectors of {{< katex >}}A^T A{{< /katex >}}.
 - The eigenvectors of {{< katex >}}A^T A{{< /katex >}} are the columns of {{< katex >}}V{{< /katex >}}.
 - The singular values {{< katex >}}σ_i{{< /katex >}} are the square roots of the eigenvalues of {{< katex >}}A^T A{{< /katex >}}.
@@ -211,39 +211,6 @@ SVD is used to perform a low-rank approximation of the merged LoRA weights. By k
 The truncation of singular values and vectors is controlled by the `--new_rank` and `--new_conv_rank` arguments, which specify the desired rank (or dimension) of the output LoRA model.
 
 The script also applies clamping to the singular vectors to prevent them from becoming too large or too small, which can help improve numerical stability and convergence during training or fine-tuning.
-
-{{< katex display=true >}}
-\Sigma = \begin{bmatrix}
-\sigma_1 & 0 & \cdots & 0 \\
-0 & \sigma_2 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
-0 & 0 & \cdots & \sigma_r
-\end{bmatrix}
-{{< /katex >}}
-
-Where {{< katex >}}r{{< /katex >}} is the rank of {{< katex >}}A{{< /katex >}}, and the singular values are arranged in descending order:
-
-{{< katex display=true >}}
-\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_r \geq 0
-{{< /katex >}}
-
-The columns of {{< katex >}}U{{< /katex >}} and {{< katex >}}V{{< /katex >}} are called the left and right singular vectors of {{< katex >}}A{{< /katex >}}, respectively:
-
-{{< katex display=true >}}
-U = \begin{bmatrix}
-| & | & & | \\
-u_1 & u_2 & \cdots & u_m \\
-| & | & & |
-\end{bmatrix}
-{{< /katex >}}
-
-{{< katex display=true >}}
-V = \begin{bmatrix}
-| & | & & | \\
-v_1 & v_2 & \cdots & v_n \\
-| & | & & |
-\end{bmatrix}
-{{< /katex >}}
 
 The SVD can be expressed in terms of the sum of rank-1 matrices:
 

@@ -10,15 +10,21 @@ The beauty of SVD lies in its ability to capture the essential information withi
 <a class=anchor href=#singular-value-decomposition>#</a></h1><p>Singular Value Decomposition (SVD) is a powerful matrix factorization technique that plays a crucial role in various fields, including machine learning, signal processing, and data analysis.</p><p>At its core, SVD decomposes a real or complex matrix into three matrices: two orthogonal matrices and one diagonal matrix containing the singular values.</p><p>The beauty of SVD lies in its ability to capture the essential information within a matrix while filtering out noise or less significant components. This property makes SVD an invaluable tool for applications such as data compression, dimensionality reduction, and low-rank approximations.
 One notable application of SVD is in the field of natural language processing, where it is used in techniques like Latent Semantic Analysis (LSA) to uncover the underlying semantic relationships between words and documents. Similarly, in computer vision and image processing, SVD is employed for tasks like image compression (e.g., JPEG) and watermarking.</p><p>The SVD of a matrix
 <link rel=stylesheet href=/katex/katex.min.css><script defer src=/katex/katex.min.js></script><script defer src=/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><span>\(A\)
-</span>(m × n) is given by:</p><span>\[
+</span>(<span>
+\(m \times n\)
+</span>) is given by:</p><span>\[
 A = U \Sigma V^T
 \]</span><p>Where:</p><ul><li><span>\(A\)
-</span>is an m × n matrix</li><li><span>\(U\)
-</span>is an m × m orthogonal matrix (<span>
+</span>is an <span>\(m \times n\)
+</span>matrix</li><li><span>\(U\)
+</span>is an <span>\(m \times m\)
+</span>orthogonal matrix (<span>
 \(U^T U = I\)
 </span>)</li><li><span>\(\Sigma\)
-</span>(Sigma) is an m × n diagonal matrix with non-negative real numbers on the diagonal</li><li><span>\(V^T\)
-</span>is the transpose of an n × n orthogonal matrix <span>\(V\)
+</span>(Sigma) is an <span>\(m \times n\)
+</span>diagonal matrix with non-negative real numbers on the diagonal</li><li><span>\(V^T\)
+</span>is the transpose of an <span>\(m \times m\)
+</span>orthogonal matrix <span>\(V\)
 </span>(<span>
 \(V^T V = I\)
 </span>)</li></ul><p>The diagonal entries of <span>\(\Sigma\)
@@ -56,7 +62,8 @@ v_1 & v_2 & \cdots & v_n \\
 </span>and <span>\(V\)
 </span>. The larger singular values capture more important information about the original matrix A, while smaller singular values capture less important or &ldquo;noisy&rdquo; information.</p><h2 id=how-the-svd-is-computed>How the SVD is computed
 <a class=anchor href=#how-the-svd-is-computed>#</a></h2><ul><li>Calculate the matrix product <span>\(A^T A\)
-</span>, which is an n × n matrix.</li><li>Find the eigenvalues and eigenvectors of <span>\(A^T A\)
+</span>, which is an <span>\(m \times m\)
+</span>matrix.</li><li>Find the eigenvalues and eigenvectors of <span>\(A^T A\)
 </span>.</li><li>The eigenvectors of <span>\(A^T A\)
 </span>are the columns of <span>\(V\)
 </span>.</li><li>The singular values <span>\(σ_i\)
@@ -129,34 +136,7 @@ U = A V \Sigma^{-1}
 Signal processing: The SVD is used in signal processing applications like signal denoising, feature extraction, and subspace tracking.</li></ul><h3 id=lora-merging>LoRA Merging
 <a class=anchor href=#lora-merging>#</a></h3><p>SVD is used to perform a low-rank approximation of the merged LoRA weights. By keeping only the top <span>\(k\)
 </span>singular values and vectors, the script extracts a low-rank representation of the merged weights, which can be more efficient and compact than the original merged weights. This low-rank representation is then used as the new LoRA weights for the merged model.
-The truncation of singular values and vectors is controlled by the <code>--new_rank</code> and <code>--new_conv_rank</code> arguments, which specify the desired rank (or dimension) of the output LoRA model.</p><p>The script also applies clamping to the singular vectors to prevent them from becoming too large or too small, which can help improve numerical stability and convergence during training or fine-tuning.</p><span>\[
-\Sigma = \begin{bmatrix}
-\sigma_1 & 0 & \cdots & 0 \\
-0 & \sigma_2 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
-0 & 0 & \cdots & \sigma_r
-\end{bmatrix}
-\]</span><p>Where <span>\(r\)
-</span>is the rank of <span>\(A\)
-</span>, and the singular values are arranged in descending order:</p><span>\[
-\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_r \geq 0
-\]</span><p>The columns of <span>\(U\)
-</span>and <span>\(V\)
-</span>are called the left and right singular vectors of <span>\(A\)
-</span>, respectively:</p><span>\[
-U = \begin{bmatrix}
-| & | & & | \\
-u_1 & u_2 & \cdots & u_m \\
-| & | & & |
-\end{bmatrix}
-\]
-</span><span>\[
-V = \begin{bmatrix}
-| & | & & | \\
-v_1 & v_2 & \cdots & v_n \\
-| & | & & |
-\end{bmatrix}
-\]</span><p>The SVD can be expressed in terms of the sum of rank-1 matrices:</p><span>\[
+The truncation of singular values and vectors is controlled by the <code>--new_rank</code> and <code>--new_conv_rank</code> arguments, which specify the desired rank (or dimension) of the output LoRA model.</p><p>The script also applies clamping to the singular vectors to prevent them from becoming too large or too small, which can help improve numerical stability and convergence during training or fine-tuning.</p><p>The SVD can be expressed in terms of the sum of rank-1 matrices:</p><span>\[
 A = \sum_{i=1}^r \sigma_i u_i v_i^T
 \]</span><p>Where <span>\(u_i\)
 </span>and <span>\(v_i\)
