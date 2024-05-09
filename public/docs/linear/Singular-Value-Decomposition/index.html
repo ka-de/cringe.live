@@ -8,8 +8,7 @@ The beauty of SVD lies in its ability to capture the essential information withi
 </label><strong>Singular Value Decomposition</strong>
 <label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#singular-value-decomposition>Singular Value Decomposition</a><ul><li><a href=#how-the-svd-is-computed>How the SVD is computed</a></li><li><a href=#visualizing-svd-and-low-rank-matrix-approximation>Visualizing SVD and Low-Rank Matrix Approximation</a><ul><li><a href=#example-output>Example Output</a></li><li><a href=#assessing-approximation-quality-with-frobenius-norm>Assessing Approximation Quality with Frobenius Norm</a></li><li><a href=#example-output-1>Example output</a></li></ul></li><li><a href=#important-properties-and-applications>Important properties and applications</a><ul><li><a href=#lora-merging>LoRA Merging</a></li></ul></li><li><a href=#alternatives-and-comparisons>Alternatives and Comparisons</a><ul><li><a href=#eigenvalue-decomposition-evd>Eigenvalue Decomposition (EVD)</a></li><li><a href=#non-negative-matrix-factorization-nmf>Non-negative Matrix Factorization (NMF)</a></li><li><a href=#tensor-decompositions>Tensor Decompositions</a></li><li><a href=#randomized-algorithms-and-sparse-matrix-factorizations>Randomized Algorithms and Sparse Matrix Factorizations</a></li><li><a href=#deep-learning-based-methods>Deep Learning-based Methods</a></li></ul></li><li><a href=#interpreting-singular-vectors>Interpreting Singular Vectors</a></li><li><a href=#computational-complexity-and-numerical-stability>Computational Complexity and Numerical Stability</a></li><li><a href=#historical-background>Historical Background</a></li><li><a href=#conclusion>Conclusion</a></li></ul></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=singular-value-decomposition>Singular Value Decomposition
 <a class=anchor href=#singular-value-decomposition>#</a></h1><p>Singular Value Decomposition (SVD) is a powerful matrix factorization technique that plays a crucial role in various fields, including machine learning, signal processing, and data analysis.</p><p>At its core, SVD decomposes a real or complex matrix into three matrices: two orthogonal matrices and one diagonal matrix containing the singular values.</p><p>The beauty of SVD lies in its ability to capture the essential information within a matrix while filtering out noise or less significant components. This property makes SVD an invaluable tool for applications such as data compression, dimensionality reduction, and low-rank approximations.
-One notable application of SVD is in the field of natural language processing, where it is used in techniques like Latent Semantic Analysis (LSA) to uncover the underlying semantic relationships between words and documents. Similarly, in computer vision and image processing, SVD is employed for tasks like image compression (e.g., JPEG) and watermarking.
-Beyond its practical applications, SVD also plays a fundamental role in linear algebra, providing insights into the structure and properties of matrices. It can be used to compute matrix inverses, solve least-squares problems, and analyze the rank and range of matrices.</p><p>The SVD of a matrix
+One notable application of SVD is in the field of natural language processing, where it is used in techniques like Latent Semantic Analysis (LSA) to uncover the underlying semantic relationships between words and documents. Similarly, in computer vision and image processing, SVD is employed for tasks like image compression (e.g., JPEG) and watermarking.</p><p>The SVD of a matrix
 <link rel=stylesheet href=/katex/katex.min.css><script defer src=/katex/katex.min.js></script><script defer src=/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><span>\(A\)
 </span>(m × n) is given by:</p><span>\[
 A = U \Sigma V^T
@@ -25,7 +24,34 @@ A = U \Sigma V^T
 </span>)</li></ul><p>The diagonal entries of <span>\(\Sigma\)
 </span>are called the singular values of <span>\(A\)
 </span>, denoted by <span>\(\sigma_i\)
-</span>:</p><p>The singular values in <span>\(\Sigma\)
+</span>:</p><span>\[
+\Sigma = \begin{bmatrix}
+\sigma_1 & 0 & \cdots & 0 \\
+0 & \sigma_2 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \sigma_r
+\end{bmatrix}
+\]</span><p>Where <span>\(r\)
+</span>is the rank of <span>\(A\)
+</span>, and the singular values are arranged in descending order:</p><span>\[
+\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_r \geq 0
+\]</span><p>The columns of <span>\(U\)
+</span>and <span>\(V\)
+</span>are called the left and right singular vectors of <span>\(A\)
+</span>, respectively:</p><span>\[
+U = \begin{bmatrix}
+| & | & & | \\
+u_1 & u_2 & \cdots & u_m \\
+| & | & & |
+\end{bmatrix}
+\]
+</span><span>\[
+V = \begin{bmatrix}
+| & | & & | \\
+v_1 & v_2 & \cdots & v_n \\
+| & | & & |
+\end{bmatrix}
+\]</span><p>The singular values in <span>\(\Sigma\)
 </span>are arranged in descending order, and they represent the importance or &ldquo;energy&rdquo; of each corresponding pair of singular vectors in <span>\(U\)
 </span>and <span>\(V\)
 </span>. The larger singular values capture more important information about the original matrix A, while smaller singular values capture less important or &ldquo;noisy&rdquo; information.</p><h2 id=how-the-svd-is-computed>How the SVD is computed

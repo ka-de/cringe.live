@@ -14,7 +14,6 @@ At its core, SVD decomposes a real or complex matrix into three matrices: two or
 
 The beauty of SVD lies in its ability to capture the essential information within a matrix while filtering out noise or less significant components. This property makes SVD an invaluable tool for applications such as data compression, dimensionality reduction, and low-rank approximations.
 One notable application of SVD is in the field of natural language processing, where it is used in techniques like Latent Semantic Analysis (LSA) to uncover the underlying semantic relationships between words and documents. Similarly, in computer vision and image processing, SVD is employed for tasks like image compression (e.g., JPEG) and watermarking.
-Beyond its practical applications, SVD also plays a fundamental role in linear algebra, providing insights into the structure and properties of matrices. It can be used to compute matrix inverses, solve least-squares problems, and analyze the rank and range of matrices.
 
 The SVD of a matrix {{< katex >}}A{{< /katex >}} (m × n) is given by:
 
@@ -30,6 +29,39 @@ Where:
 - {{< katex >}}V^T{{< /katex >}} is the transpose of an n × n orthogonal matrix {{< katex >}}V{{< /katex >}} ({{< katex >}}V^T V = I{{< /katex >}})
 
 The diagonal entries of {{< katex >}}\Sigma{{< /katex >}} are called the singular values of {{< katex >}}A{{< /katex >}}, denoted by {{< katex >}}\sigma_i{{< /katex >}}:
+
+{{< katex display=true >}}
+\Sigma = \begin{bmatrix}
+\sigma_1 & 0 & \cdots & 0 \\
+0 & \sigma_2 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \sigma_r
+\end{bmatrix}
+{{< /katex >}}
+
+Where {{< katex >}}r{{< /katex >}} is the rank of {{< katex >}}A{{< /katex >}}, and the singular values are arranged in descending order:
+
+{{< katex display=true >}}
+\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_r \geq 0
+{{< /katex >}}
+
+The columns of {{< katex >}}U{{< /katex >}} and {{< katex >}}V{{< /katex >}} are called the left and right singular vectors of {{< katex >}}A{{< /katex >}}, respectively:
+
+{{< katex display=true >}}
+U = \begin{bmatrix}
+| & | & & | \\
+u_1 & u_2 & \cdots & u_m \\
+| & | & & |
+\end{bmatrix}
+{{< /katex >}}
+
+{{< katex display=true >}}
+V = \begin{bmatrix}
+| & | & & | \\
+v_1 & v_2 & \cdots & v_n \\
+| & | & & |
+\end{bmatrix}
+{{< /katex >}}
 
 The singular values in {{< katex >}}\Sigma{{< /katex >}} are arranged in descending order, and they represent the importance or "energy" of each corresponding pair of singular vectors in {{< katex >}}U{{< /katex >}} and {{< katex >}}V{{< /katex >}}. The larger singular values capture more important information about the original matrix A, while smaller singular values capture less important or "noisy" information.
 
