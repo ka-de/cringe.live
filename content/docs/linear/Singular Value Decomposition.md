@@ -65,6 +65,21 @@ v_1 & v_2 & \cdots & v_n \\
 
 The singular values in {{< katex >}}\Sigma{{< /katex >}} are arranged in descending order, and they represent the importance or "energy" of each corresponding pair of singular vectors in {{< katex >}}U{{< /katex >}} and {{< katex >}}V{{< /katex >}}. The larger singular values capture more important information about the original matrix A, while smaller singular values capture less important or "noisy" information.
 
+The SVD can be expressed in terms of the sum of rank-1 matrices:
+
+{{< katex display=true >}}
+A = \sum_{i=1}^r \sigma_i u_i v_i^T
+{{< /katex >}}
+
+Where {{< katex >}}u_i{{< /katex >}} and {{< katex >}}v_i{{< /katex >}} are the i-th columns of {{< katex >}}U{{< /katex >}} and {{< katex >}}V{{< /katex >}}, respectively.
+The low-rank approximation of {{< katex >}}A{{< /katex >}}, using the top {{< katex >}}k{{< /katex >}} singular values and vectors, is given by:
+
+{{< katex display=true >}}
+A_k = \sum_{i=1}^k \sigma_i u_i v_i^T
+{{< /katex >}}
+
+Where {{< katex >}}A_k{{< /katex >}} is the best rank-k approximation of {{< katex >}}A{{< /katex >}} in the least-squares sense.
+
 ## How the SVD is computed
 
 - Calculate the matrix product {{< katex >}}A^T A{{< /katex >}}, which is an {{< katex >}}m \times m{{< /katex >}} matrix.
@@ -212,21 +227,6 @@ The truncation of singular values and vectors is controlled by the `--new_rank` 
 
 The script also applies clamping to the singular vectors to prevent them from becoming too large or too small, which can help improve numerical stability and convergence during training or fine-tuning.
 
-The SVD can be expressed in terms of the sum of rank-1 matrices:
-
-{{< katex display=true >}}
-A = \sum_{i=1}^r \sigma_i u_i v_i^T
-{{< /katex >}}
-
-Where {{< katex >}}u_i{{< /katex >}} and {{< katex >}}v_i{{< /katex >}} are the i-th columns of {{< katex >}}U{{< /katex >}} and {{< katex >}}V{{< /katex >}}, respectively.
-The low-rank approximation of {{< katex >}}A{{< /katex >}}, using the top {{< katex >}}k{{< /katex >}} singular values and vectors, is given by:
-
-{{< katex display=true >}}
-A_k = \sum_{i=1}^k \sigma_i u_i v_i^T
-{{< /katex >}}
-
-Where {{< katex >}}A_k{{< /katex >}} is the best rank-k approximation of {{< katex >}}A{{< /katex >}} in the least-squares sense.
-
 ## Alternatives and Comparisons
 
 While SVD is a powerful and versatile matrix factorization technique, several alternatives exist, each with its own strengths, weaknesses, and appropriate use cases.
@@ -268,6 +268,47 @@ Computing the SVD of a large matrix can be computationally expensive, especially
 To address this limitation, various approximation techniques and algorithms have been developed to reduce the computational burden. One popular approach is the Randomized SVD, which uses random projections to approximate the singular values and vectors efficiently. Other techniques include iterative methods, such as the Lanczos algorithm, and parallel or distributed implementations of SVD.
 
 Numerical stability is another important consideration when computing SVD. Ill-conditioned matrices, round-off errors, and numerical precision limitations can introduce instabilities and inaccuracies in the computed singular values and vectors. To mitigate these issues, techniques like pivoting, scaling, and iterative refinement are often employed. Additionally, as mentioned in the post, clamping the singular vectors to prevent them from becoming too large or too small can improve numerical stability and convergence during training or fine-tuning in certain applications.
+
+```python
+"""
+This script benchmarks the computational cost and numerical stability of Singular Value Decomposition (SVD) on random matrices of various sizes
+"""
+import numpy as np
+import time
+
+def svd_condition_benchmark(matrix_sizes):
+    """
+    This function generates random matrices of specified sizes and computes their SVD to determine the elapsed time for the computation and the condition number for each matrix. The condition number is calculated as the ratio of the largest to the smallest singular value, which indicates the numerical stability of the matrix.
+
+    Parameters:
+    matrix_sizes (list of tuples): A list of tuples where each tuple contains two integers representing the number of rows and columns (m, n) of the matrix to be generated and benchmarked.
+
+    Returns:
+    list of tuples: Each tuple contains two floats representing the elapsed time in seconds and the condition number for the corresponding matrix size.
+
+    Raises:
+    np.linalg.LinAlgError: If SVD computation fails due to matrix properties.
+    """
+    results = []
+    for m, n in matrix_sizes:
+        A = np.random.rand(m, n)
+        start_time = time.time()
+        try:
+            U, s, Vh = np.linalg.svd(A, full_matrices=False)
+            condition_number = s[0] / s[-1]
+            end_time = time.time()
+            elapsed_time = end_time - start_time
+            results.append((elapsed_time, condition_number))
+            print(f"Matrix size ({m}, {n}): {elapsed_time:.6f} seconds, Condition number = {condition_number:.6f}")
+        except np.linalg.LinAlgError as e:
+            print(f"Error for matrix size ({m}, {n}): {e}")
+            continue
+    return results
+
+# Benchmark for computational cost and numerical stability
+matrix_sizes = [(100, 100), (500, 500), (1000, 1000), (2000, 2000), (5000, 5000)]
+benchmark_results = svd_condition_benchmark(matrix_sizes)
+```
 
 ## Historical Background
 
