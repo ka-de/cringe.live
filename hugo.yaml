@@ -26,6 +26,8 @@ params:
   BookDateFormat: 'Jan 2, 2006'
   BookSearch: true
   BookComments: false
+  BookServiceWorker: true
+  
 menu:
   after:
     - name: "Github"

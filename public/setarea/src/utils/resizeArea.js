@@ -1,4 +1,5 @@
-// resizeArea.js
+// utils/resizeArea.js
+
 const isResizing = false
 const currentResizeArea = null
 let resizeStartX, resizeStartY

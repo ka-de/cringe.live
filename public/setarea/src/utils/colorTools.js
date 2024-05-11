@@ -1,3 +1,5 @@
+// utils/colorTools.js
+
 /**
  * Returns a random RGBA color.
  * @returns {string} A string representing a random RGBA color.

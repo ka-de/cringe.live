@@ -6,7 +6,7 @@ import resizeAreaUtils from './utils/resizeArea.js'
 import { copyToClipboard, exportToWorkflow, loadWorkflowFiles, updateCharacteristicGuidancePredictionNodes } from './utils/workflowHandling.js'
 import getRandomRGBAColor from './utils/colorTools.js'
 import { getCanvasPosition, getMousePositionRelativeToCanvas } from './utils/position.js'
-import shouldSnapArea from './utils/areaLayout.js'
+import shouldSnapArea from './utils/shouldSnapArea.js'
 
 /**
  * This JavaScript file contains functions for creating, updating, and exporting areas on a canvas.

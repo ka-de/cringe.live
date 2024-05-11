@@ -1,3 +1,5 @@
+// utils/position.js
+
 /**
  * Get the position of an element relative to the viewport.
  * @param {HTMLElement} element - The element to get the position for.

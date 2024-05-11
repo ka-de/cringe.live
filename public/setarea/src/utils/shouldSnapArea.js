@@ -1,4 +1,4 @@
-// shouldSnapArea.js
+// utils/shouldSnapArea.js
 
 import { areas } from '../setarea.js'
 
@@ -29,10 +29,11 @@ function shouldSnapArea (x, y, width, height) {
 
   // Check for nearby areas
   for (const area of areas) {
-    const areaX = parseInt(area.style.left) + canvasLeft
-    const areaY = parseInt(area.style.top) + canvasTop
-    const areaWidth = parseInt(area.style.width)
-    const areaHeight = parseInt(area.style.height)
+    const areaRect = area.getBoundingClientRect()
+    const areaX = areaRect.left - canvasLeft
+    const areaY = areaRect.top - canvasTop
+    const areaWidth = areaRect.width
+    const areaHeight = areaRect.height
 
     // Check if the new area is within the snapping radius of the existing area
     if (
