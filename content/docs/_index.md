@@ -1,4 +1,5 @@
 ---
+bookToC: false
 title: Introduction
 type: docs
 ---

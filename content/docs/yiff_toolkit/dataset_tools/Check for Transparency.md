@@ -1,6 +1,7 @@
 ---
 weight: 1
 bookFlatSection: false
+bookToC: false
 title: "Check for Transparency"
 ---
 
@@ -10,9 +11,12 @@ title: "Check for Transparency"
 
 ----
 
-The Python script recursively traverses a specified directory, identifying image files with extension `.png`. For each identified image, it checks if it contains transparency by examining its mode with PIL.
-
 ```python
+"""
+This script recursively traverses a specified directory, identifying image files with extension `.png`.
+For each identified image, it checks if it contains transparency by examining its mode with PIL.
+"""
+
 import os
 from PIL import Image
 import glob

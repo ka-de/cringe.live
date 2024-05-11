@@ -1,6 +1,7 @@
 ---
 weight: 1
 bookFlatSection: false
+bookToC: false
 title: "Count Images in Folder"
 ---
 
@@ -10,12 +11,7 @@ title: "Count Images in Folder"
 
 ---
 
-This script counts the total number of JPEG and PNG images in a specified directory.
-
 ```python
-from pathlib import Path
-import glob
-
 """
 This script counts the total number of JPEG and PNG images in a specified directory.
 
@@ -33,6 +29,9 @@ Usage:
 Note:
     Ensure that the directory path uses double backslashes (\\) or raw string literals to avoid escape sequence errors.
 """
+
+from pathlib import Path
+import glob
 
 def count_images(directory):
     # Create a Path object for the directory

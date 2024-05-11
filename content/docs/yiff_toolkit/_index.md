@@ -1,6 +1,7 @@
 ---
 weight: 2
 bookFlatSection: false
+bookToC: false
 title: "yiff_toolkit"
 ---
 

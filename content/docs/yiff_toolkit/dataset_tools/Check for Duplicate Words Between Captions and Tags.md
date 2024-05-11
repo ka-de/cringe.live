@@ -1,6 +1,7 @@
 ---
 weight: 1
 bookFlatSection: false
+bookToC: false
 title: "Check for Duplicate Words Between Captions and Tags"
 ---
 
@@ -10,11 +11,14 @@ title: "Check for Duplicate Words Between Captions and Tags"
 
 ---
 
-This script traverses through a directory, searches for text files, processes each file to extract tags and captions, and highlights occurrences of tags within captions using random colors, displaying the results in a visually rich format in the terminal.
+```python
+"""
+This script traverses through a directory, searches for text files, processes each file to extract tags
+and captions, and highlights occurrences of tags within captions using random colors,
+displaying the results in a visually rich format in the terminal.
 
 **NOTE**: This script assumes that you separate your tags with `,` and your captions with `.,`.
-
-```python
+"""
 import os
 import random
 import re
@@ -28,16 +32,19 @@ from pathlib import Path
 
 def find_files(path, extension):
     """
-    Search for files with a given extension within a directory path.
+    Search for files with a given extension within a directory path, excluding 'sample-prompts.txt'
+    and files ending with '-sample-prompts.txt'.
 
     Parameters:
     - path (str): The directory path where the search will be performed.
     - extension (str): The file extension to search for.
 
     Returns:
-    - generator: A generator object that yields Path objects for each found file.
+    - generator: A generator object that yields Path objects for each found file, excluding the specified files.
     """
-    return Path(path).glob(f'**/*{extension}')
+    return (file for file in Path(path).rglob(f'**/*{extension}') 
+            if not file.name.endswith('-sample-prompts.txt') and file.name != 'sample-prompts.txt')
+
 
 def process_file(file_path):
     """
@@ -64,6 +71,7 @@ def process_file(file_path):
 
     for tag in tags:
         pattern = r'\b{}\b'.format(re.escape(tag))
+
         for caption in captions:
             if re.search(pattern, caption):
                 if tag not in duplicates:
@@ -91,7 +99,7 @@ def main():
     The function searches for .txt files in a given directory and processes each file
     to find and display duplicate tags in captions.
     """
-    path = 'C:\\Users\\kade\\Desktop\\training_dir_staging'
+    path = 'E:\\training_dir'
     for file_path in find_files(path, '.txt'):
         process_file(file_path)
 

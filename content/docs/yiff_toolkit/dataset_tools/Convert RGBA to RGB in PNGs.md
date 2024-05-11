@@ -1,6 +1,7 @@
 ---
 weight: 1
 bookFlatSection: false
+bookToC: false
 title: "Convert RGBA to RGB in PNGs"
 ---
 
@@ -10,9 +11,12 @@ title: "Convert RGBA to RGB in PNGs"
 
 ---
 
-This Python script automates the process of converting `.png` images from RGBA to RGB format in a specified directory, utilizing multiprocessing to enhance efficiency.
-
 ```python
+"""
+This script automates the process of converting `.png` images from RGBA to RGB format
+in a specified directory, utilizing multiprocessing to enhance efficiency.
+"""
+
 import os
 from PIL import Image
 import glob
