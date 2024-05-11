@@ -1,3 +1,6 @@
 [submodule "themes/cringe-theme"]
 	path = themes/cringe-theme
 	url = https://github.com/ka-de/cringe-theme
+[submodule "static/flabbyborb"]
+	path = static/flabbyborb
+	url = https://github.com/ka-de/flabbyborb
