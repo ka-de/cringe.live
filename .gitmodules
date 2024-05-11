@@ -4,3 +4,6 @@
 [submodule "static/flabbyborb"]
 	path = static/flabbyborb
 	url = https://github.com/ka-de/flabbyborb
+[submodule "static/setarea"]
+	path = static/setarea
+	url = https://github.com/ka-de/setarea
