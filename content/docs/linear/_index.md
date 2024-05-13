@@ -23,6 +23,12 @@ Vectors are mathematical objects that have both magnitude (size) and direction. 
 
 *This furry has a velocity.*
 
+Even this [DVD logo](/dvd.html) has a vector, not just furries, just press the `v` key and an arrow will display the vector of the logo. Vectors are everywhere, even in your pants! Points are usually denoted with capital letters, like {{< katex >}}A{{< /katex >}}. {{< katex >}}\overrightarrow{AB}{{< /katex >}}
+
+{{< katex display=true >}}
+\vec{v} = \overrightarrow{AB} = \overrightarrow{CD}
+{{< /katex >}}
+
 Vectors are often represented as an array of numbers, where each number corresponds to a coordinate in space. In a 2D plane, a vector {{< katex >}}v{{< /katex >}} can be represented as an ordered pair: {{< katex >}}v = [v_1, v_2]{{< /katex >}}. Here {{< katex >}}v_1{{< /katex >}} and {{< katex >}}v_2{{< /katex >}} are the components of {{< katex >}}v{{< /katex >}} along the x and y axes respectively.
 
 For example, the vector {{< katex >}}v = [2, 3]{{< /katex >}} can be visualized as an arrow starting at the origin {{< katex >}}(0, 0){{< /katex >}} and pointing 2 units in the positive x-direction and 3 units in the positive y-direction.
