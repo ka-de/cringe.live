@@ -508,8 +508,9 @@ b : torch.Tensor
     The second input vector. It should be a 1D tensor with 3 elements.
 
 Returns:
-    cross_product (torch.Tensor): The cross product of vectors a and b.
-    It is a 1D tensor with 3 elements.
+    cross_product : torch.Tensor
+        The cross product of vectors a and b.
+        It is a 1D tensor with 3 elements.
 """
 import torch
 
@@ -520,7 +521,7 @@ b = torch.tensor([4, -2, 1])
 # Calculate the cross product
 cross_product = torch.linalg.cross(a, b)
 
-print(cross_product)
+print("The cross product of a and b is: ", cross_product)
 ```
 
 </details>
@@ -531,6 +532,22 @@ print(cross_product)
   <summary>Click to reveal solution</summary>
 
 ```python
+"""
+This script calculates the cross product of two 3-dimensional vectors.
+The vectors are defined as numpy arrays 'u' and 'v'.
+The cross product is calculated using numpy's cross function.
+
+Parameters:
+u : numpy array
+    The first vector, defined as a numpy array of three elements.
+v : numpy array
+    The second vector, defined as a numpy array of three elements.
+
+Returns:
+cross_product_numpy : numpy array
+    The cross product of vectors 'u' and 'v'.
+    This is a vector that is perpendicular to the plane containing 'u' and 'v'
+"""
 import numpy as np
 
 # define the vectors
@@ -552,12 +569,13 @@ function is used to compute the cross product.
 Parameters:
 u_torch : torch.Tensor
     A 1-D tensor representing the first vector.
-v_torch : torch.Tensor)
+v_torch : torch.Tensor
     A 1-D tensor representing the second vector.
 
 Returns:
-    cross_product_pytorch (torch.Tensor): A 1-D tensor representing the cross
-    product of `u_torch` and `v_torch`.
+    cross_product_pytorch : torch.Tensor
+        A 1-D tensor representing the cross
+        product of `u_torch` and `v_torch`.
 """
 import torch
 
@@ -574,5 +592,63 @@ print("Cross product: ", cross_product_pytorch)
 </details>
 
 3. If the position vector of a force {{< katex >}}\mathbf{\vec{F}} = [10, 20, 0]{{< /katex >}} is {{< katex >}}\mathbf{\vec{r}} = [2, 1, 3]{{< /katex >}}, calculate the torque about the origin using the cross product.
+
+<details>
+  <summary>Click to reveal solution</summary>
+
+Solution with numpy:
+
+```python
+import numpy as np
+
+def calculate_torque_np(F, r):
+    """
+    Calculate the torque about the origin using numpy.
+
+    Parameters:
+    F : np.array
+        Force vector
+    r : np.array
+        Position vector
+
+    Returns:
+        np.array: Torque vector
+    """
+    return np.cross(r, F)
+
+F = np.array([10, 20, 0])
+r = np.array([2, 1, 3])
+torque = calculate_torque_np(F, r)
+print("Torque: ", torque)
+```
+
+Solution with PyTorch:
+
+```python
+import torch
+
+def calculate_torque_torch(F, r):
+    """
+    Calculate the torque about the origin using PyTorch.
+
+    Parameters:
+    F : torch.Tensor
+        Force vector
+    r : torch.Tensor
+        Position vector
+
+    Returns:
+        torch.Tensor
+            The torque vector
+    """
+    return torch.cross(r, F)
+
+F = torch.tensor([10, 20, 0])
+r = torch.tensor([2, 1, 3])
+torque = calculate_torque_torch(F, r)
+print("Torque: ", torque)
+```
+
+</details>
 
 ---

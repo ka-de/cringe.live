@@ -399,8 +399,9 @@ A \cdot I = I \cdot A = A
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    The second input vector. It should be a 1D tensor with 3 elements.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>Returns:
-</span></span></span><span style=display:flex><span><span style=color:#40a02b>    cross_product (torch.Tensor): The cross product of vectors a and b.
-</span></span></span><span style=display:flex><span><span style=color:#40a02b>    It is a 1D tensor with 3 elements.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    cross_product : torch.Tensor
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        The cross product of vectors a and b.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        It is a 1D tensor with 3 elements.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;</span>
 </span></span><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>torch</span>
 </span></span><span style=display:flex><span>
@@ -411,10 +412,26 @@ A \cdot I = I \cdot A = A
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Calculate the cross product</span>
 </span></span><span style=display:flex><span>cross_product <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>linalg<span style=color:#04a5e5;font-weight:700>.</span>cross(a, b)
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(cross_product)
+</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;The cross product of a and b is: &#34;</span>, cross_product)
 </span></span></code></pre></div></details><ol start=2><li>Find the cross product of <span>\(\mathbf{\vec{u}} = [1, 2, 3]\)
 </span>and <span>\(\mathbf{\vec{v}} = [4, 5, 6]\)
-</span>.</li></ol><details><summary>Click to reveal solution</summary><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>numpy</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>np</span>
+</span>.</li></ol><details><summary>Click to reveal solution</summary><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>This script calculates the cross product of two 3-dimensional vectors.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>The vectors are defined as numpy arrays &#39;u&#39; and &#39;v&#39;.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>The cross product is calculated using numpy&#39;s cross function.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>Parameters:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>u : numpy array
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    The first vector, defined as a numpy array of three elements.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>v : numpy array
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    The second vector, defined as a numpy array of three elements.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>Returns:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>cross_product_numpy : numpy array
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    The cross product of vectors &#39;u&#39; and &#39;v&#39;.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    This is a vector that is perpendicular to the plane containing &#39;u&#39; and &#39;v&#39;
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>numpy</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>np</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># define the vectors</span>
 </span></span><span style=display:flex><span>u <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>1</span>, <span style=color:#fe640b>2</span>, <span style=color:#fe640b>3</span>])
@@ -432,12 +449,13 @@ A \cdot I = I \cdot A = A
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>Parameters:
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>u_torch : torch.Tensor
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    A 1-D tensor representing the first vector.
-</span></span></span><span style=display:flex><span><span style=color:#40a02b>v_torch : torch.Tensor)
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>v_torch : torch.Tensor
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    A 1-D tensor representing the second vector.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>Returns:
-</span></span></span><span style=display:flex><span><span style=color:#40a02b>    cross_product_pytorch (torch.Tensor): A 1-D tensor representing the cross
-</span></span></span><span style=display:flex><span><span style=color:#40a02b>    product of `u_torch` and `v_torch`.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    cross_product_pytorch : torch.Tensor
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        A 1-D tensor representing the cross
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        product of `u_torch` and `v_torch`.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;</span>
 </span></span><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>torch</span>
 </span></span><span style=display:flex><span>
@@ -451,6 +469,49 @@ A \cdot I = I \cdot A = A
 </span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;Cross product: &#34;</span>, cross_product_pytorch)
 </span></span></code></pre></div></details><ol start=3><li>If the position vector of a force <span>\(\mathbf{\vec{F}} = [10, 20, 0]\)
 </span>is <span>\(\mathbf{\vec{r}} = [2, 1, 3]\)
-</span>, calculate the torque about the origin using the cross product.</li></ol><hr></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/commit/78e6efafbf0ac9cee65e37c4e4a43435406dd4a9 title='Last modified by Balazs Horvath | May 13, 2024' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt>
+</span>, calculate the torque about the origin using the cross product.</li></ol><details><summary>Click to reveal solution</summary><p>Solution with numpy:</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>numpy</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>np</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8839ef>def</span> <span style=color:#1e66f5>calculate_torque_np</span>(F, r):
+</span></span><span style=display:flex><span>    <span style=color:#40a02b>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    Calculate the torque about the origin using numpy.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    Parameters:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    F : np.array
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        Force vector
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    r : np.array
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        Position vector
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    Returns:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        np.array: Torque vector
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>return</span> np<span style=color:#04a5e5;font-weight:700>.</span>cross(r, F)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>F <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>10</span>, <span style=color:#fe640b>20</span>, <span style=color:#fe640b>0</span>])
+</span></span><span style=display:flex><span>r <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>2</span>, <span style=color:#fe640b>1</span>, <span style=color:#fe640b>3</span>])
+</span></span><span style=display:flex><span>torque <span style=color:#04a5e5;font-weight:700>=</span> calculate_torque_np(F, r)
+</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;Torque: &#34;</span>, torque)
+</span></span></code></pre></div><p>Solution with PyTorch:</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>torch</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8839ef>def</span> <span style=color:#1e66f5>calculate_torque_torch</span>(F, r):
+</span></span><span style=display:flex><span>    <span style=color:#40a02b>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    Calculate the torque about the origin using PyTorch.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    Parameters:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    F : torch.Tensor
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        Force vector
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    r : torch.Tensor
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        Position vector
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    Returns:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        torch.Tensor
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>            The torque vector
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>return</span> torch<span style=color:#04a5e5;font-weight:700>.</span>cross(r, F)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>F <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>tensor([<span style=color:#fe640b>10</span>, <span style=color:#fe640b>20</span>, <span style=color:#fe640b>0</span>])
+</span></span><span style=display:flex><span>r <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>tensor([<span style=color:#fe640b>2</span>, <span style=color:#fe640b>1</span>, <span style=color:#fe640b>3</span>])
+</span></span><span style=display:flex><span>torque <span style=color:#04a5e5;font-weight:700>=</span> calculate_torque_torch(F, r)
+</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;Torque: &#34;</span>, torque)
+</span></span></code></pre></div></details><hr></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/commit/78e6efafbf0ac9cee65e37c4e4a43435406dd4a9 title='Last modified by Balazs Horvath | May 13, 2024' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt>
 <span>May 13, 2024</span></a></div><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/edit/main/content/docs/linear/_index.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt>
 <span>Edit this page</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#linear-algebra-for-furries>Linear Algebra for Furries</a><ul><li><a href=#linear-algebra-basics>Linear Algebra Basics</a><ul><li><a href=#vectors>Vectors</a><ul><li><a href=#vector-addition>Vector Addition</a></li><li><a href=#scalar-multiplication>Scalar Multiplication</a></li><li><a href=#dot-product>Dot Product</a></li><li><a href=#magnitude-or-length>Magnitude (or Length)</a></li></ul></li><li><a href=#matrices>Matrices</a><ul><li><a href=#matrix-addition-and-subtraction>Matrix Addition and Subtraction</a></li><li><a href=#scalar-multiplication-of-a-matrix>Scalar Multiplication of a Matrix</a></li><li><a href=#matrix-multiplication>Matrix Multiplication</a></li><li><a href=#identity-matrix>Identity Matrix</a></li><li><a href=#determinant>Determinant</a></li><li><a href=#inverse>Inverse</a></li><li><a href=#transpose>Transpose</a></li></ul></li></ul></li><li><a href=#the-cross-product>The Cross Product</a><ul><li><a href=#geometric-interpretation>Geometric Interpretation</a></li><li><a href=#properties>Properties</a><ul><li><a href=#anticommutativity>Anticommutativity</a></li><li><a href=#distributivity-over-addition>Distributivity over addition</a></li><li><a href=#scalar-multiplication-1>Scalar multiplication</a></li></ul></li><li><a href=#relation-to-other-vector-operations>Relation to Other Vector Operations</a></li><li><a href=#examples>Examples</a></li><li><a href=#practice-problems>Practice Problems</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>
