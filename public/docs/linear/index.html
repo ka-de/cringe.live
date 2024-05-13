@@ -149,7 +149,51 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span></span></code></pre></div><h4 id=dot-product>Dot Product
 <a class=anchor href=#dot-product>#</a></h4><p>The dot product of two vectors is a scalar quantity that is the sum of the products of the corresponding components of the vectors. For example if <span>\(\vec{e} = [2, 3]\)
 </span>and <span>\(\vec{f} = [4, 5]\)
-</span>, then <span>\(\vec{e} \cdot \vec{f} = 2*4 + 3*5 = 23\)</span></p><h4 id=magnitude-or-length>Magnitude (or Length)
+</span>, then <span>\(\vec{e} \cdot \vec{f} = 2*4 + 3*5 = 23\)</span></p><p><img src=/images/linear/dot-product-plot.png alt="A geometric interpretation of the dot product"></p><p>This is a geometric interpretation of the dot product, and it’s particularly useful when thinking about the dot product as a measure of the similarity between two vectors: if <span>\(\vec{f}\)
+</span>is very similar to <span>\(\vec{e}\)
+</span>(i.e., it points in the same direction), then its projection onto <span>\(\vec{e}\)
+</span>will be long, and so the dot product will be large. Conversely, if <span>\(\vec{f}\)
+</span>is dissimilar to <span>\(\vec{e}\)
+</span>(i.e., it points in a very different direction), then its projection onto <span>\(\vec{e}\)
+</span>will be short, and so the dot product will be small.</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>matplotlib.pyplot</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>plt</span>
+</span></span><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>numpy</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>np</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Define the vectors</span>
+</span></span><span style=display:flex><span>e <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>2</span>, <span style=color:#fe640b>3</span>])
+</span></span><span style=display:flex><span>f <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>4</span>, <span style=color:#fe640b>5</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Calculate the dot product of the vectors</span>
+</span></span><span style=display:flex><span>g <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>dot(e, f)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Calculate the projection of f onto e</span>
+</span></span><span style=display:flex><span>proj <span style=color:#04a5e5;font-weight:700>=</span> (np<span style=color:#04a5e5;font-weight:700>.</span>dot(e, f) <span style=color:#04a5e5;font-weight:700>/</span> np<span style=color:#04a5e5;font-weight:700>.</span>linalg<span style=color:#04a5e5;font-weight:700>.</span>norm(e)<span style=color:#04a5e5;font-weight:700>**</span><span style=color:#fe640b>2</span>) <span style=color:#04a5e5;font-weight:700>*</span> e
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Create a new figure</span>
+</span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>figure(dpi<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#fe640b>200</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Plot the vectors e and f</span>
+</span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>quiver(<span style=color:#fe640b>0</span>, <span style=color:#fe640b>0</span>, e[<span style=color:#fe640b>0</span>], e[<span style=color:#fe640b>1</span>], angles<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;xy&#39;</span>, scale_units<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;xy&#39;</span>, scale<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#fe640b>1</span>, color<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;r&#39;</span>, label<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;e&#39;</span>)
+</span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>quiver(<span style=color:#fe640b>0</span>, <span style=color:#fe640b>0</span>, f[<span style=color:#fe640b>0</span>], f[<span style=color:#fe640b>1</span>], angles<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;xy&#39;</span>, scale_units<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;xy&#39;</span>, scale<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#fe640b>1</span>, color<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;b&#39;</span>, label<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;f&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Plot the projection of f onto e</span>
+</span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>quiver(<span style=color:#fe640b>0</span>, <span style=color:#fe640b>0</span>, proj[<span style=color:#fe640b>0</span>], proj[<span style=color:#fe640b>1</span>], angles<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;xy&#39;</span>, scale_units<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;xy&#39;</span>, scale<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#fe640b>1</span>, color<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;g&#39;</span>, label<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#39;Projection of f onto e&#39;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Set the x-limits and y-limits of the plot</span>
+</span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>xlim(<span style=color:#04a5e5;font-weight:700>-</span><span style=color:#fe640b>1</span>, <span style=color:#fe640b>5</span>)
+</span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>ylim(<span style=color:#04a5e5;font-weight:700>-</span><span style=color:#fe640b>1</span>, <span style=color:#fe640b>6</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Add a grid</span>
+</span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>grid()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Add a legend</span>
+</span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>legend(loc<span style=color:#04a5e5;font-weight:700>=</span><span style=color:#40a02b>&#34;lower right&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Show the plot</span>
+</span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>show()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Print the dot product</span>
+</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;The dot product of vectors e and f is: &#34;</span>, g)
+</span></span></code></pre></div><h4 id=magnitude-or-length>Magnitude (or Length)
 <a class=anchor href=#magnitude-or-length>#</a></h4><p>The magnitude of a vector <span>\(\vec{g} = [a, b]\)
 </span>is given by the square root of the sum of the squares of its components. This is denoted as <span>\(||\vec{g}||\)
 </span>and calculated as <span>\(||\vec{g}|| = \sqrt{a^2 + b^2}\)</span></p><h3 id=matrices>Matrices

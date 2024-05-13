@@ -186,6 +186,51 @@ plt.show()
 
 The dot product of two vectors is a scalar quantity that is the sum of the products of the corresponding components of the vectors. For example if {{< katex >}}\vec{e} = [2, 3]{{< /katex >}} and {{< katex >}}\vec{f} = [4, 5]{{< /katex >}}, then {{< katex >}}\vec{e} \cdot \vec{f} = 2*4 + 3*5 = 23{{< /katex >}}
 
+![A geometric interpretation of the dot product](/images/linear/dot-product-plot.png)
+
+This is a geometric interpretation of the dot product, and it’s particularly useful when thinking about the dot product as a measure of the similarity between two vectors: if {{< katex >}}\vec{f}{{< /katex >}} is very similar to {{< katex >}}\vec{e}{{< /katex >}} (i.e., it points in the same direction), then its projection onto {{< katex >}}\vec{e}{{< /katex >}} will be long, and so the dot product will be large. Conversely, if {{< katex >}}\vec{f}{{< /katex >}} is dissimilar to {{< katex >}}\vec{e}{{< /katex >}} (i.e., it points in a very different direction), then its projection onto {{< katex >}}\vec{e}{{< /katex >}} will be short, and so the dot product will be small.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define the vectors
+e = np.array([2, 3])
+f = np.array([4, 5])
+
+# Calculate the dot product of the vectors
+g = np.dot(e, f)
+
+# Calculate the projection of f onto e
+proj = (np.dot(e, f) / np.linalg.norm(e)**2) * e
+
+# Create a new figure
+plt.figure(dpi=200)
+
+# Plot the vectors e and f
+plt.quiver(0, 0, e[0], e[1], angles='xy', scale_units='xy', scale=1, color='r', label='e')
+plt.quiver(0, 0, f[0], f[1], angles='xy', scale_units='xy', scale=1, color='b', label='f')
+
+# Plot the projection of f onto e
+plt.quiver(0, 0, proj[0], proj[1], angles='xy', scale_units='xy', scale=1, color='g', label='Projection of f onto e')
+
+# Set the x-limits and y-limits of the plot
+plt.xlim(-1, 5)
+plt.ylim(-1, 6)
+
+# Add a grid
+plt.grid()
+
+# Add a legend
+plt.legend(loc="lower right")
+
+# Show the plot
+plt.show()
+
+# Print the dot product
+print("The dot product of vectors e and f is: ", g)
+```
+
 #### Magnitude (or Length)
 
 The magnitude of a vector {{< katex >}}\vec{g} = [a, b]{{< /katex >}} is given by the square root of the sum of the squares of its components. This is denoted as {{< katex >}}||\vec{g}||{{< /katex >}} and calculated as {{< katex >}}||\vec{g}|| = \sqrt{a^2 + b^2}{{< /katex >}}
