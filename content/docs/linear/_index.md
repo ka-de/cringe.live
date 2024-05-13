@@ -191,6 +191,14 @@ The dot product of two vectors is a scalar quantity that is the sum of the produ
 This is a geometric interpretation of the dot product, and it’s particularly useful when thinking about the dot product as a measure of the similarity between two vectors: if {{< katex >}}\vec{f}{{< /katex >}} is very similar to {{< katex >}}\vec{e}{{< /katex >}} (i.e., it points in the same direction), then its projection onto {{< katex >}}\vec{e}{{< /katex >}} will be long, and so the dot product will be large. Conversely, if {{< katex >}}\vec{f}{{< /katex >}} is dissimilar to {{< katex >}}\vec{e}{{< /katex >}} (i.e., it points in a very different direction), then its projection onto {{< katex >}}\vec{e}{{< /katex >}} will be short, and so the dot product will be small.
 
 ```python
+"""
+This script calculates and visualizes the dot product and projection of two vectors.
+
+The script first defines two vectors, e and f. It then calculates the dot product of
+these vectors and the projection of vector f onto vector e. The vectors, their dot
+product, and the projection are then plotted on a 2D grid using matplotlib.
+Finally, the script prints the calculated dot product. 
+"""
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -234,6 +242,30 @@ print("The dot product of vectors e and f is: ", g)
 #### Magnitude (or Length)
 
 The magnitude of a vector {{< katex >}}\vec{g} = [a, b]{{< /katex >}} is given by the square root of the sum of the squares of its components. This is denoted as {{< katex >}}||\vec{g}||{{< /katex >}} and calculated as {{< katex >}}||\vec{g}|| = \sqrt{a^2 + b^2}{{< /katex >}}
+
+```python
+import numpy as np
+
+def calculate_magnitude(vector):
+    """
+    Calculate the magnitude of a vector.
+
+    The magnitude of a vector is the length of the vector in n-dimensional space, 
+    computed as the square root of the sum of the absolute squares of its components.
+
+    Parameters:
+    vector (numpy.ndarray): A numpy array representing the vector.
+
+    Returns:
+    float: The magnitude of the vector.
+    """
+    magnitude = np.linalg.norm(vector)
+    return magnitude
+
+# Example usage:
+g = np.array([3, 4])
+print("The magnitude of the vector g is:", calculate_magnitude(g))
+```
 
 ### Matrices
 

@@ -155,7 +155,15 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span>will be long, and so the dot product will be large. Conversely, if <span>\(\vec{f}\)
 </span>is dissimilar to <span>\(\vec{e}\)
 </span>(i.e., it points in a very different direction), then its projection onto <span>\(\vec{e}\)
-</span>will be short, and so the dot product will be small.</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>matplotlib.pyplot</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>plt</span>
+</span>will be short, and so the dot product will be small.</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>This script calculates and visualizes the dot product and projection of two vectors.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>The script first defines two vectors, e and f. It then calculates the dot product of
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>these vectors and the projection of vector f onto vector e. The vectors, their dot
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>product, and the projection are then plotted on a 2D grid using matplotlib.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>Finally, the script prints the calculated dot product. 
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>matplotlib.pyplot</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>plt</span>
 </span></span><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>numpy</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>np</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Define the vectors</span>
@@ -196,7 +204,28 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span></span></code></pre></div><h4 id=magnitude-or-length>Magnitude (or Length)
 <a class=anchor href=#magnitude-or-length>#</a></h4><p>The magnitude of a vector <span>\(\vec{g} = [a, b]\)
 </span>is given by the square root of the sum of the squares of its components. This is denoted as <span>\(||\vec{g}||\)
-</span>and calculated as <span>\(||\vec{g}|| = \sqrt{a^2 + b^2}\)</span></p><h3 id=matrices>Matrices
+</span>and calculated as <span>\(||\vec{g}|| = \sqrt{a^2 + b^2}\)</span></p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>numpy</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>np</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#8839ef>def</span> <span style=color:#1e66f5>calculate_magnitude</span>(vector):
+</span></span><span style=display:flex><span>    <span style=color:#40a02b>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    Calculate the magnitude of a vector.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    The magnitude of a vector is the length of the vector in n-dimensional space, 
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    computed as the square root of the sum of the absolute squares of its components.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    Parameters:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    vector (numpy.ndarray): A numpy array representing the vector.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    Returns:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    float: The magnitude of the vector.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>    magnitude <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>linalg<span style=color:#04a5e5;font-weight:700>.</span>norm(vector)
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>return</span> magnitude
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Example usage:</span>
+</span></span><span style=display:flex><span>g <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>3</span>, <span style=color:#fe640b>4</span>])
+</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;The magnitude of the vector g is:&#34;</span>, calculate_magnitude(g))
+</span></span></code></pre></div><h3 id=matrices>Matrices
 <a class=anchor href=#matrices>#</a></h3><hr><p>A matrix is a rectangular array of numbers arranged in rows and columns. Matrices are used to represent and manipulate linear transformations, which are functions that map vectors to vectors while preserving vector addition and scalar multiplication. Each number in the matrix is called an element or entry. The position of an element is defined by its row number and column number.</p><p>A <code>2x2</code> matrix can be represented as follows:</p><span>\[A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}\]</span><h4 id=matrix-addition-and-subtraction>Matrix Addition and Subtraction
 <a class=anchor href=#matrix-addition-and-subtraction>#</a></h4><p>Matrices can be added or subtracted element by element if they are of the same size. For example if we have two <code>2x2</code> matrices <span>\(A\)
 </span>and <span>\(B\)
