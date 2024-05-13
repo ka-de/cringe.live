@@ -39,6 +39,9 @@ For example, the vector {{< katex >}}\vec{v} = [2, 3]{{< /katex >}} can be visua
 
 ![My First Vector](/images/linear/hello-vectors.png)
 
+<details>
+  <summary>Click to reveal script</summary>
+
 ```python
 """
 This script creates a 2D vector plot using matplotlib.
@@ -70,6 +73,8 @@ plt.grid()
 plt.show()
 ```
 
+</details>
+
 Because we don't care about the origin of a vector to compare them, only their magnitudes, two parallel vectors that have the same length makes them equal.
 
 {{< katex display=true >}}
@@ -78,6 +83,9 @@ Because we don't care about the origin of a vector to compare them, only their m
 {{< /katex >}}
 
 ![Parallel vectors](/images/linear/parallel-vectors.png)
+
+<details>
+  <summary>Click to reveal script</summary>
 
 ```python
 """
@@ -115,11 +123,16 @@ plt.grid()
 plt.show()
 ```
 
+</details>
+
 #### Vector Addition
 
 If you have two vectors, you can add them together to get a new vector. This is done by adding the corresponding components of the vectors. For example if {{< katex >}}\vec{a} = [2, 3]{{< /katex >}} and {{< katex >}}\vec{b} = [1, 4]{{< /katex >}} then {{< katex >}}\vec{a} + \vec{b} = [2+1, 3+4] = [3, 7]{{< /katex >}}.
 
 ![A plot of vector addition](/images/linear/vector-sum.png)
+
+<details>
+  <summary>Click to reveal script</summary>
 
 ```python
 """
@@ -160,11 +173,16 @@ plt.legend(loc="lower right")
 plt.show()
 ```
 
+</details>
+
 #### Scalar Multiplication
 
 You can multiply a vector by a scalar (regular number) to get a new vector. This is done by multiplying each component of the vector by the scalar. For example if {{< katex >}}c = 2{{< /katex >}} and {{< katex >}}\vec{b} = [1,4]{{< /katex >}} then {{< katex >}}c * \vec{b} = [2*3, 2 *4] = [6, 8]{{< /katex >}}.
 
 ![Plot of a scalar multiplication](/images/linear/scalar-multiplication.png)
+
+<details>
+  <summary>Click to reveal script</summary>
 
 ```python
 """
@@ -205,6 +223,8 @@ plt.legend()
 plt.show()
 ```
 
+</details>
+
 #### Dot Product
 
 The dot product of two vectors is a scalar quantity that is the sum of the products of the corresponding components of the vectors. For example if {{< katex >}}\vec{e} = [2, 3]{{< /katex >}} and {{< katex >}}\vec{f} = [4, 5]{{< /katex >}}, then {{< katex >}}\vec{e} \cdot \vec{f} = 2*4 + 3*5 = 23{{< /katex >}}
@@ -214,6 +234,9 @@ The dot product of two vectors is a scalar quantity that is the sum of the produ
 This is a geometric interpretation of the dot product, and it’s particularly useful when thinking about the dot product as a measure of the similarity between two vectors: if {{< katex >}}\vec{f}{{< /katex >}} is very similar to {{< katex >}}\vec{e}{{< /katex >}} (i.e., it points in the same direction), then its projection onto {{< katex >}}\vec{e}{{< /katex >}} will be long, and so the dot product will be large. Conversely, if {{< katex >}}\vec{f}{{< /katex >}} is dissimilar to {{< katex >}}\vec{e}{{< /katex >}} (i.e., it points in a very different direction), then its projection onto {{< katex >}}\vec{e}{{< /katex >}} will be short, and so the dot product will be small.
 
 The magnitude of the cross product vector equals the area of the parallelogram formed by the two original vectors.
+
+<details>
+  <summary>Click to reveal script</summary>
 
 ```python
 """
@@ -264,9 +287,14 @@ plt.show()
 print("The dot product of vectors e and f is: ", g)
 ```
 
+</details>
+
 #### Magnitude (or Length)
 
 The magnitude of a vector {{< katex >}}\vec{g} = [a, b]{{< /katex >}} is given by the square root of the sum of the squares of its components. This is denoted as {{< katex >}}||\vec{g}||{{< /katex >}} and calculated as {{< katex >}}||\vec{g}|| = \sqrt{a^2 + b^2}{{< /katex >}}
+
+<details>
+  <summary>Click to reveal script</summary>
 
 ```python
 import numpy as np
@@ -279,7 +307,8 @@ def calculate_magnitude(vector):
     computed as the square root of the sum of the absolute squares of its components.
 
     Parameters:
-    vector (numpy.ndarray): A numpy array representing the vector.
+    vector : numpy.ndarray
+        A numpy array representing the vector.
 
     Returns:
     float: The magnitude of the vector.
@@ -291,6 +320,8 @@ def calculate_magnitude(vector):
 g = np.array([3, 4])
 print("The magnitude of the vector g is:", calculate_magnitude(g))
 ```
+
+</details>
 
 ### Matrices
 
@@ -463,6 +494,16 @@ The cross product of two vectors {{< katex >}}\vec{a}{{< /katex >}} and {{< kate
 \mathbf{\vec{a}} \times \mathbf{\vec{b}} = \begin{bmatrix} a_2b_3 - a_3b_2 \\ a_3b_1 - a_1b_3 \\ a_1b_2 - a_2b_1 \end{bmatrix}
 {{< /katex >}}
 
+To calculate the cross product of {{< katex >}}\mathbf{\vec{a}} = [2, 1, -3]{{< /katex >}} and {{< katex >}}\mathbf{\vec{b}} = [4, -2, 1]{{< /katex >}}:
+
+The first component of the cross product is calculated as {{< katex >}}a_2b_3 - a_3b_2 = 1*1 - (-3)*(-2) = 1 - 6 = -5{{< /katex >}}.
+
+The second component is calculated as {{< katex >}}a_3b_1 - a_1b_3 = -3*4 - 2*1 = -12 - 2 = -14{{< /katex >}}.
+
+The third component is calculated as {{< katex >}}a_1b_2 - a_2b_1 = 2*(-2) - 1*4 = -4 - 4 = -8{{< /katex >}}.
+
+Solution with numpy:
+
 ```python
 """
 This script calculates the cross product of two 3-dimensional vectors.
@@ -492,7 +533,7 @@ cross_product = np.cross(a, b)
 print("The cross product of a and b is: ", cross_product)
 ```
 
-With PyTorch:
+Solution with PyTorch:
 
 ```python
 """
@@ -531,6 +572,8 @@ print("The cross product of a and b is: ", cross_product)
 <details>
   <summary>Click to reveal solution</summary>
 
+Solution with numpy:
+
 ```python
 """
 This script calculates the cross product of two 3-dimensional vectors.
@@ -560,6 +603,8 @@ cross_product_numpy = np.cross(u, v)
 print("Cross product: ", cross_product_numpy)
 ```
 
+Solution with PyTorch:
+
 ```python
 """
 This script computes the cross product of two 3-dimensional vectors using
@@ -584,7 +629,7 @@ u_torch = torch.tensor([1, 2, 3])
 v_torch = torch.tensor([4, 5, 6])
 
 # compute the cross product
-cross_product_pytorch = torch.cross(u_torch, v_torch)
+cross_product_pytorch = torch.linalg.cross(u_torch, v_torch)
 
 print("Cross product: ", cross_product_pytorch)
 ```
@@ -641,7 +686,7 @@ def calculate_torque_torch(F, r):
         torch.Tensor
             The torque vector
     """
-    return torch.cross(r, F)
+    return torch.linalg.cross(r, F)
 
 F = torch.tensor([10, 20, 0])
 r = torch.tensor([2, 1, 3])

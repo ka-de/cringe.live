@@ -25,7 +25,7 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 \vec{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}
 \]</span><p>For example, the vector <span>\(\vec{v} = [2, 3]\)
 </span>can be visualized as an arrow starting at the origin <span>\((0, 0)\)
-</span>and pointing 2 units in the positive x-direction and 3 units in the positive y-direction.</p><p><img src=/images/linear/hello-vectors.png alt="My First Vector"></p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span>and pointing 2 units in the positive x-direction and 3 units in the positive y-direction.</p><p><img src=/images/linear/hello-vectors.png alt="My First Vector"></p><details><summary>Click to reveal script</summary><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>This script creates a 2D vector plot using matplotlib.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>It defines a vector &#39;v&#39; with coordinates (2,3) and plots it on a 2D grid.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>The origin of the vector is at (0,0).
@@ -53,10 +53,10 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Show the plot</span>
 </span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>show()
-</span></span></code></pre></div><p>Because we don&rsquo;t care about the origin of a vector to compare them, only their magnitudes, two parallel vectors that have the same length makes them equal.</p><span>\[
+</span></span></code></pre></div></details><p>Because we don&rsquo;t care about the origin of a vector to compare them, only their magnitudes, two parallel vectors that have the same length makes them equal.</p><span>\[
 \vec{v} = \overrightarrow{AB}, \quad \vec{w} = \overrightarrow{CD} \\
 \vec{v} = \vec{w}
-\]</span><p><img src=/images/linear/parallel-vectors.png alt="Parallel vectors"></p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+\]</span><p><img src=/images/linear/parallel-vectors.png alt="Parallel vectors"></p><details><summary>Click to reveal script</summary><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>This script plots two vectors, v and w, using matplotlib. The vector v originates
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>from the origin (0,0), while the vector w starts from a specified point (1,0).
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>Both vectors are defined as [2, 3], making them parallel to each other.
@@ -89,11 +89,11 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Show the plot</span>
 </span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>show()
-</span></span></code></pre></div><h4 id=vector-addition>Vector Addition
+</span></span></code></pre></div></details><h4 id=vector-addition>Vector Addition
 <a class=anchor href=#vector-addition>#</a></h4><p>If you have two vectors, you can add them together to get a new vector. This is done by adding the corresponding components of the vectors. For example if <span>\(\vec{a} = [2, 3]\)
 </span>and <span>\(\vec{b} = [1, 4]\)
 </span>then <span>\(\vec{a} + \vec{b} = [2+1, 3+4] = [3, 7]\)
-</span>.</p><p><img src=/images/linear/vector-sum.png alt="A plot of vector addition"></p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span>.</p><p><img src=/images/linear/vector-sum.png alt="A plot of vector addition"></p><details><summary>Click to reveal script</summary><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>This script visualizes the addition of two vectors using matplotlib. 
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>It first defines two 2D vectors &#39;a&#39; and &#39;b&#39;, then calculates their sum &#39;c&#39;. 
@@ -129,11 +129,11 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Show the plot</span>
 </span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>show()
-</span></span></code></pre></div><h4 id=scalar-multiplication>Scalar Multiplication
+</span></span></code></pre></div></details><h4 id=scalar-multiplication>Scalar Multiplication
 <a class=anchor href=#scalar-multiplication>#</a></h4><p>You can multiply a vector by a scalar (regular number) to get a new vector. This is done by multiplying each component of the vector by the scalar. For example if <span>\(c = 2\)
 </span>and <span>\(\vec{b} = [1,4]\)
 </span>then <span>\(c * \vec{b} = [2*3, 2 *4] = [6, 8]\)
-</span>.</p><p><img src=/images/linear/scalar-multiplication.png alt="Plot of a scalar multiplication"></p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span>.</p><p><img src=/images/linear/scalar-multiplication.png alt="Plot of a scalar multiplication"></p><details><summary>Click to reveal script</summary><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>This script demonstrates the scalar multiplication of a vector.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>It defines a vector &#39;b&#39; and a scalar &#39;c&#39;, calculates the scalar multiplication
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>of the vector, and then plots the original vector and the result of the scalar
@@ -169,7 +169,7 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Show the plot</span>
 </span></span><span style=display:flex><span>plt<span style=color:#04a5e5;font-weight:700>.</span>show()
-</span></span></code></pre></div><h4 id=dot-product>Dot Product
+</span></span></code></pre></div></details><h4 id=dot-product>Dot Product
 <a class=anchor href=#dot-product>#</a></h4><p>The dot product of two vectors is a scalar quantity that is the sum of the products of the corresponding components of the vectors. For example if <span>\(\vec{e} = [2, 3]\)
 </span>and <span>\(\vec{f} = [4, 5]\)
 </span>, then <span>\(\vec{e} \cdot \vec{f} = 2*4 + 3*5 = 23\)</span></p><p><img src=/images/linear/dot-product-plot.png alt="A geometric interpretation of the dot product"></p><p>This is a geometric interpretation of the dot product, and it’s particularly useful when thinking about the dot product as a measure of the similarity between two vectors: if <span>\(\vec{f}\)
@@ -178,7 +178,7 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span>will be long, and so the dot product will be large. Conversely, if <span>\(\vec{f}\)
 </span>is dissimilar to <span>\(\vec{e}\)
 </span>(i.e., it points in a very different direction), then its projection onto <span>\(\vec{e}\)
-</span>will be short, and so the dot product will be small.</p><p>The magnitude of the cross product vector equals the area of the parallelogram formed by the two original vectors.</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span>will be short, and so the dot product will be small.</p><p>The magnitude of the cross product vector equals the area of the parallelogram formed by the two original vectors.</p><details><summary>Click to reveal script</summary><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>This script calculates and visualizes the dot product and projection of two vectors.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>The script first defines two vectors, e and f. It then calculates the dot product of
@@ -224,10 +224,10 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Print the dot product</span>
 </span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;The dot product of vectors e and f is: &#34;</span>, g)
-</span></span></code></pre></div><h4 id=magnitude-or-length>Magnitude (or Length)
+</span></span></code></pre></div></details><h4 id=magnitude-or-length>Magnitude (or Length)
 <a class=anchor href=#magnitude-or-length>#</a></h4><p>The magnitude of a vector <span>\(\vec{g} = [a, b]\)
 </span>is given by the square root of the sum of the squares of its components. This is denoted as <span>\(||\vec{g}||\)
-</span>and calculated as <span>\(||\vec{g}|| = \sqrt{a^2 + b^2}\)</span></p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>numpy</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>np</span>
+</span>and calculated as <span>\(||\vec{g}|| = \sqrt{a^2 + b^2}\)</span></p><details><summary>Click to reveal script</summary><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>numpy</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>np</span>
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#8839ef>def</span> <span style=color:#1e66f5>calculate_magnitude</span>(vector):
 </span></span><span style=display:flex><span>    <span style=color:#40a02b>&#34;&#34;&#34;
@@ -237,7 +237,8 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    computed as the square root of the sum of the absolute squares of its components.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    Parameters:
-</span></span></span><span style=display:flex><span><span style=color:#40a02b>    vector (numpy.ndarray): A numpy array representing the vector.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    vector : numpy.ndarray
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>        A numpy array representing the vector.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    Returns:
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    float: The magnitude of the vector.
@@ -248,7 +249,7 @@ Vectors # Vectors are mathematical objects that have both magnitude (size) and d
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Example usage:</span>
 </span></span><span style=display:flex><span>g <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>3</span>, <span style=color:#fe640b>4</span>])
 </span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;The magnitude of the vector g is:&#34;</span>, calculate_magnitude(g))
-</span></span></code></pre></div><h3 id=matrices>Matrices
+</span></span></code></pre></div></details><h3 id=matrices>Matrices
 <a class=anchor href=#matrices>#</a></h3><hr><p>A matrix is a rectangular array of numbers arranged in rows and columns. Matrices are used to represent and manipulate linear transformations, which are functions that map vectors to vectors while preserving vector addition and scalar multiplication. Each number in the matrix is called an element or entry. The position of an element is defined by its row number and column number.</p><p>A <span>\(2 \times 2\)
 </span>matrix can be represented as follows:</p><span>\[A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}\]</span><h4 id=matrix-addition-and-subtraction>Matrix Addition and Subtraction
 <a class=anchor href=#matrix-addition-and-subtraction>#</a></h4><p>Matrices can be added or subtracted element by element if they are of the same size. For example if we have two <span>\(2 \times 2\)
@@ -360,7 +361,12 @@ A \cdot I = I \cdot A = A
 </span>and <span>\(\vec{b}\)
 </span>can be calculated using the formula:</p><span>\[
 \mathbf{\vec{a}} \times \mathbf{\vec{b}} = \begin{bmatrix} a_2b_3 - a_3b_2 \\ a_3b_1 - a_1b_3 \\ a_1b_2 - a_2b_1 \end{bmatrix}
-\]</span><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+\]</span><p>To calculate the cross product of <span>\(\mathbf{\vec{a}} = [2, 1, -3]\)
+</span>and <span>\(\mathbf{\vec{b}} = [4, -2, 1]\)
+</span>:</p><p>The first component of the cross product is calculated as <span>\(a_2b_3 - a_3b_2 = 1*1 - (-3)*(-2) = 1 - 6 = -5\)
+</span>.</p><p>The second component is calculated as <span>\(a_3b_1 - a_1b_3 = -3*4 - 2*1 = -12 - 2 = -14\)
+</span>.</p><p>The third component is calculated as <span>\(a_1b_2 - a_2b_1 = 2*(-2) - 1*4 = -4 - 4 = -8\)
+</span>.</p><p>Solution with numpy:</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>This script calculates the cross product of two 3-dimensional vectors.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>The vectors are defined as numpy arrays &#39;a&#39; and &#39;b&#39;.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>The cross product is calculated using numpy&#39;s cross function.
@@ -386,7 +392,7 @@ A \cdot I = I \cdot A = A
 </span></span><span style=display:flex><span>cross_product <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>cross(a, b)
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;The cross product of a and b is: &#34;</span>, cross_product)
-</span></span></code></pre></div><p>With PyTorch:</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span></span></code></pre></div><p>Solution with PyTorch:</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>This script calculates the cross product of two 3D vectors using PyTorch.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>The cross product of two vectors a and b is a vector that is perpendicular
@@ -415,7 +421,7 @@ A \cdot I = I \cdot A = A
 </span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;The cross product of a and b is: &#34;</span>, cross_product)
 </span></span></code></pre></div></details><ol start=2><li>Find the cross product of <span>\(\mathbf{\vec{u}} = [1, 2, 3]\)
 </span>and <span>\(\mathbf{\vec{v}} = [4, 5, 6]\)
-</span>.</li></ol><details><summary>Click to reveal solution</summary><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span>.</li></ol><details><summary>Click to reveal solution</summary><p>Solution with numpy:</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>This script calculates the cross product of two 3-dimensional vectors.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>The vectors are defined as numpy arrays &#39;u&#39; and &#39;v&#39;.
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>The cross product is calculated using numpy&#39;s cross function.
@@ -441,7 +447,7 @@ A \cdot I = I \cdot A = A
 </span></span><span style=display:flex><span>cross_product_numpy <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>cross(u, v)
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;Cross product: &#34;</span>, cross_product_numpy)
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span></span></code></pre></div><p>Solution with PyTorch:</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>This script computes the cross product of two 3-dimensional vectors using
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>PyTorch. The vectors are defined as 1-D PyTorch tensors. The `torch.cross()`
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>function is used to compute the cross product.
@@ -464,7 +470,7 @@ A \cdot I = I \cdot A = A
 </span></span><span style=display:flex><span>v_torch <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>tensor([<span style=color:#fe640b>4</span>, <span style=color:#fe640b>5</span>, <span style=color:#fe640b>6</span>])
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># compute the cross product</span>
-</span></span><span style=display:flex><span>cross_product_pytorch <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>cross(u_torch, v_torch)
+</span></span><span style=display:flex><span>cross_product_pytorch <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>linalg<span style=color:#04a5e5;font-weight:700>.</span>cross(u_torch, v_torch)
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;Cross product: &#34;</span>, cross_product_pytorch)
 </span></span></code></pre></div></details><ol start=3><li>If the position vector of a force <span>\(\mathbf{\vec{F}} = [10, 20, 0]\)
@@ -506,7 +512,7 @@ A \cdot I = I \cdot A = A
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>        torch.Tensor
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>            The torque vector
 </span></span></span><span style=display:flex><span><span style=color:#40a02b>    &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#8839ef>return</span> torch<span style=color:#04a5e5;font-weight:700>.</span>cross(r, F)
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>return</span> torch<span style=color:#04a5e5;font-weight:700>.</span>linalg<span style=color:#04a5e5;font-weight:700>.</span>cross(r, F)
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>F <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>tensor([<span style=color:#fe640b>10</span>, <span style=color:#fe640b>20</span>, <span style=color:#fe640b>0</span>])
 </span></span><span style=display:flex><span>r <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>tensor([<span style=color:#fe640b>2</span>, <span style=color:#fe640b>1</span>, <span style=color:#fe640b>3</span>])
