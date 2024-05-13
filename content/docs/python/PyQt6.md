@@ -58,7 +58,11 @@ This changes the font of the `QLabel` to Cascadia Code and increases the size to
 
 The `QFont` class is used to specify the font. The first argument is the font family, and the second argument is the point size. The point size is a measure of the height of the characters, with 1 point being approximately 1/72 inch. The actual rendered size may vary slightly depending on the font. The `QFont` class also has other options for setting the weight (**boldness**) and style (*italic*, <ins>underline</ins>, etc.) of the font. For example, you can use `QFont('Cascadia Code', 24, QFont.Weight.Bold)` to make the font bold.
 
+## Font by Operating System
+
 You can also define multiple fonts. Just make sure to import the platform module at the beginning of your script!
+
+---
 
 ```python
 import platform
@@ -78,7 +82,9 @@ class MainWindow(QWidget):
         # Create a QLabel to display the text
         self.label = QLabel('Hello World!', self)
         self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)  # Center the text
-        self.label.setFont(QFont('Cascadia Code', 24))  # Set the font and size
+
+        # Set the font at the start of the application
+        self.change_font_size(24)
 
         # Create a QPushButton
         self.button = QPushButton('Change Text', self)
@@ -103,6 +109,8 @@ class MainWindow(QWidget):
     def resizeEvent(self, event):
         # Resize the label to take the full size of the window
         self.label.resize(self.size())
+        # Change the font when the window is resized
+        self.change_font_size(self.slider.value())
 
     def change_text(self):
         # Change the text of the label when the button is clicked
@@ -110,7 +118,7 @@ class MainWindow(QWidget):
 
     def change_font_size(self, value):
         # Get a list of all font families available in the database
-        font_families = QFontDatabase().families()
+        font_families = QFontDatabase.families()
 
         # Set different fonts for different operating systems
         if 'Windows' in platform.system():
