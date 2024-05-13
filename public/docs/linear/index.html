@@ -270,7 +270,7 @@ A + B = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} + \begin{bmatrix} a2 & 
 </span>of the same size representing linear transformations, their sum <span>\(A + B\)
 </span>also represents a linear transformation. The sum transformation <span>\((A + B)\)
 </span>applied to any vector <span>\(\vec{v}\)
-</span>is equal to <span>\(A(v) + B(v)\)
+</span>is equal to <span>\(A(\vec{v}) + B(\vec{v})\)
 </span>. This property is known as linear separability.</p><span>\[
 (A + B)(\vec{v}) = A(\vec{v}) + B(\vec{v})
 \]</span><h4 id=scalar-multiplication-of-a-matrix>Scalar Multiplication of a Matrix
@@ -301,32 +301,32 @@ A \cdot I = I \cdot A = A
 </span>, the result is the identity matrix. Not all matrices have an inverse.</p><span>\[A^{-1} = \frac{1}{det(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}\]</span><h4 id=transpose>Transpose
 <a class=anchor href=#transpose>#</a></h4><p>The transpose of a matrix is a new matrix whose rows are the columns of the original matrix and whose columns are the rows.</p><span>\[A^T = \begin{bmatrix} a & c \\ b & d \end{bmatrix}\]</span><ul><li><strong>Linear equations</strong> are equations of the first order, representing straight lines in geometry. They are characterized by constants and variables without exponents or products of variables.</li><li><strong>Eigenvalues</strong> and <strong>Eigenvectors</strong> are special sets of scalars and vectors associated with a matrix. They are fundamental in the study of linear transformations.</li><li><strong>Orthogonal Matrices</strong> are square matrices whose columns and rows are orthogonal unit vectors (orthonormal vectors)</li></ul><hr><h2 id=the-cross-product>The Cross Product
 <a class=anchor href=#the-cross-product>#</a></h2><p>The cross product, also known as the vector product, is a binary operation on two vectors in three-dimensional space. It&rsquo;s denoted by the symbol <span>\(\times\)
-</span>and results in a vector that is perpendicular (or orthogonal) to the plane containing the two original vectors.</p><p>If you have two vectors <span>\(a = [a1, a2, a3]\)
-</span>and <span>\(b = [b1, b2, b3]\)
-</span>, their cross product, denoted as <span>\(a \times b\)
-</span>is defined as:</p><span>\[\mathbf{a} \times \mathbf{b} = \begin{bmatrix} a2b3 - a3b2 \\ a3b1 - a1b3 \\ a1b2 - a2b1 \end{bmatrix}\]</span><p>The cross product is only defined in three dimensions. In higher dimensions, one typically uses the more general concept of the exterior product. The cross product is used in various fields such as physics (torque, angular momentum), computer graphics (finding normals to surfaces), and engineering (moment of forces).</p><h3 id=geometric-interpretation>Geometric Interpretation
-<a class=anchor href=#geometric-interpretation>#</a></h3><p>Geometrically, the magnitude (or length) of the cross product vector equals the area of the parallelogram formed by the two original vectors. The direction of the cross product vector is given by the right-hand rule: if you point your open right hand in the direction of <span>\(a\)
-</span>and then curl your fingers towards <span>\(b\)
-</span>, your thumb points in the direction of <span>\(a \times b\)
+</span>and results in a vector that is perpendicular (or orthogonal) to the plane containing the two original vectors.</p><p>If you have two vectors <span>\(\vec{a} = [a1, a2, a3]\)
+</span>and <span>\(\vec{b} = [b1, b2, b3]\)
+</span>, their cross product, denoted as <span>\(\vec{a} \times \vec{b}\)
+</span>is defined as:</p><span>\[\mathbf{\vec{a}} \times \mathbf{\vec{b}} = \begin{bmatrix} a2b3 - a3b2 \\ a3b1 - a1b3 \\ a1b2 - a2b1 \end{bmatrix}\]</span><p>The cross product is only defined in three dimensions. In higher dimensions, one typically uses the more general concept of the exterior product. The cross product is used in various fields such as physics (torque, angular momentum), computer graphics (finding normals to surfaces), and engineering (moment of forces).</p><h3 id=geometric-interpretation>Geometric Interpretation
+<a class=anchor href=#geometric-interpretation>#</a></h3><p>Geometrically, the magnitude (or length) of the cross product vector equals the area of the parallelogram formed by the two original vectors. The direction of the cross product vector is given by the right-hand rule: if you point your open right hand in the direction of <span>\(\vec{a}\)
+</span>and then curl your fingers towards <span>\(\vec{b}\)
+</span>, your thumb points in the direction of <span>\(\vec{a} \times \vec{b}\)
 </span>.</p><h3 id=properties>Properties
 <a class=anchor href=#properties>#</a></h3><p>The cross product has several important properties, including:</p><h4 id=anticommutativity>Anticommutativity
-<a class=anchor href=#anticommutativity>#</a></h4><p>The property of anticommutativity means that the order in which the vectors are crossed matters. If you have two vectors <span>\(a\)
-</span>and <span>\(b\)
-</span>, the cross product <span>\(a \times b\)
-</span>is the negative of <span>\(b \times a\)
-</span>. In other words:</p><span>\[\mathbf{a} \times \mathbf{b} = -(\mathbf{b} \times \mathbf{a})\]</span><p>This is different from the dot product, which is commutative. (i.e., <span>\(a \cdot b = b \cdot a\)
+<a class=anchor href=#anticommutativity>#</a></h4><p>The property of anticommutativity means that the order in which the vectors are crossed matters. If you have two vectors <span>\(\vec{a}\)
+</span>and <span>\(\vec{b}\)
+</span>, the cross product <span>\(\vec{a} \times \vec{b}\)
+</span>is the negative of <span>\(\vec{b} \times \vec{a}\)
+</span>. In other words:</p><span>\[\mathbf{\vec{a}} \times \mathbf{\vec{b}} = -(\mathbf{\vec{b}} \times \mathbf{\vec{a}})\]</span><p>This is different from the dot product, which is commutative. (i.e., <span>\(\vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}\)
 </span>)</p><h4 id=distributivity-over-addition>Distributivity over addition
-<a class=anchor href=#distributivity-over-addition>#</a></h4><p>The distributive property of the cross product states that the cross product distributes over vector addition. That is, if you have three vectors <span>\(a\)
-</span>, <span>\(b\)
-</span>and <span>\(c\)
-</span>, then the cross product of <span>\(a\)
-</span>with the sum of <span>\(b\)
-</span>and <span>\(c\)
-</span>is equal to the sum of the cross product of <span>\(a\)
-</span>and <span>\(b\)
-</span>and the cross product of <span>\(a\)
-</span>and <span>\(c\)
-</span>. Mathematically this is expressed as:</p><span>\[\mathbf{a} \times (\mathbf{b} + \mathbf{c}) = \mathbf{a} \times \mathbf{b} + \mathbf{a} \times \mathbf{c}\]</span><h4 id=scalar-multiplication-1>Scalar multiplication
+<a class=anchor href=#distributivity-over-addition>#</a></h4><p>The distributive property of the cross product states that the cross product distributes over vector addition. That is, if you have three vectors <span>\(\vec{a}\)
+</span>, <span>\(\vec{b}\)
+</span>and <span>\(\vec{c}\)
+</span>, then the cross product of <span>\(\vec{a}\)
+</span>with the sum of <span>\(\vec{b}\)
+</span>and <span>\(\vec{c}\)
+</span>is equal to the sum of the cross product of <span>\(\vec{a}\)
+</span>and <span>\(\vec{b}\)
+</span>and the cross product of <span>\(\vec{a}\)
+</span>and <span>\(\vec{c}\)
+</span>. Mathematically this is expressed as:</p><span>\[\mathbf{\vec{a}} \times (\mathbf{\vec{b}} + \mathbf{\vec{c}}) = \mathbf{\vec{a}} \times \mathbf{\vec{b}} + \mathbf{\vec{a}} \times \mathbf{\vec{c}}\]</span><h4 id=scalar-multiplication-1>Scalar multiplication
 <a class=anchor href=#scalar-multiplication-1>#</a></h4><p>The property of scalar multiplication states that the cross product is compatible with scalar multiplication. If you multiply a vector <span>\(\vec{a}\)
 </span>by a scalar <span>\(k\)
 </span>and then take the cross product of this with a vector <span>\(\vec{b}\)
@@ -335,13 +335,13 @@ A \cdot I = I \cdot A = A
 </span>first and then multiplied the result by <span>\(k\)
 </span>. Similarly, it&rsquo;s also the same as if you multiplied <span>\(\vec{b}\)
 </span>by <span>\(k\)
-</span>before taking the cross product. This can be written as:</p><span>\[(k\mathbf{a}) \times \mathbf{b} = k(\mathbf{a} \times \mathbf{b}) = \mathbf{a} \times (k\mathbf{b})\]</span><p>Where <span>\(k\)
+</span>before taking the cross product. This can be written as:</p><span>\[(k\mathbf{\vec{a}}) \times \mathbf{\vec{b}} = k(\mathbf{\vec{a}} \times \mathbf{\vec{b}}) = \mathbf{\vec{a}} \times (k\mathbf{\vec{b}})\]</span><p>Where <span>\(k\)
 </span>is a scalar.</p><h3 id=relation-to-other-vector-operations>Relation to Other Vector Operations
 <a class=anchor href=#relation-to-other-vector-operations>#</a></h3><p>While the cross product is a useful operation, it&rsquo;s important to understand when it&rsquo;s appropriate to use it and when other vector operations, such as the dot product or scalar triple product, might be more suitable. The dot product, for instance, is useful for determining the angle between two vectors or projecting one vector onto another, while the scalar triple product is used to find the scalar triple product of three vectors.</p><h3 id=examples>Examples
-<a class=anchor href=#examples>#</a></h3><p>Let&rsquo;s calculate the cross product of two simple vectors, <span>\(\mathbf{a} = [1, 0, 0]\)
-</span>and <span>\(\mathbf{b} = [0, 1, 0]\)
+<a class=anchor href=#examples>#</a></h3><p>Let&rsquo;s calculate the cross product of two simple vectors, <span>\(\mathbf{\vec{a}} = [1, 0, 0]\)
+</span>and <span>\(\mathbf{\vec{b}} = [0, 1, 0]\)
 </span>:</p><span>\[
-\mathbf{a} \times \mathbf{b} = \begin{bmatrix}
+\mathbf{\vec{a}} \times \mathbf{\vec{b}} = \begin{bmatrix}
 0 \times 0 - 0 \times 1 \\
 0 \times 0 - 0 \times 0 \\
 1 \times 1 - 0 \times 0
@@ -354,12 +354,103 @@ A \cdot I = I \cdot A = A
 </span>and <span>\([0, 1, 0]\)
 </span>is <span>\([0, 0, 1]\)
 </span>, which is a vector pointing in the positive z-direction with a magnitude of 1.</p><h3 id=practice-problems>Practice Problems
-<a class=anchor href=#practice-problems>#</a></h3><ol><li><p>Calculate the cross product of <span>\(\mathbf{a} = [2, 1, -3]\)
-</span>and <span>\(\mathbf{b} = [4, -2, 1]\)
-</span>.</p></li><li><p>Find the cross product of <span>\(\mathbf{u} = [1, 2, 3]\)
-</span>and <span>\(\mathbf{v} = [4, 5, 6]\)
-</span>.</p></li><li><p>If the position vector of a force <span>\(\mathbf{F} = [10, 20, 0]\)
-</span>is <span>\(\mathbf{r} = [2, 1, 3]\)
-</span>, calculate the torque about the origin using the cross product.</p></li></ol><hr></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/commit/78e6efafbf0ac9cee65e37c4e4a43435406dd4a9 title='Last modified by Balazs Horvath | May 13, 2024' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt>
+<a class=anchor href=#practice-problems>#</a></h3><ol><li>Calculate the cross product of <span>\(\mathbf{\vec{a}} = [2, 1, -3]\)
+</span>and <span>\(\mathbf{\vec{b}} = [4, -2, 1]\)
+</span>.</li></ol><details><summary>Click to reveal solution</summary><p>The cross product of two vectors <span>\(\vec{a}\)
+</span>and <span>\(\vec{b}\)
+</span>can be calculated using the formula:</p><span>\[
+\mathbf{\vec{a}} \times \mathbf{\vec{b}} = \begin{bmatrix} a_2b_3 - a_3b_2 \\ a_3b_1 - a_1b_3 \\ a_1b_2 - a_2b_1 \end{bmatrix}
+\]</span><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>This script calculates the cross product of two 3-dimensional vectors.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>The vectors are defined as numpy arrays &#39;a&#39; and &#39;b&#39;.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>The cross product is calculated using numpy&#39;s cross function.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>Parameters:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>a : numpy array
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    The first vector, defined as a numpy array of three elements.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>b : numpy array
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    The second vector, defined as a numpy array of three elements.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>Returns:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>cross_product : numpy array
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    The cross product of vectors &#39;a&#39; and &#39;b&#39;.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    This is a vector that is perpendicular to the plane containing &#39;a&#39; and &#39;b&#39;
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>numpy</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>np</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Define the vectors</span>
+</span></span><span style=display:flex><span>a <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>2</span>, <span style=color:#fe640b>1</span>, <span style=color:#04a5e5;font-weight:700>-</span><span style=color:#fe640b>3</span>])
+</span></span><span style=display:flex><span>b <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>4</span>, <span style=color:#04a5e5;font-weight:700>-</span><span style=color:#fe640b>2</span>, <span style=color:#fe640b>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Calculate the cross product</span>
+</span></span><span style=display:flex><span>cross_product <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>cross(a, b)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;The cross product of a and b is: &#34;</span>, cross_product)
+</span></span></code></pre></div><p>With PyTorch:</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>This script calculates the cross product of two 3D vectors using PyTorch.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>The cross product of two vectors a and b is a vector that is perpendicular
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>to both and therefore normal to the plane containing them.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>Parameters:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>a : torch.Tensor
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    The first input vector. It should be a 1D tensor with 3 elements.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>b : torch.Tensor
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    The second input vector. It should be a 1D tensor with 3 elements.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>Returns:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    cross_product (torch.Tensor): The cross product of vectors a and b.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    It is a 1D tensor with 3 elements.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>torch</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Define the vectors</span>
+</span></span><span style=display:flex><span>a <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>tensor([<span style=color:#fe640b>2</span>, <span style=color:#fe640b>1</span>, <span style=color:#04a5e5;font-weight:700>-</span><span style=color:#fe640b>3</span>])
+</span></span><span style=display:flex><span>b <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>tensor([<span style=color:#fe640b>4</span>, <span style=color:#04a5e5;font-weight:700>-</span><span style=color:#fe640b>2</span>, <span style=color:#fe640b>1</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># Calculate the cross product</span>
+</span></span><span style=display:flex><span>cross_product <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>linalg<span style=color:#04a5e5;font-weight:700>.</span>cross(a, b)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(cross_product)
+</span></span></code></pre></div></details><ol start=2><li>Find the cross product of <span>\(\mathbf{\vec{u}} = [1, 2, 3]\)
+</span>and <span>\(\mathbf{\vec{v}} = [4, 5, 6]\)
+</span>.</li></ol><details><summary>Click to reveal solution</summary><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>numpy</span> <span style=color:#8839ef>as</span> <span style=color:#fe640b>np</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># define the vectors</span>
+</span></span><span style=display:flex><span>u <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>1</span>, <span style=color:#fe640b>2</span>, <span style=color:#fe640b>3</span>])
+</span></span><span style=display:flex><span>v <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>array([<span style=color:#fe640b>4</span>, <span style=color:#fe640b>5</span>, <span style=color:#fe640b>6</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># compute the cross product</span>
+</span></span><span style=display:flex><span>cross_product_numpy <span style=color:#04a5e5;font-weight:700>=</span> np<span style=color:#04a5e5;font-weight:700>.</span>cross(u, v)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;Cross product: &#34;</span>, cross_product_numpy)
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>This script computes the cross product of two 3-dimensional vectors using
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>PyTorch. The vectors are defined as 1-D PyTorch tensors. The `torch.cross()`
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>function is used to compute the cross product.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>Parameters:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>u_torch : torch.Tensor
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    A 1-D tensor representing the first vector.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>v_torch : torch.Tensor)
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    A 1-D tensor representing the second vector.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>Returns:
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    cross_product_pytorch (torch.Tensor): A 1-D tensor representing the cross
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>    product of `u_torch` and `v_torch`.
+</span></span></span><span style=display:flex><span><span style=color:#40a02b>&#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#179299>import</span> <span style=color:#fe640b>torch</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># define the vectors</span>
+</span></span><span style=display:flex><span>u_torch <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>tensor([<span style=color:#fe640b>1</span>, <span style=color:#fe640b>2</span>, <span style=color:#fe640b>3</span>])
+</span></span><span style=display:flex><span>v_torch <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>tensor([<span style=color:#fe640b>4</span>, <span style=color:#fe640b>5</span>, <span style=color:#fe640b>6</span>])
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic># compute the cross product</span>
+</span></span><span style=display:flex><span>cross_product_pytorch <span style=color:#04a5e5;font-weight:700>=</span> torch<span style=color:#04a5e5;font-weight:700>.</span>cross(u_torch, v_torch)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#04a5e5>print</span>(<span style=color:#40a02b>&#34;Cross product: &#34;</span>, cross_product_pytorch)
+</span></span></code></pre></div></details><ol start=3><li>If the position vector of a force <span>\(\mathbf{\vec{F}} = [10, 20, 0]\)
+</span>is <span>\(\mathbf{\vec{r}} = [2, 1, 3]\)
+</span>, calculate the torque about the origin using the cross product.</li></ol><hr></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/commit/78e6efafbf0ac9cee65e37c4e4a43435406dd4a9 title='Last modified by Balazs Horvath | May 13, 2024' target=_blank rel=noopener><img src=/svg/calendar.svg class=book-icon alt>
 <span>May 13, 2024</span></a></div><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/edit/main/content/docs/linear/_index.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt>
 <span>Edit this page</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#linear-algebra-for-furries>Linear Algebra for Furries</a><ul><li><a href=#linear-algebra-basics>Linear Algebra Basics</a><ul><li><a href=#vectors>Vectors</a><ul><li><a href=#vector-addition>Vector Addition</a></li><li><a href=#scalar-multiplication>Scalar Multiplication</a></li><li><a href=#dot-product>Dot Product</a></li><li><a href=#magnitude-or-length>Magnitude (or Length)</a></li></ul></li><li><a href=#matrices>Matrices</a><ul><li><a href=#matrix-addition-and-subtraction>Matrix Addition and Subtraction</a></li><li><a href=#scalar-multiplication-of-a-matrix>Scalar Multiplication of a Matrix</a></li><li><a href=#matrix-multiplication>Matrix Multiplication</a></li><li><a href=#identity-matrix>Identity Matrix</a></li><li><a href=#determinant>Determinant</a></li><li><a href=#inverse>Inverse</a></li><li><a href=#transpose>Transpose</a></li></ul></li></ul></li><li><a href=#the-cross-product>The Cross Product</a><ul><li><a href=#geometric-interpretation>Geometric Interpretation</a></li><li><a href=#properties>Properties</a><ul><li><a href=#anticommutativity>Anticommutativity</a></li><li><a href=#distributivity-over-addition>Distributivity over addition</a></li><li><a href=#scalar-multiplication-1>Scalar multiplication</a></li></ul></li><li><a href=#relation-to-other-vector-operations>Relation to Other Vector Operations</a></li><li><a href=#examples>Examples</a></li><li><a href=#practice-problems>Practice Problems</a></li></ul></li></ul></li></ul></nav></div></aside></main></body></html>

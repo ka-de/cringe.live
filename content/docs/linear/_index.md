@@ -5,7 +5,7 @@ bookCollapseSection: true
 title: "Linear Algebra for Furries"
 ---
 
-<!--markdownlint-disable MD033 MD025 -->
+<!--markdownlint-disable MD033 MD029 MD025 -->
 
 # Linear Algebra for Furries
 
@@ -321,7 +321,7 @@ import numpy as np
 A = np.array([[1, 2], [3, 4]])
 ```
 
-If we have two matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} of the same size representing linear transformations, their sum {{< katex >}}A + B{{< /katex >}} also represents a linear transformation. The sum transformation {{< katex >}}(A + B){{< /katex >}} applied to any vector {{< katex >}}\vec{v}{{< /katex >}} is equal to {{< katex >}}A(v) + B(v){{< /katex >}}. This property is known as linear separability.
+If we have two matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} of the same size representing linear transformations, their sum {{< katex >}}A + B{{< /katex >}} also represents a linear transformation. The sum transformation {{< katex >}}(A + B){{< /katex >}} applied to any vector {{< katex >}}\vec{v}{{< /katex >}} is equal to {{< katex >}}A(\vec{v}) + B(\vec{v}){{< /katex >}}. This property is known as linear separability.
 
 {{< katex display=true >}}
 (A + B)(\vec{v}) = A(\vec{v}) + B(\vec{v})
@@ -392,15 +392,15 @@ The transpose of a matrix is a new matrix whose rows are the columns of the orig
 
 The cross product, also known as the vector product, is a binary operation on two vectors in three-dimensional space. It's denoted by the symbol {{< katex >}}\times{{< /katex >}} and results in a vector that is perpendicular (or orthogonal) to the plane containing the two original vectors.
 
-If you have two vectors {{< katex >}}a = [a1, a2, a3]{{< /katex >}} and {{< katex >}}b = [b1, b2, b3]{{< /katex >}}, their cross product, denoted as {{< katex >}}a \times b{{< /katex >}} is defined as:
+If you have two vectors {{< katex >}}\vec{a} = [a1, a2, a3]{{< /katex >}} and {{< katex >}}\vec{b} = [b1, b2, b3]{{< /katex >}}, their cross product, denoted as {{< katex >}}\vec{a} \times \vec{b}{{< /katex >}} is defined as:
 
-{{< katex display=true >}}\mathbf{a} \times \mathbf{b} = \begin{bmatrix} a2b3 - a3b2 \\ a3b1 - a1b3 \\ a1b2 - a2b1 \end{bmatrix}{{< /katex >}}
+{{< katex display=true >}}\mathbf{\vec{a}} \times \mathbf{\vec{b}} = \begin{bmatrix} a2b3 - a3b2 \\ a3b1 - a1b3 \\ a1b2 - a2b1 \end{bmatrix}{{< /katex >}}
 
 The cross product is only defined in three dimensions. In higher dimensions, one typically uses the more general concept of the exterior product. The cross product is used in various fields such as physics (torque, angular momentum), computer graphics (finding normals to surfaces), and engineering (moment of forces).
 
 ### Geometric Interpretation
 
-Geometrically, the magnitude (or length) of the cross product vector equals the area of the parallelogram formed by the two original vectors. The direction of the cross product vector is given by the right-hand rule: if you point your open right hand in the direction of {{< katex >}}a{{< /katex >}} and then curl your fingers towards {{< katex >}}b{{< /katex >}}, your thumb points in the direction of {{< katex >}}a \times b{{< /katex >}}.
+Geometrically, the magnitude (or length) of the cross product vector equals the area of the parallelogram formed by the two original vectors. The direction of the cross product vector is given by the right-hand rule: if you point your open right hand in the direction of {{< katex >}}\vec{a}{{< /katex >}} and then curl your fingers towards {{< katex >}}\vec{b}{{< /katex >}}, your thumb points in the direction of {{< katex >}}\vec{a} \times \vec{b}{{< /katex >}}.
 
 ### Properties
 
@@ -408,23 +408,23 @@ The cross product has several important properties, including:
 
 #### Anticommutativity
 
-The property of anticommutativity means that the order in which the vectors are crossed matters. If you have two vectors {{< katex >}}a{{< /katex >}} and {{< katex >}}b{{< /katex >}}, the cross product {{< katex >}}a \times b{{< /katex >}} is the negative of {{< katex >}}b \times a{{< /katex >}}. In other words:
+The property of anticommutativity means that the order in which the vectors are crossed matters. If you have two vectors {{< katex >}}\vec{a}{{< /katex >}} and {{< katex >}}\vec{b}{{< /katex >}}, the cross product {{< katex >}}\vec{a} \times \vec{b}{{< /katex >}} is the negative of {{< katex >}}\vec{b} \times \vec{a}{{< /katex >}}. In other words:
 
-{{< katex display=true >}}\mathbf{a} \times \mathbf{b} = -(\mathbf{b} \times \mathbf{a}){{< /katex >}}
+{{< katex display=true >}}\mathbf{\vec{a}} \times \mathbf{\vec{b}} = -(\mathbf{\vec{b}} \times \mathbf{\vec{a}}){{< /katex >}}
 
-This is different from the dot product, which is commutative. (i.e., {{< katex >}}a \cdot b = b \cdot a{{< /katex >}})
+This is different from the dot product, which is commutative. (i.e., {{< katex >}}\vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a}{{< /katex >}})
 
 #### Distributivity over addition
 
-The distributive property of the cross product states that the cross product distributes over vector addition. That is, if you have three vectors {{< katex >}}a{{< /katex >}}, {{< katex >}}b{{< /katex >}} and {{< katex >}}c{{< /katex >}}, then the cross product of {{< katex >}}a{{< /katex >}} with the sum of {{< katex >}}b{{< /katex >}} and {{< katex >}}c{{< /katex >}} is equal to the sum of the cross product of {{< katex >}}a{{< /katex >}} and {{< katex >}}b{{< /katex >}} and the cross product of {{< katex >}}a{{< /katex >}} and {{< katex >}}c{{< /katex >}}. Mathematically this is expressed as:
+The distributive property of the cross product states that the cross product distributes over vector addition. That is, if you have three vectors {{< katex >}}\vec{a}{{< /katex >}}, {{< katex >}}\vec{b}{{< /katex >}} and {{< katex >}}\vec{c}{{< /katex >}}, then the cross product of {{< katex >}}\vec{a}{{< /katex >}} with the sum of {{< katex >}}\vec{b}{{< /katex >}} and {{< katex >}}\vec{c}{{< /katex >}} is equal to the sum of the cross product of {{< katex >}}\vec{a}{{< /katex >}} and {{< katex >}}\vec{b}{{< /katex >}} and the cross product of {{< katex >}}\vec{a}{{< /katex >}} and {{< katex >}}\vec{c}{{< /katex >}}. Mathematically this is expressed as:
 
-{{< katex display=true >}}\mathbf{a} \times (\mathbf{b} + \mathbf{c}) = \mathbf{a} \times \mathbf{b} + \mathbf{a} \times \mathbf{c}{{< /katex >}}
+{{< katex display=true >}}\mathbf{\vec{a}} \times (\mathbf{\vec{b}} + \mathbf{\vec{c}}) = \mathbf{\vec{a}} \times \mathbf{\vec{b}} + \mathbf{\vec{a}} \times \mathbf{\vec{c}}{{< /katex >}}
 
 #### Scalar multiplication
 
 The property of scalar multiplication states that the cross product is compatible with scalar multiplication. If you multiply a vector {{< katex >}}\vec{a}{{< /katex >}} by a scalar {{< katex >}}k{{< /katex >}} and then take the cross product of this with a vector {{< katex >}}\vec{b}{{< /katex >}}, it's the same as if you took the cross product of {{< katex >}}\vec{a}{{< /katex >}} and {{< katex >}}\vec{b}{{< /katex >}} first and then multiplied the result by {{< katex >}}k{{< /katex >}}. Similarly, it's also the same as if you multiplied {{< katex >}}\vec{b}{{< /katex >}} by {{< katex >}}k{{< /katex >}} before taking the cross product. This can be written as:
 
-{{< katex display=true >}}(k\mathbf{a}) \times \mathbf{b} = k(\mathbf{a} \times \mathbf{b}) = \mathbf{a} \times (k\mathbf{b}){{< /katex >}}
+{{< katex display=true >}}(k\mathbf{\vec{a}}) \times \mathbf{\vec{b}} = k(\mathbf{\vec{a}} \times \mathbf{\vec{b}}) = \mathbf{\vec{a}} \times (k\mathbf{\vec{b}}){{< /katex >}}
 
 Where {{< katex >}}k{{< /katex >}} is a scalar.
 
@@ -434,10 +434,10 @@ While the cross product is a useful operation, it's important to understand when
 
 ### Examples
 
-Let's calculate the cross product of two simple vectors, {{< katex >}}\mathbf{a} = [1, 0, 0]{{< /katex >}} and {{< katex >}}\mathbf{b} = [0, 1, 0]{{< /katex >}}:
+Let's calculate the cross product of two simple vectors, {{< katex >}}\mathbf{\vec{a}} = [1, 0, 0]{{< /katex >}} and {{< katex >}}\mathbf{\vec{b}} = [0, 1, 0]{{< /katex >}}:
 
 {{< katex display=true >}}
-\mathbf{a} \times \mathbf{b} = \begin{bmatrix}
+\mathbf{\vec{a}} \times \mathbf{\vec{b}} = \begin{bmatrix}
 0 \times 0 - 0 \times 1 \\
 0 \times 0 - 0 \times 0 \\
 1 \times 1 - 0 \times 0
@@ -452,10 +452,127 @@ So, the cross product of {{< katex >}}[1, 0, 0]{{< /katex >}} and {{< katex >}}[
 
 ### Practice Problems
 
-1. Calculate the cross product of {{< katex >}}\mathbf{a} = [2, 1, -3]{{< /katex >}} and {{< katex >}}\mathbf{b} = [4, -2, 1]{{< /katex >}}.
+1. Calculate the cross product of {{< katex >}}\mathbf{\vec{a}} = [2, 1, -3]{{< /katex >}} and {{< katex >}}\mathbf{\vec{b}} = [4, -2, 1]{{< /katex >}}.
 
-2. Find the cross product of {{< katex >}}\mathbf{u} = [1, 2, 3]{{< /katex >}} and {{< katex >}}\mathbf{v} = [4, 5, 6]{{< /katex >}}.
+<details>
+  <summary>Click to reveal solution</summary>
 
-3. If the position vector of a force {{< katex >}}\mathbf{F} = [10, 20, 0]{{< /katex >}} is {{< katex >}}\mathbf{r} = [2, 1, 3]{{< /katex >}}, calculate the torque about the origin using the cross product.
+The cross product of two vectors {{< katex >}}\vec{a}{{< /katex >}} and {{< katex >}}\vec{b}{{< /katex >}} can be calculated using the formula:
+
+{{< katex display=true >}}
+\mathbf{\vec{a}} \times \mathbf{\vec{b}} = \begin{bmatrix} a_2b_3 - a_3b_2 \\ a_3b_1 - a_1b_3 \\ a_1b_2 - a_2b_1 \end{bmatrix}
+{{< /katex >}}
+
+```python
+"""
+This script calculates the cross product of two 3-dimensional vectors.
+The vectors are defined as numpy arrays 'a' and 'b'.
+The cross product is calculated using numpy's cross function.
+
+Parameters:
+a : numpy array
+    The first vector, defined as a numpy array of three elements.
+b : numpy array
+    The second vector, defined as a numpy array of three elements.
+
+Returns:
+cross_product : numpy array
+    The cross product of vectors 'a' and 'b'.
+    This is a vector that is perpendicular to the plane containing 'a' and 'b'
+"""
+import numpy as np
+
+# Define the vectors
+a = np.array([2, 1, -3])
+b = np.array([4, -2, 1])
+
+# Calculate the cross product
+cross_product = np.cross(a, b)
+
+print("The cross product of a and b is: ", cross_product)
+```
+
+With PyTorch:
+
+```python
+"""
+This script calculates the cross product of two 3D vectors using PyTorch.
+
+The cross product of two vectors a and b is a vector that is perpendicular
+to both and therefore normal to the plane containing them.
+
+Parameters:
+a : torch.Tensor
+    The first input vector. It should be a 1D tensor with 3 elements.
+b : torch.Tensor
+    The second input vector. It should be a 1D tensor with 3 elements.
+
+Returns:
+    cross_product (torch.Tensor): The cross product of vectors a and b.
+    It is a 1D tensor with 3 elements.
+"""
+import torch
+
+# Define the vectors
+a = torch.tensor([2, 1, -3])
+b = torch.tensor([4, -2, 1])
+
+# Calculate the cross product
+cross_product = torch.linalg.cross(a, b)
+
+print(cross_product)
+```
+
+</details>
+
+2. Find the cross product of {{< katex >}}\mathbf{\vec{u}} = [1, 2, 3]{{< /katex >}} and {{< katex >}}\mathbf{\vec{v}} = [4, 5, 6]{{< /katex >}}.
+
+<details>
+  <summary>Click to reveal solution</summary>
+
+```python
+import numpy as np
+
+# define the vectors
+u = np.array([1, 2, 3])
+v = np.array([4, 5, 6])
+
+# compute the cross product
+cross_product_numpy = np.cross(u, v)
+
+print("Cross product: ", cross_product_numpy)
+```
+
+```python
+"""
+This script computes the cross product of two 3-dimensional vectors using
+PyTorch. The vectors are defined as 1-D PyTorch tensors. The `torch.cross()`
+function is used to compute the cross product.
+
+Parameters:
+u_torch : torch.Tensor
+    A 1-D tensor representing the first vector.
+v_torch : torch.Tensor)
+    A 1-D tensor representing the second vector.
+
+Returns:
+    cross_product_pytorch (torch.Tensor): A 1-D tensor representing the cross
+    product of `u_torch` and `v_torch`.
+"""
+import torch
+
+# define the vectors
+u_torch = torch.tensor([1, 2, 3])
+v_torch = torch.tensor([4, 5, 6])
+
+# compute the cross product
+cross_product_pytorch = torch.cross(u_torch, v_torch)
+
+print("Cross product: ", cross_product_pytorch)
+```
+
+</details>
+
+3. If the position vector of a force {{< katex >}}\mathbf{\vec{F}} = [10, 20, 0]{{< /katex >}} is {{< katex >}}\mathbf{\vec{r}} = [2, 1, 3]{{< /katex >}}, calculate the torque about the origin using the cross product.
 
 ---
