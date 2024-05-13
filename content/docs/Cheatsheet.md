@@ -13,7 +13,7 @@ title: "Cheatsheet"
 
 ## HTML Snippets
 
-### Markdown Links
+### Markdown: Display Small Image with Link to Large Image
 
 ```markdown
 [![An AI generated image.](small.png)](large.png)
