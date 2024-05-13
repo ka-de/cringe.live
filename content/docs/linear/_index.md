@@ -40,6 +40,11 @@ For example, the vector {{< katex >}}\vec{v} = [2, 3]{{< /katex >}} can be visua
 ![My First Vector](/images/linear/hello-vectors.png)
 
 ```python
+"""
+This script creates a 2D vector plot using matplotlib.
+It defines a vector 'v' with coordinates (2,3) and plots it on a 2D grid.
+The origin of the vector is at (0,0).
+"""
 import matplotlib.pyplot as plt
 
 # Define the origin
@@ -75,6 +80,11 @@ Because we don't care about the origin of a vector to compare them, only their m
 ![Parallel vectors](/images/linear/parallel-vectors.png)
 
 ```python
+"""
+This script plots two vectors, v and w, using matplotlib. The vector v originates
+from the origin (0,0), while the vector w starts from a specified point (1,0).
+Both vectors are defined as [2, 3], making them parallel to each other.
+"""
 import matplotlib.pyplot as plt
 
 # Define the origin for v and starting point for w
@@ -112,6 +122,12 @@ If you have two vectors, you can add them together to get a new vector. This is 
 ![A plot of vector addition](/images/linear/vector-sum.png)
 
 ```python
+"""
+This script visualizes the addition of two vectors using matplotlib. 
+
+It first defines two 2D vectors 'a' and 'b', then calculates their sum 'c'. 
+The vectors are then plotted on a 2D grid using matplotlib's quiver function. 
+"""
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -151,6 +167,13 @@ You can multiply a vector by a scalar (regular number) to get a new vector. This
 ![Plot of a scalar multiplication](/images/linear/scalar-multiplication.png)
 
 ```python
+"""
+This script demonstrates the scalar multiplication of a vector.
+It defines a vector 'b' and a scalar 'c', calculates the scalar multiplication
+of the vector, and then plots the original vector and the result of the scalar
+multiplication on a 2D grid. The vectors are represented as arrows originating
+from the origin (0,0).
+"""
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -189,6 +212,8 @@ The dot product of two vectors is a scalar quantity that is the sum of the produ
 ![A geometric interpretation of the dot product](/images/linear/dot-product-plot.png)
 
 This is a geometric interpretation of the dot product, and it’s particularly useful when thinking about the dot product as a measure of the similarity between two vectors: if {{< katex >}}\vec{f}{{< /katex >}} is very similar to {{< katex >}}\vec{e}{{< /katex >}} (i.e., it points in the same direction), then its projection onto {{< katex >}}\vec{e}{{< /katex >}} will be long, and so the dot product will be large. Conversely, if {{< katex >}}\vec{f}{{< /katex >}} is dissimilar to {{< katex >}}\vec{e}{{< /katex >}} (i.e., it points in a very different direction), then its projection onto {{< katex >}}\vec{e}{{< /katex >}} will be short, and so the dot product will be small.
+
+The magnitude of the cross product vector equals the area of the parallelogram formed by the two original vectors.
 
 ```python
 """
@@ -273,13 +298,13 @@ print("The magnitude of the vector g is:", calculate_magnitude(g))
 
 A matrix is a rectangular array of numbers arranged in rows and columns. Matrices are used to represent and manipulate linear transformations, which are functions that map vectors to vectors while preserving vector addition and scalar multiplication. Each number in the matrix is called an element or entry. The position of an element is defined by its row number and column number.
 
-A `2x2` matrix can be represented as follows:
+A {{< katex >}}2 \times 2{{< /katex >}} matrix can be represented as follows:
 
 {{< katex display=true >}}A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}{{< /katex >}}
 
 #### Matrix Addition and Subtraction
 
-Matrices can be added or subtracted element by element if they are of the same size. For example if we have two `2x2` matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} then the sum {{< katex >}}A+B{{< /katex >}} is a new `2x2` matrix where each element is the sum of the corresponding elements in {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}}.
+Matrices can be added or subtracted element by element if they are of the same size. For example if we have two {{< katex >}}2 \times 2{{< /katex >}} matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} then the sum {{< katex >}}A+B{{< /katex >}} is a new {{< katex >}}2 \times 2{{< /katex >}} matrix where each element is the sum of the corresponding elements in {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}}.
 
 It can be represented as:
 
@@ -287,10 +312,19 @@ It can be represented as:
 A + B = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} + \begin{bmatrix} a2 & b2 \\ c2 & d2 \end{bmatrix} = \begin{bmatrix} a1+a2 & b1+b2 \\ c1+c2 & d1+d2 \end{bmatrix}
 {{< /katex >}}
 
+This is how you can create a {{< katex >}}2 \times 2{{< /katex >}} matrix with numpy:
+
+```python
+import numpy as np
+
+# Create a 2x2 matrix
+A = np.array([[1, 2], [3, 4]])
+```
+
 If we have two matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} of the same size representing linear transformations, their sum {{< katex >}}A + B{{< /katex >}} also represents a linear transformation. The sum transformation {{< katex >}}(A + B){{< /katex >}} applied to any vector {{< katex >}}\vec{v}{{< /katex >}} is equal to {{< katex >}}A(v) + B(v){{< /katex >}}. This property is known as linear separability.
 
 {{< katex display=true >}}
-(A + B)(v) = A(v) + B(v)
+(A + B)(\vec{v}) = A(\vec{v}) + B(\vec{v})
 {{< /katex >}}
 
 #### Scalar Multiplication of a Matrix
@@ -311,9 +345,24 @@ For two matrices to be multiplied, the number of columns in the first matrix mus
 
 #### Identity Matrix
 
-This is a special type of square matrix where all the elements of the principal diagonal are ones and all other elements are zeros. The identity matrix play a similar role in matrix algebra as the number 1 in regular algebra.
+This is a special type of square matrix where all the elements of the principal diagonal (from the upper left to the bottom right) are ones and all other elements are zeros. The identity matrix play a similar role in matrix algebra as the number 1 in regular algebra. Here are some example ones:
 
-{{< katex display=true >}}I = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}{{< /katex >}}
+{{< katex display=true >}}
+I_2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+\quad
+I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+\quad
+I_4 = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}
+{{< /katex >}}
+
+The identity matrix plays a similar role in matrix operations as the number 1 does in real number operations. When you multiply any square matrix by the identity matrix of the same order, you get the original matrix back, regardless of the order of multiplication. This is expressed as:
+
+{{< katex display=true >}}
+A \cdot I = I \cdot A = A
+{{< /katex >}}
+
+- Where {{< katex >}}A{{< /katex >}} is any square matrix,
+- {{< katex >}}I{{< /katex >}} is the identity matrix of the same order as {{< katex >}}A{{< /katex >}}.
 
 #### Determinant
 
