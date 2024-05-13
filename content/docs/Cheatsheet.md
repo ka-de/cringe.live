@@ -16,7 +16,7 @@ title: "Cheatsheet"
 ### Markdown Links
 
 ```markdown
-[![An AI generated image.]()]()
+[![An AI generated image.](small.png)](large.png)
 ```
 
 ### Collapsible Section

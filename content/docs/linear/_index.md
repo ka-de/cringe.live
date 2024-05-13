@@ -19,35 +19,176 @@ Linear Algebra is a branch of mathematics that deals with vectors, vector spaces
 
 Vectors are mathematical objects that have both magnitude (size) and direction. They can represent physical quantities like force, velocity or displacement. For example, if you're a furry running in a park, your velocity is a vector - it has a speed (magnitude) and a direction you're running in.
 
-![A furry running in a park](/images/furry-running.jpg)
+![A furry running in a park](/images/linear/furry-running.jpg)
 
 *This furry has a velocity.*
 
-Even this [DVD logo](/dvd.html) has a vector, not just furries, just press the `v` key and an arrow will display the vector of the logo. Vectors are everywhere, even in your pants! Points are usually denoted with capital letters, like {{< katex >}}A{{< /katex >}}. {{< katex >}}\overrightarrow{AB}{{< /katex >}}
+Even this [DVD logo](/dvd.html) has a vector, not just furries, just press the `v` key and an arrow will display the vector of the logo. Vectors are everywhere, even in your pants! Points are usually denoted with capital letters, like {{< katex >}}A{{< /katex >}}. A directed line segment from {{< katex >}}A{{< /katex >}} to {{< katex >}}B{{< /katex >}} is denoted by {{< katex >}}\overrightarrow{AB}{{< /katex >}}.
 
 {{< katex display=true >}}
-\vec{v} = \overrightarrow{AB} = \overrightarrow{CD}
+\vec{v} = \overrightarrow{AB}
 {{< /katex >}}
 
-Vectors are often represented as an array of numbers, where each number corresponds to a coordinate in space. In a 2D plane, a vector {{< katex >}}v{{< /katex >}} can be represented as an ordered pair: {{< katex >}}v = [v_1, v_2]{{< /katex >}}. Here {{< katex >}}v_1{{< /katex >}} and {{< katex >}}v_2{{< /katex >}} are the components of {{< katex >}}v{{< /katex >}} along the x and y axes respectively.
+Vectors are often represented as an array of numbers, where each number corresponds to a coordinate in space. In a 2D plane, a vector {{< katex >}}\vec{v}{{< /katex >}} can be represented as an ordered pair: {{< katex >}}\vec{v} = [v_1, v_2]{{< /katex >}}. Here {{< katex >}}v_1{{< /katex >}} and {{< katex >}}v_2{{< /katex >}} are the components of {{< katex >}}\vec{v}{{< /katex >}} along the x and y axes respectively. You can also represent it like:
 
-For example, the vector {{< katex >}}v = [2, 3]{{< /katex >}} can be visualized as an arrow starting at the origin {{< katex >}}(0, 0){{< /katex >}} and pointing 2 units in the positive x-direction and 3 units in the positive y-direction.
+{{< katex display=true >}}
+\vec{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}
+{{< /katex >}}
+
+For example, the vector {{< katex >}}\vec{v} = [2, 3]{{< /katex >}} can be visualized as an arrow starting at the origin {{< katex >}}(0, 0){{< /katex >}} and pointing 2 units in the positive x-direction and 3 units in the positive y-direction.
+
+![My First Vector](/images/linear/hello-vectors.png)
+
+```python
+import matplotlib.pyplot as plt
+
+# Define the origin
+origin = [0], [0]
+
+# Define the vector v
+v = [2, 3]
+
+# Create a new figure
+plt.figure()
+
+# Plot the vector v
+plt.quiver(*origin, *v, color='r', angles='xy', scale_units='xy', scale=1)
+
+# Set the x-limits and y-limits of the plot
+plt.xlim(-1, 3)
+plt.ylim(-1, 4)
+
+# Add a grid
+plt.grid()
+
+# Show the plot
+plt.show()
+```
+
+Because we don't care about the origin of a vector to compare them, only their magnitudes, two parallel vectors that have the same length makes them equal.
+
+{{< katex display=true >}}
+\vec{v} = \overrightarrow{AB}, \quad \vec{w} = \overrightarrow{CD} \\
+\vec{v} = \vec{w}
+{{< /katex >}}
+
+![Parallel vectors](/images/linear/parallel-vectors.png)
+
+```python
+import matplotlib.pyplot as plt
+
+# Define the origin for v and starting point for w
+origin_v = [0], [0]
+origin_w = [1], [0]  # Change this to the desired starting point for w
+
+# Define the vectors v and w
+v = [2, 3]
+w = [2, 3]  # w is parallel to v
+
+# Create a new figure
+plt.figure(dpi=200)
+
+# Plot the vector v
+plt.quiver(*origin_v, *v, color='r', angles='xy', scale_units='xy', scale=1)
+
+# Plot the vector w
+plt.quiver(*origin_w, *w, color='b', angles='xy', scale_units='xy', scale=1)
+
+# Set the x-limits and y-limits of the plot
+plt.xlim(-1, 4)
+plt.ylim(-1, 5)
+
+# Add a grid
+plt.grid()
+
+# Show the plot
+plt.show()
+```
 
 #### Vector Addition
 
-If you have two vectors, you can add them together to get a new vector. This is done by adding the corresponding components of the vectors. For example if {{< katex >}}a = [2, 3]{{< /katex >}} and {{< katex >}}b = [1, 4]{{< /katex >}} then {{< katex >}}a + b = [2+1, 3+4] = [3, 7]{{< /katex >}}.
+If you have two vectors, you can add them together to get a new vector. This is done by adding the corresponding components of the vectors. For example if {{< katex >}}\vec{a} = [2, 3]{{< /katex >}} and {{< katex >}}\vec{b} = [1, 4]{{< /katex >}} then {{< katex >}}\vec{a} + \vec{b} = [2+1, 3+4] = [3, 7]{{< /katex >}}.
+
+![A plot of vector addition](/images/linear/vector-sum.png)
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define the vectors
+a = np.array([2, 3])
+b = np.array([1, 4])
+
+# Calculate the sum of the vectors
+c = a + b
+
+# Create a new figure
+plt.figure(dpi=200)
+
+# Plot the vectors a, b, and c
+plt.quiver(0, 0, a[0], a[1], angles='xy', scale_units='xy', scale=1, color='r', label='a')
+plt.quiver(0, 0, b[0], b[1], angles='xy', scale_units='xy', scale=1, color='b', label='b')
+plt.quiver(0, 0, c[0], c[1], angles='xy', scale_units='xy', scale=1, color='g', label='a + b')
+
+# Set the x-limits and y-limits of the plot
+plt.xlim(-1, 4)
+plt.ylim(-1, 8)
+
+# Add a grid
+plt.grid()
+
+# Add a legend
+plt.legend(loc="lower right")
+
+# Show the plot
+plt.show()
+```
 
 #### Scalar Multiplication
 
-You can multiply a vector by a scalar (regular number) to get a new vector. This is done by multiplying each component of the vector by the scalar. For example if {{< katex >}}c = 2{{< /katex >}} and {{< katex >}}b = [1,4 ]{{< /katex >}} then {{< katex >}}c * b = [2*3, 2 *4]  = [6, 8]{{< /katex >}}.
+You can multiply a vector by a scalar (regular number) to get a new vector. This is done by multiplying each component of the vector by the scalar. For example if {{< katex >}}c = 2{{< /katex >}} and {{< katex >}}\vec{b} = [1,4]{{< /katex >}} then {{< katex >}}c * \vec{b} = [2*3, 2 *4] = [6, 8]{{< /katex >}}.
+
+![Plot of a scalar multiplication](/images/linear/scalar-multiplication.png)
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Define the vector and scalar
+b = np.array([1, 4])
+c = 2
+
+# Calculate the scalar multiplication of the vector
+d = c * b
+
+# Create a new figure
+plt.figure(dpi=200)
+
+# Plot the vectors b and d
+plt.quiver(0, 0, b[0], b[1], angles='xy', scale_units='xy', scale=1, color='b', label='b')
+plt.quiver(0, 0, d[0], d[1], angles='xy', scale_units='xy', scale=1, color='g', label='c * b')
+
+# Set the x-limits and y-limits of the plot
+plt.xlim(-1, 10)
+plt.ylim(-1, 10)
+
+# Add a grid
+plt.grid()
+
+# Add a legend
+plt.legend()
+
+# Show the plot
+plt.show()
+```
 
 #### Dot Product
 
-The dot product of two vectors is a scalar quantity that is the sum of the products of the corresponding components of the vectors. For example if {{< katex >}}e = [2, 3]{{< /katex >}} and {{< katex >}}f = [4, 5]{{< /katex >}}, then {{< katex >}}e \cdot f = 2*4 + 3*5 = 23{{< /katex >}}
+The dot product of two vectors is a scalar quantity that is the sum of the products of the corresponding components of the vectors. For example if {{< katex >}}\vec{e} = [2, 3]{{< /katex >}} and {{< katex >}}\vec{f} = [4, 5]{{< /katex >}}, then {{< katex >}}\vec{e} \cdot \vec{f} = 2*4 + 3*5 = 23{{< /katex >}}
 
 #### Magnitude (or Length)
 
-The magnitude of a vector {{< katex >}}g = [a, b]{{< /katex >}} is given by the square root of the sum of the squares of its components. This is denoted as {{< katex >}}||g||{{< /katex >}} and calculated as {{< katex >}}||g|| = \sqrt{a^2 + b^2}{{< /katex >}}
+The magnitude of a vector {{< katex >}}\vec{g} = [a, b]{{< /katex >}} is given by the square root of the sum of the squares of its components. This is denoted as {{< katex >}}||\vec{g}||{{< /katex >}} and calculated as {{< katex >}}||\vec{g}|| = \sqrt{a^2 + b^2}{{< /katex >}}
 
 ### Matrices
 
@@ -69,7 +210,7 @@ It can be represented as:
 A + B = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} + \begin{bmatrix} a2 & b2 \\ c2 & d2 \end{bmatrix} = \begin{bmatrix} a1+a2 & b1+b2 \\ c1+c2 & d1+d2 \end{bmatrix}
 {{< /katex >}}
 
-If we have two matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} of the same size representing linear transformations, their sum {{< katex >}}A + B{{< /katex >}} also represents a linear transformation. The sum transformation {{< katex >}}(A + B){{< /katex >}} applied to any vector {{< katex >}}v{{< /katex >}} is equal to {{< katex >}}A(v) + B(v){{< /katex >}}. This property is known as linear separability.
+If we have two matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} of the same size representing linear transformations, their sum {{< katex >}}A + B{{< /katex >}} also represents a linear transformation. The sum transformation {{< katex >}}(A + B){{< /katex >}} applied to any vector {{< katex >}}\vec{v}{{< /katex >}} is equal to {{< katex >}}A(v) + B(v){{< /katex >}}. This property is known as linear separability.
 
 {{< katex display=true >}}
 (A + B)(v) = A(v) + B(v)
@@ -155,7 +296,7 @@ The distributive property of the cross product states that the cross product dis
 
 #### Scalar multiplication
 
-The property of scalar multiplication states that the cross product is compatible with scalar multiplication. If you multiply a vector {{< katex >}}a{{< /katex >}} by a scalar {{< katex >}}k{{< /katex >}} and then take the cross product of this with a vector {{< katex >}}b{{< /katex >}}, it's the same as if you took the cross product of {{< katex >}}a{{< /katex >}} and {{< katex >}}b{{< /katex >}} first and then multiplied the result by {{< katex >}}k{{< /katex >}}. Similarly, it's also the same as if you multiplied {{< katex >}}b{{< /katex >}} by {{< katex >}}k{{< /katex >}} before taking the cross product. This can be written as:
+The property of scalar multiplication states that the cross product is compatible with scalar multiplication. If you multiply a vector {{< katex >}}\vec{a}{{< /katex >}} by a scalar {{< katex >}}k{{< /katex >}} and then take the cross product of this with a vector {{< katex >}}\vec{b}{{< /katex >}}, it's the same as if you took the cross product of {{< katex >}}\vec{a}{{< /katex >}} and {{< katex >}}\vec{b}{{< /katex >}} first and then multiplied the result by {{< katex >}}k{{< /katex >}}. Similarly, it's also the same as if you multiplied {{< katex >}}\vec{b}{{< /katex >}} by {{< katex >}}k{{< /katex >}} before taking the cross product. This can be written as:
 
 {{< katex display=true >}}(k\mathbf{a}) \times \mathbf{b} = k(\mathbf{a} \times \mathbf{b}) = \mathbf{a} \times (k\mathbf{b}){{< /katex >}}
 
@@ -192,9 +333,3 @@ So, the cross product of {{< katex >}}[1, 0, 0]{{< /katex >}} and {{< katex >}}[
 3. If the position vector of a force {{< katex >}}\mathbf{F} = [10, 20, 0]{{< /katex >}} is {{< katex >}}\mathbf{r} = [2, 1, 3]{{< /katex >}}, calculate the torque about the origin using the cross product.
 
 ---
-
-## Kolmogorov-Arnold Networks
-
----
-
-Kolmogorov-Arnold Networks (KANs) are a type of neural network inspired by the Kolmogorov-Arnold representation theorem. They are proposed as promising alternatives to Multi-Layer Perceptrons (MLPs)

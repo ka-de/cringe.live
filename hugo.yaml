@@ -15,6 +15,7 @@ markup:
       unsafe: true
   tableOfContents:
     startLevel: 1
+    endLevel: 6
 params:
   BookTheme: 'auto'
   BookToC: true
