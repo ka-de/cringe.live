@@ -269,3 +269,62 @@ If you want to arrange the widgets in a grid, you can use a `QGridLayout`. If yo
 If you want to create a custom layout, you can subclass `QLayout` and override its methods. If you want to add spacing between the widgets, you can use the `addSpacing` method of the `QVBoxLayout`.
 
 For example, `layout.addSpacing(10)` adds a 10-pixel spacing. You can replace 10 with the number of pixels you want. Please note that the spacing is measured in pixels, so a spacing of 10 corresponds to a 10-pixel spacing. This is roughly equivalent to a 0.1-inch spacing on a display with a pixel density of 96 DPI (dots per inch), which is a common pixel density for desktop displays. However, the actual size might vary depending on the pixel density of your display.
+
+## QML
+
+QML, which stands for Qt Modeling Language, is a user interface markup language that is part of the Qt framework. It’s a declarative language, similar to CSS and JSON, designed for creating user interface-centric applications. QML allows designers and developers to describe their user interfaces in a JSON-like format with support for dynamic layouts, animations, and signal handling.
+
+---
+
+First create an `omg.qml` file.
+
+```python
+import QtQuick
+import QtQuick.Controls
+
+ApplicationWindow {
+    visible: true
+    width: 640
+    height: 480
+    title: "Hello World"
+
+    Text {
+        id: helloText
+        text: "Hello, World!"
+        anchors.centerIn: parent
+        font.pixelSize: 24
+    }
+}
+```
+
+Next, create `qml.py` file.
+
+```python
+from PyQt6.QtCore import Qt, QUrl
+from PyQt6.QtGui import QGuiApplication
+from PyQt6.QtQml import QQmlApplicationEngine
+
+if __name__ == "__main__":
+    import sys
+
+    # Create an instance of the application
+    app = QGuiApplication(sys.argv)
+
+    # Create a QML engine
+    engine = QQmlApplicationEngine()
+
+    # Define the QML file path
+    qml_file_path = "./omg.qml"
+
+    # Load the QML file
+    engine.load(QUrl.fromLocalFile(qml_file_path))
+
+    # Check if the engine loaded the QML file successfully
+    if not engine.rootObjects():
+        sys.exit(-1)
+
+    # Execute the application
+    sys.exit(app.exec())
+```
+
+When you run this script, a basic Hello World application should load.

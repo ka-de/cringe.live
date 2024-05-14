@@ -1,4 +1,5 @@
 ---
+weight: 3
 title: The Frobenius Norm
 type: docs
 ---

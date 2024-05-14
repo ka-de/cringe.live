@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 4
 bookFlatSection: false
 title: "Singular Value Decomposition"
 ---
