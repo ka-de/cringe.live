@@ -171,6 +171,13 @@ print("Predicted Class: ", ps.max(dim=1)[1].item())
 ### The Whole Thing
 
 ```python
+"""
+This script is designed to train and evaluate a simple neural network on the MNIST dataset using PyTorch. 
+The MNIST dataset comprises 28x28 grayscale images of handwritten digits. 
+The script includes data preprocessing, model definition, training, and evaluation phases. 
+It also contains a function to display an image and the model's prediction for it.
+"""
+
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
@@ -242,9 +249,19 @@ with torch.no_grad():
 
 print("Accuracy of the network on test images: %d %%" % (100 * correct / total))
 
-
 def imshow(image, ax=None, title=None, normalize=True):
-    """Imshow for Tensor."""
+    """
+    Display a PyTorch Tensor as an image.
+
+    Parameters:
+    - image (Tensor): The image Tensor to be displayed.
+    - ax (matplotlib.axes.Axes, optional): The axes on which to plot the image. If None, a new figure and axes are created.
+    - title (str, optional): The title of the plot.
+    - normalize (bool, optional): Whether to normalize the image for display.
+
+    Returns:
+    - ax (matplotlib.axes.Axes): The axes with the image plotted.
+    """
     if ax is None:
         fig, ax = plt.subplots()
     image = image.numpy().transpose((1, 2, 0))
@@ -265,7 +282,6 @@ def imshow(image, ax=None, title=None, normalize=True):
     ax.set_yticklabels("")
 
     return ax
-
 
 # Test out your network!
 model.eval()

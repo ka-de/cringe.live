@@ -67,10 +67,10 @@ This inverse matrix represents a rotation in the opposite direction, effectively
 
 ## Preserving Vector Norms
 
-When an orthogonal matrix multiplies a vector, the length (or norm) of the vector is preserved. This is why orthogonal transformations are also called **isometries**. Mathematically, for any vector {{< katex >}}v{{< /katex >}}, we have:
+When an orthogonal matrix multiplies a vector, the length (or norm) of the vector is preserved. This is why orthogonal transformations are also called **isometries**. Mathematically, for any vector {{< katex >}}\vec{v}{{< /katex >}}, we have:
 
 {{< katex display=true >}}
-||Qv|| = ||v||
+||Q\vec{v}|| = ||\vec{v}||
 {{< /katex >}}
 
 ## Determinant of Orthogonal Matrices
@@ -85,13 +85,18 @@ The determinant of an orthogonal matrix is always either +1 or -1. This is a dir
 
 The eigenvalues of an orthogonal matrix are always of absolute value 1. They can be either real ({{< katex >}}\pm 1{{< /katex >}}) or complex numbers with a magnitude of 1. This reflects the fact that orthogonal matrices correspond to rotations and reflections, which do not change the magnitude of vectors. For an orthogonal matrix, the eigenvalues are values that satisfy the equation:
 
-{{< katex display=true >}} Qv =   \lambda v {{< /katex >}}
+{{< katex display=true >}} Q\vec{v} = \lambda \vec{v} {{< /katex >}}
 
-where {{< katex >}}v{{< /katex >}} is a non-zero vector (eigenvector), and {{< katex >}}\lambda{{< /katex >}} is a scalar (eigenvalue). Since orthogonal matrices represent rotations and reflections, their eigenvalues are of absolute value 1, which means they lie on the unit circle in the complex plane.
+where {{< katex >}}\vec{v}{{< /katex >}} is a non-zero vector (eigenvector), and {{< katex >}}\lambda{{< /katex >}} is a scalar (eigenvalue). Since orthogonal matrices represent rotations and reflections, their eigenvalues are of absolute value 1, which means they lie on the unit circle in the complex plane.
 
 Consider the orthogonal matrix representing a rotation by angle {{< katex >}}\theta{{< /katex >}}:
 
-{{< katex display=true >}} Q = \begin{bmatrix} \cos(\theta) & -\sin(\theta) \ \sin(\theta) & \cos(\theta) \end{bmatrix} {{< /katex >}}
+{{< katex display=true >}}
+Q = \begin{bmatrix}
+\cos(\theta) & -\sin(\theta) \\
+\sin(\theta) & \cos(\theta)
+\end{bmatrix}
+{{< /katex >}}
 
 The eigenvalues of this matrix are complex numbers {{< katex >}}e^{i\theta}{{< /katex >}} and {{< katex >}}e^{-i\theta}{{< /katex >}}, which correspond to rotations by {{< katex >}}\theta{{< /katex >}} and {{< katex >}}-\theta{{< /katex >}} respectively. The eigenvectors associated with these eigenvalues are also complex and represent the directions that are invariant under the rotation.
 
@@ -132,6 +137,8 @@ print("Q is orthogonal:", np.allclose(Q_T, Q_inv))
 
 ## Example #2
 
+This script generates and checks orthogonal matrices.
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -157,8 +164,12 @@ for i in range(1, 21):
 
     # Plot the matrix
     plt.figure(figsize=(6, 6))
-    plt.imshow(Q, cmap='gray')
+    plt.imshow(Q, cmap='viridis')
     plt.title(f"Orthogonal Matrix {i}")
     plt.colorbar()
     plt.show()
 ```
+
+1. The script first defines the `generate_orthogonal(n)` function which generates a random {{< katex >}}n \times n{{< /katex >}} orthogonal matrix. It first creates a random {{< katex >}}n \times n{{< /katex >}} matrix `H` using `np.random.randn(n, n)`. Then, it uses the QR decomposition function `np.linalg.qr(H)` to decompose this matrix into `Q` (an orthogonal matrix) and `R` (an upper triangular matrix). The function returns `Q`.
+2. Then it defines the `is_orthogonal(Q)` function which checks if a matrix `Q` is orthogonal. It does this by comparing the transpose of `Q` (denoted `Q.T`) with the inverse of `Q` (denoted `np.linalg.inv(Q)`). If `Q` is orthogonal, these two matrices will be close to each other (within a certain tolerance), so `np.allclose(Q.T, np.linalg.inv(Q))` will return `True`.
+3. The script then generates and checks 20 orthogonal matrices. For each matrix, it uses `generate_orthogonal(3)` to generate a {{< katex >}}3 \times 3{{< /katex >}} orthogonal matrix, checks if the matrix is orthogonal using `is_orthogonal(Q)`, and prints the result. It also plots the matrix using matplotlib.
