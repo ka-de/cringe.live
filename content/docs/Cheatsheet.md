@@ -40,7 +40,7 @@ import matplotlib.pyplot as plt
 mpl.style.use("latte")
 ```
 
-## Update PyTorch
+### Update PyTorch
 
 ```python
 # Uninstalls the specified Python packages (torch, torchaudio, torchvision,
@@ -56,7 +56,7 @@ mpl.style.use("latte")
 !pip3 install torch torchaudio torchvision torchtext torchdata
 ```
 
-## Display Plots Inline
+### Display Plots Inline
 
 ```python
 # This line is a magic command in IPython.
@@ -66,7 +66,7 @@ mpl.style.use("latte")
 %matplotlib inline
 ```
 
-## Mount Google Drive
+### Mount Google Drive
 
 ```python
 # These lines are used when you’re working in Google Colab and you want to
@@ -79,3 +79,40 @@ from google.colab import drive
 drive.mount('/content/drive')
 ```
 
+## VSCode Snippets
+
+### Keybindings
+
+#### KaTeX for Hugo
+
+```json
+{
+    "key": "ctrl+alt+k",
+    "command": "editor.action.insertSnippet",
+    "args": {
+        "snippet": "{{</* katex display=true >}}\\n\\$TM_SELECTED_TEXT\\n{{< /katex */>}}"
+    },
+    "when": "editorTextFocus && !editorReadonly"
+},
+{
+    "key": "ctrl+alt+l",
+    "command": "editor.action.insertSnippet",
+    "args": {
+        "snippet": "{{</* katex >}}\\$TM_SELECTED_TEXT{{< /katex */>}}"
+    },
+    "when": "editorTextFocus && !editorReadonly"
+},
+```
+
+#### KaTeX Surround With `\vec`
+
+```json
+{
+    "key": "ctrl+alt+v",
+    "command": "editor.action.insertSnippet",
+    "args": {
+        "snippet": "\\vec{$TM_SELECTED_TEXT}"
+    },
+    "when": "editorTextFocus && !editorReadonly"
+}
+```
