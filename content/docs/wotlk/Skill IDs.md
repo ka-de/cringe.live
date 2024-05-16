@@ -1,3 +1,11 @@
+---
+weight: 1
+bookFlatSection: false
+bookToC: false
+title: "Skill IDs"
+---
+
+<!--markdownlint-disable MD025 MD033 -->
 
 # Skill IDs
 
@@ -9,7 +17,7 @@
 | 0 | 0 | 165 | 0 | Leatherworking |
 | 0 | 0 | 755 | 0 | Jewelcrafting |
 | 0 | 0 | 773 | 0 | Inscription |
-| 0 | 0 | 182 | 0 | Herbalism |
+| 0 | 0 | 182 | 0 | Herbalism (Wrong? WTF?!) |
 | 0 | 0 | 356 | 0 | Fishing |
 | 0 | 0 | 202 | 0 | Engineering |
 | 0 | 0 | 333 | 0 | Enchanting |

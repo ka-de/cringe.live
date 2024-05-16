@@ -42,8 +42,6 @@ bookToC: false
   </div>
 </div>
 
-> It is the shape of things to come, the pattern of death!
-> 
 > (Awkward Silence)
 > 
 > You have entered the lair of a delinquent, born at precisely the right time.
@@ -52,4 +50,3 @@ bookToC: false
 
 <script src="js/quotes.js"></script>
 
-*Stay cringe!*
