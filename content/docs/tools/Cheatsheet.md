@@ -1,6 +1,5 @@
 ---
 weight: 20
-bookHidden: true
 bookFlatSection: false
 title: "Cheatsheet"
 ---
