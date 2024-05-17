@@ -151,11 +151,12 @@ In this example, we have two threads that are both incrementing a counter in the
 
 ---
 
-This code simulates a resource gathering game with multiple players. The game has three types of resources: wood, stone, and food. Each player tries to gather as many resources as possible until all resources are depleted.
+This code simulates a resource gathering game with multiple players. Each player tries to gather as many resources as possible until all resources are depleted.
 
-The `Player` struct represents a player in the game. Each player has an ID, a shared resource manager, and a counter for the resources they've gathered. The `gather_resource` method allows a player to gather a random amount of a randomly selected resource, if available. The `ResourceManager` struct represents the shared resource manager, which keeps track of the amount of each resource available. The `Resource` enum represents the different types of resources a player can gather.
-
-In the `main` function, a shared resource manager is created with initial amounts of each resource. Then, a number of players are created, each with their own thread. In each thread, the player continuously gathers resources until all resources are depleted. The game concludes by determining the player who has gathered the most resources. The ID of the winning player and the amount of resources they've gathered are then printed to the console. This code demonstrates the use of threads, mutexes, and shared state in Rust. It's a good example of a multi-threaded simulation where multiple entities are competing for a shared resource.
+- The `ResourceManager` struct represents a resource manager that manages three types of resources: wood, stone, and food. The `gather_resource` method allows a player to gather a random amount of a specific resource if it’s available.
+- The `Resource` enum represents the different types of resources that can be gathered: wood, stone, and food.
+The `Player` struct represents a player in the game. Each player has an ID, a reference to the resource manager, and a count of the resources they’ve gathered. The `gather_resource` method allows a player to gather a specific resource, update their gathered resources, and print out the amount gathered and the remaining amount of that resource.
+- In the `main` function, a resource manager is created with initial amounts of wood, stone, and food. Then, five players are created, each with their own thread. In each player’s thread, they continuously gather a random resource until all resources are depleted. After all threads finish, the player who gathered the most resources is determined and printed out as the winner.
 
 ```rust
 use rand::Rng;
