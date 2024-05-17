@@ -151,130 +151,151 @@ In this example, we have two threads that are both incrementing a counter in the
 
 ---
 
+This code is a simulation of a resource gathering game where multiple players compete to collect resources such as wood, stone, and food. The `ResourceManager` struct tracks the available resources, while the `Player` struct represents each player, holding an ID, a shared resource manager, and a mutex for gathered resources to ensure thread safety. Players use the `gather_resource` method to collect resources, which are randomly determined and subtracted from the shared resource pool. The game runs in a multi-threaded environment, with each player operating in a separate thread, gathering resources until all are depleted.
+
+The main function sets up the initial resources, creates players, and spawns threads for each player’s resource gathering activities. It uses an `Arc` to allow shared ownership of the `ResourceManager` across threads, and a `Mutex` to prevent data races when accessing the shared state. After all threads complete, the program determines the winner based on who gathered the most resources. The code demonstrates concepts like multi-threading, shared state management, and thread synchronization in Rust.
+
 ```rust
-// Import necessary libraries for concurrency, threads, and random number generation
+use rand::Rng;
 use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::Duration;
-use rand::Rng;
 
-// Define a struct to represent the resource manager, which holds the amount of each resource
+// Define a struct to represent a resource manager
+#[derive(PartialEq)]
 struct ResourceManager {
     wood: u32,
     stone: u32,
     food: u32,
 }
 
-// Define an enum to represent the different types of resources
+// Define an enum to represent different types of resources
 enum Resource {
     Wood,
     Stone,
     Food,
 }
 
-// Define a struct to represent a player, which has an id and a reference to the resource manager
+// Define a struct to represent a player
 struct Player {
-    id: u32, // player id
-    resource_manager: Arc<Mutex<ResourceManager>>, // reference to the resource manager
+    id: u32,
+    resource_manager: Arc<Mutex<ResourceManager>>,
+    gathered_resources: Mutex<u32>,
 }
 
 // Implement methods for the Player struct
 impl Player {
-    // Constructor method for Player, takes an id and a reference to the resource manager
+    // Create a new player with a given ID and resource manager
     fn new(id: u32, resource_manager: Arc<Mutex<ResourceManager>>) -> Self {
-        Player { id, resource_manager }
+        Player {
+            id,
+            resource_manager,
+            gathered_resources: Mutex::new(0),
+        }
     }
 
-    // Method to gather a specified amount of a specified resource
-    fn gather_resource(&self, resource: Resource, amount: u32) {
-        // Lock the resource manager and get a mutable reference to it
+    // Gather a resource (wood, stone, or food) and update the player's gathered resources
+    fn gather_resource(&self, resource: Resource) {
+        // Lock the resource manager and gathered resources to ensure thread safety
         let mut resource_manager = self.resource_manager.lock().unwrap();
-        
-        // Match the resource type and perform the necessary action
-        match resource {
-            Resource::Wood => {
-                // Check if there's enough wood available
-                if resource_manager.wood >= amount {
-                    // If there's enough wood, subtract the amount from the total and print a message
-                    resource_manager.wood -= amount;
-                    println!(
-                        "Player {} gathered {} wood. Remaining wood: {}",
-                        self.id, amount, resource_manager.wood
-                    );
-                } else {
-                    println!("Player {} attempted to gather wood, but not enough available.", self.id);
-                }
-            }
-            Resource::Stone => {
-                if resource_manager.stone >= amount {
-                    // If there's enough stone, subtract the amount from the total and print a message
-                    resource_manager.stone -= amount;
-                    println!(
-                        "Player {} gathered {} stone. Remaining stone: {}",
-                        self.id, amount, resource_manager.stone
-                    );
-                } else {
-                    println!("Player {} attempted to gather stone, but not enough available.", self.id);
-                }
-            }
-            Resource::Food => {
-                if resource_manager.food >= amount {
-                    // If there's enough food, subtract the amount from the total and print a message
-                    resource_manager.food -= amount;
-                    println!(
-                        "Player {} gathered {} food. Remaining food: {}",
-                        self.id, amount, resource_manager.food
-                    );
-                } else {
-                    println!("Player {} attempted to gather food, but not enough available.", self.id);
-                }
-            }
+        let mut gathered_resources = self.gathered_resources.lock().unwrap();
+
+        // Determine which resource to gather based on the input resource type
+        let (resource_amount, resource_name) = match resource {
+            Resource::Wood => (&mut resource_manager.wood, "wood"),
+            Resource::Stone => (&mut resource_manager.stone, "stone"),
+            Resource::Food => (&mut resource_manager.food, "food"),
+        };
+
+        // If there is enough of the resource available, gather a random amount
+        if *resource_amount > 0 {
+            let amount = rand::thread_rng().gen_range(1..=*resource_amount);
+            *resource_amount -= amount;
+            *gathered_resources += amount;
+            println!(
+                "Player {} gathered {} {}. Remaining {}: {}",
+                self.id, amount, resource_name, resource_name, resource_amount
+            );
+        } else {
+            // If there is not enough of the resource available, print a message
+            println!(
+                "Player {} attempted to gather {}, but not enough available.",
+                self.id, resource_name
+            );
         }
     }
 }
 
-// Main function
 fn main() {
-    // Create a new resource manager with initial amounts of each resource
+    // Create a resource manager with initial resources
     let resource_manager = Arc::new(Mutex::new(ResourceManager {
-        wood: 1000,
-        stone: 500,
-        food: 200,
+        wood: 10,
+        stone: 50,
+        food: 20,
     }));
 
-    // Create a vector to hold the handles of the player threads
+    // Create a vector to store player handles and a vector to store players
     let mut player_handles = vec![];
+    let mut players = vec![];
 
-    // Spawn 5 player threads
+    // Create 5 players and start a thread for each player
     for i in 0..5 {
-        // Clone the resource manager reference for each player
+        // Clone the resource manager for each player
         let resource_manager = Arc::clone(&resource_manager);
-        // Create a new player with an id and a reference to the resource manager
-        let player = Player::new(i, resource_manager);
-        // Spawn a new thread for the player
+        // Create a new player and add it to the players vector
+        let player = Arc::new(Player::new(i, resource_manager));
+        players.push(Arc::clone(&player));
+        // Start a thread for the player
         let handle = thread::spawn(move || {
-            // The player gathers some resources in a random order
-            player.gather_resource(Resource::Wood, 20);
-            // Introduce a random delay
-            thread::sleep(Duration::from_secs(rand::thread_rng().gen_range(1..5)));
-            player.gather_resource(Resource::Stone, 10);
-            // Introduce another random delay
-            thread::sleep(Duration::from_secs(rand::thread_rng().gen_range(1..5)));
-            player.gather_resource(Resource::Food, 5);
+            // Create an empty resource manager to check for when resources are depleted
+            let empty_resources = ResourceManager {
+                wood: 0,
+                stone: 0,
+                food: 0,
+            };
+            // Loop until all resources are depleted
+            while *player.resource_manager.lock().unwrap()!= empty_resources {
+                // Randomly select a resource to gather
+                let resource = match rand::thread_rng().gen_range(0..3) {
+                    0 => Resource::Wood,
+                    1 => Resource::Stone,
+                    2 => Resource::Food,
+                    _ => unreachable!(),
+                };
+                // Gather the resource
+                player.gather_resource(resource);
+                // Sleep for a random amount of time before gathering again
+                thread::sleep(Duration::from_secs(rand::thread_rng().gen_range(1..5)));
+            }
         });
-        // Add the handle of the player thread to the vector
+
+        // Add the thread handle to the player handles vector
         player_handles.push(handle);
     }
 
-    // Wait for all player threads to finish
+    // Wait for all threads to finish
     for handle in player_handles {
         handle.join().unwrap();
     }
+
+    // Determine the winner by finding the player with the most gathered resources
+    let mut max_resources = 0;
+    let mut winner_id = 0;
+
+    for player in &players {
+        let resources = *player.gathered_resources.lock().unwrap();
+        if resources > max_resources {
+            max_resources = resources;
+            winner_id = player.id;
+        }
+    }
+
+    // Print the winner
+    println!(
+        "Player {} wins with {} resources!",
+        winner_id, max_resources
+    );
 }
 ```
 
-In this example, we have a `ResourceManager` that manages the global resource pool, and multiple `Player` threads that access the resource manager to gather resources. Each `Player` has a reference to the `ResourceManager` through an `Arc<Mutex<ResourceManager>>`, which allows multiple threads to share the same resource manager.
-
-When a `Player` thread wants to gather a resource, it locks the ResourceManager using the `lock()` method, checks if the resource is available, and updates the resource amount if it is. If the resource is not available, it prints an error message.
-
-The `main()` function creates a `ResourceManager` and spawns 5 `Player` threads, each of which gathers resources in a specific order (wood, stone, food). The `join()` method is used to wait for all player threads to finish before exiting the program.
+Well, this mutex example got out of hand! I'll see you next lesson! 😇

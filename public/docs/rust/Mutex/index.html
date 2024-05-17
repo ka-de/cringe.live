@@ -103,124 +103,145 @@ The Mutex in Rust is a powerful tool for synchronizing access to shared mutable 
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    <span style=color:#1e66f5>println!</span>(<span style=color:#40a02b>&#34;Game state counter: </span><span style=color:#40a02b>{}</span><span style=color:#40a02b>&#34;</span>, game_state.lock().unwrap().counter);
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div><p>In this example, we have two threads that are both incrementing a counter in the game state 10,000 times. The Mutex ensures that only one thread can access the game state at a time, preventing race conditions. If we didn’t use a Mutex and allowed both threads to access the game state simultaneously, we could end up with inconsistent results.</p><h2 id=resourcemanager>ResourceManager
-<a class=anchor href=#resourcemanager>#</a></h2><hr><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic>// Import necessary libraries for concurrency, threads, and random number generation
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span><span style=color:#8839ef>use</span> std::sync::{Arc, Mutex};
+<a class=anchor href=#resourcemanager>#</a></h2><hr><p>This code is a simulation of a resource gathering game where multiple players compete to collect resources such as wood, stone, and food. The <code>ResourceManager</code> struct tracks the available resources, while the <code>Player</code> struct represents each player, holding an ID, a shared resource manager, and a mutex for gathered resources to ensure thread safety. Players use the <code>gather_resource</code> method to collect resources, which are randomly determined and subtracted from the shared resource pool. The game runs in a multi-threaded environment, with each player operating in a separate thread, gathering resources until all are depleted.</p><p>The main function sets up the initial resources, creates players, and spawns threads for each player’s resource gathering activities. It uses an <code>Arc</code> to allow shared ownership of the <code>ResourceManager</code> across threads, and a <code>Mutex</code> to prevent data races when accessing the shared state. After all threads complete, the program determines the winner based on who gathered the most resources. The code demonstrates concepts like multi-threading, shared state management, and thread synchronization in Rust.</p><div class=highlight><pre tabindex=0 style=color:#4c4f69;background-color:#eff1f5;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-rust data-lang=rust><span style=display:flex><span><span style=color:#8839ef>use</span> rand::Rng;
+</span></span><span style=display:flex><span><span style=color:#8839ef>use</span> std::sync::{Arc, Mutex};
 </span></span><span style=display:flex><span><span style=color:#8839ef>use</span> std::thread;
 </span></span><span style=display:flex><span><span style=color:#8839ef>use</span> std::time::Duration;
-</span></span><span style=display:flex><span><span style=color:#8839ef>use</span> rand::Rng;
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic>// Define a struct to represent the resource manager, which holds the amount of each resource
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span><span style=color:#8839ef>struct</span> <span style=color:#df8e1d>ResourceManager</span> {
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic>// Define a struct to represent a resource manager
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span><span style=color:#9ca0b0;font-style:italic>#[derive(PartialEq)]</span>
+</span></span><span style=display:flex><span><span style=color:#8839ef>struct</span> <span style=color:#df8e1d>ResourceManager</span> {
 </span></span><span style=display:flex><span>    wood: <span style=color:#d20f39>u32</span>,
 </span></span><span style=display:flex><span>    stone: <span style=color:#d20f39>u32</span>,
 </span></span><span style=display:flex><span>    food: <span style=color:#d20f39>u32</span>,
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic>// Define an enum to represent the different types of resources
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic>// Define an enum to represent different types of resources
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span><span style=color:#8839ef>enum</span> <span style=color:#df8e1d>Resource</span> {
 </span></span><span style=display:flex><span>    Wood,
 </span></span><span style=display:flex><span>    Stone,
 </span></span><span style=display:flex><span>    Food,
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic>// Define a struct to represent a player, which has an id and a reference to the resource manager
+</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic>// Define a struct to represent a player
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span><span style=color:#8839ef>struct</span> <span style=color:#df8e1d>Player</span> {
-</span></span><span style=display:flex><span>    id: <span style=color:#d20f39>u32</span>, <span style=color:#9ca0b0;font-style:italic>// player id
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    resource_manager: <span style=color:#df8e1d>Arc</span><span style=color:#04a5e5;font-weight:700>&lt;</span>Mutex<span style=color:#04a5e5;font-weight:700>&lt;</span>ResourceManager<span style=color:#04a5e5;font-weight:700>&gt;&gt;</span>, <span style=color:#9ca0b0;font-style:italic>// reference to the resource manager
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>}
+</span></span><span style=display:flex><span>    id: <span style=color:#d20f39>u32</span>,
+</span></span><span style=display:flex><span>    resource_manager: <span style=color:#df8e1d>Arc</span><span style=color:#04a5e5;font-weight:700>&lt;</span>Mutex<span style=color:#04a5e5;font-weight:700>&lt;</span>ResourceManager<span style=color:#04a5e5;font-weight:700>&gt;&gt;</span>,
+</span></span><span style=display:flex><span>    gathered_resources: <span style=color:#df8e1d>Mutex</span><span style=color:#04a5e5;font-weight:700>&lt;</span><span style=color:#d20f39>u32</span><span style=color:#04a5e5;font-weight:700>&gt;</span>,
+</span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic>// Implement methods for the Player struct
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span><span style=color:#8839ef>impl</span> Player {
-</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Constructor method for Player, takes an id and a reference to the resource manager
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Create a new player with a given ID and resource manager
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    <span style=color:#8839ef>fn</span> <span style=color:#1e66f5>new</span>(id: <span style=color:#d20f39>u32</span>, resource_manager: <span style=color:#df8e1d>Arc</span><span style=color:#04a5e5;font-weight:700>&lt;</span>Mutex<span style=color:#04a5e5;font-weight:700>&lt;</span>ResourceManager<span style=color:#04a5e5;font-weight:700>&gt;&gt;</span>) -&gt; <span style=color:#df8e1d>Self</span> {
-</span></span><span style=display:flex><span>        Player { id, resource_manager }
+</span></span><span style=display:flex><span>        Player {
+</span></span><span style=display:flex><span>            id,
+</span></span><span style=display:flex><span>            resource_manager,
+</span></span><span style=display:flex><span>            gathered_resources: <span style=color:#df8e1d>Mutex</span>::new(<span style=color:#fe640b>0</span>),
+</span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Method to gather a specified amount of a specified resource
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    <span style=color:#8839ef>fn</span> <span style=color:#1e66f5>gather_resource</span>(<span style=color:#04a5e5;font-weight:700>&amp;</span><span style=color:#04a5e5>self</span>, resource: <span style=color:#df8e1d>Resource</span>, amount: <span style=color:#d20f39>u32</span>) {
-</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Lock the resource manager and get a mutable reference to it
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Gather a resource (wood, stone, or food) and update the player&#39;s gathered resources
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    <span style=color:#8839ef>fn</span> <span style=color:#1e66f5>gather_resource</span>(<span style=color:#04a5e5;font-weight:700>&amp;</span><span style=color:#04a5e5>self</span>, resource: <span style=color:#df8e1d>Resource</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Lock the resource manager and gathered resources to ensure thread safety
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>        <span style=color:#d20f39>let</span> <span style=color:#8839ef>mut</span> resource_manager <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#04a5e5>self</span>.resource_manager.lock().unwrap();
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Match the resource type and perform the necessary action
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>        <span style=color:#8839ef>match</span> resource {
-</span></span><span style=display:flex><span>            Resource::Wood <span style=color:#04a5e5;font-weight:700>=&gt;</span> {
-</span></span><span style=display:flex><span>                <span style=color:#9ca0b0;font-style:italic>// Check if there&#39;s enough wood available
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>                <span style=color:#8839ef>if</span> resource_manager.wood <span style=color:#04a5e5;font-weight:700>&gt;=</span> amount {
-</span></span><span style=display:flex><span>                    <span style=color:#9ca0b0;font-style:italic>// If there&#39;s enough wood, subtract the amount from the total and print a message
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>                    resource_manager.wood <span style=color:#04a5e5;font-weight:700>-=</span> amount;
-</span></span><span style=display:flex><span>                    <span style=color:#1e66f5>println!</span>(
-</span></span><span style=display:flex><span>                        <span style=color:#40a02b>&#34;Player </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> gathered </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> wood. Remaining wood: </span><span style=color:#40a02b>{}</span><span style=color:#40a02b>&#34;</span>,
-</span></span><span style=display:flex><span>                        <span style=color:#04a5e5>self</span>.id, amount, resource_manager.wood
-</span></span><span style=display:flex><span>                    );
-</span></span><span style=display:flex><span>                } <span style=color:#8839ef>else</span> {
-</span></span><span style=display:flex><span>                    <span style=color:#1e66f5>println!</span>(<span style=color:#40a02b>&#34;Player </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> attempted to gather wood, but not enough available.&#34;</span>, <span style=color:#04a5e5>self</span>.id);
-</span></span><span style=display:flex><span>                }
-</span></span><span style=display:flex><span>            }
-</span></span><span style=display:flex><span>            Resource::Stone <span style=color:#04a5e5;font-weight:700>=&gt;</span> {
-</span></span><span style=display:flex><span>                <span style=color:#8839ef>if</span> resource_manager.stone <span style=color:#04a5e5;font-weight:700>&gt;=</span> amount {
-</span></span><span style=display:flex><span>                    <span style=color:#9ca0b0;font-style:italic>// If there&#39;s enough stone, subtract the amount from the total and print a message
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>                    resource_manager.stone <span style=color:#04a5e5;font-weight:700>-=</span> amount;
-</span></span><span style=display:flex><span>                    <span style=color:#1e66f5>println!</span>(
-</span></span><span style=display:flex><span>                        <span style=color:#40a02b>&#34;Player </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> gathered </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> stone. Remaining stone: </span><span style=color:#40a02b>{}</span><span style=color:#40a02b>&#34;</span>,
-</span></span><span style=display:flex><span>                        <span style=color:#04a5e5>self</span>.id, amount, resource_manager.stone
-</span></span><span style=display:flex><span>                    );
-</span></span><span style=display:flex><span>                } <span style=color:#8839ef>else</span> {
-</span></span><span style=display:flex><span>                    <span style=color:#1e66f5>println!</span>(<span style=color:#40a02b>&#34;Player </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> attempted to gather stone, but not enough available.&#34;</span>, <span style=color:#04a5e5>self</span>.id);
-</span></span><span style=display:flex><span>                }
-</span></span><span style=display:flex><span>            }
-</span></span><span style=display:flex><span>            Resource::Food <span style=color:#04a5e5;font-weight:700>=&gt;</span> {
-</span></span><span style=display:flex><span>                <span style=color:#8839ef>if</span> resource_manager.food <span style=color:#04a5e5;font-weight:700>&gt;=</span> amount {
-</span></span><span style=display:flex><span>                    <span style=color:#9ca0b0;font-style:italic>// If there&#39;s enough food, subtract the amount from the total and print a message
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>                    resource_manager.food <span style=color:#04a5e5;font-weight:700>-=</span> amount;
-</span></span><span style=display:flex><span>                    <span style=color:#1e66f5>println!</span>(
-</span></span><span style=display:flex><span>                        <span style=color:#40a02b>&#34;Player </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> gathered </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> food. Remaining food: </span><span style=color:#40a02b>{}</span><span style=color:#40a02b>&#34;</span>,
-</span></span><span style=display:flex><span>                        <span style=color:#04a5e5>self</span>.id, amount, resource_manager.food
-</span></span><span style=display:flex><span>                    );
-</span></span><span style=display:flex><span>                } <span style=color:#8839ef>else</span> {
-</span></span><span style=display:flex><span>                    <span style=color:#1e66f5>println!</span>(<span style=color:#40a02b>&#34;Player </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> attempted to gather food, but not enough available.&#34;</span>, <span style=color:#04a5e5>self</span>.id);
-</span></span><span style=display:flex><span>                }
-</span></span><span style=display:flex><span>            }
+</span></span><span style=display:flex><span>        <span style=color:#d20f39>let</span> <span style=color:#8839ef>mut</span> gathered_resources <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#04a5e5>self</span>.gathered_resources.lock().unwrap();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Determine which resource to gather based on the input resource type
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>        <span style=color:#d20f39>let</span> (resource_amount, resource_name) <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#8839ef>match</span> resource {
+</span></span><span style=display:flex><span>            Resource::Wood <span style=color:#04a5e5;font-weight:700>=&gt;</span> (<span style=color:#04a5e5;font-weight:700>&amp;</span><span style=color:#8839ef>mut</span> resource_manager.wood, <span style=color:#40a02b>&#34;wood&#34;</span>),
+</span></span><span style=display:flex><span>            Resource::Stone <span style=color:#04a5e5;font-weight:700>=&gt;</span> (<span style=color:#04a5e5;font-weight:700>&amp;</span><span style=color:#8839ef>mut</span> resource_manager.stone, <span style=color:#40a02b>&#34;stone&#34;</span>),
+</span></span><span style=display:flex><span>            Resource::Food <span style=color:#04a5e5;font-weight:700>=&gt;</span> (<span style=color:#04a5e5;font-weight:700>&amp;</span><span style=color:#8839ef>mut</span> resource_manager.food, <span style=color:#40a02b>&#34;food&#34;</span>),
+</span></span><span style=display:flex><span>        };
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// If there is enough of the resource available, gather a random amount
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>        <span style=color:#8839ef>if</span> <span style=color:#04a5e5;font-weight:700>*</span>resource_amount <span style=color:#04a5e5;font-weight:700>&gt;</span> <span style=color:#fe640b>0</span> {
+</span></span><span style=display:flex><span>            <span style=color:#d20f39>let</span> amount <span style=color:#04a5e5;font-weight:700>=</span> rand::thread_rng().gen_range(<span style=color:#fe640b>1</span><span style=color:#04a5e5;font-weight:700>..=*</span>resource_amount);
+</span></span><span style=display:flex><span>            <span style=color:#04a5e5;font-weight:700>*</span>resource_amount <span style=color:#04a5e5;font-weight:700>-=</span> amount;
+</span></span><span style=display:flex><span>            <span style=color:#04a5e5;font-weight:700>*</span>gathered_resources <span style=color:#04a5e5;font-weight:700>+=</span> amount;
+</span></span><span style=display:flex><span>            <span style=color:#1e66f5>println!</span>(
+</span></span><span style=display:flex><span>                <span style=color:#40a02b>&#34;Player </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> gathered </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> </span><span style=color:#40a02b>{}</span><span style=color:#40a02b>. Remaining </span><span style=color:#40a02b>{}</span><span style=color:#40a02b>: </span><span style=color:#40a02b>{}</span><span style=color:#40a02b>&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#04a5e5>self</span>.id, amount, resource_name, resource_name, resource_amount
+</span></span><span style=display:flex><span>            );
+</span></span><span style=display:flex><span>        } <span style=color:#8839ef>else</span> {
+</span></span><span style=display:flex><span>            <span style=color:#9ca0b0;font-style:italic>// If there is not enough of the resource available, print a message
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>            <span style=color:#1e66f5>println!</span>(
+</span></span><span style=display:flex><span>                <span style=color:#40a02b>&#34;Player </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> attempted to gather </span><span style=color:#40a02b>{}</span><span style=color:#40a02b>, but not enough available.&#34;</span>,
+</span></span><span style=display:flex><span>                <span style=color:#04a5e5>self</span>.id, resource_name
+</span></span><span style=display:flex><span>            );
 </span></span><span style=display:flex><span>        }
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic>// Main function
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span><span style=color:#8839ef>fn</span> <span style=color:#1e66f5>main</span>() {
-</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Create a new resource manager with initial amounts of each resource
+</span></span><span style=display:flex><span><span style=color:#8839ef>fn</span> <span style=color:#1e66f5>main</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Create a resource manager with initial resources
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    <span style=color:#d20f39>let</span> resource_manager <span style=color:#04a5e5;font-weight:700>=</span> Arc::new(Mutex::new(ResourceManager {
-</span></span><span style=display:flex><span>        wood: <span style=color:#fe640b>1000</span>,
-</span></span><span style=display:flex><span>        stone: <span style=color:#fe640b>500</span>,
-</span></span><span style=display:flex><span>        food: <span style=color:#fe640b>200</span>,
+</span></span><span style=display:flex><span>        wood: <span style=color:#fe640b>10</span>,
+</span></span><span style=display:flex><span>        stone: <span style=color:#fe640b>50</span>,
+</span></span><span style=display:flex><span>        food: <span style=color:#fe640b>20</span>,
 </span></span><span style=display:flex><span>    }));
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Create a vector to hold the handles of the player threads
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Create a vector to store player handles and a vector to store players
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    <span style=color:#d20f39>let</span> <span style=color:#8839ef>mut</span> player_handles <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#1e66f5>vec!</span>[];
+</span></span><span style=display:flex><span>    <span style=color:#d20f39>let</span> <span style=color:#8839ef>mut</span> players <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#1e66f5>vec!</span>[];
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Spawn 5 player threads
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Create 5 players and start a thread for each player
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    <span style=color:#8839ef>for</span> i <span style=color:#8839ef>in</span> <span style=color:#fe640b>0</span><span style=color:#04a5e5;font-weight:700>..</span><span style=color:#fe640b>5</span> {
-</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Clone the resource manager reference for each player
+</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Clone the resource manager for each player
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>        <span style=color:#d20f39>let</span> resource_manager <span style=color:#04a5e5;font-weight:700>=</span> Arc::clone(<span style=color:#04a5e5;font-weight:700>&amp;</span>resource_manager);
-</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Create a new player with an id and a reference to the resource manager
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>        <span style=color:#d20f39>let</span> player <span style=color:#04a5e5;font-weight:700>=</span> Player::new(i, resource_manager);
-</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Spawn a new thread for the player
+</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Create a new player and add it to the players vector
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>        <span style=color:#d20f39>let</span> player <span style=color:#04a5e5;font-weight:700>=</span> Arc::new(Player::new(i, resource_manager));
+</span></span><span style=display:flex><span>        players.push(Arc::clone(<span style=color:#04a5e5;font-weight:700>&amp;</span>player));
+</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Start a thread for the player
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>        <span style=color:#d20f39>let</span> handle <span style=color:#04a5e5;font-weight:700>=</span> thread::spawn(<span style=color:#8839ef>move</span> <span style=color:#04a5e5;font-weight:700>||</span> {
-</span></span><span style=display:flex><span>            <span style=color:#9ca0b0;font-style:italic>// The player gathers some resources in a random order
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>            player.gather_resource(Resource::Wood, <span style=color:#fe640b>20</span>);
-</span></span><span style=display:flex><span>            <span style=color:#9ca0b0;font-style:italic>// Introduce a random delay
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>            thread::sleep(Duration::from_secs(rand::thread_rng().gen_range(<span style=color:#fe640b>1</span><span style=color:#04a5e5;font-weight:700>..</span><span style=color:#fe640b>5</span>)));
-</span></span><span style=display:flex><span>            player.gather_resource(Resource::Stone, <span style=color:#fe640b>10</span>);
-</span></span><span style=display:flex><span>            <span style=color:#9ca0b0;font-style:italic>// Introduce another random delay
-</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>            thread::sleep(Duration::from_secs(rand::thread_rng().gen_range(<span style=color:#fe640b>1</span><span style=color:#04a5e5;font-weight:700>..</span><span style=color:#fe640b>5</span>)));
-</span></span><span style=display:flex><span>            player.gather_resource(Resource::Food, <span style=color:#fe640b>5</span>);
+</span></span><span style=display:flex><span>            <span style=color:#9ca0b0;font-style:italic>// Create an empty resource manager to check for when resources are depleted
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>            <span style=color:#d20f39>let</span> empty_resources <span style=color:#04a5e5;font-weight:700>=</span> ResourceManager {
+</span></span><span style=display:flex><span>                wood: <span style=color:#fe640b>0</span>,
+</span></span><span style=display:flex><span>                stone: <span style=color:#fe640b>0</span>,
+</span></span><span style=display:flex><span>                food: <span style=color:#fe640b>0</span>,
+</span></span><span style=display:flex><span>            };
+</span></span><span style=display:flex><span>            <span style=color:#9ca0b0;font-style:italic>// Loop until all resources are depleted
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>            <span style=color:#8839ef>while</span> <span style=color:#04a5e5;font-weight:700>*</span>player.resource_manager.lock().unwrap()<span style=color:#04a5e5;font-weight:700>!=</span> empty_resources {
+</span></span><span style=display:flex><span>                <span style=color:#9ca0b0;font-style:italic>// Randomly select a resource to gather
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>                <span style=color:#d20f39>let</span> resource <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#8839ef>match</span> rand::thread_rng().gen_range(<span style=color:#fe640b>0</span><span style=color:#04a5e5;font-weight:700>..</span><span style=color:#fe640b>3</span>) {
+</span></span><span style=display:flex><span>                    <span style=color:#fe640b>0</span> <span style=color:#04a5e5;font-weight:700>=&gt;</span> Resource::Wood,
+</span></span><span style=display:flex><span>                    <span style=color:#fe640b>1</span> <span style=color:#04a5e5;font-weight:700>=&gt;</span> Resource::Stone,
+</span></span><span style=display:flex><span>                    <span style=color:#fe640b>2</span> <span style=color:#04a5e5;font-weight:700>=&gt;</span> Resource::Food,
+</span></span><span style=display:flex><span>                    _ <span style=color:#04a5e5;font-weight:700>=&gt;</span> <span style=color:#1e66f5>unreachable!</span>(),
+</span></span><span style=display:flex><span>                };
+</span></span><span style=display:flex><span>                <span style=color:#9ca0b0;font-style:italic>// Gather the resource
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>                player.gather_resource(resource);
+</span></span><span style=display:flex><span>                <span style=color:#9ca0b0;font-style:italic>// Sleep for a random amount of time before gathering again
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>                thread::sleep(Duration::from_secs(rand::thread_rng().gen_range(<span style=color:#fe640b>1</span><span style=color:#04a5e5;font-weight:700>..</span><span style=color:#fe640b>5</span>)));
+</span></span><span style=display:flex><span>            }
 </span></span><span style=display:flex><span>        });
-</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Add the handle of the player thread to the vector
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#9ca0b0;font-style:italic>// Add the thread handle to the player handles vector
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>        player_handles.push(handle);
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Wait for all player threads to finish
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Wait for all threads to finish
 </span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    <span style=color:#8839ef>for</span> handle <span style=color:#8839ef>in</span> player_handles {
 </span></span><span style=display:flex><span>        handle.join().unwrap();
 </span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Determine the winner by finding the player with the most gathered resources
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    <span style=color:#d20f39>let</span> <span style=color:#8839ef>mut</span> max_resources <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#fe640b>0</span>;
+</span></span><span style=display:flex><span>    <span style=color:#d20f39>let</span> <span style=color:#8839ef>mut</span> winner_id <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#fe640b>0</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#8839ef>for</span> player <span style=color:#8839ef>in</span> <span style=color:#04a5e5;font-weight:700>&amp;</span>players {
+</span></span><span style=display:flex><span>        <span style=color:#d20f39>let</span> resources <span style=color:#04a5e5;font-weight:700>=</span> <span style=color:#04a5e5;font-weight:700>*</span>player.gathered_resources.lock().unwrap();
+</span></span><span style=display:flex><span>        <span style=color:#8839ef>if</span> resources <span style=color:#04a5e5;font-weight:700>&gt;</span> max_resources {
+</span></span><span style=display:flex><span>            max_resources <span style=color:#04a5e5;font-weight:700>=</span> resources;
+</span></span><span style=display:flex><span>            winner_id <span style=color:#04a5e5;font-weight:700>=</span> player.id;
+</span></span><span style=display:flex><span>        }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#9ca0b0;font-style:italic>// Print the winner
+</span></span></span><span style=display:flex><span><span style=color:#9ca0b0;font-style:italic></span>    <span style=color:#1e66f5>println!</span>(
+</span></span><span style=display:flex><span>        <span style=color:#40a02b>&#34;Player </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> wins with </span><span style=color:#40a02b>{}</span><span style=color:#40a02b> resources!&#34;</span>,
+</span></span><span style=display:flex><span>        winner_id, max_resources
+</span></span><span style=display:flex><span>    );
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>In this example, we have a <code>ResourceManager</code> that manages the global resource pool, and multiple <code>Player</code> threads that access the resource manager to gather resources. Each <code>Player</code> has a reference to the <code>ResourceManager</code> through an <code>Arc&lt;Mutex&lt;ResourceManager>></code>, which allows multiple threads to share the same resource manager.</p><p>When a <code>Player</code> thread wants to gather a resource, it locks the ResourceManager using the <code>lock()</code> method, checks if the resource is available, and updates the resource amount if it is. If the resource is not available, it prints an error message.</p><p>The <code>main()</code> function creates a <code>ResourceManager</code> and spawns 5 <code>Player</code> threads, each of which gathers resources in a specific order (wood, stone, food). The <code>join()</code> method is used to wait for all player threads to finish before exiting the program.</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/edit/main/content/docs/rust/Mutex.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt>
+</span></span></code></pre></div><p>Well, this mutex example got out of hand! I&rsquo;ll see you next lesson! 😇</p></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div><a class="flex align-center" href=https://github.com/ka-de/cringe.live/edit/main/content/docs/rust/Mutex.md target=_blank rel=noopener><img src=/svg/edit.svg class=book-icon alt>
 <span>Edit this page</span></a></div></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><label for=menu-control class="hidden book-menu-overlay"></label></div></main></body></html>
