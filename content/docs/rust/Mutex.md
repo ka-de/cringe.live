@@ -180,31 +180,23 @@ enum Resource {
 }
 
 impl ResourceManager {
-    // Gather a resource (wood, stone, or food) and return the amount gathered
-    fn gather_resource(&mut self, resource: Resource) -> u32 {
+    // Gather a resource (wood, stone, or food) and return the amount gathered and the remaining amount
+    fn gather_resource(&mut self, resource: &Resource) -> (u32, u32) {
         // Determine which resource to gather based on the input resource type
-        let (resource_amount, resource_name) = match resource {
-            Resource::Wood => (&mut self.wood, "wood"),
-            Resource::Stone => (&mut self.stone, "stone"),
-            Resource::Food => (&mut self.food, "food"),
+        let resource_amount = match resource {
+            Resource::Wood => &mut self.wood,
+            Resource::Stone => &mut self.stone,
+            Resource::Food => &mut self.food,
         };
 
         // If there is enough of the resource available, gather a random amount
         if *resource_amount > 0 {
             let amount = rand::thread_rng().gen_range(1..=*resource_amount);
             *resource_amount -= amount;
-            println!(
-                "Gathered {} {}. Remaining {}: {}",
-                amount, resource_name, resource_name, resource_amount
-            );
-            amount
+            (amount, *resource_amount)
         } else {
-            // If there is not enough of the resource available, print a message
-            println!(
-                "Attempted to gather {}, but not enough available.",
-                resource_name
-            );
-            0
+            // If there is not enough of the resource available, return 0 and the remaining amount
+            (0, *resource_amount)
         }
     }
 }
@@ -228,18 +220,33 @@ impl Player {
     }
 
     // Gather a resource (wood, stone, or food) and update the player's gathered resources
-    fn gather_resource(&self, resource: Resource) {
+    fn gather_resource(&self, resource: &Resource) {
         // Lock the resource manager and gathered resources to ensure thread safety
         let mut resource_manager = self.resource_manager.lock().unwrap();
         let mut gathered_resources = self.gathered_resources.lock().unwrap();
 
         // Gather the resource using the resource manager
-        let amount = resource_manager.gather_resource(resource);
-        *gathered_resources += amount;
-        println!(
-            "Player {} gathered {} resources.",
-            self.id, *gathered_resources
-        );
+        let (amount, remaining) = resource_manager.gather_resource(resource);
+
+        // Determine the resource name based on the input resource type
+        let resource_name = match resource {
+            Resource::Wood => "wood",
+            Resource::Stone => "stone",
+            Resource::Food => "food",
+        };
+
+        if amount > 0 {
+            *gathered_resources += amount;
+            println!(
+                "Player {} gathered {} {}. Remaining {}: {}",
+                self.id, amount, resource_name, resource_name, remaining
+            );
+        } else {
+            println!(
+                "Player {} failed to gather {}. Remaining {}: {}",
+                self.id, resource_name, resource_name, remaining
+            );
+        }
     }
 }
 
@@ -271,7 +278,7 @@ fn main() {
                 food: 0,
             };
             // Loop until all resources are depleted
-            while *player.resource_manager.lock().unwrap()!= empty_resources {
+            while *player.resource_manager.lock().unwrap() != empty_resources {
                 // Randomly select a resource to gather
                 let resource = match rand::thread_rng().gen_range(0..3) {
                     0 => Resource::Wood,
@@ -280,8 +287,8 @@ fn main() {
                     _ => unreachable!(),
                 };
                 // Gather the resource
-                player.gather_resource(resource);
-                // Sleep for a random amount of time before gathering again
+                player.gather_resource(&resource); // Pass a reference to resource
+                                                   // Sleep for a random amount of time before gathering again
                 thread::sleep(Duration::from_secs(rand::thread_rng().gen_range(1..5)));
             }
         });
