@@ -178,11 +178,47 @@ enum Resource {
     Food,
 }
 
+// Implementation block for the ResourceManager struct
+impl ResourceManager {
+    // Method to gather a resource
+    fn gather(&mut self, resource: Resource) -> u32 {
+        // Match the resource type to get a mutable reference to the amount of the resource and its name
+        let (resource_amount, resource_name) = match resource {
+            Resource::Wood => (&mut self.wood, "wood"),
+            Resource::Stone => (&mut self.stone, "stone"),
+            Resource::Food => (&mut self.food, "food"),
+        };
+
+        // Check if there is any of the resource available
+        if *resource_amount > 0 {
+            // Generate a random amount of the resource to gather
+            let amount = rand::thread_rng().gen_range(1..=*resource_amount);
+            // Subtract the gathered amount from the total amount of the resource
+            *resource_amount -= amount;
+            // Print a message indicating the amount gathered and the remaining amount
+            println!(
+                "Gathered {} {}. Remaining {}: {}",
+                amount, resource_name, resource_name, resource_amount
+            );
+            // Return the amount gathered
+            amount
+        } else {
+            // Print a message indicating that there was not enough of the resource available to gather
+            println!(
+                "Attempted to gather {}, but not enough available.",
+                resource_name
+            );
+            // Return 0 since no resources were gathered
+            0
+        }
+    }
+}
+
 // Define a struct to represent a player
 struct Player {
-    id: u32, // Unique identifier for the player
+    id: u32,                                       // Unique identifier for the player
     resource_manager: Arc<Mutex<ResourceManager>>, // Shared resource manager protected by a mutex
-    gathered_resources: Mutex<u32>, // Mutex-protected counter for gathered resources
+    gathered_resources: Mutex<u32>,                // Mutex-protected counter for gathered resources
 }
 
 // Implement methods for the Player struct
@@ -198,34 +234,11 @@ impl Player {
 
     // Gather a resource and update the player's gathered resources
     fn gather_resource(&self, resource: Resource) {
-        let mut resource_manager = self.resource_manager.lock().unwrap(); // Lock the resource manager
-        let mut gathered_resources = self.gathered_resources.lock().unwrap(); // Lock the gathered resources
-
-        // Match the resource type and get the corresponding amount and name
-        let (resource_amount, resource_name) = match resource {
-            Resource::Wood => (&mut resource_manager.wood, "wood"),
-            Resource::Stone => (&mut resource_manager.stone, "stone"),
-            Resource::Food => (&mut resource_manager.food, "food"),
-        };
-
-        // Check if the resource is available and gather it
-        if *resource_amount > 0 {
-            // Generate a random amount to gather
-            let amount = rand::thread_rng().gen_range(1..=*resource_amount);
-            // Update the resource manager and the player's gathered resources
-            *resource_amount -= amount;
-            *gathered_resources += amount;
-            // Print the result of the gathering action
-            println!(
-                "Player {} gathered {} {}. Remaining {}: {}",
-                self.id, amount, resource_name, resource_name, resource_amount
-            );
-        } else {
-            // Print a message if the resource is not available
-            println!(
-                "Player {} attempted to gather {}, but not enough available.",
-                self.id, resource_name
-            );
+        if let Ok(mut resource_manager) = self.resource_manager.lock() {
+            if let Ok(mut gathered_resources) = self.gathered_resources.lock() {
+                let amount = resource_manager.gather(resource);
+                *gathered_resources += amount;
+            }
         }
     }
 }
