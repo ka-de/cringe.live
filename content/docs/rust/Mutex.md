@@ -178,6 +178,36 @@ enum Resource {
     Food,
 }
 
+impl ResourceManager {
+    // Gather a resource (wood, stone, or food) and return the amount gathered
+    fn gather_resource(&mut self, resource: Resource) -> u32 {
+        // Determine which resource to gather based on the input resource type
+        let (resource_amount, resource_name) = match resource {
+            Resource::Wood => (&mut self.wood, "wood"),
+            Resource::Stone => (&mut self.stone, "stone"),
+            Resource::Food => (&mut self.food, "food"),
+        };
+
+        // If there is enough of the resource available, gather a random amount
+        if *resource_amount > 0 {
+            let amount = rand::thread_rng().gen_range(1..=*resource_amount);
+            *resource_amount -= amount;
+            println!(
+                "Gathered {} {}. Remaining {}: {}",
+                amount, resource_name, resource_name, resource_amount
+            );
+            amount
+        } else {
+            // If there is not enough of the resource available, print a message
+            println!(
+                "Attempted to gather {}, but not enough available.",
+                resource_name
+            );
+            0
+        }
+    }
+}
+
 // Define a struct to represent a player
 struct Player {
     id: u32,
@@ -202,29 +232,13 @@ impl Player {
         let mut resource_manager = self.resource_manager.lock().unwrap();
         let mut gathered_resources = self.gathered_resources.lock().unwrap();
 
-        // Determine which resource to gather based on the input resource type
-        let (resource_amount, resource_name) = match resource {
-            Resource::Wood => (&mut resource_manager.wood, "wood"),
-            Resource::Stone => (&mut resource_manager.stone, "stone"),
-            Resource::Food => (&mut resource_manager.food, "food"),
-        };
-
-        // If there is enough of the resource available, gather a random amount
-        if *resource_amount > 0 {
-            let amount = rand::thread_rng().gen_range(1..=*resource_amount);
-            *resource_amount -= amount;
-            *gathered_resources += amount;
-            println!(
-                "Player {} gathered {} {}. Remaining {}: {}",
-                self.id, amount, resource_name, resource_name, resource_amount
-            );
-        } else {
-            // If there is not enough of the resource available, print a message
-            println!(
-                "Player {} attempted to gather {}, but not enough available.",
-                self.id, resource_name
-            );
-        }
+        // Gather the resource using the resource manager
+        let amount = resource_manager.gather_resource(resource);
+        *gathered_resources += amount;
+        println!(
+            "Player {} gathered {} resources.",
+            self.id, *gathered_resources
+        );
     }
 }
 
