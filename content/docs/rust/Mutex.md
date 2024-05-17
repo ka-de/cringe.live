@@ -46,6 +46,8 @@ Rust’s Mutex also implements a strategy called “poisoning” where a mutex i
 
 ## GameState
 
+---
+
 In a video game, you might have multiple threads running at the same time, each responsible for different aspects of the game, such as rendering graphics, handling user input, updating game state, etc.
 
 Let’s consider a scenario where we have a global game state that multiple threads need to access and modify. We can use a Mutex to ensure that only one thread can access and modify the game state at a time, preventing race conditions and ensuring data consistency.
@@ -83,6 +85,8 @@ Finally, we print out the game score. If another thread tried to lock the Mutex 
 This is a very simplified example, but it gives you an idea of how Mutexes can be used in a multithreaded context like a video game to safely manage access to shared data. In a real game, the game state could be much more complex and there could be many more threads all needing to access and modify it.
 
 ## Multiple Threads
+
+---
 
 In the next example, we’ll use a Mutex to protect a global counter that’s being updated by two threads. This is a simplified model of how you might have multiple parts of a game engine updating the game state.
 
@@ -132,6 +136,8 @@ fn main() {
 In this example, we have two threads that are both incrementing a counter in the game state 10,000 times. The Mutex ensures that only one thread can access the game state at a time, preventing race conditions. If we didn’t use a Mutex and allowed both threads to access the game state simultaneously, we could end up with inconsistent results.
 
 ## ResourceManager
+
+---
 
 ```rust
 use std::sync::{Arc, Mutex};
@@ -216,4 +222,4 @@ In this example, we have a `ResourceManager` that manages the global resource po
 
 When a `Player` thread wants to gather a resource, it locks the ResourceManager using the `lock()` method, checks if the resource is available, and updates the resource amount if it is. If the resource is not available, it prints an error message.
 
-The main() function creates a `ResourceManager` and spawns 5 `Player` threads, each of which gathers resources in a specific order (wood, stone, food). The join() method is used to wait for all player threads to finish before exiting the program.
+The `main()` function creates a `ResourceManager` and spawns 5 `Player` threads, each of which gathers resources in a specific order (wood, stone, food). The `join()` method is used to wait for all player threads to finish before exiting the program.
