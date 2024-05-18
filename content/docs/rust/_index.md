@@ -1,7 +1,7 @@
 ---
 weight: 10
 bookFlatSection: false
-bookCollapseSection: false
+bookCollapseSection: true
 title: "Rust"
 ---
 

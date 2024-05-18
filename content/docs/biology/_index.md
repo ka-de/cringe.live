@@ -1,7 +1,7 @@
 ---
 weight: 15
 bookFlatSection: false
-bookCollapseSection: false
+bookCollapseSection: true
 title: "Biology"
 ---
 

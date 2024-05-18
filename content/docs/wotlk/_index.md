@@ -1,7 +1,7 @@
 ---
 weight: 20
 bookFlatSection: false
-bookCollapseSection: false
+bookCollapseSection: true
 title: "WOTLK"
 ---
 
