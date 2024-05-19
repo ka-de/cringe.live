@@ -312,7 +312,8 @@ title: "The Shrunk LoRA Guide"
 
 ## Way Too Small LoRAs
 
-Proceed at your own risk!
+<details>
+  <summary>Proceed at your own risk!</summary>
 
 amalia-v2e400
 
@@ -667,6 +668,8 @@ woolrool-v1e4
 - [woolrool-v1e4_th-0.92_spn_lora0.50_spn_ckpt0.50_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-0.92_spn_lora0.50_spn_ckpt0.50_size4.0.safetensors?download=true)
 - [woolrool-v1e4_th-1.14_spn_lora0.50_spn_ckpt0.50_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-1.14_spn_lora0.50_spn_ckpt0.50_size8.0.safetensors?download=true)
 - [woolrool-v1e4_th-1.26_spn_lora0.50_spn_ckpt0.50_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-1.26_spn_lora0.50_spn_ckpt0.50_size12.0.safetensors?download=true)
+
+</details>
 
 ## What the Heck is a Subspace Factor
 
