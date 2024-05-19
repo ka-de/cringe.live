@@ -11,6 +11,8 @@ title: "The Shrunk LoRA Guide"
 
 ---
 
+![The image is a humorous and imaginative scene depicting a man and a woman looking closely at a tiny wolf on a spoon. The man, wearing glasses and a sweatshirt with a large "T" on it, is holding a magnifying glass to better see the miniature wolf. The woman, peering closely beside him, also seems amazed and curious about the small wolf. The tiny wolf, adorned with a hotdog bun costume, adds a whimsical and playful element to the image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/honey-i-shrunk-the-hotdogwolf.png)
+
 ## The LoRAs
 
 ---
@@ -670,6 +672,10 @@ woolrool-v1e4
 - [woolrool-v1e4_th-1.26_spn_lora0.50_spn_ckpt0.50_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-1.26_spn_lora0.50_spn_ckpt0.50_size12.0.safetensors?download=true)
 
 </details>
+
+## Plots
+
+![This image is an XY plot.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/blaiddplot.png?download=true)
 
 ## What the Heck is a Subspace Factor
 
