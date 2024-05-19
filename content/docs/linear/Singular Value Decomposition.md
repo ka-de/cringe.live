@@ -15,97 +15,97 @@ At its core, SVD decomposes a real or complex matrix into three matrices: two or
 The beauty of SVD lies in its ability to capture the essential information within a matrix while filtering out noise or less significant components. This property makes SVD an invaluable tool for applications such as data compression, dimensionality reduction, and low-rank approximations.
 One notable application of SVD is in the field of natural language processing, where it is used in techniques like Latent Semantic Analysis (LSA) to uncover the underlying semantic relationships between words and documents. Similarly, in computer vision and image processing, SVD is employed for tasks like image compression (e.g., JPEG) and watermarking.
 
-The SVD of a matrix {{< katex >}}A{{< /katex >}} ({{< katex >}}m \times n{{< /katex >}}) is given by:
+The SVD of a matrix $A$ ($m \times n$) is given by:
 
-{{< katex display=true >}}
+$$
 A = U \Sigma V^T
-{{< /katex >}}
+$$
 
 Where:
 
-- {{< katex >}}A{{< /katex >}} is an {{< katex >}}m \times n{{< /katex >}} matrix
-- {{< katex >}}U{{< /katex >}} is an {{< katex >}}m \times m{{< /katex >}} orthogonal matrix ({{< katex >}}U^T U = I{{< /katex >}})
-- {{< katex >}}\Sigma{{< /katex >}} (Sigma) is an {{< katex >}}m \times n{{< /katex >}} diagonal matrix with non-negative real numbers on the diagonal
-- {{< katex >}}V^T{{< /katex >}} is the transpose of an {{< katex >}}m \times m{{< /katex >}} orthogonal matrix {{< katex >}}V{{< /katex >}} ({{< katex >}}V^T V = I{{< /katex >}})
+- $A$ is an $m \times n$ matrix
+- $U$ is an $m \times m$ orthogonal matrix ($U^T U = I$)
+- $\Sigma$ (Sigma) is an $m \times n$ diagonal matrix with non-negative real numbers on the diagonal
+- $V^T$ is the transpose of an $m \times m$ orthogonal matrix $V$ ($V^T V = I$)
 
-The diagonal entries of {{< katex >}}\Sigma{{< /katex >}} are called the singular values of {{< katex >}}A{{< /katex >}}, denoted by {{< katex >}}\sigma_i{{< /katex >}}:
+The diagonal entries of $\Sigma$ are called the singular values of $A$, denoted by $\sigma_i$:
 
-{{< katex display=true >}}
+$$
 \Sigma = \begin{bmatrix}
 \sigma_1 & 0 & \cdots & 0 \\
 0 & \sigma_2 & \cdots & 0 \\
 \vdots & \vdots & \ddots & \vdots \\
 0 & 0 & \cdots & \sigma_r
 \end{bmatrix}
-{{< /katex >}}
+$$
 
-Where {{< katex >}}r{{< /katex >}} is the rank of {{< katex >}}A{{< /katex >}}, and the singular values are arranged in descending order:
+Where $r$ is the rank of $A$, and the singular values are arranged in descending order:
 
-{{< katex display=true >}}
+$$
 \sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_r \geq 0
-{{< /katex >}}
+$$
 
-The columns of {{< katex >}}U{{< /katex >}} and {{< katex >}}V{{< /katex >}} are called the left and right singular vectors of {{< katex >}}A{{< /katex >}}, respectively:
+The columns of $U$ and $V$ are called the left and right singular vectors of $A$, respectively:
 
-{{< katex display=true >}}
+$$
 U = \begin{bmatrix}
 | & | & & | \\
 u_1 & u_2 & \cdots & u_m \\
 | & | & & |
 \end{bmatrix}
-{{< /katex >}}
+$$
 
-{{< katex display=true >}}
+$$
 V = \begin{bmatrix}
 | & | & & | \\
 v_1 & v_2 & \cdots & v_n \\
 | & | & & |
 \end{bmatrix}
-{{< /katex >}}
+$$
 
-The singular values in {{< katex >}}\Sigma{{< /katex >}} are arranged in descending order, and they represent the importance or "energy" of each corresponding pair of singular vectors in {{< katex >}}U{{< /katex >}} and {{< katex >}}V{{< /katex >}}. The larger singular values capture more important information about the original matrix A, while smaller singular values capture less important or "noisy" information.
+The singular values in $\Sigma$ are arranged in descending order, and they represent the importance or "energy" of each corresponding pair of singular vectors in $U$ and $V$. The larger singular values capture more important information about the original matrix A, while smaller singular values capture less important or "noisy" information.
 
 The SVD can be expressed in terms of the sum of rank-1 matrices:
 
-{{< katex display=true >}}
+$$
 A = \sum_{i=1}^r \sigma_i u_i v_i^T
-{{< /katex >}}
+$$
 
-Where {{< katex >}}u_i{{< /katex >}} and {{< katex >}}v_i{{< /katex >}} are the i-th columns of {{< katex >}}U{{< /katex >}} and {{< katex >}}V{{< /katex >}}, respectively.
-The low-rank approximation of {{< katex >}}A{{< /katex >}}, using the top {{< katex >}}k{{< /katex >}} singular values and vectors, is given by:
+Where $u_i$ and $v_i$ are the i-th columns of $U$ and $V$, respectively.
+The low-rank approximation of $A$, using the top $k$ singular values and vectors, is given by:
 
-{{< katex display=true >}}
+$$
 A_k = \sum_{i=1}^k \sigma_i u_i v_i^T
-{{< /katex >}}
+$$
 
-Where {{< katex >}}A_k{{< /katex >}} is the best rank-k approximation of {{< katex >}}A{{< /katex >}} in the least-squares sense.
+Where $A_k$ is the best rank-k approximation of $A$ in the least-squares sense.
 
 ## How the SVD is computed
 
-- Calculate the matrix product {{< katex >}}A^T A{{< /katex >}}, which is an {{< katex >}}m \times m{{< /katex >}} matrix.
-- Find the eigenvalues and eigenvectors of {{< katex >}}A^T A{{< /katex >}}.
-- The eigenvectors of {{< katex >}}A^T A{{< /katex >}} are the columns of {{< katex >}}V{{< /katex >}}.
-- The singular values {{< katex >}}σ_i{{< /katex >}} are the square roots of the eigenvalues of {{< katex >}}A^T A{{< /katex >}}.
-- The columns of {{< katex >}}U{{< /katex >}} are obtained by multiplying {{< katex >}}A{{< /katex >}} with the corresponding columns of {{< katex >}}V{{< /katex >}}, and then dividing by the corresponding singular values.
+- Calculate the matrix product $A^T A$, which is an $m \times m$ matrix.
+- Find the eigenvalues and eigenvectors of $A^T A$.
+- The eigenvectors of $A^T A$ are the columns of $V$.
+- The singular values $σ_i$ are the square roots of the eigenvalues of $A^T A$.
+- The columns of $U$ are obtained by multiplying $A$ with the corresponding columns of $V$, and then dividing by the corresponding singular values.
 
 Mathematically, it can be expressed as:
 
-{{< katex display=true >}}
+$$
 A^T A = V \Lambda V^T
-{{< /katex >}}
+$$
 
-Where {{< katex >}}\Lambda{{< /katex >}} is a diagonal matrix containing the eigenvalues of {{< katex >}}A^T A{{< /katex >}}.
-The singular values {{< katex >}}σ_i{{< /katex >}} are the square roots of the diagonal elements of {{< katex >}}\Lambda{{< /katex >}}:
+Where $\Lambda$ is a diagonal matrix containing the eigenvalues of $A^T A$.
+The singular values $σ_i$ are the square roots of the diagonal elements of $\Lambda$:
 
-{{< katex display=true >}}
+$$
 \Sigma = \sqrt{\Lambda}
-{{< /katex >}}
+$$
 
 And the columns of U are given by:
 
-{{< katex display=true >}}
+$$
 U = A V \Sigma^{-1}
-{{< /katex >}}
+$$
 
 ## Visualizing SVD and Low-Rank Matrix Approximation
 
@@ -218,16 +218,16 @@ Rank 9: 0.0550
 
 ## Important properties and applications
 
-Low-rank approximation: By keeping only the k largest singular values and their corresponding singular vectors, we can approximate the original matrix {{< katex >}}A{{< /katex >}} as {{< katex >}}A \approx U_k \Sigma_k V_k^T{{< /katex >}}, where {{< katex >}}U_k{{< /katex >}}, {{< katex >}}\Sigma_k{{< /katex >}}, and {{< katex >}}V_k^T{{< /katex >}} are the truncated matrices containing the top {{< katex >}}k{{< /katex >}} singular values and vectors. This is known as the low-rank approximation of {{< katex >}}A{{< /katex >}}, and it is useful for data compression, noise reduction, and dimensionality reduction.
+Low-rank approximation: By keeping only the k largest singular values and their corresponding singular vectors, we can approximate the original matrix $A$ as $A \approx U_k \Sigma_k V_k^T$, where $U_k$, $\Sigma_k$, and $V_k^T$ are the truncated matrices containing the top $k$ singular values and vectors. This is known as the low-rank approximation of $A$, and it is useful for data compression, noise reduction, and dimensionality reduction.
 
 - **Matrix inversion and pseudoinverse**: The SVD can be used to compute the inverse or pseudoinverse of a matrix, which is useful in linear algebra and least-squares problems.
 - **Data analysis and dimensionality reduction**: The SVD is used in techniques like Principal Component Analysis (PCA) and Latent Semantic Analysis (LSA) for dimensionality reduction and data analysis.
 - **Image compression and processing**: The SVD is used in image compression algorithms like JPEG and in various image processing tasks, such as watermarking and noise removal.
-Signal processing: The SVD is used in signal processing applications like signal denoising, feature extraction, and subspace tracking.
+  Signal processing: The SVD is used in signal processing applications like signal denoising, feature extraction, and subspace tracking.
 
 ### LoRA Merging
 
-SVD is used to perform a low-rank approximation of the merged LoRA weights. By keeping only the top {{< katex >}}k{{< /katex >}} singular values and vectors, the script extracts a low-rank representation of the merged weights, which can be more efficient and compact than the original merged weights. This low-rank representation is then used as the new LoRA weights for the merged model.
+SVD is used to perform a low-rank approximation of the merged LoRA weights. By keeping only the top $k$ singular values and vectors, the script extracts a low-rank representation of the merged weights, which can be more efficient and compact than the original merged weights. This low-rank representation is then used as the new LoRA weights for the merged model.
 The truncation of singular values and vectors is controlled by the `--new_rank` and `--new_conv_rank` arguments, which specify the desired rank (or dimension) of the output LoRA model.
 
 The script also applies clamping to the singular vectors to prevent them from becoming too large or too small, which can help improve numerical stability and convergence during training or fine-tuning.
@@ -268,7 +268,7 @@ Another approach is to combine SVD with other techniques or domain-specific cons
 
 ## Computational Complexity and Numerical Stability
 
-Computing the SVD of a large matrix can be computationally expensive, especially for dense matrices. The computational cost grows significantly with the size of the matrix, making it challenging to apply SVD to very large-scale problems. The time complexity of the SVD algorithm for an {{< katex >}}m \times n{{< /katex >}} matrix is {{< katex >}}O(\min(m^2n, mn^2)){{< /katex >}}, which can become prohibitive for large matrices.
+Computing the SVD of a large matrix can be computationally expensive, especially for dense matrices. The computational cost grows significantly with the size of the matrix, making it challenging to apply SVD to very large-scale problems. The time complexity of the SVD algorithm for an $m \times n$ matrix is $O(\min(m^2n, mn^2))$, which can become prohibitive for large matrices.
 
 To address this limitation, various approximation techniques and algorithms have been developed to reduce the computational burden. One popular approach is the Randomized SVD, which uses random projections to approximate the singular values and vectors efficiently. Other techniques include iterative methods, such as the Lanczos algorithm, and parallel or distributed implementations of SVD.
 

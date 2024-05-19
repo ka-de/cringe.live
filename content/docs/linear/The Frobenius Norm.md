@@ -19,23 +19,23 @@ The Frobenius norm, named after the German mathematician Ferdinand Georg Frobeni
 
 ## Mathematical Definition
 
-Mathematically, the Frobenius norm of a matrix {{< katex >}}A{{< /katex >}} is defined as the square root of the sum of the absolute squares of its elements
+Mathematically, the Frobenius norm of a matrix $A$ is defined as the square root of the sum of the absolute squares of its elements
 
-{{< katex display=true >}}
+$$
 ||A||_F = \sqrt{\sum_{i=1}^{m}\sum_{j=1}^{n}|a_{ij}|^2}
-{{< /katex >}}
+$$
 
-Where {{< katex >}}a_{ij}{{< /katex >}} represents the elements of the matrix {{< katex >}}A{{< /katex >}}, and {{< katex >}}m{{< /katex >}} and {{< katex >}}n{{< /katex >}} are the dimensions of the matrix.
+Where $a_{ij}$ represents the elements of the matrix $A$, and $m$ and $n$ are the dimensions of the matrix.
 
 ## Properties
 
 The Frobenius norm has several important properties that make it particularly useful in the field of numerical linear algebra:
 
-- **Sub-multiplicative**: The Frobenius norm is sub-multiplicative, meaning that for any two matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}}, the Frobenius norm of their product is less than or equal to the product of their Frobenius norms. This can be represented as:
+- **Sub-multiplicative**: The Frobenius norm is sub-multiplicative, meaning that for any two matrices $A$ and $B$, the Frobenius norm of their product is less than or equal to the product of their Frobenius norms. This can be represented as:
 
-{{< katex display=true >}}
+$$
 ||AB||_F \leq ||A||_F ||B||_F
-{{< /katex >}}
+$$
 
 - **Extension of Euclidean Norm**: The Frobenius norm can also be considered as an extension of the Euclidean norm from vectors to matrices1. This makes it a natural choice for measuring the “distance” between two matrices.
 

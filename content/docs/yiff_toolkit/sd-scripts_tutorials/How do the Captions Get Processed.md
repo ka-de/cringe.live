@@ -61,9 +61,9 @@ If wildcards are not enabled and the caption contains newlines, only the first l
 
 The function offers advanced token manipulation features, including shuffling, warmup, and dropout. Tokens are the individual words or symbols in the caption. Shuffling tokens can help the model learn more robust representations by presenting the data in different orders. The token warmup mechanism is a form of curriculum learning where the complexity of the data is gradually increased during training. The mathematical formula for calculating the number of tokens to keep based on the warmup step is as follows:
 
-{{< katex display=true >}}
+$$
 \text{tokens\_len} = \left\lfloor \left( \text{self.current\_step} \right) \times \left( \frac{\text{len(flex\_tokens)} - \text{subset.token\_warmup\_min}}{\text{subset.token\_warmup\_step}} \right) \right\rfloor + \text{subset.token\_warmup\_min}
-{{< /katex >}}
+$$
 
 or in Python:
 

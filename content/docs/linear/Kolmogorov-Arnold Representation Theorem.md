@@ -12,13 +12,13 @@ The Kolmogorov-Arnold Representation Theorem, also known as the superposition th
 
 It was first proved by Andrey Kolmogorov in 1956 and later extended by his student Vladimir Arnold in 1957.
 
-The theorem states that every multivariate continuous function can be represented as a superposition of continuous functions of one variable. More specifically, if {{< katex >}}f{{< /katex >}} is a multivariate continuous function, then {{< katex >}}f{{< /katex >}} can be written as a finite composition of continuous functions of a single variable and the binary operation of addition.
+The theorem states that every multivariate continuous function can be represented as a superposition of continuous functions of one variable. More specifically, if $f$ is a multivariate continuous function, then $f$ can be written as a finite composition of continuous functions of a single variable and the binary operation of addition.
 
 The mathematical representation is as follows:
 
-{{< katex display=true >}}f(x_1, \ldots, x_m) = \sum_{i=1}^{2m+1} \Phi_i \left( \sum_{j=1}^{m} \phi_{i,j}(x_j) \right){{< /katex >}}
+$$f(x_1, \ldots, x_m) = \sum_{i=1}^{2m+1} \Phi_i \left( \sum_{j=1}^{m} \phi_{i,j}(x_j) \right)$$
 
-Where {{< katex >}}\Phi_i{{< /katex >}} and {{< katex >}}\phi_{i,j}{{< /katex >}} are continuous monotonically increasing functions on the interval {{< katex >}}[0,1]{{< /katex >}}
+Where $\Phi_i$ and $\phi_{i,j}$ are continuous monotonically increasing functions on the interval $[0,1]$
 
 This theorem solved a more constrained form of Hilbert’s thirteenth problem, so the original Hilbert’s thirteenth problem is a corollary. In a sense, they showed that the only true multivariate function is the sum, since every other function can be written using univariate functions and summing.
 

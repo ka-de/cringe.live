@@ -23,19 +23,19 @@ Vectors are mathematical objects that have both magnitude (size) and direction. 
 
 _This furry has a velocity._
 
-Even this [DVD logo](/dvd.html) has a vector, not just furries, just press the `v` key and an arrow will display the vector of the logo. Vectors are everywhere, even in your pants! Points are usually denoted with capital letters, like {{< katex >}}A{{< /katex >}}. A directed line segment from {{< katex >}}A{{< /katex >}} to {{< katex >}}B{{< /katex >}} is denoted by {{< katex >}}\overrightarrow{AB}{{< /katex >}}.
+Even this [DVD logo](/dvd.html) has a vector, not just furries, just press the `v` key and an arrow will display the vector of the logo. Vectors are everywhere, even in your pants! Points are usually denoted with capital letters, like $A$. A directed line segment from $A$ to $B$ is denoted by $\overrightarrow{AB}$.
 
-{{< katex display=true >}}
+$$
 \vec{v} = \overrightarrow{AB}
-{{< /katex >}}
+$$
 
-Vectors are often represented as an array of numbers, where each number corresponds to a coordinate in space. In a 2D plane, a vector {{< katex >}}\vec{v}{{< /katex >}} can be represented as an ordered pair: {{< katex >}}\vec{v} = [v_1, v_2]{{< /katex >}}. Here {{< katex >}}v_1{{< /katex >}} and {{< katex >}}v_2{{< /katex >}} are the components of {{< katex >}}\vec{v}{{< /katex >}} along the x and y axes respectively. You can also represent it like:
+Vectors are often represented as an array of numbers, where each number corresponds to a coordinate in space. In a 2D plane, a vector $\vec{v}$ can be represented as an ordered pair: $\vec{v} = [v_1, v_2]$. Here $v_1$ and $v_2$ are the components of $\vec{v}$ along the x and y axes respectively. You can also represent it like:
 
-{{< katex display=true >}}
+$$
 \vec{v} = \begin{bmatrix} v_1 \\ v_2 \end{bmatrix}
-{{< /katex >}}
+$$
 
-For example, the vector {{< katex >}}\vec{v} = [2, 3]{{< /katex >}} can be visualized as an arrow starting at the origin {{< katex >}}(0, 0){{< /katex >}} and pointing 2 units in the positive x-direction and 3 units in the positive y-direction.
+For example, the vector $\vec{v} = [2, 3]$ can be visualized as an arrow starting at the origin $(0, 0)$ and pointing 2 units in the positive x-direction and 3 units in the positive y-direction.
 
 ![My First Vector](/images/linear/hello-vectors.png)
 
@@ -77,10 +77,10 @@ plt.show()
 
 Because we don't care about the origin of a vector to compare them, only their magnitudes, two parallel vectors that have the same length makes them equal.
 
-{{< katex display=true >}}
+$$
 \vec{v} = \overrightarrow{AB}, \quad \vec{w} = \overrightarrow{CD} \\
 \vec{v} = \vec{w}
-{{< /katex >}}
+$$
 
 ![Parallel vectors](/images/linear/parallel-vectors.png)
 
@@ -127,7 +127,7 @@ plt.show()
 
 ### Vector Addition
 
-If you have two vectors, you can add them together to get a new vector. This is done by adding the corresponding components of the vectors. For example if {{< katex >}}\vec{a} = [2, 3]{{< /katex >}} and {{< katex >}}\vec{b} = [1, 4]{{< /katex >}} then {{< katex >}}\vec{a} + \vec{b} = [2+1, 3+4] = [3, 7]{{< /katex >}}.
+If you have two vectors, you can add them together to get a new vector. This is done by adding the corresponding components of the vectors. For example if $\vec{a} = [2, 3]$ and $\vec{b} = [1, 4]$ then $\vec{a} + \vec{b} = [2+1, 3+4] = [3, 7]$.
 
 ![A plot of vector addition](/images/linear/vector-sum.png)
 
@@ -177,7 +177,7 @@ plt.show()
 
 ### Scalar Multiplication
 
-You can multiply a vector by a scalar (regular number) to get a new vector. This is done by multiplying each component of the vector by the scalar. For example if {{< katex >}}c = 2{{< /katex >}} and {{< katex >}}\vec{b} = [1,4]{{< /katex >}} then {{< katex >}}c * \vec{b} = [2*3, 2 \*4] = [6, 8]{{< /katex >}}.
+You can multiply a vector by a scalar (regular number) to get a new vector. This is done by multiplying each component of the vector by the scalar. For example if $c = 2$ and $\vec{b} = [1,4]$ then $c * \vec{b} = [2*3, 2*4] = [6, 8]$.
 
 ![Plot of a scalar multiplication](/images/linear/scalar-multiplication.png)
 
@@ -227,11 +227,11 @@ plt.show()
 
 ### Dot Product
 
-The dot product of two vectors is a scalar quantity that is the sum of the products of the corresponding components of the vectors. For example if {{< katex >}}\vec{e} = [2, 3]{{< /katex >}} and {{< katex >}}\vec{f} = [4, 5]{{< /katex >}}, then {{< katex >}}\vec{e} \cdot \vec{f} = 2*4 + 3*5 = 23{{< /katex >}}
+The dot product of two vectors is a scalar quantity that is the sum of the products of the corresponding components of the vectors. For example if $\vec{e} = [2, 3]$ and $\vec{f} = [4, 5]$, then $\vec{e} \cdot \vec{f} = 2*4 + 3*5 = 23$
 
 ![A geometric interpretation of the dot product](/images/linear/dot-product-plot.png)
 
-This is a geometric interpretation of the dot product, and it’s particularly useful when thinking about the dot product as a measure of the similarity between two vectors: if {{< katex >}}\vec{f}{{< /katex >}} is very similar to {{< katex >}}\vec{e}{{< /katex >}} (i.e., it points in the same direction), then its projection onto {{< katex >}}\vec{e}{{< /katex >}} will be long, and so the dot product will be large. Conversely, if {{< katex >}}\vec{f}{{< /katex >}} is dissimilar to {{< katex >}}\vec{e}{{< /katex >}} (i.e., it points in a very different direction), then its projection onto {{< katex >}}\vec{e}{{< /katex >}} will be short, and so the dot product will be small.
+This is a geometric interpretation of the dot product, and it’s particularly useful when thinking about the dot product as a measure of the similarity between two vectors: if $\vec{f}$ is very similar to $\vec{e}$ (i.e., it points in the same direction), then its projection onto $\vec{e}$ will be long, and so the dot product will be large. Conversely, if $\vec{f}$ is dissimilar to $\vec{e}$ (i.e., it points in a very different direction), then its projection onto $\vec{e}$ will be short, and so the dot product will be small.
 
 The magnitude of the cross product vector equals the area of the parallelogram formed by the two original vectors.
 
@@ -291,7 +291,7 @@ print("The dot product of vectors e and f is: ", g)
 
 ### Magnitude (or Length)
 
-The magnitude of a vector {{< katex >}}\vec{g} = [a, b]{{< /katex >}} is given by the square root of the sum of the squares of its components. This is denoted as {{< katex >}}||\vec{g}||{{< /katex >}} and calculated as {{< katex >}}||\vec{g}|| = \sqrt{a^2 + b^2}{{< /katex >}}
+The magnitude of a vector $\vec{g} = [a, b]$ is given by the square root of the sum of the squares of its components. This is denoted as $||\vec{g}||$ and calculated as $||\vec{g}|| = \sqrt{a^2 + b^2}$
 
 <details>
   <summary>Click to reveal script</summary>
@@ -329,21 +329,21 @@ print("The magnitude of the vector g is:", calculate_magnitude(g))
 
 A matrix is a rectangular array of numbers arranged in rows and columns. Matrices are used to represent and manipulate linear transformations, which are functions that map vectors to vectors while preserving vector addition and scalar multiplication. Each number in the matrix is called an element or entry. The position of an element is defined by its row number and column number.
 
-A {{< katex >}}2 \times 2{{< /katex >}} matrix can be represented as follows:
+A $2 \times 2$ matrix can be represented as follows:
 
-{{< katex display=true >}}A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}{{< /katex >}}
+$$A = \begin{bmatrix} a & b \\ c & d \end{bmatrix}$$
 
 ### Matrix Addition and Subtraction
 
-Matrices can be added or subtracted element by element if they are of the same size. For example if we have two {{< katex >}}2 \times 2{{< /katex >}} matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} then the sum {{< katex >}}A+B{{< /katex >}} is a new {{< katex >}}2 \times 2{{< /katex >}} matrix where each element is the sum of the corresponding elements in {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}}.
+Matrices can be added or subtracted element by element if they are of the same size. For example if we have two $2 \times 2$ matrices $A$ and $B$ then the sum $A+B$ is a new $2 \times 2$ matrix where each element is the sum of the corresponding elements in $A$ and $B$.
 
 It can be represented as:
 
-{{< katex display=true >}}
+$$
 A + B = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} + \begin{bmatrix} a2 & b2 \\ c2 & d2 \end{bmatrix} = \begin{bmatrix} a1+a2 & b1+b2 \\ c1+c2 & d1+d2 \end{bmatrix}
-{{< /katex >}}
+$$
 
-This is how you can create a {{< katex >}}2 \times 2{{< /katex >}} matrix with numpy:
+This is how you can create a $2 \times 2$ matrix with numpy:
 
 ```python
 import numpy as np
@@ -352,25 +352,25 @@ import numpy as np
 A = np.array([[1, 2], [3, 4]])
 ```
 
-If we have two matrices {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} of the same size representing linear transformations, their sum {{< katex >}}A + B{{< /katex >}} also represents a linear transformation. The sum transformation {{< katex >}}(A + B){{< /katex >}} applied to any vector {{< katex >}}\vec{v}{{< /katex >}} is equal to {{< katex >}}A(\vec{v}) + B(\vec{v}){{< /katex >}}. This property is known as linear separability.
+If we have two matrices $A$ and $B$ of the same size representing linear transformations, their sum $A + B$ also represents a linear transformation. The sum transformation $(A + B)$ applied to any vector $\vec{v}$ is equal to $A(\vec{v}) + B(\vec{v})$. This property is known as linear separability.
 
-{{< katex display=true >}}
+$$
 (A + B)(\vec{v}) = A(\vec{v}) + B(\vec{v})
-{{< /katex >}}
+$$
 
 ### Scalar Multiplication of a Matrix
 
 A matrix can be multiplied by a scalar. This is done by multiplying each element of the matrix by the scalar.
 
-{{< katex display=true >}}kA = k \cdot \begin{bmatrix} a & b \\ c & d \end{bmatrix} = \begin{bmatrix} ka & kb \\ kc & kd \end{bmatrix}{{< /katex >}}
+$$kA = k \cdot \begin{bmatrix} a & b \\ c & d \end{bmatrix} = \begin{bmatrix} ka & kb \\ kc & kd \end{bmatrix}$$
 
 ### Matrix Multiplication
 
 The multiplication of two matrices is more complex than their addition. For two matrices to be multiplied, the number of columns in the first matrix must be equal to the number of rows in the second matrix.
 
-{{< katex display=true >}}AB = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} \cdot \begin{bmatrix} a2 & b2 \\ c2 & d2 \end{bmatrix} = \begin{bmatrix} a1*a2 + b1*c2 & a1*b2 + b1*d2 \\ c1*a2 + d1*c2 & c1*b2 + d1*d2 \end{bmatrix}{{< /katex >}}
+$$AB = \begin{bmatrix} a1 & b1 \\ c1 & d1 \end{bmatrix} \cdot \begin{bmatrix} a2 & b2 \\ c2 & d2 \end{bmatrix} = \begin{bmatrix} a1*a2 + b1*c2 & a1*b2 + b1*d2 \\ c1*a2 + d1*c2 & c1*b2 + d1*d2 \end{bmatrix}$$
 
-Matrix multiplication corresponds to function composition of linear transformations. If {{< katex >}}A{{< /katex >}} and {{< katex >}}B{{< /katex >}} are matrices representing linear transformations, then {{< katex >}}AB{{< /katex >}} represents the transformation that first applies {{< katex >}}B{{< /katex >}} and then applies {{< katex >}}A{{< /katex >}}.
+Matrix multiplication corresponds to function composition of linear transformations. If $A$ and $B$ are matrices representing linear transformations, then $AB$ represents the transformation that first applies $B$ and then applies $A$.
 
 For two matrices to be multiplied, the number of columns in the first matrix must equal the number of rows in the second matrix.
 
@@ -378,41 +378,139 @@ For two matrices to be multiplied, the number of columns in the first matrix mus
 
 This is a special type of square matrix where all the elements of the principal diagonal (from the upper left to the bottom right) are ones and all other elements are zeros. The identity matrix play a similar role in matrix algebra as the number 1 in regular algebra. Here are some example ones:
 
-{{< katex display=true >}}
+$$
 I_2 = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
 \quad
 I_3 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 \quad
 I_4 = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}
-{{< /katex >}}
+$$
 
 The identity matrix plays a similar role in matrix operations as the number 1 does in real number operations. When you multiply any square matrix by the identity matrix of the same order, you get the original matrix back, regardless of the order of multiplication. This is expressed as:
 
-{{< katex display=true >}}
+$$
 A \cdot I = I \cdot A = A
-{{< /katex >}}
+$$
 
-- Where {{< katex >}}A{{< /katex >}} is any square matrix,
-- {{< katex >}}I{{< /katex >}} is the identity matrix of the same order as {{< katex >}}A{{< /katex >}}.
+- Where $A$ is any square matrix,
+- $I$ is the identity matrix of the same order as $A$.
 
 ### Determinant
 
 The determinant is a special number that can be calculated from a square matrix. It has many important properties and uses, such as providing the solution of a system of linear equations.
 
-{{< katex display=true >}}det(A) = det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc{{< /katex >}}
+$$det(A) = det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc$$
 
 ### Inverse
 
-The inverse of a matrix {{< katex >}}A{{< /katex >}} is another matrix, denoted as {{< katex >}}A^{-1}{{< /katex >}}, such that when {{< katex >}}A{{< /katex >}} is multiplied by {{< katex >}}A^{-1}{{< /katex >}}, the result is the identity matrix. Not all matrices have an inverse.
+The inverse of a matrix $A$ is another matrix, denoted as $A^{-1}$, such that when $A$ is multiplied by $A^{-1}$, the result is the identity matrix. Not all matrices have an inverse.
 
-{{< katex display=true >}}A^{-1} = \frac{1}{det(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}{{< /katex >}}
+$$A^{-1} = \frac{1}{det(A)} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$$
 
 ### Transpose
 
 The transpose of a matrix is a new matrix whose rows are the columns of the original matrix and whose columns are the rows.
 
-{{< katex display=true >}}A^T = \begin{bmatrix} a & c \\ b & d \end{bmatrix}{{< /katex >}}
+$$A^T = \begin{bmatrix} a & c \\ b & d \end{bmatrix}$$
 
-- **Linear equations** are equations of the first order, representing straight lines in geometry. They are characterized by constants and variables without exponents or products of variables.
-- **Eigenvalues** and **Eigenvectors** are special sets of scalars and vectors associated with a matrix. They are fundamental in the study of linear transformations.
-- **Orthogonal Matrices** are square matrices whose columns and rows are orthogonal unit vectors (orthonormal vectors)
+## Eigenvalues and Eigenvectors
+
+---
+
+### Eigenvalues
+
+---
+
+An eigenvalue of a square matrix $A$ is a scalar $\lambda$ that satisfies the equation:
+
+$$
+A\vec{v} = \lambda\vec{v}
+$$
+
+Where $\vec{v}$ is a non-zero vector. This equation can be rearranged as:
+
+$$
+(A - \lambda I)\vec{v} = \vec{0}
+$$
+
+Where $I$ is the identity matrix of the same size as $A$, and $\vec{0}$ is the zero vector. The scalars $\lambda$ that satisfy this equation are the eigenvalues of $A$.
+
+To find the eigenvalues of a matrix, we set the determinant of $(A - \lambda I)$ equal to zero and solve for $\lambda$:
+
+$$
+\det(A - \lambda I) = 0
+$$
+
+This equation is known as the characteristic equation of $A$, and its solutions are the eigenvalues of $A$.
+
+Here's an example in Python using NumPy to find the eigenvalues of a $3 \times 3$ matrix:
+
+```python
+import numpy as np
+
+# Define the matrix A
+A = np.array([[1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]])
+
+# Calculate the eigenvalues
+eigenvalues, _ = np.linalg.eig(A)
+print("Eigenvalues: ", eigenvalues)
+```
+
+The script uses the `np.linalg.eig` function to calculate the eigenvalues of the matrix `A`. This function returns a tuple consisting of a vector (the eigenvalues of `A`) and an array (the corresponding eigenvectors of `A`). In this case, the script only keeps the eigenvalues and ignores the eigenvectors by storing them in `_`.
+
+### Eigenvectors
+
+---
+
+An eigenvector of a matrix $A$ is a non-zero vector $\vec{v}$ that satisfies the equation:
+
+$$
+A\vec{v} = \lambda\vec{v}
+$$
+
+Where $\lambda$ is an eigenvalue of $A$ corresponding to $\vec{v}$. For each eigenvalue $\lambda$, there may be one or more eigenvectors associated with it.
+
+To find the eigenvectors corresponding to an eigenvalue $\lambda$, we substitute $\lambda$ into the equation $(A - \lambda I)\vec{v} = \vec{0}$ and solve for $\vec{v}$.
+
+Here's an example in Python using NumPy to find the eigenvectors of a $2 \times 2$ matrix:
+
+```python
+import numpy as np
+
+# Define the matrix A
+A = np.array([[2, 1],
+              [1, 3]])
+
+# Calculate the eigenvalues and eigenvectors
+eigenvalues, eigenvectors = np.linalg.eig(A)
+
+print("Eigenvalues: ", eigenvalues)
+
+# Print the eigenvectors
+for i in range(len(eigenvalues)):
+    print(f"Eigenvector for eigenvalue {eigenvalues[i]}: {eigenvectors[:, i]}")
+```
+
+In this example, we first calculate the eigenvalues and eigenvectors of the matrix `A` using `np.linalg.eig`. The function returns the eigenvalues as a 1D array, and the eigenvectors as a 2D array, where each column corresponds to an eigenvector associated with the eigenvalue at the same index.
+
+We then iterate over the eigenvalues and print the corresponding eigenvectors. Note that the eigenvectors are normalized to have a length of 1.
+
+Eigenvectors have many important properties and applications. For example, they can be used to diagonalize a matrix, which simplifies many matrix computations. They are also useful in fields like quantum mechanics, where they represent the possible states of a system.
+
+### Properties of Eigenvalues and Eigenvectors
+
+---
+
+Some important properties of eigenvalues and eigenvectors include:
+
+<!-- prettier-ignore-start -->
+**Linearity**: If $\vec{v}_1$ and $\vec{v}_2$ are eigenvectors of $A$ with corresponding eigenvalues $\lambda_1$ and $\lambda_2$, then any linear combination $c_1\vec{v}_1 + c_2\vec{v}_2$ is also an eigenvector of $A$ with the same eigenvalue $c_1\lambda_1 + c_2\lambda_2$.
+<!-- prettier-ignore-end -->
+
+**Diagonalizability**: If a square matrix $A$ has $n$ linearly independent eigenvectors, then $A$ is diagonalizable. This means that there exists an invertible matrix $P$ such that $P^{-1}AP$ is a diagonal matrix, where the diagonal entries are the eigenvalues of $A$.
+
+**Geometric Multiplicity and Algebraic Multiplicity**: The geometric multiplicity of an eigenvalue $\lambda$ is the dimension of the corresponding eigenspace (the space spanned by the eigenvectors associated with $\lambda$). The algebraic multiplicity of $\lambda$ is the multiplicity of $\lambda$ as a root of the characteristic equation $\det(A - \lambda I) = 0$. The algebraic multiplicity is always greater than or equal to the geometric multiplicity.
+
+**Orthogonality of Eigenvectors**: If $A$ is a real symmetric matrix (or a complex hermitian matrix), then the eigenvectors corresponding to distinct eigenvalues are orthogonal to each other.

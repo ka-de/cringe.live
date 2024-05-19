@@ -12,11 +12,26 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+            - - $
+              - $
+        enable: true
   tableOfContents:
     startLevel: 1
     endLevel: 6
 
 params:
+  math: true
   BookTheme: "auto"
   BookToC: true
   #BookLogo: 'logo.png'

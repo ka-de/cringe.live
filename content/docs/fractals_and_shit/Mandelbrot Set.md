@@ -13,9 +13,9 @@ title: "Mandelbrot Set"
 
 ## Introduction
 
-The Mandelbrot set is a fascinating concept in the field of complex dynamics, a branch of mathematics. It is a two-dimensional set defined in the complex plane, known for its intricate and infinitely recursive boundary that exhibits fractal properties. The set is defined by a relatively simple iterative equation, {{< katex >}}z_{n+1} = z_{n}^2 + c{{< /katex >}} where {{< katex >}}c{{< /katex >}} is a complex number and the sequence starts with {{< katex >}}z_0 = 0{{< /katex >}}
+The Mandelbrot set is a fascinating concept in the field of complex dynamics, a branch of mathematics. It is a two-dimensional set defined in the complex plane, known for its intricate and infinitely recursive boundary that exhibits fractal properties. The set is defined by a relatively simple iterative equation, $z_{n+1} = z_{n}^2 + c$ where $c$ is a complex number and the sequence starts with $z_0 = 0$
 
-The Mandelbrot set includes all complex numbers, {{< katex >}}c{{< /katex >}}, for which this sequence does not diverge to infinity, meaning it remains bounded in absolute value. This set was first defined and drawn by Robert W. Brooks and Peter Matelski in 1978, and later visualized by Benoit Mandelbrot in 1980.
+The Mandelbrot set includes all complex numbers, $c$, for which this sequence does not diverge to infinity, meaning it remains bounded in absolute value. This set was first defined and drawn by Robert W. Brooks and Peter Matelski in 1978, and later visualized by Benoit Mandelbrot in 1980.
 
 Here is a numpy version.
 
@@ -113,5 +113,5 @@ def main():
     draw_mandelbrot(-2.0, 1.0, -1.5, 1.5, 1440, 1440, 256)
 
 if __name__ == "__main__":
-    main() 
+    main()
 ```
