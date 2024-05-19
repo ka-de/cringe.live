@@ -220,7 +220,7 @@ title: "The Shrunk LoRA Guide"
 - [non-euclidean_sex-v1e400_th-1.51_spn_lora0.50_spn_ckpt0.50_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-1.51_spn_lora0.50_spn_ckpt0.50_size24.0.safetensors?download=true)
 - [non-euclidean_sex-v1e400_th-1.62_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-1.62_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors?download=true)
 
-### pup_masks-v1e400
+### pup_mask-v1e400
 
 - [pup_mask-v1e400_th-1.46_spn_lora0.50_spn_ckpt0.50_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-1.46_spn_lora0.50_spn_ckpt0.50_size24.0.safetensors?download=true)
 - [pup_mask-v1e400_th-1.56_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-1.56_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors?download=true)
