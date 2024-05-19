@@ -314,6 +314,8 @@ title: "The Shrunk LoRA Guide"
 
 ## Way Too Small LoRAs
 
+---
+
 <details>
   <summary>Proceed at your own risk!</summary>
 
@@ -674,6 +676,8 @@ woolrool-v1e4
 </details>
 
 ## Plots
+
+---
 
 ![This image is an XY plot.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/blaiddplot.png?download=true)
 
