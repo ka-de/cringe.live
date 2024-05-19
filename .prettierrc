@@ -2,4 +2,3 @@
 goTemplateBracketSpacing: true
 plugins:
   - prettier-plugin-go-template
-
