@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Create Empty Captions for Images"
+summary: "This Python script creates an empty text file with the same name as each image file (.jpg, .png, or .jpeg) present in a specified directory. The script checks if the directory exists, and then iterates through all the image files in the directory."
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -11,16 +12,11 @@ title: "Create Empty Captions for Images"
 
 ---
 
+This Python script creates an empty text file with the same name as each image file (.jpg, .png, or .jpeg) present in a specified directory. The script checks if the directory exists, and then iterates through all the image files in the directory.
+
+For each image file, it creates a corresponding text file with the same name but with a .txt extension in the same directory, unless a text file with that name already exists.
+
 ```python
-"""
-This Python script creates an empty text file with the same name as each image file (.jpg, .png, or .jpeg)
-present in a specified directory. The script checks if the directory exists, and then iterates through
-all the image files in the directory.
-
-For each image file, it creates a corresponding text file with the same name but with a .txt extension
-in the same directory, unless a text file with that name already exists.
-"""
-
 import os
 import glob
 

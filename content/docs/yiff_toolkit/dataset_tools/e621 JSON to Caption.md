@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "e621 JSON to Caption"
+summary: "This Python script is designed to process JSON files found within a specified directory and its subdirectories. Each JSON file is expected to contain data related to image posts sourced from e621.net or e6ai.net. The script parses these JSON files, extracts relevant information such as image URL, ratings, and tags, and generates caption files (`.txt`) based on this data."
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -11,8 +12,7 @@ title: "e621 JSON to Caption"
 
 ---
 
-This Python script is designed to process JSON files found within a specified directory and its subdirectories.
-Each JSON file is expected to contain data related to image posts, particularly sourced from online platforms such as image boards. The script parses these JSON files, extracts relevant information such as image URL, ratings, and tags, and generates caption files (`.txt`) based on this data.
+This Python script is designed to process JSON files found within a specified directory and its subdirectories. Each JSON file is expected to contain data related to image posts sourced from e621.net or e6ai.net. The script parses these JSON files, extracts relevant information such as image URL, ratings, and tags, and generates caption files (`.txt`) based on this data.
 
 Here's a breakdown of what the script does:
 
@@ -25,13 +25,6 @@ Here's a breakdown of what the script does:
 4. **Processing Tags**: Tags are processed to replace underscores with spaces and to handle special cases such as artist tags. Ignored tags are filtered out.
 
 ```python
-"""
-This script processes JSON files from a specified directory and its subdirectories,
-extracting image-related data to create caption files. It filters out certain tags
-based on predefined patterns and generates a .txt file for each image with its
-rating and relevant tags.
-"""
-
 import os
 import glob
 import re

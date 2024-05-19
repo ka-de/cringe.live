@@ -10,6 +10,8 @@ title: "Dataset Tools"
 
 # Dataset Tools
 
+---
+
 A "small" collection of Python scripts that dataset curators might find handy.
 
-{{< section summary >}}
+{{< section details >}}

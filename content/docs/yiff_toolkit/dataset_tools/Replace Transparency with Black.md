@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Replace Transparency with Black"
+summary: "This Python script processes all `.png` images in a specified directory by adding a black layer to each, utilizing multiprocessing to handle the images in parallel for efficiency."
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -11,12 +12,9 @@ title: "Replace Transparency with Black"
 
 ---
 
-```python
-"""
-This Python script processes all `.png` images in a specified directory by adding a black layer to each,
-utilizing multiprocessing to handle the images in parallel for efficiency.
-"""
+This Python script processes all `.png` images in a specified directory by adding a black layer to each, utilizing multiprocessing to handle the images in parallel for efficiency.
 
+```python
 import os
 from PIL import Image
 import glob

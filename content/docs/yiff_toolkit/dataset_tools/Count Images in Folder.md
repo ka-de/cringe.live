@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Count Images in Folder"
+summary: "This script counts the total number of JPEG and PNG images in a specified directory."
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -11,25 +12,15 @@ title: "Count Images in Folder"
 
 ---
 
-```python
-"""
 This script counts the total number of JPEG and PNG images in a specified directory.
 
-The script uses the `glob` module to find all files with .jpg, .jpeg, and .png extensions
-within the given directory and its subdirectories. It then calculates the total count of these
-image files and prints the result.
+The script uses the `glob` module to find all files with .jpg, .jpeg, and .png extensions within the given directory and its subdirectories. It then calculates the total count of these image files and prints the result.
 
-Functions:
-    count_images(directory): Counts and returns the number of image files in the directory.
+To use this script, simply set the `directory_path` variable to the path of the directory you want to process. Then run the script, and it will output the total number of images found.
 
-Usage:
-    To use this script, simply set the `directory_path` variable to the path of the directory
-    you want to process. Then run the script, and it will output the total number of images found.
+**NOTE**: Ensure that the directory path uses double backslashes (\\) or raw string literals to avoid escape sequence errors.
 
-Note:
-    Ensure that the directory path uses double backslashes (\\) or raw string literals to avoid escape sequence errors.
-"""
-
+```python
 from pathlib import Path
 import glob
 

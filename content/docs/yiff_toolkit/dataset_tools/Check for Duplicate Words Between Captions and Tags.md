@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Check for Duplicate Words Between Captions and Tags"
+summary: "This script traverses through a directory, searches for text files, processes each file to extract tags and captions, and highlights occurrences of tags within captions using random colors, displaying the results in a visually rich format in the terminal."
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -11,14 +12,11 @@ title: "Check for Duplicate Words Between Captions and Tags"
 
 ---
 
-```python
-"""
-This script traverses through a directory, searches for text files, processes each file to extract tags
-and captions, and highlights occurrences of tags within captions using random colors,
-displaying the results in a visually rich format in the terminal.
+This script traverses through a directory, searches for text files, processes each file to extract tags and captions, and highlights occurrences of tags within captions using random colors, displaying the results in a visually rich format in the terminal.
 
 **NOTE**: This script assumes that you separate your tags with `,` and your captions with `.,`.
-"""
+
+```python
 import os
 import random
 import re

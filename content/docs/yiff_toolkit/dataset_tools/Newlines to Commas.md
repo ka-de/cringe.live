@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Newlines to Commas"
+summary: "Recursively modify the content of `.txt` files in the specified directory and its subdirectories by replacing newlines with commas and spaces."
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -11,12 +12,9 @@ title: "Newlines to Commas"
 
 ---
 
-```python
-"""
-Recursively modify the content of `.txt` files in the specified director
-and its subdirectories by replacing newlines with commas and spaces.
-"""
+Recursively modify the content of `.txt` files in the specified directory and its subdirectories by replacing newlines with commas and spaces.
 
+```python
 from pathlib import Path
 
 def process_directory(directory):

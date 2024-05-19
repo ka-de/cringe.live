@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Check for Large Images"
+summary: "This script checks the resolution of all images in a specified directory and its subdirectories. If the resolution of an image exceeds a certain limit, the path of the image is written to an output file. The script uses multiprocessing to speed up the process."
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -11,13 +12,9 @@ title: "Check for Large Images"
 
 ---
 
-```python
-"""
-This script checks the resolution of all images in a specified directory and its subdirectories.
-If the resolution of an image exceeds a certain limit, the path of the image is written to an output file.
-The script uses multiprocessing to speed up the process.
-"""
+This script checks the resolution of all images in a specified directory and its subdirectories. If the resolution of an image exceeds a certain limit, the path of the image is written to an output file. The script uses multiprocessing to speed up the process.
 
+```python
 from pathlib import Path
 import multiprocessing
 import os

@@ -11,24 +11,6 @@ title: "The Shrunk LoRA Guide"
 
 ---
 
-## Which File Should I Get
-
----
-
-When in doubt, just download the ones that end with `_0` and probably from the 8Mb version denoted by `s8` before the `_0`. The number before the underscore (`_`) signifies the `score_type` that was used to save the LoRA.
-
-## `score_type`
-
----
-
-The `score_type` value ranges from 0 to 1, and it’s used in the `pt.lerp()` function to compute a score `s` for each layer. This function performs a linear interpolation between the logarithm of singular value ratios (`dlora.sval_ratios`) and the logarithm of subspace ratios (`dlora.subspace_ratios`).
-
-If `score_type` is 0, the score `s` is entirely based on the logarithm of singular value ratios. If `score_type` is 1, the score `s` is entirely based on the logarithm of subspace ratios. For values between 0 and 1, the score `s` is a blend of these two quantities.
-
-These scores are then used to create a mask that determines which parts of each layer to keep when reducing the model’s size. The parts with higher scores are kept, while the parts with lower scores are discarded.
-
-So, changing the `score_type` changes the way scores are computed, which in turn affects which parts of the model are kept and which are discarded during the size reduction process. Different `score_type` values can lead to different reduced models, potentially with different performance characteristics. It’s a way to explore different trade-offs between model size and performance.
-
 ## What the Heck is a Subspace Factor
 
 ---

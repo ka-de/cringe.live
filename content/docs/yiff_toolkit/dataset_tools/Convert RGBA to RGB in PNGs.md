@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Convert RGBA to RGB in PNGs"
+summary: "This script automates the process of converting `.png` images from RGBA to RGB format in a specified directory, utilizing multiprocessing to enhance efficiency."
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -11,12 +12,9 @@ title: "Convert RGBA to RGB in PNGs"
 
 ---
 
-```python
-"""
-This script automates the process of converting `.png` images from RGBA to RGB format
-in a specified directory, utilizing multiprocessing to enhance efficiency.
-"""
+This script automates the process of converting `.png` images from RGBA to RGB format in a specified directory, utilizing multiprocessing to enhance efficiency.
 
+```python
 import os
 from PIL import Image
 import glob
