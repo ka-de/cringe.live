@@ -3,6 +3,7 @@ weight: 2
 title: WTF is Machine Learning?
 bookToC: false
 type: docs
+summary: "This article provides an introduction to machine learning and walks through building a simple neural network using PyTorch to classify handwritten digits from the MNIST dataset, covering data loading, defining the network architecture, training, evaluation, and making predictions."
 ---
 
 <!-- markdownlint-disable MD025 -->
@@ -81,15 +82,15 @@ for e in range(epochs):
     for images, labels in trainloader:
         # Flatten images into a 784 long vector
         images = images.view(images.shape[0], -1)
-    
+
         # Training pass
         optimizer.zero_grad()
-        
+
         output = model(images)
         loss = criterion(output, labels)
         loss.backward()
         optimizer.step()
-        
+
         running_loss += loss.item()
     print(f"Training loss: {running_loss/len(trainloader)}")
 ```
@@ -172,9 +173,9 @@ print("Predicted Class: ", ps.max(dim=1)[1].item())
 
 ```python
 """
-This script is designed to train and evaluate a simple neural network on the MNIST dataset using PyTorch. 
-The MNIST dataset comprises 28x28 grayscale images of handwritten digits. 
-The script includes data preprocessing, model definition, training, and evaluation phases. 
+This script is designed to train and evaluate a simple neural network on the MNIST dataset using PyTorch.
+The MNIST dataset comprises 28x28 grayscale images of handwritten digits.
+The script includes data preprocessing, model definition, training, and evaluation phases.
 It also contains a function to display an image and the model's prediction for it.
 """
 

@@ -1,7 +1,8 @@
 ---
-weight: 1
+weight: 2
 bookFlatSection: false
 title: "Orthogonal Matrices"
+summary: "This article discusses orthogonal matrices, which are square matrices whose columns and rows form orthonormal bases, their properties like being invertible with the inverse equal to the transpose, preserving vector norms, having determinants of ±1, eigenvalues of absolute value 1, and their applications in simplifying complex systems."
 ---
 
 <!-- markdownlint-disable MD025 -->
@@ -112,8 +113,8 @@ Orthogonal matrices play a crucial role in simplifying complex systems. For inst
 """
 This script demonstrates the properties of orthogonal matrices in linear algebra using a 3x3 matrix.
 
-It defines a 3x3 orthogonal matrix 'Q', calculates its transpose 'Q_T' and its inverse 'Q_inv'. 
-It then checks if the transpose is equal to the inverse, which is the defining property of an orthogonal matrix. 
+It defines a 3x3 orthogonal matrix 'Q', calculates its transpose 'Q_T' and its inverse 'Q_inv'.
+It then checks if the transpose is equal to the inverse, which is the defining property of an orthogonal matrix.
 If 'Q' is orthogonal, it prints 'Q is orthogonal: True', otherwise it prints 'Q is orthogonal: False'.
 
 Note: This script uses the numpy library for matrix operations.
