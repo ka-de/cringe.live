@@ -13,6 +13,8 @@ title: "The Shrunk LoRA Guide"
 
 [![The image is a humorous and imaginative scene depicting a man and a woman looking closely at a tiny wolf on a spoon. The man, wearing glasses and a sweatshirt with a large "T" on it, is holding a magnifying glass to better see the miniature wolf. The woman, peering closely beside him, also seems amazed and curious about the small wolf. The tiny wolf, adorned with a hotdog bun costume, adds a whimsical and playful element to the image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/honey-i-shrunk-the-hotdogwolf-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/honey-i-shrunk-the-hotdogwolf.png)
 
+> NOTE: Some of these boys have XY plots with them, you can click on them to download the full sized image.
+
 ## The LoRAs - Method #1
 
 ---
@@ -96,6 +98,8 @@ title: "The Shrunk LoRA Guide"
 - [bdsm-v1e400_th-2.50_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.50_spn_ckpt1.00_size32.0.safetensors?download=true)
 
 ### blaidd-v1e400
+
+[![An XY plot.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-blaidd-spn_lora-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-blaidd-spn_ckpt.png?download=true)
 
 - [blaidd-v1e400_th-1.69_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-1.69_spn_ckpt1.00_size4.0.safetensors?download=true)
 - [blaidd-v1e400_th-1.91_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-1.91_spn_ckpt1.00_size8.0.safetensors?download=true)
@@ -369,6 +373,8 @@ title: "The Shrunk LoRA Guide"
 - [greg_rutkowski-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors?download=true)
 
 ### hamgas-v1e400
+
+[![An XY plot.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-hamgas-spn_ckpt-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-hamgas-spn_ckpt.png?download=true)
 
 - [hamgas-v1e400_th-1.69_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-1.69_spn_ckpt1.00_size4.0.safetensors?download=true)
 - [hamgas-v1e400_th-1.96_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-1.96_spn_ckpt1.00_size8.0.safetensors?download=true)
@@ -869,6 +875,8 @@ title: "The Shrunk LoRA Guide"
 
 `blaidd-v1e400`
 
+[![An XY plot.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-blaidd-fro_ckpt-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-blaidd-fro_ckpt.png?download=true)
+
 - [blaidd-v1e400_th-2.62_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.62_fro_ckpt1.00_size4.0.safetensors?download=true)
 - [blaidd-v1e400_th-2.86_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.86_fro_ckpt1.00_size8.0.safetensors?download=true)
 - [blaidd-v1e400_th-2.99_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.99_fro_ckpt1.00_size12.0.safetensors?download=true)
@@ -1141,6 +1149,8 @@ title: "The Shrunk LoRA Guide"
 - [greg_rutkowski-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors?download=true)
 
 `hamgas-v1e400`
+
+[![An XY plot.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-hamgas-fro_ckpt-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-hamgas-fro_ckpt.png?download=true)
 
 - [hamgas-v1e400_th-2.62_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.62_fro_ckpt1.00_size4.0.safetensors?download=true)
 - [hamgas-v1e400_th-2.89_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.89_fro_ckpt1.00_size8.0.safetensors?download=true)
@@ -1595,6 +1605,8 @@ title: "The Shrunk LoRA Guide"
 
 `blaidd-v1e400`
 
+[![An XY plot.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-blaidd-spn_lora-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-blaidd-spn_lora.png?download=true)
+
 - [blaidd-v1e400_th-1.37_spn_lora0.50_spn_ckpt0.50_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-1.37_spn_lora0.50_spn_ckpt0.50_size24.0.safetensors?download=true)
 - [blaidd-v1e400_th-1.49_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-1.49_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors?download=true)
 
@@ -1699,6 +1711,8 @@ title: "The Shrunk LoRA Guide"
 - [greg_rutkowski-v1e400_th-1.53_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-1.53_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors?download=true)
 
 `hamgas-v1e400`
+
+[![An XY plot.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-hamgas-spn_lora-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/plot-hamgas-spn_lora.png?download=true)
 
 - [hamgas-v1e400_th-1.49_spn_lora0.50_spn_ckpt0.50_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-1.49_spn_lora0.50_spn_ckpt0.50_size24.0.safetensors?download=true)
 - [hamgas-v1e400_th-1.62_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-1.62_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors?download=true)
