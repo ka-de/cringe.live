@@ -17,1286 +17,1551 @@ title: "The Shrunk LoRA Guide"
 
 ---
 
-amalia-v2e400_th-1.79_spn_ckpt1.00_size4.0.safetensors
-amalia-v2e400_th-2.00_spn_ckpt1.00_size8.0.safetensors
-amalia-v2e400_th-2.11_spn_ckpt1.00_size12.0.safetensors
-amalia-v2e400_th-2.15_spn_ckpt1.00_size14.0.safetensors
-amalia-v2e400_th-2.19_spn_ckpt1.00_size16.0.safetensors
-amalia-v2e400_th-2.23_spn_ckpt1.00_size18.0.safetensors
-amalia-v2e400_th-2.27_spn_ckpt1.00_size20.0.safetensors
-amalia-v2e400_th-2.30_spn_ckpt1.00_size22.0.safetensors
-amalia-v2e400_th-2.34_spn_ckpt1.00_size24.0.safetensors
-amalia-v2e400_th-2.49_spn_ckpt1.00_size32.0.safetensors
-amalia-v2e400_th-2.74_fro_ckpt1.00_size4.0.safetensors
-amalia-v2e400_th-2.95_fro_ckpt1.00_size8.0.safetensors
-amalia-v2e400_th-3.06_fro_ckpt1.00_size12.0.safetensors
-amalia-v2e400_th-3.11_fro_ckpt1.00_size14.0.safetensors
-amalia-v2e400_th-3.15_fro_ckpt1.00_size16.0.safetensors
-amalia-v2e400_th-3.18_fro_ckpt1.00_size18.0.safetensors
-amalia-v2e400_th-3.22_fro_ckpt1.00_size20.0.safetensors
-amalia-v2e400_th-3.24_fro_ckpt1.00_size22.0.safetensors
-amalia-v2e400_th-3.27_fro_ckpt1.00_size24.0.safetensors
-amalia-v2e400_th-3.39_fro_ckpt1.00_size32.0.safetensors
+### amalia-v2e400
 
-amicus-v1e200_th-1.90_spn_ckpt1.00_size4.0.safetensors
-amicus-v1e200_th-2.10_spn_ckpt1.00_size8.0.safetensors
-amicus-v1e200_th-2.21_spn_ckpt1.00_size12.0.safetensors
-amicus-v1e200_th-2.25_spn_ckpt1.00_size14.0.safetensors
-amicus-v1e200_th-2.29_spn_ckpt1.00_size16.0.safetensors
-amicus-v1e200_th-2.32_spn_ckpt1.00_size18.0.safetensors
-amicus-v1e200_th-2.35_spn_ckpt1.00_size20.0.safetensors
-amicus-v1e200_th-2.39_spn_ckpt1.00_size22.0.safetensors
-amicus-v1e200_th-2.42_spn_ckpt1.00_size24.0.safetensors
-amicus-v1e200_th-2.58_spn_ckpt1.00_size32.0.safetensors
-amicus-v1e200_th-2.82_fro_ckpt1.00_size4.0.safetensors
-amicus-v1e200_th-3.05_fro_ckpt1.00_size8.0.safetensors
-amicus-v1e200_th-3.16_fro_ckpt1.00_size12.0.safetensors
-amicus-v1e200_th-3.20_fro_ckpt1.00_size14.0.safetensors
-amicus-v1e200_th-3.23_fro_ckpt1.00_size16.0.safetensors
-amicus-v1e200_th-3.27_fro_ckpt1.00_size18.0.safetensors
-amicus-v1e200_th-3.30_fro_ckpt1.00_size20.0.safetensors
-amicus-v1e200_th-3.33_fro_ckpt1.00_size22.0.safetensors
-amicus-v1e200_th-3.36_fro_ckpt1.00_size24.0.safetensors
-amicus-v1e200_th-3.47_fro_ckpt1.00_size32.0.safetensors
+- [amalia-v2e400_th-1.79_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-1.79_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [amalia-v2e400_th-2.00_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.00_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [amalia-v2e400_th-2.11_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.11_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [amalia-v2e400_th-2.15_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.15_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [amalia-v2e400_th-2.19_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.19_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [amalia-v2e400_th-2.23_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.23_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [amalia-v2e400_th-2.27_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.27_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [amalia-v2e400_th-2.30_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.30_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [amalia-v2e400_th-2.34_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.34_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [amalia-v2e400_th-2.49_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.49_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-arielsatyr-v1e400_th-1.70_spn_ckpt1.00_size4.0.safetensors
-arielsatyr-v1e400_th-1.93_spn_ckpt1.00_size8.0.safetensors
-arielsatyr-v1e400_th-2.06_spn_ckpt1.00_size12.0.safetensors
-arielsatyr-v1e400_th-2.10_spn_ckpt1.00_size14.0.safetensors
-arielsatyr-v1e400_th-2.14_spn_ckpt1.00_size16.0.safetensors
-arielsatyr-v1e400_th-2.18_spn_ckpt1.00_size18.0.safetensors
-arielsatyr-v1e400_th-2.22_spn_ckpt1.00_size20.0.safetensors
-arielsatyr-v1e400_th-2.25_spn_ckpt1.00_size22.0.safetensors
-arielsatyr-v1e400_th-2.28_spn_ckpt1.00_size24.0.safetensors
-arielsatyr-v1e400_th-2.42_spn_ckpt1.00_size32.0.safetensors
-arielsatyr-v1e400_th-2.65_fro_ckpt1.00_size4.0.safetensors
-arielsatyr-v1e400_th-2.88_fro_ckpt1.00_size8.0.safetensors
-arielsatyr-v1e400_th-3.01_fro_ckpt1.00_size12.0.safetensors
-arielsatyr-v1e400_th-3.05_fro_ckpt1.00_size14.0.safetensors
-arielsatyr-v1e400_th-3.09_fro_ckpt1.00_size16.0.safetensors
-arielsatyr-v1e400_th-3.12_fro_ckpt1.00_size18.0.safetensors
-arielsatyr-v1e400_th-3.16_fro_ckpt1.00_size20.0.safetensors
-arielsatyr-v1e400_th-3.18_fro_ckpt1.00_size22.0.safetensors
-arielsatyr-v1e400_th-3.21_fro_ckpt1.00_size24.0.safetensors
-arielsatyr-v1e400_th-3.32_fro_ckpt1.00_size32.0.safetensors
+### amicus-v1e200
 
-arielsatyr-v2e400_th-1.67_spn_ckpt1.00_size4.0.safetensors
-arielsatyr-v2e400_th-1.91_spn_ckpt1.00_size8.0.safetensors
-arielsatyr-v2e400_th-2.04_spn_ckpt1.00_size12.0.safetensors
-arielsatyr-v2e400_th-2.09_spn_ckpt1.00_size14.0.safetensors
-arielsatyr-v2e400_th-2.13_spn_ckpt1.00_size16.0.safetensors
-arielsatyr-v2e400_th-2.17_spn_ckpt1.00_size18.0.safetensors
-arielsatyr-v2e400_th-2.21_spn_ckpt1.00_size20.0.safetensors
-arielsatyr-v2e400_th-2.24_spn_ckpt1.00_size22.0.safetensors
-arielsatyr-v2e400_th-2.28_spn_ckpt1.00_size24.0.safetensors
-arielsatyr-v2e400_th-2.42_spn_ckpt1.00_size32.0.safetensors
-arielsatyr-v2e400_th-2.63_fro_ckpt1.00_size4.0.safetensors
-arielsatyr-v2e400_th-2.86_fro_ckpt1.00_size8.0.safetensors
-arielsatyr-v2e400_th-2.99_fro_ckpt1.00_size12.0.safetensors
-arielsatyr-v2e400_th-3.04_fro_ckpt1.00_size14.0.safetensors
-arielsatyr-v2e400_th-3.08_fro_ckpt1.00_size16.0.safetensors
-arielsatyr-v2e400_th-3.12_fro_ckpt1.00_size18.0.safetensors
-arielsatyr-v2e400_th-3.15_fro_ckpt1.00_size20.0.safetensors
-arielsatyr-v2e400_th-3.18_fro_ckpt1.00_size22.0.safetensors
-arielsatyr-v2e400_th-3.20_fro_ckpt1.00_size24.0.safetensors
-arielsatyr-v2e400_th-3.32_fro_ckpt1.00_size32.0.safetensors
+- [amicus-v1e200_th-1.90_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-1.90_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [amicus-v1e200_th-2.10_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-2.10_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [amicus-v1e200_th-2.21_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-2.21_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [amicus-v1e200_th-2.25_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-2.25_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [amicus-v1e200_th-2.29_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-2.29_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [amicus-v1e200_th-2.32_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-2.32_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [amicus-v1e200_th-2.35_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-2.35_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [amicus-v1e200_th-2.39_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-2.39_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [amicus-v1e200_th-2.42_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-2.42_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [amicus-v1e200_th-2.58_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-2.58_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-auroth-v1e250_th-1.66_spn_ckpt1.00_size4.0.safetensors
-auroth-v1e250_th-1.93_spn_ckpt1.00_size8.0.safetensors
-auroth-v1e250_th-2.05_spn_ckpt1.00_size12.0.safetensors
-auroth-v1e250_th-2.10_spn_ckpt1.00_size14.0.safetensors
-auroth-v1e250_th-2.15_spn_ckpt1.00_size16.0.safetensors
-auroth-v1e250_th-2.18_spn_ckpt1.00_size18.0.safetensors
-auroth-v1e250_th-2.22_spn_ckpt1.00_size20.0.safetensors
-auroth-v1e250_th-2.26_spn_ckpt1.00_size22.0.safetensors
-auroth-v1e250_th-2.29_spn_ckpt1.00_size24.0.safetensors
-auroth-v1e250_th-2.43_spn_ckpt1.00_size32.0.safetensors
-auroth-v1e250_th-2.60_fro_ckpt1.00_size4.0.safetensors
-auroth-v1e250_th-2.87_fro_ckpt1.00_size8.0.safetensors
-auroth-v1e250_th-3.01_fro_ckpt1.00_size12.0.safetensors
-auroth-v1e250_th-3.05_fro_ckpt1.00_size14.0.safetensors
-auroth-v1e250_th-3.09_fro_ckpt1.00_size16.0.safetensors
-auroth-v1e250_th-3.13_fro_ckpt1.00_size18.0.safetensors
-auroth-v1e250_th-3.16_fro_ckpt1.00_size20.0.safetensors
-auroth-v1e250_th-3.19_fro_ckpt1.00_size22.0.safetensors
-auroth-v1e250_th-3.22_fro_ckpt1.00_size24.0.safetensors
-auroth-v1e250_th-3.33_fro_ckpt1.00_size32.0.safetensors
+### arielsatyr-v1e400
 
-bdsm-v1e400_th-1.79_spn_ckpt1.00_size4.0.safetensors
-bdsm-v1e400_th-2.03_spn_ckpt1.00_size8.0.safetensors
-bdsm-v1e400_th-2.15_spn_ckpt1.00_size12.0.safetensors
-bdsm-v1e400_th-2.19_spn_ckpt1.00_size14.0.safetensors
-bdsm-v1e400_th-2.23_spn_ckpt1.00_size16.0.safetensors
-bdsm-v1e400_th-2.26_spn_ckpt1.00_size18.0.safetensors
-bdsm-v1e400_th-2.30_spn_ckpt1.00_size20.0.safetensors
-bdsm-v1e400_th-2.33_spn_ckpt1.00_size22.0.safetensors
-bdsm-v1e400_th-2.36_spn_ckpt1.00_size24.0.safetensors
-bdsm-v1e400_th-2.50_spn_ckpt1.00_size32.0.safetensors
-bdsm-v1e400_th-2.74_fro_ckpt1.00_size4.0.safetensors
-bdsm-v1e400_th-2.98_fro_ckpt1.00_size8.0.safetensors
-bdsm-v1e400_th-3.11_fro_ckpt1.00_size12.0.safetensors
-bdsm-v1e400_th-3.14_fro_ckpt1.00_size14.0.safetensors
-bdsm-v1e400_th-3.18_fro_ckpt1.00_size16.0.safetensors
-bdsm-v1e400_th-3.21_fro_ckpt1.00_size18.0.safetensors
-bdsm-v1e400_th-3.24_fro_ckpt1.00_size20.0.safetensors
-bdsm-v1e400_th-3.26_fro_ckpt1.00_size22.0.safetensors
-bdsm-v1e400_th-3.29_fro_ckpt1.00_size24.0.safetensors
-bdsm-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors
+- [arielsatyr-v1e400_th-1.70_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-1.70_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-1.93_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-1.93_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-2.06_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-2.06_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-2.10_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-2.10_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-2.14_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-2.14_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-2.18_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-2.18_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-2.22_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-2.22_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-2.25_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-2.25_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-2.28_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-2.28_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-2.42_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-2.42_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-blaidd-v1e400_th-1.69_spn_ckpt1.00_size4.0.safetensors
-blaidd-v1e400_th-1.91_spn_ckpt1.00_size8.0.safetensors
-blaidd-v1e400_th-2.04_spn_ckpt1.00_size12.0.safetensors
-blaidd-v1e400_th-2.08_spn_ckpt1.00_size14.0.safetensors
-blaidd-v1e400_th-2.12_spn_ckpt1.00_size16.0.safetensors
-blaidd-v1e400_th-2.16_spn_ckpt1.00_size18.0.safetensors
-blaidd-v1e400_th-2.20_spn_ckpt1.00_size20.0.safetensors
-blaidd-v1e400_th-2.23_spn_ckpt1.00_size22.0.safetensors
-blaidd-v1e400_th-2.27_spn_ckpt1.00_size24.0.safetensors
-blaidd-v1e400_th-2.41_spn_ckpt1.00_size32.0.safetensors
-blaidd-v1e400_th-2.62_fro_ckpt1.00_size4.0.safetensors
-blaidd-v1e400_th-2.86_fro_ckpt1.00_size8.0.safetensors
-blaidd-v1e400_th-2.99_fro_ckpt1.00_size12.0.safetensors
-blaidd-v1e400_th-3.04_fro_ckpt1.00_size14.0.safetensors
-blaidd-v1e400_th-3.08_fro_ckpt1.00_size16.0.safetensors
-blaidd-v1e400_th-3.12_fro_ckpt1.00_size18.0.safetensors
-blaidd-v1e400_th-3.15_fro_ckpt1.00_size20.0.safetensors
-blaidd-v1e400_th-3.18_fro_ckpt1.00_size22.0.safetensors
-blaidd-v1e400_th-3.20_fro_ckpt1.00_size24.0.safetensors
-blaidd-v1e400_th-3.31_fro_ckpt1.00_size32.0.safetensors
+### arielsatyr-v2e400
 
-blp-v1e400_th-1.71_spn_ckpt1.00_size4.0.safetensors
-blp-v1e400_th-1.98_spn_ckpt1.00_size8.0.safetensors
-blp-v1e400_th-2.12_spn_ckpt1.00_size12.0.safetensors
-blp-v1e400_th-2.16_spn_ckpt1.00_size14.0.safetensors
-blp-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors
-blp-v1e400_th-2.26_spn_ckpt1.00_size18.0.safetensors
-blp-v1e400_th-2.30_spn_ckpt1.00_size20.0.safetensors
-blp-v1e400_th-2.33_spn_ckpt1.00_size22.0.safetensors
-blp-v1e400_th-2.37_spn_ckpt1.00_size24.0.safetensors
-blp-v1e400_th-2.51_spn_ckpt1.00_size32.0.safetensors
-blp-v1e400_th-2.67_fro_ckpt1.00_size4.0.safetensors
-blp-v1e400_th-2.92_fro_ckpt1.00_size8.0.safetensors
-blp-v1e400_th-3.06_fro_ckpt1.00_size12.0.safetensors
-blp-v1e400_th-3.11_fro_ckpt1.00_size14.0.safetensors
-blp-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors
-blp-v1e400_th-3.20_fro_ckpt1.00_size18.0.safetensors
-blp-v1e400_th-3.23_fro_ckpt1.00_size20.0.safetensors
-blp-v1e400_th-3.27_fro_ckpt1.00_size22.0.safetensors
-blp-v1e400_th-3.30_fro_ckpt1.00_size24.0.safetensors
-blp-v1e400_th-3.42_fro_ckpt1.00_size32.0.safetensors
+- [arielsatyr-v2e400_th-1.67_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-1.67_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-1.91_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-1.91_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-2.04_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.04_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-2.09_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.09_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-2.13_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.13_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-2.17_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.17_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-2.21_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.21_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-2.24_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.24_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-2.28_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.28_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-2.42_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.42_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-blue_frost_th-0.85_spn_ckpt1.00_size4.0.safetensors
-blue_frost_th-1.04_spn_ckpt1.00_size8.0.safetensors
-blue_frost_th-1.17_spn_ckpt1.00_size12.0.safetensors
-blue_frost_th-1.22_spn_ckpt1.00_size14.0.safetensors
-blue_frost_th-1.26_spn_ckpt1.00_size16.0.safetensors
-blue_frost_th-1.30_spn_ckpt1.00_size18.0.safetensors
-blue_frost_th-1.34_spn_ckpt1.00_size20.0.safetensors
-blue_frost_th-1.38_spn_ckpt1.00_size22.0.safetensors
-blue_frost_th-1.41_spn_ckpt1.00_size24.0.safetensors
-blue_frost_th-1.51_spn_ckpt1.00_size32.0.safetensors
-blue_frost_th-1.81_fro_ckpt1.00_size4.0.safetensors
-blue_frost_th-1.99_fro_ckpt1.00_size8.0.safetensors
-blue_frost_th-2.12_fro_ckpt1.00_size12.0.safetensors
-blue_frost_th-2.17_fro_ckpt1.00_size14.0.safetensors
-blue_frost_th-2.22_fro_ckpt1.00_size16.0.safetensors
-blue_frost_th-2.26_fro_ckpt1.00_size18.0.safetensors
-blue_frost_th-2.29_fro_ckpt1.00_size20.0.safetensors
-blue_frost_th-2.32_fro_ckpt1.00_size22.0.safetensors
-blue_frost_th-2.35_fro_ckpt1.00_size24.0.safetensors
-blue_frost_th-2.46_fro_ckpt1.00_size32.0.safetensors
+### auroth-v1e250
 
-butterchalk-v3e400_th-1.79_spn_ckpt1.00_size4.0.safetensors
-butterchalk-v3e400_th-1.98_spn_ckpt1.00_size8.0.safetensors
-butterchalk-v3e400_th-2.09_spn_ckpt1.00_size12.0.safetensors
-butterchalk-v3e400_th-2.13_spn_ckpt1.00_size14.0.safetensors
-butterchalk-v3e400_th-2.17_spn_ckpt1.00_size16.0.safetensors
-butterchalk-v3e400_th-2.21_spn_ckpt1.00_size18.0.safetensors
-butterchalk-v3e400_th-2.25_spn_ckpt1.00_size20.0.safetensors
-butterchalk-v3e400_th-2.28_spn_ckpt1.00_size22.0.safetensors
-butterchalk-v3e400_th-2.32_spn_ckpt1.00_size24.0.safetensors
-butterchalk-v3e400_th-2.46_spn_ckpt1.00_size32.0.safetensors
-butterchalk-v3e400_th-2.73_fro_ckpt1.00_size4.0.safetensors
-butterchalk-v3e400_th-2.93_fro_ckpt1.00_size8.0.safetensors
-butterchalk-v3e400_th-3.05_fro_ckpt1.00_size12.0.safetensors
-butterchalk-v3e400_th-3.09_fro_ckpt1.00_size14.0.safetensors
-butterchalk-v3e400_th-3.13_fro_ckpt1.00_size16.0.safetensors
-butterchalk-v3e400_th-3.16_fro_ckpt1.00_size18.0.safetensors
-butterchalk-v3e400_th-3.19_fro_ckpt1.00_size20.0.safetensors
-butterchalk-v3e400_th-3.22_fro_ckpt1.00_size22.0.safetensors
-butterchalk-v3e400_th-3.25_fro_ckpt1.00_size24.0.safetensors
-butterchalk-v3e400_th-3.36_fro_ckpt1.00_size32.0.safetensors
+- [auroth-v1e250_th-1.66_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-1.66_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [auroth-v1e250_th-1.93_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-1.93_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [auroth-v1e250_th-2.05_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-2.05_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [auroth-v1e250_th-2.10_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-2.10_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [auroth-v1e250_th-2.15_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-2.15_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [auroth-v1e250_th-2.18_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-2.18_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [auroth-v1e250_th-2.22_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-2.22_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [auroth-v1e250_th-2.26_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-2.26_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [auroth-v1e250_th-2.29_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-2.29_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [auroth-v1e250_th-2.43_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-2.43_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-by_clybius-v1e400_th-1.70_spn_ckpt1.00_size4.0.safetensors
-by_clybius-v1e400_th-1.92_spn_ckpt1.00_size8.0.safetensors
-by_clybius-v1e400_th-2.06_spn_ckpt1.00_size12.0.safetensors
-by_clybius-v1e400_th-2.11_spn_ckpt1.00_size14.0.safetensors
-by_clybius-v1e400_th-2.16_spn_ckpt1.00_size16.0.safetensors
-by_clybius-v1e400_th-2.20_spn_ckpt1.00_size18.0.safetensors
-by_clybius-v1e400_th-2.24_spn_ckpt1.00_size20.0.safetensors
-by_clybius-v1e400_th-2.29_spn_ckpt1.00_size22.0.safetensors
-by_clybius-v1e400_th-2.33_spn_ckpt1.00_size24.0.safetensors
-by_clybius-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors
-by_clybius-v1e400_th-2.64_fro_ckpt1.00_size4.0.safetensors
-by_clybius-v1e400_th-2.89_fro_ckpt1.00_size8.0.safetensors
-by_clybius-v1e400_th-3.02_fro_ckpt1.00_size12.0.safetensors
-by_clybius-v1e400_th-3.07_fro_ckpt1.00_size14.0.safetensors
-by_clybius-v1e400_th-3.12_fro_ckpt1.00_size16.0.safetensors
-by_clybius-v1e400_th-3.16_fro_ckpt1.00_size18.0.safetensors
-by_clybius-v1e400_th-3.19_fro_ckpt1.00_size20.0.safetensors
-by_clybius-v1e400_th-3.23_fro_ckpt1.00_size22.0.safetensors
-by_clybius-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors
-by_clybius-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors
+### bdsm-v1e400
 
-by_hibbary-v1e400_th-1.91_spn_ckpt1.00_size4.0.safetensors
-by_hibbary-v1e400_th-2.14_spn_ckpt1.00_size8.0.safetensors
-by_hibbary-v1e400_th-2.24_spn_ckpt1.00_size12.0.safetensors
-by_hibbary-v1e400_th-2.28_spn_ckpt1.00_size14.0.safetensors
-by_hibbary-v1e400_th-2.32_spn_ckpt1.00_size16.0.safetensors
-by_hibbary-v1e400_th-2.35_spn_ckpt1.00_size18.0.safetensors
-by_hibbary-v1e400_th-2.38_spn_ckpt1.00_size20.0.safetensors
-by_hibbary-v1e400_th-2.41_spn_ckpt1.00_size22.0.safetensors
-by_hibbary-v1e400_th-2.44_spn_ckpt1.00_size24.0.safetensors
-by_hibbary-v1e400_th-2.55_spn_ckpt1.00_size32.0.safetensors
-by_hibbary-v1e400_th-2.87_fro_ckpt1.00_size4.0.safetensors
-by_hibbary-v1e400_th-3.08_fro_ckpt1.00_size8.0.safetensors
-by_hibbary-v1e400_th-3.19_fro_ckpt1.00_size12.0.safetensors
-by_hibbary-v1e400_th-3.22_fro_ckpt1.00_size14.0.safetensors
-by_hibbary-v1e400_th-3.25_fro_ckpt1.00_size16.0.safetensors
-by_hibbary-v1e400_th-3.28_fro_ckpt1.00_size18.0.safetensors
-by_hibbary-v1e400_th-3.30_fro_ckpt1.00_size20.0.safetensors
-by_hibbary-v1e400_th-3.32_fro_ckpt1.00_size22.0.safetensors
-by_hibbary-v1e400_th-3.34_fro_ckpt1.00_size24.0.safetensors
-by_hibbary-v1e400_th-3.42_fro_ckpt1.00_size32.0.safetensors
+- [bdsm-v1e400_th-1.79_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-1.79_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [bdsm-v1e400_th-2.03_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.03_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [bdsm-v1e400_th-2.15_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.15_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [bdsm-v1e400_th-2.19_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.19_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [bdsm-v1e400_th-2.23_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.23_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [bdsm-v1e400_th-2.26_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.26_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [bdsm-v1e400_th-2.30_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.30_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [bdsm-v1e400_th-2.33_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.33_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [bdsm-v1e400_th-2.36_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.36_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [bdsm-v1e400_th-2.50_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.50_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-by_himari-v1e400_th-1.48_spn_ckpt1.00_size4.0.safetensors
-by_himari-v1e400_th-1.78_spn_ckpt1.00_size8.0.safetensors
-by_himari-v1e400_th-1.92_spn_ckpt1.00_size12.0.safetensors
-by_himari-v1e400_th-1.98_spn_ckpt1.00_size14.0.safetensors
-by_himari-v1e400_th-2.03_spn_ckpt1.00_size16.0.safetensors
-by_himari-v1e400_th-2.08_spn_ckpt1.00_size18.0.safetensors
-by_himari-v1e400_th-2.12_spn_ckpt1.00_size20.0.safetensors
-by_himari-v1e400_th-2.16_spn_ckpt1.00_size22.0.safetensors
-by_himari-v1e400_th-2.20_spn_ckpt1.00_size24.0.safetensors
-by_himari-v1e400_th-2.36_spn_ckpt1.00_size32.0.safetensors
-by_himari-v1e400_th-2.41_fro_ckpt1.00_size4.0.safetensors
-by_himari-v1e400_th-2.73_fro_ckpt1.00_size8.0.safetensors
-by_himari-v1e400_th-2.87_fro_ckpt1.00_size12.0.safetensors
-by_himari-v1e400_th-2.92_fro_ckpt1.00_size14.0.safetensors
-by_himari-v1e400_th-2.98_fro_ckpt1.00_size16.0.safetensors
-by_himari-v1e400_th-3.02_fro_ckpt1.00_size18.0.safetensors
-by_himari-v1e400_th-3.06_fro_ckpt1.00_size20.0.safetensors
-by_himari-v1e400_th-3.10_fro_ckpt1.00_size22.0.safetensors
-by_himari-v1e400_th-3.14_fro_ckpt1.00_size24.0.safetensors
-by_himari-v1e400_th-3.27_fro_ckpt1.00_size32.0.safetensors
+### blaidd-v1e400
 
-cecily_lin-v1e37_th-1.70_spn_ckpt1.00_size4.0.safetensors
-cecily_lin-v1e37_th-1.98_spn_ckpt1.00_size8.0.safetensors
-cecily_lin-v1e37_th-2.12_spn_ckpt1.00_size12.0.safetensors
-cecily_lin-v1e37_th-2.16_spn_ckpt1.00_size14.0.safetensors
-cecily_lin-v1e37_th-2.21_spn_ckpt1.00_size16.0.safetensors
-cecily_lin-v1e37_th-2.24_spn_ckpt1.00_size18.0.safetensors
-cecily_lin-v1e37_th-2.28_spn_ckpt1.00_size20.0.safetensors
-cecily_lin-v1e37_th-2.31_spn_ckpt1.00_size22.0.safetensors
-cecily_lin-v1e37_th-2.35_spn_ckpt1.00_size24.0.safetensors
-cecily_lin-v1e37_th-2.49_spn_ckpt1.00_size32.0.safetensors
-cecily_lin-v1e37_th-2.60_fro_ckpt1.00_size4.0.safetensors
-cecily_lin-v1e37_th-2.92_fro_ckpt1.00_size8.0.safetensors
-cecily_lin-v1e37_th-3.07_fro_ckpt1.00_size12.0.safetensors
-cecily_lin-v1e37_th-3.12_fro_ckpt1.00_size14.0.safetensors
-cecily_lin-v1e37_th-3.16_fro_ckpt1.00_size16.0.safetensors
-cecily_lin-v1e37_th-3.20_fro_ckpt1.00_size18.0.safetensors
-cecily_lin-v1e37_th-3.22_fro_ckpt1.00_size20.0.safetensors
-cecily_lin-v1e37_th-3.25_fro_ckpt1.00_size22.0.safetensors
-cecily_lin-v1e37_th-3.28_fro_ckpt1.00_size24.0.safetensors
-cecily_lin-v1e37_th-3.38_fro_ckpt1.00_size32.0.safetensors
+- [blaidd-v1e400_th-1.69_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-1.69_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [blaidd-v1e400_th-1.91_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-1.91_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [blaidd-v1e400_th-2.04_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.04_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [blaidd-v1e400_th-2.08_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.08_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [blaidd-v1e400_th-2.12_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.12_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [blaidd-v1e400_th-2.16_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.16_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [blaidd-v1e400_th-2.20_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.20_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [blaidd-v1e400_th-2.23_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.23_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [blaidd-v1e400_th-2.27_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.27_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [blaidd-v1e400_th-2.41_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.41_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-cervine_penis-v1e400_th-1.73_spn_ckpt1.00_size4.0.safetensors
-cervine_penis-v1e400_th-1.99_spn_ckpt1.00_size8.0.safetensors
-cervine_penis-v1e400_th-2.11_spn_ckpt1.00_size12.0.safetensors
-cervine_penis-v1e400_th-2.16_spn_ckpt1.00_size14.0.safetensors
-cervine_penis-v1e400_th-2.20_spn_ckpt1.00_size16.0.safetensors
-cervine_penis-v1e400_th-2.24_spn_ckpt1.00_size18.0.safetensors
-cervine_penis-v1e400_th-2.27_spn_ckpt1.00_size20.0.safetensors
-cervine_penis-v1e400_th-2.30_spn_ckpt1.00_size22.0.safetensors
-cervine_penis-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors
-cervine_penis-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors
-cervine_penis-v1e400_th-2.66_fro_ckpt1.00_size4.0.safetensors
-cervine_penis-v1e400_th-2.93_fro_ckpt1.00_size8.0.safetensors
-cervine_penis-v1e400_th-3.06_fro_ckpt1.00_size12.0.safetensors
-cervine_penis-v1e400_th-3.11_fro_ckpt1.00_size14.0.safetensors
-cervine_penis-v1e400_th-3.15_fro_ckpt1.00_size16.0.safetensors
-cervine_penis-v1e400_th-3.18_fro_ckpt1.00_size18.0.safetensors
-cervine_penis-v1e400_th-3.21_fro_ckpt1.00_size20.0.safetensors
-cervine_penis-v1e400_th-3.24_fro_ckpt1.00_size22.0.safetensors
-cervine_penis-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors
-cervine_penis-v1e400_th-3.37_fro_ckpt1.00_size32.0.safetensors
+### blp-v1e400
 
-chillet-v3e10_th-1.56_spn_ckpt1.00_size4.0.safetensors
-chillet-v3e10_th-1.84_spn_ckpt1.00_size8.0.safetensors
-chillet-v3e10_th-1.98_spn_ckpt1.00_size12.0.safetensors
-chillet-v3e10_th-2.03_spn_ckpt1.00_size14.0.safetensors
-chillet-v3e10_th-2.07_spn_ckpt1.00_size16.0.safetensors
-chillet-v3e10_th-2.11_spn_ckpt1.00_size18.0.safetensors
-chillet-v3e10_th-2.15_spn_ckpt1.00_size20.0.safetensors
-chillet-v3e10_th-2.18_spn_ckpt1.00_size22.0.safetensors
-chillet-v3e10_th-2.22_spn_ckpt1.00_size24.0.safetensors
-chillet-v3e10_th-2.36_spn_ckpt1.00_size32.0.safetensors
-chillet-v3e10_th-2.49_fro_ckpt1.00_size4.0.safetensors
-chillet-v3e10_th-2.77_fro_ckpt1.00_size8.0.safetensors
-chillet-v3e10_th-2.93_fro_ckpt1.00_size12.0.safetensors
-chillet-v3e10_th-2.98_fro_ckpt1.00_size14.0.safetensors
-chillet-v3e10_th-3.02_fro_ckpt1.00_size16.0.safetensors
-chillet-v3e10_th-3.06_fro_ckpt1.00_size18.0.safetensors
-chillet-v3e10_th-3.09_fro_ckpt1.00_size20.0.safetensors
-chillet-v3e10_th-3.12_fro_ckpt1.00_size22.0.safetensors
-chillet-v3e10_th-3.15_fro_ckpt1.00_size24.0.safetensors
-chillet-v3e10_th-3.26_fro_ckpt1.00_size32.0.safetensors
+- [blp-v1e400_th-1.71_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-1.71_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [blp-v1e400_th-1.98_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-1.98_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [blp-v1e400_th-2.12_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-2.12_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [blp-v1e400_th-2.16_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-2.16_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [blp-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [blp-v1e400_th-2.26_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-2.26_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [blp-v1e400_th-2.30_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-2.30_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [blp-v1e400_th-2.33_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-2.33_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [blp-v1e400_th-2.37_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-2.37_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [blp-v1e400_th-2.51_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-2.51_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-chunie-v1e5_th-1.75_spn_ckpt1.00_size4.0.safetensors
-chunie-v1e5_th-2.03_spn_ckpt1.00_size8.0.safetensors
-chunie-v1e5_th-2.16_spn_ckpt1.00_size12.0.safetensors
-chunie-v1e5_th-2.22_spn_ckpt1.00_size14.0.safetensors
-chunie-v1e5_th-2.26_spn_ckpt1.00_size16.0.safetensors
-chunie-v1e5_th-2.30_spn_ckpt1.00_size18.0.safetensors
-chunie-v1e5_th-2.34_spn_ckpt1.00_size20.0.safetensors
-chunie-v1e5_th-2.37_spn_ckpt1.00_size22.0.safetensors
-chunie-v1e5_th-2.41_spn_ckpt1.00_size24.0.safetensors
-chunie-v1e5_th-2.54_spn_ckpt1.00_size32.0.safetensors
-chunie-v1e5_th-2.67_fro_ckpt1.00_size4.0.safetensors
-chunie-v1e5_th-2.96_fro_ckpt1.00_size8.0.safetensors
-chunie-v1e5_th-3.11_fro_ckpt1.00_size12.0.safetensors
-chunie-v1e5_th-3.16_fro_ckpt1.00_size14.0.safetensors
-chunie-v1e5_th-3.21_fro_ckpt1.00_size16.0.safetensors
-chunie-v1e5_th-3.24_fro_ckpt1.00_size18.0.safetensors
-chunie-v1e5_th-3.27_fro_ckpt1.00_size20.0.safetensors
-chunie-v1e5_th-3.30_fro_ckpt1.00_size22.0.safetensors
-chunie-v1e5_th-3.33_fro_ckpt1.00_size24.0.safetensors
-chunie-v1e5_th-3.43_fro_ckpt1.00_size32.0.safetensors
+### blue_frost
 
-cooliehigh-v1e45_th-1.71_spn_ckpt1.00_size4.0.safetensors
-cooliehigh-v1e45_th-1.98_spn_ckpt1.00_size8.0.safetensors
-cooliehigh-v1e45_th-2.12_spn_ckpt1.00_size12.0.safetensors
-cooliehigh-v1e45_th-2.17_spn_ckpt1.00_size14.0.safetensors
-cooliehigh-v1e45_th-2.21_spn_ckpt1.00_size16.0.safetensors
-cooliehigh-v1e45_th-2.25_spn_ckpt1.00_size18.0.safetensors
-cooliehigh-v1e45_th-2.29_spn_ckpt1.00_size20.0.safetensors
-cooliehigh-v1e45_th-2.32_spn_ckpt1.00_size22.0.safetensors
-cooliehigh-v1e45_th-2.36_spn_ckpt1.00_size24.0.safetensors
-cooliehigh-v1e45_th-2.50_spn_ckpt1.00_size32.0.safetensors
-cooliehigh-v1e45_th-2.62_fro_ckpt1.00_size4.0.safetensors
-cooliehigh-v1e45_th-2.94_fro_ckpt1.00_size8.0.safetensors
-cooliehigh-v1e45_th-3.08_fro_ckpt1.00_size12.0.safetensors
-cooliehigh-v1e45_th-3.12_fro_ckpt1.00_size14.0.safetensors
-cooliehigh-v1e45_th-3.17_fro_ckpt1.00_size16.0.safetensors
-cooliehigh-v1e45_th-3.20_fro_ckpt1.00_size18.0.safetensors
-cooliehigh-v1e45_th-3.23_fro_ckpt1.00_size20.0.safetensors
-cooliehigh-v1e45_th-3.26_fro_ckpt1.00_size22.0.safetensors
-cooliehigh-v1e45_th-3.29_fro_ckpt1.00_size24.0.safetensors
-cooliehigh-v1e45_th-3.39_fro_ckpt1.00_size32.0.safetensors
+- [blue_frost_th-0.85_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-0.85_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [blue_frost_th-1.04_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.04_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [blue_frost_th-1.17_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.17_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [blue_frost_th-1.22_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.22_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [blue_frost_th-1.26_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.26_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [blue_frost_th-1.30_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.30_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [blue_frost_th-1.34_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.34_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [blue_frost_th-1.38_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.38_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [blue_frost_th-1.41_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.41_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [blue_frost_th-1.51_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.51_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-dagasi-v1e134_th-1.73_spn_ckpt1.00_size4.0.safetensors
-dagasi-v1e134_th-2.00_spn_ckpt1.00_size8.0.safetensors
-dagasi-v1e134_th-2.14_spn_ckpt1.00_size12.0.safetensors
-dagasi-v1e134_th-2.19_spn_ckpt1.00_size14.0.safetensors
-dagasi-v1e134_th-2.23_spn_ckpt1.00_size16.0.safetensors
-dagasi-v1e134_th-2.27_spn_ckpt1.00_size18.0.safetensors
-dagasi-v1e134_th-2.30_spn_ckpt1.00_size20.0.safetensors
-dagasi-v1e134_th-2.34_spn_ckpt1.00_size22.0.safetensors
-dagasi-v1e134_th-2.37_spn_ckpt1.00_size24.0.safetensors
-dagasi-v1e134_th-2.52_spn_ckpt1.00_size32.0.safetensors
-dagasi-v1e134_th-2.65_fro_ckpt1.00_size4.0.safetensors
-dagasi-v1e134_th-2.93_fro_ckpt1.00_size8.0.safetensors
-dagasi-v1e134_th-3.08_fro_ckpt1.00_size12.0.safetensors
-dagasi-v1e134_th-3.13_fro_ckpt1.00_size14.0.safetensors
-dagasi-v1e134_th-3.18_fro_ckpt1.00_size16.0.safetensors
-dagasi-v1e134_th-3.22_fro_ckpt1.00_size18.0.safetensors
-dagasi-v1e134_th-3.25_fro_ckpt1.00_size20.0.safetensors
-dagasi-v1e134_th-3.28_fro_ckpt1.00_size22.0.safetensors
-dagasi-v1e134_th-3.31_fro_ckpt1.00_size24.0.safetensors
-dagasi-v1e134_th-3.42_fro_ckpt1.00_size32.0.safetensors
+### butterchalk-v3e400
 
-darkgem-v1e4_th-1.96_spn_ckpt1.00_size4.0.safetensors
-darkgem-v1e4_th-2.21_spn_ckpt1.00_size8.0.safetensors
-darkgem-v1e4_th-2.33_spn_ckpt1.00_size12.0.safetensors
-darkgem-v1e4_th-2.37_spn_ckpt1.00_size14.0.safetensors
-darkgem-v1e4_th-2.42_spn_ckpt1.00_size16.0.safetensors
-darkgem-v1e4_th-2.45_spn_ckpt1.00_size18.0.safetensors
-darkgem-v1e4_th-2.49_spn_ckpt1.00_size20.0.safetensors
-darkgem-v1e4_th-2.52_spn_ckpt1.00_size22.0.safetensors
-darkgem-v1e4_th-2.55_spn_ckpt1.00_size24.0.safetensors
-darkgem-v1e4_th-2.68_spn_ckpt1.00_size32.0.safetensors
-darkgem-v1e4_th-2.89_fro_ckpt1.00_size4.0.safetensors
-darkgem-v1e4_th-3.15_fro_ckpt1.00_size8.0.safetensors
-darkgem-v1e4_th-3.27_fro_ckpt1.00_size12.0.safetensors
-darkgem-v1e4_th-3.31_fro_ckpt1.00_size14.0.safetensors
-darkgem-v1e4_th-3.36_fro_ckpt1.00_size16.0.safetensors
-darkgem-v1e4_th-3.39_fro_ckpt1.00_size18.0.safetensors
-darkgem-v1e4_th-3.43_fro_ckpt1.00_size20.0.safetensors
-darkgem-v1e4_th-3.45_fro_ckpt1.00_size22.0.safetensors
-darkgem-v1e4_th-3.48_fro_ckpt1.00_size24.0.safetensors
-darkgem-v1e4_th-3.57_fro_ckpt1.00_size32.0.safetensors
+- [butterchalk-v3e400_th-1.79_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-1.79_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [butterchalk-v3e400_th-1.98_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-1.98_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [butterchalk-v3e400_th-2.09_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-2.09_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [butterchalk-v3e400_th-2.13_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-2.13_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [butterchalk-v3e400_th-2.17_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-2.17_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [butterchalk-v3e400_th-2.21_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-2.21_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [butterchalk-v3e400_th-2.25_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-2.25_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [butterchalk-v3e400_th-2.28_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-2.28_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [butterchalk-v3e400_th-2.32_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-2.32_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [butterchalk-v3e400_th-2.46_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-2.46_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-dharrel-v1e350_th-1.76_spn_ckpt1.00_size4.0.safetensors
-dharrel-v1e350_th-1.99_spn_ckpt1.00_size8.0.safetensors
-dharrel-v1e350_th-2.12_spn_ckpt1.00_size12.0.safetensors
-dharrel-v1e350_th-2.16_spn_ckpt1.00_size14.0.safetensors
-dharrel-v1e350_th-2.20_spn_ckpt1.00_size16.0.safetensors
-dharrel-v1e350_th-2.24_spn_ckpt1.00_size18.0.safetensors
-dharrel-v1e350_th-2.27_spn_ckpt1.00_size20.0.safetensors
-dharrel-v1e350_th-2.31_spn_ckpt1.00_size22.0.safetensors
-dharrel-v1e350_th-2.34_spn_ckpt1.00_size24.0.safetensors
-dharrel-v1e350_th-2.48_spn_ckpt1.00_size32.0.safetensors
-dharrel-v1e350_th-2.71_fro_ckpt1.00_size4.0.safetensors
-dharrel-v1e350_th-2.94_fro_ckpt1.00_size8.0.safetensors
-dharrel-v1e350_th-3.07_fro_ckpt1.00_size12.0.safetensors
-dharrel-v1e350_th-3.12_fro_ckpt1.00_size14.0.safetensors
-dharrel-v1e350_th-3.16_fro_ckpt1.00_size16.0.safetensors
-dharrel-v1e350_th-3.19_fro_ckpt1.00_size18.0.safetensors
-dharrel-v1e350_th-3.22_fro_ckpt1.00_size20.0.safetensors
-dharrel-v1e350_th-3.25_fro_ckpt1.00_size22.0.safetensors
-dharrel-v1e350_th-3.27_fro_ckpt1.00_size24.0.safetensors
-dharrel-v1e350_th-3.37_fro_ckpt1.00_size32.0.safetensors
+### by_clybius-v1e400
 
-dharrel-v2e400_th-1.86_spn_ckpt1.00_size4.0.safetensors
-dharrel-v2e400_th-2.09_spn_ckpt1.00_size8.0.safetensors
-dharrel-v2e400_th-2.22_spn_ckpt1.00_size12.0.safetensors
-dharrel-v2e400_th-2.27_spn_ckpt1.00_size14.0.safetensors
-dharrel-v2e400_th-2.31_spn_ckpt1.00_size16.0.safetensors
-dharrel-v2e400_th-2.35_spn_ckpt1.00_size18.0.safetensors
-dharrel-v2e400_th-2.39_spn_ckpt1.00_size20.0.safetensors
-dharrel-v2e400_th-2.42_spn_ckpt1.00_size22.0.safetensors
-dharrel-v2e400_th-2.45_spn_ckpt1.00_size24.0.safetensors
-dharrel-v2e400_th-2.60_spn_ckpt1.00_size32.0.safetensors
-dharrel-v2e400_th-2.80_fro_ckpt1.00_size4.0.safetensors
-dharrel-v2e400_th-3.04_fro_ckpt1.00_size8.0.safetensors
-dharrel-v2e400_th-3.17_fro_ckpt1.00_size12.0.safetensors
-dharrel-v2e400_th-3.22_fro_ckpt1.00_size14.0.safetensors
-dharrel-v2e400_th-3.26_fro_ckpt1.00_size16.0.safetensors
-dharrel-v2e400_th-3.30_fro_ckpt1.00_size18.0.safetensors
-dharrel-v2e400_th-3.33_fro_ckpt1.00_size20.0.safetensors
-dharrel-v2e400_th-3.36_fro_ckpt1.00_size22.0.safetensors
-dharrel-v2e400_th-3.39_fro_ckpt1.00_size24.0.safetensors
-dharrel-v2e400_th-3.50_fro_ckpt1.00_size32.0.safetensors
+- [by_clybius-v1e400_th-1.70_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-1.70_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [by_clybius-v1e400_th-1.92_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-1.92_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [by_clybius-v1e400_th-2.06_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-2.06_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [by_clybius-v1e400_th-2.11_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-2.11_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [by_clybius-v1e400_th-2.16_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-2.16_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [by_clybius-v1e400_th-2.20_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-2.20_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [by_clybius-v1e400_th-2.24_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-2.24_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [by_clybius-v1e400_th-2.29_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-2.29_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [by_clybius-v1e400_th-2.33_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-2.33_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [by_clybius-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-forefront-foot_perspective-v1e400_th-1.76_spn_ckpt1.00_size4.0.safetensors
-forefront-foot_perspective-v1e400_th-2.02_spn_ckpt1.00_size8.0.safetensors
-forefront-foot_perspective-v1e400_th-2.14_spn_ckpt1.00_size12.0.safetensors
-forefront-foot_perspective-v1e400_th-2.19_spn_ckpt1.00_size14.0.safetensors
-forefront-foot_perspective-v1e400_th-2.23_spn_ckpt1.00_size16.0.safetensors
-forefront-foot_perspective-v1e400_th-2.26_spn_ckpt1.00_size18.0.safetensors
-forefront-foot_perspective-v1e400_th-2.29_spn_ckpt1.00_size20.0.safetensors
-forefront-foot_perspective-v1e400_th-2.33_spn_ckpt1.00_size22.0.safetensors
-forefront-foot_perspective-v1e400_th-2.36_spn_ckpt1.00_size24.0.safetensors
-forefront-foot_perspective-v1e400_th-2.50_spn_ckpt1.00_size32.0.safetensors
-forefront-foot_perspective-v1e400_th-2.70_fro_ckpt1.00_size4.0.safetensors
-forefront-foot_perspective-v1e400_th-2.95_fro_ckpt1.00_size8.0.safetensors
-forefront-foot_perspective-v1e400_th-3.09_fro_ckpt1.00_size12.0.safetensors
-forefront-foot_perspective-v1e400_th-3.13_fro_ckpt1.00_size14.0.safetensors
-forefront-foot_perspective-v1e400_th-3.18_fro_ckpt1.00_size16.0.safetensors
-forefront-foot_perspective-v1e400_th-3.21_fro_ckpt1.00_size18.0.safetensors
-forefront-foot_perspective-v1e400_th-3.24_fro_ckpt1.00_size20.0.safetensors
-forefront-foot_perspective-v1e400_th-3.27_fro_ckpt1.00_size22.0.safetensors
-forefront-foot_perspective-v1e400_th-3.29_fro_ckpt1.00_size24.0.safetensors
-forefront-foot_perspective-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors
+### by_hibbary-v1e400
 
-foxparks-v2e134_th-1.64_spn_ckpt1.00_size4.0.safetensors
-foxparks-v2e134_th-1.87_spn_ckpt1.00_size8.0.safetensors
-foxparks-v2e134_th-2.00_spn_ckpt1.00_size12.0.safetensors
-foxparks-v2e134_th-2.05_spn_ckpt1.00_size14.0.safetensors
-foxparks-v2e134_th-2.09_spn_ckpt1.00_size16.0.safetensors
-foxparks-v2e134_th-2.12_spn_ckpt1.00_size18.0.safetensors
-foxparks-v2e134_th-2.16_spn_ckpt1.00_size20.0.safetensors
-foxparks-v2e134_th-2.19_spn_ckpt1.00_size22.0.safetensors
-foxparks-v2e134_th-2.23_spn_ckpt1.00_size24.0.safetensors
-foxparks-v2e134_th-2.38_spn_ckpt1.00_size32.0.safetensors
-foxparks-v2e134_th-2.56_fro_ckpt1.00_size4.0.safetensors
-foxparks-v2e134_th-2.81_fro_ckpt1.00_size8.0.safetensors
-foxparks-v2e134_th-2.95_fro_ckpt1.00_size12.0.safetensors
-foxparks-v2e134_th-2.99_fro_ckpt1.00_size14.0.safetensors
-foxparks-v2e134_th-3.04_fro_ckpt1.00_size16.0.safetensors
-foxparks-v2e134_th-3.08_fro_ckpt1.00_size18.0.safetensors
-foxparks-v2e134_th-3.11_fro_ckpt1.00_size20.0.safetensors
-foxparks-v2e134_th-3.14_fro_ckpt1.00_size22.0.safetensors
-foxparks-v2e134_th-3.17_fro_ckpt1.00_size24.0.safetensors
-foxparks-v2e134_th-3.27_fro_ckpt1.00_size32.0.safetensors
+- [by_hibbary-v1e400_th-1.91_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-1.91_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-2.14_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-2.14_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-2.24_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-2.24_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-2.28_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-2.28_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-2.32_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-2.32_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-2.35_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-2.35_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-2.38_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-2.38_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-2.41_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-2.41_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-2.44_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-2.44_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-2.55_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-2.55_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-furry_sticker-v1e250_th-1.53_spn_ckpt1.00_size4.0.safetensors
-furry_sticker-v1e250_th-1.83_spn_ckpt1.00_size8.0.safetensors
-furry_sticker-v1e250_th-1.99_spn_ckpt1.00_size12.0.safetensors
-furry_sticker-v1e250_th-2.04_spn_ckpt1.00_size14.0.safetensors
-furry_sticker-v1e250_th-2.10_spn_ckpt1.00_size16.0.safetensors
-furry_sticker-v1e250_th-2.15_spn_ckpt1.00_size18.0.safetensors
-furry_sticker-v1e250_th-2.19_spn_ckpt1.00_size20.0.safetensors
-furry_sticker-v1e250_th-2.24_spn_ckpt1.00_size22.0.safetensors
-furry_sticker-v1e250_th-2.27_spn_ckpt1.00_size24.0.safetensors
-furry_sticker-v1e250_th-2.41_spn_ckpt1.00_size32.0.safetensors
-furry_sticker-v1e250_th-2.42_fro_ckpt1.00_size4.0.safetensors
-furry_sticker-v1e250_th-2.75_fro_ckpt1.00_size8.0.safetensors
-furry_sticker-v1e250_th-2.92_fro_ckpt1.00_size12.0.safetensors
-furry_sticker-v1e250_th-2.98_fro_ckpt1.00_size14.0.safetensors
-furry_sticker-v1e250_th-3.03_fro_ckpt1.00_size16.0.safetensors
-furry_sticker-v1e250_th-3.08_fro_ckpt1.00_size18.0.safetensors
-furry_sticker-v1e250_th-3.12_fro_ckpt1.00_size20.0.safetensors
-furry_sticker-v1e250_th-3.15_fro_ckpt1.00_size22.0.safetensors
-furry_sticker-v1e250_th-3.19_fro_ckpt1.00_size24.0.safetensors
-furry_sticker-v1e250_th-3.31_fro_ckpt1.00_size32.0.safetensors
+### by_himari-v1e400
 
-goronic-v1e1_th-1.62_spn_ckpt1.00_size4.0.safetensors
-goronic-v1e1_th-1.86_spn_ckpt1.00_size8.0.safetensors
-goronic-v1e1_th-2.00_spn_ckpt1.00_size12.0.safetensors
-goronic-v1e1_th-2.05_spn_ckpt1.00_size14.0.safetensors
-goronic-v1e1_th-2.09_spn_ckpt1.00_size16.0.safetensors
-goronic-v1e1_th-2.13_spn_ckpt1.00_size18.0.safetensors
-goronic-v1e1_th-2.17_spn_ckpt1.00_size20.0.safetensors
-goronic-v1e1_th-2.20_spn_ckpt1.00_size22.0.safetensors
-goronic-v1e1_th-2.24_spn_ckpt1.00_size24.0.safetensors
-goronic-v1e1_th-2.38_spn_ckpt1.00_size32.0.safetensors
-goronic-v1e1_th-2.55_fro_ckpt1.00_size4.0.safetensors
-goronic-v1e1_th-2.80_fro_ckpt1.00_size8.0.safetensors
-goronic-v1e1_th-2.94_fro_ckpt1.00_size12.0.safetensors
-goronic-v1e1_th-3.00_fro_ckpt1.00_size14.0.safetensors
-goronic-v1e1_th-3.04_fro_ckpt1.00_size16.0.safetensors
-goronic-v1e1_th-3.08_fro_ckpt1.00_size18.0.safetensors
-goronic-v1e1_th-3.11_fro_ckpt1.00_size20.0.safetensors
-goronic-v1e1_th-3.14_fro_ckpt1.00_size22.0.safetensors
-goronic-v1e1_th-3.16_fro_ckpt1.00_size24.0.safetensors
-goronic-v1e1_th-3.27_fro_ckpt1.00_size32.0.safetensors
+- [by_himari-v1e400_th-1.48_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-1.48_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [by_himari-v1e400_th-1.78_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-1.78_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [by_himari-v1e400_th-1.92_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-1.92_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [by_himari-v1e400_th-1.98_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-1.98_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [by_himari-v1e400_th-2.03_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.03_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [by_himari-v1e400_th-2.08_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.08_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [by_himari-v1e400_th-2.12_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.12_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [by_himari-v1e400_th-2.16_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.16_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [by_himari-v1e400_th-2.20_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.20_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [by_himari-v1e400_th-2.36_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.36_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-greg_rutkowski-v1e400_th-1.79_spn_ckpt1.00_size4.0.safetensors
-greg_rutkowski-v1e400_th-2.01_spn_ckpt1.00_size8.0.safetensors
-greg_rutkowski-v1e400_th-2.13_spn_ckpt1.00_size12.0.safetensors
-greg_rutkowski-v1e400_th-2.18_spn_ckpt1.00_size14.0.safetensors
-greg_rutkowski-v1e400_th-2.22_spn_ckpt1.00_size16.0.safetensors
-greg_rutkowski-v1e400_th-2.25_spn_ckpt1.00_size18.0.safetensors
-greg_rutkowski-v1e400_th-2.29_spn_ckpt1.00_size20.0.safetensors
-greg_rutkowski-v1e400_th-2.32_spn_ckpt1.00_size22.0.safetensors
-greg_rutkowski-v1e400_th-2.35_spn_ckpt1.00_size24.0.safetensors
-greg_rutkowski-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors
-greg_rutkowski-v1e400_th-2.73_fro_ckpt1.00_size4.0.safetensors
-greg_rutkowski-v1e400_th-2.96_fro_ckpt1.00_size8.0.safetensors
-greg_rutkowski-v1e400_th-3.08_fro_ckpt1.00_size12.0.safetensors
-greg_rutkowski-v1e400_th-3.13_fro_ckpt1.00_size14.0.safetensors
-greg_rutkowski-v1e400_th-3.17_fro_ckpt1.00_size16.0.safetensors
-greg_rutkowski-v1e400_th-3.20_fro_ckpt1.00_size18.0.safetensors
-greg_rutkowski-v1e400_th-3.23_fro_ckpt1.00_size20.0.safetensors
-greg_rutkowski-v1e400_th-3.26_fro_ckpt1.00_size22.0.safetensors
-greg_rutkowski-v1e400_th-3.28_fro_ckpt1.00_size24.0.safetensors
-greg_rutkowski-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors
+### cecily_lin-v1e37
 
-hamgas-v1e400_th-1.69_spn_ckpt1.00_size4.0.safetensors
-hamgas-v1e400_th-1.96_spn_ckpt1.00_size8.0.safetensors
-hamgas-v1e400_th-2.09_spn_ckpt1.00_size12.0.safetensors
-hamgas-v1e400_th-2.14_spn_ckpt1.00_size14.0.safetensors
-hamgas-v1e400_th-2.19_spn_ckpt1.00_size16.0.safetensors
-hamgas-v1e400_th-2.23_spn_ckpt1.00_size18.0.safetensors
-hamgas-v1e400_th-2.27_spn_ckpt1.00_size20.0.safetensors
-hamgas-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors
-hamgas-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors
-hamgas-v1e400_th-2.49_spn_ckpt1.00_size32.0.safetensors
-hamgas-v1e400_th-2.62_fro_ckpt1.00_size4.0.safetensors
-hamgas-v1e400_th-2.89_fro_ckpt1.00_size8.0.safetensors
-hamgas-v1e400_th-3.04_fro_ckpt1.00_size12.0.safetensors
-hamgas-v1e400_th-3.09_fro_ckpt1.00_size14.0.safetensors
-hamgas-v1e400_th-3.13_fro_ckpt1.00_size16.0.safetensors
-hamgas-v1e400_th-3.17_fro_ckpt1.00_size18.0.safetensors
-hamgas-v1e400_th-3.21_fro_ckpt1.00_size20.0.safetensors
-hamgas-v1e400_th-3.24_fro_ckpt1.00_size22.0.safetensors
-hamgas-v1e400_th-3.27_fro_ckpt1.00_size24.0.safetensors
-hamgas-v1e400_th-3.40_fro_ckpt1.00_size32.0.safetensors
+- [cecily_lin-v1e37_th-1.70_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-1.70_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-1.98_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-1.98_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-2.12_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-2.12_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-2.16_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-2.16_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-2.21_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-2.21_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-2.24_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-2.24_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-2.28_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-2.28_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-2.31_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-2.31_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-2.35_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-2.35_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-2.49_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-2.49_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-honovy_ponyxl_v1e4_th-1.97_spn_ckpt1.00_size4.0.safetensors
-honovy_ponyxl_v1e4_th-2.22_spn_ckpt1.00_size8.0.safetensors
-honovy_ponyxl_v1e4_th-2.34_spn_ckpt1.00_size12.0.safetensors
-honovy_ponyxl_v1e4_th-2.39_spn_ckpt1.00_size14.0.safetensors
-honovy_ponyxl_v1e4_th-2.43_spn_ckpt1.00_size16.0.safetensors
-honovy_ponyxl_v1e4_th-2.47_spn_ckpt1.00_size18.0.safetensors
-honovy_ponyxl_v1e4_th-2.50_spn_ckpt1.00_size20.0.safetensors
-honovy_ponyxl_v1e4_th-2.53_spn_ckpt1.00_size22.0.safetensors
-honovy_ponyxl_v1e4_th-2.57_spn_ckpt1.00_size24.0.safetensors
-honovy_ponyxl_v1e4_th-2.69_spn_ckpt1.00_size32.0.safetensors
-honovy_ponyxl_v1e4_th-2.90_fro_ckpt1.00_size4.0.safetensors
-honovy_ponyxl_v1e4_th-3.15_fro_ckpt1.00_size8.0.safetensors
-honovy_ponyxl_v1e4_th-3.29_fro_ckpt1.00_size12.0.safetensors
-honovy_ponyxl_v1e4_th-3.33_fro_ckpt1.00_size14.0.safetensors
-honovy_ponyxl_v1e4_th-3.37_fro_ckpt1.00_size16.0.safetensors
-honovy_ponyxl_v1e4_th-3.40_fro_ckpt1.00_size18.0.safetensors
-honovy_ponyxl_v1e4_th-3.43_fro_ckpt1.00_size20.0.safetensors
-honovy_ponyxl_v1e4_th-3.46_fro_ckpt1.00_size22.0.safetensors
-honovy_ponyxl_v1e4_th-3.49_fro_ckpt1.00_size24.0.safetensors
-honovy_ponyxl_v1e4_th-3.58_fro_ckpt1.00_size32.0.safetensors
+### cervine_penis-v1e400
 
-hoodwink-v1e400_th-1.74_spn_ckpt1.00_size4.0.safetensors
-hoodwink-v1e400_th-1.99_spn_ckpt1.00_size8.0.safetensors
-hoodwink-v1e400_th-2.12_spn_ckpt1.00_size12.0.safetensors
-hoodwink-v1e400_th-2.17_spn_ckpt1.00_size14.0.safetensors
-hoodwink-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors
-hoodwink-v1e400_th-2.24_spn_ckpt1.00_size18.0.safetensors
-hoodwink-v1e400_th-2.27_spn_ckpt1.00_size20.0.safetensors
-hoodwink-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors
-hoodwink-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors
-hoodwink-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors
-hoodwink-v1e400_th-2.69_fro_ckpt1.00_size4.0.safetensors
-hoodwink-v1e400_th-2.93_fro_ckpt1.00_size8.0.safetensors
-hoodwink-v1e400_th-3.07_fro_ckpt1.00_size12.0.safetensors
-hoodwink-v1e400_th-3.12_fro_ckpt1.00_size14.0.safetensors
-hoodwink-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors
-hoodwink-v1e400_th-3.19_fro_ckpt1.00_size18.0.safetensors
-hoodwink-v1e400_th-3.22_fro_ckpt1.00_size20.0.safetensors
-hoodwink-v1e400_th-3.24_fro_ckpt1.00_size22.0.safetensors
-hoodwink-v1e400_th-3.27_fro_ckpt1.00_size24.0.safetensors
-hoodwink-v1e400_th-3.37_fro_ckpt1.00_size32.0.safetensors
+- [cervine_penis-v1e400_th-1.73_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-1.73_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-1.99_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-1.99_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-2.11_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-2.11_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-2.16_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-2.16_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-2.20_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-2.20_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-2.24_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-2.24_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-2.27_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-2.27_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-2.30_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-2.30_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-jayjay-v1e400_th-1.67_spn_ckpt1.00_size4.0.safetensors
-jayjay-v1e400_th-1.93_spn_ckpt1.00_size8.0.safetensors
-jayjay-v1e400_th-2.05_spn_ckpt1.00_size12.0.safetensors
-jayjay-v1e400_th-2.10_spn_ckpt1.00_size14.0.safetensors
-jayjay-v1e400_th-2.14_spn_ckpt1.00_size16.0.safetensors
-jayjay-v1e400_th-2.18_spn_ckpt1.00_size18.0.safetensors
-jayjay-v1e400_th-2.21_spn_ckpt1.00_size20.0.safetensors
-jayjay-v1e400_th-2.24_spn_ckpt1.00_size22.0.safetensors
-jayjay-v1e400_th-2.28_spn_ckpt1.00_size24.0.safetensors
-jayjay-v1e400_th-2.43_spn_ckpt1.00_size32.0.safetensors
-jayjay-v1e400_th-2.61_fro_ckpt1.00_size4.0.safetensors
-jayjay-v1e400_th-2.87_fro_ckpt1.00_size8.0.safetensors
-jayjay-v1e400_th-3.00_fro_ckpt1.00_size12.0.safetensors
-jayjay-v1e400_th-3.05_fro_ckpt1.00_size14.0.safetensors
-jayjay-v1e400_th-3.09_fro_ckpt1.00_size16.0.safetensors
-jayjay-v1e400_th-3.12_fro_ckpt1.00_size18.0.safetensors
-jayjay-v1e400_th-3.15_fro_ckpt1.00_size20.0.safetensors
-jayjay-v1e400_th-3.18_fro_ckpt1.00_size22.0.safetensors
-jayjay-v1e400_th-3.21_fro_ckpt1.00_size24.0.safetensors
-jayjay-v1e400_th-3.32_fro_ckpt1.00_size32.0.safetensors
+### chillet-v3e10
 
-jinxit-v1e10_th-1.65_spn_ckpt1.00_size4.0.safetensors
-jinxit-v1e10_th-1.87_spn_ckpt1.00_size8.0.safetensors
-jinxit-v1e10_th-2.00_spn_ckpt1.00_size12.0.safetensors
-jinxit-v1e10_th-2.04_spn_ckpt1.00_size14.0.safetensors
-jinxit-v1e10_th-2.09_spn_ckpt1.00_size16.0.safetensors
-jinxit-v1e10_th-2.12_spn_ckpt1.00_size18.0.safetensors
-jinxit-v1e10_th-2.16_spn_ckpt1.00_size20.0.safetensors
-jinxit-v1e10_th-2.20_spn_ckpt1.00_size22.0.safetensors
-jinxit-v1e10_th-2.23_spn_ckpt1.00_size24.0.safetensors
-jinxit-v1e10_th-2.37_spn_ckpt1.00_size32.0.safetensors
-jinxit-v1e10_th-2.57_fro_ckpt1.00_size4.0.safetensors
-jinxit-v1e10_th-2.82_fro_ckpt1.00_size8.0.safetensors
-jinxit-v1e10_th-2.95_fro_ckpt1.00_size12.0.safetensors
-jinxit-v1e10_th-3.00_fro_ckpt1.00_size14.0.safetensors
-jinxit-v1e10_th-3.04_fro_ckpt1.00_size16.0.safetensors
-jinxit-v1e10_th-3.08_fro_ckpt1.00_size18.0.safetensors
-jinxit-v1e10_th-3.10_fro_ckpt1.00_size20.0.safetensors
-jinxit-v1e10_th-3.13_fro_ckpt1.00_size22.0.safetensors
-jinxit-v1e10_th-3.16_fro_ckpt1.00_size24.0.safetensors
-jinxit-v1e10_th-3.26_fro_ckpt1.00_size32.0.safetensors
+- [chillet-v3e10_th-1.56_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-1.56_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [chillet-v3e10_th-1.84_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-1.84_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [chillet-v3e10_th-1.98_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-1.98_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [chillet-v3e10_th-2.03_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.03_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [chillet-v3e10_th-2.07_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.07_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [chillet-v3e10_th-2.11_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.11_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [chillet-v3e10_th-2.15_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.15_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [chillet-v3e10_th-2.18_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.18_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [chillet-v3e10_th-2.22_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.22_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [chillet-v3e10_th-2.36_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.36_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-kame_3-v1e80_th-1.72_spn_ckpt1.00_size4.0.safetensors
-kame_3-v1e80_th-1.99_spn_ckpt1.00_size8.0.safetensors
-kame_3-v1e80_th-2.12_spn_ckpt1.00_size12.0.safetensors
-kame_3-v1e80_th-2.16_spn_ckpt1.00_size14.0.safetensors
-kame_3-v1e80_th-2.20_spn_ckpt1.00_size16.0.safetensors
-kame_3-v1e80_th-2.24_spn_ckpt1.00_size18.0.safetensors
-kame_3-v1e80_th-2.28_spn_ckpt1.00_size20.0.safetensors
-kame_3-v1e80_th-2.31_spn_ckpt1.00_size22.0.safetensors
-kame_3-v1e80_th-2.34_spn_ckpt1.00_size24.0.safetensors
-kame_3-v1e80_th-2.48_spn_ckpt1.00_size32.0.safetensors
-kame_3-v1e80_th-2.63_fro_ckpt1.00_size4.0.safetensors
-kame_3-v1e80_th-2.93_fro_ckpt1.00_size8.0.safetensors
-kame_3-v1e80_th-3.07_fro_ckpt1.00_size12.0.safetensors
-kame_3-v1e80_th-3.12_fro_ckpt1.00_size14.0.safetensors
-kame_3-v1e80_th-3.16_fro_ckpt1.00_size16.0.safetensors
-kame_3-v1e80_th-3.19_fro_ckpt1.00_size18.0.safetensors
-kame_3-v1e80_th-3.22_fro_ckpt1.00_size20.0.safetensors
-kame_3-v1e80_th-3.24_fro_ckpt1.00_size22.0.safetensors
-kame_3-v1e80_th-3.27_fro_ckpt1.00_size24.0.safetensors
-kame_3-v1e80_th-3.36_fro_ckpt1.00_size32.0.safetensors
+### chunie-v1e5
 
-kenket-v1e4_th-1.76_spn_ckpt1.00_size4.0.safetensors
-kenket-v1e4_th-1.98_spn_ckpt1.00_size8.0.safetensors
-kenket-v1e4_th-2.12_spn_ckpt1.00_size12.0.safetensors
-kenket-v1e4_th-2.17_spn_ckpt1.00_size14.0.safetensors
-kenket-v1e4_th-2.22_spn_ckpt1.00_size16.0.safetensors
-kenket-v1e4_th-2.25_spn_ckpt1.00_size18.0.safetensors
-kenket-v1e4_th-2.29_spn_ckpt1.00_size20.0.safetensors
-kenket-v1e4_th-2.32_spn_ckpt1.00_size22.0.safetensors
-kenket-v1e4_th-2.36_spn_ckpt1.00_size24.0.safetensors
-kenket-v1e4_th-2.48_spn_ckpt1.00_size32.0.safetensors
-kenket-v1e4_th-2.65_fro_ckpt1.00_size4.0.safetensors
-kenket-v1e4_th-2.93_fro_ckpt1.00_size8.0.safetensors
-kenket-v1e4_th-3.07_fro_ckpt1.00_size12.0.safetensors
-kenket-v1e4_th-3.12_fro_ckpt1.00_size14.0.safetensors
-kenket-v1e4_th-3.16_fro_ckpt1.00_size16.0.safetensors
-kenket-v1e4_th-3.19_fro_ckpt1.00_size18.0.safetensors
-kenket-v1e4_th-3.22_fro_ckpt1.00_size20.0.safetensors
-kenket-v1e4_th-3.25_fro_ckpt1.00_size22.0.safetensors
-kenket-v1e4_th-3.28_fro_ckpt1.00_size24.0.safetensors
-kenket-v1e4_th-3.37_fro_ckpt1.00_size32.0.safetensors
+- [chunie-v1e5_th-1.75_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-1.75_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [chunie-v1e5_th-2.03_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.03_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [chunie-v1e5_th-2.16_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.16_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [chunie-v1e5_th-2.22_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.22_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [chunie-v1e5_th-2.26_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.26_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [chunie-v1e5_th-2.30_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.30_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [chunie-v1e5_th-2.34_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.34_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [chunie-v1e5_th-2.37_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.37_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [chunie-v1e5_th-2.41_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.41_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [chunie-v1e5_th-2.54_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.54_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-lodestone-v1e400_th-1.83_spn_ckpt1.00_size4.0.safetensors
-lodestone-v1e400_th-2.06_spn_ckpt1.00_size8.0.safetensors
-lodestone-v1e400_th-2.21_spn_ckpt1.00_size12.0.safetensors
-lodestone-v1e400_th-2.27_spn_ckpt1.00_size14.0.safetensors
-lodestone-v1e400_th-2.32_spn_ckpt1.00_size16.0.safetensors
-lodestone-v1e400_th-2.37_spn_ckpt1.00_size18.0.safetensors
-lodestone-v1e400_th-2.41_spn_ckpt1.00_size20.0.safetensors
-lodestone-v1e400_th-2.45_spn_ckpt1.00_size22.0.safetensors
-lodestone-v1e400_th-2.49_spn_ckpt1.00_size24.0.safetensors
-lodestone-v1e400_th-2.66_spn_ckpt1.00_size32.0.safetensors
-lodestone-v1e400_th-2.77_fro_ckpt1.00_size4.0.safetensors
-lodestone-v1e400_th-3.02_fro_ckpt1.00_size8.0.safetensors
-lodestone-v1e400_th-3.16_fro_ckpt1.00_size12.0.safetensors
-lodestone-v1e400_th-3.21_fro_ckpt1.00_size14.0.safetensors
-lodestone-v1e400_th-3.26_fro_ckpt1.00_size16.0.safetensors
-lodestone-v1e400_th-3.31_fro_ckpt1.00_size18.0.safetensors
-lodestone-v1e400_th-3.35_fro_ckpt1.00_size20.0.safetensors
-lodestone-v1e400_th-3.38_fro_ckpt1.00_size22.0.safetensors
-lodestone-v1e400_th-3.42_fro_ckpt1.00_size24.0.safetensors
-lodestone-v1e400_th-3.56_fro_ckpt1.00_size32.0.safetensors
+### cooliehigh-v1e45
 
-louart-v1e10_th-1.73_spn_ckpt1.00_size4.0.safetensors
-louart-v1e10_th-1.96_spn_ckpt1.00_size8.0.safetensors
-louart-v1e10_th-2.06_spn_ckpt1.00_size12.0.safetensors
-louart-v1e10_th-2.11_spn_ckpt1.00_size14.0.safetensors
-louart-v1e10_th-2.15_spn_ckpt1.00_size16.0.safetensors
-louart-v1e10_th-2.19_spn_ckpt1.00_size18.0.safetensors
-louart-v1e10_th-2.22_spn_ckpt1.00_size20.0.safetensors
-louart-v1e10_th-2.25_spn_ckpt1.00_size22.0.safetensors
-louart-v1e10_th-2.29_spn_ckpt1.00_size24.0.safetensors
-louart-v1e10_th-2.43_spn_ckpt1.00_size32.0.safetensors
-louart-v1e10_th-2.65_fro_ckpt1.00_size4.0.safetensors
-louart-v1e10_th-2.90_fro_ckpt1.00_size8.0.safetensors
-louart-v1e10_th-3.03_fro_ckpt1.00_size12.0.safetensors
-louart-v1e10_th-3.07_fro_ckpt1.00_size14.0.safetensors
-louart-v1e10_th-3.10_fro_ckpt1.00_size16.0.safetensors
-louart-v1e10_th-3.14_fro_ckpt1.00_size18.0.safetensors
-louart-v1e10_th-3.17_fro_ckpt1.00_size20.0.safetensors
-louart-v1e10_th-3.20_fro_ckpt1.00_size22.0.safetensors
-louart-v1e10_th-3.22_fro_ckpt1.00_size24.0.safetensors
-louart-v1e10_th-3.33_fro_ckpt1.00_size32.0.safetensors
+- [cooliehigh-v1e45_th-1.71_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-1.71_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-1.98_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-1.98_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-2.12_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-2.12_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-2.17_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-2.17_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-2.21_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-2.21_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-2.25_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-2.25_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-2.29_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-2.29_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-2.32_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-2.32_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-2.36_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-2.36_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-2.50_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-2.50_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-lovander-v3e10_th-1.64_spn_ckpt1.00_size4.0.safetensors
-lovander-v3e10_th-1.89_spn_ckpt1.00_size8.0.safetensors
-lovander-v3e10_th-2.03_spn_ckpt1.00_size12.0.safetensors
-lovander-v3e10_th-2.08_spn_ckpt1.00_size14.0.safetensors
-lovander-v3e10_th-2.12_spn_ckpt1.00_size16.0.safetensors
-lovander-v3e10_th-2.15_spn_ckpt1.00_size18.0.safetensors
-lovander-v3e10_th-2.19_spn_ckpt1.00_size20.0.safetensors
-lovander-v3e10_th-2.22_spn_ckpt1.00_size22.0.safetensors
-lovander-v3e10_th-2.26_spn_ckpt1.00_size24.0.safetensors
-lovander-v3e10_th-2.41_spn_ckpt1.00_size32.0.safetensors
-lovander-v3e10_th-2.55_fro_ckpt1.00_size4.0.safetensors
-lovander-v3e10_th-2.83_fro_ckpt1.00_size8.0.safetensors
-lovander-v3e10_th-2.97_fro_ckpt1.00_size12.0.safetensors
-lovander-v3e10_th-3.02_fro_ckpt1.00_size14.0.safetensors
-lovander-v3e10_th-3.07_fro_ckpt1.00_size16.0.safetensors
-lovander-v3e10_th-3.10_fro_ckpt1.00_size18.0.safetensors
-lovander-v3e10_th-3.13_fro_ckpt1.00_size20.0.safetensors
-lovander-v3e10_th-3.16_fro_ckpt1.00_size22.0.safetensors
-lovander-v3e10_th-3.19_fro_ckpt1.00_size24.0.safetensors
-lovander-v3e10_th-3.30_fro_ckpt1.00_size32.0.safetensors
+### dagasi-v1e134
 
-magic-v1e400_th-1.90_spn_ckpt1.00_size4.0.safetensors
-magic-v1e400_th-2.14_spn_ckpt1.00_size8.0.safetensors
-magic-v1e400_th-2.27_spn_ckpt1.00_size12.0.safetensors
-magic-v1e400_th-2.31_spn_ckpt1.00_size14.0.safetensors
-magic-v1e400_th-2.35_spn_ckpt1.00_size16.0.safetensors
-magic-v1e400_th-2.39_spn_ckpt1.00_size18.0.safetensors
-magic-v1e400_th-2.43_spn_ckpt1.00_size20.0.safetensors
-magic-v1e400_th-2.46_spn_ckpt1.00_size22.0.safetensors
-magic-v1e400_th-2.50_spn_ckpt1.00_size24.0.safetensors
-magic-v1e400_th-2.63_spn_ckpt1.00_size32.0.safetensors
-magic-v1e400_th-2.84_fro_ckpt1.00_size4.0.safetensors
-magic-v1e400_th-3.09_fro_ckpt1.00_size8.0.safetensors
-magic-v1e400_th-3.22_fro_ckpt1.00_size12.0.safetensors
-magic-v1e400_th-3.27_fro_ckpt1.00_size14.0.safetensors
-magic-v1e400_th-3.31_fro_ckpt1.00_size16.0.safetensors
-magic-v1e400_th-3.34_fro_ckpt1.00_size18.0.safetensors
-magic-v1e400_th-3.37_fro_ckpt1.00_size20.0.safetensors
-magic-v1e400_th-3.40_fro_ckpt1.00_size22.0.safetensors
-magic-v1e400_th-3.43_fro_ckpt1.00_size24.0.safetensors
-magic-v1e400_th-3.54_fro_ckpt1.00_size32.0.safetensors
+- [dagasi-v1e134_th-1.73_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-1.73_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [dagasi-v1e134_th-2.00_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.00_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [dagasi-v1e134_th-2.14_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.14_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [dagasi-v1e134_th-2.19_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.19_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [dagasi-v1e134_th-2.23_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.23_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [dagasi-v1e134_th-2.27_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.27_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [dagasi-v1e134_th-2.30_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.30_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [dagasi-v1e134_th-2.34_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.34_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [dagasi-v1e134_th-2.37_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.37_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [dagasi-v1e134_th-2.52_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.52_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-maliketh-v1e1_th-1.71_spn_ckpt1.00_size4.0.safetensors
-maliketh-v1e1_th-1.90_spn_ckpt1.00_size8.0.safetensors
-maliketh-v1e1_th-2.02_spn_ckpt1.00_size12.0.safetensors
-maliketh-v1e1_th-2.07_spn_ckpt1.00_size14.0.safetensors
-maliketh-v1e1_th-2.10_spn_ckpt1.00_size16.0.safetensors
-maliketh-v1e1_th-2.14_spn_ckpt1.00_size18.0.safetensors
-maliketh-v1e1_th-2.17_spn_ckpt1.00_size20.0.safetensors
-maliketh-v1e1_th-2.20_spn_ckpt1.00_size22.0.safetensors
-maliketh-v1e1_th-2.24_spn_ckpt1.00_size24.0.safetensors
-maliketh-v1e1_th-2.38_spn_ckpt1.00_size32.0.safetensors
-maliketh-v1e1_th-2.63_fro_ckpt1.00_size4.0.safetensors
-maliketh-v1e1_th-2.85_fro_ckpt1.00_size8.0.safetensors
-maliketh-v1e1_th-2.98_fro_ckpt1.00_size12.0.safetensors
-maliketh-v1e1_th-3.02_fro_ckpt1.00_size14.0.safetensors
-maliketh-v1e1_th-3.06_fro_ckpt1.00_size16.0.safetensors
-maliketh-v1e1_th-3.09_fro_ckpt1.00_size18.0.safetensors
-maliketh-v1e1_th-3.12_fro_ckpt1.00_size20.0.safetensors
-maliketh-v1e1_th-3.15_fro_ckpt1.00_size22.0.safetensors
-maliketh-v1e1_th-3.17_fro_ckpt1.00_size24.0.safetensors
-maliketh-v1e1_th-3.28_fro_ckpt1.00_size32.0.safetensors
+### darkgem-v1e4
 
-martlet-v1e200_th-1.86_spn_ckpt1.00_size4.0.safetensors
-martlet-v1e200_th-2.07_spn_ckpt1.00_size8.0.safetensors
-martlet-v1e200_th-2.18_spn_ckpt1.00_size12.0.safetensors
-martlet-v1e200_th-2.22_spn_ckpt1.00_size14.0.safetensors
-martlet-v1e200_th-2.26_spn_ckpt1.00_size16.0.safetensors
-martlet-v1e200_th-2.29_spn_ckpt1.00_size18.0.safetensors
-martlet-v1e200_th-2.32_spn_ckpt1.00_size20.0.safetensors
-martlet-v1e200_th-2.35_spn_ckpt1.00_size22.0.safetensors
-martlet-v1e200_th-2.39_spn_ckpt1.00_size24.0.safetensors
-martlet-v1e200_th-2.53_spn_ckpt1.00_size32.0.safetensors
-martlet-v1e200_th-2.77_fro_ckpt1.00_size4.0.safetensors
-martlet-v1e200_th-3.01_fro_ckpt1.00_size8.0.safetensors
-martlet-v1e200_th-3.13_fro_ckpt1.00_size12.0.safetensors
-martlet-v1e200_th-3.17_fro_ckpt1.00_size14.0.safetensors
-martlet-v1e200_th-3.21_fro_ckpt1.00_size16.0.safetensors
-martlet-v1e200_th-3.24_fro_ckpt1.00_size18.0.safetensors
-martlet-v1e200_th-3.27_fro_ckpt1.00_size20.0.safetensors
-martlet-v1e200_th-3.29_fro_ckpt1.00_size22.0.safetensors
-martlet-v1e200_th-3.32_fro_ckpt1.00_size24.0.safetensors
-martlet-v1e200_th-3.42_fro_ckpt1.00_size32.0.safetensors
+- [darkgem-v1e4_th-1.96_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-1.96_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [darkgem-v1e4_th-2.21_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-2.21_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [darkgem-v1e4_th-2.33_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-2.33_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [darkgem-v1e4_th-2.37_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-2.37_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [darkgem-v1e4_th-2.42_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-2.42_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [darkgem-v1e4_th-2.45_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-2.45_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [darkgem-v1e4_th-2.49_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-2.49_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [darkgem-v1e4_th-2.52_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-2.52_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [darkgem-v1e4_th-2.55_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-2.55_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [darkgem-v1e4_th-2.68_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-2.68_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-non-euclidean_sex-v1e400_th-1.78_spn_ckpt1.00_size4.0.safetensors
-non-euclidean_sex-v1e400_th-2.07_spn_ckpt1.00_size8.0.safetensors
-non-euclidean_sex-v1e400_th-2.20_spn_ckpt1.00_size12.0.safetensors
-non-euclidean_sex-v1e400_th-2.24_spn_ckpt1.00_size14.0.safetensors
-non-euclidean_sex-v1e400_th-2.27_spn_ckpt1.00_size16.0.safetensors
-non-euclidean_sex-v1e400_th-2.31_spn_ckpt1.00_size18.0.safetensors
-non-euclidean_sex-v1e400_th-2.34_spn_ckpt1.00_size20.0.safetensors
-non-euclidean_sex-v1e400_th-2.37_spn_ckpt1.00_size22.0.safetensors
-non-euclidean_sex-v1e400_th-2.40_spn_ckpt1.00_size24.0.safetensors
-non-euclidean_sex-v1e400_th-2.54_spn_ckpt1.00_size32.0.safetensors
-non-euclidean_sex-v1e400_th-2.69_fro_ckpt1.00_size4.0.safetensors
-non-euclidean_sex-v1e400_th-3.00_fro_ckpt1.00_size8.0.safetensors
-non-euclidean_sex-v1e400_th-3.15_fro_ckpt1.00_size12.0.safetensors
-non-euclidean_sex-v1e400_th-3.19_fro_ckpt1.00_size14.0.safetensors
-non-euclidean_sex-v1e400_th-3.22_fro_ckpt1.00_size16.0.safetensors
-non-euclidean_sex-v1e400_th-3.26_fro_ckpt1.00_size18.0.safetensors
-non-euclidean_sex-v1e400_th-3.28_fro_ckpt1.00_size20.0.safetensors
-non-euclidean_sex-v1e400_th-3.31_fro_ckpt1.00_size22.0.safetensors
-non-euclidean_sex-v1e400_th-3.33_fro_ckpt1.00_size24.0.safetensors
-non-euclidean_sex-v1e400_th-3.42_fro_ckpt1.00_size32.0.safetensors
+### dharrel-v1e350
 
-pup_mask-v1e400_th-1.77_spn_ckpt1.00_size4.0.safetensors
-pup_mask-v1e400_th-2.00_spn_ckpt1.00_size8.0.safetensors
-pup_mask-v1e400_th-2.13_spn_ckpt1.00_size12.0.safetensors
-pup_mask-v1e400_th-2.17_spn_ckpt1.00_size14.0.safetensors
-pup_mask-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors
-pup_mask-v1e400_th-2.25_spn_ckpt1.00_size18.0.safetensors
-pup_mask-v1e400_th-2.28_spn_ckpt1.00_size20.0.safetensors
-pup_mask-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors
-pup_mask-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors
-pup_mask-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors
-pup_mask-v1e400_th-2.72_fro_ckpt1.00_size4.0.safetensors
-pup_mask-v1e400_th-2.95_fro_ckpt1.00_size8.0.safetensors
-pup_mask-v1e400_th-3.08_fro_ckpt1.00_size12.0.safetensors
-pup_mask-v1e400_th-3.12_fro_ckpt1.00_size14.0.safetensors
-pup_mask-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors
-pup_mask-v1e400_th-3.19_fro_ckpt1.00_size18.0.safetensors
-pup_mask-v1e400_th-3.22_fro_ckpt1.00_size20.0.safetensors
-pup_mask-v1e400_th-3.25_fro_ckpt1.00_size22.0.safetensors
-pup_mask-v1e400_th-3.27_fro_ckpt1.00_size24.0.safetensors
-pup_mask-v1e400_th-3.37_fro_ckpt1.00_size32.0.safetensors
+- [dharrel-v1e350_th-1.76_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-1.76_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [dharrel-v1e350_th-1.99_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-1.99_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [dharrel-v1e350_th-2.12_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-2.12_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [dharrel-v1e350_th-2.16_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-2.16_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [dharrel-v1e350_th-2.20_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-2.20_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [dharrel-v1e350_th-2.24_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-2.24_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [dharrel-v1e350_th-2.27_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-2.27_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [dharrel-v1e350_th-2.31_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-2.31_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [dharrel-v1e350_th-2.34_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-2.34_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [dharrel-v1e350_th-2.48_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-2.48_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-ramona-v1e400_th-1.73_spn_ckpt1.00_size4.0.safetensors
-ramona-v1e400_th-1.96_spn_ckpt1.00_size8.0.safetensors
-ramona-v1e400_th-2.09_spn_ckpt1.00_size12.0.safetensors
-ramona-v1e400_th-2.13_spn_ckpt1.00_size14.0.safetensors
-ramona-v1e400_th-2.18_spn_ckpt1.00_size16.0.safetensors
-ramona-v1e400_th-2.21_spn_ckpt1.00_size18.0.safetensors
-ramona-v1e400_th-2.25_spn_ckpt1.00_size20.0.safetensors
-ramona-v1e400_th-2.29_spn_ckpt1.00_size22.0.safetensors
-ramona-v1e400_th-2.32_spn_ckpt1.00_size24.0.safetensors
-ramona-v1e400_th-2.49_spn_ckpt1.00_size32.0.safetensors
-ramona-v1e400_th-2.67_fro_ckpt1.00_size4.0.safetensors
-ramona-v1e400_th-2.91_fro_ckpt1.00_size8.0.safetensors
-ramona-v1e400_th-3.04_fro_ckpt1.00_size12.0.safetensors
-ramona-v1e400_th-3.08_fro_ckpt1.00_size14.0.safetensors
-ramona-v1e400_th-3.12_fro_ckpt1.00_size16.0.safetensors
-ramona-v1e400_th-3.16_fro_ckpt1.00_size18.0.safetensors
-ramona-v1e400_th-3.20_fro_ckpt1.00_size20.0.safetensors
-ramona-v1e400_th-3.23_fro_ckpt1.00_size22.0.safetensors
-ramona-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors
-ramona-v1e400_th-3.38_fro_ckpt1.00_size32.0.safetensors
+### dharrel-v2e400
 
-realistic-v4e400_th-1.56_spn_ckpt1.00_size4.0.safetensors
-realistic-v4e400_th-1.86_spn_ckpt1.00_size8.0.safetensors
-realistic-v4e400_th-2.02_spn_ckpt1.00_size12.0.safetensors
-realistic-v4e400_th-2.07_spn_ckpt1.00_size14.0.safetensors
-realistic-v4e400_th-2.12_spn_ckpt1.00_size16.0.safetensors
-realistic-v4e400_th-2.16_spn_ckpt1.00_size18.0.safetensors
-realistic-v4e400_th-2.20_spn_ckpt1.00_size20.0.safetensors
-realistic-v4e400_th-2.23_spn_ckpt1.00_size22.0.safetensors
-realistic-v4e400_th-2.27_spn_ckpt1.00_size24.0.safetensors
-realistic-v4e400_th-2.39_spn_ckpt1.00_size32.0.safetensors
-realistic-v4e400_th-2.46_fro_ckpt1.00_size4.0.safetensors
-realistic-v4e400_th-2.78_fro_ckpt1.00_size8.0.safetensors
-realistic-v4e400_th-2.94_fro_ckpt1.00_size12.0.safetensors
-realistic-v4e400_th-2.99_fro_ckpt1.00_size14.0.safetensors
-realistic-v4e400_th-3.04_fro_ckpt1.00_size16.0.safetensors
-realistic-v4e400_th-3.08_fro_ckpt1.00_size18.0.safetensors
-realistic-v4e400_th-3.12_fro_ckpt1.00_size20.0.safetensors
-realistic-v4e400_th-3.15_fro_ckpt1.00_size22.0.safetensors
-realistic-v4e400_th-3.19_fro_ckpt1.00_size24.0.safetensors
-realistic-v4e400_th-3.31_fro_ckpt1.00_size32.0.safetensors
+- [dharrel-v2e400_th-1.86_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-1.86_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [dharrel-v2e400_th-2.09_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-2.09_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [dharrel-v2e400_th-2.22_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-2.22_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [dharrel-v2e400_th-2.27_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-2.27_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [dharrel-v2e400_th-2.31_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-2.31_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [dharrel-v2e400_th-2.35_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-2.35_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [dharrel-v2e400_th-2.39_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-2.39_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [dharrel-v2e400_th-2.42_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-2.42_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [dharrel-v2e400_th-2.45_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-2.45_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [dharrel-v2e400_th-2.60_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-2.60_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-realistic-v4e500_th-1.56_spn_ckpt1.00_size4.0.safetensors
-realistic-v4e500_th-1.86_spn_ckpt1.00_size8.0.safetensors
-realistic-v4e500_th-2.01_spn_ckpt1.00_size12.0.safetensors
-realistic-v4e500_th-2.06_spn_ckpt1.00_size14.0.safetensors
-realistic-v4e500_th-2.12_spn_ckpt1.00_size16.0.safetensors
-realistic-v4e500_th-2.15_spn_ckpt1.00_size18.0.safetensors
-realistic-v4e500_th-2.20_spn_ckpt1.00_size20.0.safetensors
-realistic-v4e500_th-2.23_spn_ckpt1.00_size22.0.safetensors
-realistic-v4e500_th-2.26_spn_ckpt1.00_size24.0.safetensors
-realistic-v4e500_th-2.39_spn_ckpt1.00_size32.0.safetensors
-realistic-v4e500_th-2.46_fro_ckpt1.00_size4.0.safetensors
-realistic-v4e500_th-2.77_fro_ckpt1.00_size8.0.safetensors
-realistic-v4e500_th-2.94_fro_ckpt1.00_size12.0.safetensors
-realistic-v4e500_th-2.99_fro_ckpt1.00_size14.0.safetensors
-realistic-v4e500_th-3.04_fro_ckpt1.00_size16.0.safetensors
-realistic-v4e500_th-3.08_fro_ckpt1.00_size18.0.safetensors
-realistic-v4e500_th-3.12_fro_ckpt1.00_size20.0.safetensors
-realistic-v4e500_th-3.15_fro_ckpt1.00_size22.0.safetensors
-realistic-v4e500_th-3.19_fro_ckpt1.00_size24.0.safetensors
-realistic-v4e500_th-3.31_fro_ckpt1.00_size32.0.safetensors
+### forefront-foot_perspective-v1e400
 
-skecchiart-v1e134_th-1.74_spn_ckpt1.00_size4.0.safetensors
-skecchiart-v1e134_th-2.01_spn_ckpt1.00_size8.0.safetensors
-skecchiart-v1e134_th-2.14_spn_ckpt1.00_size12.0.safetensors
-skecchiart-v1e134_th-2.19_spn_ckpt1.00_size14.0.safetensors
-skecchiart-v1e134_th-2.23_spn_ckpt1.00_size16.0.safetensors
-skecchiart-v1e134_th-2.27_spn_ckpt1.00_size18.0.safetensors
-skecchiart-v1e134_th-2.31_spn_ckpt1.00_size20.0.safetensors
-skecchiart-v1e134_th-2.34_spn_ckpt1.00_size22.0.safetensors
-skecchiart-v1e134_th-2.38_spn_ckpt1.00_size24.0.safetensors
-skecchiart-v1e134_th-2.52_spn_ckpt1.00_size32.0.safetensors
-skecchiart-v1e134_th-2.66_fro_ckpt1.00_size4.0.safetensors
-skecchiart-v1e134_th-2.96_fro_ckpt1.00_size8.0.safetensors
-skecchiart-v1e134_th-3.10_fro_ckpt1.00_size12.0.safetensors
-skecchiart-v1e134_th-3.15_fro_ckpt1.00_size14.0.safetensors
-skecchiart-v1e134_th-3.19_fro_ckpt1.00_size16.0.safetensors
-skecchiart-v1e134_th-3.22_fro_ckpt1.00_size18.0.safetensors
-skecchiart-v1e134_th-3.25_fro_ckpt1.00_size20.0.safetensors
-skecchiart-v1e134_th-3.28_fro_ckpt1.00_size22.0.safetensors
-skecchiart-v1e134_th-3.31_fro_ckpt1.00_size24.0.safetensors
-skecchiart-v1e134_th-3.42_fro_ckpt1.00_size32.0.safetensors
+- [forefront-foot_perspective-v1e400_th-1.76_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-1.76_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-2.02_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.02_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-2.14_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.14_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-2.19_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.19_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-2.23_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.23_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-2.26_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.26_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-2.29_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.29_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-2.33_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.33_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-2.36_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.36_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-2.50_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.50_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-skiltaire-v1e400_th-1.72_spn_ckpt1.00_size4.0.safetensors
-skiltaire-v1e400_th-1.94_spn_ckpt1.00_size8.0.safetensors
-skiltaire-v1e400_th-2.07_spn_ckpt1.00_size12.0.safetensors
-skiltaire-v1e400_th-2.11_spn_ckpt1.00_size14.0.safetensors
-skiltaire-v1e400_th-2.16_spn_ckpt1.00_size16.0.safetensors
-skiltaire-v1e400_th-2.20_spn_ckpt1.00_size18.0.safetensors
-skiltaire-v1e400_th-2.23_spn_ckpt1.00_size20.0.safetensors
-skiltaire-v1e400_th-2.27_spn_ckpt1.00_size22.0.safetensors
-skiltaire-v1e400_th-2.30_spn_ckpt1.00_size24.0.safetensors
-skiltaire-v1e400_th-2.44_spn_ckpt1.00_size32.0.safetensors
-skiltaire-v1e400_th-2.67_fro_ckpt1.00_size4.0.safetensors
-skiltaire-v1e400_th-2.88_fro_ckpt1.00_size8.0.safetensors
-skiltaire-v1e400_th-3.01_fro_ckpt1.00_size12.0.safetensors
-skiltaire-v1e400_th-3.06_fro_ckpt1.00_size14.0.safetensors
-skiltaire-v1e400_th-3.10_fro_ckpt1.00_size16.0.safetensors
-skiltaire-v1e400_th-3.14_fro_ckpt1.00_size18.0.safetensors
-skiltaire-v1e400_th-3.17_fro_ckpt1.00_size20.0.safetensors
-skiltaire-v1e400_th-3.21_fro_ckpt1.00_size22.0.safetensors
-skiltaire-v1e400_th-3.23_fro_ckpt1.00_size24.0.safetensors
-skiltaire-v1e400_th-3.35_fro_ckpt1.00_size32.0.safetensors
+### foxparks-v2e134
 
-small_dom_big_sub-v2e400_th-1.80_spn_ckpt1.00_size4.0.safetensors
-small_dom_big_sub-v2e400_th-2.04_spn_ckpt1.00_size8.0.safetensors
-small_dom_big_sub-v2e400_th-2.16_spn_ckpt1.00_size12.0.safetensors
-small_dom_big_sub-v2e400_th-2.20_spn_ckpt1.00_size14.0.safetensors
-small_dom_big_sub-v2e400_th-2.24_spn_ckpt1.00_size16.0.safetensors
-small_dom_big_sub-v2e400_th-2.28_spn_ckpt1.00_size18.0.safetensors
-small_dom_big_sub-v2e400_th-2.31_spn_ckpt1.00_size20.0.safetensors
-small_dom_big_sub-v2e400_th-2.34_spn_ckpt1.00_size22.0.safetensors
-small_dom_big_sub-v2e400_th-2.37_spn_ckpt1.00_size24.0.safetensors
-small_dom_big_sub-v2e400_th-2.51_spn_ckpt1.00_size32.0.safetensors
-small_dom_big_sub-v2e400_th-2.74_fro_ckpt1.00_size4.0.safetensors
-small_dom_big_sub-v2e400_th-3.00_fro_ckpt1.00_size8.0.safetensors
-small_dom_big_sub-v2e400_th-3.11_fro_ckpt1.00_size12.0.safetensors
-small_dom_big_sub-v2e400_th-3.15_fro_ckpt1.00_size14.0.safetensors
-small_dom_big_sub-v2e400_th-3.19_fro_ckpt1.00_size16.0.safetensors
-small_dom_big_sub-v2e400_th-3.22_fro_ckpt1.00_size18.0.safetensors
-small_dom_big_sub-v2e400_th-3.25_fro_ckpt1.00_size20.0.safetensors
-small_dom_big_sub-v2e400_th-3.28_fro_ckpt1.00_size22.0.safetensors
-small_dom_big_sub-v2e400_th-3.30_fro_ckpt1.00_size24.0.safetensors
-small_dom_big_sub-v2e400_th-3.40_fro_ckpt1.00_size32.0.safetensors
+- [foxparks-v2e134_th-1.64_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-1.64_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [foxparks-v2e134_th-1.87_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-1.87_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.00_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.00_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.05_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.05_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.09_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.09_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.12_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.12_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.16_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.16_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.19_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.19_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.23_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.23_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.38_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.38_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-space-v1e500_th-1.77_spn_ckpt1.00_size4.0.safetensors
-space-v1e500_th-2.11_spn_ckpt1.00_size8.0.safetensors
-space-v1e500_th-2.27_spn_ckpt1.00_size12.0.safetensors
-space-v1e500_th-2.31_spn_ckpt1.00_size14.0.safetensors
-space-v1e500_th-2.36_spn_ckpt1.00_size16.0.safetensors
-space-v1e500_th-2.41_spn_ckpt1.00_size18.0.safetensors
-space-v1e500_th-2.44_spn_ckpt1.00_size20.0.safetensors
-space-v1e500_th-2.48_spn_ckpt1.00_size22.0.safetensors
-space-v1e500_th-2.51_spn_ckpt1.00_size24.0.safetensors
-space-v1e500_th-2.64_spn_ckpt1.00_size32.0.safetensors
-space-v1e500_th-2.68_fro_ckpt1.00_size4.0.safetensors
-space-v1e500_th-3.02_fro_ckpt1.00_size8.0.safetensors
-space-v1e500_th-3.19_fro_ckpt1.00_size12.0.safetensors
-space-v1e500_th-3.24_fro_ckpt1.00_size14.0.safetensors
-space-v1e500_th-3.29_fro_ckpt1.00_size16.0.safetensors
-space-v1e500_th-3.33_fro_ckpt1.00_size18.0.safetensors
-space-v1e500_th-3.37_fro_ckpt1.00_size20.0.safetensors
-space-v1e500_th-3.40_fro_ckpt1.00_size22.0.safetensors
-space-v1e500_th-3.44_fro_ckpt1.00_size24.0.safetensors
-space-v1e500_th-3.55_fro_ckpt1.00_size32.0.safetensors
+### furry_sticker-v1e250
 
-spaceengine-v1e500_th-1.72_spn_ckpt1.00_size4.0.safetensors
-spaceengine-v1e500_th-2.04_spn_ckpt1.00_size8.0.safetensors
-spaceengine-v1e500_th-2.19_spn_ckpt1.00_size12.0.safetensors
-spaceengine-v1e500_th-2.25_spn_ckpt1.00_size14.0.safetensors
-spaceengine-v1e500_th-2.29_spn_ckpt1.00_size16.0.safetensors
-spaceengine-v1e500_th-2.33_spn_ckpt1.00_size18.0.safetensors
-spaceengine-v1e500_th-2.37_spn_ckpt1.00_size20.0.safetensors
-spaceengine-v1e500_th-2.41_spn_ckpt1.00_size22.0.safetensors
-spaceengine-v1e500_th-2.44_spn_ckpt1.00_size24.0.safetensors
-spaceengine-v1e500_th-2.57_spn_ckpt1.00_size32.0.safetensors
-spaceengine-v1e500_th-2.63_fro_ckpt1.00_size4.0.safetensors
-spaceengine-v1e500_th-2.96_fro_ckpt1.00_size8.0.safetensors
-spaceengine-v1e500_th-3.12_fro_ckpt1.00_size12.0.safetensors
-spaceengine-v1e500_th-3.18_fro_ckpt1.00_size14.0.safetensors
-spaceengine-v1e500_th-3.22_fro_ckpt1.00_size16.0.safetensors
-spaceengine-v1e500_th-3.27_fro_ckpt1.00_size18.0.safetensors
-spaceengine-v1e500_th-3.30_fro_ckpt1.00_size20.0.safetensors
-spaceengine-v1e500_th-3.33_fro_ckpt1.00_size22.0.safetensors
-spaceengine-v1e500_th-3.36_fro_ckpt1.00_size24.0.safetensors
-spaceengine-v1e500_th-3.49_fro_ckpt1.00_size32.0.safetensors
+- [furry_sticker-v1e250_th-1.53_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-1.53_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-1.83_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-1.83_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-1.99_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-1.99_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-2.04_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.04_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-2.10_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.10_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-2.15_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.15_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-2.19_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.19_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-2.24_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.24_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-2.27_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.27_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-2.41_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.41_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-spectrumshift-v1e400_th-1.83_spn_ckpt1.00_size4.0.safetensors
-spectrumshift-v1e400_th-2.02_spn_ckpt1.00_size8.0.safetensors
-spectrumshift-v1e400_th-2.12_spn_ckpt1.00_size12.0.safetensors
-spectrumshift-v1e400_th-2.16_spn_ckpt1.00_size14.0.safetensors
-spectrumshift-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors
-spectrumshift-v1e400_th-2.25_spn_ckpt1.00_size18.0.safetensors
-spectrumshift-v1e400_th-2.28_spn_ckpt1.00_size20.0.safetensors
-spectrumshift-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors
-spectrumshift-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors
-spectrumshift-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors
-spectrumshift-v1e400_th-2.77_fro_ckpt1.00_size4.0.safetensors
-spectrumshift-v1e400_th-2.98_fro_ckpt1.00_size8.0.safetensors
-spectrumshift-v1e400_th-3.09_fro_ckpt1.00_size12.0.safetensors
-spectrumshift-v1e400_th-3.13_fro_ckpt1.00_size14.0.safetensors
-spectrumshift-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors
-spectrumshift-v1e400_th-3.19_fro_ckpt1.00_size18.0.safetensors
-spectrumshift-v1e400_th-3.22_fro_ckpt1.00_size20.0.safetensors
-spectrumshift-v1e400_th-3.25_fro_ckpt1.00_size22.0.safetensors
-spectrumshift-v1e400_th-3.28_fro_ckpt1.00_size24.0.safetensors
-spectrumshift-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors
+### goronic-v1e1
 
-squishy-v1e10_th-2.06_spn_ckpt1.00_size4.0.safetensors
-squishy-v1e10_th-2.31_spn_ckpt1.00_size8.0.safetensors
-squishy-v1e10_th-2.44_spn_ckpt1.00_size12.0.safetensors
-squishy-v1e10_th-2.49_spn_ckpt1.00_size14.0.safetensors
-squishy-v1e10_th-2.53_spn_ckpt1.00_size16.0.safetensors
-squishy-v1e10_th-2.57_spn_ckpt1.00_size18.0.safetensors
-squishy-v1e10_th-2.61_spn_ckpt1.00_size20.0.safetensors
-squishy-v1e10_th-2.64_spn_ckpt1.00_size22.0.safetensors
-squishy-v1e10_th-2.68_spn_ckpt1.00_size24.0.safetensors
-squishy-v1e10_th-2.81_spn_ckpt1.00_size32.0.safetensors
+- [goronic-v1e1_th-1.62_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-1.62_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [goronic-v1e1_th-1.86_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-1.86_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [goronic-v1e1_th-2.00_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.00_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [goronic-v1e1_th-2.05_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.05_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [goronic-v1e1_th-2.09_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.09_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [goronic-v1e1_th-2.13_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.13_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [goronic-v1e1_th-2.17_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.17_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [goronic-v1e1_th-2.20_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.20_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [goronic-v1e1_th-2.24_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.24_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [goronic-v1e1_th-2.38_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.38_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### greg_rutkowski-v1e400
+
+- [greg_rutkowski-v1e400_th-1.79_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-1.79_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-2.01_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.01_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-2.13_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.13_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-2.18_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.18_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-2.22_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.22_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-2.25_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.25_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-2.29_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.29_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-2.32_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.32_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-2.35_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.35_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### hamgas-v1e400
+
+- [hamgas-v1e400_th-1.69_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-1.69_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [hamgas-v1e400_th-1.96_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-1.96_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [hamgas-v1e400_th-2.09_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.09_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [hamgas-v1e400_th-2.14_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.14_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [hamgas-v1e400_th-2.19_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.19_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [hamgas-v1e400_th-2.23_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.23_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [hamgas-v1e400_th-2.27_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.27_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [hamgas-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [hamgas-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [hamgas-v1e400_th-2.49_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.49_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### honovy-v1e4
+
+- [honovy_ponyxl_v1e4_th-1.97_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-1.97_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-2.22_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-2.22_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-2.34_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-2.34_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-2.39_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-2.39_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-2.43_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-2.43_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-2.47_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-2.47_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-2.50_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-2.50_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-2.53_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-2.53_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-2.57_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-2.57_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-2.69_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-2.69_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### hoodwink-v1e400
+
+- [hoodwink-v1e400_th-1.74_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-1.74_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [hoodwink-v1e400_th-1.99_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-1.99_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [hoodwink-v1e400_th-2.12_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-2.12_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [hoodwink-v1e400_th-2.17_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-2.17_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [hoodwink-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [hoodwink-v1e400_th-2.24_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-2.24_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [hoodwink-v1e400_th-2.27_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-2.27_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [hoodwink-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [hoodwink-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [hoodwink-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### jayjay-v1e400
+
+- [jayjay-v1e400_th-1.67_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-1.67_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [jayjay-v1e400_th-1.93_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-1.93_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [jayjay-v1e400_th-2.05_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-2.05_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [jayjay-v1e400_th-2.10_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-2.10_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [jayjay-v1e400_th-2.14_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-2.14_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [jayjay-v1e400_th-2.18_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-2.18_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [jayjay-v1e400_th-2.21_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-2.21_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [jayjay-v1e400_th-2.24_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-2.24_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [jayjay-v1e400_th-2.28_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-2.28_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [jayjay-v1e400_th-2.43_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-2.43_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### jinxit-v1e10
+
+- [jinxit-v1e10_th-1.65_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-1.65_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [jinxit-v1e10_th-1.87_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-1.87_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [jinxit-v1e10_th-2.00_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.00_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [jinxit-v1e10_th-2.04_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.04_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [jinxit-v1e10_th-2.09_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.09_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [jinxit-v1e10_th-2.12_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.12_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [jinxit-v1e10_th-2.16_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.16_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [jinxit-v1e10_th-2.20_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.20_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [jinxit-v1e10_th-2.23_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.23_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [jinxit-v1e10_th-2.37_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.37_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### kame_3-v1e80
+
+- [kame_3-v1e80_th-1.72_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-1.72_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [kame_3-v1e80_th-1.99_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-1.99_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [kame_3-v1e80_th-2.12_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-2.12_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [kame_3-v1e80_th-2.16_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-2.16_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [kame_3-v1e80_th-2.20_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-2.20_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [kame_3-v1e80_th-2.24_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-2.24_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [kame_3-v1e80_th-2.28_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-2.28_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [kame_3-v1e80_th-2.31_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-2.31_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [kame_3-v1e80_th-2.34_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-2.34_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [kame_3-v1e80_th-2.48_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-2.48_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### kenket-v1e4
+
+- [kenket-v1e4_th-1.76_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-1.76_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [kenket-v1e4_th-1.98_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-1.98_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [kenket-v1e4_th-2.12_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-2.12_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [kenket-v1e4_th-2.17_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-2.17_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [kenket-v1e4_th-2.22_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-2.22_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [kenket-v1e4_th-2.25_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-2.25_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [kenket-v1e4_th-2.29_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-2.29_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [kenket-v1e4_th-2.32_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-2.32_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [kenket-v1e4_th-2.36_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-2.36_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [kenket-v1e4_th-2.48_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-2.48_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### lodestone-v1e400
+
+- [lodestone-v1e400_th-1.83_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-1.83_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [lodestone-v1e400_th-2.06_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-2.06_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [lodestone-v1e400_th-2.21_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-2.21_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [lodestone-v1e400_th-2.27_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-2.27_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [lodestone-v1e400_th-2.32_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-2.32_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [lodestone-v1e400_th-2.37_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-2.37_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [lodestone-v1e400_th-2.41_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-2.41_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [lodestone-v1e400_th-2.45_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-2.45_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [lodestone-v1e400_th-2.49_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-2.49_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [lodestone-v1e400_th-2.66_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-2.66_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### louart-v1e10
+
+- [louart-v1e10_th-1.73_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-1.73_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [louart-v1e10_th-1.96_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-1.96_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [louart-v1e10_th-2.06_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-2.06_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [louart-v1e10_th-2.11_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-2.11_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [louart-v1e10_th-2.15_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-2.15_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [louart-v1e10_th-2.19_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-2.19_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [louart-v1e10_th-2.22_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-2.22_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [louart-v1e10_th-2.25_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-2.25_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [louart-v1e10_th-2.29_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-2.29_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [louart-v1e10_th-2.43_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-2.43_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### lovander-v3e10
+
+- [lovander-v3e10_th-1.64_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-1.64_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [lovander-v3e10_th-1.89_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-1.89_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [lovander-v3e10_th-2.03_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.03_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [lovander-v3e10_th-2.08_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.08_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [lovander-v3e10_th-2.12_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.12_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [lovander-v3e10_th-2.15_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.15_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [lovander-v3e10_th-2.19_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.19_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [lovander-v3e10_th-2.22_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.22_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [lovander-v3e10_th-2.26_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.26_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [lovander-v3e10_th-2.41_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.41_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### magic-v1e400
+
+- [magic-v1e400_th-1.90_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-1.90_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [magic-v1e400_th-2.14_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-2.14_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [magic-v1e400_th-2.27_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-2.27_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [magic-v1e400_th-2.31_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-2.31_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [magic-v1e400_th-2.35_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-2.35_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [magic-v1e400_th-2.39_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-2.39_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [magic-v1e400_th-2.43_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-2.43_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [magic-v1e400_th-2.46_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-2.46_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [magic-v1e400_th-2.50_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-2.50_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [magic-v1e400_th-2.63_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-2.63_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### maliketh-v1e1
+
+- [maliketh-v1e1_th-1.71_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-1.71_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [maliketh-v1e1_th-1.90_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-1.90_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [maliketh-v1e1_th-2.02_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.02_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [maliketh-v1e1_th-2.07_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.07_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [maliketh-v1e1_th-2.10_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.10_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [maliketh-v1e1_th-2.14_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.14_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [maliketh-v1e1_th-2.17_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.17_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [maliketh-v1e1_th-2.20_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.20_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [maliketh-v1e1_th-2.24_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.24_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [maliketh-v1e1_th-2.38_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.38_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### martlet-v1e200
+
+- [martlet-v1e200_th-1.86_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-1.86_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [martlet-v1e200_th-2.07_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-2.07_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [martlet-v1e200_th-2.18_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-2.18_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [martlet-v1e200_th-2.22_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-2.22_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [martlet-v1e200_th-2.26_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-2.26_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [martlet-v1e200_th-2.29_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-2.29_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [martlet-v1e200_th-2.32_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-2.32_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [martlet-v1e200_th-2.35_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-2.35_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [martlet-v1e200_th-2.39_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-2.39_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [martlet-v1e200_th-2.53_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-2.53_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### non-euclidean_sex-v1e400
+
+- [non-euclidean_sex-v1e400_th-1.78_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-1.78_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-2.07_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-2.07_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-2.20_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-2.20_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-2.24_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-2.24_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-2.27_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-2.27_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-2.31_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-2.31_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-2.34_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-2.34_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-2.37_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-2.37_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-2.40_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-2.40_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-2.54_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-2.54_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### pup_mask-v1e400
+
+- [pup_mask-v1e400_th-1.77_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-1.77_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [pup_mask-v1e400_th-2.00_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.00_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [pup_mask-v1e400_th-2.13_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.13_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [pup_mask-v1e400_th-2.17_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.17_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [pup_mask-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [pup_mask-v1e400_th-2.25_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.25_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [pup_mask-v1e400_th-2.28_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.28_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [pup_mask-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [pup_mask-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [pup_mask-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### ramona-v1e400
+
+- [ramona-v1e400_th-1.73_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-1.73_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [ramona-v1e400_th-1.96_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-1.96_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [ramona-v1e400_th-2.09_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-2.09_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [ramona-v1e400_th-2.13_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-2.13_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [ramona-v1e400_th-2.18_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-2.18_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [ramona-v1e400_th-2.21_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-2.21_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [ramona-v1e400_th-2.25_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-2.25_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [ramona-v1e400_th-2.29_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-2.29_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [ramona-v1e400_th-2.32_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-2.32_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [ramona-v1e400_th-2.49_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-2.49_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### realistic-v4e400
+
+- [realistic-v4e400_th-1.56_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-1.56_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [realistic-v4e400_th-1.86_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-1.86_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [realistic-v4e400_th-2.02_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.02_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [realistic-v4e400_th-2.07_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.07_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [realistic-v4e400_th-2.12_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.12_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [realistic-v4e400_th-2.16_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.16_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [realistic-v4e400_th-2.20_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.20_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [realistic-v4e400_th-2.23_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.23_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [realistic-v4e400_th-2.27_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.27_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [realistic-v4e400_th-2.39_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.39_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### realistic-v4e500
+
+- [realistic-v4e500_th-1.56_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-1.56_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [realistic-v4e500_th-1.86_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-1.86_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [realistic-v4e500_th-2.01_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.01_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [realistic-v4e500_th-2.06_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.06_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [realistic-v4e500_th-2.12_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.12_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [realistic-v4e500_th-2.15_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.15_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [realistic-v4e500_th-2.20_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.20_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [realistic-v4e500_th-2.23_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.23_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [realistic-v4e500_th-2.26_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.26_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [realistic-v4e500_th-2.39_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.39_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### skecchiart-v1e134
+
+- [skecchiart-v1e134_th-1.74_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-1.74_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [skecchiart-v1e134_th-2.01_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.01_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [skecchiart-v1e134_th-2.14_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.14_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [skecchiart-v1e134_th-2.19_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.19_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [skecchiart-v1e134_th-2.23_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.23_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [skecchiart-v1e134_th-2.27_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.27_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [skecchiart-v1e134_th-2.31_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.31_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [skecchiart-v1e134_th-2.34_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.34_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [skecchiart-v1e134_th-2.38_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.38_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [skecchiart-v1e134_th-2.52_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.52_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### skiltaire-v1e400
+
+- [skiltaire-v1e400_th-1.72_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-1.72_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [skiltaire-v1e400_th-1.94_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-1.94_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [skiltaire-v1e400_th-2.07_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-2.07_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [skiltaire-v1e400_th-2.11_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-2.11_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [skiltaire-v1e400_th-2.16_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-2.16_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [skiltaire-v1e400_th-2.20_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-2.20_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [skiltaire-v1e400_th-2.23_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-2.23_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [skiltaire-v1e400_th-2.27_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-2.27_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [skiltaire-v1e400_th-2.30_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-2.30_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [skiltaire-v1e400_th-2.44_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-2.44_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### small_dom_big_sub-v2e400
+
+- [small_dom_big_sub-v2e400_th-1.80_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-1.80_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-2.04_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-2.04_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-2.16_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-2.16_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-2.20_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-2.20_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-2.24_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-2.24_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-2.28_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-2.28_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-2.31_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-2.31_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-2.34_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-2.34_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-2.37_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-2.37_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-2.51_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-2.51_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### space-v1e500
+
+- [space-v1e500_th-1.77_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-1.77_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [space-v1e500_th-2.11_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-2.11_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [space-v1e500_th-2.27_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-2.27_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [space-v1e500_th-2.31_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-2.31_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [space-v1e500_th-2.36_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-2.36_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [space-v1e500_th-2.41_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-2.41_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [space-v1e500_th-2.44_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-2.44_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [space-v1e500_th-2.48_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-2.48_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [space-v1e500_th-2.51_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-2.51_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [space-v1e500_th-2.64_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-2.64_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### spaceengine-v1e500
+
+- [spaceengine-v1e500_th-1.72_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-1.72_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [spaceengine-v1e500_th-2.04_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.04_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [spaceengine-v1e500_th-2.19_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.19_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [spaceengine-v1e500_th-2.25_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.25_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [spaceengine-v1e500_th-2.29_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.29_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [spaceengine-v1e500_th-2.33_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.33_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [spaceengine-v1e500_th-2.37_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.37_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [spaceengine-v1e500_th-2.41_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.41_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [spaceengine-v1e500_th-2.44_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.44_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [spaceengine-v1e500_th-2.57_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.57_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### spectrumshift-v1e400
+
+- [spectrumshift-v1e400_th-1.83_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-1.83_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-2.02_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.02_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-2.12_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.12_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-2.16_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.16_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.21_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-2.25_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.25_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-2.28_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.28_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.31_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.34_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.48_spn_ckpt1.00_size32.0.safetensors?download=true)
+
+### squishy-v1e10
+
+- [squishy-v1e10_th-2.06_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.06_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [squishy-v1e10_th-2.31_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.31_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [squishy-v1e10_th-2.44_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.44_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [squishy-v1e10_th-2.49_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.49_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [squishy-v1e10_th-2.53_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.53_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [squishy-v1e10_th-2.57_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.57_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [squishy-v1e10_th-2.61_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.61_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [squishy-v1e10_th-2.64_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.64_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [squishy-v1e10_th-2.68_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.68_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [squishy-v1e10_th-2.81_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.81_spn_ckpt1.00_size32.0.safetensors?download=true)
 
 ### tibetan-v2e500
 
-tibetan-v2e500_th-1.69_spn_ckpt1.00_size4.0.safetensors
-tibetan-v2e500_th-1.91_spn_ckpt1.00_size8.0.safetensors
-tibetan-v2e500_th-2.04_spn_ckpt1.00_size12.0.safetensors
-tibetan-v2e500_th-2.09_spn_ckpt1.00_size14.0.safetensors
-tibetan-v2e500_th-2.14_spn_ckpt1.00_size16.0.safetensors
-tibetan-v2e500_th-2.18_spn_ckpt1.00_size18.0.safetensors
-tibetan-v2e500_th-2.22_spn_ckpt1.00_size20.0.safetensors
-tibetan-v2e500_th-2.25_spn_ckpt1.00_size22.0.safetensors
-tibetan-v2e500_th-2.29_spn_ckpt1.00_size24.0.safetensors
-tibetan-v2e500_th-2.44_spn_ckpt1.00_size32.0.safetensors
+- [tibetan-v2e500_th-1.69_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-1.69_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [tibetan-v2e500_th-1.91_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-1.91_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [tibetan-v2e500_th-2.04_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-2.04_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [tibetan-v2e500_th-2.09_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-2.09_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [tibetan-v2e500_th-2.14_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-2.14_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [tibetan-v2e500_th-2.18_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-2.18_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [tibetan-v2e500_th-2.22_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-2.22_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [tibetan-v2e500_th-2.25_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-2.25_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [tibetan-v2e500_th-2.29_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-2.29_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [tibetan-v2e500_th-2.44_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-2.44_spn_ckpt1.00_size32.0.safetensors?download=true)
 
 ### veemon-v1e400
 
-veemon-v1e400_th-1.60_spn_ckpt1.00_size4.0.safetensors
-veemon-v1e400_th-1.90_spn_ckpt1.00_size8.0.safetensors
-veemon-v1e400_th-2.05_spn_ckpt1.00_size12.0.safetensors
-veemon-v1e400_th-2.11_spn_ckpt1.00_size14.0.safetensors
-veemon-v1e400_th-2.15_spn_ckpt1.00_size16.0.safetensors
-veemon-v1e400_th-2.19_spn_ckpt1.00_size18.0.safetensors
-veemon-v1e400_th-2.23_spn_ckpt1.00_size20.0.safetensors
-veemon-v1e400_th-2.27_spn_ckpt1.00_size22.0.safetensors
-veemon-v1e400_th-2.31_spn_ckpt1.00_size24.0.safetensors
-veemon-v1e400_th-2.46_spn_ckpt1.00_size32.0.safetensors
+- [veemon-v1e400_th-1.60_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-1.60_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [veemon-v1e400_th-1.90_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-1.90_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [veemon-v1e400_th-2.05_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-2.05_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [veemon-v1e400_th-2.11_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-2.11_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [veemon-v1e400_th-2.15_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-2.15_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [veemon-v1e400_th-2.19_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-2.19_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [veemon-v1e400_th-2.23_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-2.23_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [veemon-v1e400_th-2.27_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-2.27_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [veemon-v1e400_th-2.31_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-2.31_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [veemon-v1e400_th-2.46_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-2.46_spn_ckpt1.00_size32.0.safetensors?download=true)
 
 ### whisperingfornothing-v1e58
 
-whisperingfornothing-v1e58_th-1.73_spn_ckpt1.00_size4.0.safetensors
-whisperingfornothing-v1e58_th-1.99_spn_ckpt1.00_size8.0.safetensors
-whisperingfornothing-v1e58_th-2.12_spn_ckpt1.00_size12.0.safetensors
-whisperingfornothing-v1e58_th-2.17_spn_ckpt1.00_size14.0.safetensors
-whisperingfornothing-v1e58_th-2.22_spn_ckpt1.00_size16.0.safetensors
-whisperingfornothing-v1e58_th-2.25_spn_ckpt1.00_size18.0.safetensors
-whisperingfornothing-v1e58_th-2.29_spn_ckpt1.00_size20.0.safetensors
-whisperingfornothing-v1e58_th-2.32_spn_ckpt1.00_size22.0.safetensors
-whisperingfornothing-v1e58_th-2.36_spn_ckpt1.00_size24.0.safetensors
-whisperingfornothing-v1e58_th-2.49_spn_ckpt1.00_size32.0.safetensors
+- [whisperingfornothing-v1e58_th-1.73_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-1.73_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-1.99_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-1.99_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-2.12_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-2.12_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-2.17_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-2.17_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-2.22_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-2.22_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-2.25_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-2.25_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-2.29_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-2.29_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-2.32_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-2.32_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-2.36_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-2.36_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-2.49_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-2.49_spn_ckpt1.00_size32.0.safetensors?download=true)
 
 ### wickerbeast-v1e500
 
-wickerbeast-v1e500_th-1.61_spn_ckpt1.00_size4.0.safetensors
-wickerbeast-v1e500_th-1.89_spn_ckpt1.00_size8.0.safetensors
-wickerbeast-v1e500_th-2.02_spn_ckpt1.00_size12.0.safetensors
-wickerbeast-v1e500_th-2.07_spn_ckpt1.00_size14.0.safetensors
-wickerbeast-v1e500_th-2.11_spn_ckpt1.00_size16.0.safetensors
-wickerbeast-v1e500_th-2.15_spn_ckpt1.00_size18.0.safetensors
-wickerbeast-v1e500_th-2.19_spn_ckpt1.00_size20.0.safetensors
-wickerbeast-v1e500_th-2.23_spn_ckpt1.00_size22.0.safetensors
-wickerbeast-v1e500_th-2.26_spn_ckpt1.00_size24.0.safetensors
-wickerbeast-v1e500_th-2.40_spn_ckpt1.00_size32.0.safetensors
+- [wickerbeast-v1e500_th-1.61_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-1.61_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-1.89_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-1.89_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-2.02_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.02_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-2.07_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.07_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-2.11_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.11_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-2.15_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.15_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-2.19_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.19_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-2.23_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.23_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-2.26_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.26_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-2.40_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.40_spn_ckpt1.00_size32.0.safetensors?download=true)
 
 ### wjs07-v1e200
 
-wjs07-v1e200_th-1.85_spn_ckpt1.00_size4.0.safetensors
-wjs07-v1e200_th-2.09_spn_ckpt1.00_size8.0.safetensors
-wjs07-v1e200_th-2.20_spn_ckpt1.00_size12.0.safetensors
-wjs07-v1e200_th-2.24_spn_ckpt1.00_size14.0.safetensors
-wjs07-v1e200_th-2.28_spn_ckpt1.00_size16.0.safetensors
-wjs07-v1e200_th-2.32_spn_ckpt1.00_size18.0.safetensors
-wjs07-v1e200_th-2.35_spn_ckpt1.00_size20.0.safetensors
-wjs07-v1e200_th-2.39_spn_ckpt1.00_size22.0.safetensors
-wjs07-v1e200_th-2.42_spn_ckpt1.00_size24.0.safetensors
-wjs07-v1e200_th-2.56_spn_ckpt1.00_size32.0.safetensors
+- [wjs07-v1e200_th-1.85_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-1.85_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [wjs07-v1e200_th-2.09_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-2.09_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [wjs07-v1e200_th-2.20_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-2.20_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [wjs07-v1e200_th-2.24_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-2.24_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [wjs07-v1e200_th-2.28_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-2.28_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [wjs07-v1e200_th-2.32_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-2.32_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [wjs07-v1e200_th-2.35_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-2.35_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [wjs07-v1e200_th-2.39_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-2.39_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [wjs07-v1e200_th-2.42_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-2.42_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [wjs07-v1e200_th-2.56_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-2.56_spn_ckpt1.00_size32.0.safetensors?download=true)
 
 ### wolfy-nail-v1e400
 
-wolfy-nail-v1e400_th-1.78_spn_ckpt1.00_size4.0.safetensors
-wolfy-nail-v1e400_th-1.99_spn_ckpt1.00_size8.0.safetensors
-wolfy-nail-v1e400_th-2.10_spn_ckpt1.00_size12.0.safetensors
-wolfy-nail-v1e400_th-2.14_spn_ckpt1.00_size14.0.safetensors
-wolfy-nail-v1e400_th-2.19_spn_ckpt1.00_size16.0.safetensors
-wolfy-nail-v1e400_th-2.22_spn_ckpt1.00_size18.0.safetensors
-wolfy-nail-v1e400_th-2.26_spn_ckpt1.00_size20.0.safetensors
-wolfy-nail-v1e400_th-2.30_spn_ckpt1.00_size22.0.safetensors
-wolfy-nail-v1e400_th-2.33_spn_ckpt1.00_size24.0.safetensors
-wolfy-nail-v1e400_th-2.49_spn_ckpt1.00_size32.0.safetensors
+- [wolfy-nail-v1e400_th-1.78_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-1.78_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-1.99_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-1.99_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-2.10_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-2.10_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-2.14_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-2.14_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-2.19_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-2.19_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-2.22_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-2.22_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-2.26_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-2.26_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-2.30_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-2.30_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-2.33_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-2.33_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-2.49_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-2.49_spn_ckpt1.00_size32.0.safetensors?download=true)
 
 ### woolrool-v1e4
 
-woolrool-v1e4_th-1.77_spn_ckpt1.00_size4.0.safetensors
-woolrool-v1e4_th-2.04_spn_ckpt1.00_size8.0.safetensors
-woolrool-v1e4_th-2.16_spn_ckpt1.00_size12.0.safetensors
-woolrool-v1e4_th-2.21_spn_ckpt1.00_size14.0.safetensors
-woolrool-v1e4_th-2.24_spn_ckpt1.00_size16.0.safetensors
-woolrool-v1e4_th-2.29_spn_ckpt1.00_size18.0.safetensors
-woolrool-v1e4_th-2.32_spn_ckpt1.00_size20.0.safetensors
-woolrool-v1e4_th-2.35_spn_ckpt1.00_size22.0.safetensors
-woolrool-v1e4_th-2.39_spn_ckpt1.00_size24.0.safetensors
-woolrool-v1e4_th-2.53_spn_ckpt1.00_size32.0.safetensors
+- [woolrool-v1e4_th-1.77_spn_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-1.77_spn_ckpt1.00_size4.0.safetensors?download=true)
+- [woolrool-v1e4_th-2.04_spn_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.04_spn_ckpt1.00_size8.0.safetensors?download=true)
+- [woolrool-v1e4_th-2.16_spn_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.16_spn_ckpt1.00_size12.0.safetensors?download=true)
+- [woolrool-v1e4_th-2.21_spn_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.21_spn_ckpt1.00_size14.0.safetensors?download=true)
+- [woolrool-v1e4_th-2.24_spn_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.24_spn_ckpt1.00_size16.0.safetensors?download=true)
+- [woolrool-v1e4_th-2.29_spn_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.29_spn_ckpt1.00_size18.0.safetensors?download=true)
+- [woolrool-v1e4_th-2.32_spn_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.32_spn_ckpt1.00_size20.0.safetensors?download=true)
+- [woolrool-v1e4_th-2.35_spn_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.35_spn_ckpt1.00_size22.0.safetensors?download=true)
+- [woolrool-v1e4_th-2.39_spn_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.39_spn_ckpt1.00_size24.0.safetensors?download=true)
+- [woolrool-v1e4_th-2.53_spn_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.53_spn_ckpt1.00_size32.0.safetensors?download=true)
 
-## Method #3 - Frobenius Norm
+## Method #2 - Frobenius Norm
+
+<details>
+  <summary>Click to reveal links</summary>
+
+`amalia-v2e400`
+
+- [amalia-v2e400_th-2.74_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.74_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [amalia-v2e400_th-2.95_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-2.95_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [amalia-v2e400_th-3.06_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-3.06_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [amalia-v2e400_th-3.11_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-3.11_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [amalia-v2e400_th-3.15_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-3.15_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [amalia-v2e400_th-3.18_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-3.18_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [amalia-v2e400_th-3.22_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-3.22_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [amalia-v2e400_th-3.24_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-3.24_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [amalia-v2e400_th-3.27_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-3.27_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [amalia-v2e400_th-3.39_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amalia-v2e400_th-3.39_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`amicus-v1e200`
+
+- [amicus-v1e200_th-2.82_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-2.82_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [amicus-v1e200_th-3.05_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-3.05_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [amicus-v1e200_th-3.16_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-3.16_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [amicus-v1e200_th-3.20_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-3.20_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [amicus-v1e200_th-3.23_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-3.23_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [amicus-v1e200_th-3.27_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-3.27_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [amicus-v1e200_th-3.30_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-3.30_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [amicus-v1e200_th-3.33_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-3.33_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [amicus-v1e200_th-3.36_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-3.36_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [amicus-v1e200_th-3.47_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/amicus-v1e200_th-3.47_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`arielsatyr-v1e400`
+
+- [arielsatyr-v1e400_th-2.65_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-2.65_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-2.88_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-2.88_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-3.01_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-3.01_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-3.05_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-3.05_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-3.09_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-3.09_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-3.12_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-3.12_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-3.16_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-3.16_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-3.18_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-3.18_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-3.21_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-3.21_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [arielsatyr-v1e400_th-3.32_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v1e400_th-3.32_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`arielsatyr-v2e400`
+
+- [arielsatyr-v2e400_th-2.63_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.63_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-2.86_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.86_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-2.99_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-2.99_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-3.04_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-3.04_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-3.08_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-3.08_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-3.12_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-3.12_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-3.15_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-3.15_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-3.18_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-3.18_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-3.20_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-3.20_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [arielsatyr-v2e400_th-3.32_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/arielsatyr-v2e400_th-3.32_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`auroth-v1e250`
+
+- [auroth-v1e250_th-2.60_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-2.60_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [auroth-v1e250_th-2.87_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-2.87_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [auroth-v1e250_th-3.01_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-3.01_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [auroth-v1e250_th-3.05_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-3.05_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [auroth-v1e250_th-3.09_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-3.09_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [auroth-v1e250_th-3.13_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-3.13_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [auroth-v1e250_th-3.16_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-3.16_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [auroth-v1e250_th-3.19_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-3.19_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [auroth-v1e250_th-3.22_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-3.22_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [auroth-v1e250_th-3.33_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/auroth-v1e250_th-3.33_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`bdsm-v1e400`
+
+- [bdsm-v1e400_th-2.74_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.74_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [bdsm-v1e400_th-2.98_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-2.98_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [bdsm-v1e400_th-3.11_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-3.11_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [bdsm-v1e400_th-3.14_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-3.14_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [bdsm-v1e400_th-3.18_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-3.18_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [bdsm-v1e400_th-3.21_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-3.21_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [bdsm-v1e400_th-3.24_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-3.24_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [bdsm-v1e400_th-3.26_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-3.26_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [bdsm-v1e400_th-3.29_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-3.29_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [bdsm-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/bdsm-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`blaidd-v1e400`
+
+- [blaidd-v1e400_th-2.62_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.62_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [blaidd-v1e400_th-2.86_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.86_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [blaidd-v1e400_th-2.99_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-2.99_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [blaidd-v1e400_th-3.04_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-3.04_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [blaidd-v1e400_th-3.08_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-3.08_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [blaidd-v1e400_th-3.12_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-3.12_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [blaidd-v1e400_th-3.15_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-3.15_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [blaidd-v1e400_th-3.18_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-3.18_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [blaidd-v1e400_th-3.20_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-3.20_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [blaidd-v1e400_th-3.31_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blaidd-v1e400_th-3.31_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`blp-v1e400`
+
+- [blp-v1e400_th-2.67_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-2.67_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [blp-v1e400_th-2.92_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-2.92_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [blp-v1e400_th-3.06_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-3.06_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [blp-v1e400_th-3.11_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-3.11_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [blp-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [blp-v1e400_th-3.20_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-3.20_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [blp-v1e400_th-3.23_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-3.23_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [blp-v1e400_th-3.27_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-3.27_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [blp-v1e400_th-3.30_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-3.30_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [blp-v1e400_th-3.42_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blp-v1e400_th-3.42_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`blue_frost`
+
+- [blue_frost_th-1.81_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.81_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [blue_frost_th-1.99_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-1.99_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [blue_frost_th-2.12_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-2.12_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [blue_frost_th-2.17_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-2.17_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [blue_frost_th-2.22_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-2.22_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [blue_frost_th-2.26_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-2.26_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [blue_frost_th-2.29_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-2.29_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [blue_frost_th-2.32_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-2.32_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [blue_frost_th-2.35_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-2.35_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [blue_frost_th-2.46_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/blue_frost_th-2.46_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`butterchalk-v3e400`
+
+- [butterchalk-v3e400_th-2.73_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-2.73_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [butterchalk-v3e400_th-2.93_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-2.93_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [butterchalk-v3e400_th-3.05_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-3.05_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [butterchalk-v3e400_th-3.09_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-3.09_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [butterchalk-v3e400_th-3.13_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-3.13_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [butterchalk-v3e400_th-3.16_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-3.16_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [butterchalk-v3e400_th-3.19_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-3.19_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [butterchalk-v3e400_th-3.22_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-3.22_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [butterchalk-v3e400_th-3.25_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-3.25_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [butterchalk-v3e400_th-3.36_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/butterchalk-v3e400_th-3.36_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`by_clybius-v1e400`
+
+- [by_clybius-v1e400_th-2.64_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-2.64_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [by_clybius-v1e400_th-2.89_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-2.89_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [by_clybius-v1e400_th-3.02_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-3.02_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [by_clybius-v1e400_th-3.07_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-3.07_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [by_clybius-v1e400_th-3.12_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-3.12_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [by_clybius-v1e400_th-3.16_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-3.16_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [by_clybius-v1e400_th-3.19_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-3.19_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [by_clybius-v1e400_th-3.23_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-3.23_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [by_clybius-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [by_clybius-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_clybius-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`by_hibbary-v1e400`
+
+- [by_hibbary-v1e400_th-2.87_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-2.87_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-3.08_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-3.08_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-3.19_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-3.19_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-3.22_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-3.22_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-3.25_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-3.25_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-3.28_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-3.28_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-3.30_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-3.30_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-3.32_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-3.32_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-3.34_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-3.34_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [by_hibbary-v1e400_th-3.42_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_hibbary-v1e400_th-3.42_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`by_himari-v1e400`
+
+- [by_himari-v1e400_th-2.41_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.41_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [by_himari-v1e400_th-2.73_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.73_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [by_himari-v1e400_th-2.87_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.87_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [by_himari-v1e400_th-2.92_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.92_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [by_himari-v1e400_th-2.98_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-2.98_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [by_himari-v1e400_th-3.02_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-3.02_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [by_himari-v1e400_th-3.06_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-3.06_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [by_himari-v1e400_th-3.10_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-3.10_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [by_himari-v1e400_th-3.14_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-3.14_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [by_himari-v1e400_th-3.27_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/by_himari-v1e400_th-3.27_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`cecily_lin-v1e37`
+
+- [cecily_lin-v1e37_th-2.60_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-2.60_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-2.92_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-2.92_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-3.07_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-3.07_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-3.12_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-3.12_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-3.16_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-3.16_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-3.20_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-3.20_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-3.22_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-3.22_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-3.25_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-3.25_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-3.28_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-3.28_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [cecily_lin-v1e37_th-3.38_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cecily_lin-v1e37_th-3.38_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`cervine_penis-v1e400`
+
+- [cervine_penis-v1e400_th-2.66_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-2.66_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-2.93_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-2.93_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-3.06_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-3.06_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-3.11_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-3.11_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-3.15_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-3.15_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-3.18_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-3.18_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-3.21_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-3.21_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-3.24_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-3.24_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [cervine_penis-v1e400_th-3.37_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cervine_penis-v1e400_th-3.37_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`chillet-v3e10`
+
+- [chillet-v3e10_th-2.49_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.49_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [chillet-v3e10_th-2.77_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.77_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [chillet-v3e10_th-2.93_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.93_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [chillet-v3e10_th-2.98_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-2.98_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [chillet-v3e10_th-3.02_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-3.02_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [chillet-v3e10_th-3.06_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-3.06_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [chillet-v3e10_th-3.09_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-3.09_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [chillet-v3e10_th-3.12_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-3.12_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [chillet-v3e10_th-3.15_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-3.15_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [chillet-v3e10_th-3.26_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chillet-v3e10_th-3.26_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`chunie-v1e5`
+
+- [chunie-v1e5_th-2.67_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.67_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [chunie-v1e5_th-2.96_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-2.96_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [chunie-v1e5_th-3.11_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-3.11_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [chunie-v1e5_th-3.16_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-3.16_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [chunie-v1e5_th-3.21_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-3.21_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [chunie-v1e5_th-3.24_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-3.24_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [chunie-v1e5_th-3.27_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-3.27_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [chunie-v1e5_th-3.30_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-3.30_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [chunie-v1e5_th-3.33_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-3.33_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [chunie-v1e5_th-3.43_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/chunie-v1e5_th-3.43_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`cooliehigh-v1e45`
+
+- [cooliehigh-v1e45_th-2.62_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-2.62_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-2.94_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-2.94_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-3.08_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-3.08_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-3.12_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-3.12_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-3.17_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-3.17_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-3.20_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-3.20_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-3.23_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-3.23_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-3.26_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-3.26_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-3.29_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-3.29_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [cooliehigh-v1e45_th-3.39_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/cooliehigh-v1e45_th-3.39_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`dagasi-v1e134`
+
+- [dagasi-v1e134_th-2.65_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.65_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [dagasi-v1e134_th-2.93_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-2.93_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [dagasi-v1e134_th-3.08_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-3.08_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [dagasi-v1e134_th-3.13_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-3.13_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [dagasi-v1e134_th-3.18_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-3.18_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [dagasi-v1e134_th-3.22_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-3.22_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [dagasi-v1e134_th-3.25_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-3.25_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [dagasi-v1e134_th-3.28_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-3.28_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [dagasi-v1e134_th-3.31_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-3.31_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [dagasi-v1e134_th-3.42_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dagasi-v1e134_th-3.42_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`darkgem-v1e4`
+
+- [darkgem-v1e4_th-2.89_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-2.89_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [darkgem-v1e4_th-3.15_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-3.15_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [darkgem-v1e4_th-3.27_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-3.27_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [darkgem-v1e4_th-3.31_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-3.31_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [darkgem-v1e4_th-3.36_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-3.36_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [darkgem-v1e4_th-3.39_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-3.39_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [darkgem-v1e4_th-3.43_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-3.43_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [darkgem-v1e4_th-3.45_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-3.45_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [darkgem-v1e4_th-3.48_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-3.48_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [darkgem-v1e4_th-3.57_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/darkgem-v1e4_th-3.57_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`dharrel-v1e350`
+
+- [dharrel-v1e350_th-2.71_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-2.71_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [dharrel-v1e350_th-2.94_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-2.94_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [dharrel-v1e350_th-3.07_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-3.07_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [dharrel-v1e350_th-3.12_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-3.12_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [dharrel-v1e350_th-3.16_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-3.16_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [dharrel-v1e350_th-3.19_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-3.19_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [dharrel-v1e350_th-3.22_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-3.22_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [dharrel-v1e350_th-3.25_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-3.25_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [dharrel-v1e350_th-3.27_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-3.27_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [dharrel-v1e350_th-3.37_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v1e350_th-3.37_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`dharrel-v2e400`
+
+- [dharrel-v2e400_th-2.80_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-2.80_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [dharrel-v2e400_th-3.04_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-3.04_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [dharrel-v2e400_th-3.17_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-3.17_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [dharrel-v2e400_th-3.22_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-3.22_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [dharrel-v2e400_th-3.26_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-3.26_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [dharrel-v2e400_th-3.30_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-3.30_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [dharrel-v2e400_th-3.33_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-3.33_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [dharrel-v2e400_th-3.36_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-3.36_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [dharrel-v2e400_th-3.39_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-3.39_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [dharrel-v2e400_th-3.50_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/dharrel-v2e400_th-3.50_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`forefront-foot_perspective-v1e400`
+
+- [forefront-foot_perspective-v1e400_th-2.70_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.70_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-2.95_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-2.95_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-3.09_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-3.09_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-3.13_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-3.13_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-3.18_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-3.18_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-3.21_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-3.21_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-3.24_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-3.24_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-3.27_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-3.27_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-3.29_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-3.29_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [forefront-foot_perspective-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/forefront-foot_perspective-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`foxparks-v2e134`
+
+- [foxparks-v2e134_th-2.56_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.56_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.81_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.81_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.95_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.95_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [foxparks-v2e134_th-2.99_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-2.99_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [foxparks-v2e134_th-3.04_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-3.04_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [foxparks-v2e134_th-3.08_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-3.08_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [foxparks-v2e134_th-3.11_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-3.11_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [foxparks-v2e134_th-3.14_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-3.14_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [foxparks-v2e134_th-3.17_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-3.17_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [foxparks-v2e134_th-3.27_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/foxparks-v2e134_th-3.27_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`furry_sticker-v1e250`
+
+- [furry_sticker-v1e250_th-2.42_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.42_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-2.75_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.75_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-2.92_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.92_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-2.98_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-2.98_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-3.03_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-3.03_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-3.08_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-3.08_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-3.12_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-3.12_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-3.15_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-3.15_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-3.19_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-3.19_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [furry_sticker-v1e250_th-3.31_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/furry_sticker-v1e250_th-3.31_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`goronic-v1e1`
+
+- [goronic-v1e1_th-2.55_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.55_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [goronic-v1e1_th-2.80_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.80_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [goronic-v1e1_th-2.94_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-2.94_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [goronic-v1e1_th-3.00_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-3.00_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [goronic-v1e1_th-3.04_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-3.04_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [goronic-v1e1_th-3.08_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-3.08_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [goronic-v1e1_th-3.11_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-3.11_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [goronic-v1e1_th-3.14_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-3.14_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [goronic-v1e1_th-3.16_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-3.16_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [goronic-v1e1_th-3.27_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/goronic-v1e1_th-3.27_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`greg_rutkowski-v1e400`
+
+- [greg_rutkowski-v1e400_th-2.73_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.73_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-2.96_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-2.96_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-3.08_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-3.08_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-3.13_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-3.13_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-3.17_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-3.17_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-3.20_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-3.20_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-3.23_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-3.23_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-3.26_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-3.26_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-3.28_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-3.28_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [greg_rutkowski-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/greg_rutkowski-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`hamgas-v1e400`
+
+- [hamgas-v1e400_th-2.62_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.62_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [hamgas-v1e400_th-2.89_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-2.89_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [hamgas-v1e400_th-3.04_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-3.04_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [hamgas-v1e400_th-3.09_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-3.09_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [hamgas-v1e400_th-3.13_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-3.13_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [hamgas-v1e400_th-3.17_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-3.17_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [hamgas-v1e400_th-3.21_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-3.21_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [hamgas-v1e400_th-3.24_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-3.24_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [hamgas-v1e400_th-3.27_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-3.27_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [hamgas-v1e400_th-3.40_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hamgas-v1e400_th-3.40_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`honovy-v1e4`
+
+- [honovy_ponyxl_v1e4_th-2.90_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-2.90_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-3.15_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-3.15_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-3.29_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-3.29_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-3.33_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-3.33_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-3.37_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-3.37_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-3.40_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-3.40_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-3.43_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-3.43_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-3.46_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-3.46_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-3.49_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-3.49_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [honovy_ponyxl_v1e4_th-3.58_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/honovy_ponyxl_v1e4_th-3.58_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`hoodwink-v1e400`
+
+- [hoodwink-v1e400_th-2.69_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-2.69_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [hoodwink-v1e400_th-2.93_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-2.93_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [hoodwink-v1e400_th-3.07_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-3.07_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [hoodwink-v1e400_th-3.12_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-3.12_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [hoodwink-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [hoodwink-v1e400_th-3.19_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-3.19_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [hoodwink-v1e400_th-3.22_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-3.22_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [hoodwink-v1e400_th-3.24_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-3.24_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [hoodwink-v1e400_th-3.27_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-3.27_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [hoodwink-v1e400_th-3.37_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/hoodwink-v1e400_th-3.37_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`jayjay-v1e400`
+
+- [jayjay-v1e400_th-2.61_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-2.61_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [jayjay-v1e400_th-2.87_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-2.87_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [jayjay-v1e400_th-3.00_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-3.00_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [jayjay-v1e400_th-3.05_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-3.05_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [jayjay-v1e400_th-3.09_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-3.09_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [jayjay-v1e400_th-3.12_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-3.12_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [jayjay-v1e400_th-3.15_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-3.15_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [jayjay-v1e400_th-3.18_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-3.18_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [jayjay-v1e400_th-3.21_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-3.21_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [jayjay-v1e400_th-3.32_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jayjay-v1e400_th-3.32_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`jinxit-v1e10`
+
+- [jinxit-v1e10_th-2.57_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.57_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [jinxit-v1e10_th-2.82_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.82_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [jinxit-v1e10_th-2.95_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-2.95_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [jinxit-v1e10_th-3.00_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-3.00_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [jinxit-v1e10_th-3.04_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-3.04_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [jinxit-v1e10_th-3.08_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-3.08_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [jinxit-v1e10_th-3.10_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-3.10_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [jinxit-v1e10_th-3.13_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-3.13_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [jinxit-v1e10_th-3.16_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-3.16_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [jinxit-v1e10_th-3.26_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/jinxit-v1e10_th-3.26_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`kame_3-v1e80`
+
+- [kame_3-v1e80_th-2.63_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-2.63_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [kame_3-v1e80_th-2.93_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-2.93_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [kame_3-v1e80_th-3.07_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-3.07_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [kame_3-v1e80_th-3.12_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-3.12_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [kame_3-v1e80_th-3.16_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-3.16_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [kame_3-v1e80_th-3.19_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-3.19_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [kame_3-v1e80_th-3.22_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-3.22_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [kame_3-v1e80_th-3.24_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-3.24_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [kame_3-v1e80_th-3.27_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-3.27_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [kame_3-v1e80_th-3.36_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kame_3-v1e80_th-3.36_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`kenket-v1e4`
+
+- [kenket-v1e4_th-2.65_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-2.65_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [kenket-v1e4_th-2.93_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-2.93_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [kenket-v1e4_th-3.07_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-3.07_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [kenket-v1e4_th-3.12_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-3.12_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [kenket-v1e4_th-3.16_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-3.16_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [kenket-v1e4_th-3.19_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-3.19_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [kenket-v1e4_th-3.22_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-3.22_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [kenket-v1e4_th-3.25_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-3.25_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [kenket-v1e4_th-3.28_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-3.28_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [kenket-v1e4_th-3.37_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/kenket-v1e4_th-3.37_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`lodestone-v1e400`
+
+- [lodestone-v1e400_th-2.77_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-2.77_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [lodestone-v1e400_th-3.02_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-3.02_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [lodestone-v1e400_th-3.16_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-3.16_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [lodestone-v1e400_th-3.21_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-3.21_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [lodestone-v1e400_th-3.26_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-3.26_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [lodestone-v1e400_th-3.31_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-3.31_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [lodestone-v1e400_th-3.35_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-3.35_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [lodestone-v1e400_th-3.38_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-3.38_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [lodestone-v1e400_th-3.42_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-3.42_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [lodestone-v1e400_th-3.56_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lodestone-v1e400_th-3.56_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`lovander-v3e10`
+
+- [lovander-v3e10_th-2.55_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.55_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [lovander-v3e10_th-2.83_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.83_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [lovander-v3e10_th-2.97_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-2.97_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [lovander-v3e10_th-3.02_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-3.02_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [lovander-v3e10_th-3.07_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-3.07_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [lovander-v3e10_th-3.10_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-3.10_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [lovander-v3e10_th-3.13_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-3.13_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [lovander-v3e10_th-3.16_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-3.16_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [lovander-v3e10_th-3.19_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-3.19_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [lovander-v3e10_th-3.30_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/lovander-v3e10_th-3.30_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`louart-v1e10`
+
+- [louart-v1e10_th-2.65_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-2.65_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [louart-v1e10_th-2.90_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-2.90_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [louart-v1e10_th-3.03_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-3.03_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [louart-v1e10_th-3.07_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-3.07_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [louart-v1e10_th-3.10_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-3.10_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [louart-v1e10_th-3.14_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-3.14_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [louart-v1e10_th-3.17_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-3.17_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [louart-v1e10_th-3.20_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-3.20_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [louart-v1e10_th-3.22_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-3.22_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [louart-v1e10_th-3.33_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/louart-v1e10_th-3.33_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`magic-v1e400`
+
+- [magic-v1e400_th-2.84_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-2.84_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [magic-v1e400_th-3.09_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-3.09_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [magic-v1e400_th-3.22_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-3.22_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [magic-v1e400_th-3.27_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-3.27_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [magic-v1e400_th-3.31_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-3.31_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [magic-v1e400_th-3.34_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-3.34_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [magic-v1e400_th-3.37_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-3.37_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [magic-v1e400_th-3.40_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-3.40_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [magic-v1e400_th-3.43_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-3.43_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [magic-v1e400_th-3.54_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/magic-v1e400_th-3.54_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`maliketh-v1e1`
+
+- [maliketh-v1e1_th-2.63_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.63_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [maliketh-v1e1_th-2.85_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.85_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [maliketh-v1e1_th-2.98_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-2.98_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [maliketh-v1e1_th-3.02_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-3.02_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [maliketh-v1e1_th-3.06_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-3.06_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [maliketh-v1e1_th-3.09_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-3.09_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [maliketh-v1e1_th-3.12_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-3.12_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [maliketh-v1e1_th-3.15_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-3.15_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [maliketh-v1e1_th-3.17_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-3.17_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [maliketh-v1e1_th-3.28_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/maliketh-v1e1_th-3.28_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`martlet-v1e200`
+
+- [martlet-v1e200_th-2.77_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-2.77_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [martlet-v1e200_th-3.01_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-3.01_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [martlet-v1e200_th-3.13_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-3.13_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [martlet-v1e200_th-3.17_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-3.17_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [martlet-v1e200_th-3.21_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-3.21_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [martlet-v1e200_th-3.24_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-3.24_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [martlet-v1e200_th-3.27_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-3.27_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [martlet-v1e200_th-3.29_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-3.29_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [martlet-v1e200_th-3.32_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-3.32_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [martlet-v1e200_th-3.42_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/martlet-v1e200_th-3.42_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`non-euclidean_sex-v1e400`
+
+- [non-euclidean_sex-v1e400_th-2.69_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-2.69_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-3.00_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-3.00_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-3.15_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-3.15_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-3.19_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-3.19_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-3.22_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-3.22_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-3.26_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-3.26_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-3.28_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-3.28_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-3.31_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-3.31_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-3.33_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-3.33_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [non-euclidean_sex-v1e400_th-3.42_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/non-euclidean_sex-v1e400_th-3.42_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`pup_mask-v1e400`
+
+- [pup_mask-v1e400_th-2.72_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.72_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [pup_mask-v1e400_th-2.95_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-2.95_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [pup_mask-v1e400_th-3.08_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-3.08_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [pup_mask-v1e400_th-3.12_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-3.12_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [pup_mask-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [pup_mask-v1e400_th-3.19_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-3.19_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [pup_mask-v1e400_th-3.22_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-3.22_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [pup_mask-v1e400_th-3.25_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-3.25_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [pup_mask-v1e400_th-3.27_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-3.27_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [pup_mask-v1e400_th-3.37_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/pup_mask-v1e400_th-3.37_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`ramona-v1e400`
+
+- [ramona-v1e400_th-2.67_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-2.67_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [ramona-v1e400_th-2.91_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-2.91_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [ramona-v1e400_th-3.04_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-3.04_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [ramona-v1e400_th-3.08_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-3.08_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [ramona-v1e400_th-3.12_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-3.12_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [ramona-v1e400_th-3.16_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-3.16_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [ramona-v1e400_th-3.20_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-3.20_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [ramona-v1e400_th-3.23_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-3.23_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [ramona-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [ramona-v1e400_th-3.38_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/ramona-v1e400_th-3.38_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`realistic-v4e400`
+
+- [realistic-v4e400_th-2.46_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.46_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [realistic-v4e400_th-2.78_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.78_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [realistic-v4e400_th-2.94_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.94_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [realistic-v4e400_th-2.99_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-2.99_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [realistic-v4e400_th-3.04_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-3.04_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [realistic-v4e400_th-3.08_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-3.08_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [realistic-v4e400_th-3.12_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-3.12_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [realistic-v4e400_th-3.15_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-3.15_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [realistic-v4e400_th-3.19_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-3.19_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [realistic-v4e400_th-3.31_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e400_th-3.31_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`realistic-v4e500`
+
+- [realistic-v4e500_th-2.46_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.46_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [realistic-v4e500_th-2.77_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.77_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [realistic-v4e500_th-2.94_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.94_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [realistic-v4e500_th-2.99_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-2.99_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [realistic-v4e500_th-3.04_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-3.04_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [realistic-v4e500_th-3.08_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-3.08_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [realistic-v4e500_th-3.12_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-3.12_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [realistic-v4e500_th-3.15_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-3.15_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [realistic-v4e500_th-3.19_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-3.19_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [realistic-v4e500_th-3.31_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/realistic-v4e500_th-3.31_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`skecchiart-v1e134`
+
+- [skecchiart-v1e134_th-2.66_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.66_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [skecchiart-v1e134_th-2.96_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-2.96_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [skecchiart-v1e134_th-3.10_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-3.10_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [skecchiart-v1e134_th-3.15_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-3.15_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [skecchiart-v1e134_th-3.19_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-3.19_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [skecchiart-v1e134_th-3.22_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-3.22_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [skecchiart-v1e134_th-3.25_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-3.25_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [skecchiart-v1e134_th-3.28_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-3.28_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [skecchiart-v1e134_th-3.31_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-3.31_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [skecchiart-v1e134_th-3.42_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skecchiart-v1e134_th-3.42_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`skiltaire-v1e400`
+
+- [skiltaire-v1e400_th-2.67_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-2.67_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [skiltaire-v1e400_th-2.88_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-2.88_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [skiltaire-v1e400_th-3.01_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-3.01_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [skiltaire-v1e400_th-3.06_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-3.06_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [skiltaire-v1e400_th-3.10_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-3.10_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [skiltaire-v1e400_th-3.14_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-3.14_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [skiltaire-v1e400_th-3.17_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-3.17_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [skiltaire-v1e400_th-3.21_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-3.21_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [skiltaire-v1e400_th-3.23_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-3.23_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [skiltaire-v1e400_th-3.35_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/skiltaire-v1e400_th-3.35_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`small_dom_big_sub-v2e400`
+
+- [small_dom_big_sub-v2e400_th-2.74_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-2.74_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-3.00_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-3.00_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-3.11_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-3.11_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-3.15_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-3.15_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-3.19_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-3.19_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-3.22_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-3.22_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-3.25_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-3.25_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-3.28_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-3.28_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-3.30_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-3.30_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [small_dom_big_sub-v2e400_th-3.40_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/small_dom_big_sub-v2e400_th-3.40_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`space-v1e500`
+
+- [space-v1e500_th-2.68_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-2.68_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [space-v1e500_th-3.02_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-3.02_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [space-v1e500_th-3.19_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-3.19_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [space-v1e500_th-3.24_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-3.24_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [space-v1e500_th-3.29_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-3.29_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [space-v1e500_th-3.33_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-3.33_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [space-v1e500_th-3.37_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-3.37_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [space-v1e500_th-3.40_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-3.40_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [space-v1e500_th-3.44_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-3.44_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [space-v1e500_th-3.55_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/space-v1e500_th-3.55_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`spaceengine-v1e500`
+
+- [spaceengine-v1e500_th-2.63_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.63_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [spaceengine-v1e500_th-2.96_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-2.96_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [spaceengine-v1e500_th-3.12_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-3.12_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [spaceengine-v1e500_th-3.18_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-3.18_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [spaceengine-v1e500_th-3.22_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-3.22_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [spaceengine-v1e500_th-3.27_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-3.27_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [spaceengine-v1e500_th-3.30_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-3.30_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [spaceengine-v1e500_th-3.33_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-3.33_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [spaceengine-v1e500_th-3.36_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-3.36_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [spaceengine-v1e500_th-3.49_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spaceengine-v1e500_th-3.49_fro_ckpt1.00_size32.0.safetensors?download=true)
+
+`spectrumshift-v1e400`
+
+- [spectrumshift-v1e400_th-2.77_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.77_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-2.98_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-2.98_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-3.09_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-3.09_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-3.13_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-3.13_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-3.16_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-3.19_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-3.19_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-3.22_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-3.22_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-3.25_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-3.25_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-3.28_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-3.28_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [spectrumshift-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/spectrumshift-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors?download=true)
 
 `squishy-v1e10`
 
-squishy-v1e10_th-2.97_fro_ckpt1.00_size4.0.safetensors
-squishy-v1e10_th-3.22_fro_ckpt1.00_size8.0.safetensors
-squishy-v1e10_th-3.37_fro_ckpt1.00_size12.0.safetensors
-squishy-v1e10_th-3.42_fro_ckpt1.00_size14.0.safetensors
-squishy-v1e10_th-3.47_fro_ckpt1.00_size16.0.safetensors
-squishy-v1e10_th-3.51_fro_ckpt1.00_size18.0.safetensors
-squishy-v1e10_th-3.55_fro_ckpt1.00_size20.0.safetensors
-squishy-v1e10_th-3.58_fro_ckpt1.00_size22.0.safetensors
-squishy-v1e10_th-3.61_fro_ckpt1.00_size24.0.safetensors
-squishy-v1e10_th-3.72_fro_ckpt1.00_size32.0.safetensors
+- [squishy-v1e10_th-2.97_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-2.97_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [squishy-v1e10_th-3.22_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-3.22_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [squishy-v1e10_th-3.37_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-3.37_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [squishy-v1e10_th-3.42_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-3.42_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [squishy-v1e10_th-3.47_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-3.47_fro_ckpt1.00_size16.0.safetensors)
+- [squishy-v1e10_th-3.51_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-3.51_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [squishy-v1e10_th-3.55_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-3.55_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [squishy-v1e10_th-3.58_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-3.58_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [squishy-v1e10_th-3.61_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-3.61_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [squishy-v1e10_th-3.72_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/squishy-v1e10_th-3.72_fro_ckpt1.00_size32.0.safetensors?download=true)
 
 `tibetan-v2e500`
 
-tibetan-v2e500_th-2.64_fro_ckpt1.00_size4.0.safetensors
-tibetan-v2e500_th-2.86_fro_ckpt1.00_size8.0.safetensors
-tibetan-v2e500_th-3.00_fro_ckpt1.00_size12.0.safetensors
-tibetan-v2e500_th-3.04_fro_ckpt1.00_size14.0.safetensors
-tibetan-v2e500_th-3.09_fro_ckpt1.00_size16.0.safetensors
-tibetan-v2e500_th-3.12_fro_ckpt1.00_size18.0.safetensors
-tibetan-v2e500_th-3.16_fro_ckpt1.00_size20.0.safetensors
-tibetan-v2e500_th-3.19_fro_ckpt1.00_size22.0.safetensors
-tibetan-v2e500_th-3.22_fro_ckpt1.00_size24.0.safetensors
-tibetan-v2e500_th-3.35_fro_ckpt1.00_size32.0.safetensors
+- [tibetan-v2e500_th-2.64_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-2.64_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [tibetan-v2e500_th-2.86_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-2.86_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [tibetan-v2e500_th-3.00_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-3.00_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [tibetan-v2e500_th-3.04_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-3.04_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [tibetan-v2e500_th-3.09_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-3.09_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [tibetan-v2e500_th-3.12_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-3.12_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [tibetan-v2e500_th-3.16_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-3.16_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [tibetan-v2e500_th-3.19_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-3.19_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [tibetan-v2e500_th-3.22_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-3.22_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [tibetan-v2e500_th-3.35_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/tibetan-v2e500_th-3.35_fro_ckpt1.00_size32.0.safetensors?download=true)
 
 `veemon-v1e400`
 
-veemon-v1e400_th-2.52_fro_ckpt1.00_size4.0.safetensors
-veemon-v1e400_th-2.82_fro_ckpt1.00_size8.0.safetensors
-veemon-v1e400_th-3.00_fro_ckpt1.00_size12.0.safetensors
-veemon-v1e400_th-3.05_fro_ckpt1.00_size14.0.safetensors
-veemon-v1e400_th-3.09_fro_ckpt1.00_size16.0.safetensors
-veemon-v1e400_th-3.13_fro_ckpt1.00_size18.0.safetensors
-veemon-v1e400_th-3.16_fro_ckpt1.00_size20.0.safetensors
-veemon-v1e400_th-3.19_fro_ckpt1.00_size22.0.safetensors
-veemon-v1e400_th-3.22_fro_ckpt1.00_size24.0.safetensors
-veemon-v1e400_th-3.34_fro_ckpt1.00_size32.0.safetensors
+- [veemon-v1e400_th-2.52_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-2.52_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [veemon-v1e400_th-2.82_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-2.82_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [veemon-v1e400_th-3.00_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-3.00_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [veemon-v1e400_th-3.05_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-3.05_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [veemon-v1e400_th-3.09_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-3.09_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [veemon-v1e400_th-3.13_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-3.13_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [veemon-v1e400_th-3.16_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-3.16_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [veemon-v1e400_th-3.19_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-3.19_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [veemon-v1e400_th-3.22_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-3.22_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [veemon-v1e400_th-3.34_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/veemon-v1e400_th-3.34_fro_ckpt1.00_size32.0.safetensors?download=true)
 
 `whisperingfornothing-v1e58`
 
-whisperingfornothing-v1e58_th-2.66_fro_ckpt1.00_size4.0.safetensors
-whisperingfornothing-v1e58_th-2.94_fro_ckpt1.00_size8.0.safetensors
-whisperingfornothing-v1e58_th-3.08_fro_ckpt1.00_size12.0.safetensors
-whisperingfornothing-v1e58_th-3.12_fro_ckpt1.00_size14.0.safetensors
-whisperingfornothing-v1e58_th-3.16_fro_ckpt1.00_size16.0.safetensors
-whisperingfornothing-v1e58_th-3.20_fro_ckpt1.00_size18.0.safetensors
-whisperingfornothing-v1e58_th-3.24_fro_ckpt1.00_size20.0.safetensors
-whisperingfornothing-v1e58_th-3.26_fro_ckpt1.00_size22.0.safetensors
-whisperingfornothing-v1e58_th-3.29_fro_ckpt1.00_size24.0.safetensors
-whisperingfornothing-v1e58_th-3.39_fro_ckpt1.00_size32.0.safetensors
+- [whisperingfornothing-v1e58_th-2.66_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-2.66_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-2.94_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-2.94_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-3.08_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-3.08_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-3.12_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-3.12_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-3.16_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-3.16_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-3.20_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-3.20_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-3.24_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-3.24_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-3.26_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-3.26_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-3.29_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-3.29_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [whisperingfornothing-v1e58_th-3.39_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/whisperingfornothing-v1e58_th-3.39_fro_ckpt1.00_size32.0.safetensors?download=true)
 
 `wickerbeast-v1e500`
 
-wickerbeast-v1e500_th-2.52_fro_ckpt1.00_size4.0.safetensors
-wickerbeast-v1e500_th-2.83_fro_ckpt1.00_size8.0.safetensors
-wickerbeast-v1e500_th-2.97_fro_ckpt1.00_size12.0.safetensors
-wickerbeast-v1e500_th-3.02_fro_ckpt1.00_size14.0.safetensors
-wickerbeast-v1e500_th-3.06_fro_ckpt1.00_size16.0.safetensors
-wickerbeast-v1e500_th-3.09_fro_ckpt1.00_size18.0.safetensors
-wickerbeast-v1e500_th-3.12_fro_ckpt1.00_size20.0.safetensors
-wickerbeast-v1e500_th-3.15_fro_ckpt1.00_size22.0.safetensors
-wickerbeast-v1e500_th-3.18_fro_ckpt1.00_size24.0.safetensors
-wickerbeast-v1e500_th-3.29_fro_ckpt1.00_size32.0.safetensors
+- [wickerbeast-v1e500_th-2.52_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.52_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-2.83_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.83_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-2.97_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-2.97_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-3.02_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-3.02_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-3.06_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-3.06_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-3.09_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-3.09_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-3.12_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-3.12_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-3.15_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-3.15_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-3.18_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-3.18_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [wickerbeast-v1e500_th-3.29_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wickerbeast-v1e500_th-3.29_fro_ckpt1.00_size32.0.safetensors?download=true)
 
 `wjs07`
 
-wjs07-v1e200_th-2.78_fro_ckpt1.00_size4.0.safetensors
-wjs07-v1e200_th-3.05_fro_ckpt1.00_size8.0.safetensors
-wjs07-v1e200_th-3.16_fro_ckpt1.00_size12.0.safetensors
-wjs07-v1e200_th-3.20_fro_ckpt1.00_size14.0.safetensors
-wjs07-v1e200_th-3.23_fro_ckpt1.00_size16.0.safetensors
-wjs07-v1e200_th-3.27_fro_ckpt1.00_size18.0.safetensors
-wjs07-v1e200_th-3.30_fro_ckpt1.00_size20.0.safetensors
-wjs07-v1e200_th-3.33_fro_ckpt1.00_size22.0.safetensors
-wjs07-v1e200_th-3.36_fro_ckpt1.00_size24.0.safetensors
-wjs07-v1e200_th-3.46_fro_ckpt1.00_size32.0.safetensors
+- [wjs07-v1e200_th-2.78_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-2.78_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [wjs07-v1e200_th-3.05_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-3.05_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [wjs07-v1e200_th-3.16_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-3.16_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [wjs07-v1e200_th-3.20_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-3.20_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [wjs07-v1e200_th-3.23_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-3.23_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [wjs07-v1e200_th-3.27_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-3.27_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [wjs07-v1e200_th-3.30_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-3.30_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [wjs07-v1e200_th-3.33_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-3.33_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [wjs07-v1e200_th-3.36_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-3.36_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [wjs07-v1e200_th-3.46_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wjs07-v1e200_th-3.46_fro_ckpt1.00_size32.0.safetensors?download=true)
 
 `wolfy-nail-v1e400`
 
-wolfy-nail-v1e400_th-2.74_fro_ckpt1.00_size4.0.safetensors
-wolfy-nail-v1e400_th-2.95_fro_ckpt1.00_size8.0.safetensors
-wolfy-nail-v1e400_th-3.06_fro_ckpt1.00_size12.0.safetensors
-wolfy-nail-v1e400_th-3.10_fro_ckpt1.00_size14.0.safetensors
-wolfy-nail-v1e400_th-3.13_fro_ckpt1.00_size16.0.safetensors
-wolfy-nail-v1e400_th-3.17_fro_ckpt1.00_size18.0.safetensors
-wolfy-nail-v1e400_th-3.20_fro_ckpt1.00_size20.0.safetensors
-wolfy-nail-v1e400_th-3.23_fro_ckpt1.00_size22.0.safetensors
-wolfy-nail-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors
-wolfy-nail-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors
+- [wolfy-nail-v1e400_th-2.74_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-2.74_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-2.95_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-2.95_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-3.06_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-3.06_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-3.10_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-3.10_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-3.13_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-3.13_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-3.17_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-3.17_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-3.20_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-3.20_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-3.23_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-3.23_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-3.26_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [wolfy-nail-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/wolfy-nail-v1e400_th-3.39_fro_ckpt1.00_size32.0.safetensors?download=true)
 
 `woolrool-v1e4`
 
-woolrool-v1e4_th-2.69_fro_ckpt1.00_size4.0.safetensors
-woolrool-v1e4_th-2.99_fro_ckpt1.00_size8.0.safetensors
-woolrool-v1e4_th-3.12_fro_ckpt1.00_size12.0.safetensors
-woolrool-v1e4_th-3.16_fro_ckpt1.00_size14.0.safetensors
-woolrool-v1e4_th-3.20_fro_ckpt1.00_size16.0.safetensors
-woolrool-v1e4_th-3.24_fro_ckpt1.00_size18.0.safetensors
-woolrool-v1e4_th-3.27_fro_ckpt1.00_size20.0.safetensors
-woolrool-v1e4_th-3.30_fro_ckpt1.00_size22.0.safetensors
-woolrool-v1e4_th-3.33_fro_ckpt1.00_size24.0.safetensors
-woolrool-v1e4_th-3.43_fro_ckpt1.00_size32.0.safetensors
+- [woolrool-v1e4_th-2.69_fro_ckpt1.00_size4.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.69_fro_ckpt1.00_size4.0.safetensors?download=true)
+- [woolrool-v1e4_th-2.99_fro_ckpt1.00_size8.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-2.99_fro_ckpt1.00_size8.0.safetensors?download=true)
+- [woolrool-v1e4_th-3.12_fro_ckpt1.00_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-3.12_fro_ckpt1.00_size12.0.safetensors?download=true)
+- [woolrool-v1e4_th-3.16_fro_ckpt1.00_size14.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-3.16_fro_ckpt1.00_size14.0.safetensors?download=true)
+- [woolrool-v1e4_th-3.20_fro_ckpt1.00_size16.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-3.20_fro_ckpt1.00_size16.0.safetensors?download=true)
+- [woolrool-v1e4_th-3.24_fro_ckpt1.00_size18.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-3.24_fro_ckpt1.00_size18.0.safetensors?download=true)
+- [woolrool-v1e4_th-3.27_fro_ckpt1.00_size20.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-3.27_fro_ckpt1.00_size20.0.safetensors?download=true)
+- [woolrool-v1e4_th-3.30_fro_ckpt1.00_size22.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-3.30_fro_ckpt1.00_size22.0.safetensors?download=true)
+- [woolrool-v1e4_th-3.33_fro_ckpt1.00_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-3.33_fro_ckpt1.00_size24.0.safetensors?download=true)
+- [woolrool-v1e4_th-3.43_fro_ckpt1.00_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-3.43_fro_ckpt1.00_size32.0.safetensors?download=true)
 
-## The LoRAs - Method #2
+</details>
+
+## The LoRAs - Method #3
+
+<details>
+  <summary>Click to reveal links</summary>
 
 `amalia-v2e400`
 
@@ -1955,12 +2220,6 @@ woolrool-v1e4
 - [woolrool-v1e4_th-1.26_spn_lora0.50_spn_ckpt0.50_size12.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-1.26_spn_lora0.50_spn_ckpt0.50_size12.0.safetensors?download=true)
 
 </details>
-
-## Plots
-
----
-
-[![This image is an XY plot.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/blaiddplot-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/blaiddplot.png?download=true)
 
 ## What the Heck is a Subspace Factor
 
