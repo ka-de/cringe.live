@@ -1858,6 +1858,8 @@ title: "The Shrunk LoRA Guide"
 - [woolrool-v1e4_th-1.46_spn_lora0.50_spn_ckpt0.50_size24.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-1.46_spn_lora0.50_spn_ckpt0.50_size24.0.safetensors?download=true)
 - [woolrool-v1e4_th-1.57_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk/woolrool-v1e4_th-1.57_spn_lora0.50_spn_ckpt0.50_size32.0.safetensors?download=true)
 
+</details>
+
 ## Way Too Small LoRAs
 
 ---
