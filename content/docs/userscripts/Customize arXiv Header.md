@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Customize arXiv Header"
+summary: "This userscript customizes the arXiv website by hiding specific header elements, resizing the header, and removing 'Report Issue' buttons."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -10,6 +11,8 @@ title: "Customize arXiv Header"
 # Customize arXiv Header
 
 ---
+
+This userscript is designed to customize the arXiv website's appearance by selectively hiding and modifying various header elements. It removes the visibility of the `.html-header-message` and `.html-header-logo` classes, while adjusting the font size of `.html-header-nav` and resizing the `.desktop_header` to a height of 10px, centering its contents using flexbox properties. Additionally, the script targets and hides any buttons containing the text "Report Issue" and removes the `body::after` pseudo-element by appending a custom style to the document head. This results in a cleaner and more streamlined interface for users accessing arXiv's HTML pages.
 
 ```js
 // ==UserScript==

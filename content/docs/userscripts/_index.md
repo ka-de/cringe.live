@@ -18,4 +18,4 @@ Userscripts are small programs written in JavaScript that can alter the appearan
 
 ---
 
-{{< section >}}
+{{< section details >}}
