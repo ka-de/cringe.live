@@ -15,7 +15,7 @@ title: "The Shrunk LoRA Guide"
 
 > NOTE: Some of these boys have XY plots with them, you can click on them to download the full sized image. The first row is always the original LoRA.
 
-## The LoRAs - Method #1
+## Method #1
 
 ---
 
@@ -1568,7 +1568,7 @@ title: "The Shrunk LoRA Guide"
 
 </details>
 
-## The LoRAs - Method #3
+## Method #3
 
 <details>
   <summary>Click to reveal links</summary>
