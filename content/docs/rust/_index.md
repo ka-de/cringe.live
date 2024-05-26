@@ -3,7 +3,7 @@ weight: 10
 bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
-title: "Rust"
+title: "🦀 - Rust"
 ---
 
 <!--markdownlint-disable MD025  -->

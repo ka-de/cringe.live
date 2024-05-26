@@ -3,7 +3,7 @@ weight: 5
 bookFlatSection: false
 bookToC: false
 bookCollapseSection: true
-title: "Mathematics"
+title: "💤 - Mathematics"
 ---
 
 <!--markdownlint-disable MD025 -->

@@ -46,9 +46,9 @@ params:
 
 menu:
   after:
-    - name: "Github"
+    - name: "🐙 - Github"
       url: "https://github.com/ka-de"
       weight: 10
-    - name: "Twitter"
+    - name: "🐦 - Twitter"
       url: "https://twitter.com/_ka_de"
       weight: 20

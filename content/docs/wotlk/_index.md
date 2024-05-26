@@ -3,7 +3,7 @@ weight: 20
 bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
-title: "WOTLK"
+title: "❄️ - WOTLK"
 ---
 
 <!--markdownlint-disable MD025  -->

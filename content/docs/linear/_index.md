@@ -2,12 +2,12 @@
 weight: 1
 bookFlatSection: false
 bookCollapseSection: true
-title: "Linear Algebra for Furries"
+title: "↗️ - Linear Algebra"
 ---
 
 <!--markdownlint-disable MD033 MD029 MD025 -->
 
-# Linear Algebra for Furries
+# Linear Algebra
 
 ---
 
