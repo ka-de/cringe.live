@@ -9,6 +9,8 @@ title: "unreachable!()"
 
 # unreachable!()
 
+---
+
 The `unreachable!()` macro in Rust is used to indicate a section of the code that should never be reached under normal circumstances. It’s useful in places where the compiler can’t determine that some code is unreachable.
 
 If the execution of the program ever does reach a point marked with `unreachable!()`, the program will immediately panic and terminate. This is because `unreachable!()` is essentially a shorthand for `panic!()` with a specific message indicating that unreachable code was reached.

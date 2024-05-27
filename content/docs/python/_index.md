@@ -24,4 +24,4 @@ Technically, Python’s design philosophy prioritizes the readability of code, l
 
 ---
 
-{{< section >}}
+{{< section details >}}

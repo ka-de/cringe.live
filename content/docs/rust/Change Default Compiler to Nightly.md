@@ -9,6 +9,8 @@ title: "Change Default Compiler to Nightly"
 
 # Change Default Compiler to Nightly
 
+---
+
 ```bash
 rustup default nightly
 ```

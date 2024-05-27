@@ -9,6 +9,8 @@ summary: "The article discusses the cross product of vectors in three-dimensiona
 
 # Cross Product
 
+---
+
 The cross product, also known as the vector product, is a binary operation on two vectors in three-dimensional space. It's denoted by the symbol $\times$ and results in a vector that is perpendicular (or orthogonal) to the plane containing the two original vectors.
 
 If you have two vectors $\vec{a} = [a1, a2, a3]$ and $\vec{b} = [b1, b2, b3]$, their cross product, denoted as $\vec{a} \times \vec{b}$ is defined as:

@@ -8,6 +8,8 @@ title: "Singular Value Decomposition"
 
 # Singular Value Decomposition
 
+---
+
 Singular Value Decomposition (SVD) is a powerful matrix factorization technique that plays a crucial role in various fields, including machine learning, signal processing, and data analysis.
 
 At its core, SVD decomposes a real or complex matrix into three matrices: two orthogonal matrices and one diagonal matrix containing the singular values.

@@ -9,6 +9,8 @@ summary: "This article discusses orthogonal matrices, which are square matrices 
 
 # Orthogonal Matrices
 
+---
+
 An orthogonal matrix is a square matrix whose rows and columns are orthogonal unit vectors. In other words, it is a matrix whose columns (and rows) form an orthonormal basis for the vector space they span, meaning they are mutually perpendicular unit vectors.
 
 More precisely, a matrix $Q$ is orthogonal if it satisfies the following condition:

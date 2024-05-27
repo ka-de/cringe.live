@@ -8,6 +8,8 @@ title: "Convert Date to UNIX Timestamp"
 
 # Convert Date to UNIX Timestamp
 
+---
+
 ```py
 """
 This script converts a given date and time in the format of year, month, day, hour, and minute

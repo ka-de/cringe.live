@@ -8,6 +8,8 @@ title: "Kolmogorov-Arnold Representation Theorem"
 
 # Kolmogorov-Arnold Representation Theorem
 
+---
+
 The Kolmogorov-Arnold Representation Theorem, also known as the superposition theorem, is a significant result in real analysis and approximation theory.
 
 It was first proved by Andrey Kolmogorov in 1956 and later extended by his student Vladimir Arnold in 1957.

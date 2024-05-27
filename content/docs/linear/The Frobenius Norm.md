@@ -8,6 +8,8 @@ type: docs
 
 # The Frobenius Norm
 
+---
+
 The Frobenius norm, named after the German mathematician Ferdinand Georg Frobenius, is a measure of error in matrix approximations. It provides a single value that quantifies the difference between two matrices. Specifically, in the context of matrix approximations like those obtained through Singular Value Decomposition (SVD), the Frobenius norm measures the “distance” between the original matrix and its approximation.
 
 ## Key Features

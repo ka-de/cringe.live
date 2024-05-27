@@ -9,6 +9,8 @@ title: "Visibility"
 
 # Visibility
 
+---
+
 In Rust, the visibility of functions, structs, and other items is controlled by the `pub` keyword. However, `pub` can be further refined using the `crate` keyword to limit the visibility to the current crate only. Let’s look at some examples:
 
 ```rust

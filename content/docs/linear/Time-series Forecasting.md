@@ -7,6 +7,8 @@ type: docs
 
 # Time-series Forecasting
 
+---
+
 Time-series forecasting is a method used to predict future data points by analyzing past trends and patterns in time-series data. A time-series is a sequence of data points collected or recorded at successive time intervals. It’s widely applied in various domains such as finance, retail, healthcare, and natural sciences for critical tasks like supply chain optimization, energy prediction, and weather forecasting.
 
 ## Key Aspects
@@ -37,7 +39,7 @@ Time-series forecasting models can be used in a wide range of real-world applica
 - **Weather Forecasting**: Predicting weather conditions such as temperature, humidity, and precipitation based on past weather data. For instance, predicting tomorrow’s temperature based on the past week’s data.
 - **Sales Forecasting**: Estimating future sales to manage inventory and plan production in retail and manufacturing industries. For example, a retail store predicting the sales of a particular product for the next month.
 - **Energy Demand Forecasting**: Predicting future energy demand to optimize energy production and distribution. For instance, a power company predicting the electricity demand for the next day.
-Traffic Prediction: Estimating future traffic conditions to manage traffic flow and plan road infrastructure. For example, predicting the traffic volume on a particular road during rush hour.
+  Traffic Prediction: Estimating future traffic conditions to manage traffic flow and plan road infrastructure. For example, predicting the traffic volume on a particular road during rush hour.
 - **Healthcare**: Predicting the progression of diseases or patient readmission rates based on historical health data. For instance, predicting the likelihood of a patient being readmitted to the hospital within 30 days.
 - **Agriculture**: Forecasting crop yields based on factors like rainfall, temperature, and soil conditions. For example, predicting the yield of a particular crop for the next season.
 - **Economic Forecasting**: Predicting economic indicators like GDP, inflation rates, and unemployment rates to make policy decisions. For instance, predicting the unemployment rate for the next quarter.

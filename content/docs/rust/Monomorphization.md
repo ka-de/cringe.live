@@ -9,6 +9,8 @@ title: "Monomorphization"
 
 # Monomorphization
 
+---
+
 Monomorphization is a process in Rust that turns generic code into specific code by filling in the concrete types that are used when compiled. This is how Rust achieves zero-cost abstractions with generics.
 
 In Rust, you can use generics to create definitions for items like function signatures or structs, which can then be used with many different concrete data types. When you define a function that uses generics, you place the generics in the signature of the function where you would usually specify the data types of the parameters and return value.
@@ -159,4 +161,3 @@ fn main() {
 In this code, the `Player` struct now has a `coins` field to keep track of the total coin value. The `collect_item` method checks if the item is a `Coin`, and if so, adds its value to the player’s total coin value. Otherwise, it adds the item to the inventory as before.
 
 The `InventoryItem` trait now includes an `as_any` method, which allows us to downcast the `InventoryItem` to its concrete type. This is necessary because Rust doesn’t support downcasting directly from a trait object to a concrete type.
-

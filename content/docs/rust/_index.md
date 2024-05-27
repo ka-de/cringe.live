@@ -30,4 +30,4 @@ In summary, Rust’s design balances performance, robustness, and expressiveness
 
 ---
 
-{{< section >}}
+{{< section details >}}

@@ -18,4 +18,4 @@ Mathematics is a field of knowledge that encompasses the study of numbers, formu
 
 ## Documents
 
-{{< section >}}
+{{< section details >}}
