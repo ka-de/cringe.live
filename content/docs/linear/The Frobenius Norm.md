@@ -39,7 +39,7 @@ $$
 ||AB||_F \leq ||A||_F ||B||_F
 $$
 
-- **Extension of Euclidean Norm**: The Frobenius norm can also be considered as an extension of the Euclidean norm from vectors to matrices1. This makes it a natural choice for measuring the “distance” between two matrices.
+- **Extension of Euclidean Norm**: The Frobenius norm can also be considered as an extension of the Euclidean norm from vectors to matrices. This makes it a natural choice for measuring the “distance” between two matrices.
 
 ## Applications
 
