@@ -4,6 +4,7 @@ bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
 title: "Dataset Tools"
+summary: 'A "small" collection of Python and PowerShell scripts that dataset curators might find handy.'
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -12,6 +13,6 @@ title: "Dataset Tools"
 
 ---
 
-A "small" collection of Python scripts that dataset curators might find handy.
+A "small" collection of Python and PowerShell scripts that dataset curators might find handy.
 
 {{< section details >}}

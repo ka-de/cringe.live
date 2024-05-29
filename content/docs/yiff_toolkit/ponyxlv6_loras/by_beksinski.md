@@ -20,12 +20,18 @@ Zdzisław Beksiński (24 February 1929 – 21 February 2005) was a renowned Poli
 
 ---
 
-The score tags might or might not help you!
+The score tags might or might not help you! `surreal` is a nice word, and so is `detailed background`. Put `` in the negative.
 
 ### Suggested Tags
 
 ```md
-nightmare fuel, wtf, why, where is your god now
+creepy, nightmare fuel, wtf, why, where is your god now, old art, creepypasta
+```
+
+### Suggested Negative
+
+```md
+border, black border
 ```
 
 ## Content
@@ -34,13 +40,13 @@ nightmare fuel, wtf, why, where is your god now
 
 [LoRA Download](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/by_beksinski-v1e400.safetensors?download=true)
 
-[Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_beksinski)
-
-[Shrunk LoRA Download (41.3MB) (UNTESTED)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_th-3.55.safetensors?download=true)
+[Shrunk LoRA Download (41.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_th-3.55.safetensors?download=true)
 
 [Shrunk LoRA Download (13MB) (UNTESTED)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_size12_th-3.13.safetensors?download=true)
 
 [Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/by_beksinski)
+
+[Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_beksinski)
 
 <!--
 [Sample Prompts (Missing)]()
