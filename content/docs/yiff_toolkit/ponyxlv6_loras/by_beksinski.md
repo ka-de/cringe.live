@@ -40,7 +40,7 @@ nightmare fuel, wtf, why, where is your god now
 
 [Shrunk LoRA Download (13MB) (UNTESTED)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_size12_th-3.13.safetensors?download=true)
 
-[Sample Images](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/by_beksinski)
+[Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/by_beksinski)
 
 <!--
 [Sample Prompts (Missing)]()
@@ -48,7 +48,7 @@ nightmare fuel, wtf, why, where is your god now
 [Metadata (TODO)]()
 -->
 
-## Sample Images
+## Example Images
 
 ---
 
