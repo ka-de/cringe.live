@@ -38,20 +38,22 @@ border, black border
 
 ---
 
-[LoRA Download](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/by_beksinski-v1e400.safetensors?download=true)
+[⬇️ LoRA Download](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/by_beksinski-v1e400.safetensors?download=true)
 
-[Shrunk LoRA Download (41.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ Shrunk LoRA Download (41.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_th-3.55.safetensors?download=true)
 
-[Shrunk LoRA Download (13MB) (UNTESTED)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_size12_th-3.13.safetensors?download=true)
+[⬇️ Shrunk LoRA Download (13MB) (UNTESTED)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_size12_th-3.13.safetensors?download=true)
 
-[Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/by_beksinski)
+[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/by_beksinski)
 
-[Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_beksinski)
+[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_beksinski)
+
+[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/by_beksinski-v1e400.json)
 
 <!--
-[Sample Prompts (Missing)]()
+[🧺 Sample Prompts (Missing)]()
 
-[Metadata (TODO)]()
+
 -->
 
 ## Example Images
