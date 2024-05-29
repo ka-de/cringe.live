@@ -162,6 +162,21 @@ Creates different buckets by pre-categorizing images with different aspect ratio
 
 ---
 
+##### `--bucket_no_upscale`
+
+Affects the resolution of images processed by the network by disabling any upscaling of images. When this option is set, the network will only downscale images to fit within the maximum area specified by `self.max_area` if the image’s $width \times height$ exceeds this value.
+
+> The select_bucket function, particularly the code snippet you’ve highlighted, is responsible for determining the appropriate bucket for an image based on its resolution and aspect ratio. Here’s a step-by-step explanation of what the code does:
+>
+> Check if downscaling is needed: If the product of image_width and image_height is greater than self.max_area, the image is too large and must be downscaled while maintaining its aspect ratio.
+> Calculate the resized dimensions: It calculates the width and height that the image should be resized to, such that the resized image’s area does not exceed self.max_area and the aspect ratio is preserved.
+> Round the dimensions: The round_to_steps function is used to round the resized dimensions to the nearest multiple of self.reso_steps, which is a parameter that defines the step size for resolution buckets.
+> Determine the aspect ratio error: The code compares the aspect ratio of the width and height after rounding to decide which dimension to prioritize in order to minimize the error in aspect ratio after resizing.
+> Select the resized size: Based on the smaller aspect ratio error, it chooses the resized dimensions that best maintain the original aspect ratio of the image.
+> In summary, the select_bucket function is ensuring that when downscaling is necessary, the image is resized to dimensions that are multiples of the resolution step size (self.reso_steps) and as close as possible to the original aspect ratio, without exceeding the maximum allowed area (self.max_area). Upscaling is not performed when --bucket_no_upscale is set.
+
+---
+
 ##### `--min_bucket_reso` and `--max_bucket_reso`
 
 Specifies the minimum and maximum resolutions used by the buckets. These values are ignored if `--bucket_no_upscale` is set.
