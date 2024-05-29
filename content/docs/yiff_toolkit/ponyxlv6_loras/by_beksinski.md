@@ -15,12 +15,12 @@ summary: "Zdzisław Beksiński’s art style is characterized by its hauntingly 
 ## Introduction
 
 Zdzisław Beksiński (24 February 1929 – 21 February 2005) was a renowned Polish artist known for his distinctive style of dystopian surrealism. He had no formal training as an artist but was a graduate of the Faculty of Architecture at the Kraków Polytechnic. Beksiński’s creations, which he referred to as either Baroque or Gothic, were made mainly in two periods. The first period is characterized by expressionistic color and surreal architecture, often depicting a doomsday scenario. The second period saw a more abstract style, with the main features of formalism. Beksiński’s work often depicted disturbing images of death, decay, and desolate landscapes filled with skeletons and deformed figures. Tragically, Beksiński was stabbed to death at his Warsaw apartment in 2005.
-  
+
 ## Content
 
 ---
 
-[⬇️ LoRA Download](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/by_beksinski-v1e400.safetensors?download=true)
+[⬇️ LoRA Download (241 MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/by_beksinski-v1e400.safetensors?download=true)
 
 [⬇️ Shrunk LoRA Download (41.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_th-3.55.safetensors?download=true)
 
@@ -47,7 +47,8 @@ The score tags might or might not help you!
 ### Suggested Tags
 
 ```md
-surreal, creepy, nightmare fuel, wtf, why, where is your god now, old art, creepypasta, detailed background
+surreal, creepy, nightmare fuel, wtf, why, where is your god now,
+old art, creepypasta, detailed background
 ```
 
 ### Suggested Negative
@@ -79,3 +80,7 @@ border, black border
 [![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001705-05290130.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001705-05290130-upscaled.png?download=true)
 
 </div>
+
+## Shrink Plots
+
+[![A human generated XY plot.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/by_beksinski-shrink-plot/beksinski-shrunk-plot-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/by_beksinski-shrink-plot/beksinski-shrunk-plot.png?download=true)
