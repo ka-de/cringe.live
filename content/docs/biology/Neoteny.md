@@ -2,6 +2,7 @@
 weight: 1
 bookFlatSection: false
 title: "Neoteny"
+bookToC: false
 ---
 
 <!--markdownlint-disable MD025 -->
