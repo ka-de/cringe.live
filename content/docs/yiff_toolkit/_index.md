@@ -40,7 +40,7 @@ For now let's imagine you want to teach your model _wickerbeasts_ so you can gen
 
 ### Create the `training_dir` Directory
 
-Before starting we need a directory where we'll organize our datasets. Open up a terminal by pressing `Win + R` and typing in `pwsh`. We will also be using [git](https://git-scm.com/download/win) and [huggingface](https://huggingface.co/) to version control our smut. For brevity I'll refrain from giving you a tutorial on both. Once you have your newly created dataset on HF ready lets clone it. Make sure you change `user` in the first line to your HF username!
+Before starting we need a directory where we'll organize our datasets. Open up a terminal by pressing `Win + R` and typing in `pwsh`. We will also be using [git](https://git-scm.com/download/win) and [huggingface](https://huggingface.co/) to version control our smut. For brevity I'll refrain from giving you a tutorial on both, but thankfully 🤗 wrote [one](https://huggingface.co/docs/hub/repositories-getting-started). Once you have your newly created dataset on HF ready lets clone it. Make sure you change `user` in the first line to your HF username!
 
 ```bat
 git clone git@hf.co:/datasets/user/training_dir C:\training_dir
