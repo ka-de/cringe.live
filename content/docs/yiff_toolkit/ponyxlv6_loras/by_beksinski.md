@@ -20,12 +20,14 @@ Zdzisław Beksiński (24 February 1929 – 21 February 2005) was a renowned Poli
 
 ---
 
-The score tags might or might not help you! `surreal` is a nice word, and so is `detailed background`. Put `` in the negative.
+Keyword: `by beksinski`
+
+The score tags might or might not help you!
 
 ### Suggested Tags
 
 ```md
-creepy, nightmare fuel, wtf, why, where is your god now, old art, creepypasta
+surreal, creepy, nightmare fuel, wtf, why, where is your god now, old art, creepypasta, detailed background
 ```
 
 ### Suggested Negative
