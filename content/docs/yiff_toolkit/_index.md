@@ -5,7 +5,7 @@ bookToC: true
 title: "🐺 - yiff_toolkit"
 ---
 
-<!--markdownlint-disable MD025 MD033 -->
+<!--markdownlint-disable MD025 MD033 MD038 -->
 
 # Yiff Toolkit
 
@@ -94,8 +94,6 @@ The inference script for the tagger needs a folder as input, be warned that it a
 [Link to the Script](/docs/yiff_toolkit/dataset_tools/FurryTagger/)
 
 [Colab Notebook](https://colab.research.google.com/drive/1gIB2fGjLAuh6s_hrNlIPCkw_3jodoFP0?usp=sharing)
-
-
 
 ## Embeddings for 1.5 and SDXL
 
