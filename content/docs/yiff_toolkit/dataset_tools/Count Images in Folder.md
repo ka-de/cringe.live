@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Count Images in Folder"
+title: "🐍 Count Images in Folder"
 summary: "This script counts the total number of JPEG and PNG images in a specified directory."
 ---
 
@@ -27,15 +27,15 @@ import glob
 def count_images(directory):
     # Create a Path object for the directory
     path = Path(directory)
-    
+
     # Use glob to find all jpg, jpeg, and png files
     jpg_files = glob.glob(str(path / '**/*.jpg'), recursive=True)
     jpeg_files = glob.glob(str(path / '**/*.jpeg'), recursive=True)
     png_files = glob.glob(str(path / '**/*.png'), recursive=True)
-    
+
     # Count the total number of image files
     total_images = len(jpg_files) + len(jpeg_files) + len(png_files)
-    
+
     return total_images
 
 # Specify the directory path

@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Format-JSONFiles"
+title: "⚡ Format-JSONFiles"
 summary: "Formats JSON files from single-line to multi-line format using the jq command-line JSON processor."
 ---
 
@@ -10,10 +10,10 @@ summary: "Formats JSON files from single-line to multi-line format using the jq 
 
 # Format-JSONFiles
 
+---
+
 The `Format-JSONFiles` function formats JSON files found in a specified directory using the `jq` command-line JSON processor.
 It loops through each JSON file in the directory, applies `jq` formatting, and overwrites the original file with the formatted JSON.
-
----
 
 ```pwsh
 <#

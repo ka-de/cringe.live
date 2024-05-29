@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Get-Seed"
+title: "⚡ Get-Seed"
 summary: "Retrieves the `ss_seed` value from the metadata of a `.safetensors` file."
 ---
 
@@ -10,9 +10,9 @@ summary: "Retrieves the `ss_seed` value from the metadata of a `.safetensors` fi
 
 # Get-Seed
 
-Retrieves the `ss_seed` value from the metadata of a `.safetensors` file.
-
 ---
+
+Retrieves the `ss_seed` value from the metadata of a `.safetensors` file.
 
 ```pwsh
 <#

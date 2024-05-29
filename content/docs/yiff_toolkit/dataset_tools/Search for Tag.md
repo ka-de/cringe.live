@@ -2,8 +2,8 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Search for Tag"
-summary: "This script is used to search for the word \"anthrofied\" in all .txt files within a specified directory and its subdirectories. It uses multiprocessing to speed up the search by checking multiple files simultaneously."
+title: "🐍 Search for Tag"
+summary: 'This script is used to search for the word "anthrofied" in all .txt files within a specified directory and its subdirectories. It uses multiprocessing to speed up the search by checking multiple files simultaneously.'
 ---
 
 <!--markdownlint-disable MD025 -->

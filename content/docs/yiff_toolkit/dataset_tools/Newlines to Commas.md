@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Newlines to Commas"
+title: "🐍 Newlines to Commas"
 summary: "Recursively modify the content of `.txt` files in the specified directory and its subdirectories by replacing newlines with commas and spaces."
 ---
 
@@ -38,16 +38,16 @@ def process_directory(directory):
     """
     # Create a Path object for the directory
     path = Path(directory)
-    
+
     # Use glob pattern to match all .txt files recursively
     for file_path in path.rglob('*.txt'):
         # Read the content of the file
         with open(file_path, 'r') as file:
             content = file.read()
-        
+
         # Replace newline with a comma and space
         modified_content = content.replace('\n', ', ')
-        
+
         # Write the modified content back to the file
         with open(file_path, 'w') as file:
             file.write(modified_content)

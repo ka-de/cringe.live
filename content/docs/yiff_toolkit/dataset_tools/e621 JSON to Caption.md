@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "e621 JSON to Caption"
+title: "🐍 e621 JSON to Caption"
 summary: "This Python script is designed to process JSON files found within a specified directory and its subdirectories. Each JSON file is expected to contain data related to image posts sourced from e621.net or e6ai.net. The script parses these JSON files, extracts relevant information such as image URL, ratings, and tags, and generates caption files (`.txt`) based on this data."
 ---
 

@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Check for Duplicate Words Between Captions and Tags"
+title: "🐍 Check for Duplicate Words Between Captions and Tags"
 summary: "This script traverses through a directory, searches for text files, processes each file to extract tags and captions, and highlights occurrences of tags within captions using random colors, displaying the results in a visually rich format in the terminal."
 ---
 
@@ -40,7 +40,7 @@ def find_files(path, extension):
     Returns:
     - generator: A generator object that yields Path objects for each found file, excluding the specified files.
     """
-    return (file for file in Path(path).rglob(f'**/*{extension}') 
+    return (file for file in Path(path).rglob(f'**/*{extension}')
             if not file.name.endswith('-sample-prompts.txt') and file.name != 'sample-prompts.txt')
 
 
@@ -93,7 +93,7 @@ def process_file(file_path):
 def main():
     """
     Main function to process all .txt files in a specified directory for duplicate tags.
-    
+
     The function searches for .txt files in a given directory and processes each file
     to find and display duplicate tags in captions.
     """

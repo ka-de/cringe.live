@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Format-JSONFilesToSingleLine"
+title: "⚡ Format-JSONFilesToSingleLine"
 summary: "Formats JSON files to a single-line format using the jq utility."
 ---
 

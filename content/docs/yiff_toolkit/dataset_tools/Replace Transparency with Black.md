@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Replace Transparency with Black"
+title: "🐍 Replace Transparency with Black"
 summary: "This Python script processes all `.png` images in a specified directory by adding a black layer to each, utilizing multiprocessing to handle the images in parallel for efficiency."
 ---
 
@@ -72,7 +72,7 @@ def process_directory(directory):
     """
     # Get a list of all .png images in the directory recursively
     image_paths = glob.glob(os.path.join(directory, '**', '*.png'), recursive=True)
-    
+
     # Create a pool of workers equal to the number of CPU cores
     with Pool() as pool:
         # Map the process_image function to the list of image paths

@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Check for Transparency"
+title: "🐍 Check for Transparency"
 summary: "This script recursively traverses a specified directory, identifying image files with extension `.png`. For each identified image, it checks if it contains transparency by examining its mode with PIL."
 ---
 
@@ -10,7 +10,7 @@ summary: "This script recursively traverses a specified directory, identifying i
 
 # Check for Transparency
 
-----
+---
 
 This script recursively traverses a specified directory, identifying image files with extension `.png`. For each identified image, it checks if it contains transparency by examining its mode with PIL.
 

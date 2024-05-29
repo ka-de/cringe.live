@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Convert RGBA to RGB in PNGs"
+title: "🐍 Convert RGBA to RGB in PNGs"
 summary: "This script automates the process of converting `.png` images from RGBA to RGB format in a specified directory, utilizing multiprocessing to enhance efficiency."
 ---
 

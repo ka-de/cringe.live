@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Inspect-Lora"
+title: "⚡ Inspect-Lora"
 summary: "Takes a file path as input and uses Python to read the metadata from a `.safetensors` file. It then pretty-prints the metadata contents to the console and saves it next to the LoRA."
 ---
 
@@ -10,9 +10,9 @@ summary: "Takes a file path as input and uses Python to read the metadata from a
 
 # Inspect-Lora
 
-Takes a file path as input and uses Python to read the metadata from a `.safetensors` file. It then pretty-prints the metadata contents to the console and saves it next to the LoRA.
-
 ---
+
+Takes a file path as input and uses Python to read the metadata from a `.safetensors` file. It then pretty-prints the metadata contents to the console and saves it next to the LoRA.
 
 ```pwsh
 <#
