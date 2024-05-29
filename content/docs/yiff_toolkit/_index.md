@@ -50,3 +50,29 @@ git checkout wickerbeast
 ```
 
 Let's continue with downloading some _wickerbeast_ data but don't close the terminal window just yet, for this we'll make good use of the furry <abbr title="image board">booru</abbr> [e621.net](https://e621.net/). There are two nice ways to download data from this site with the metadata intact, I'll start with the fastest and then I will explain how you can selectively browse around the site and get the images you like one by one.
+
+### Grabber
+
+[Grabber](https://github.com/Bionus/imgbrd-grabber) makes your life easier when trying to compile datasets quickly from imageboards.
+
+[![A screenshot of Grabber.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/tutorial/grabber1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/tutorial/grabber1.png)
+
+Clicking on the `Add` button on the Download tab lets you add a `group` which will get downloaded, `Tags` will be the where you can type in the search parameters like you would on e621.net, so for example the string `wickerbeast solo -comic -meme -animated order:score` will search for solo wickerbeast pictures without including comics, memes, and animated posts in descending order of their scores. For training SDXL LoRAs you usually won't need more than 50 images, but you should set the solo group to `40` and add a new group with `-solo` instead of `solo` and set the `Image Limit` to `10` for it to include some images with other characters in it. This will help the model learn a lot better!
+
+You should also enable `Separate log files` for e621, this will download the metadata automatically alongside the pictures.
+
+[![Another screenshot of Grabber.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/tutorial/grabber2.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/tutorial/grabber2.png)
+
+For Pony I've set up the Text file content like so: `rating_%rating%, %all:separator=^, %` for other models you might want to replace `rating_%rating%` with just `%rating%`.
+
+You should also set the `Folder` into which the images will get downloaded. Let's use `C:\training_dir\1_wickerbeast` for both groups.
+
+Now you are ready to right-click on each group and download the images.
+
+---
+
+### Manual Method
+
+This method requires a browser extension like [ViolentMonkey](https://violentmonkey.github.io/) and [this](/docs/userscripts/e621.net-JSON-Button/) UserScript.
+
+This will put a link to the JSON next to the download button on e621.net and e6ai.net and you can use [this](/docs/yiff_toolkit/dataset_tools/e621-JSON-to-Caption/) Python script to convert them to caption files, it uses the `rating_` prefix before `safe/questionable/explicit` because.. you've guessed it, Pony! It also lets you ignore the tags you add into `ignored_tags` using the `r"\btag\b",` syntax, just replace `tag` with the tag you want it to skip.
