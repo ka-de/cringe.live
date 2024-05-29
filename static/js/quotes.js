@@ -349,7 +349,7 @@ function getRandomQuoteHtml() {
   // Format the quote and author in HTML
   const formattedHtml = `
     <blockquote>
-      <p>${randomQuote.quote}</p>
+      <p><em>${randomQuote.quote}</em></p>
       <footer>&mdash; ${randomQuote.author}</footer>
     </blockquote>
   `;
