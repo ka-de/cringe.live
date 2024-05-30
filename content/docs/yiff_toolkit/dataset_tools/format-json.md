@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "🦀 format-json"
-summary: "Formats JSON files from single-line to multi-line format using the jq command-line JSON processor."
+summary: "Formats JSON files from single-line to multi-line format using `serde_json`."
 ---
 
 <!--markdownlint-disable MD025 -->
