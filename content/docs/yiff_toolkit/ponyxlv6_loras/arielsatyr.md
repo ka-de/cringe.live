@@ -14,15 +14,13 @@ summary: "Someone's satyr character."
 
 ## Introduction
 
-{}
+Someone's satyr character.
 
 ## Content
 
 ---
 
-[⬇️ LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/arielsatyr-v2e400.safetensors?download=true)
-
-[⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
+[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/arielsatyr-v2e400.safetensors?download=true)
 
 [⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
 

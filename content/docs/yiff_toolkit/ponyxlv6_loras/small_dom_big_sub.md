@@ -22,9 +22,7 @@ Finally, the small guy gets to be on top! A LoRA trained on images depicting a s
 
 ---
 
-[⬇️ LoRA Download](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/small_dom_big_sub-v2e400.safetensors?download=true)
-
-[⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
+[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/small_dom_big_sub-v2e400.safetensors?download=true)
 
 [⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
 

@@ -24,8 +24,6 @@ Zdzisław Beksiński (24 February 1929 – 21 February 2005) was a renowned Poli
 
 [⬇️ Shrunk LoRA Download (41.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_th-3.55.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (13MB) (UNTESTED)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_beksinski-v1e400_frockpt1_size12_th-3.13.safetensors?download=true)
-
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/by_beksinski)
 
 [📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_beksinski)

@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "amalia"
-summary: "{}"
+summary: "Loli cat girl OC from butterchalk."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -14,7 +14,7 @@ summary: "{}"
 
 ## Introduction
 
-{}
+Loli cat girl OC from butterchalk.
 
 ## Content
 
