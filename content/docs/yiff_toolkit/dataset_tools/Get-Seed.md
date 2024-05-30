@@ -2,6 +2,7 @@
 weight: 20
 bookFlatSection: false
 bookToC: false
+bookHidden: true
 title: "⚡ Get-Seed"
 summary: "Retrieves the `ss_seed` value from the metadata of a `.safetensors` file."
 ---

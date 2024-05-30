@@ -2,6 +2,7 @@
 weight: 20
 bookFlatSection: false
 bookToC: false
+bookHidden: true
 title: "⚡ Format-JSONFiles"
 summary: "Formats JSON files from single-line to multi-line format using the jq command-line JSON processor."
 ---

@@ -1,5 +1,6 @@
 ---
 weight: 20
+bookHidden: true
 bookFlatSection: false
 bookToC: false
 title: "⚡ Inspect-Lora"
