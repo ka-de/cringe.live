@@ -105,12 +105,11 @@ def process_tags(tags_dict):
         else:
             for tag in tags_list:
                 tag = tag.replace("_", " ")
-                # Escape unescaped parentheses
                 tag = re.sub(r"(?<!\\)\(", r"\(", tag)
                 tag = re.sub(r"(?<!\\)\)", r"\)", tag)
                 if tag.lower() == "artist":
                     continue
-                if not should_ignore_tag(tag):
+                if not should_ignore_tag(tag, ignored_tags):
                     category_tags.append(tag)
         processed_tags.extend(category_tags)
     return processed_tags
