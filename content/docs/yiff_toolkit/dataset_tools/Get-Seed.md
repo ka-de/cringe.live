@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 20
 bookFlatSection: false
 bookToC: false
 title: "⚡ Get-Seed"

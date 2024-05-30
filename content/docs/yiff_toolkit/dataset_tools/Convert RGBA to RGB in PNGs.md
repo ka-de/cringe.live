@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 10
 bookFlatSection: false
 bookToC: false
 title: "🐍 Convert RGBA to RGB in PNGs"
