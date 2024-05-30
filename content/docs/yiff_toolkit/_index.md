@@ -101,24 +101,6 @@ Embeddings in Stable Diffusion are high-dimensional representations of input dat
 
 You can find in the [`/embeddings`](https://huggingface.co/k4d3/yiff_toolkit/tree/main/embeddings) folder a whole bunch of them I collected for SD 1.5 that I later converted with [this](https://huggingface.co/spaces/FoodDesert/Embedding_Converter) tool for SDXL.
 
-## ComfyUI Walkthrough any%
-
-⚠️ Coming next year! ⚠️
-
----
-
-## AnimateDiff for Masochists
-
-⚠️ Coming in 2026! ⚠️
-
----
-
-## Stable Cascade Furry Bible
-
-### Resonance Cascade
-
-🍆
-
 ---
 
 ## SDXL Furry Bible
@@ -127,13 +109,15 @@ You can find in the [`/embeddings`](https://huggingface.co/k4d3/yiff_toolkit/tre
 
 [Resolution Lora](https://huggingface.co/jiaxiangc/res-adapter/resolve/main/sdxl-i/resolution_lora.safetensors?download=true) is a nice thing to have, it will help with consistency. For SDXL it is just a LoRA you can load in and it will do its magic. No need for a custom node or extension in this case.
 
+<!-- ⚠️ TODO: PAG + HiDiffusion -->
+
 ### SeaArt Furry
 
 ---
 
 SeaArt's furry model sadly has its cons not just pros, yes it might come with artist knowledge bundled, but it seems to have trouble doing more than one character or everyone is bad at prompting, oh and it uses raw e621 tags, which just means you have to use underscores `_` instead of spaces&nbsp;` `&nbsp; inside the tags.
 
-⚠️ TODO: Prompting tips.
+<!-- ⚠️ TODO: Prompting tips. -->
 
 ### Pony Diffusion V6
 

@@ -8,7 +8,7 @@ summary: "Zdzisław Beksiński’s art style is characterized by its hauntingly 
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# by_beksinski
+# by_beksinski-v1e400
 
 ---
 
@@ -64,20 +64,20 @@ border, black border
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00000019-05290020.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00000019-05290020-upscaled.png?download=true)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00000060-05290121.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00000060-05290121-upscaled.png?download=true)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00000019-05290020-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00000019-05290020-upscaled.png?download=true)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00000060-05290121-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00000060-05290121-upscaled.png?download=true)
 
 </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001683-05290028.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001683-05290028-upscaled.png?download=true)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001697-05290118.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001697-05290118-upscaled.png?download=true)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001683-05290028-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001683-05290028-upscaled.png?download=true)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001697-05290118-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001697-05290118-upscaled.png?download=true)
 
   </div>
 </div>
 <div style="display: flex; justify-content: center;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001705-05290130.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001705-05290130-upscaled.png?download=true)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001705-05290130-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_beksinski/00001705-05290130-upscaled.png?download=true)
 
 </div>
 
