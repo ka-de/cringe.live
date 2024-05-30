@@ -44,13 +44,19 @@ Keywords:
 
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/{})
+[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/analbeads-v1e400.json)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/{}.json)
+## 📐 Dataset
 
-<!--
-[🧺 Sample Prompts]()
--->
+---
+
+[anal_beads_in_ass](https://huggingface.co/datasets/k4d3/furry/tree/main/anal_beads_in_ass)
+
+[anal_beads_in_pussy](https://huggingface.co/datasets/k4d3/furry/tree/main/anal_beads_in_pussy)
+
+[anal_beads_in_nipple](https://huggingface.co/datasets/k4d3/furry/tree/main/anal_beads_in_nipple)
+
+[anal_beads_in_urethra](https://huggingface.co/datasets/k4d3/furry/tree/main/anal_beads_in_urethra)
 
 ## Prompting Guide
 
