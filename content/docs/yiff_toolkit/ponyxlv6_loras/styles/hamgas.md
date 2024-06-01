@@ -2,37 +2,41 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "amalia"
-summary: "Loli cat girl OC from butterchalk."
+title: "hamgas"
+summary: "{}"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# amalia-v2e400
+# hamgas-v1e400
 
 ---
 
 ## Introduction
 
-Loli cat girl OC from butterchalk.
+{}
 
 ## Content
 
 ---
 
-[⬇️ LoRA Download (149MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/amalia-v2e400.safetensors?download=true)
+[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/hamgas-v1e400.safetensors?download=true)
 
 [⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
 
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](<https://huggingface.co/datasets/k4d3/furry/tree/main/amalia_(claralaine)>)
+[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_hamgas)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/amalia-v2e400.json)
+[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/hamgas-v1e400.json)
 
 ## Prompting Guide
 
 ---
+
+Keyword:
+
+- `hamgas`
 
 {}
 

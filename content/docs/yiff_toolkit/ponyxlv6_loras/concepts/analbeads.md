@@ -18,7 +18,7 @@ Keywords:
 
   > Self explanatory, right where it belongs! In the anus!
   >
-  > A helper function. You can put `anal_beads_in_ass` in the negative so CLIP doesn't fuck around putting anal beads into every hole!
+  > You can put `anal beads in ass` in the negative so CLIP doesn't fuck around putting anal beads into every hole!
 
 - `anal beads in pussy`
 

@@ -38,6 +38,8 @@ Keyword:
 
 - `by himari`
 
+I recommend starting `1024x1024` at `11.0` CFG and then do a second pass on it at `1536x1536` with CFG at `6.0` with the denoise at `0.69`.
+
 ### Suggested Tags
 
 ```md
@@ -52,9 +54,7 @@ This digital artwork image presents a solo anthropomorphic female reptile specif
 
 ### Suggested Negative
 
-```md
-{}
-```
+The LoRA is extremely biased towards `blurry background` and `two tone body`.
 
 ## Example Images
 
@@ -63,14 +63,14 @@ This digital artwork image presents a solo anthropomorphic female reptile specif
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000418-04190818-512.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000418-04190818.png)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00001078-04190837-512.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00001078-04190837.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000418-04190818.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000418-04190818.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00001078-04190837.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00001078-04190837.png)
 
 </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000005-06011347-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000005-06011347.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000007-06011350-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000007-06011350.png)
 
   </div>
 </div>
