@@ -16,6 +16,8 @@ summary: "A tiny LoRA trained on 4 images by [@147Penguinmw](https://twitter.com
 
 A tiny LoRA trained on 4 images by [@147Penguinmw](https://twitter.com/147Penguinmw).
 
+Himari’s art style is a captivating blend of anime influences with plenty of cultural touches ranging from Japanese attires to the setting. Combined with an excellent shading technique and clean lines and the use of vibrant colors.
+
 ## Content
 
 ---
@@ -40,17 +42,9 @@ Keyword:
 
 I recommend starting `1024x1024` at `11.0` CFG and then do a second pass on it at `1536x1536` with CFG at `6.0` with the denoise at `0.69`.
 
-### Suggested Tags
+### Example Prompt
 
-```md
-<!-- Example Prompt -->
-
-score_9, score_8_up, score_7_up, score_6_up, source_furry, rating_explicit, on back, sexy pose,
-full-length portrait, pussy, solo, reptile, scalie, anthro female lizard, scales, blush,
-blue eyes, white body, blue body, plant, blue scales, white scales, detailed background,
-looking at viewer, furniture, digital media \(artwork\),
-This digital artwork image presents a solo anthropomorphic female reptile specifically a lizard with a white body adorned with detailed blue scales.,
-```
+> `score_9, score_8_up, score_7_up, score_6_up, source_furry, rating_explicit, on back, sexy pose, full-length portrait, pussy, solo, reptile, scalie, anthro female lizard, scales, blush, blue eyes, white body, blue body, plant, blue scales, white scales, detailed background, looking at viewer, furniture, digital media \(artwork\), This digital artwork image presents a solo anthropomorphic female reptile specifically a lizard with a white body adorned with detailed blue scales.,`
 
 ### Suggested Negative
 
