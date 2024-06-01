@@ -40,7 +40,7 @@ Keyword:
 
 - `by himari`
 
-I recommend starting `1024x1024` at `11.0` CFG and then do a second pass on it at `1536x1536` with CFG at `6.0` with the denoise at `0.69`.
+I recommend starting `1024x1024` at `11.0` CFG with `Euler a` and then do a second pass on it at `1536x1536` with CFG at `6.0` with the denoise between `0.60` and `0.69` either with `Euler a` or `DPM++ 2M Karras`.
 
 ### Example Prompt
 

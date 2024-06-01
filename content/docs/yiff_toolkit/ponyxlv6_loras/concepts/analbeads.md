@@ -81,19 +81,19 @@ Keywords:
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000045-06011658-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000045-06011658.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000057-06011716-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000057-06011716.png)
 
 </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000064-06011732-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000064-06011732.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000073-06011754-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000073-06011754.png)
 
   </div>
 </div>
 <div style="display: flex; justify-content: center;">
 
-[![An AI generated image.](small.png)](large.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000080-06011803-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000080-06011803.png)
 
 </div>

@@ -38,7 +38,7 @@ Keyword:
 
 - `darkgem` (Only use it if you want your character to end up `holding a dark red gem`)
 
-I recommend first an `Euler a` with `40` steps, CFG set to `11` at 1024x1024 resolution and then a hi-res pass at 1536x1536 with `DPM++ 2M Karras` at 60 steps with denoise set at `0.69` for the highest levels of darkgem.
+I recommend first an `Euler a` with `40` steps, CFG set to `11` at 1024x1024 resolution and then a hi-res pass at 1536x1536 with `DPM++ 2M Karras` at 60 steps with denoise set between `0.40` and `0.69` for the highest levels of darkgem, but using `DPM++ 2M Karras` on both steps is also fine.
 
 ### Suggested Tags
 

@@ -12,7 +12,7 @@ summary: "Loads `eva02-vit-large-448-8046`, applies it to a set of images in a s
 
 ---
 
-Applies a pre-trained model (`eva02-vit-large-448-8046`) to a set of images in a specified directory and write the model’s output tags to a text file for each image. The script first loads the model and sets it to evaluation mode. It then defines image transformations, including resizing, tensor conversion, and normalization. The script also handles specific image formats, converting WebP images to PNG and replacing any alpha channels with black. It then applies the model to each image, calculates the probabilities of each tag, and writes the tags that exceed a certain threshold to a text file. The script also handles ignored tags and replaces certain tags with their counterparts.
+Applies a pre-trained model (`eva02-vit-large-448-8046`) to a set of images in a specified directory and writes the model’s output tags to a text file for each image. The script first loads the model and sets it to evaluation mode. It then defines image transformations, including resizing, tensor conversion, and normalization. The script also handles specific image formats, converting WebP images to PNG and replacing any alpha channels with black. It then applies the model to each image, calculates the probabilities of each tag, and writes the tags that exceed a certain threshold to a text file. The script also handles ignored tags and replaces certain tags with their counterparts.
 
 ```python
 import os
