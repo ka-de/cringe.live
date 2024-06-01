@@ -46,12 +46,6 @@ Keyword:
 detailed background, amazing_background, scenery porn, feral,
 ```
 
-### Suggested Negative
-
-```md
-{}
-```
-
 ## Example Images
 
 ---
