@@ -70,6 +70,6 @@ The LoRA is extremely biased towards `blurry background` and `two tone body`.
 </div>
 <div style="display: flex; justify-content: center;">
 
-[![An AI generated image.](small.png)](large.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000033-06011636-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000033-06011636.png)
 
 </div>
