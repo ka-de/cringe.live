@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "tibetan"
-summary: "The Tibetan Sand Fox is a unique fox species known for its square head and dense coat, inhabiting the high Tibetan Plateau. 😒"
+summary: "The Tibetan Sand Fox is a unique fox species known for its square head and dense coat, inhabiting the high Tibetan Plateau with an unamused expression."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
