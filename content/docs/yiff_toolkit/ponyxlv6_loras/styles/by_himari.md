@@ -14,6 +14,8 @@ summary: "A tiny LoRA trained on 4 images by [@147Penguinmw](https://twitter.com
 
 ## Introduction
 
+---
+
 A tiny LoRA trained on 4 images by [@147Penguinmw](https://twitter.com/147Penguinmw).
 
 Himari’s art style is a captivating blend of anime influences with plenty of cultural touches ranging from Japanese attires to the setting. Combined with an excellent shading technique and clean lines and the use of vibrant colors.

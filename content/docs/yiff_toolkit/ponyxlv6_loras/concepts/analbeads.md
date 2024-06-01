@@ -10,6 +10,12 @@ summary: "Oh my God! A sex toy! 🙀"
 
 # analbeads-v1e400
 
+---
+
+## Introduction
+
+---
+
 Anal beads are sex toys consisting of a number of round beads on a string, which are intended for insertion into the anus, but they may be inserted into other orifices as well. This LoRA aims to help with just that!
 
 Keywords:
@@ -27,10 +33,6 @@ Keywords:
   > Anal beads inserted into the vagina.
 
 ---
-
-## Introduction
-
-{}
 
 ## Content
 
