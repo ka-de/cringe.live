@@ -2,33 +2,33 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "blue_frost"
-summary: "A bit of an experiment trying to make generating kitsch winter scenes easier."
+title: "cooliehigh"
+summary: "{}"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# blue_frost
+# cooliehigh-v1e45
 
 ---
 
 ## Introduction
 
-A bit of an experiment trying to make generating kitsch winter scenes easier. Originally trained for base SDXL, but it seems to work with PonyXL just fine. If you can call kitsch fine, anyway..
+{}
 
 ## Content
 
 ---
 
-[⬇️ LoRA Download (218MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/blue_frost.safetensors?download=true)
+[⬇️ LoRA Download (58.4MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/cooliehigh-v1e45.safetensors?download=true)
 
 [⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
 
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/blue_frost)
+[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_cooliehigh)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/blue_frost.json)
+[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/cooliehigh-v1e45.json)
 
 ## Prompting Guide
 

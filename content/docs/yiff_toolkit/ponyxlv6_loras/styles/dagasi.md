@@ -2,33 +2,33 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "blue_frost"
-summary: "A bit of an experiment trying to make generating kitsch winter scenes easier."
+title: "dagasi"
+summary: "{}"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# blue_frost
+# dagasi-v1e134
 
 ---
 
 ## Introduction
 
-A bit of an experiment trying to make generating kitsch winter scenes easier. Originally trained for base SDXL, but it seems to work with PonyXL just fine. If you can call kitsch fine, anyway..
+{}
 
 ## Content
 
 ---
 
-[⬇️ LoRA Download (218MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/blue_frost.safetensors?download=true)
+[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/dagasi-v1e134.safetensors?download=true)
 
 [⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
 
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/blue_frost)
+[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_dagasi)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/blue_frost.json)
+[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/dagasi-v1e134.json)
 
 ## Prompting Guide
 
