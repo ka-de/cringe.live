@@ -61,19 +61,19 @@ abstract background, simple background
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/realistic/00001231-04070113.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/realistic/00001231-04070113.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/realistic/00000685-04021915.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/realistic/00000685-04021915.png)
 
 </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/realistic/00000703-04021946.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/realistic/00000703-04021946.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/realistic/00000706-04021959.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/realistic/00000706-04021959.png)
 
   </div>
 </div>
 <div style="display: flex; justify-content: center;">
 
-[![An AI generated image.](small.png)](large.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/realistic/00000754-04030229.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/realistic/00000754-04030229.png)
 
 </div>
