@@ -81,13 +81,16 @@ fn main() {
 Sort by a custom comparator:
 
 ```rust
-numbers.sort_by(|a, b| b.cmp(a)); // sort in descending order
-println!("Sorted in descending order: {:?}", numbers);
+fn main() {
+    let mut numbers = vec![4, 6, 3, 10, 51, 1, 152, 616, 25195, 259125];
+    numbers.sort_by(|a, b| b.cmp(a)); // sort in descending order
+    println!("Sorted in descending order: {:?}", numbers);
+}
 ```
 
 ## Sorting Structs
 
-Sort a vector of structs:
+You can sort a vector of structs, like this code, which creates a vector of `Person` structs and sorts them by age in ascending order. After sorting, it prints each person’s name and age.
 
 ```rust
 #[derive(Debug)]
@@ -96,14 +99,18 @@ struct Person {
     age: u32,
 }
 
-let mut people = vec![
-    Person { name: "Alice".to_string(), age: 25 },
-    Person { name: "Bob".to_string(), age: 30 },
-    Person { name: "Charlie".to_string(), age: 22 },
-];
+fn main() {
+    let mut people = vec![
+        Person { name: "Alice".to_string(), age: 25 },
+        Person { name: "Bob".to_string(), age: 30 },
+        Person { name: "Charlie".to_string(), age: 22 }
+    ];
 
-people.sort_by_key(|p| p.age);
-println!("Sorted by age: {:?}", people);
+    people.sort_by_key(|p| p.age);
+    for person in &people {
+        println!("{} is {} years old", person.name, person.age);
+    }
+}
 ```
 
 ## Deduplication
