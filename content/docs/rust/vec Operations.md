@@ -127,6 +127,48 @@ fn main() {
 }
 ```
 
+You can manually implement the Ord trait on your Person struct to define a custom sorting order. Here’s how:
+
+```rust
+use std::cmp::Ordering;
+
+#[derive(Debug, Eq, PartialEq)]
+struct Person {
+    name: String,
+    age: u32,
+}
+
+impl Ord for Person {
+    fn cmp(&self, other: &Self) -> Ordering {
+        self.age.cmp(&other.age)
+    }
+}
+
+impl PartialOrd for Person {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
+    }
+}
+
+fn main() {
+    let mut people = vec![
+        Person { name: "Alice".to_string(), age: 25 },
+        Person { name: "Bob".to_string(), age: 30 },
+        Person { name: "Charlie".to_string(), age: 22 }
+    ];
+
+    people.sort();
+
+    for person in &people {
+        println!("{:?}", person);
+    }
+}
+```
+
+In this example, the `Person` struct is sorted by `age`. The `cmp` method in the `Ord` trait implementation is used to compare `Person` instances based on their `age`. The `partial_cmp` method in the `PartialOrd` trait implementation calls the `cmp` method to get the `Ordering`. The sort method is then used to sort the people vector. The `Eq` and `PartialEq` traits are also derived so that `Person` instances can be compared for equality. This is required by the `Ord` and `PartialOrd` traits.
+
+Please note that this will sort the `Person` instances in ascending order of their `age`. If you want to sort them in descending order, you can use `people.sort_by(|a, b| b.age.cmp(&a.age));` instead of `people.sort()`;.
+
 ## Deduplication
 
 Remove duplicates:
