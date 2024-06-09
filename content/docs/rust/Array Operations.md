@@ -88,7 +88,7 @@ fn main() {
 }
 ```
 
-In this code `numbers.sort_by(|a, b| b.cmp(a));` sorts the `numbers` vector in descending order. The comparator function `|a, b| b.cmp(a)` compares `b` with `a`. If `b` is less than `a`, Less is returned. If `b` is equal to `a`, `Equal` is returned. If `b` is greater than `a`, `Greater` is returned. Since `sort_by` sorts in ascending order by default, returning `Greater` when `b` is greater than `a` results in a descending sort. The sorted vector is then printed.
+In this code `numbers.sort_by(|a, b| b.cmp(a));` sorts the `numbers` vector in descending order. The comparator function `|a, b| b.cmp(a)` compares `b` with `a`. If `b` is less than `a`, `Less` is returned. If `b` is equal to `a`, `Equal` is returned. If `b` is greater than `a`, `Greater` is returned. Since `sort_by` sorts in ascending order by default, returning `Greater` when `b` is greater than `a` results in a descending sort. The sorted vector is then printed.
 
 ## Sorting Structs
 
