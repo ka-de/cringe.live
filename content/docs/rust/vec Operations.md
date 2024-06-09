@@ -127,7 +127,7 @@ fn main() {
 }
 ```
 
-You can manually implement the Ord trait on your Person struct to define a custom sorting order. Here’s how:
+You can manually implement the `Ord` trait on your `Person` struct to define a custom sorting order. Here’s how:
 
 ```rust
 use std::cmp::Ordering;
