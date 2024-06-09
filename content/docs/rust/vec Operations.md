@@ -38,12 +38,24 @@ We can perform a binary search on this:
 fn main() {
     let mut numbers = vec![4, 6, 3, 10, 51, 1, 152, 616, 25195, 259125];
 
+    // In order to use binary search properly you need to sort the vector first!
+    numbers.sort();
+
     let target = 152;
     match numbers.binary_search(&target) {
         Ok(index) => println!("Found {} at index {}", target, index),
         Err(_) => println!("{} not found in the array", target),
     }
 }
+```
+
+An alternative for unsorted arrays is to use linear search ($O(n)$ time).
+
+```rust
+    match numbers.iter().position(|&x| x == target) {
+        Some(index) => println!("Found {} at index {}", target, index),
+        None => println!("{} not found in the array", target),
+    }
 ```
 
 ## Filtering
