@@ -66,8 +66,14 @@ fn main() {
 Transform elements using `map()`:
 
 ```rust
-let squared_numbers: Vec<_> = numbers.iter().map(|&x| x * x).collect();
-println!("Squared numbers: {:?}", squared_numbers);
+fn main() {
+    let numbers = vec![4, 6, 3, 10, 51, 1, 152, 616, 25195, 259125];
+    let squared_numbers: Vec<_> = numbers
+        .iter()
+        .map(|&x| (x as i64) * (x as i64))
+        .collect();
+    println!("Squared numbers: {:?}", squared_numbers);
+}
 ```
 
 ## Custom Comparator
