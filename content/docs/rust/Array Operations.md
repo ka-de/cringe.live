@@ -118,44 +118,67 @@ fn main() {
 Remove duplicates:
 
 ```rust
-numbers.sort();
-numbers.dedup();
-println!("Deduplicated: {:?}", numbers);
+fn main() {
+    let mut numbers = vec![4, 6, 4, 3, 10, 10, 51, 1, 152, 200, 616, 200, 25195, 259125];
+    numbers.sort();
+    numbers.dedup();
+    println!("Deduplicated: {:?}", numbers);
+}
 ```
 
 ## Finding Elements
 
-```rust
-let first_even = numbers.iter().find(|&&x| x % 2 == 0);
-println!("First even number: {:?}", first_even);
+1. **Find the first even number in a vector:** The `numbers.iter().find(|&&x| x % 2 == 0)` line iterates over the `numbers` vector and uses the `find` method to return the first number that satisfies the condition `x % 2 == 0`, which checks if a number is even. The result (which is an `Option`) is stored in `first_even`. The `match` statement then checks this `Option`. If an even number is found (`Some(&number)`), it prints "First even number: {number}". If no even number is found (`None`), it prints "No even number found".
 
-let position = numbers.iter().position(|&x| x > 100);
-println!("Index of first number > 100: {:?}", position);
+2. **Find the index of the first number greater than 100 in the vector:** The `numbers.iter().position(|&x| x > 100)` line iterates over the `numbers` vector and uses the `position` method to return the index of the first number that satisfies the condition `x > 100`. The result (which is an `Option`) is stored in `position`. The `match` statement then checks this `Option`. If a number greater than 100 is found (`Some(index)`), it prints "Index of first number > 100: {index}". If no such number is found (`None`), it prints "No number > 100 found".
+
+```rust
+fn main() {
+    let numbers = vec![4, 6, 4, 3, 10, 10, 51, 1, 152, 200, 616, 200, 25195, 259125];
+    let first_even = numbers.iter().find(|&&x| x % 2 == 0);
+    match first_even {
+        Some(&number) => println!("First even number: {}", number),
+        None => println!("No even number found"),
+    }
+
+    let position = numbers.iter().position(|&x| x > 100);
+    match position {
+        Some(index) => println!("Index of first number > 100: {}", index),
+        None => println!("No number > 100 found"),
+    }
+}
 ```
 
 ## Folding (Reducing)
 
 ```rust
-let sum: i32 = numbers.iter().fold(0, |acc, &x| acc + x);
-println!("Sum: {}", sum);
-
-let product: i32 = numbers.iter().fold(1, |acc, &x| acc * x);
-println!("Product: {}", product);
+fn main() {
+    let numbers = vec![4, 6, 4, 3, 10, 10, 51, 1, 152, 200, 616, 200, 25195, 259125];
+    let sum: i32 = numbers.iter().fold(0, |acc, &x| acc + x);
+    println!("Sum: {}", sum);
+    let product: f64 = numbers
+        .iter()
+        .map(|&x| x as f64)
+        .fold(1.0, |acc, x| acc * x);
+    println!("Product: {}", product);
+}
 ```
 
 ## Capacity and Length
 
 ```rust
-let mut v = Vec::with_capacity(10);
-v.push(1);
-v.push(2);
+fn main() {
+    let mut v = Vec::with_capacity(10);
+    v.push(1);
+    v.push(2);
 
-println!("Length: {}, Capacity: {}", v.len(), v.capacity());
+    println!("Length: {}, Capacity: {}", v.len(), v.capacity());
+}
 ```
 
 ## Shrinking to Fit
 
 ```rust
-v.shrink_to_fit();
-println!("After shrink_to_fit - Length: {}, Capacity: {}", v.len(), v.capacity());
+    v.shrink_to_fit();
+    println!("After shrink_to_fit - Length: {}, Capacity: {}", v.len(), v.capacity());
 ```
