@@ -37,9 +37,6 @@ We can perform a binary search on this:
 ```rust
 fn main() {
     let mut numbers = vec![4, 6, 3, 10, 51, 1, 152, 616, 25195, 259125];
-    numbers.sort();
-
-    println!("Sorted numbers: {:?}", numbers);
 
     let target = 152;
     match numbers.binary_search(&target) {
