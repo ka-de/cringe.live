@@ -89,7 +89,7 @@ drive.mount('/content/drive')
     "key": "ctrl+alt+k",
     "command": "editor.action.insertSnippet",
     "args": {
-        "snippet": "{{</* katex display=true >}}\\n\\$TM_SELECTED_TEXT\\n{{< /katex */>}}"
+        "snippet": "$$\\n\\$TM_SELECTED_TEXT\\n$$"
     },
     "when": "editorTextFocus && !editorReadonly"
 },
@@ -97,7 +97,7 @@ drive.mount('/content/drive')
     "key": "ctrl+alt+l",
     "command": "editor.action.insertSnippet",
     "args": {
-        "snippet": "{{</* katex >}}\\$TM_SELECTED_TEXT{{< /katex */>}}"
+        "snippet": "$\\$TM_SELECTED_TEXT$"
     },
     "when": "editorTextFocus && !editorReadonly"
 },
