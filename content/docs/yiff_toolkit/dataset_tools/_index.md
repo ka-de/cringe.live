@@ -13,6 +13,6 @@ summary: 'A "small" collection of Python and PowerShell scripts that dataset cur
 
 ---
 
-A "small" collection of Python and PowerShell scripts that dataset curators might find handy. The ⚡ in the title means it is a PowerShell script and 🐍 means Python.
+A "small" collection of Python and PowerShell scripts that dataset curators might find handy. The ⚡ in the title means it is a PowerShell script and 🐍 means Python and a 🦀 means Rust of course!
 
 {{< section details >}}

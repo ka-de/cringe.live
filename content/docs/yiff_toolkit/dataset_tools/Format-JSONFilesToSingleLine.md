@@ -4,7 +4,7 @@ bookFlatSection: false
 bookToC: false
 bookHidden: true
 title: "⚡ Format-JSONFilesToSingleLine"
-summary: "Formats JSON files to a single-line format using the jq utility."
+summary: "Formats JSON files to a single-line format using the `jq` utility."
 ---
 
 <!--markdownlint-disable MD025 -->
