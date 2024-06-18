@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Spherical Linear Interpolation"
+summary: "A method used in computer graphics to interpolate between two points on a sphere. It’s particularly useful for smooth transitions."
 ---
 
 <!--markdownlint-disable MD025 -->

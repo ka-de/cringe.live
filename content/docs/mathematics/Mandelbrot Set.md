@@ -3,6 +3,7 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "Mandelbrot Set"
+summary: "A fascinating concept in the field of complex dynamics. It includes all complex numbers, $c$, for which this sequence does not diverge to infinity."
 ---
 
 <!--markdownlint-disable MD025 -->
