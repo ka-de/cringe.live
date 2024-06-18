@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: true
 title: "bytemuck"
-summary: "The bytemuck crate offers Rust developers a safe, zero-cost way to perform type transmutations, crucial for low-level systems programming and interfacing with foreign data structures."
+summary: "The `bytemuck` crate offers Rust developers a safe, zero-cost way to perform type transmutations, crucial for low-level systems programming and interfacing with foreign data structures."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
