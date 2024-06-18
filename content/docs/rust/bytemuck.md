@@ -1,7 +1,7 @@
 ---
 weight: 1
 bookFlatSection: false
-bookToC: false
+bookToC: true
 title: "bytemuck"
 ---
 
