@@ -14,9 +14,9 @@ title: "sccache"
 To install it all you need to do is type in
 
 ```bash
-cargo install sccache --locked
+cargo install sccache
 ```
 
 and then set the environment variable `RUSTC_WRAPPER`, but make sure you use the correct path to sccache!
 
-![An image explaining how to set the environment variable.](/static/images/rust/sscache-1.png)
+![An image explaining how to set the environment variable.](/static/images/rust/sccache-1.png)
