@@ -5,6 +5,8 @@ title: "Markov Chain"
 bookToC: false
 ---
 
+<!--markdownlint-disable MD025 -->
+
 # Markov Chain
 
 A **Markov chain**, also known as a Markov process, is a mathematical model that describes a sequence of possible events, where the probability of each event depends only on the state attained in the previous event. This property is often characterized as "memorylessness".
