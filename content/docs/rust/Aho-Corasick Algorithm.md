@@ -91,3 +91,43 @@ fn main() {
     stdout.execute(Print(&haystack[last_end..])).unwrap();
 }
 ```
+
+## Stream replace all
+
+This example shows how to replace all occurrences of multiple patterns simultaneously.
+
+```rust
+    let patterns = &["fox", "brown", "quick"];
+    let replace_with = &["sloth", "grey", "slow"];
+
+    // The text to search in
+    let haystack = "The quick brown fox.";
+    // Creating a new AhoCorasick automaton with the given patterns
+    let ac = AhoCorasick::new(patterns).unwrap();
+
+    // Replacing all occurrences of the patterns in the text and storing the result
+    let mut result = vec![];
+    ac.try_stream_replace_all(haystack.as_bytes(), &mut result, replace_with).expect(
+        "try_stream_replace_all failed"
+    );
+
+    // Converting the result to a string
+    let result_str = String::from_utf8(result).unwrap();
+
+    // Finding all occurrences of the replacement patterns in the result and storing their ids and positions
+    let mut matches = vec![];
+    for mat in ac.find_iter(&result_str) {
+        matches.push((mat.pattern().as_usize(), mat.start(), mat.end()));
+    }
+
+    let mut last_end = 0;
+    for (id, start, end) in matches.iter() {
+        let color = color_map.entry(*id).or_insert(colors[rng.gen_range(0..colors.len())]);
+        stdout.execute(Print(&result_str[last_end..*start])).unwrap();
+        stdout.execute(SetForegroundColor(*color)).unwrap();
+        stdout.execute(Print(&result_str[*start..*end])).unwrap();
+        stdout.execute(ResetColor).unwrap();
+        last_end = *end;
+    }
+    stdout.execute(Print(&result_str[last_end..])).unwrap();
+```
