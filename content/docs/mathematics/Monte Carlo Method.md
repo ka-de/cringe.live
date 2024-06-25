@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 title: "Monte Carlo Method"
 bookToC: false
+summary: ""
 ---
 
 <!--markdownlint-disable MD025 -->
