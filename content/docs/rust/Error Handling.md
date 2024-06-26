@@ -208,7 +208,7 @@ In this example, the `?` operator automatically converts `io::Error` and `ParseI
 
 ### Using `?` in `main()`
 
-Starting from Rust 1.26, you can use ? in main() if the return type is Result<(), E>:
+You can use `?` in `main()` if the return type is `Result<(), E>`:
 
 ```rust
 use std::fs::File;
