@@ -4,6 +4,7 @@ bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
 title: "🐍 - Python"
+summary: "Python is a **high-level, interpreted programming language** known for its clear syntax, code readability, and emphasis on developer productivity, making it a popular choice for a wide range of applications, from web development to data analysis and machine learning."
 ---
 
 <!--markdownlint-disable MD025  -->

@@ -2,6 +2,7 @@
 weight: 3
 title: The Frobenius Norm
 type: docs
+summary: "The Frobenius norm of a matrix is defined as the square root of the sum of the absolute squares of its elements, providing a measure of the magnitude of the matrix."
 ---
 
 <!-- markdownlint-disable MD025 -->
@@ -14,12 +15,16 @@ The Frobenius norm, named after the German mathematician Ferdinand Georg Frobeni
 
 ## Key Features
 
+---
+
 - **Holistic Measure**: The Frobenius norm considers all the elements of the matrices, giving a holistic measure of the discrepancy between them.
 - **Analogous to Euclidean Norm**: The Frobenius norm is analogous to the Euclidean norm for vectors, making it a natural choice for measuring errors in matrix form.
 - **Ease of Computation**: It is relatively easy to compute, involving standard operations like squaring, summing, and square rooting.
 - **Scale Sensitivity**: The Frobenius norm is sensitive to the scale of the matrices, which means it reflects the absolute size of the errors.
 
 ## Mathematical Definition
+
+---
 
 Mathematically, the Frobenius norm of a matrix $A$ is defined as the square root of the sum of the absolute squares of its elements
 
@@ -30,6 +35,8 @@ $$
 Where $a_{ij}$ represents the elements of the matrix $A$, and $m$ and $n$ are the dimensions of the matrix.
 
 ## Properties
+
+---
 
 The Frobenius norm has several important properties that make it particularly useful in the field of numerical linear algebra:
 
@@ -42,5 +49,7 @@ $$
 - **Extension of Euclidean Norm**: The Frobenius norm can also be considered as an extension of the Euclidean norm from vectors to matrices. This makes it a natural choice for measuring the “distance” between two matrices.
 
 ## Applications
+
+---
 
 The Frobenius norm is widely used in various fields such as machine learning, data mining, and image processing. It is often used to measure the error of a matrix approximation, to regularize a matrix in optimization problems, or to measure the “distance” between two matrices in various machine learning algorithms.

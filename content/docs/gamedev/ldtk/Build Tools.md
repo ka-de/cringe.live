@@ -4,6 +4,7 @@ bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
 title: "Build Tools"
+summary: "These scripts are for building tools that recompile the LDTK engine, remove Haxe libraries, and start the LDTK application."
 ---
 
 <!--markdownlint-disable MD025 -->

@@ -3,12 +3,14 @@ weight: 1
 bookFlatSection: false
 title: "Markov Chain"
 bookToC: false
-summary: ""
+summary: "A Markov chain is a statistical model that undergoes transitions from one state to another within a finite or countable number of possible states, where the probability of transitioning to any particular state depends solely on the current state and not on the sequence of states that preceded it."
 ---
 
 <!--markdownlint-disable MD025 -->
 
 # Markov Chain
+
+---
 
 A **Markov chain**, also known as a Markov process, is a mathematical model that describes a sequence of possible events, where the probability of each event depends only on the state attained in the previous event. This property is often characterized as "memorylessness".
 
@@ -25,6 +27,8 @@ Markov chains have many applications as statistical models of real-world process
 The adjectives Markovian and Markov are used to describe something that is related to a Markov process. Overall, a Markov chain is a powerful tool in probability theory and statistics that is used to model systems that follow a chain of linked events, where what happens next depends only on the current state of the system.
 
 ## Code Example
+
+---
 
 A simple weather simulation based on a Markov Chain. The weather of the current day is used to probabilistically determine the weather of the next day. The weather can be “rainy”, “cloudy”, or “sunny”, and the transitions between these states are determined by the Markov Chain. The simulation runs for 30 days, starting with a “rainy” day. The weather for each day is printed to the console.
 

@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 title: "Endosymbiont"
 bookToC: false
+summary: "An endosymbiont is an organism that lives within the body or cells of another organism, typically forming a mutualistic relationship, which is a key concept in the endosymbiotic theory of organelle evolution."
 ---
 
 <!--markdownlint-disable MD025 -->

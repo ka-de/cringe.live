@@ -10,6 +10,8 @@ summary: "A norm is a mathematical function that assigns a positive length or si
 
 # Norm
 
+---
+
 In mathematics, a **norm** is a function that assigns a strictly positive length or size to each vector in a vector space. It is a total size or length of all vectors in a vector space or matrices. For simplicity, let us consider it in a two-dimensional space. The norm of a vector $x = (x_1, x_2)$ is given by:
 
 $$ ||x|| = \sqrt{x_1^2 + x_2^2} $$
@@ -22,6 +24,8 @@ In machine learning, we use norms to understand and measure the error of a model
 
 ## Properties of Norms
 
+---
+
 Norms have several important properties:
 
 1. Non-negativity: $||x|| \geq 0$ for all $x$
@@ -31,6 +35,8 @@ Norms have several important properties:
 
 ## Types of Norms
 
+---
+
 There are various types of norms, each with specific applications:
 
 1. p-norm (Lp norm): $||x||_p = (\sum |x_i|^p)^{1/p}$, where $p \geq 1$
@@ -39,11 +45,15 @@ There are various types of norms, each with specific applications:
 
 ## Induced Matrix Norms
 
+---
+
 Norms can be defined for matrices based on their effect on vector norms. For a matrix $A$ and vector $x$:
 
 $||A|| = \sup\{||Ax|| : ||x|| = 1\}$
 
 ## Applications in Mathematics and Machine Learning
+
+---
 
 1. Normalized vectors: A vector with a norm of 1 is called a unit vector or normalized vector.
 2. Functional analysis: Norms are crucial in defining metric spaces and studying convergence in infinite-dimensional spaces.
@@ -52,6 +62,8 @@ $||A|| = \sup\{||Ax|| : ||x|| = 1\}$
 5. Inner products: In inner product spaces, norms can be derived from inner products: $||x|| = \sqrt{\langle x, x \rangle}$
 
 ## Advanced Concepts
+
+---
 
 1. Dual norms: For every norm, there exists a dual norm defined on the dual space.
 2. Normed algebras: Norms can be defined on algebras, leading to the study of Banach algebras and C*-algebras in functional analysis.

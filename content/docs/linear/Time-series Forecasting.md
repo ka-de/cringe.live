@@ -1,6 +1,8 @@
 ---
 title: Time-series Forecasting
 type: docs
+bookToC: false
+summary: "Time-series forecasting is a technique that uses historical and current data to predict future values, guiding strategic decision-making and understanding future trends."
 ---
 
 <!-- markdownlint-disable MD025 -->
@@ -12,6 +14,8 @@ type: docs
 Time-series forecasting is a method used to predict future data points by analyzing past trends and patterns in time-series data. A time-series is a sequence of data points collected or recorded at successive time intervals. It’s widely applied in various domains such as finance, retail, healthcare, and natural sciences for critical tasks like supply chain optimization, energy prediction, and weather forecasting.
 
 ## Key Aspects
+
+---
 
 ### Historical Data
 

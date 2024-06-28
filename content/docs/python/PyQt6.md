@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "PyQt6"
+summary: "This post provides a detailed guide on how to create a PyQt6 application with a resizable `QLabel`, a `QPushButton`, and a `QSlider`, and how to change the font size and text of the `QLabel` dynamically."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

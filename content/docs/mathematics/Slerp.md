@@ -28,6 +28,8 @@ Where:
 
 ## Example Code
 
+---
+
 ```rust
 use nalgebra::UnitQuaternion;
 

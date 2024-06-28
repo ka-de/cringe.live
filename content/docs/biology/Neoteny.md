@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 title: "Neoteny"
 bookToC: false
+summary: "Neoteny, also known as juvenilization, is the delaying or slowing of the physiological development of an organism, typically resulting in the retention of juvenile traits into adulthood."
 ---
 
 <!--markdownlint-disable MD025 -->

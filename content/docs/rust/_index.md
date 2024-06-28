@@ -4,6 +4,7 @@ bookFlatSection: false
 bookCollapseSection: true
 bookToC: true
 title: "🦀 - Rust"
+summary: "Rust is a multi-paradigm, general-purpose programming language that emphasizes performance, type safety, and concurrency, enforcing memory safety without a garbage collector, and is widely adopted for systems programming, building kernels for operating systems, game engines, and browser engines."
 ---
 
 <!--markdownlint-disable MD025 MD029 MD033 -->

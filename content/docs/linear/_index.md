@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookCollapseSection: true
 title: "↗️ - Linear Algebra"
+summary: "Linear algebra is a branch of mathematics that deals with vectors, matrices, and linear transformations, and is fundamental to many areas of mathematics, sciences, and engineering."
 ---
 
 <!--markdownlint-disable MD033 MD029 MD025 -->

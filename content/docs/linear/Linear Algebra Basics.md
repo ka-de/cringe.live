@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 title: "Linear Algebra Basics"
 summary: "Linear Algebra Basics covers the fundamentals of vectors, vector operations, matrices, and matrix operations"
+bookToC: true
 ---
 
 <!--markdownlint-disable MD033 MD029 MD025 -->

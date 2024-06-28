@@ -3,6 +3,7 @@ weight: 2
 bookFlatSection: false
 title: "Wedge Product"
 summary: "The article discusses the wedge product of vectors in linear algebra, its geometric interpretation, important properties like anticommutativity and distributivity, its relation to other vector operations, examples of wedge product calculations, and practice problems involving wedge product applications."
+bookToC: true
 ---
 
 <!--markdownlint-disable MD033 MD029 MD025 -->

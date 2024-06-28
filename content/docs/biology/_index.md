@@ -4,6 +4,7 @@ bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
 title: "🦎 - Biology"
+summary: "Biology is the natural science that studies life and living organisms, including their physical structure, chemical processes, molecular interactions, physiological mechanisms, development, and evolution."
 ---
 
 <!--markdownlint-disable MD025  -->
@@ -20,4 +21,4 @@ Biology is a natural science that involves the study of life and living organism
 
 ---
 
-{{< section >}}
+{{< section details >}}

@@ -3,11 +3,14 @@ weight: 1
 bookFlatSection: false
 title: "Myopia"
 bookToC: false
+summary: "Myopia, also known as near-sightedness, is a condition where the eye focuses light in front of the retina instead of on it, causing distant objects to appear blurry while close objects appear clear."
 ---
 
 <!--markdownlint-disable MD025 -->
 
 # Myopia
+
+---
 
 **Myopia** is a common vision condition in which you can see objects near to you clearly, but objects farther away appear blurry. It occurs when the shape of your eye causes light rays to bend (refract) incorrectly, focusing the images in front of the retina instead of directly on the retina.
 

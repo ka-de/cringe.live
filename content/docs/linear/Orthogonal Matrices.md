@@ -3,6 +3,7 @@ weight: 2
 bookFlatSection: false
 title: "Orthogonal Matrices"
 summary: "This article discusses orthogonal matrices, which are square matrices whose columns and rows form orthonormal bases, their properties like being invertible with the inverse equal to the transpose, preserving vector norms, having determinants of ±1, eigenvalues of absolute value 1, and their applications in simplifying complex systems."
+bookToC: true
 ---
 
 <!-- markdownlint-disable MD025 -->

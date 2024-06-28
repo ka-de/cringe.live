@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 title: "Hypermetropia"
 bookToC: false
+summary: ""
 ---
 
 <!--markdownlint-disable MD025 -->

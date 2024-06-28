@@ -2,6 +2,8 @@
 weight: 4
 bookFlatSection: false
 title: "Singular Value Decomposition"
+bookToC: true
+summary: "Singular Value Decomposition (SVD) is a factorization method in linear algebra that decomposes a matrix into a rotation, a rescaling, and another rotation, generalizing the eigendecomposition of a square normal matrix to any matrix."
 ---
 
 <!-- markdownlint-disable MD025 MD033 -->

@@ -2,6 +2,8 @@
 weight: 5
 bookFlatSection: false
 title: "Kolmogorov-Arnold Representation Theorem"
+bookToC: false
+summary: "The Kolmogorov-Arnold Representation Theorem states that every multivariate continuous function can be represented as a superposition of continuous functions of one variable and the binary operation of addition."
 ---
 
 <!-- markdownlint-disable MD025 -->

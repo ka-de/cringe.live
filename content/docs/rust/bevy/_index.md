@@ -4,6 +4,7 @@ bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
 title: "bevy"
+summary: "Bevy is a refreshingly simple, data-driven game engine built in Rust, offering a complete 2D and 3D feature set, and it is free and open-source."
 ---
 
 <!--markdownlint-disable MD025  -->

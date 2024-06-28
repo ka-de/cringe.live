@@ -10,11 +10,15 @@ summary: "The Monte Carlo method, a statistical technique using randomness, is u
 
 # Monte Carlo Method
 
+---
+
 The Monte Carlo method is a statistical technique that allows you to make numerical predictions or decisions under uncertainty. It’s named after the Monte Carlo Casino in Monaco, where the primary developer of the method, physicist Stanislaw Ulam, was inspired by his uncle’s gambling habits.
 
 The method involves using randomness to solve problems that might be deterministic in principle. It relies on repeated random sampling to obtain numerical results. The underlying concept is to use randomness to solve problems that might be deterministic in principle. They are mainly used in three distinct problem classes: optimization, numerical integration, and generating draws from a probability distribution.
 
 ## Estimating Pi with Monte Carlo Simulation
+
+---
 
 Here’s a simple example of a Monte Carlo simulation in Rust, estimating the value of Pi:
 
@@ -58,6 +62,8 @@ $$
 This method becomes more accurate as the number of points increases.
 
 ## Estimating Euler's Number Using the Monte Carlo Method
+
+---
 
 This time, let’s estimate the mathematical constant $e$ (Euler’s number) using a Monte Carlo method. The idea is to estimate $e$ using the formula for the expected value of a certain random variable.
 

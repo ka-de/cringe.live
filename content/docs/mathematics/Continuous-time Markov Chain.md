@@ -3,12 +3,14 @@ weight: 1
 bookFlatSection: false
 title: "Continuous-time Markov Chain"
 bookToC: false
-summary: ""
+summary: "A Continuous-time Markov Chain (CTMC) is a stochastic model used to represent systems that transition between states continuously over time, where the probability of transitioning to any particular state depends solely on the current state and the amount of time spent in that state, not on the sequence of past states."
 ---
 
 <!--markdownlint-disable MD025 -->
 
 # Continuous-time Markov Chain
+
+---
 
 A Continuous Time Markov Chain (CTMC) is a type of Markov process, which is a mathematical model for systems that jump between different states ("state" here refers to a condition or status the system can be in), with the property that the next state depends only on the current state and not on how the system arrived in its current state.
 
@@ -38,6 +40,8 @@ $$
 Where $P(t)$ is a vector that gives the probability of being in each state at time $t$.
 
 ## Code Example
+
+---
 
 ```rust
 extern crate rand;

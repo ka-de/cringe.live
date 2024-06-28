@@ -21,9 +21,13 @@ The cross product is only defined in three dimensions. In higher dimensions, one
 
 ## Geometric Interpretation
 
+---
+
 Geometrically, the magnitude (or length) of the cross product vector equals the area of the parallelogram formed by the two original vectors. The direction of the cross product vector is given by the right-hand rule: if you point your open right hand in the direction of $\vec{a}$ and then curl your fingers towards $\vec{b}$, your thumb points in the direction of $\vec{a} \times \vec{b}$.
 
 ## Properties
+
+---
 
 The cross product has several important properties, including:
 
@@ -51,9 +55,13 @@ Where $k$ is a scalar.
 
 ## Relation to Other Vector Operations
 
+---
+
 While the cross product is a useful operation, it's important to understand when it's appropriate to use it and when other vector operations, such as the dot product or scalar triple product, might be more suitable. The dot product, for instance, is useful for determining the angle between two vectors or projecting one vector onto another, while the scalar triple product is used to find the scalar triple product of three vectors.
 
 ## Examples
+
+---
 
 Let's calculate the cross product of two simple vectors, $\mathbf{\vec{a}} = [1, 0, 0]$ and $\mathbf{\vec{b}} = [0, 1, 0]$:
 
@@ -72,6 +80,8 @@ $$
 So, the cross product of $[1, 0, 0]$ and $[0, 1, 0]$ is $[0, 0, 1]$, which is a vector pointing in the positive z-direction with a magnitude of 1.
 
 ## Practice Problems
+
+---
 
 1. Calculate the cross product of $\mathbf{\vec{a}} = [2, 1, -3]$ and $\mathbf{\vec{b}} = [4, -2, 1]$.
 

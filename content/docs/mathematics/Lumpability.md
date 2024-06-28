@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 title: "Lumpability"
 bookToC: false
+summary: "Lumpability refers to the property of a Markov chain where a coarse-grained version of the chain retains the Markov property. In simpler terms, it means that when you group states of a Markov chain into larger “lumps,” the resulting chain still behaves like a Markov chain."
 ---
 
 <!--markdownlint-disable MD025 -->

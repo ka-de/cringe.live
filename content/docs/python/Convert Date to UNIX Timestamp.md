@@ -2,6 +2,7 @@
 weight: 1
 bookFlatSection: false
 title: "Convert Date to UNIX Timestamp"
+summary: "Provides a Python script that converts a given date and time into a Unix timestamp, which represents the number of seconds that have elapsed since January 1, 1970."
 ---
 
 <!--markdownlint-disable MD025  -->

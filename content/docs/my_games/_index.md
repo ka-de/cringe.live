@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "🎮 - My Games"
+summary: "I do dabble, yes indeed!"
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -12,5 +13,7 @@ title: "🎮 - My Games"
 ---
 
 ## List
+
+---
 
 {{< section details >}}
