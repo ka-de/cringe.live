@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Aho–Corasick Algorithm"
+summary: "The Aho-Corasick algorithm efficiently locates all occurrences of multiple keywords in a text by constructing a finite state machine, combining trie and failure transitions, and can be used for tasks like pattern highlighting and simultaneous replacements."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
