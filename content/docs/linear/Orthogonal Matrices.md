@@ -2,7 +2,7 @@
 weight: 2
 bookFlatSection: false
 title: "Orthogonal Matrices"
-summary: "This article discusses orthogonal matrices, which are square matrices whose columns and rows form orthonormal bases, their properties like being invertible with the inverse equal to the transpose, preserving vector norms, having determinants of ±1, eigenvalues of absolute value 1, and their applications in simplifying complex systems."
+summary: "Square matrices whose columns and rows form orthonormal bases, their properties like being invertible with the inverse equal to the transpose, preserving vector norms, having determinants of ±1, eigenvalues of absolute value 1, and their applications in simplifying complex systems."
 bookToC: true
 ---
 
@@ -41,6 +41,8 @@ Both vectors have a magnitude of 1, which positions them on the unit circle—a 
 
 ## The Inverse of an Orthogonal Matrix
 
+---
+
 One of the properties of an orthogonal matrix is that its inverse is equal to its transpose:
 
 $$
@@ -71,6 +73,8 @@ This inverse matrix represents a rotation in the opposite direction, effectively
 
 ## Preserving Vector Norms
 
+---
+
 When an orthogonal matrix multiplies a vector, the length (or norm) of the vector is preserved. This is why orthogonal transformations are also called **isometries**. Mathematically, for any vector $\vec{v}$, we have:
 
 $$
@@ -79,6 +83,8 @@ $$
 
 ## Determinant of Orthogonal Matrices
 
+---
+
 The determinant of an orthogonal matrix is always either +1 or -1. This is a direct consequence of the matrix being a product of reflections and rotations, both of which preserve the area (in 2D) or volume (in 3D) up to a sign. Thus:
 
 $$
@@ -86,6 +92,8 @@ $$
 $$
 
 ## Eigenvalues and Eigenvectors
+
+---
 
 The eigenvalues of an orthogonal matrix are always of absolute value 1. They can be either real ($\pm 1$) or complex numbers with a magnitude of 1. This reflects the fact that orthogonal matrices correspond to rotations and reflections, which do not change the magnitude of vectors. For an orthogonal matrix, the eigenvalues are values that satisfy the equation:
 
@@ -108,9 +116,13 @@ In physical terms, the eigenvectors of an orthogonal matrix represent the axes o
 
 ## Application in Complex Systems
 
+---
+
 Orthogonal matrices play a crucial role in simplifying complex systems. For instance, in the diagonalization of a matrix, orthogonal matrices can be used to transform a matrix into a diagonal form, which is much easier to analyze and work with.
 
 ## Example #1
+
+---
 
 ```python
 """
@@ -140,6 +152,8 @@ print("Q is orthogonal:", np.allclose(Q_T, Q_inv))
 ```
 
 ## Example #2
+
+---
 
 This script generates and checks orthogonal matrices.
 

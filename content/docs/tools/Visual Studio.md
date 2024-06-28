@@ -2,7 +2,7 @@
 weight: 20
 bookFlatSection: false
 title: "Visual Studio"
-summary: ""
+summary: "Visual Studio refers to the Microsoft Visual Studio, a powerful Integrated Development Environment (IDE) that supports the development of applications in multiple languages, including C. It provides a range of tools for editing, debugging, and compiling code."
 ---
 
 <!--markdownlint-disable MD025 -->

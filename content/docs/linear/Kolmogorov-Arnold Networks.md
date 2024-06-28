@@ -3,6 +3,7 @@ weight: 5
 bookFlatSection: false
 title: "Kolmogorov-Arnold Networks"
 summary: "Kolmogorov-Arnold Networks (KANs) are a novel neural network architecture that, inspired by the Kolmogorov-Arnold representation theorem, replaces the fixed activation functions of Multi-Layer Perceptrons (MLPs) with learnable activation functions on edges, leading to improved accuracy and interpretability."
+bookToC: false
 ---
 
 <!-- markdownlint-disable MD025 -->

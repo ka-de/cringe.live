@@ -4,6 +4,7 @@ bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
 title: "✒️ - Writings"
+summary: "Writing is the art of sculpting language to express ideas, evoke emotions, and create worlds that exist in the imagination."
 ---
 
 <!--markdownlint-disable MD025  -->
@@ -18,4 +19,4 @@ Writing, in the context of crafting short stories and other creative works, is a
 
 ---
 
-{{< section >}}
+{{< section details >}}

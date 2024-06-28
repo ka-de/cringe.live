@@ -3,7 +3,7 @@ weight: 2
 title: WTF is Machine Learning?
 bookToC: false
 type: docs
-summary: "This article provides an introduction to machine learning and walks through building a simple neural network using PyTorch to classify handwritten digits from the MNIST dataset, covering data loading, defining the network architecture, training, evaluation, and making predictions."
+summary: "An introduction to machine learning and walkthrough of building a simple neural network using PyTorch to classify handwritten digits from the MNIST dataset, covering data loading, defining the network architecture, training, evaluation, and making predictions."
 ---
 
 <!-- markdownlint-disable MD025 -->

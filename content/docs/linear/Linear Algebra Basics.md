@@ -420,8 +420,6 @@ $$A^T = \begin{bmatrix} a & c \\ b & d \end{bmatrix}$$
 
 ### Eigenvalues
 
----
-
 An eigenvalue of a square matrix $A$ is a scalar $\lambda$ that satisfies the equation:
 
 $$
@@ -462,8 +460,6 @@ print("Eigenvalues: ", eigenvalues)
 The script uses the `np.linalg.eig` function to calculate the eigenvalues of the matrix `A`. This function returns a tuple consisting of a vector (the eigenvalues of `A`) and an array (the corresponding eigenvectors of `A`). In this case, the script only keeps the eigenvalues and ignores the eigenvectors by storing them in `_`.
 
 ### Eigenvectors
-
----
 
 An eigenvector of a matrix $A$ is a non-zero vector $\vec{v}$ that satisfies the equation:
 

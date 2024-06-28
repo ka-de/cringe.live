@@ -46,7 +46,7 @@ fn main() {
         // If the file is a JSON file, format it
         if path.extension().unwrap_or_default() == "json" {
             if let Err(e) = format_json_file(&path) {
-                println!("Failed to format {}: {}", path.display(), e);
+                println!("Failed to format {}: {e}", path.display());
             }
         }
     }

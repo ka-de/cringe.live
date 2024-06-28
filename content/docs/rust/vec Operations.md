@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: true
 title: "vec Operations"
+summary: "Provides an overview of various operations you can perform on vectors in Rust, including sorting, searching, filtering, mapping, custom comparators, deduplication, finding elements, folding, and managing capacity and length."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -27,7 +28,7 @@ We can sort this using `sort()`.
 
 ```rust
     numbers.sort();
-    println!("Sorted numbers: {:?}", numbers);
+    println!("Sorted numbers: {numbers:?}");
 ```
 
 ## Binary Search
@@ -43,8 +44,8 @@ fn main() {
 
     let target = 152;
     match numbers.binary_search(&target) {
-        Ok(index) => println!("Found {} at index {}", target, index),
-        Err(_) => println!("{} not found in the array", target),
+        Ok(index) => println!("Found {target} at index {index}"),
+        Err(_) => println!("{target} not found in the array"),
     }
 }
 ```
@@ -53,8 +54,8 @@ An alternative for unsorted arrays is to use linear search ($O(n)$ time).
 
 ```rust
     match numbers.iter().position(|&x| x == target) {
-        Some(index) => println!("Found {} at index {}", target, index),
-        None => println!("{} not found in the array", target),
+        Some(index) => println!("Found {target} at index {index}"),
+        None => println!("{target} not found in the array"),
     }
 ```
 
@@ -69,7 +70,7 @@ fn main() {
         .iter()
         .filter(|&&x| x % 2 == 0)
         .collect();
-    println!("Even numbers: {:?}", even_numbers);
+    println!("Even numbers: {even_numbers:?}");
 }
 ```
 
@@ -84,7 +85,7 @@ fn main() {
         .iter()
         .map(|&x| (x as i64) * (x as i64))
         .collect();
-    println!("Squared numbers: {:?}", squared_numbers);
+    println!("Squared numbers: {squared_numbers:?}");
 }
 ```
 
@@ -96,7 +97,7 @@ You can pass a custom comparator function to the `sort_by` method to sort a vect
 fn main() {
     let mut numbers = vec![4, 6, 3, 10, 51, 1, 152, 616, 25195, 259125];
     numbers.sort_by(|a, b| b.cmp(a)); // sort in descending order
-    println!("Sorted in descending order: {:?}", numbers);
+    println!("Sorted in descending order: {numbers:?}");
 }
 ```
 
@@ -160,7 +161,7 @@ fn main() {
     people.sort();
 
     for person in &people {
-        println!("{:?}", person);
+        println!("{person:?}");
     }
 }
 ```
@@ -178,7 +179,7 @@ fn main() {
     let mut numbers = vec![4, 6, 4, 3, 10, 10, 51, 1, 152, 200, 616, 200, 25195, 259125];
     numbers.sort();
     numbers.dedup();
-    println!("Deduplicated: {:?}", numbers);
+    println!("Deduplicated: {numbers:?}");
 }
 ```
 
@@ -193,13 +194,13 @@ fn main() {
     let numbers = vec![4, 6, 4, 3, 10, 10, 51, 1, 152, 200, 616, 200, 25195, 259125];
     let first_even = numbers.iter().find(|&&x| x % 2 == 0);
     match first_even {
-        Some(&number) => println!("First even number: {}", number),
+        Some(&number) => println!("First even number: {number}"),
         None => println!("No even number found"),
     }
 
     let position = numbers.iter().position(|&x| x > 100);
     match position {
-        Some(index) => println!("Index of first number > 100: {}", index),
+        Some(index) => println!("Index of first number > 100: {index}"),
         None => println!("No number > 100 found"),
     }
 }
@@ -211,12 +212,12 @@ fn main() {
 fn main() {
     let numbers = vec![4, 6, 4, 3, 10, 10, 51, 1, 152, 200, 616, 200, 25195, 259125];
     let sum: i32 = numbers.iter().fold(0, |acc, &x| acc + x);
-    println!("Sum: {}", sum);
+    println!("Sum: {sum}");
     let product: f64 = numbers
         .iter()
         .map(|&x| x as f64)
         .fold(1.0, |acc, x| acc * x);
-    println!("Product: {}", product);
+    println!("Product: {product}");
 }
 ```
 

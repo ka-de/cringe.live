@@ -3,11 +3,14 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "#[rustfmt::skip]"
+summary: "An attribute you can place above code to tell `rustfmt` not to format it."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
 # #[rustfmt::skip]
+
+---
 
 The `#[rustfmt::skip]` attribute is a directive you can place above a piece of code to tell `rustfmt` to ignore it during formatting. This is useful when you have a specific formatting style that you want to preserve, which might otherwise be altered by `rustfmt`.
 

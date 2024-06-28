@@ -2,6 +2,7 @@
 weight: 20
 bookFlatSection: false
 title: "PowerShell"
+summary: "Powershell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework. It’s used for managing and automating the administration of Windows systems."
 ---
 
 <!--markdownlint-disable MD025 -->

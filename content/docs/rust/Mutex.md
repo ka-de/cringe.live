@@ -1,13 +1,16 @@
 ---
 weight: 1
 bookFlatSection: false
-bookToC: false
+bookToC: true
 title: "Mutex"
+summary: "In Rust, a Mutex (Mutual Exclusion) is a synchronization primitive that ensures thread safety by allowing only one thread to access shared data at a time, and it provides mechanisms for locking and unlocking, deadlock prevention, and handling of \"poisoned\" states."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
 # Mutex
+
+---
 
 A Mutex in Rust stands for Mutual Exclusion. It is a concurrency primitive that ensures only one thread can access some data at any point in time. If a thread needs to read or write the data, it must first acquire the lock on the Mutex.
 
@@ -36,7 +39,7 @@ fn main() {
 
     // Print the Mutex. Since we can't directly access the value inside,
     // this will print the type std::sync::Mutex<i32> but not the value 6.
-    println!("m = {:?}", m);
+    println!("m = {m:?}");
 }
 ```
 

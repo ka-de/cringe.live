@@ -42,7 +42,7 @@ fn main() {
 
                 // Rename the file
                 fs::rename(old_name, &new_name).unwrap();
-                println!("Renamed {} to {}", old_name, new_name);
+                println!("Renamed {old_name} to {new_name}");
             }
         }
     }

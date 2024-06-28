@@ -284,17 +284,17 @@ Pattern matching allows us to handle different variants of an enum and extract t
 fn handle_game_event(event: GameEvent) {
     match event {
         GameEvent::PlayerMoved { player_id, from, to } => {
-            println!("Player {} moved from {:?} to {:?}", player_id, from, to);
+            println!("Player {player_id} moved from {from:?} to {to:?}");
             update_player_position(player_id, to);
             check_for_encounters(player_id, from, to);
         },
         GameEvent::ItemCollected { player_id, item, position } => {
-            println!("Player {} collected {} at {:?}", player_id, item.name, position);
+            println!("Player {player_id} collected {} at {position:?}", item.name);
             add_item_to_inventory(player_id, item);
             remove_item_from_world(position);
         },
         GameEvent::LevelCompleted { player_id, level_id, score, time, bonuses } => {
-            println!("Player {} completed level {} with score {} in {} seconds", player_id, level_id, score, time);
+            println!("Player {player_id} completed level {level_id} with score {score} in {time} seconds");
             let total_score = calculate_total_score(score, time, &bonuses);
             update_leaderboard(player_id, level_id, total_score);
             load_next_level(player_id);
@@ -306,11 +306,11 @@ fn handle_game_event(event: GameEvent) {
 fn handle_enemy(enemy: Enemy) {
     match enemy {
         Enemy::Goblin { health, weapon: WeaponType::Sword(length) } if health < 20.0 => {
-            println!("A weakened goblin with a {} unit long sword!", length);
+            println!("A weakened goblin with a {length} unit long sword!");
             trigger_fleeing_behavior();
         },
         Enemy::Dragon { health, breath_attack } if health > 100.0 => {
-            println!("A strong dragon with {} breath!", breath_attack);
+            println!("A strong dragon with {breath_attack} breath!");
             trigger_aggressive_behavior();
         },
         Enemy::Wizard { spells, .. } if spells.len() > 5 => {
@@ -326,6 +326,8 @@ fn handle_enemy(enemy: Enemy) {
 ```
 
 ## Methods on Enums
+
+---
 
 Just like structs, you can also add methods to enums:
 
@@ -358,6 +360,8 @@ if current_state.can_save() {
 ```
 
 ## Combining Structs and Enums
+
+---
 
 The real power of sum and product types comes from combining them. This allows you to create complex, nested data structures that can represent intricate game systems. Here's an example of how you might use both structs and enums to model a simple game world:
 

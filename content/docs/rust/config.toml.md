@@ -3,11 +3,14 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "config.toml"
+summary: "Configuring `cargo`, the Rust package manager."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
 # config.toml
+
+---
 
 [Official Documentation](https://doc.rust-lang.org/cargo/reference/config.html)
 

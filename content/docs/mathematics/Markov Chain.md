@@ -70,9 +70,9 @@ fn main() {
 
     let mut current_state = "rainy".to_string();
     for _ in 0..30 {
-        print!("Current state: {} ", current_state);
+        print!("Current state: {current_state} ");
         if let Some(next_state) = chain.next_state(&current_state) {
-            println!("Next state: {}", next_state);
+            println!("Next state: {next_state}");
             current_state = next_state.to_string();
         }
     }

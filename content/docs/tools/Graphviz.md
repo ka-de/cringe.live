@@ -2,6 +2,8 @@
 weight: 20
 bookFlatSection: false
 title: "GraphViz"
+summary: "Graphviz is an open-source graph visualization software. It takes structured text in the DOT language as input and creates diagrams in various formats such as PDF, SVG, and PNG."
+bookToC: false
 ---
 
 <!--markdownlint-disable MD025 -->

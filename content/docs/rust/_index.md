@@ -54,6 +54,8 @@ rustc --version
 
 ## Installing Rust on Windows
 
+---
+
 1. Go to [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) to download `rustup-init.exe`.
 2. Run `rustup-init.exe` and follow the onscreen instructions.
 3. After the installation is complete, close the command prompt and reopen it.
@@ -64,6 +66,8 @@ rustc --version
 ```
 
 ## Creating Your First Rust Program
+
+---
 
 Rust has a build system and package manager called `cargo`. It comes with `rustup`, so you already have it if you've installed Rust.
 
@@ -159,10 +163,10 @@ fn main() {
 
     {
         let x = x + 1;
-        println!("Inside the inner scope, x is: {}", x);
+        println!("Inside the inner scope, x is: {x}");
     }
 
-    println!("Outside the inner scope, x is: {}", x);
+    println!("Outside the inner scope, x is: {x}");
 }
 ```
 
@@ -190,12 +194,12 @@ fn main() {
 
 ### Printing formatted text with `println!` macro
 
-You can also use the `println!` macro to print formatted text. The `{}` placeholder is used to insert variables into the text.
+You can also use the `println!` macro to print formatted text. The `{name}` syntax is used to insert variables into the text.
 
 ```rust
 fn main() {
     let name = "Alice";
-    println!("Hello, {}!", name);
+    println!("Hello, {name}!");
 }
 ```
 
@@ -217,7 +221,7 @@ The `format!` macro is similar to `println!`, but instead of printing the text, 
 ```rust
 fn main() {
     let name = "Alice";
-    let greeting = format!("Hello, {}!", name);
+    let greeting = format!("Hello, {name}!");
     println!("{}", greeting);
 }
 ```
@@ -253,7 +257,7 @@ use std::fmt::Write;
 fn main() {
     let mut s = String::new();
     writeln!(&mut s, "Hello, {}!", "World").expect("Unable to write");
-    println!("{}", s);
+    println!("{s}");
 }
 ```
 
@@ -277,7 +281,7 @@ impl fmt::Display for Point {
 
 fn main() {
     let p = Point { x: 10, y: 20 };
-    println!("{}", p);
+    println!("{p}");
 }
 ```
 
@@ -290,7 +294,7 @@ The `format_args!` macro is a low-level macro for string formatting, which `prin
 ```rust
 fn main() {
     let s = format_args!("{} {}", "Hello", "World");
-    println!("{}", s);
+    println!("{s}");
 }
 ```
 

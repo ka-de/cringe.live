@@ -7,8 +7,11 @@ summary: "An in-depth guide on error handling in Rust, covering basic techniques
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
+<!-- ⚠️ TODO: Check all this code again! ^^; -->
 
 # Error Handling
+
+---
 
 Error handling is a crucial aspect of writing robust and reliable software, and Rust provides powerful tools to handle errors effectively. In this blog post, we'll explore different error handling techniques in Rust, from basic error handling to more advanced scenarios, including asynchronous error handling.
 
@@ -38,13 +41,13 @@ fn divide(a: f64, b: f64) -> Result<f64, String> {
 
 fn main() {
     match divide(10.0, 2.0) {
-        Ok(result) => println!("Result: {}", result),
-        Err(error) => println!("Error: {}", error),
+        Ok(result) => println!("Result: {result}"),
+        Err(error) => println!("Error: {error}"),
     }
 
     match divide(10.0, 0.0) {
-        Ok(result) => println!("Result: {}", result),
-        Err(error) => println!("Error: {}", error),
+        Ok(result) => println!("Result: {result}"),
+        Err(error) => println!("Error: {error}"),
     }
 }
 ```
@@ -74,8 +77,8 @@ fn read_file_contents(path: &str) -> Result<String, io::Error> {
 
 fn main() {
     match read_file_contents("example.txt") {
-        Ok(contents) => println!("File contents: {}", contents),
-        Err(error) => println!("Error reading file: {}", error),
+        Ok(contents) => println!("File contents: {contents}"),
+        Err(error) => println!("Error reading file: {error}"),
     }
 }
 ```
@@ -103,7 +106,7 @@ fn copy_file(source: &str, destination: &str) -> Result<(), io::Error> {
 
 fn main() {
     if let Err(e) = copy_file("source.txt", "destination.txt") {
-        eprintln!("Failed to copy file: {}", e);
+        eprintln!("Failed to copy file: {e}");
     }
 }
 ```
@@ -157,8 +160,8 @@ fn read_and_parse(path: &str) -> Result<i32, CustomError> {
 
 fn main() {
     match read_and_parse("number.txt") {
-        Ok(number) => println!("Number: {}", number),
-        Err(error) => println!("Error: {}", error),
+        Ok(number) => println!("Number: {number}"),
+        Err(error) => println!("Error: {error}"),
     }
 }
 ```
@@ -198,8 +201,8 @@ fn read_and_parse(path: &str) -> Result<i32, CustomError> {
 
 fn main() {
     match read_and_parse("number.txt") {
-        Ok(n) => println!("The number is: {}", n),
-        Err(e) => eprintln!("An error occurred: {:?}", e),
+        Ok(n) => println!("The number is: {n}"),
+        Err(e) => eprintln!("An error occurred: {e:?}"),
     }
 }
 ```
@@ -218,7 +221,7 @@ fn main() -> Result<(), io::Error> {
     let mut file = File::open("example.txt")?;
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
-    println!("File contents: {}", contents);
+    println!("File contents: {contents}");
     Ok(())
 }
 ```
@@ -274,7 +277,7 @@ async fn process_data(url: &str, file_path: &str) -> Result<(), Box<dyn Error>> 
 async fn main() {
     match process_data("https://example.com", "example.txt").await {
         Ok(()) => println!("Processing completed successfully"),
-        Err(error) => println!("Error: {}", error),
+        Err(error) => println!("Error: {error}"),
     }
 }
 ```
@@ -584,8 +587,8 @@ fn main() -> Result<(), AppError> {
     let path = Path::new("numbers.txt");
     
     match read_and_process_file(path) {
-        Ok(sum) => println!("The sum of numbers in the file is: {}", sum),
-        Err(e) => eprintln!("An error occurred: {}", e),
+        Ok(sum) => println!("The sum of numbers in the file is: {sum}"),
+        Err(e) => eprintln!("An error occurred: {e}"),
     }
 
     Ok(())

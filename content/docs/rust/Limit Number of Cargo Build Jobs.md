@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Limit Number of Cargo Build Jobs"
+summary: "How to limit the jobs `cargo` spawns."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

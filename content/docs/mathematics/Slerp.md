@@ -50,7 +50,7 @@ fn main() {
     let t = 0.5; // halfway interpolation
 
     let interpolated = slerp(q0, q1, t);
-    println!("Interpolated Quaternion: {:?}", interpolated);
+    println!("Interpolated Quaternion: {interpolated:?}");
 }
 ```
 
@@ -80,7 +80,7 @@ fn main() {
         }
         let t = elapsed_time.as_secs_f32() / total_duration.as_secs_f32(); // calculate interpolation factor
         let interpolated = slerp(q0, q1, t);
-        println!("Interpolated Quaternion at t={} => {:?}", t, interpolated);
+        println!("Interpolated Quaternion at t={t} => {interpolated:?}");
     }
 }
 ```

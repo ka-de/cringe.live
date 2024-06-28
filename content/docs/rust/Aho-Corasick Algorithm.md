@@ -10,6 +10,8 @@ summary: "The Aho-Corasick algorithm efficiently locates all occurrences of mult
 
 # Aho–Corasick Algorithm
 
+---
+
 This is a classic string searching algorithm that was invented by Alfred V. Aho and Margaret J. Corasick in 1975. It’s used for locating all occurrences of any of a finite set of strings within some input text.
 
 It constructs a finite state machine from a list of keywords, then uses the machine to locate all occurrences of the keywords in a body of text. The construction of the machine runs in $O(n)$ time where $n$ is the total length of all keywords. The search operation also runs in $O(n)$ time where $n$ is the length of the searched text.
@@ -23,6 +25,8 @@ The finite state machine is essentially a trie with additional “failure” tra
 Once the finite state machine is constructed, it can be used to search the text. Starting from the first character of the text and the root of the trie, follow the transition corresponding to the current character in the text. If the transition does not exist, follow the failure transition of the current node. If a node is reached that corresponds to a keyword, record a match.
 
 ## Code Example
+
+---
 
 This program highlights the occurrences of specific patterns in a given text using the Aho-Corasick algorithm.
 It assigns a unique color to each pattern and prints the text to the console with the patterns highlighted in their respective colors.
@@ -94,6 +98,8 @@ fn main() {
 ```
 
 ## Stream replace all
+
+---
 
 This example shows how to replace all occurrences of multiple patterns simultaneously.
 

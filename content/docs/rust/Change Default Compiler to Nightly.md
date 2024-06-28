@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Change Default Compiler to Nightly"
+summary: "How to change to the nightly rust compiler for one build or setting it up as the default for your project."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

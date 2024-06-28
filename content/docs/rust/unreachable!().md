@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "unreachable!()"
+summary: "Explains the unreachable!() macro in Rust, which is used to mark code sections that should never be reached, causing the program to panic if executed."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

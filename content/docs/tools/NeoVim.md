@@ -2,6 +2,8 @@
 weight: 20
 bookFlatSection: false
 title: "NeoVim"
+summary: "Neovim is a refactor of the Vim text editor, which aims to improve extensibility and usability."
+bookToC: false
 ---
 
 <!--markdownlint-disable MD025 MD038 -->
