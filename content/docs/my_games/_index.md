@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "🎮 - Games"
+title: "🎮 - My Games"
 ---
 
 <!--markdownlint-disable MD025 -->

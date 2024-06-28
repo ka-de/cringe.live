@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 title: "Monte Carlo Method"
 bookToC: false
-summary: ""
+summary: "The Monte Carlo method, a statistical technique using randomness, is used to estimate mathematical constants like Pi and Euler’s number by generating random numbers and applying specific mathematical operations. For example, Pi is estimated by generating random points within a unit square and checking how many fall inside a unit circle, while Euler’s number is estimated by generating random numbers, summing them until they exceed 1, and averaging the counts of numbers needed. The accuracy of these estimates increases with the number of iterations. This method is implemented in the Rust programming language using the nanorand crate for random number generation."
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -35,7 +35,7 @@ fn main() {
     }
 
     let pi_estimate = 4.0 * (inside_circle as f64 / total as f64);
-    println!("Estimate of Pi = {}", pi_estimate);
+    println!("Estimate of Pi = {pi_estimate}");
 }
 ```
 
@@ -80,7 +80,7 @@ fn main() {
     }
 
     let e_estimate = sum / trials as f64;
-    println!("Estimate of e = {}", e_estimate);
+    println!("Estimate of e = {e_estimate}");
 }
 ```
 

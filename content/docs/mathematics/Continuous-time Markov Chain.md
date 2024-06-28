@@ -47,7 +47,7 @@ use rand::prelude::*;
 use rand_distr::Exp;
 
 // Define the states
-#[derive(Debug, Copy, Clone)] // Added Copy and Clone traits
+#[derive(Debug, Copy, Clone)]
 enum State {
     State1,
     State2,
