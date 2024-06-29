@@ -3,6 +3,7 @@ weight: 3
 bookFlatSection: false
 bookToC: false
 title: "Visibility"
+summary: "Explains how to control the visibility of functions and other items in Rust using the pub keyword, including examples of public, crate-level, and private visibility."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

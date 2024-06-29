@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Silence Compiler Warnings"
-summary: "The command `cargo rustc -- -Awarnings` and the environment variable setting `RUSTFLAGS` in Rust are used to silence all compiler warnings."
+summary: "The command `cargo rustc -- -Awarnings` and the environment variable setting `RUSTFLAGS=\"-Awarnings\"` in Rust are used to silence all compiler warnings."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
