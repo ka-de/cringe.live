@@ -1,6 +1,7 @@
 ---
 weight: 1
 bookFlatSection: false
+bookCollapseSection: false
 bookToC: false
 title: "Old Reddit to New"
 summary: "The opposite of New Reddit to Old."

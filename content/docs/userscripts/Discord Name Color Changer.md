@@ -1,6 +1,7 @@
 ---
 weight: 1
 bookFlatSection: false
+bookCollapseSection: false
 bookToC: false
 title: "Discord Name Color Changer"
 summary: "Replaces specific username colors with new ones on a Discord channel by observing and modifying the DOM."

@@ -1,6 +1,7 @@
 ---
 weight: 1
 bookFlatSection: false
+bookCollapseSection: false
 bookToC: false
 title: "The Pattern of Death"
 ---

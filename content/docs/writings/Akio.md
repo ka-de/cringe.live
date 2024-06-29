@@ -1,6 +1,7 @@
 ---
 weight: 20
 bookFlatSection: false
+bookCollapseSection: false
 bookToC: false
 bookHidden: true
 title: "Akio"

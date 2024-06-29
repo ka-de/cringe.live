@@ -1,9 +1,10 @@
 ---
 weight: 20
 bookFlatSection: false
+bookCollapseSection: false
+bookToC: true
 title: "Haxe"
 summary: "Haxe is a high-level, strictly-typed programming language and compiler that can produce applications and source code for many different platforms from a single code-base."
-bookToC: true
 ---
 
 <!--markdownlint-disable MD025 -->

@@ -42,7 +42,6 @@ keywords:
 showFullContent: false
 description: ""
 readingTime: true
-hideComments: false
 ---
 
 {{< figure src="/images/manvsmachine.png" alt="AI Generated caricature." caption="Men slowly starting to interface with the machines other men built for them. Glorious!" >}}

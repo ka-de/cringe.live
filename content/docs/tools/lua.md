@@ -1,9 +1,10 @@
 ---
 weight: 20
 bookFlatSection: false
+bookCollapseSection: false
+bookToC: true
 title: "lua"
 summary: "Lua is a lightweight, high-level, multi-paradigm programming language designed primarily for embedded use in applications."
-bookToC: true
 ---
 
 <!--markdownlint-disable MD025 -->

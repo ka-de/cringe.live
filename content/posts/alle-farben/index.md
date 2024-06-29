@@ -51,7 +51,6 @@ categories:
 description: "This humorous blog post chronicles the author's adventures in coding, as they showcase their PowerShell, Python, and Excel skills through a series of increasingly complex tasks. Starting with a whimsical PowerShell function, the post then delves into extracting color values from an Excel spreadsheet using Python scripts, converting them to different formats, and even rendering manual data entry seemingly \"irrelevant.\" With a playful tone and self-deprecating humor, the author shares their coding exploits, complete with a screenshot of the spreadsheet they painstakingly crafted, ultimately providing readers with the full scripts and example files on their GitHub repository."
 showFullContent: false
 readingTime: true
-hideComments: false
 ---
 
 ```powershell

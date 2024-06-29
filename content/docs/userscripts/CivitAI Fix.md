@@ -1,6 +1,7 @@
 ---
 weight: 1
 bookFlatSection: false
+bookCollapseSection: false
 bookToC: false
 title: "CivitAI Fix"
 summary: "Modifies the CSS of civitai.com to change the `flex-wrap` properties of a specific class."

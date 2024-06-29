@@ -44,7 +44,6 @@ categories:
 showFullContent: true
 description: "In this introspective and thought-provoking piece, the author shares their journey of self-discovery and personal growth. They delve into their struggles with substance abuse, particularly caffeine addiction and smoking, and how a shift towards healthier alternatives like green tea has been transformative. Through vivid anecdotes and insightful observations, the writer explores the complex relationship between humans and plant-based substances, questioning the evolutionary design flaws that make us susceptible to addictions. Alongside their newfound appreciation for a mindful lifestyle, they grapple with the profound impact of past choices and the desire to break free from harmful patterns. This honest and introspective account offers a relatable perspective on the challenges of addiction recovery, self-improvement, and the pursuit of a balanced, fulfilling life."
 readingTime: true
-hideComments: false
 ---
 
 {{< figure src="/images/teacupandpot.png" alt="Alt Text" caption="Embracing comfort has been the highlight of my midlife crisis!" >}}

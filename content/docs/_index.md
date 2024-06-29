@@ -1,4 +1,6 @@
 ---
+bookFlatSection: false
+bookCollapseSection: false
 bookToC: false
 title: Introduction
 type: docs

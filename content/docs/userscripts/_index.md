@@ -2,8 +2,9 @@
 weight: 10
 bookFlatSection: false
 bookCollapseSection: true
-bookToC: true
+bookToC: false
 title: "📜 - Userscripts"
+summary: "Userscripts are small programs written in JavaScript that can alter the appearance and behavior of web pages on the client side."
 ---
 
 <!--markdownlint-disable MD025  -->

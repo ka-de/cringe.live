@@ -1,6 +1,8 @@
 ---
 weight: 20
 bookFlatSection: false
+bookCollapseSection: false
+bookToC: true
 title: "Cheatsheet"
 summary: "Cheatsheets for software are quick reference guides that provide an overview of the commands, features, or syntax of a software program. They are incredibly useful for beginners who are trying to familiarize themselves with a new software, or for experienced users who need a quick reminder of the software’s capabilities."
 ---

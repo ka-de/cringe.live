@@ -1,6 +1,8 @@
 ---
 weight: 20
 bookFlatSection: false
+bookCollapseSection: false
+bookToC: false
 title: "Visual Studio"
 summary: "Visual Studio refers to the Microsoft Visual Studio, a powerful Integrated Development Environment (IDE) that supports the development of applications in multiple languages, including C. It provides a range of tools for editing, debugging, and compiling code."
 ---
@@ -12,6 +14,8 @@ summary: "Visual Studio refers to the Microsoft Visual Studio, a powerful Integr
 ---
 
 ## Compiler Options
+
+---
 
 In Microsoft Visual Studio compiler, `/MD`, `/MDd`, `/MT`, and `/MTd` are options that determine which version of the C++ runtime library to use. Here's what each of them means:
 
