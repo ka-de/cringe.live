@@ -16,6 +16,8 @@ Finally, the small guy gets to be on top! A LoRA trained on images depicting a s
 
 ## Introduction
 
+---
+
 {}
 
 ## Content
