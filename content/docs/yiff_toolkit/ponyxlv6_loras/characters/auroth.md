@@ -14,6 +14,8 @@ summary: "Auroth, the Winter Wyvern, is an ancient dragon from Dota 2, known for
 
 ## Introduction
 
+---
+
 Auroth, also known as the Winter Wyvern is a character from the game Dota 2. As an Eldwurm, an ancient dragon, she is perhaps the oldest of her kind. Unlike most dragons that breathe fire Auroth breathes an unfathomable cold. She is a scholar and a poet at heart yearning for time to write and add to the Eldwurm Eddas, the epics of her kind, however this LoRA just makes porn with her.
 
 ## Content

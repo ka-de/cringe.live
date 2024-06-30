@@ -14,6 +14,8 @@ summary: "A squirrel from DOTA 2 with a massive crossbow."
 
 ## Introduction
 
+---
+
 A squirrel from DOTA 2. Hoodwink is known for toting a massive crossbow, which she uses with great skill. Despite the size of her weapon, she is able to move through the woodland with ease, making her a difficult target to keep tabs on in battle.
 
 ## Content

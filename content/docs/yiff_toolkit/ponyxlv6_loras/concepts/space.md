@@ -22,7 +22,7 @@ summary: "{}"
 
 [⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/space-v1e500.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
+[⬇️ Shrunk LoRA Download (33.8MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/space-v1e500_frockpt1_th-3.55.safetensors?download=true)
 
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
@@ -66,7 +66,6 @@ blurry, wtf, old art, where is your god now, abstract background, simple backgro
 
 [![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/space/00000890-04092251-512.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/space/00000890-04092251.png)
 [![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/space/00000895-04092334-512.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/space/00000895-04092334.png)
-
 
 </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">

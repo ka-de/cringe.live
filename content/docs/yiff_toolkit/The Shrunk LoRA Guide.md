@@ -2,14 +2,21 @@
 weight: 2
 bookFlatSection: false
 bookToC: true
-title: "The Shrunk LoRA Guide"
+bookHidden: true
+title: "(OLD) ~~The Shrunk LoRA Guide~~"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# The Shrunk LoRA Guide
+# (OLD) The Shrunk LoRA Guide
 
 ---
+
+## ⚠️ NOTE: This document has been deprecated
+
+The shrunk version of all my loras should be found now right under the original download links [here](http://localhost:1313/docs/yiff_toolkit/).
+
+## But Here it is Anyway
 
 [![The image is a humorous and imaginative scene depicting a man and a woman looking closely at a tiny wolf on a spoon. The man, wearing glasses and a sweatshirt with a large "T" on it, is holding a magnifying glass to better see the miniature wolf. The woman, peering closely beside him, also seems amazed and curious about the small wolf. The tiny wolf, adorned with a hotdog bun costume, adds a whimsical and playful element to the image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/honey-i-shrunk-the-hotdogwolf-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/honey-i-shrunk-the-hotdogwolf.png)
 

@@ -14,6 +14,8 @@ summary: "Foxparks is a fiery, fox-like creature from Palworld, known for its fl
 
 ## Introduction
 
+---
+
 Foxparks is from the game Palworld. It resembles a red fox, with its long ears matching the color of its body fur, and a touch of brown on top. The fur along its stomach has a brighter hue. One of the most striking features of Foxparks is its large, flame-covered tail, which is equal in size to its body. This fiery pattern extends to its feet as well. Despite its fiery appearance, Foxparks is unskilled at controlling fire from the moment it is born and tends to choke on the flames it breathes unintentionally.
 
 ## Content

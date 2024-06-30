@@ -14,4 +14,6 @@ title: "Styles"
 
 ## LoRAs
 
+---
+
 {{< section details >}}

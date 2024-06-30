@@ -14,6 +14,8 @@ summary: "A blue werewolf from Zoophobia."
 
 ## Introduction
 
+---
+
 JayJay, also known as “BlueJay” Burdell, is a character from the webcomic Zoophobia. She is depicted as a werewolf. JayJay is a farmer by day and transforms into a party animal by night. She first appeared in the “Die Young” music video.
 
 ## Content

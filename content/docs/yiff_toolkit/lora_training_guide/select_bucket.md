@@ -9,6 +9,8 @@ title: "select_bucket"
 
 # `select_bucket`
 
+---
+
 The `select_bucket` function is responsible for determining the appropriate resolution (size) for an input image, based on predefined resolutions and aspect ratios, as well as the maximum area allowed for the image. The function takes two arguments: `image_width` and `image_height`, which represent the dimensions of the input image.
 
 Here's a breakdown of the function's logic:
@@ -44,6 +46,8 @@ Here's a breakdown of the function's logic:
 The `get_crop_ltrb` function, which is a static method, calculates the left, top, right, and bottom coordinates for cropping an image to fit a given bucket resolution. It takes two arguments: `bucket_reso` (the target resolution) and `image_size` (the original image size). The function determines whether to match the height or width of the bucket resolution based on the aspect ratios, calculates the resized dimensions, and then computes the crop coordinates based on the difference between the bucket resolution and the resized dimensions.
 
 ## Translation
+
+---
 
 ```python
 def select_bucket(self, image_width, image_height):

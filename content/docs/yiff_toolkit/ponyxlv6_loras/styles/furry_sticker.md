@@ -14,6 +14,8 @@ summary: "Generate an infinite amount of furry stickers for your infinite amount
 
 ## Introduction
 
+---
+
 Furry stickers are vibrant and playful adhesive illustrations that feature anthropomorphic animal characters, which are animals with human characteristics. These characters often sport expressive faces and are depicted in various poses or with accessories that add to their human-like persona. Furry stickers are popular within the furry community for personalizing items like laptops, notebooks, or cars, allowing individuals to express their love for the art form and the characters they relate to. They serve as a form of self-expression and community identification, showcasing one’s interests in the furry culture.
 
 ## Content

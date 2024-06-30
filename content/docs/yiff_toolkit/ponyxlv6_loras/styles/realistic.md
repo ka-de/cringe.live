@@ -14,6 +14,8 @@ summary: "My take on photorealistic furries. Highly experimental and extremely f
 
 ## Introduction
 
+---
+
 You can combo this with the [RetouchPhoto LoRA](https://civitai.com/models/343602/retouchphoto-for-ponyv6) for even more research. 📈
 
 ## Content
@@ -22,7 +24,7 @@ You can combo this with the [RetouchPhoto LoRA](https://civitai.com/models/34360
 
 [⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/realistic-v4e400.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
+[⬇️ Shrunk LoRA Download (49.8MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/realistic-v4e400_frockpt1_th-3.55.safetensors?download=true)
 
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 

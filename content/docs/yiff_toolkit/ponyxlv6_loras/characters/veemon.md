@@ -8,7 +8,7 @@ summary: "Veemon is a small, blue, dragon-like Digimon with a white belly, a hor
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# veemon
+# veemon-v1e400
 
 ---
 
@@ -22,7 +22,7 @@ Veemon is a humanoid, lizard-like creature standing about 2-feet tall. It has pr
 
 [⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/veemon-v1e400.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
+[⬇️ Shrunk LoRA Download (45.7MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/veemon-v1e400_frockpt1_th-3.55.safetensors?download=true)
 
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 

@@ -14,6 +14,8 @@ summary: "{}"
 
 ## Introduction
 
+---
+
 Replicate [blp](https://e6ai.net/posts?tags=blp)'s unique style of AI art without employing 40 different custom nodes to alter sigmas and noise injection. I recommend you set your CFG between `6.0 and 9.0` and use `DPM++ 2M Karras` for the sampler and scheduler for a more realistic look or you can use `Euler a` for a more cartoony/dreamy generation with a low CFG of `6.0`. A second pass at `1536x1536` is recommended with `Euler a` at CFG `9.0`, with the denoise set between `0.4` and `0.69`.
 
 There have been reports that if you use this LoRA with a negative weight of `-0.5` your generations will get a slight sepia tone.

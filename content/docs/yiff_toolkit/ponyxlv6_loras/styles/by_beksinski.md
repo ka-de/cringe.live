@@ -14,6 +14,8 @@ summary: "Zdzisław Beksiński’s art style is characterized by its hauntingly 
 
 ## Introduction
 
+---
+
 Zdzisław Beksiński (24 February 1929 – 21 February 2005) was a renowned Polish artist known for his distinctive style of dystopian surrealism. He had no formal training as an artist but was a graduate of the Faculty of Architecture at the Kraków Polytechnic. Beksiński’s creations, which he referred to as either Baroque or Gothic, were made mainly in two periods. The first period is characterized by expressionistic color and surreal architecture, often depicting a doomsday scenario. The second period saw a more abstract style, with the main features of formalism. Beksiński’s work often depicted disturbing images of death, decay, and desolate landscapes filled with skeletons and deformed figures. Tragically, Beksiński was stabbed to death at his Warsaw apartment in 2005.
 
 ## Content

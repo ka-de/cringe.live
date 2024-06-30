@@ -14,6 +14,8 @@ summary: "Someone's satyr character."
 
 ## Introduction
 
+---
+
 Someone's satyr character.
 
 ## Content

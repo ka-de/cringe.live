@@ -14,6 +14,8 @@ summary: "A bit of an experiment trying to make generating kitsch winter scenes 
 
 ## Introduction
 
+---
+
 A bit of an experiment trying to make generating kitsch winter scenes easier. Originally trained for base SDXL, but it seems to work with PonyXL just fine. If you can call kitsch fine, anyway..
 
 ## Content

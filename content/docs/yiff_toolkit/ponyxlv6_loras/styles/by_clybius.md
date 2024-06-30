@@ -14,6 +14,8 @@ summary: "{}"
 
 ## Introduction
 
+---
+
 An AI artist to bias the dataset towards detailed owls.
 
 ## Content

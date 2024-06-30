@@ -14,6 +14,8 @@ summary: "BDSM is an acronym standing for Bondage, Discipline, Sadism, and Masoc
 
 ## Introduction
 
+---
+
 BDSM is an acronym standing for Bondage, Discipline, Sadism, and Masochism. Discipline was later expanded to refer to acts of domination, and submission. The LoRA only generates consenting characters... obviously!
 
 ## Content

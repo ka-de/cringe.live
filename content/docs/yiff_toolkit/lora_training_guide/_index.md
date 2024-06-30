@@ -12,6 +12,8 @@ summary: "It beats reading Japanese Python code!"
 
 ## Subsections
 
+---
+
 {{< section details >}}
 
 ## Installation Tips

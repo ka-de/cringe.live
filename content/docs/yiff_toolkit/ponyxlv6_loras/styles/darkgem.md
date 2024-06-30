@@ -14,6 +14,8 @@ summary: "{}"
 
 ## Introduction
 
+---
+
 Quality digital painting style.
 
 ## Content
