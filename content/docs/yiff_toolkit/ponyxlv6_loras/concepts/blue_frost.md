@@ -24,7 +24,7 @@ A bit of an experiment trying to make generating kitsch winter scenes easier. Or
 
 [⬇️ LoRA Download (218MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/blue_frost.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
+[⬇️ Shrunk LoRA Download (183MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/blue_frost_frockpt1_th-3.55.safetensors?download=true)
 
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 

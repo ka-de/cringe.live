@@ -14,7 +14,9 @@ title: "(OLD) ~~The Shrunk LoRA Guide~~"
 
 ## ⚠️ NOTE: This document has been deprecated
 
-The shrunk version of all my loras should be found now right under the original download links [here](http://localhost:1313/docs/yiff_toolkit/).
+The shrunk version of all my LoRAs should now be found now right under the original download links for each model [here](/docs/yiff_toolkit/).
+
+At some point I realized I get the best results by shrinking my LoRAs with -3.55 using the Frobenius Norm recipe, so this page is now totally obsolete! Sadly, this process sometimes, like in the case of normal SDXL LoRAs (such as [blue_frost](/docs/yiff_toolkit/ponyxlv6_loras/concepts/blue_frost/)) makes the shrinking process less.. shrinky.. So this page is still a little bit relevant, if you are looking for only really tiny LoRAs and don't care about quality loss!
 
 ## But Here it is Anyway
 
