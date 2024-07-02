@@ -16,7 +16,7 @@ summary: "Loli cat girl OC from butterchalk."
 
 ---
 
-Loli cat girl OC from butterchalk.
+Anthropomorphic female domestic cat created by butterchalk. Predominantly gray; black and white fur. Pointed ears with a mix of grey and white fur, large yellow eyes and a long tail with a curl at the end featuring alternating bands of grey and darker gray.
 
 ## Content
 
