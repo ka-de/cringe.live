@@ -17,7 +17,7 @@ summary: "An offensive, unethical and biased guide on how to poop out awesome Lo
 ---
 
 <div style="text-align: center;">
-    <video style="width: 100%;" autoplay loop muted playsinline>
+    <video style="" autoplay loop muted playsinline>
         <source src="https://huggingface.co/k4d3/yiff_toolkit3/resolve/main/static/sd-scripts/blaidd_training.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
