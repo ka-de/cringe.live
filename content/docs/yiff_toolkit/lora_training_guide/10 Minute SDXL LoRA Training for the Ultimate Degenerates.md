@@ -29,7 +29,7 @@ This method is a short, no hand-holding "guide" that describes a super-experimen
 
 ---
 
-First, you'll need to get my fork of sd-scripts, or just get the optimizer specific changes in your fork. The way you can do that is described [here](/docs/yiff_toolkit/lora_training_guide/Add-Custom-Optimizers/), but instead of the optimizer on that page, we'll use [this](https://raw.githubusercontent.com/ka-de/sd-scripts/lodew/library/optimizers/clybius.py) one instead.
+First, you'll need to get my fork of sd-scripts, or just get the optimizer specific changes in your fork. The way you can do that is described [here](/docs/yiff_toolkit/lora_training_guide/Add-Custom-Optimizers/), but instead of the optimizer on that page, we'll use [this](https://raw.githubusercontent.com/ka-de/sd-scripts/lodew/library/optimizers/clybius.py) one.
 
 ```bash
 git clone https://github.com/ka-de/sd-scripts -b dev
