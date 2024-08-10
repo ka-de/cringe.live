@@ -153,9 +153,15 @@ INFO: Pass through layers: 264
 For example, to cut out everything but OUT01 or `output_blocks.1` you would have to use:
 
 ```bash
-python chop_blocks.py 1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+python chop_blocks.py {lora_path} 1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
 ```
 
 Because the first number in the vector string is just for compatibility with a ComfyUI node I will mention in the next paragraph, you can forget about it, the next number after it is `input_blocks.1`!
 
 In order for you to check which block contains what information I greatly recommend you install [ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack) and use the `Lora Loader (Block Weight)` node!
+
+![A screenshot of the Lora Loader node](https://huggingface.co/k4d3/yiff_toolkit3/resolve/main/static/sd-scripts/lora_loader.png)
+
+Make sure you set `control_after_generate` to `fixed`!
+
+Once you have figured out which blocks you want to keep, chop up the LoRA you just resized, and send your teeny-tiny LoRA to your friends on Discord without paying for Nitro! 😹
