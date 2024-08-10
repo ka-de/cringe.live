@@ -23,7 +23,7 @@ summary: "An offensive, unethical and biased guide on how to poop out awesome Lo
     </video>
 </div>
 
-This method is a short, no hand-holding "guide" that describes a super-experimental method of training an SDXL LoRA in 80 steps, it works with both Pony Diffusion V6 XL and CompassMix XL and probably a few more others. The "10 Minute" in the title is just click bait, the training time will depend on your dataset and step size and how long ago your Dad bought you your GPU, but it is pretty frigging fast! The 80 steps apply to characters and styles with 40 to 200 images in the dataset without any scaling issues, you will only need to adjust the output name between trainings! 😸 (⚠️: I still need to test more weird and complex stuff!)
+This method is a short, no hand-holding "guide" that describes a super-experimental method of training an SDXL LoRA in 80 steps, it works with both Pony Diffusion V6 XL and CompassMix XL and probably a few more others. The "10 Minute" in the title is just click bait, the training time will depend on your dataset and step size and how long ago your dad bought you your GPU, but it is pretty frigging fast! The 80 steps apply to characters and styles with 40 to 200 images in the dataset without any scaling issues, you will only need to adjust the output name between trainings! 😸 (⚠️: I still need to test more weird and complex stuff!)
 
 ## Setup and Training
 
@@ -160,8 +160,14 @@ Because the first number in the vector string is just for compatibility with a C
 
 In order for you to check which block contains what information I greatly recommend you install [ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack) and use the `Lora Loader (Block Weight)` node!
 
+<div style="text-align: center;">
+
 ![A screenshot of the Lora Loader node](https://huggingface.co/k4d3/yiff_toolkit3/resolve/main/static/sd-scripts/lora_loader.png)
 
+</div>
+
 Make sure you set `control_after_generate` to `fixed`!
+
+You can also use the presets in there to check all IN, OUT or MID blocks, but the juicy stuff is mostly going to be in OUT1. <!-- ⚠️ TODO: I really need to train more LoRAs -->
 
 Once you have figured out which blocks you want to keep, chop up the LoRA you just resized, and send your teeny-tiny LoRA to your friends on Discord without paying for Nitro! 😹
