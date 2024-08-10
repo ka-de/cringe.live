@@ -153,7 +153,7 @@ INFO: Pass through layers: 264
 For example, to cut out everything but OUT01 or `output_blocks.1` you would have to use:
 
 ```bash
-python chop_blocks.py {lora_path} 1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
+python chop_blocks.py {⚠️resized⚠️_lora_path} 1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
 ```
 
 Because the first number in the vector string is just for compatibility with a ComfyUI node I will mention in the next paragraph, you can forget about it, the next number after it is `input_blocks.1`!
