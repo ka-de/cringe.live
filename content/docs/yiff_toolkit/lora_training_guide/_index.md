@@ -769,4 +769,4 @@ You will of course need to [install](https://www.tensorflow.org/install/pip) Ten
 tensorboard --logdir=logs
 ```
 
-After that you can open it up in your browser at [http://localhost:6006/](http://localhost:6006/).
+After that you can open it up in your browser at [http://localhost:6006/](http://localhost:6006/) and try and read some tea leaves, uh, sorry! I meant loss curves!

@@ -11,7 +11,7 @@ title: "Add Custom Optimizers"
 
 ---
 
-Let's make sure you start your little experiments with custom optimizers in the `dev` branch of `sd-scripts`!
+Let's make sure you start your little experiments with custom optimizers in the `dev` branch of `sd-scripts`! You can skip this step, but then you can't gloat to your friends that you are an experimenting savant!
 
 ```bash
 git checkout dev
@@ -19,9 +19,16 @@ git checkout dev
 
 Now let's create a new `optimizers` folder in `library` and an empty `__init__.py` file as well!
 
+Linux/Mac:
+
 ```bash
 mkdir library/optimizers
 touch library/optimizers/__init__.py
+```
+
+Windows PowerShell:
+
+```pwsh
 ```
 
 You can put whatever optimizer you want in this folder, like, let's put `compass.py` in there:
