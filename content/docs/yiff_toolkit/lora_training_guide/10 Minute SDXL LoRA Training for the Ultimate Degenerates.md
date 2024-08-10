@@ -23,7 +23,7 @@ summary: "An offensive, unethical and biased guide on how to poop out awesome Lo
     </video>
 </div>
 
-This method is a short, no hand-holding "guide" that describes a super-experimental method of training an SDXL LoRA in 80 steps, it works with both Pony Diffusion V6 XL and CompassMix XL and probably a few more others. The "10 Minute" in the title is just click bait, the training time will depend on your dataset and step size, but it is pretty frigging fast! The 80 steps apply to characters and styles with 40 to 200 images in the dataset without any scaling issues, you will only need to adjust the output name between trainings! 😸 (⚠️: I still need to test more weird and complex stuff!)
+This method is a short, no hand-holding "guide" that describes a super-experimental method of training an SDXL LoRA in 80 steps, it works with both Pony Diffusion V6 XL and CompassMix XL and probably a few more others. The "10 Minute" in the title is just click bait, the training time will depend on your dataset and step size and how long ago your Dad bought you your GPU, but it is pretty frigging fast! The 80 steps apply to characters and styles with 40 to 200 images in the dataset without any scaling issues, you will only need to adjust the output name between trainings! 😸 (⚠️: I still need to test more weird and complex stuff!)
 
 ## Setup and Training
 
