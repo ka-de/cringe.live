@@ -45,4 +45,4 @@ Use the search bar to type in `Custom Scripts` and find the one made by `pythong
 
 ![Custom Scripts Author](/images/comfyui/custom_scripts_author.png)
 
-You can learn more about what I just made you install here: [Custom Scripts]()
+You can learn more about what I just made you install here: [Custom Scripts](/docs/yiff_toolkit/comfyui/ComfyUI-Custom-Scripts/)
