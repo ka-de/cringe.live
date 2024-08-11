@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 5
 bookFlatSection: false
 bookToC: false
 title: "ComfyUI_bitsandbytes_NF4"
