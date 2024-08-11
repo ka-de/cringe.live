@@ -43,7 +43,7 @@ Let's get through the basic stuff quick, so we can get to the fun stuff quicker!
 
 It could be a bit daunting at first to wrap your head around all these new concepts, especially when this is the first time you encounter a node based workflow, so much so, that you might feel the need to hop onto Discord, and publicly let 30k people know that you are too dumb to learn ComfyUI and that ComfyUI sucks and that everybody who is trying to help your dumb ass is just a troll! But fuck that! You are stronger than that! Besides, you have 🐺🪄 (me) here to help you get through this shit, quick and easy!
 
-The workflow is the whole thing in the previous screenshot, every node, group and connections you have made, together form this esoteric JSON beast, when people tell you to share your workflow, what they mean really mean, is for you to hit `Ctrl + S` and send them the JSON file you downloaded after naming your workflow something meaningful. You can also use [Workflow Image](/docs/yiff_toolkit/comfyui/#workflow-image) from the Custom-Scripts custom node, to embed the workflow in an image of your workflow.
+The workflow is the whole thing in the previous screenshot, every node, group and connections you have made, together form this esoteric JSON beast, when people tell you to share your workflow, what they mean really mean, is for you to hit `Ctrl + S` and send them the JSON file you downloaded after naming your workflow something meaningful. You can also use [Workflow Image](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/#workflow-image) from the Custom-Scripts custom node, to embed the workflow in an image of your workflow.
 
 Now, let's start from the beginning and get rid of all this daunting node soup!
 
