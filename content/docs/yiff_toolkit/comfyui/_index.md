@@ -15,7 +15,7 @@ title: "The Unethical ComfyUI Guide"
 
 ---
 
-If you need help installing ComfyUI, you didn't come to the right place. Please check out the [Installing](https://github.com/comfyanonymous/ComfyUI?tab=readme-ov-file#installing) section of the readme, and come back here when you got it running.
+If you need help installing ComfyUI, you didn't come to the right place. If you are using Windows, you can use the [prebuilt](https://docs.comfy.org/get_started/pre_package) package, or you can install it [manually](https://docs.comfy.org/get_started/manual_install) otherwise (more fun).
 
 ## Subsections
 
@@ -30,6 +30,10 @@ If you need help installing ComfyUI, you didn't come to the right place. Please 
 Before you can start using ComfyUI, first you need to get a model and depending on what you want to accomplish, you might need to stock up on some LoRAs.
 
 Models, or checkpoints are the huge files responsible for generating images based on text and/or image input. They are stored in the `models\checkpoints` folder of your ComfyUI installation. A good place to browse for one is [CivitAI](https://civitai.com/), but, since you are here, you are probably going to want to check out [CompassMix XL Lightning](https://civitai.com/models/498370/compassmix-xl-lightning) or [Pony Diffusion V6 XL](https://civitai.com/models/257749/pony-diffusion-v6-xl). Both of which are SDXL based, which are a lot more heftier than SD1.5 models. This guide will mostly be focused on using XL models, but eventually I will add a section for working with 1.5! <!-- ⚠️ TODO: Add a section for 1.5 x) -->
+
+LoRAs, or **Lo**w-**R**ank **A**daptation is a technique that came along to reduce the costs of fine-tuning LLMs. It works by freezing the pretrained model's weights and injects trainable rank decomposition matrices into each layer. For now, the important thing is that these have a different method of operation and a different purpose, therefore these are stored separately in the `models\loras` folder in ComfyUI and you can find a lot of them on this website or on CivitAI and many other places!
+
+You'll find other folders for other types of models in the `models\` folder! Feel free to explore around here, but we'll worry about them when (if) we get to them.
 
 ## Node Based Workflow
 
@@ -55,3 +59,7 @@ Here is how you can clear your workflow, both with the new and old UIs:
         Your browser does not support the video tag.
     </video>
 </div>
+
+Now that we don't have anything to work with, let's add a node! There are two ways to do this, first is to right click on an empty part of your workflow (which right now could be, literally anywhere). But this method, even though is well-structured, somehow just sucks! So we are going to left-click twice on an empty part of the workflow instead!
+
+![Right Click Add Method](https://huggingface.co/k4d3/yiff_toolkit3/resolve/main/static/comfyui/right_click_add.png)
