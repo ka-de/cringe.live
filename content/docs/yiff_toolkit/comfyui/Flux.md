@@ -13,3 +13,9 @@ summary: ""
 ---
 
 [Installation and Basic Usage](https://comfyanonymous.github.io/ComfyUI_examples/flux/)
+
+See [ComfyUI_bitsandbytes_NF4](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_bitsandbytes_NF4/) for my favorite way to load in the model.
+
+## Get Negative Prompts Back
+
+---
