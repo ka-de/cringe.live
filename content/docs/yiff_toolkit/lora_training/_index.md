@@ -519,23 +519,33 @@ Learning will always end with what you specify in `--max_train_epochs` or `--max
 
 ##### `--mixed_precision`
 
-⚠️
+This setting determines the numerical precision used during training computations. Opting for mixed precision can boost training speed and lower memory consumption, but it introduces potential numerical instability. Here's a breakdown of the options and their trade-offs:
+
+- "no": Uses full 32-bit precision. It's slower but more stable.
+- "fp16": Uses 16-bit precision where possible, falling back to 32-bit when necessary. This can speed up training and reduce memory usage, but may occasionally lead to numerical instability.
+- "bf16": Uses bfloat16 precision. It offers a good balance between the range of 32-bit floats and the memory savings of 16-bit floats.
+
+Choose wisely based on your hardware capabilities and stability requirements. If you encounter NaN losses or other numerical issues during training, consider switching to full precision or adjusting other hyperparameters.
 
 ```py
-    --mixed_precision="fp16"
+    --mixed_precision="bf16"
 ```
 
 ---
 
 ##### `--save_precision`
 
-⚠️
+This parameter determines the precision of the saved model weights. It's a crucial choice that affects both the file size and the accuracy of your trained LoRA. Here's what you need to know:
+
+- "fp32": Full 32-bit precision. It's the most accurate but takes up more storage space.
+- "fp16": 16-bit precision. A good balance between accuracy and file size, suitable for most use cases.
+- "bf16": bfloat16 precision. Offers a wider range than fp16 but with less precision, useful for certain hardware setups.
+
+Choose based on your storage constraints and accuracy requirements. If you're not sure, "fp16" is a solid default that works well in most situations. It'll keep your LoRA file size reasonable without sacrificing too much precision.
 
 ```py
     --save_precision="fp16"
 ```
-
----
 
 ##### `--caption_extension`
 
@@ -549,7 +559,19 @@ For example, if your images are named `image1.jpg`, `image2.jpg`, and so on, and
 
 ##### `--cache_latents` and `--cache_latents_to_disk`
 
-⚠️
+These two parameters work together to optimize memory usage and potentially speed up training:
+
+- `--cache_latents`: This option caches the latent representations of your training images in memory. By doing this, the model doesn't need to re-encode the images into latents at every training step, which can significantly speed up training, especially for larger datasets.
+
+- `--cache_latents_to_disk`: When used in conjunction with `--cache_latents`, this option allows the cached latents to be stored on disk instead of keeping them all in memory. This is particularly useful if you have a large dataset that exceeds your available RAM.
+
+Using these options can provide several benefits:
+
+1. Faster training: By pre-computing and caching latents, you reduce the computational overhead during each training step.
+2. Reduced VRAM usage: Caching to disk can help manage memory more efficiently, especially for large datasets.
+3. Consistency: Pre-computed latents ensure that the same latent representation is used for each image across epochs, which can lead to more stable training.
+
+However, be aware that caching latents may use a significant amount of disk space, especially for large datasets. Make sure you have sufficient storage available when using `--cache_latents_to_disk`.
 
 ```py
     --cache_latents --cache_latents_to_disk
