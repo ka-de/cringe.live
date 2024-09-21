@@ -72,6 +72,12 @@ This enables only one out block, which seems to be the most important block for 
 1,0,0,0,0,0,0,1,1,0,0,0,1,1,1,1,1,1,0,0,0
 ```
 
+## by_kenket
+
+```r
+1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+```
+
 ## by_serpent_x
 
 ```r
