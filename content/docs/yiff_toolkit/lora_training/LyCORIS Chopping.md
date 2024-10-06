@@ -50,16 +50,6 @@ Now, let's analyze each vector string preset I have collected:
 For character LoRAs you usually want `1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1` AKA Out-All, for Styles and Poses IDK!Needs testing: MID01 for poses / compositions
 -->
 
-## Nobody Has Ever Used This Vector String
-
----
-
-Yep, that's the name of it! This one leaves out all the deeper layers.
-
-```r
-1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-```
-
 ## Heavy Lifter
 
 This enables only one out block, which seems to be the most important block for the final output.
