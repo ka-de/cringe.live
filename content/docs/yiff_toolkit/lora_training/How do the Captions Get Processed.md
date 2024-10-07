@@ -3,6 +3,7 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "How do the Captions Get Processed?"
+summary: "This article explains the `process_caption` method in sd-scripts, detailing how it customizes captions based on various parameters. It covers prefix and suffix addition, dropout mechanisms, wildcard processing, token manipulation, and textual inversion replacements. The method ensures captions are dynamically modified to enhance training data quality and model robustness."
 ---
 
 <!--markdownlint-disable MD025 -->

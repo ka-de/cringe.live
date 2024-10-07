@@ -3,6 +3,7 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "Add Custom Optimizers"
+summary: "The article provides a detailed guide on how to add custom optimizers to the `sd-scripts` library. It walks through the steps of creating a new optimizers folder, adding an `__init__.py` file, and implementing a custom optimizer class in Python. The guide also explains how to integrate the new optimizer into the training script, ensuring it can be used effectively during model training."
 ---
 
 <!--markdownlint-disable MD025 -->

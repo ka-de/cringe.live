@@ -6,7 +6,7 @@ bookToC: false
 
 <!-- markdownlint-disable MD009 MD025 MD033 -->
 
-# Lets get one thing straight
+# 俺についての一つのこと
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
   <div style="flex: 1; margin-right: 10px;">
