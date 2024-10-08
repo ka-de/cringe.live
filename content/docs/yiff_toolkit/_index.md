@@ -2,12 +2,12 @@
 weight: 1
 bookFlatSection: false
 bookToC: true
-title: "🐺 - yiff_toolkit"
+title: "🐺 - イッフ＿ツールキット"
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->
 
-# Yiff Toolkit
+# イッフ＿ツールキット
 
 ---
 
@@ -315,7 +315,9 @@ It is still a bit early to blindly trust these things, but the new generation of
 
 ---
 
-[Link](https://huggingface.co/spaces/fancyfeast/joy-caption-pre-alpha)
+[Link](https://huggingface.co/spaces/fancyfeast/joy-caption-alpha-two)
+
+[Download Script](https://huggingface.co/k4d3/toolkit/blob/main/joy)
 
 ```bash
 git clone https://huggingface.co/spaces/fancyfeast

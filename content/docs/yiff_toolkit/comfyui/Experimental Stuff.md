@@ -16,16 +16,29 @@ summary: "This document contains information that might get outdated before you 
 
 ---
 
-Put this `--front-end-version Comfy-Org/ComfyUI_frontend@latest` after `main.py`.
+Put this `--front-end-version Comfy-Org/ComfyUI_frontend@latest` after `main.py` in your command-line argument you use to start your ComfyUI!
 
-I think those node previews are really stupid lmao!
+### New Features
+
+---
+
+You can now drag and drop nodes from the Node Library sidebar to your workflow, which you can also filter!
+
+<div style="text-align: center;">
+    <video style="width: 100%;" autoplay loop muted playsinline>
+        <source src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/node_library_search_drag.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
 
 ## For Loops
 
 ---
 
-You can check out the branch with [gh](https://cli.github.com/) but make sure to remind yourself that you are behind `master` by a few commits!
+~~You can check out the branch with [gh](https://cli.github.com/) but make sure to remind yourself that you are behind `master` by a few commits!~~
 
+<!--
 ```bash
 gh pr checkout 2666
 ```
@@ -43,11 +56,13 @@ gh pr checkout 2666
 git fetch origin
 git merge origin/master
 ```
+-->
 
-You should also get the [execution-inversion-demo-comfyui](https://github.com/BadCafeCode/execution-inversion-demo-comfyui) custom node so you can try out some of the new features you just enabled!
+The branch has been merged!
+
+You should also make sure the [execution-inversion-demo-comfyui](https://github.com/BadCafeCode/execution-inversion-demo-comfyui) custom node you might have downloaded is updated!
 
 So how do these for loops work? Uh, good question! Let's find out!
-
 ## Lazy Evaluation
 
 ---
