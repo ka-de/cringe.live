@@ -24,15 +24,15 @@ In addition to his technical skills, Chunie's art often conveys a sense of movem
 
 ---
 
-[⬇️ Chopped LoKR Download (?MB)]()
+[⬇️ Chopped LoKR Download (10.2MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/by_chunie-v3s3000c.safetensors)
 
-[⬇️ Original LoKR Download (?MB)]()
+[⬇️ Original LoKR Download (12.3MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/by_chunie-v3s3000.safetensors)
 
 <!--
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/chunie)
 -->
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_chunie)
+[📐 Dataset](https://huggingface.co/datasets/k4d3/by_chunie)
 
 <!--
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/chunie-v1e5.json)

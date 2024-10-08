@@ -22,7 +22,7 @@ Put this `--front-end-version Comfy-Org/ComfyUI_frontend@latest` after `main.py`
 
 ---
 
-You can now drag and drop nodes from the Node Library sidebar to your workflow, which you can also filter!
+You can now drag and drop nodes from the Node Library sidebar to your workflow, which you can also search!
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
