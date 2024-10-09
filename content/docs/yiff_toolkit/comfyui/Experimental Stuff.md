@@ -22,7 +22,9 @@ Put this `--front-end-version Comfy-Org/ComfyUI_frontend@latest` after `main.py`
 
 ---
 
-You can now drag and drop nodes from the Node Library sidebar to your workflow, which you can also search!
+You can now drag and drop nodes from the Node Library in the new sidebar section to your workflow, which you can also search using fuzzy matching!
+
+Fuzzy search allows you to find nodes in the Node Library even if you don't remember their exact names. It works by matching the characters you type to the characters in the node names, even if they're not in the same order. This makes it easier to find nodes without having to remember their exact names.
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
@@ -31,6 +33,14 @@ You can now drag and drop nodes from the Node Library sidebar to your workflow, 
     </video>
 </div>
 
+Holding shift while releasing a link will now bring up the Node Search Box.
+
+<div style="text-align: center;">
+    <video style="width: 100%;" autoplay loop muted playsinline>
+        <source src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/link_release_node.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
 ## For Loops
 
