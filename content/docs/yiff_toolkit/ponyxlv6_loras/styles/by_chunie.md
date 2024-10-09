@@ -44,16 +44,6 @@ In addition to his technical skills, Chunie's art often conveys a sense of movem
 
 Keyword: `by chunie` (You don't need to use it)
 
-### Close to the Original
-
----
-
-```md
-score_6_up, score_5_up, source_furry, rating_explicit, ...
-```
-
-With `Euler a` and the CFG at `9.0` I'd say this is as close I can get to the original style.
-
 ## Example Images
 
 ---
@@ -62,22 +52,21 @@ With `Euler a` and the CFG at `9.0` I'd say this is as close I can get to the or
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.]()]()
-[![An AI generated image.]()]()
-[![An AI generated image.]()]()
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/9S9Z1PJ2HRM38GCS80NS9R8HW0e.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/9S9Z1PJ2HRM38GCS80NS9R8HW0e.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/BQXDYPF2T4YB8Z7CQWFTQTSNF0e.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/BQXDYPF2T4YB8Z7CQWFTQTSNF0e.png)
+
 
   </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.]()]()
-[![An AI generated image.]()]()
-[![An AI generated image.]()]()
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/NA4DW5FFX1HA0QEED4KWFH9VT0.jpg)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/NA4DW5FFX1HA0QEED4KWFH9VT0.jpg)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/P8ZZZ6WF97GDS5KCNTJ2X0XGM0e.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/P8ZZZ6WF97GDS5KCNTJ2X0XGM0e.png)
 
   </div>
 </div>
 
 <div style="display: flex; justify-content: center;">
 
-[![An AI generated image.]()]()
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/KG4BXSTZF14P330YH3V38MERJ0.jpg)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/KG4BXSTZF14P330YH3V38MERJ0.jpg)
 
 </div>
