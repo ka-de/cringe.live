@@ -1,5 +1,5 @@
 ---
-weight: 2
+weight: 1
 bookFlatSection: false
 bookToC: true
 title: "LoRA Training Guide"
