@@ -47,7 +47,6 @@ Keyword: `by chunie` (You don't need to use it)
 ## Example Images
 
 ---
-<!-- ⚠️ TODO: Thumbnails! -->
 
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; justify-content: space-between; width: 45%;">
