@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "Optimizing ComfyUI Load Times"
-summary: ""
+summary: "The document provides steps to optimize ComfyUI load times by enabling compression in the server script and compressing files using gzip and brotli."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,7 +12,11 @@ summary: ""
 
 ---
 
-With the caveat that over the local network this might actually be slower, however, over an internet cable, or worse, the Wi-Fi, this will greatly improve your loading times every time you decide to fire up ComfyUI.
+[![The image shows an anime girl with long blonde hair and fennec ears running through a snowy landscape. The setting appears to be during twilight, with a sky that transitions from warm orange hues near the horizon to cooler blue tones above, suggesting either dawn or dusk. The individual is captured mid-stride, with one foot touching the ground and the other lifted behind them, conveying a sense of motion. Streaks of white and light blue in the background give an impression of speed or wind rushing past. The foreground shows patches of snow on uneven terrain with exposed earth, while the background features silhouettes of coniferous trees against the sky.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/make_it_fast_small.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/make_it_fast.png)
+
+With the caveat that over the local network this might actually be slower, however, over an internet cable, or worse, the Wi-Fi and mobile networks, this will greatly improve your loading times every time you decide to fire up ComfyUI.
+
+You will need to apply this change to `server.py` and restart ComfyUI:
 
 ```diff
 diff --git a/server.py b/server.py
@@ -53,7 +57,9 @@ find web* custom_nodes/**/{js,web} -type f \( -name "*.css" -o -name "*.html" -o
 ```
 -->
 
-You can also compress your `autocomplete` file for [ComfyUI-Custom-Scripts](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/)
+You will need to recompress them every time the frontend gets updated because ComfyUI developers decided not to include version strings for the frontend scripts, instead, they just use `no-cache` like monkeys! 🐺
+
+You can also compress your `autocomplete` file for [ComfyUI-Custom-Scripts](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/) but first you need to patch `autocomplete.py`:
 
 ```diff
 diff --git a/py/autocomplete.py b/py/autocomplete.py
@@ -73,7 +79,7 @@ index 8ac6a05..7d68e8f 100644
 +    return res
 ```
 
-and then compress it with:
+and then compress your spellbook with:
 
 ```bash
 gzip -k custom_nodes/ComfyUI-Custom-Scripts/user/autocomplete.txt

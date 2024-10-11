@@ -51,21 +51,20 @@ Keyword: `by chunie` (You don't need to use it)
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/9S9Z1PJ2HRM38GCS80NS9R8HW0e.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/9S9Z1PJ2HRM38GCS80NS9R8HW0e.png)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/BQXDYPF2T4YB8Z7CQWFTQTSNF0e.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/BQXDYPF2T4YB8Z7CQWFTQTSNF0e.png)
-
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/by_chunie/9S9Z1PJ2HRM38GCS80NS9R8HW0e_small.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/by_chunie/9S9Z1PJ2HRM38GCS80NS9R8HW0e.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/by_chunie/BQXDYPF2T4YB8Z7CQWFTQTSNF0e_small.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/by_chunie/BQXDYPF2T4YB8Z7CQWFTQTSNF0e.png)
 
   </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/NA4DW5FFX1HA0QEED4KWFH9VT0.jpg)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/NA4DW5FFX1HA0QEED4KWFH9VT0.jpg)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/P8ZZZ6WF97GDS5KCNTJ2X0XGM0e.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/P8ZZZ6WF97GDS5KCNTJ2X0XGM0e.png)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/by_chunie/KG4BXSTZF14P330YH3V38MERJ0_small.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/by_chunie/KG4BXSTZF14P330YH3V38MERJ0.jpg)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/by_chunie/NA4DW5FFX1HA0QEED4KWFH9VT0.jpg)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/by_chunie/up_00018_.png)
 
   </div>
 </div>
 
 <div style="display: flex; justify-content: center;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/KG4BXSTZF14P330YH3V38MERJ0.jpg)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/KG4BXSTZF14P330YH3V38MERJ0.jpg)
+[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/by_chunie/P8ZZZ6WF97GDS5KCNTJ2X0XGM0e_small.png)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/by_chunie/P8ZZZ6WF97GDS5KCNTJ2X0XGM0e.png)
 
 </div>
