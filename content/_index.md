@@ -55,3 +55,9 @@ bookToC: false
         <img alt="The image showcases three anthropomorphic wolves, each dressed in unique and elaborate costumes, standing in front of an American flag. The wolf in the center is adorned in a purple wizard’s robe and hood, holding a raised and clenched fist, adding a mystical and powerful touch to its appearance. The wolf on the left is wearing a blue suit, splattered with red blood. While the American flag is falling down upside down. The wolf on the right contrasts with a more authoritative look, dressed in a police uniform minus the shirt, revealing a muscular chest design, complete with an officer’s badge. The detailed costumes of these characters bring out their distinct personalities, from the mystical and magical to the patriotic and authoritative. The fur textures are realistic, enhancing the lifelike appearance of the wolves. The backdrop of a clear blue sky and the American flag adds a sense of celebration or national pride to the scene, making the image both striking and memorable." src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/pny/00000215-07150016e.png">
     </a>
 </div>
+
+## Site News
+
+### 10/11/2024
+
+[by_chunie](/docs/yiff_toolkit/ponyxlv6_loras/styles/by_chunie/) got an update and I also wrote about [Optimizing ComfyUI Load Times](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/).

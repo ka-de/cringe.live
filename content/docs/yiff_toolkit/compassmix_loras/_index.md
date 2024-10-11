@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 3
 bookFlatSection: false
 bookToC: false
 title: "CompassMix XL Lightning LoRAs"

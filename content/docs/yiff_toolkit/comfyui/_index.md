@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 2
 bookFlatSection: false
 bookToC: true
 title: "The Unethical ComfyUI Guide"
