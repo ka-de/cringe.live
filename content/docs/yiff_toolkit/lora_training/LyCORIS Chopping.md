@@ -75,7 +75,7 @@ This enables only one out block, which seems to be the most important block for 
 ## by_hamgas
 
 ```r
-1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,1,1,0,0,0
+1,0,0,0,0,0,0,1,1,0,0,0,1,0,1,1,1,1,0,0,0
 ```
 
 ## by_kenket
