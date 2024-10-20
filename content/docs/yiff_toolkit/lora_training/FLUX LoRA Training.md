@@ -2,13 +2,13 @@
 weight: 2
 bookFlatSection: false
 bookToC: false
-title: "Longer SDXL LoRA Training"
+title: "FLUX LoRA Training"
 summary: ""
 ---
 
 <!--markdownlint-disable MD025 -->
 
-# Longer SDXL LoRA Training
+# FLUX LoRA Training
 
 ---
 
