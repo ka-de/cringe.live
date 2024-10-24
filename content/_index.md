@@ -11,7 +11,13 @@ bookToC: false
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
   <div style="flex: 1; margin-right: 10px;">
 
-![The image depicts an anthropomorphic white wolf with green eyes, donning a purple wizard hat and cape with gold trims and a red gem. The character is pointing up with a defensive expression, accompanied by a speech bubble that reads, “I’M NOT A FURRY!” This visual is set against a transparent background, highlighting the colorful character. The humor in this image arises from the irony of the character’s statement. The term “furry” refers to individuals who have an interest in anthropomorphic animal characters, often dressing up as one or appreciating art related to them. Despite the character’s adamant denial, it ironically embodies the very essence of what it claims not to be—a furry, complete with human-like expression and attire typically associated with the furry fandom. This contradiction between the character’s statement and its appearance creates a humorous juxtaposition.](/images/kade-point-up-not-a-furry.png)
+{{< blurhash 
+    src="/images/kade-point-up-not-a-furry.png" 
+    blurhash="LIK-Xz010LkoM|t6_2IV%gM{xu-;" 
+    width="512" 
+    height="512" 
+    alt="The image depicts an anthropomorphic white wolf with green eyes, donning a purple wizard hat and cape with gold trims and a red gem. The character is pointing up with a defensive expression, accompanied by a speech bubble that reads, “I’M NOT A FURRY!” This visual is set against a transparent background, highlighting the colorful character. The humor in this image arises from the irony of the character’s statement. The term “furry” refers to individuals who have an interest in anthropomorphic animal characters, often dressing up as one or appreciating art related to them. Despite the character’s adamant denial, it ironically embodies the very essence of what it claims not to be—a furry, complete with human-like expression and attire typically associated with the furry fandom. This contradiction between the character’s statement and its appearance creates a humorous juxtaposition." 
+>}}
 
   </div>
   <div style="flex: 1; margin-left: 10px;">

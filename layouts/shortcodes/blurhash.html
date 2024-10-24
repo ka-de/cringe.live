@@ -1,0 +1,22 @@
+{{- $width := .Get "width" | default "400" -}}
+{{- $height := .Get "height" | default "300" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $src := .Get "src" -}}
+{{- $blurhash := .Get "blurhash" -}}
+
+<div class="image-container" style="aspect-ratio: {{ $width }}/{{ $height }};">
+    <canvas 
+        class="blur-hash" 
+        data-blurhash="{{ $blurhash }}" 
+        width="{{ $width }}" 
+        height="{{ $height }}"
+    ></canvas>
+    <img 
+        src="{{ $src }}" 
+        loading="lazy" 
+        width="{{ $width }}" 
+        height="{{ $height }}"
+        alt="{{ $alt }}"
+        onload="this.previousElementSibling.style.display = 'none'; this.style.opacity = 1;"
+    >
+</div>
