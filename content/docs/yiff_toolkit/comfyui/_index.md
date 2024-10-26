@@ -55,11 +55,11 @@ Here is how you can clear your workflow, both with the new and old UIs:
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
-        <source src="https://huggingface.co/k4d3/yiff_toolkit3/resolve/main/static/comfyui/clear_workflow.mp4" type="video/mp4">
+        <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/clear_workflow.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
 
 Now that we don't have anything to work with, let's add a node! There are two ways to do this, first is to right click on an empty part of your workflow (which right now could be, literally anywhere). But this method, even though is well-structured, somehow just sucks! So we are going to left-click twice on an empty part of the workflow instead!
 
-![Right Click Add Method](https://huggingface.co/k4d3/yiff_toolkit3/resolve/main/static/comfyui/right_click_add.png)
+![Right Click Add Method](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/right_click_add.png)

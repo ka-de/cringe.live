@@ -779,7 +779,7 @@ I like giving the `--output_name` a relevant name to make sure I know exactly wh
 
 {{< blurhash
     src="/images/sd-scripts/keep_track_of_changes.png"
-    blurhash="LIK-Xz010LkoM|t6_2IV%gM{xu-;"
+    blurhash="L8SigQ00?b~qxtofs;j]tMoesroN"
     width="522"
     height="261"
     alt="The image shows a screenshot of a computer code interface with various parameters and settings highlighted. The background is white, and the text is in green, and purple. Key parameters include “network_dropout” and “lr” indicating settings for a machine learning model’s training process. The middle sections suggest that the output name is being reviewed. This image is relevant for those configuring neural network training."

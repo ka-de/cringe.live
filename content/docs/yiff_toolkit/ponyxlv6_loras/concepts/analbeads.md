@@ -6,7 +6,7 @@ title: "analbeads"
 summary: "Oh my God! A sex toy! 🙀"
 ---
 
-<!--markdownlint-disable MD025 MD033 -->
+<!--markdownlint-disable MD025 MD033 MD034 -->
 
 # analbeads-v1e400
 
@@ -85,19 +85,57 @@ Keywords:
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000045-06011658-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000045-06011658.png)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000057-06011716-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000057-06011716.png)
+<a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000045-06011658.png">
+{{< blurhash
+    src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000045-06011658-small.png"
+    blurhash="LIG+Eyrt0K-.6Ct9xYV?M{tmIURi"
+    width="1400"
+    height="1400"
+    alt=""
+>}}
+</a>
+<a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000057-06011716.png">
+{{< blurhash
+    src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000057-06011716-small.png"
+    blurhash="LOI|:-NGBgO[E;wcouT10=r?-6jc"
+    width="1400"
+    height="1400"
+    alt=""
+>}}
+</a>
 
 </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000064-06011732-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000064-06011732.png)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000073-06011754-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000073-06011754.png)
+<a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000064-06011732.png">
+{{< blurhash
+    src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000064-06011732-small.png"
+    blurhash="LTK^{HTbE0rCHDNXnj$jA0adnQI="
+    width="1400"
+    height="1400"
+    alt=""
+>}}
+</a>
+<a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000073-06011754.png">
+{{< blurhash
+    src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000073-06011754-small.png"
+    blurhash="LQJQvL?F4:IWB@R*ELW?MwaJs:bw"
+    width="1400"
+    height="1400"
+    alt=""
+>}}
+</a>
 
   </div>
 </div>
 <div style="display: flex; justify-content: center;">
-
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000080-06011803-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000080-06011803.png)
-
+<a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000080-06011803.png">
+{{< blurhash
+    src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/analbeads/00000080-06011803-small.png"
+    blurhash="LREflsWC9FwNqCR*R5RREhs.$jWq"
+    width="1400"
+    height="1400"
+    alt=""
+>}}
+</a>
 </div>

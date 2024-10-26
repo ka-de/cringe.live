@@ -6,7 +6,7 @@ title: "10 Minute LoRA Training for the Ultimate Degenerates"
 summary: "An offensive, unethical and biased guide on how to poop out awesome LoRAs with the bare minimal of effort and compute time."
 ---
 
-<!--markdownlint-disable MD025 MD033 -->
+<!--markdownlint-disable MD025 MD033 MD034 -->
 
 # 10 Minute SDXL LoRA Training for the Ultimate Degenerates
 
@@ -18,7 +18,7 @@ summary: "An offensive, unethical and biased guide on how to poop out awesome Lo
 
 <div style="display: flex; align-items: center;">
     <video style="margin-right: 20px;" autoplay loop muted playsinline>
-        <source src="https://huggingface.co/k4d3/yiff_toolkit3/resolve/main/static/sd-scripts/blaidd_training.mp4" type="video/mp4">
+        <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/sd-scripts/blaidd_training.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <p>
@@ -163,7 +163,13 @@ In order for you to check which block contains what information I greatly recomm
 
 <div style="text-align: center;">
 
-![A screenshot of the Lora Loader node](https://huggingface.co/k4d3/yiff_toolkit3/resolve/main/static/sd-scripts/lora_loader.png)
+{{< blurhash
+    src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/sd-scripts/lora_loader.png"
+    blurhash="L3O|b2xuWBWB~qof4nWB%MofIUWU"
+    width="1045"
+    height="805"
+    alt="The screenshot shows a user interface element from the ComfyUI-Inspire-Pack, specifically a node named “Lora Loader (Block Weight).” This node is part of a visual programming environment and includes various adjustable parameters. Key settings visible in the node are “model”, “clip”, “category_filter”, “lora_name”, “strength_model”, “strength_clip”, “inverse”, “control_after_generate”, and “preset” Each parameter has corresponding input fields or dropdown menus for user customization. The preset field contains a detailed alphanumeric string, representing a specific configuration."
+>}}
 
 </div>
 

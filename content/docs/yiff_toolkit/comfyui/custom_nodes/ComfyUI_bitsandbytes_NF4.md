@@ -23,8 +23,8 @@ git clone https://github.com/comfyanonymous/ComfyUI_bitsandbytes_NF4
 
 You will want to use the `CheckpointLoaderNF4` node to load in the models.
 
-![CheckpointLoaderNF4 Node](https://huggingface.co/k4d3/yiff_toolkit3/resolve/main/static/comfyui/CheckpointLoaderNF4.png)
+![CheckpointLoaderNF4 Node](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/CheckpointLoaderNF4.png)
 
 Here is an example workflow:
 
-![Example NF4 Workflow](https://huggingface.co/k4d3/yiff_toolkit3/resolve/main/static/comfyui/nf4_workflow.png)
+![Example NF4 Workflow](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/nf4_workflow.png)

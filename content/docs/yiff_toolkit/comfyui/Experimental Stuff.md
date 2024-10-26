@@ -28,7 +28,7 @@ Fuzzy search allows you to find nodes in the Node Library even if you don't reme
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
-        <source src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/node_library_search_drag.mp4" type="video/mp4">
+        <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/node_library_search_drag.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
@@ -37,7 +37,7 @@ Holding shift while releasing a link will now bring up the Node Search Box.
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
-        <source src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/link_release_node.mp4" type="video/mp4">
+        <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/link_release_node.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </div>
