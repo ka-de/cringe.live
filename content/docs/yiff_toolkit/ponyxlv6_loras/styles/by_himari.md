@@ -56,22 +56,65 @@ The LoRA is extremely biased towards `blurry background` and `two tone body`.
 
 ---
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000418-04190818.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000418-04190818.png)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00001078-04190837.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00001078-04190837.png)
-
-</div>
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000005-06011347-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000005-06011347.png)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000007-06011350-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000007-06011350.png)
-
+<div class="image-grid">
+  <div class="image-grid-container">
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000418-04190818.png">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000418-04190818.png"
+        blurhash="LIJ%Xu$QSz5QF?M|S}tQ~oM{E2-o"
+        width="1024"
+        height="1024"
+        alt="Anthropomorphic pink-scaled female dragon with large horns lounging on couch wearing loose blue plaid shirt draped off shoulder black thigh-high socks holding a small book with both hands. Background features green houseplants against light-colored walls. The character has visible vulva medium-sized breasts blushing expression while gazing directly at the viewer. Digital art style with detailed shading and textures."
+        grid="true"
+      >}}
+    </a>
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00001078-04190837.png">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00001078-04190837.png"
+        blurhash="LGD,fY_2m,S}~A%L%#NG$i%1IVH?"
+        width="1536"
+        height="1536"
+        alt="This digital illustration depicts an anthropomorphic turquoise-scaled dragon woman lounging seductively on a red couch with white cushions. She has light green hair styled into twin tails wears casual beige shirt and dark pants which she's pulling down slightly revealing her genitals. Her tail curls around her body while one hand rests suggestively over her exposed vulva. The setting includes large windows framed by lush greenery outside creating a serene backdrop. The art style is detailed with smooth shading and highlights typical of high-quality fantasy illustrations. This piece appears inspired by furry or anthro genres often found within online artistic communities."
+        grid="true"
+      >}}
+    </a>
   </div>
 </div>
-<div style="display: flex; justify-content: center;">
-
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000033-06011636-small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000033-06011636.png)
-
+<div class="image-grid">
+  <div class="image-grid-container">
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000005-06011347.png">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000005-06011347-small.png"
+        blurhash="LMJ7q9^jD$~o$d-Pr;-p9GM{%2My"
+        width="1400"
+        height="1400"
+        alt="Anthropomorphic Samoyed character with white fur wearing a purple wizard hat adorned with a gold star emblem and matching cloak lined with brown trimmings. The character has striking green eyes and wears an amulet around their neck. They're posing playfully against a backdrop of wooden bookshelves filled with colorful books suggesting a magical or library setting. This digital artwork features vibrant colors and detailed shading."
+        grid="true"
+      >}}
+    </a>
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000007-06011350.png">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000007-06011350.png"
+        blurhash="LSH_MIsk%KxZ_MM}I=Rl~ARkM|Rj"
+        width="1536"
+        height="1536"
+        alt="This digital artwork features an anthropomorphic otter character sitting among lush green foliage with hanging vines. The otter has light brown fur short spiky hair bright blue eyes and wears a black hoodie over a white T-shirt paired with blue jeans and sneakers. He sits cross-legged one hand adjusting his glasses while gazing directly at the viewer. His expression is friendly and relaxed. The scene appears to be set outdoors under soft sunlight filtering through leaves above him. This piece showcases detailed textures and shading characteristic of modern furry art styles."
+        grid="true"
+      >}}
+    </a>
+  </div>
+</div>
+<div class="image-grid">
+  <div class="image-grid-container">
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000033-06011636.png">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_himari/00000033-06011636-small.png"
+        blurhash="LPJ%RA}=0gD*$~JAOYt6Y5s.#RoI"
+        width="1400"
+        height="1400"
+        alt="A digital illustration depicting an anthropomorphic male fox with orange and white fur reclining seductively on a bed. He has muscular arms legs crossed showcasing his erect penis and visible testicles. His expression is inviting as he looks directly at the viewer. The room features green potted plants on shelves against beige walls. The bedding includes teal stripes. This artwork combines eroticism with detailed character design focusing on the fox's anatomy and pose."
+        grid="true"
+      >}}
+    </a>
+  </div>
 </div>

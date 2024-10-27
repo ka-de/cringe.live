@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "darkgem"
-summary: "{}"
+summary: "Fuck you too! x3"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -16,7 +16,7 @@ summary: "{}"
 
 ---
 
-Quality digital painting style.
+Digital painting style.
 
 ## Content
 
@@ -42,38 +42,20 @@ Keyword:
 
 I recommend first an `Euler a` with `40` steps, CFG set to `11` at 1024x1024 resolution and then a hi-res pass at 1536x1536 with `DPM++ 2M Karras` at 60 steps with denoise set between `0.40` and `0.69` for the highest levels of darkgem, but using `DPM++ 2M Karras` on both steps is also fine.
 
-### Suggested Tags
-
-```md
-{}
-```
-
-### Suggested Negative
-
-```md
-{}
-```
-
 ## Example Images
 
 ---
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/darkgem/00000859-04070924e-512.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/darkgem/00000859-04070924e.png)
-[![An AI generated image.](small.png)](large.png)
-
-</div>
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
-
+<div class="image-grid">
+  <div class="image-grid-container">
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/darkgem/00000859-04070924e.png">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/darkgem/00000859-04070924e-512.png"
+        blurhash="LKF6tAMzELaL.ARPRiajy8IBIBxu"
+        width="512"
+        height="512"
+        alt="Digital illustration featuring an anthropomorphic male werewolf with gray fur holding a large sword and sheathed dagger. He has muscular build prominent abs erect red uncircumcised ipenis and visible testicles. His expression shows confidence as he stands amidst lush green foliage in a forest setting. The character wears no clothing except for a blue cape draped over his shoulders. Background includes trees and sunlight filtering through leaves creating dappled light effects on the ground. This artwork is highly detailed showcasing realistic textures and shading typical of fantasy art styles. Artist unknown. Tags: furry anthro were-wolf warrior digital_art full_body muscular_male nudity nsfw weapon cape forest_background sunlight detailed_textures."
+      >}}
+    </a>
   </div>
-</div>
-<div style="display: flex; justify-content: center;">
-
-[![An AI generated image.](small.png)](large.png)
-
 </div>

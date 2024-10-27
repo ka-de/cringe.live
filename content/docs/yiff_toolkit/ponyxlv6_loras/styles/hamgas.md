@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "hamgas"
-summary: "{}"
+summary: ""
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -11,12 +11,6 @@ summary: "{}"
 # hamgas-v1e400
 
 ---
-
-## Introduction
-
----
-
-{}
 
 ## Content
 
@@ -39,41 +33,3 @@ summary: "{}"
 Keyword:
 
 - `hamgas`
-
-{}
-
-### Suggested Tags
-
-```md
-{}
-```
-
-### Suggested Negative
-
-```md
-{}
-```
-
-## Example Images
-
----
-
-<div style="display: flex; justify-content: space-between;">
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
-
-</div>
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
-
-  </div>
-</div>
-<div style="display: flex; justify-content: center;">
-
-[![An AI generated image.](small.png)](large.png)
-
-</div>

@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "blp"
-summary: "{}"
+summary: ""
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -47,27 +47,3 @@ Keyword:
 ```md
 detailed background, amazing_background, scenery porn, feral,
 ```
-
-## Example Images
-
----
-
-<div style="display: flex; justify-content: space-between;">
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
-
-</div>
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
-
-  </div>
-</div>
-<div style="display: flex; justify-content: center;">
-
-[![An AI generated image.](small.png)](large.png)
-
-</div>

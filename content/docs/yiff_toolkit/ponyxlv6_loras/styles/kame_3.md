@@ -12,12 +12,6 @@ summary: ""
 
 ---
 
-## Introduction
-
----
-
-{}
-
 ## Content
 
 ---
@@ -39,41 +33,3 @@ summary: ""
 Keyword:
 
 - `kame_3`
-
-{}
-
-### Suggested Tags
-
-```md
-{}
-```
-
-### Suggested Negative
-
-```md
-{}
-```
-
-## Example Images
-
----
-
-<div style="display: flex; justify-content: space-between;">
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
-
-</div>
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](small.png)](large.png)
-[![An AI generated image.](small.png)](large.png)
-
-  </div>
-</div>
-<div style="display: flex; justify-content: center;">
-
-[![An AI generated image.](small.png)](large.png)
-
-</div>

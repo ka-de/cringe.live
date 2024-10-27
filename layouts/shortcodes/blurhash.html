@@ -3,6 +3,11 @@
 {{- $alt := .Get "alt" | default "" -}}
 {{- $src := .Get "src" -}}
 {{- $blurhash := .Get "blurhash" -}}
+{{- $grid := .Get "grid" | default "false" -}}
+
+{{ if eq $grid "true" }}
+<div class="image-grid-container">
+{{ end }}
 
 <div class="image-container" style="aspect-ratio: {{ $width }}/{{ $height }};">
     <canvas 
@@ -20,3 +25,7 @@
         onload="this.previousElementSibling.style.display = 'none'; this.style.opacity = 1;"
     >
 </div>
+
+{{ if eq $grid "true" }}
+</div>
+{{ end }}

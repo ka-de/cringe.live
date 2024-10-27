@@ -48,23 +48,65 @@ Keyword: `by chunie` (You don't need to use it)
 
 ---
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/9S9Z1PJ2HRM38GCS80NS9R8HW0e_small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/9S9Z1PJ2HRM38GCS80NS9R8HW0e.png)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/BQXDYPF2T4YB8Z7CQWFTQTSNF0e_small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/BQXDYPF2T4YB8Z7CQWFTQTSNF0e.png)
-
-  </div>
-  <div style="display: flex; justify-content: space-between; width: 45%;">
-
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/KG4BXSTZF14P330YH3V38MERJ0_small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/KG4BXSTZF14P330YH3V38MERJ0.jpg)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/NA4DW5FFX1HA0QEED4KWFH9VT0.jpg)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/up_00018_.png)
-
+<div class="image-grid">
+  <div class="image-grid-container">
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/9S9Z1PJ2HRM38GCS80NS9R8HW0e.png">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/9S9Z1PJ2HRM38GCS80NS9R8HW0e_small.png"
+        blurhash="LDF=]q9H0gxulS%08_%z.SofDiNG"
+        width="1024"
+        height="1024"
+        alt="This digital artwork depicts an anthropomorphic female fox with reddish-brown fur kneeling in a snowy forest clearing. She has large blue eyes perky ears and prominent breasts visible through her fur. Her bushy tail curves around her body. The backdrop features tall trees covered in snow creating a serene winter scene. Light filters through the canopy casting soft shadows on the ground. This piece exhibits smooth textures and realistic shading typical of high-quality fantasy art. No specific artist or source is credited within the image itself."
+        grid="true"
+      >}}
+    </a>
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/BQXDYPF2T4YB8Z7CQWFTQTSNF0e.png">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/BQXDYPF2T4YB8Z7CQWFTQTSNF0e_small.png"
+        blurhash="L9E.YJ0dDj^*4=-W-XIb_4iw%5$."
+        width="1024"
+        height="1024"
+        alt="A digital illustration depicts an anthropomorphic white wolf with green eyes wearing a purple wizard hat and robe. The wolf's muscular physique is partially exposed under the robes as he holds a staff emitting magical purple flames. His large erect penis is prominently visible between his legs. The background features dense forest foliage illuminated by soft light filtering through leaves. This fantasy-themed artwork emphasizes mystical elements and eroticism."
+        grid="true"
+      >}}
+    </a>
   </div>
 </div>
-
-<div style="display: flex; justify-content: center;">
-
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/P8ZZZ6WF97GDS5KCNTJ2X0XGM0e_small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/P8ZZZ6WF97GDS5KCNTJ2X0XGM0e.png)
-
+<div class="image-grid">
+  <div class="image-grid-container">
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/KG4BXSTZF14P330YH3V38MERJ0.jpg">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/KG4BXSTZF14P330YH3V38MERJ0_small.png"
+        blurhash="LCDcaO-,0gt4-=tRTJIVD%V@IBkq"
+        width="1024"
+        height="1024"
+        alt="A digital painting depicts an anthropomorphic otter with muscular build standing confidently amidst a dense forest illuminated by blue bioluminescent plants. The character has brown fur white underbelly large ears and striking pink eyes; he is naked showing his erect penis prominently between spread legs. His right arm reaches forward while left hand gestures as if casting magic. Detailed textures highlight musculature and fur. Background features tall trees and scattered glowing flora. This artwork likely belongs to fantasy or furry genre art styles."
+        grid="true"
+      >}}
+    </a>
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/up_00018_.png">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/NA4DW5FFX1HA0QEED4KWFH9VT0.jpg"
+        blurhash="LAD[^q$T9GD-~oopNW9E0cs+t1R*"
+        width="1024"
+        height="1024"
+        alt="This digital artwork features an anthropomorphic wolf with white fur and green eyes wearing a purple wizard's hat adorned with gold details and a star emblem at its front. The character sports a matching purple cloak over a brown shirt suggesting a magical or fantasy theme. Behind them stands a shelf filled with books illuminated softly to highlight their spines. The scene appears indoors possibly within a library or study room. The art style is detailed and semi-realistic with smooth shading techniques emphasizing textures such as fur and fabric."
+        grid="true"
+      >}}
+    </a>
+  </div>
+</div>
+<div class="image-grid">
+  <div class="image-grid-container">
+    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/P8ZZZ6WF97GDS5KCNTJ2X0XGM0e.png">
+      {{< blurhash
+        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/by_chunie/P8ZZZ6WF97GDS5KCNTJ2X0XGM0e_small.png"
+        blurhash="LKF=8e^ji^Ri_NX9M{E1t-Ndxaw]"
+        width="1024"
+        height="1024"
+        alt="A digital artwork depicts an anthropomorphic hyena with dark brown fur featuring light tan stripes lounging seductively against rocks in a desert setting under palm trees. The muscular male figure has a prominent erect penis visible between his spread legs. He wears no clothes or accessories aside from a spiked collar around his neck. His blue eyes gaze directly at the viewer adding intensity to the scene. This piece blends fantasy realism with sensual undertones typical of furry art genres."
+        grid="true"
+      >}}
+    </a>
+  </div>
 </div>
