@@ -97,7 +97,16 @@ anthro male maliketh \(elden ring\) with white fur and white hair wearing head a
 
 ---
 
-Sponsored by `--sample_every_n_steps=1`
+Sponsored by `--sample_every_n_steps=1`, the first video is using `--network_alpha=0.0625` and `"conv_alpha=1"`
+
+<div style="text-align: center;">
+    <video style="width: 100%;" autoplay loop muted playsinline>
+        <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/maliketh_2_samples.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+and this one is with `--network_alpha=64` and `"conv_alpha=64"`
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
