@@ -8,7 +8,23 @@ summary: "The second best boy from Elden Ring, Maliketh, the Black Blade, is a f
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# maliketh-v1e1
+# maliketh-v3s2000
+
+---
+
+## Example Images
+
+---
+
+<a href="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/maliketh/up_00040_.png">
+  {{< blurhash
+    src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/maliketh/up_00040_small.png"
+    blurhash=""
+    width="1440"
+    height="1440"
+    alt="This is an intricate digital painting depicting an anthropomorphic lion warrior reclining on sandy beach with rocky cliffs and distant castle ruins in the background under a partly cloudy sky. The muscular lion has dark fur adorned with metal armor plating over his arms and legs; he sports white mane-like hair extending from beneath a black helmet featuring sharp horns. His chest is bare except for some leather straps revealing defined abs. He wears brown leather boots that reach up to mid-thighs. The lion's physique is robust yet lean suggesting strength combined with agility. Notably there's explicit detail of his large erect penis which is prominently displayed between his spread thighs. His testicles hang freely below it also detailed realistically. Behind him lies a large stone block or bench partially covered by sand providing support as he leans back slightly. Textures throughout the artwork include smooth metallic sheen of arm guards contrasted against rough rock textures visible at both ends of the scene. Overall color palette uses warm earth tones enhancing the natural setting while maintaining focus on the character through shading and lighting techniques typical of high-quality fantasy art styles. This vividly captures an intimate moment within a dramatic landscape."
+  >}}
+</a>
 
 ---
 
@@ -24,6 +40,50 @@ What truly sets Maliketh apart is his unique blend of human and beastly traits. 
 
 ---
 
+[⬇️ Chopped LoRA Download (16.5MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/maliketh-v3s2000c.safetensors)
+
+[⬇️ Original LoRA Download (27.8MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/maliketh-v3s2000.safetensors)
+
+<!--
+[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+-->
+
+[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/maliketh)
+
+[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/maliketh-v3s2000.json)
+
+## Training Montage
+
+---
+
+Sponsored by `--sample_every_n_steps=1`, the first video is using `--network_alpha=0.0625` and `"conv_alpha=1"`
+
+<div style="text-align: center;">
+    <video style="width: 100%;" autoplay loop muted playsinline>
+        <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/maliketh_2_samples.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+and this one is with `--network_alpha=64` and `"conv_alpha=64"`
+
+<div style="text-align: center;">
+    <video style="width: 100%;" autoplay loop muted playsinline>
+        <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/maliketh_2_samples.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+## maliketh-v2s50_frockpt1_th-3.55
+
+---
+
+[⬇️ CivitAI Page](https://civitai.com/models/629416?modelVersionId=703779)
+
+## maliketh-v1e1
+
+---
+
 [⬇️ LoRA Download (58.4MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/maliketh-v1e1.safetensors?download=true)
 
 [⬇️ Shrunk LoRA Download (50.2MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/maliketh-v1e1_frockpt1_th-3.55.safetensors?download=true)
@@ -34,25 +94,15 @@ What truly sets Maliketh apart is his unique blend of human and beastly traits. 
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/maliketh-v1e1.json)
 
-## Prompting Guide
-
----
-
 Keyword:
 
 - `maliketh \(elden ring\)`
-
-### Suggested Tags
 
 ```md
 male, anthro, maliketh \(elden ring\), white fur, white hair, head armor, red canine genitalia, knot,
 
 anthro male maliketh \(elden ring\) with white fur and white hair wearing head armor, He has a red canine genitalia with a knotty base and fluffy tail, He has claws and monotone fur with a monotone body,
 ```
-
-## Example Images
-
----
 
 <div class="image-grid">
   <div class="image-grid-container">
@@ -91,26 +141,4 @@ anthro male maliketh \(elden ring\) with white fur and white hair wearing head a
       >}}
     </a>
   </div>
-</div>
-
-## Training Montage
-
----
-
-Sponsored by `--sample_every_n_steps=1`, the first video is using `--network_alpha=0.0625` and `"conv_alpha=1"`
-
-<div style="text-align: center;">
-    <video style="width: 100%;" autoplay loop muted playsinline>
-        <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/maliketh_2_samples.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
-
-and this one is with `--network_alpha=64` and `"conv_alpha=64"`
-
-<div style="text-align: center;">
-    <video style="width: 100%;" autoplay loop muted playsinline>
-        <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/maliketh_2_samples.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 </div>

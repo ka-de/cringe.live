@@ -70,6 +70,10 @@ bookToC: false
 
 ## Site News
 
+### 10/28/2024
+
+[Maliketh](/docs/yiff_toolkit/ponyxlv6_loras/characters/maliketh/) got a nice update.
+
 ### 10/24/2024
 
 Placeholder loading images, also known as BlurHash has been implemented for the site. The code used to encode the images can be found [here](https://github.com/ka-de/blurhash) which is a de-WASM'd and async version of [fpapado/blurhash-rust-wasm](https://github.com/fpapado/blurhash-rust-wasm), for the frontend part I went with [mad-gooze/fast-blurhash](https://github.com/mad-gooze/fast-blurhash).
