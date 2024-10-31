@@ -70,6 +70,14 @@ bookToC: false
 
 ## Site News
 
+### 10/31/2024
+
+Happy Halloween! 🎃 Please accept this [skunk](/docs/yiff_toolkit/ponyxlv6_loras/characters/skunk/) LoRA as a gift! 🦨
+
+<!--
+[Amicus](/docs/yiff_toolkit/ponyxlv6_loras/characters/amicus/) has received a well deserved update, and a new [wickerbeast](/docs/yiff_toolkit/ponyxlv6_loras/characters/wickerbeast/) LoRA has been added to the list for Pony!
+-->
+
 ### 10/28/2024
 
 [Maliketh](/docs/yiff_toolkit/ponyxlv6_loras/characters/maliketh/) got a nice update.

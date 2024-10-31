@@ -19,7 +19,7 @@ summary: "The second best boy from Elden Ring, Maliketh, the Black Blade, is a f
 <a href="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/maliketh/up_00040_.png">
   {{< blurhash
     src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/maliketh/up_00040_small.png"
-    blurhash=""
+    blurhash="LGF5dA0ME1WV_2M|V@jY%fRjM|%2"
     width="1440"
     height="1440"
     alt="This is an intricate digital painting depicting an anthropomorphic lion warrior reclining on sandy beach with rocky cliffs and distant castle ruins in the background under a partly cloudy sky. The muscular lion has dark fur adorned with metal armor plating over his arms and legs; he sports white mane-like hair extending from beneath a black helmet featuring sharp horns. His chest is bare except for some leather straps revealing defined abs. He wears brown leather boots that reach up to mid-thighs. The lion's physique is robust yet lean suggesting strength combined with agility. Notably there's explicit detail of his large erect penis which is prominently displayed between his spread thighs. His testicles hang freely below it also detailed realistically. Behind him lies a large stone block or bench partially covered by sand providing support as he leans back slightly. Textures throughout the artwork include smooth metallic sheen of arm guards contrasted against rough rock textures visible at both ends of the scene. Overall color palette uses warm earth tones enhancing the natural setting while maintaining focus on the character through shading and lighting techniques typical of high-quality fantasy art styles. This vividly captures an intimate moment within a dramatic landscape."
@@ -104,41 +104,33 @@ male, anthro, maliketh \(elden ring\), white fur, white hair, head armor, red ca
 anthro male maliketh \(elden ring\) with white fur and white hair wearing head armor, He has a red canine genitalia with a knotty base and fluffy tail, He has claws and monotone fur with a monotone body,
 ```
 
-<div class="image-grid">
-  <div class="image-grid-container">
-    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000844-04070802e.png">
-      {{< blurhash
-        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000844-04070802e.png"
-        blurhash="LGF=~=~qERM{b|IVNIR+DjE29aR-"
-        width="1440"
-        height="1440"
-        alt="A highly detailed digital painting depicting an anthropomorphic male wolf with muscular physique erect red penis wearing black armor pieces including shoulder pads and wristbands. He has white fur sharp claws and a mane-like tuft of hair flowing down his back. The setting appears ancient Greek or Roman ruins with columns and stone steps leading into a scenic coastal landscape featuring distant rocky islands under a bright blue sky filled with fluffy clouds. The wolf stands confidently gazing off towards the sea. This artwork blends fantasy realism with mythological themes."
-        grid="true"
-      >}}
-    </a>
-    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000850-04070838.png">
-      {{< blurhash
-        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000850-04070838.png"
-        blurhash="L5IOLgMc~8%$I.a~-o_4E3IT01_2"
-        width="1536"
-        height="1536"
-        alt="Digital drawing featuring an anthropomorphic wolf warrior with muscular build standing erect. The character has black armor covering shoulders and forearms with intricate designs; long flowing white hair cascading down his back. He wears no pants exposing large red penis and visible testicles. Background consists of beige stone arches suggesting ancient ruins or castle walls. His face is partially obscured by dark helmet adorned with horns."
-        grid="true"
-      >}}
-    </a>
-  </div>
-</div>
-<div class="image-grid">
-  <div class="image-grid-container">
-    <a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000842-04070728e.png">
-      {{< blurhash
-        src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000842-04070728e.png"
-        blurhash="LMKw%;%M9t_34.~qRPD*9FWU-;Rj"
-        width="1440"
-        height="1440"
-        alt="This digital drawing features an anthropomorphic male wolf character with muscular build and prominent chest muscles visible abs erect red penis uncircumcised. He has flowing white hair-like fur extending down his back and arms large claws and wears a dark spiked helmet resembling armor. His eyes glow yellow under the helmet giving him a fierce appearance. The background is solid black which contrasts sharply against his light-colored fur. This artwork appears to be created digitally using bold lines and shading techniques typical of modern furry art styles. There's no additional background or setting details provided."
-        grid="true"
-      >}}
-    </a>
-  </div>
-</div>
+<a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000844-04070802e.png">
+  {{< blurhash
+    src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000844-04070802e.png"
+    blurhash="LGF=~=~qERM{b|IVNIR+DjE29aR-"
+    width="1440"
+    height="1440"
+    alt="A highly detailed digital painting depicting an anthropomorphic male wolf with muscular physique erect red penis wearing black armor pieces including shoulder pads and wristbands. He has white fur sharp claws and a mane-like tuft of hair flowing down his back. The setting appears ancient Greek or Roman ruins with columns and stone steps leading into a scenic coastal landscape featuring distant rocky islands under a bright blue sky filled with fluffy clouds. The wolf stands confidently gazing off towards the sea. This artwork blends fantasy realism with mythological themes."
+    grid="true"
+  >}}
+</a>
+<a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000850-04070838.png">
+  {{< blurhash
+    src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000850-04070838.png"
+    blurhash="L5IOLgMc~8%$I.a~-o_4E3IT01_2"
+    width="1536"
+    height="1536"
+    alt="Digital drawing featuring an anthropomorphic wolf warrior with muscular build standing erect. The character has black armor covering shoulders and forearms with intricate designs; long flowing white hair cascading down his back. He wears no pants exposing large red penis and visible testicles. Background consists of beige stone arches suggesting ancient ruins or castle walls. His face is partially obscured by dark helmet adorned with horns."
+    grid="true"
+  >}}
+</a>
+<a href="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000842-04070728e.png">
+  {{< blurhash
+    src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/00000842-04070728e.png"
+    blurhash="LMKw%;%M9t_34.~qRPD*9FWU-;Rj"
+    width="1440"
+    height="1440"
+    alt="This digital drawing features an anthropomorphic male wolf character with muscular build and prominent chest muscles visible abs erect red penis uncircumcised. He has flowing white hair-like fur extending down his back and arms large claws and wears a dark spiked helmet resembling armor. His eyes glow yellow under the helmet giving him a fierce appearance. The background is solid black which contrasts sharply against his light-colored fur. This artwork appears to be created digitally using bold lines and shading techniques typical of modern furry art styles. There's no additional background or setting details provided."
+    grid="true"
+  >}}
+</a>
