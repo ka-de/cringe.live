@@ -72,24 +72,25 @@ bookToC: false
 
 ### 11/2/2024
 
-Sober up with this small article about [`UNetSelfAttentionMultiply`](/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply/) for ComfyUI.
+- Sober up with this small article about [`UNetSelfAttentionMultiply`](/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply/) for ComfyUI.
+- [Amicus](/docs/yiff_toolkit/ponyxlv6_loras/characters/amicus/) has received a well deserved update
 
 ### 10/31/2024
 
-Happy Halloween! 🎃 Please accept this [skunk](/docs/yiff_toolkit/ponyxlv6_loras/characters/skunk/) LoRA as a gift! 🦨
+- Happy Halloween! 🎃 Please accept this [skunk](/docs/yiff_toolkit/ponyxlv6_loras/characters/skunk/) LoRA as a gift! 🦨
 
 <!--
-[Amicus](/docs/yiff_toolkit/ponyxlv6_loras/characters/amicus/) has received a well deserved update, and a new [wickerbeast](/docs/yiff_toolkit/ponyxlv6_loras/characters/wickerbeast/) LoRA has been added to the list for Pony!
+, and a new [wickerbeast](/docs/yiff_toolkit/ponyxlv6_loras/characters/wickerbeast/) LoRA has been added to the list for Pony!
 -->
 
 ### 10/28/2024
 
-[Maliketh](/docs/yiff_toolkit/ponyxlv6_loras/characters/maliketh/) got a nice update.
+- [Maliketh](/docs/yiff_toolkit/ponyxlv6_loras/characters/maliketh/) got a nice update.
 
 ### 10/24/2024
 
-Placeholder loading images, also known as BlurHash has been implemented for the site. The code used to encode the images can be found [here](https://github.com/ka-de/blurhash) which is a de-WASM'd and async version of [fpapado/blurhash-rust-wasm](https://github.com/fpapado/blurhash-rust-wasm), for the frontend part I went with [mad-gooze/fast-blurhash](https://github.com/mad-gooze/fast-blurhash).
+- Placeholder loading images, also known as BlurHash has been implemented for the site. The code used to encode the images can be found [here](https://github.com/ka-de/blurhash) which is a de-WASM'd and async version of [fpapado/blurhash-rust-wasm](https://github.com/fpapado/blurhash-rust-wasm), for the frontend part I went with [mad-gooze/fast-blurhash](https://github.com/mad-gooze/fast-blurhash).
 
 ### 10/11/2024
 
-[by_chunie](/docs/yiff_toolkit/ponyxlv6_loras/styles/by_chunie/) got an update and I also wrote about [Optimizing ComfyUI Load Times](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/).
+- [by_chunie](/docs/yiff_toolkit/ponyxlv6_loras/styles/by_chunie/) got an update and I also wrote about [Optimizing ComfyUI Load Times](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/).
