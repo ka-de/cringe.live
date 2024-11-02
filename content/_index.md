@@ -70,6 +70,10 @@ bookToC: false
 
 ## Site News
 
+### 11/2/2024
+
+Sober up with this small article about [`UNetSelfAttentionMultiply`](/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply/) for ComfyUI.
+
 ### 10/31/2024
 
 Happy Halloween! 🎃 Please accept this [skunk](/docs/yiff_toolkit/ponyxlv6_loras/characters/skunk/) LoRA as a gift! 🦨
