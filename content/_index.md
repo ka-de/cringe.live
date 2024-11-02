@@ -59,11 +59,11 @@ bookToC: false
 <div style="display: flex; justify-content: center;">
   <a href="https://cringe.live/docs/yiff_toolkit">
 {{< blurhash
-    src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/pny/00000215-07150016e.png"
-    blurhash="LAAmug9v9tx]PDyE$*9u0exbw]V@"
-    width="1536"
-    height="1536"
-    alt="The image showcases three anthropomorphic wolves, each dressed in unique and elaborate costumes, standing in front of an American flag. The wolf in the center is adorned in a purple wizard’s robe and hood, holding a raised and clenched fist, adding a mystical and powerful touch to its appearance. The wolf on the left is wearing a blue suit, splattered with red blood. While the American flag is falling down upside down. The wolf on the right contrasts with a more authoritative look, dressed in a police uniform minus the shirt, revealing a muscular chest design, complete with an officer’s badge. The detailed costumes of these characters bring out their distinct personalities, from the mystical and magical to the patriotic and authoritative. The fur textures are realistic, enhancing the lifelike appearance of the wolves. The backdrop of a clear blue sky and the American flag adds a sense of celebration or national pride to the scene, making the image both striking and memorable."
+    src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/fear_and_loathing_edited.png"
+    blurhash="LPF5ps9ao#oz?wxZoK%MXot5V@t8"
+    width="1920"
+    height="816"
+    alt=""
 >}}
   </a>
 </div>

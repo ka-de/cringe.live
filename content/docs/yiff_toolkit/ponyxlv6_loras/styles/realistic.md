@@ -8,7 +8,7 @@ summary: "My take on photorealistic furries. Highly experimental and extremely f
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# realistic-v4e400
+# realistic-v5s3000 (preview)
 
 ---
 
@@ -18,7 +18,28 @@ summary: "My take on photorealistic furries. Highly experimental and extremely f
 
 You can combo this with the [RetouchPhoto LoRA](https://civitai.com/models/343602/retouchphoto-for-ponyv6) for even more research. 📈
 
-## Content
+## Training Montage (preview)
+
+---
+
+<div style="text-align: center;">
+    <video style="width: 100%;" autoplay loop muted playsinline>
+        <source src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/realistic/sample_sample00.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+## Content (preview)
+
+---
+
+[📐 Dataset](https://huggingface.co/datasets/k4d3/realistic)
+
+## realistic-v4e400 (old)
+
+---
+
+### Content (old)
 
 ---
 
@@ -32,7 +53,7 @@ You can combo this with the [RetouchPhoto LoRA](https://civitai.com/models/34360
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/realistic-v4e400.json)
 
-## Prompting Guide
+### Prompting Guide (old)
 
 ---
 
@@ -42,7 +63,7 @@ Keyword:
 
 I recommend you don't try anything but a CFG of `6.0` and `DPM++ 2M Karras`
 
-### Suggested Tags
+#### Suggested Tags
 
 ```python
 
@@ -50,13 +71,13 @@ I recommend you don't try anything but a CFG of `6.0` and `DPM++ 2M Karras`
 realistic, photo, detailed background, amazing_background, scenery porn, <your prompt>
 ```
 
-### Suggested Negative
+#### Suggested Negative
 
 ```md
 abstract background, simple background
 ```
 
-## Example Images
+### Example Images (old)
 
 ---
 
