@@ -74,14 +74,11 @@ bookToC: false
 
 - Sober up with this small article about [`UNetSelfAttentionMultiply`](/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply/) for ComfyUI.
 - [Amicus](/docs/yiff_toolkit/ponyxlv6_loras/characters/amicus/) has received a well deserved update for Pony Diffusion V6 XL!
+- The [wickerbeast](/docs/yiff_toolkit/ponyxlv6_loras/characters/wickerbeast/) LoRA has been added to the list for Pony!
 
 ### 10/31/2024
 
 - Happy Halloween! 🎃 Please accept this [skunk](/docs/yiff_toolkit/ponyxlv6_loras/characters/skunk/) LoRA for Pony Diffusion V6 XL as a gift! 🦨
-
-<!--
-, and a new [wickerbeast](/docs/yiff_toolkit/ponyxlv6_loras/characters/wickerbeast/) LoRA has been added to the list for Pony!
--->
 
 ### 10/28/2024
 
