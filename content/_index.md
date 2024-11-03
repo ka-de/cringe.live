@@ -70,6 +70,11 @@ bookToC: false
 
 ## Site News
 
+### 11/3/2024
+
+- New LoRA: [Night in the Woods]() style for Stable Diffusion 3.5 Large.
+- I broke every link to every LoRA! It is better this way, I'm sorry! 🐺
+
 ### 11/2/2024
 
 - Sober up with this small article about [`UNetSelfAttentionMultiply`](/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply) for ComfyUI.
