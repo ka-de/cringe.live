@@ -72,17 +72,17 @@ bookToC: false
 
 ### 11/2/2024
 
-- Sober up with this small article about [`UNetSelfAttentionMultiply`](/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply/) for ComfyUI.
-- [Amicus](/docs/yiff_toolkit/ponyxlv6_loras/characters/amicus/) has received a well deserved update for Pony Diffusion V6 XL!
-- The [wickerbeast](/docs/yiff_toolkit/ponyxlv6_loras/characters/wickerbeast/) LoRA has been added to the list for Pony!
+- Sober up with this small article about [`UNetSelfAttentionMultiply`](/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply) for ComfyUI.
+- [Amicus](/docs/yiff_toolkit/loras/ponyxlv6/characters/amicus) has received a well deserved update for Pony Diffusion V6 XL!
+- The [wickerbeast](/docs/yiff_toolkit/loras/ponyxlv6/characters/wickerbeast) LoRA has been added to the list for Pony!
 
 ### 10/31/2024
 
-- Happy Halloween! 🎃 Please accept this [skunk](/docs/yiff_toolkit/ponyxlv6_loras/characters/skunk/) LoRA for Pony Diffusion V6 XL as a gift! 🦨
+- Happy Halloween! 🎃 Please accept this [skunk](/docs/yiff_toolkit/loras/ponyxlv6/characters/skunk) LoRA for Pony Diffusion V6 XL as a gift! 🦨
 
 ### 10/28/2024
 
-- [Maliketh](/docs/yiff_toolkit/ponyxlv6_loras/characters/maliketh/) for Pony Diffusion V6 XL got a nice update.
+- [Maliketh](/docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh) for Pony Diffusion V6 XL got a nice update.
 
 ### 10/24/2024
 
@@ -90,4 +90,4 @@ bookToC: false
 
 ### 10/11/2024
 
-- [by_chunie](/docs/yiff_toolkit/ponyxlv6_loras/styles/by_chunie/) for Pony Diffusion V6 XL got an update and I also wrote about [Optimizing ComfyUI Load Times](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/).
+- [by_chunie](/docs/yiff_toolkit/loras/ponyxlv6/styles/by_chunie) for Pony Diffusion V6 XL got an update and I also wrote about [Optimizing ComfyUI Load Times](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times).
