@@ -72,7 +72,7 @@ bookToC: false
 
 ### 11/3/2024
 
-- New LoRA: [Night in the Woods]() style for Stable Diffusion 3.5 Large.
+- New LoRA: [Night in the Woods](/docs/yiff_toolkit/loras/3.5-large/styles/nitw) style for Stable Diffusion 3.5 Large.
 - I broke every link to every LoRA! It is better this way, I'm sorry! 🐺
 
 ### 11/2/2024
