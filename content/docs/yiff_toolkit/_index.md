@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: true
-title: "🐺 - イッフ＿ツールキット"
+title: "イッフ＿ツールキット"
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->
