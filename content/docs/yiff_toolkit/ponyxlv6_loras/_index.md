@@ -26,6 +26,9 @@ aliases:
   position: relative;
   top: 70px;
   z-index: 1;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 100px;
 }
 
 .chat-bubble div {
@@ -55,6 +58,6 @@ aliases:
 <div class="chat-bubble">
   <img src="https://github.com/ka-de/kmacros/blob/master/images/icon.png?raw=true" alt="Hotdogwolf guardian saint of yiff_toolkit." width="50" height="50">
   <div>
-    This page has been moved to <a href="/docs/yiff_toolkit/loras/ponyxlv6/">/docs/yiff_toolkit/loras/ponyxlv6/</a>.
+    This page has been moved to <a href="/docs/yiff_toolkit/loras/ponyxlv6/">/docs/yiff_toolkit/loras/ponyxlv6/</a>!
   </div>
 </div>
