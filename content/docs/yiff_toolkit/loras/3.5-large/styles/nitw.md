@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "night_in_the_woods"
-summary: ""
+summary: "Night in the Woods is a critically acclaimed adventure game known for its vibrant, hand-drawn animation style, which features a unique blend of anthropomorphic characters and a rich, atmospheric world. The game's art style, characterized by its expressive, emotive characters and detailed, immersive environments, has been praised for its ability to draw players into the game's world and evoke a strong emotional connection."
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->
@@ -58,9 +58,9 @@ summary: ""
 
 ---
 
-"Night in the Woods" is a 2017 single-player adventure game developed by Infinite Fall and published by Finji. The game follows Mae Borowski, a young feline woman who drops out of college and returns to her hometown of Possum Springs, a once-thriving mining town now facing economic decline. As Mae reconnects with her childhood friends, including Bea, a gothic crocodile, and Gregg, a hyperactive fox, she discovers that the town harbors dark secrets. The game's narrative explores themes of mental illness, depression, and the struggles of the working class, all set against the backdrop of a slowly decaying small town.
+“Night in the Woods” is a narrative-driven adventure game that follows the story of Mae Borowski, a college dropout who returns to her hometown of Possum Springs. The game delves into themes of mental health, economic struggles, and the complexities of growing up. What sets “Night in the Woods” apart is its unique art style, which plays a crucial role in conveying its story and atmosphere. The characters are anthropomorphic animals, each designed with a distinct personality that reflects their role in the narrative. Mae and her family are cats, Gregg is a fox, Angus is a bear, and Bea is a crocodile. This choice of character design adds a layer of whimsy and relatability, making the game’s heavy themes more approachable.
 
-The gameplay of "Night in the Woods" focuses on exploration, story, and character development. Players guide Mae through her daily life, interacting with various characters, engaging in mini-games, and uncovering the mysteries of Possum Springs. The game received critical acclaim for its compelling story, well-written dialogue, and unique art style¹. Its soundtrack, composed by Alec Holowka, also garnered praise for its atmospheric and emotional depth. Overall, "Night in the Woods" offers a poignant and immersive experience that resonates with players through its relatable characters and thought-provoking themes.
+The art style of “Night in the Woods” is characterized by its simplicity and use of geometric shapes, reminiscent of children’s book illustrations. The color palette is predominantly warm, with autumnal hues that evoke a sense of nostalgia and comfort. This is contrasted by the use of cooler colors in more stressful or eerie scenes, effectively setting the mood and reflecting Mae’s emotional journey. The backgrounds are detailed yet stylized, creating a world that feels both familiar and dreamlike. The game’s visual design is not just about aesthetics; it enhances the storytelling by creating an immersive environment that draws players into Mae’s world and her struggles. The combination of simple shapes, warm colors, and anthropomorphic characters makes “Night in the Woods” a visually striking and emotionally resonant experience.
 
 ## Content
 
