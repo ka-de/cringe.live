@@ -98,14 +98,6 @@ Such distinctive characteristics of skunks occupy a unique position in furry cul
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/skunk-v2s2000.json)
 
-<!--
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
-
-
-
-
--->
-
 ## Training Montage
 
 ---
