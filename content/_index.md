@@ -72,7 +72,7 @@ bookToC: false
 
 ### 11/11/2024
 
-- Added a new section to the [LoRA Training](/docs/yiff_toolkit/lora_training/) page about the difference between steps and epochs and how gradient accumulation works.
+- Added a [new section](/docs/yiff_toolkit/lora_training/#steps-vs-epochs) to the [LoRA Training](/docs/yiff_toolkit/lora_training/) page about the difference between steps and epochs and how gradient accumulation works.
 - The [Text Autocomplete](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/#text-autocomplete) section on the [ComfyUI Custom Scripts](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/) page has rewritten.
 
 ### 11/3/2024
