@@ -771,6 +771,42 @@ Just replace `{output_directory}` with your desired output directory and `model.
 
 Feel free to experiment with any of the SVD recipes, which you can read about in the project's README, my recommendation is obviously just a personal bias, but I did try to [test](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/by_beksinski-shrink-plot/beksinski-shrunk-plot.png?download=true), a [lot](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/shrunk), so others won't feel the need to!
 
+## Steps vs Epochs
+
+---
+
+When training a model, it's essential to understand the difference between steps and epochs. Both are crucial concepts in the training process, but they serve distinct purposes.
+
+### Steps
+
+A step refers to a single iteration of the training process, where the model processes a batch of data and updates its parameters based on the loss calculated from that batch. The number of steps is typically determined by the batch size and the total amount of training data. In other words, a step is a single update of the model's parameters.
+
+### Epochs
+
+An epoch, on the other hand, represents a complete pass through the entire training dataset. One epoch is equivalent to processing the entire dataset once, with each batch being processed in a sequence of steps. The number of epochs determines how many times the model sees the entire training dataset during training.
+
+To illustrate the difference, consider a training dataset with 1000 images, a batch size of 10, and a total of 10 epochs. In this scenario:
+
+- The model will process 100 steps per epoch (1000 images / 10 images per batch).
+- The model will see the entire dataset 10 times, with each epoch consisting of 100 steps.
+
+Understanding the distinction between steps and epochs is crucial for configuring training parameters, such as the learning rate schedule, and for monitoring the model's progress during training.
+
+### Gradient Accumulation
+
+Gradient accumulation is a technique used to reduce the memory requirements of training deep neural networks. It works by accumulating the gradients of the loss function with respect to the model's parameters over multiple iterations, rather than computing the gradients at each iteration. This allows for larger batch sizes and more efficient use of GPU memory.
+
+In the context of LoRA training, gradient accumulation can be used to improve the stability and efficiency of the training process. By accumulating gradients over multiple iterations, the model can learn to recognize patterns in the data more effectively, leading to improved performance.
+
+To use gradient accumulation in LoRA training, you can add the following argument to your training command:
+
+```bash
+--gradient_accumulation_steps=6
+--gradient_checkpointing
+```
+
+It's important to note that the number of steps in each epoch is determined by the batch size and the total amount of training data. Therefore, when using gradient accumulation, the number of steps in each epoch will be the number of iterations required to process the entire training dataset, rather than the number of batches. This distinction is important when configuring the learning rate schedule and monitoring the model's progress during training.
+
 ## Keep Track of Your Changes
 
 ---

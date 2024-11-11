@@ -2,12 +2,12 @@
 weight: 1
 bookFlatSection: false
 bookToC: true
-title: "イッフ＿ツールキット"
+title: "Yiff Toolkit"
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->
 
-# イッフ＿ツールキット
+# Yiff Toolkit
 
 ---
 

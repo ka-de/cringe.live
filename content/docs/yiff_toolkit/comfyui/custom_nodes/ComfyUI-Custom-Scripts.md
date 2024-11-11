@@ -12,24 +12,35 @@ summary: ""
 
 ---
 
-A bunch of useful and less useful custom nodes and it also changes up a bit the look of the interface, I think, for the better. One thing I don't recommend you even try out is the node auto arranging, since it will just end up jumbling it in a silly manner. You should always take care of your nodes manually with autism and plenty of OCD!
+A bunch of useful and less useful custom nodes and features by pythongosssss.
 
-## Autocomplete
+## Text Autocomplete
 
 ---
 
-<!-- ⚠️ TODO: Words -->
+
+<div style="text-align: center;">
+    <video style="width: 100%;" autoplay loop muted playsinline>
+        <source src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/custom_scripts_completion.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+This functionality allows you to autocomplete your text as you type, which you can enable or disable in the settings.
 
 <div style="text-align: center;">
 
 ![Autocomplete Settings](/images/comfyui/autocomplete_settings.png)
 
 </div>
-<div style="text-align: center;">
 
-![Autocomplete](/images/comfyui/autocomplete.png)
+You can paste in an entire `.csv` file into the text box in the "Manage Custom Words" and you should see the words you added appear in the dropdown menu when you type into a prompt!
 
-</div>
+If you need a `.csv` file with words, you can use my spellbook if you really want!
+
+```bash
+https://raw.githubusercontent.com/ka-de/sacred_words/refs/heads/main/spellbook.csv
+```
 
 ## Always Snap to Grid
 
@@ -59,7 +70,7 @@ These two nodes play a sound and display a notification every time something ran
 
 ---
 
-This adds a panel to the bottom of ComfyUI that lets you see the output images. Combine this with the new Beta UI, and you have the ultimate interface!
+This used to be my favorite feature, but since the new UI, I prefer the Queue (`q`) in the sidebar panel.
 
 <div style="text-align: center;">
 

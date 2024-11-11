@@ -70,6 +70,11 @@ bookToC: false
 
 ## Site News
 
+### 11/11/2024
+
+- Added a new section to the [LoRA Training](/docs/yiff_toolkit/lora_training/) page about the difference between steps and epochs and how gradient accumulation works.
+- The [Text Autocomplete](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/#text-autocomplete) section on the [ComfyUI Custom Scripts](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/) page has rewritten.
+
 ### 11/3/2024
 
 - New LoRA: [Night in the Woods](/docs/yiff_toolkit/loras/3.5-large/styles/nitw) style for Stable Diffusion 3.5 Large.
