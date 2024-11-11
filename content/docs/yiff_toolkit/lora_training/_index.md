@@ -802,7 +802,6 @@ To use gradient accumulation in LoRA training, you can add the following argumen
 
 ```bash
 --gradient_accumulation_steps=6
---gradient_checkpointing
 ```
 
 It's important to note that the number of steps in each epoch is determined by the batch size and the total amount of training data. Therefore, when using gradient accumulation, the number of steps in each epoch will be the number of iterations required to process the entire training dataset, rather than the number of batches. This distinction is important when configuring the learning rate schedule and monitoring the model's progress during training.
