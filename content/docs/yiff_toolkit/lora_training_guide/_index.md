@@ -1,12 +1,12 @@
 ---
-title: "(redirect) Pony Diffusion V6 XL LoRAs"
+title: "(redirect) LoRA Training Guide"
 bookSearchExclude: true
 bookHidden: true
 bookToC: false
 bookFlatSection: true
 aliases:
-  - /docs/yiff_toolkit/ponyxlv6_loras/
-  - /docs/yiff_toolkit/ponyxlv6_loras/index.html
+  - /docs/yiff_toolkit/lora_training_guide/
+  - /docs/yiff_toolkit/lora_training_guide/index.html
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->
@@ -58,6 +58,6 @@ aliases:
 <div class="chat-bubble">
   <img src="https://github.com/ka-de/kmacros/blob/master/images/icon.png?raw=true" alt="Hotdogwolf guardian saint of yiff_toolkit." width="50" height="50">
   <div>
-    This page has been moved to <a href="/docs/yiff_toolkit/loras/ponyxlv6/">/docs/yiff_toolkit/loras/ponyxlv6/</a>!
+    This page has been moved to <a href="/docs/yiff_toolkit/lora_training/">/docs/yiff_toolkit/lora_training/</a>!
   </div>
 </div>
