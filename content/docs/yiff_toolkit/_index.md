@@ -17,8 +17,6 @@ title: "Yiff Toolkit"
 
 The `yiff_toolkit` is a comprehensive set of tools designed to enhance your creative process in the realm of furry art. From refining artist styles to generating unique characters, the Yiff Toolkit provides a range of tools to help you cum.
 
-> NOTE: You can click on any image in this README to be instantly teleported next to the original resolution version of it! If you want the metadata for a picture and it isn't there, you need to delete the letter e before the .png in the link! If a metadata containing original image is missing, please let me know!
-
 ## Subsections
 
 ---
