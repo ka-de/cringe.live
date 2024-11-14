@@ -16,9 +16,9 @@ summary: "Lofi and Kenket's art style blends anthropomorphism and realism, featu
 
 ---
 
-The art style of Lofi & Kenket, collectively known as hax, is a unique blend of anthropomorphism and realism. Their artwork often features animal characters with human-like postures and expressions, set in scenes that balance between the fantastical and the everyday. The use of soft shading and a muted color palette contributes to a dreamy, serene atmosphere that is signature to their work. The attention to detail in textures—such as fur, clothing, and environmental elements—adds depth and richness to each piece.
+Lofi & Kenket's artistic style, known as hax, combines anthropomorphic and realistic elements. Their work typically features animal characters with human-like poses and facial expressions, set against backgrounds that blend fantasy and reality. The use of soft shading and muted colors creates a calming, ethereal ambiance characteristic of their art. The attention to detail in textures, such as fur, clothing, and environmental elements, adds depth and complexity to each piece.
 
-In terms of composition, hax tends to create images with dynamic interactions between characters that convey a narrative or emotion without the need for words. There’s an emphasis on lighting and perspective that gives their scenes a cinematic quality. This storytelling through imagery invites viewers into intimate moments in the lives of the characters portrayed, often evoking a sense of nostalgia or contemplation.
+In terms of composition, hax's images often depict dynamic character interactions that convey a narrative or emotion without relying on text. The emphasis on lighting and perspective gives their scenes a cinematic feel. This visual storytelling invites viewers into the personal moments of the characters, often eliciting feelings of nostalgia or introspection.
 
 ## Content
 
@@ -30,10 +30,7 @@ In terms of composition, hax tends to create images with dynamic interactions be
 
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit2/tree/main/static/by_hax-compass)
 
-<!--
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/)
-[📊 Metadata]()
--->
+[📐 Dataset](https://huggingface.co/datasets/k4d3/by_hax)
 
 ## Prompting Guide
 
