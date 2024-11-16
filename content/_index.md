@@ -6,8 +6,8 @@ bookToC: false
 
 <!-- markdownlint-disable MD009 MD025 MD033 -->
 
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-  <div style="flex: 1; margin-right: 10px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+  <div style="flex: 1 1 300px; min-width: 0;">
 
 {{< blurhash
     src="/images/kade-point-up-not-a-furry.png"
@@ -18,7 +18,7 @@ bookToC: false
 >}}
 
   </div>
-  <div style="flex: 1; margin-left: 10px;">
+  <div style="flex: 1 1 300px; min-width: 0;">
 
 ```json
 {
