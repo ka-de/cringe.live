@@ -50,14 +50,14 @@ bookToC: false
 >
 > You have entered the lair of a delinquent, born at precisely the right time.
 >
-> Here you will find a plethora of awkward notes for [Low-Rank Adaptations](https://cringe.live/docs/yiff_toolkit/lora_training/) related to image diffusion, mostly for [Pony Diffusion](https://cringe.live/docs/yiff_toolkit/loras/ponyxlv6/), but also for [Stable Diffusion 3.5 Large](https://cringe.live/docs/yiff_toolkit/loras/3.5-large/), and others. While I'm not a furry.. 😹.. I do like wolves and anthropomorphic characters and I happen to like sharing `.safetensors`.
+> Here you will find a plethora of awkward notes for [Low-Rank Adaptations](/docs/yiff_toolkit/lora_training/) related to image diffusion, mostly for [Pony Diffusion](/docs/yiff_toolkit/loras/ponyxlv6/), but also for [Stable Diffusion 3.5 Large](/docs/yiff_toolkit/loras/3.5-large/), and others. While I'm not a furry.. 😹.. I do like wolves and anthropomorphic characters and I happen to like sharing `.safetensors`.
 > 
 > Do whatever you want with these floating point byproducts, just dont sell them! 🐺
 > 
-> You should also check out [Yiff Toolkit](https://cringe.live/docs/yiff_toolkit) and [ComfyUI](https://cringe.live/docs/comfyui) for more content!
+> You should also check out [Yiff Toolkit](/docs/yiff_toolkit) and [ComfyUI](/docs/comfyui) for more content!
 
 <div style="display: flex; justify-content: center;">
-  <a href="https://cringe.live/docs/yiff_toolkit">
+  <a href="/docs/yiff_toolkit">
 {{< blurhash
     src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/fear_and_loathing_edited.png"
     blurhash="LPF5ps9ao#oz?wxZoK%MXot5V@t8"
