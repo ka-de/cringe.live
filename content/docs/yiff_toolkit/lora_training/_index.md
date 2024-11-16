@@ -3,12 +3,120 @@ weight: 1
 bookFlatSection: false
 bookToC: true
 title: "LoRA Training Guide"
-summary: "It beats reading Japanese Python code!"
+summary: "The LoRA Training Guide explains Low-Rank Adaptation (LoRA), a technique for fine-tuning large-scale language and diffusion models efficiently by introducing small, trainable low-rank matrices instead of modifying all model parameters. This approach keeps the original model weights frozen and injects two additional matrices into each layer to learn necessary adjustments. LoRA is lightweight, making it feasible to train multiple adaptations without hefty storage requirements. The guide also compares LoRA with LyCORIS, an advanced extension that offers more control and flexibility, and introduces LoKr, which uses Kronecker products for matrix decomposition, enhancing memory efficiency and control over the adaptation process."
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->
 
 # LoRA Training Guide
+
+---
+
+## What are LoRAs?
+
+---
+
+LoRA (Low-Rank Adaptation) is a cutting-edge technique designed to facilitate the fine-tuning of large-scale language and diffusion models efficiently. Instead of overhauling the entire set of model parameters—which can number in the billions—LoRA introduces small, trainable "low-rank" matrices that adapt the model's behavior. This innovative approach was detailed in the paper ["LoRA: Low-Rank Adaptation of Large Language Models"](https://arxiv.org/abs/2106.09685) by researchers at Microsoft.
+
+### How LoRAs Work
+
+Traditional fine-tuning modifies all the parameters of a pre-trained model, which is computationally intensive and memory-demanding. LoRA, on the other hand, keeps the original model weights frozen and injects two additional matrices, \( \mathbf{A} \) and \( \mathbf{B} \), into each layer. These matrices are significantly smaller and are responsible for learning the necessary adjustments.
+
+Mathematically, if we denote the original weight matrix as \( \mathbf{W} \) of size \( d \times k \), LoRA approximates the weight update \( \Delta \mathbf{W} \) using the following decomposition:
+
+\[
+\Delta \mathbf{W} = \mathbf{B} \mathbf{A}
+\]
+
+Where:
+
+- \( \mathbf{B} \) is a \( d \times r \) matrix
+- \( \mathbf{A} \) is an \( r \times k \) matrix
+- \( r \) is the rank of the decomposition, typically much smaller than \( d \) and \( k \)
+
+The adapted weight matrix \( \mathbf{W}' \) becomes:
+
+\[
+\mathbf{W}' = \mathbf{W} + \alpha \Delta \mathbf{W} = \mathbf{W} + \alpha \mathbf{B} \mathbf{A}
+\]
+
+Here, \( \alpha \) is a scaling factor that controls the influence of the LoRA adjustments.
+
+LoRAs are lightweight, usually ranging from 1-100MB, compared to full model fine-tunes that can soar into several gigabytes. This efficiency makes it feasible to train multiple adaptations without hefty storage requirements.
+
+Multiple LoRAs can be seamlessly combined by summing their weight updates, allowing for a rich blend of styles or functionalities without conflict.
+Since the base model remains untouched, switching between different LoRA adaptations is straightforward. This flexibility eliminates the need to maintain numerous full model copies.
+
+With fewer parameters to update, training LoRAs is significantly faster and demands less computational power, making it accessible even for those with limited hardware resources.
+
+### Applications in Image Diffusion
+
+LoRAs serve as powerful tools to train the model to generate images in styles that were previously unattainable and you can also use them to easily add recognizable characters or unique elements without retraining the entire model.
+
+You can extend or enhance a model's grasp of specific themes or subjects, improving generation quality in targeted areas.
+
+## LyCORIS vs. Regular LoRAs
+
+While both LyCORIS and regular Low-Rank Adaptations (LoRAs) aim to facilitate efficient fine-tuning of large-scale models, they differ in several key aspects that influence their applications, flexibility, and performance. Understanding these differences is crucial for selecting the appropriate approach based on your specific needs and constraints.
+
+### What is LyCORIS?
+
+**LyCORIS** (**L**ora be**y**ond **C**onventional methods, **O**ther **R**ank adaptation **I**mplementations for **S**table diffusion) is an advanced extension of the traditional LoRA framework. It introduces several enhancements to improve the adaptability, efficiency, and scalability of model fine-tuning. LyCORIS incorporates sophisticated techniques such as Tucker decomposition, rank dropout, and specialized network modules to offer more granular control over the adaptation process.
+
+### Key Differences
+
+1. **Decomposition Techniques**:
+
+Regular LoRAs typically use a simple low-rank decomposition \( \Delta \mathbf{W} = \mathbf{B} \mathbf{A} \) to adapt model weights, LyCORIS extends this by incorporating **Tucker decomposition**, allowing for more complex and flexible adaptations. This decomposition breaks down tensors into smaller core tensors and factor matrices, providing a higher degree of control over the adaptation process.
+
+Most LoRAs may use standard dropout techniques to prevent overfitting, LyCORIS introduces **rank dropout**, a specialized form of dropout that operates on the rank of the input tensors. This method helps in regularizing the model more effectively by selectively dropping entire rank components, enhancing the generalization capabilities of the adapted model.
+
+Regular LoRAs focus primarily on modifying the weight matrices without extensive control over which layers or modules are adapted. LyCORIS provides a variety of **presets** and **network modules**, allowing users to specify which parts of the model to adapt. For example, presets like `full`, `attn-only`, and `unet-transformer-only` offer tailored adaptation strategies, enabling more targeted and efficient fine-tuning.
+
+Regular LoRAs offer basic control over the adaptation's scaling through a single alpha parameter, LyCORIS enhances this by allowing **block-wise control** over both the alpha values and the dimensions of each adaptation block. This granular adjustment ensures that each part of the model can be finely tuned to achieve optimal performance.
+
+Regular LoRAs are generally constrained to the original LoRA algorithm, LyCORIS supports multiple **LyCORIS-specific algorithms** (e.g., `locon`, `(IA)^3`), each designed to address different fine-tuning challenges. This flexibility allows for more sophisticated adaptation techniques tailored to various model architectures and training scenarios.
+
+Regular LoRAs require minimal integration efforts, primarily involving the addition of low-rank matrices to the training process, LyCORIS integrates more deeply with training pipelines, supporting features like **gradient accumulation**, **memory-efficient attention mechanisms**, and **multi-resolution noise**. These integrations enhance training efficiency and stability, especially when dealing with large models or limited computational resources.
+
+### When to Use LyCORIS vs. Regular LoRAs
+
+- **Use Regular LoRAs When**:
+  - You need a straightforward and lightweight fine-tuning approach.
+  - Computational resources are limited, and simplicity is preferred.
+  - The project requirements do not necessitate advanced adaptation techniques.
+
+- **Use LyCORIS When**:
+  - You require more control and flexibility over the fine-tuning process.
+  - Working with complex models where targeted adaptations can yield significant performance improvements.
+  - You aim to leverage advanced regularization and decomposition techniques to enhance model generalization.
+  - Integration with sophisticated training pipelines and optimization strategies is necessary.
+
+## LoKr
+
+---
+
+LyCORIS also introduces **LoKr** (Low-rank adaptation with Kronecker product), which represents another significant advancement in model adaptation techniques. LoKr extends beyond traditional low-rank assumptions by utilizing Kronecker products for matrix decomposition.
+
+### How LoKr Works
+
+The key innovation of LoKr lies in its use of Kronecker products (denoted by ⊗) to modify the forward pass:
+
+\[
+h′ = W_0h + b + γ\Delta Wh = W_0h + b + γ[C ⊗ (BA)]h
+\]
+
+### Advantages of LoKr
+
+LoKr offers the widest range of potential parameter counts among adaptation methods, allowing for extremely efficient memory usage when properly configured. The use of Kronecker products enables multiplicative rank relationships, breaking free from traditional low-rank limitations.
+
+Like LoCon, LoKr has been adapted to work effectively with convolutional layers. Users can choose whether to apply additional low-rank decomposition to the right block of the Kronecker decomposition, providing fine-grained control over the adaptation process. When configured optimally, LoKr can achieve the smallest file sizes among all adaptation methods while maintaining effectiveness.
+
+This makes LoKr particularly suitable for scenarios where:
+
+- Extreme parameter efficiency is required
+- The model needs to maintain high expressiveness with minimal memory footprint
+- Fine-grained control over the adaptation process is necessary
 
 ## Subsections
 

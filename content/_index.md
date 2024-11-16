@@ -50,8 +50,11 @@ bookToC: false
 >
 > You have entered the lair of a delinquent, born at precisely the right time.
 >
-> Here you will find a plethora of awkward notes related to image diffusion.
->
+> Here you will find a plethora of awkward notes for [Low-Rank Adaptations](https://cringe.live/docs/yiff_toolkit/lora_training/) related to image diffusion, mostly for [Pony Diffusion](https://cringe.live/docs/yiff_toolkit/loras/ponyxlv6/), but also for [Stable Diffusion 3.5 Large](https://cringe.live/docs/yiff_toolkit/loras/3.5-large/), and others. While I'm not a furry.. 😹.. I do like wolves and anthropomorphic characters and I happen to like sharing `.safetensors`.
+> 
+> Do whatever you want with these floating point byproducts, just dont sell them! 🐺
+> 
+> You should also check out [Yiff Toolkit](https://cringe.live/docs/yiff_toolkit) and [ComfyUI](https://cringe.live/docs/comfyui) for more content!
 
 <div style="display: flex; justify-content: center;">
   <a href="https://cringe.live/docs/yiff_toolkit">
@@ -70,6 +73,12 @@ bookToC: false
 <script src="js/quotes.js"></script>
 
 ## Site News
+
+---
+
+### 11/16/2024
+
+- Added a [new section](/docs/yiff_toolkit/lora_training/#lokr) to the [LoRA Training](/docs/yiff_toolkit/lora_training/) page about LoKr and there is now a lengthy introduction that vaguely explains what LoRAs are and how they work.
 
 ### 11/11/2024
 
