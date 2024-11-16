@@ -1,12 +1,10 @@
 ---
-title: Introduction
+title: About
 type: docs
 bookToC: false
 ---
 
 <!-- markdownlint-disable MD009 MD025 MD033 -->
-
-# 俺についての一つのこと
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
   <div style="flex: 1; margin-right: 10px;">
@@ -49,12 +47,11 @@ bookToC: false
 </div>
 
 > (Awkward Silence)
-> 
+>
 > You have entered the lair of a delinquent, born at precisely the right time.
-
-<div id="quote-container"></div>
-
-<script src="js/quotes.js"></script>
+>
+> Here you will find a plethora of awkward notes related to image diffusion.
+>
 
 <div style="display: flex; justify-content: center;">
   <a href="https://cringe.live/docs/yiff_toolkit">
@@ -67,6 +64,10 @@ bookToC: false
 >}}
   </a>
 </div>
+
+<div id="quote-container"></div>
+
+<script src="js/quotes.js"></script>
 
 ## Site News
 
