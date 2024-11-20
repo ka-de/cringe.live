@@ -50,11 +50,13 @@ bookToC: false
 >
 > You have entered the lair of a delinquent, born at precisely the right time.
 >
-> Here you will find a plethora of awkward notes for [Low-Rank Adaptations](/docs/yiff_toolkit/lora_training/) related to image diffusion, mostly for [Pony Diffusion](/docs/yiff_toolkit/loras/ponyxlv6/), but also for [Stable Diffusion 3.5 Large](/docs/yiff_toolkit/loras/3.5-large/), and others. While I'm not a furry.. 😹.. I do like wolves and anthropomorphic characters and I happen to like sharing `.safetensors`.
+> Here you will find a plethora of awkward notes for [Low-Rank Adaptations](/docs/yiff_toolkit/lora_training/) related to image diffusion, mostly for Pony Diffusion V6 XL, but with some modifications can be easily adopted to work with any SDXL model, I also offer a selection of LoRAs I have trained myself for [Pony Diffusion](/docs/yiff_toolkit/loras/ponyxlv6/), [Stable Diffusion 3.5 Large](/docs/yiff_toolkit/loras/3.5-large/) and [CompassMix](/docs/yiff_toolkit/loras/compassmix). While I'm not a furry.. 😹.. I do like wolves and anthropomorphic characters and I happen to like sharing `.safetensors`.
 > 
-> Do whatever you want with these floating point byproducts, just dont sell them! 🐺
+> Do whatever you want with these floating point byproducts, just don't sell them or upload them to an image generation service! 🐺
 > 
-> You should also check out [Yiff Toolkit](/docs/yiff_toolkit) and [ComfyUI](/docs/comfyui) for more content!
+> Send me an [e-mail](mailto:acsipont@gmail.com) for business inquiries.
+> 
+> You should also check out **[Yiff Toolkit](/docs/yiff_toolkit)** and [ComfyUI](/docs/comfyui) for more content!
 
 <div style="display: flex; justify-content: center;">
   <a href="/docs/yiff_toolkit">

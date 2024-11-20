@@ -1,0 +1,111 @@
+Building upon the initiative of \lora,
+this section introduces \lycoris, our open-source library that provides an array of different methods for fine-tuning Stable Diffusion.
+
+\subsection{Design and Objectives}
+\label{subsec:lycoris-design}
+
+\lycoris~stands for \emph{\textbf{L}ora be\textbf{y}ond \textbf{C}onventional methods, \textbf{O}ther \textbf{R}ank adaptation \textbf{I}mplementations for \textbf{S}table diffusion}.
+Broadly speaking, the library's main objective is to serve as a test bed for users to experiment with a variety of fine-tuning strategies for Stable Diffusion models. Seamlessly integrating into the existing ecosystem, \lycoris~is compatible with easy-to-use command-line tools and graphic interfaces, allowing users to leverage the algorithms implemented in the library effortlessly. Additionally, native support exists in popular user interfaces designed for image generation, facilitating the use of models fine-tuned through \lycoris~methods.
+For most of the algorithms implemented in \lycoris, stored parameters naturally allow for the reconstruction of the weight update $\Delta\weightmat$.
+This design brings inherent flexibility: it enables the weight updates to be scaled and applied to a base model $\alt{\weightmat_0}$ different from those originally used for training, expressed as $\alt{\weightmat}=\alt{\weightmat_0}+\lambda\Delta \weightmat$.
+Furthermore, a weight update can be combined with those from other fine-tuned models, further compressed, or integrated with advanced tools like ControlNet. This opens up a diverse range of possibilities for the application of these fine-tuned models.
+ 
+ 
+
+\subsection{Implemented Algorithms}
+\label{subsec:algos}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{images/main/algo.pdf}
+    \caption{This figure shows the structure of the proposed Loha and Lokr modules implemented in \lycoris.}
+    \disclose{\vspace*{-0.8em}}{\vspace*{-0.5em}}
+    \label{fig:algo-main}
+\end{figure}
+
+We now discuss the core of the library---the algorithms implemented in \lycoris. 
+For conciseness, we will primarily focus on three main algorithms: \lora~(LoCon), \loha, and \lokr. 
+The merge ratio $\scale=\alpha/\dimension$ introduced in \eqref{eq:lora} is implemented for all these methods.
+% Having outlined the objectives that guide \lycoris, we now turn our attention to the heart of the library: the algorithms it implements. For conciseness, we will mostly restrict our discussion to introductions of the three main variants: \lora~(LoCon), \loha, and \lokr. 
+% The merge ratio $\scale=\alpha/\dimension$ introduced in \eqref{eq:lora} is implemented for all these methods.
+%Further implementation details can be found in \needref.
+
+
+\paragraph{LoRA (LoCon)\afterhead}
+In the work of~\cite{hu2021lora}, the focus was centered on applying the low-rank adapter to the attention layer within the large language model. In contrast, the convolutional layers play a key role in Stable Diffusion. Therefore, we extend the method to the convolutional layers of diffusion models (details are provided in \cref{apx:decomp-conv}).
+The intuition is with more layers getting involved during fine-tuning, the performance (generated image quality and fidelity) should be better. 
+%Note we fine-tune the convolutional layers and the attention layers of the diffusion model simultaneously.
+
+% Moreover, the conflicts between \lora~models should be less when multiple \lora~models are applied to one diffusion model simultaneously.. 
+
+% In particular, consider a convolutional layer with a weight update denoted as $\Delta \weightmat \in \mathbb{R}^{\nChannelsout \times \nChannelsin \times \kernelsize \times \kernelsize } $, where $\kernelsize$ represents kernel size, $\nChannelsin$ and $\nChannelsout$ indicate the number of input channels and output channels. To facilitate the application of our method, this weight update can be unrolled into a 2-D matrix represented as $\Delta \weightmat \in \mathbb{R}^{\nChannelsout \times\nChannelsin\kernelsize^{2}}$. Factorizing this 2-D matrix gives us two matrices of reduced rank: $\leftmat\in \mathbb{R}^{\nChannelsout\times \dimension}, \rightmat\in \mathbb{R}^{\dimension\times \nChannelsin\kernelsize^{2} } $. The matrix $\rightmat$ can be reshaped back to a 4-D tensor: $\rightmat\in \mathbb{R}^{\dimension\times\nChannelsin \times \kernelsize \times \kernelsize}$. Such a transformation implies that the given convolutional layer can be effectively approximated by two consecutive convolutional layers with kernel sizes $\kernelsize$ and 1. Notably, the low-rank dimension $\dimension$ is the number of output and input channels of the first and second layers. This decomposition method is well-established and has been extensively adopted in previous research (see \eg \citealp{wang2021pufferfish}).
+% Beyond this basic approach, we also implement the Tucker decomposition~\citep{tucker1966some}
+% %\citep{phan2020stable}
+% for the convolutional layers, as explained in \cref{apx:tucker-decomp}.
+%Moreover, other tensor decomposition methodologies, such as Tucker decomposition~\cite{tucker1966some}, are applicable as well. However, it is beyond the scope of this paper. We leave it for future exploration. 
+%}
+
+%\textbf{LoRA (LoCon)\afterhead} Based on previous works, our works explore the use of the LoRA technique to convolutional layers. Specifically, we implement two distinct approaches for decomposing convolutional layers: direct decomposition and cp decomposition.
+
+\paragraph{\loha\afterhead}
+Inspired by the basic idea underlying \lora, we explore the potential enhancements in fine-tuning methods. In particular, it is well recognized that methods based on matrix factorization suffer from the \emph{low-rank constraint}. Within the \lora~framework, weight updates are confined within the low-rank space, inevitably impacting the performance of the fine-tuned model. To achieve better fine-tuning performance, we conjecture that a relatively large rank might be necessary, particularly when working with larger fine-tuning datasets or when the data distribution of downstream tasks greatly deviates from the pretraining data. However, this cloud leads to increased memory usage and more storage demands.
+
+FedPara~\citep{hyeon-woo2022fedpara} is a technique originally developed for federated learning that aims to mitigate the low-rank constraint when applying low-rank decomposition methods to federated learning. One of the advantages of FedPara is that the maximum rank of the resulting matrix is larger than those derived from conventional low-rank decomposition (such as \lora). More precisely,  for $\Delta \weightmat = (\leftmat_1 \rightmat_1) \odot (\leftmat_2 \rightmat_2)$, where $\odot$ denotes the Hadamard product (element-wise product), $\leftmat_{1},\leftmat_{2}  \in \mathbb{R}^{\vdim \times \dimension}$, $\rightmat_{1},\rightmat_{2} \in \mathbb{R}^{\dimension \times \vdimalt}$, and $\dimension \leq \min(\vdim, \vdimalt)$, the rank of $\Delta \weightmat$ can be as large as $\dimension^2$. To make a fair comparison, we assume the low-rank dimension in equation (\ref{eq:lora}) is $2\dimension$, such that they have the same number of trainable parameters. Then, the reconstructed matrix $\Delta \weightmat = \leftmat\rightmat$ has a maximum rank of $2\dimension$. Clearly, $ 2\dimension < \dimension^2 $, if $\dimension > 2$. This implies decomposing the weight update with the Hadamard product could improve the fine-tuning capability given the same number of trainable parameters. We term this method as \loha~(\textbf{Lo}w-rank adaptation with \textbf{Ha}damard product). The forward pass of $\hidden^{\prime} = \weightmat_{0}\hidden +\bias$ is then modified to:\vspace{2pt}
+\begin{equation}\label{equ:loha}
+\hidden^{\prime} = \weightmat_{0}\hidden +\bias  + \scale \Delta \weightmat \hidden =  \weightmat_{0}\hidden +\bias + \scale\left[(\leftmat_1 \rightmat_1) \odot (\leftmat_2 \rightmat_2)\right] \hidden.
+\end{equation}
+%
+ 
+% Here, we restate Proposition 1 of~\cite{hyeon-woo2022fedpara} under fine-tuning context to facilitate the introduction. We refer the readers to~\cite{hyeon-woo2022fedpara} for more details. 
+% \begin{proposition}\label{prop:loha}
+% Let $\Delta \weightmat = (\leftmat_1 \rightmat_1) \odot (\leftmat_2 \rightmat_2)$, where $\odot$ denotes the Hadamard product (element-wise product), $\leftmat_{1} \in \mathbb{R}^{d \times r}$, $\rightmat_{2} \in \mathbb{R}^{d \times r}$, $\leftmat_{1} \in \mathbb{R}^{r \times k}$, $\rightmat_{2} \in \mathbb{R}^{r \times k}$, and $r \leq \min(m, n)$. Then, $\text{rank}(\Delta \weightmat) \leq r^2$.
+% \end{proposition}
+
+
+% \textbf{\loha\afterhead} Following the implementation of LoCon, our efforts pivoted toward investigating alternative decomposition methods to achieve distinct model characteristics. Inspired by the decomposition techniques proposed in FedPara \cite{hyeon-woo2022fedpara}, we adapted these strategies into the context of \lora. This led to the conception of \acdef{loha}, which incorporates Hadamard product in low-rank decomposition for model fine-tuning. With equation \eqref{eq:lora} we have:
+
+% \begin{equation}
+% \Delta W = (B_1 A_1) \circ (B_2 A_2) \label{LoHa weight}
+% \end{equation}
+
+% In this equation, $A_i \in \R^{\dimension \times \vdimalt}$ and $B_i \in \R^{\vdim \times \dimension}$. The matrices $A_i$ and $B_i$ are constrained such that $\rankfunc{B_i A_i} \leq \dimension$. Consequently, the rank of $\Delta W$, is bounded above by $\dimension^2$. In most scenarios, $\Delta W$ attains full rank, implying that $\rankfunc{\Delta W} = \dimension^2$.
+
+\paragraph{\lokr\afterhead}
+In the same spirit of maximizing matrix rank while minimizing parameter count, our library offers \lokr~(\textbf{Lo}w-rank adaptation with \textbf{Kr}onecker product) as another viable option. This method is an extension of the KronA technique, initially proposed by \citet{edalati2022krona} for fine-tuning of language models, and employs Kronecker products for matrix decomposition. Importantly, we have adapted this technique to work with convolutional layers, similar to what we achieved with LoCon.
+A unique advantage of using Kronecker products lies in the multiplicative nature of their ranks, allowing us to move beyond the limitations of low-rank assumptions.
+ 
+Going further, to provide finer granularity for model fine-tuning, we additionally incorporate an optional low-rank decomposition (which users can choose to apply or not) that focuses exclusively on the right block resulting from the Kronecker decomposition.%
+\footnote{As shown in \cref{eq:lokr-size}, in our implementation, the right block is always the larger of the two.}
+In summary, 
+writing $\otimes$ for the Kronecker product,
+the forward pass $\hidden^{\prime} = \weightmat_{0}\hidden+\bias$ is modified to:
+%
+\begin{equation}
+\label{equ:lokr}
+\hidden^{\prime} = \weightmat_{0}\hidden +\bias + \scale \Delta \weightmat \hidden  =  \weightmat_{0}\hidden  +\bias + \scale\left[\kronmat \otimes (\leftmat \rightmat)\right] \hidden,
+\end{equation}
+%
+The size of these matrices are determined by two user-specified hyperparameters: the factor $\factor$ and the dimension $\dimension$.
+With these, we have 
+$ \kronmat \in \R^{\krondecomposesm{\vdim} \times \krondecomposesm{\vdimalt}} $,
+$ \leftmat \in \R^{\krondecomposelg{\vdim} \times \dimension} $, and 
+$ \rightmat \in \R^{\dimension \times \krondecomposelg{\vdimalt}} $, where
+%
+\begin{equation}
+\label{eq:lokr-size}
+\krondecomposesm{\vdim} = \max\left(\kronsmdim \leq \min(\factor, \sqrt{\vdim}) \mid \vdim \bmod \kronsmdim = 0 \right), ~~~
+\krondecomposelg{\vdim} = \frac{\vdim}{\krondecomposesm{\vdim}}.
+\end{equation}
+%
+The two scalars $\krondecomposesm{\vdimalt}$ and $\krondecomposelg{\vdimalt}$ are defined in the same way.
+Interestingly, \lokr~has the widest range of potential parameter counts among the three methods and can yield the smallest file sizes when appropriately configured. Additionally, it can be interpreted an adapter that is composed of a number of linear layers, as detailed in \cref{apx:lokr}.
+%admits a nuanced interpretation of KronA's two weight tensors as individual linear network layers, as detailed in \cref{apx:lokr}.
+
+\paragraph{Others\afterhead}
+In addition to \lora, \loha, and \lokr~described earlier, our library features other algorithms including DyLoRA~\citep{va2022DyLoRA}, GLoRA \citep{chavan2023oneforall}, and $\text{(IA)}^3$ \citep{liu2022fewshot}.
+Moreover, between the date of submission and the preparation of the camera-ready version for the main conference, we have further expanded \lycoris~ by incorporating more recent advancements, notably OFT~\citep{qiu2023controlling}, BOFT~\citep{liu2024parameterefficient}, and DoRA~\citep{liu2024dora}.
+However, the discussion of these supplementary algorithms is beyond the scope of this paper.
+
+
+%OFT~\citep{qiu2023controlling}, BOFT~\citep{liu2024parameterefficient}, and DoRA~\citep{liu2024dora}, where the latter three algorithms are incorporated  
+%Moreover, following the basic idea of GLoRA, we have created GLoKr, a fusion of GLoRA concepts with linear layer adaptations of \lokr.

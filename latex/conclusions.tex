@@ -1,0 +1,12 @@
+In conclusion, this paper serves three main purposes. 
+First, we introduce \lycoris, an open-source library implementing a diverse range of methods for Stable Diffusion fine-tuning.
+Second, we advocate for a more comprehensive evaluation framework that better captures the nuances of different fine-tuning methods.
+Lastly, our extensive experiments shed light on the impact of the choice of the algorithm and their configuration on model performance, revealing their relative strengths and limitations.
+For instance, based on our experiments, \loha~seems to be better suited for simple, multi-concept fine-tuning, whereas \lokr~with full dimension is better for complex, single-concept tasks.
+%fit better the situation where we simultaneously fine-tune for multiple concepts that are relatively simple to learn. In contrast, \lokr~with full dimension emerges as an effective choice when focus on a single, more complex concept.
+This distinction in their applicability also indicates that the rank of the matrix update, often considered a key factor, may not always be the definitive predictor of a method's efficacy in various fine-tuning scenarios.
+
+% Interestingly, we find although both \loha~and \lokr~increase the maximum matrix ranks compared to \lora, their impact on model fine-tuning diverges, suggesting that rank may not be the best indicator to predict a method's performance in our context.
+
+Despite our extensive efforts, the scope of our study remains limited. For example, we have not explored the task of generating images with multiple learned concepts, as this aspect is highly sensitive to input prompts and more challenging to evaluate.
+However, recent works such as \cite{huang2023t2icompbench} aim to address these issues, and we believe that incorporating these emerging evaluation frameworks will further enrich the comparison of fine-tuning methods in future studies.
