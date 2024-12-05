@@ -86,6 +86,8 @@ bookToC: false
 - [surrounded_by_penis](/docs/yiff_toolkit/loras/ponyxlv6/concepts/surrounded_by_penis) for Pony Diffusion V6 XL which aims to help generating images where one or more characters are surrounded by penises from multiple sides.
 - [halloween_cattiva](/docs/yiff_toolkit/loras/ponyxlv6/characters/halloween_cattiva) for Pony Diffusion V6 XL is a halloween themed Cattiva from Palworld with a pumpkin head.
 - [blackorbit](/docs/yiff_toolkit/loras/ponyxlv6/styles/blackorbit) for Pony Diffusion V6 XL which is a 3D style heavily inspired by VRChat.
+- [gren_art](/docs/yiff_toolkit/loras/ponyxlv6/styles/gren_art) for Pony Diffusion V6 XL which is a realistic style.
+- [less_details](/docs/yiff_toolkit/loras/3.5-large/styles/less_details) for Stable Diffusion 3.5 Large which is useful for reducing the palette, details and non-pixellated parts during generation.
 
 ### 11/16/2024
 

@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "hev_suit"
-summary: ""
+summary: "The HEV suit from Half-Life is an iconic armor Gordon Freeman wears throughout the series. This LoRA is trained on a bunch of fan art and screenshots featuring it."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -16,6 +16,7 @@ summary: ""
 
 ---
 
+The HEV suit from Half-Life is an iconic armor Gordon Freeman wears throughout the series. This LoRA is trained on a bunch of fan art and screenshots featuring it.
 
 ## Content
 
@@ -31,17 +32,13 @@ summary: ""
 
 ---
 
-Keyword: `hev suit`
+Keyword: `hev suit`, `armor`, `lambda`
 
-### Suggested Tags
+## Recommended Vector String
 
-```md
-```
+---
 
-### Suggested Negative
-
-```md
-```
+`1,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0`
 
 ## Example Images
 
