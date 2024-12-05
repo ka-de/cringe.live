@@ -80,7 +80,12 @@ bookToC: false
 
 ### 12/5/2024
 
-- New LoRA: [hld](/docs/yiff_toolkit/loras/ponyxlv6/styles/hld) for Pony Diffusion V6 XL which replicates the style of the video game Hyper Light Drifter.
+#### New LoRAs
+
+- [hld](/docs/yiff_toolkit/loras/ponyxlv6/styles/hld) for Pony Diffusion V6 XL replicates the style of the video game Hyper Light Drifter.
+- [surrounded_by_penis](/docs/yiff_toolkit/loras/ponyxlv6/concepts/surrounded_by_penis) for Pony Diffusion V6 XL which aims to help generating images where one or more characters are surrounded by penises from multiple sides.
+- [halloween_cattiva](/docs/yiff_toolkit/loras/ponyxlv6/characters/halloween_cattiva) for Pony Diffusion V6 XL is a halloween themed Cattiva from Palworld with a pumpkin head.
+- [blackorbit](/docs/yiff_toolkit/loras/ponyxlv6/styles/blackorbit) for Pony Diffusion V6 XL which is a 3D style heavily inspired by VRChat.
 
 ### 11/16/2024
 
