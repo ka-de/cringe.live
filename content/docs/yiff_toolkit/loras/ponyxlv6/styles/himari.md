@@ -2,13 +2,13 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "by_himari"
+title: "himari"
 summary: "A tiny LoRA trained on 4 images by [@147Penguinmw](https://twitter.com/147Penguinmw)."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# by_himari-v1e400
+# himari-v1e400
 
 ---
 

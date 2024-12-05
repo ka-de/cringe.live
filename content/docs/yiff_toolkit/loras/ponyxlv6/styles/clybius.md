@@ -2,13 +2,13 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "by_clybius"
+title: "clybius"
 summary: ""
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# by_clybius-v1e400
+# clybius-v1e400
 
 ---
 

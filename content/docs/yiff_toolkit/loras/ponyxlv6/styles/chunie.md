@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "by_chunie"
+title: "chunie"
 summary: "Chunie’s art style is known for its vibrant, detailed, and realistic depictions of anthropomorphic characters, capturing intricate details and expressions, and conveying a sense of movement and energy, which has earned him a dedicated following in the furry community."
 ---
 

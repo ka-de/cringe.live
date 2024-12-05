@@ -2,13 +2,13 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "by_dagasi"
+title: "dagasi"
 summary: "What? Dagasi? What is that? I don't know anything about it!"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# by_dagasi-v2e80
+# dagasi-v2e80
 
 ---
 

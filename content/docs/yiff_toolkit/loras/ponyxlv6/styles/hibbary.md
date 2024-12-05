@@ -2,13 +2,13 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "by_hibbary"
+title: "hibbary"
 summary: ""
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# by_hibbary-v1e400
+# hibbary-v1e400
 
 ---
 

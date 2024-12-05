@@ -11,6 +11,14 @@ title: "NoobAI Notes"
 
 ---
 
+## Introduction
+
+NoobAI is based on the SDXL architecture specifically tailored for anime and furry image generation. Currently I'm using the v-prediction `0.65S` version of the model. This guide will focus mostly on that particular version. It was trained on Danbooru and e621.
+
+## Download
+
+[CivitAI](https://civitai.com/models/833294?modelVersionId=1093948)
+
 ## Training Tips
 
 ---
@@ -24,9 +32,9 @@ I'm currently on the `sd3` branch so there is nothing special to passing:
 
 ### Fitting in 24Gb VRAM
 
-{{% details "Click to expand content."  %}}
-
 I used the following settings to fit perfectly inside a 4090.
+
+{{% details "Click to expand content."  %}}
 
 ```bash
 args=(
@@ -94,9 +102,12 @@ args=(
     --caption_extension=".txt"
 )
 ```
+
 By decreasing the batch size and/or the resolution to 768x or 512x you can fit into any GPU. If you still struggle, use an 8-bit optimizer. [Here](https://github.com/ka-de/sd-scripts/blob/dev/library/optimizers/clybius.py) is the optimizer I prefer currently, there is a guide on how to integrate custom optimizers to sd-scripts [here](/docs/yiff_toolkit/lora_training/Add-Custom-Optimizers/).
 
 {{% /details %}}
+
+<!--
 
 ### Nitpicks
 
@@ -169,6 +180,7 @@ index 1aca021..4afcfc3 100644
 ```
 
 {{% /details %}}
+-->
 
 ## Prompting Tips
 

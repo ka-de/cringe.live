@@ -112,4 +112,4 @@ bookToC: false
 
 ### 10/11/2024
 
-- [by_chunie](/docs/yiff_toolkit/loras/ponyxlv6/styles/by_chunie) for Pony Diffusion V6 XL got an update and I also wrote about [Optimizing ComfyUI Load Times](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times).
+- [chunie](/docs/yiff_toolkit/loras/ponyxlv6/styles/by_chunie) for Pony Diffusion V6 XL got an update and I also wrote about [Optimizing ComfyUI Load Times](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times).

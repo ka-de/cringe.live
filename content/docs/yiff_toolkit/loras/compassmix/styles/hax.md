@@ -2,13 +2,13 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "by_hax"
+title: "hax"
 summary: "Lofi and Kenket's art style blends anthropomorphism and realism, featuring detailed animal characters in serene, cinematic scenes that evoke emotion and narrative through soft shading, muted colors, and dynamic compositions."
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# by_hax-v1e400
+# hax-v1e400
 
 ---
 

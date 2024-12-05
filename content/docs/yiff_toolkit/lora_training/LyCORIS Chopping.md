@@ -58,19 +58,19 @@ Vector strings control which layers are kept or removed using values from 0 to 1
 1,0,0,0,0,0,0,1,1,0,0,0,1,1,1,1,1,1,0,0,0
 ```
 
-### by_hamgas
+### hamgas
 
 ```r
 1,0,0,0,0,0,0,1,1,0,0,0,1,0,1,1,1,1,0,0,0
 ```
 
-### by_kenket
+### kenket
 
 ```r
 1,1,1,1,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 ```
 
-### by_serpent_x
+### serpent_x
 
 ```r
 1,0,0,0,0,1,0,1,1,0,0,0,1,1,1,1,1,1,0,0,0

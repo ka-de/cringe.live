@@ -30,9 +30,9 @@ Two of the most renowned space telescopes are the Hubble Space Telescope (HST) a
 
 [🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset - by_jwst](https://huggingface.co/datasets/k4d3/furry/tree/main/by_jwst)
+[📐 Dataset - jwst](https://huggingface.co/datasets/k4d3/furry/tree/main/by_jwst)
 
-[📐 Dataset - by_hubble](https://huggingface.co/datasets/k4d3/furry/tree/main/by_hubble)
+[📐 Dataset - hubble](https://huggingface.co/datasets/k4d3/furry/tree/main/by_hubble)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/space-v1e500.json)
 
