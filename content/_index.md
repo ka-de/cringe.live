@@ -78,6 +78,10 @@ bookToC: false
 
 ---
 
+### 12/5/2024
+
+- New LoRA: [hld](/docs/yiff_toolkit/loras/ponyxlv6/styles/hld) for Pony Diffusion V6 XL which replicates the style of the video game Hyper Light Drifter.
+
 ### 11/16/2024
 
 - Added a [new section](/docs/yiff_toolkit/lora_training/#lokr) to the [LoRA Training](/docs/yiff_toolkit/lora_training/) page about LoKr and there is now a lengthy introduction that vaguely explains what LoRAs are and how they work.
