@@ -54,7 +54,7 @@ You really should have no need to use the keyword, but don't let me stop you!
         blurhash="LeHxmM.Sx^RO_4SixanhShIUM{xt"
         width="1440"
         height="1440"
-        alt="This is a digital painting depicting an anthropomorphic red fox character dressed in adventurer gear sitting on rocky terrain with lush greenery around it. The background features hazy mountains under a clear blue sky dotted with fluffy clouds. The fox has large expressive eyes pointed ears adorned with goggles perched atop its head and wears a backpack filled with various tools and supplies. It sports a sleeveless shirt shorts bandages wrapped around its forearms and lower legs giving off a rugged explorer vibe. Its bushy tail curls upward behind them. This scene suggests preparation or contemplation before embarking into nature's wilderness. Artist watermark "Lithi-Hawk" is visible at the top left corner."
+        alt="This is a digital painting depicting an anthropomorphic red fox character dressed in adventurer gear sitting on rocky terrain with lush greenery around it. The background features hazy mountains under a clear blue sky dotted with fluffy clouds. The fox has large expressive eyes pointed ears adorned with goggles perched atop its head and wears a backpack filled with various tools and supplies. It sports a sleeveless shirt shorts bandages wrapped around its forearms and lower legs giving off a rugged explorer vibe. Its bushy tail curls upward behind them. This scene suggests preparation or contemplation before embarking into nature's wilderness. Artist watermark 'Lithi-Hawk' is visible at the top left corner."
         grid="true"
       >}}
     </a>
