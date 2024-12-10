@@ -3,10 +3,10 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "hld"
-summary: "Hyper Light Drifter is a captivating video game with its vibrant, pixel art style that blends retro aesthetics with modern design elements."
+summary: "Hyper Light Drifter is a captivating video game with its vibrant, pixel art style that blends retro aesthetics with modern design elements. This LoRA was trained on a bunch of screenshots from the game."
 ---
 
-<!--markdownlint-disable MD025 MD033 -->
+<!--markdownlint-disable MD025 MD033 MD034 -->
 
 # hld-v1s400
 
@@ -16,7 +16,7 @@ summary: "Hyper Light Drifter is a captivating video game with its vibrant, pixe
 
 ---
 
-"Hyper Light Drifter" is a visually stunning game that stands out for its unique art style. The game employs a pixel art aesthetic that is both minimalist and richly detailed, creating a world that feels both retro and futuristic. The use of vibrant colors and intricate animations brings the game's environments and characters to life, making every scene a visual treat. The art style is heavily influenced by classic 8-bit and 16-bit games, but it also incorporates modern design elements that give it a fresh and contemporary feel. This blend of old and new creates a nostalgic yet innovative experience that is both captivating and immersive. The game's art style is not just about aesthetics; it also plays a crucial role in storytelling, with each pixel meticulously crafted to convey emotion and atmosphere. Overall, HLD is a masterpiece of visual design. This LoRA was trained on a bunch of screenshots from the game.
+The art style of Hyper Light Drifter is a vibrant, pixelated masterpiece that evokes nostalgia for classic 16-bit games. It features a rich color palette with neon hues and contrasting shades, creating a visually striking and immersive world. The environments are detailed with intricate pixel art, blending futuristic and natural elements seamlessly. The use of lighting and shadows adds depth and atmosphere, enhancing the overall aesthetic. Characters and creatures are designed with a minimalist yet expressive approach, contributing to the game's unique and memorable visual identity. This LoRA was trained on a bunch of screenshots from the game.
 
 ## Content
 
@@ -35,6 +35,19 @@ summary: "Hyper Light Drifter is a captivating video game with its vibrant, pixe
 Keyword: `hld, pixel art`
 
 The score tags might or might not help you!
+
+## Example Workflow
+
+---
+
+{{< blurhash
+  src="https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/hld/hld_workflow.png"
+  blurhash="L5Q0XK?cxsNZxb9Gx]tP_MIAxbs:"
+  width="5500"
+  height="1574"
+  alt="None"
+  grid="true"
+>}}
 
 ## Example Images
 
