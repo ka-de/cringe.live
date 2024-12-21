@@ -78,6 +78,10 @@ bookToC: false
 
 ---
 
+### 12/21/2024
+
+- Dead download links in the [chunie](/docs/yiff_toolkit/loras/ponyxlv6/styles/chunie) LoRA page have been fixed. 😳
+
 ### 12/5/2024
 
 #### New LoRAs

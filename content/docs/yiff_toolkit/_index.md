@@ -3,6 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: true
 title: "Yiff Toolkit"
+summary: "A comprehensive set of tools and guides for creating furry artwork using AI. With a detailed guide on LoRA training, this toolkit provides everything you need to create your own synthetic art."
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->
