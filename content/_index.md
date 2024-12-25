@@ -60,13 +60,14 @@ bookToC: false
 
 <div style="display: flex; justify-content: center;">
   <a href="/docs/yiff_toolkit">
-{{< blurhash
-    src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/fear_and_loathing_edited.png"
-    blurhash="LPF5ps9ao#oz?wxZoK%MXot5V@t8"
-    width="1920"
-    height="816"
-    alt=""
->}}
+    {{< blurhash
+      src="realistic/fur_and_loathing_small.png"
+      blurhash="LOE.qnE2bbkX_4t6kC-pOtxZWBxu"
+      width="1400"
+      height="595"
+      alt="This is a high-resolution CGI digital artwork depicting two anthropomorphic characters driving through an arid desert landscape with mountains in the background under clear blue skies. The character on the left has dark brown fur wears sunglasses and sips from a red can while seated in the passenger seat of a beige convertible car. This character appears to be male based on muscular build. The driver located on the right side of the vehicle is a white-furred canine wearing black aviator goggles over their eyes and a light-colored safari hat. They also wear a gray shirt tucked into khaki shorts and have a relaxed posture as they steer the car using both hands on the wheel. Both characters exude a sense of leisure and adventure typical of travel companions enjoying a road trip together. Inside the car's interior there’s visible leather seating with creased textures adding realism. Outside the vast desert stretches out with its reddish-brown hues and sparse vegetation emphasizing isolation and freedom. The overall style of the art leans towards realistic yet retains cartoon-like features common in furry fandom communities. Shadows and reflections add depth enhancing the three-dimensional effect of the scene."
+      grid="false"
+    >}}
   </a>
 </div>
 
@@ -85,6 +86,8 @@ bookToC: false
 - [fart_fetish](/docs/yiff_toolkit/loras/noobai/concepts/fart_fetish) for NoobAI.
 
 ### 12/21/2024
+
+**Site News:**
 
 - Dead download links in the [chunie](/docs/yiff_toolkit/loras/ponyxlv6/styles/chunie) LoRA page have been fixed. 😳
 

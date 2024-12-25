@@ -32,7 +32,7 @@ It's a symphony of the body's natural processes, a reminder of our shared roots.
 
 ---
 
-I am absolutely certain `fart fetish` isn't needed, that shouldn't stop you from typing it in for CLIP though. It deserves it! `presenting hindquarters`, `brown fart cloud` and `looking back at viewer` is worth a lot more.
+I am absolutely certain `fart fetish` isn't needed, but that shouldn't stop you from typing it in for CLIP though. It deserves it! `presenting hindquarters`, `brown fart cloud` and `looking back at viewer` is worth a lot more.
 
 If you get a nice composition, but the text in the cloud is ruining it, try reinforcing the attention with background elements or character details present in the generation but aren't prompted, instead of changing the seed or even worse, trying to Photoshop it.
 
