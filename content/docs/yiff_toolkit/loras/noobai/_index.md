@@ -12,6 +12,10 @@ summary: "NoobAI is a finetune of Illustrious using the full Danbooru and e621 d
 
 ---
 
+All the LoRAs are trained on one of many versions of the v-pred variant of the model. If you want to be sure which one exactly, your best choice is to check the metadata.
+
+If you are using the EPS variant, you clearly haven't read Appendix D of [Progressive Distillation for Fast Sampling of Diffusion Models](https://arxiv.org/pdf/2202.00512), I mean, just look at that rotation from the noise to the image! Gorgeous!
+
 ## LoRAs
 
 ---
