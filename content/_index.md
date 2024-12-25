@@ -61,7 +61,7 @@ bookToC: false
 <div style="display: flex; justify-content: center;">
   <a href="/docs/yiff_toolkit">
     {{< blurhash
-      src="realistic/fur_and_loathing_small.png"
+      src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/realistic/fur_and_loathing_small.png"
       blurhash="LOE.qnE2bbkX_4t6kC-pOtxZWBxu"
       width="1400"
       height="595"
