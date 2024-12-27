@@ -79,6 +79,12 @@ bookToC: false
 
 ---
 
+### 12/27/2024
+
+**Site News:**
+
+- Added a [new section](/docs/yiff_toolkit/comfyui/ComfyUI_frontend-ProgressBars) on how to add progress bars to the ComfyUI frontend.
+
 ### 12/25/2024
 
 **New LoRA:**
