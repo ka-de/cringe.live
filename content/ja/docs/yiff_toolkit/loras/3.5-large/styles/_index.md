@@ -3,19 +3,19 @@ weight: 1
 bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
-title: "Styles"
-summary: "Style LoRAs for Stable Diffusion models focus on adapting the neural network to replicate specific artistic styles, visual aesthetics, or rendering techniques. These adaptations modify how the model interprets and generates visual elements like brushstrokes, color palettes, shading techniques, and overall artistic presentation. Style LoRAs can transform outputs to match anything from classical art movements (like impressionism or art nouveau) to modern digital art styles (such as anime, pixel art, or watercolor). They work by fine-tuning the model's attention layers to recognize and reproduce the specific style or technique."
+title: "スタイル"
+summary: "Stable DiffusionモデルのスタイルLoRAは、特定の芸術的スタイル、視覚的な美学、またはレンダリング技法を再現するためにニューラルネットワークを適応させることに焦点を当てています。これらの適応により、筆致、カラーパレット、シェーディング技法、全体的な芸術的表現など、視覚要素の解釈と生成方法が修正されます。スタイルLoRAは、印象派やアールヌーボーなどの古典的な芸術運動から、アニメ、ピクセルアート、水彩画などの現代のデジタルアートスタイルまで、あらゆるものに出力を変換することができます。これらは、特定のスタイルや技法を認識し再現するようにモデルのアテンションレイヤーを微調整することで機能します。"
 ---
 
 <!--markdownlint-disable MD025 -->
 
-# Style LoRAs
+# スタイルLoRA
 
 ---
 
-Style LoRAs for Stable Diffusion models focus on adapting the neural network to replicate specific artistic styles, visual aesthetics, or rendering techniques. These adaptations modify how the model interprets and generates visual elements like brushstrokes, color palettes, shading techniques, and overall artistic presentation. Style LoRAs can transform outputs to match anything from classical art movements (like impressionism or art nouveau) to modern digital art styles (such as anime, pixel art, or watercolor). They work by fine-tuning the model's attention layers to recognize and reproduce the specific style or technique.
+Stable DiffusionモデルのスタイルLoRAは、特定の芸術的スタイル、視覚的な美学、またはレンダリング技法を再現するためにニューラルネットワークを適応させることに焦点を当てています。これらの適応により、筆致、カラーパレット、シェーディング技法、全体的な芸術的表現など、視覚要素の解釈と生成方法が修正されます。スタイルLoRAは、印象派やアールヌーボーなどの古典的な芸術運動から、アニメ、ピクセルアート、水彩画などの現代のデジタルアートスタイルまで、あらゆるものに出力を変換することができます。これらは、特定のスタイルや技法を認識し再現するようにモデルのアテンションレイヤーを微調整することで機能します。
 
-## LoRAs
+## LoRA
 
 ---
 

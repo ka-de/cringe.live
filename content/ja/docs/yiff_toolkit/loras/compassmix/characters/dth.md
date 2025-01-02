@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "dth"
-summary: "The character Death in “Puss in Boots” is a grim figure who, despite his menacing appearance and ominous role, displays a surprising sense of humor and unexpected compassion."
+summary: "『長ぐつをはいた猫』に登場する死神は、その不気味な外見と不吉な役割にもかかわらず、意外なユーモアのセンスと思いがけない思いやりを見せるキャラクターです。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,41 +12,41 @@ summary: "The character Death in “Puss in Boots” is a grim figure who, despi
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-Death, as a character in “Puss in Boots”, is a fascinating embodiment of the end of life, a figure cloaked in darkness and mystery. Despite his daunting role and the fear he naturally instills, Death is not merely a one-dimensional character. He is portrayed with a depth that goes beyond the stereotypical grim reaper image. His presence, while ominous, is not entirely devoid of lightness. In fact, he often surprises with his unexpected sense of humor, a trait that adds a layer of complexity to his character and breaks the monotony of his otherwise grim existence.
+『長ぐつをはいた猫』に登場する死神は、生命の終わりを体現する魅力的なキャラクターであり、闇と神秘に包まれた存在です。その威圧的な役割と、自然と人々に与える恐怖感にもかかわらず、死神は一面的なキャラクターではありません。典型的な死神のイメージを超えた深みのある描写がなされています。その存在は不吉ではありますが、完全に明るさを欠いているわけではありません。実際、予期せぬユーモアのセンスを見せることがあり、それがキャラクターに複雑さを加え、その他の場面での厳かな存在感に変化をもたらしています。
 
-Moreover, Death exhibits a level of compassion that one might not expect from such a character. He is not just a harvester of souls, but also a being capable of understanding and empathy. This unexpected softness does not undermine his intimidating persona, but rather enhances it, adding a layer of intrigue and making him a more relatable character. Despite his chilling duty, Death, in “Puss in Boots”, is a character who manages to evoke not just fear, but also laughter and sympathy, making him a truly unique and memorable figure in the story.
+さらに、死神はこのようなキャラクターからは予想もつかないような思いやりを示します。単なる魂を刈り取る存在ではなく、理解と共感を持ち合わせた存在なのです。この予期せぬ優しさは、彼の威圧的な性格を損なうことなく、むしろそれを引き立て、より興味深い存在にしています。その恐ろしい任務にもかかわらず、『長ぐつをはいた猫』の死神は、恐怖だけでなく、笑いと共感を呼び起こすキャラクターとなっており、物語の中で真に独特で印象的な存在となっています。
 
-## Content
-
----
-
-[⬇️ LoRA Download (241MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/dth-v1e400/dth-v1e400.safetensors?download=true)
-
-[⬇️ Shrunk LoRA Download (46MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/dth-v1e400/dth-v1e400_frockpt1_th-3.55.safetensors?download=true)
-
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/dth-compass)
-
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/dth)
-
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/compass_loras/dth-v1e400/dth-v1e400.json)
-
-## Prompting Guide
+## コンテンツ
 
 ---
 
-Keyword: `dth`
+[⬇️ LoRAダウンロード (241MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/dth-v1e400/dth-v1e400.safetensors?download=true)
 
-### Suggested Tags
+[⬇️ 軽量版LoRAダウンロード (46MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/dth-v1e400/dth-v1e400_frockpt1_th-3.55.safetensors?download=true)
+
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/dth-compass)
+
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/dth)
+
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/compass_loras/dth-v1e400/dth-v1e400.json)
+
+## プロンプトガイド
+
+---
+
+キーワード: `dth`
+
+### 推奨タグ
 
 ```md
 dth, cloak, red eyes
 ```
 
-## Example Images
+## サンプル画像
 
 ---
 <!-- ⚠️ TODO: Small versions! -->
@@ -55,17 +55,17 @@ dth, cloak, red eyes
   
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000169-07091531.png?download=true)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000169-07091531.png?download=true)
+[![AIで生成された画像](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000169-07091531.png?download=true)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000169-07091531.png?download=true)
 
   </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000167-07091523.png?download=true)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000167-07091523.png?download=true)
+[![AIで生成された画像](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000167-07091523.png?download=true)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000167-07091523.png?download=true)
 
   </div>
 </div>
 <div style="display: flex; justify-content: center;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000168-07091524.png?download=true)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000168-07091524.png?download=true)
+[![AIで生成された画像](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000168-07091524.png?download=true)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000168-07091524.png?download=true)
 
 </div>

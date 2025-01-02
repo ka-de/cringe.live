@@ -3,9 +3,9 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "night_in_the_woods"
-summary: "Night in the Woods is a critically acclaimed adventure game known for its vibrant, hand-drawn animation style, which features a unique blend of anthropomorphic characters and a rich, atmospheric world. The game's art style, characterized by its expressive, emotive characters and detailed, immersive environments, has been praised for its ability to draw players into the game's world and evoke a strong emotional connection."
+summary: "Night in the Woods は、生き生きとした手描きのアニメーションスタイルで知られる高く評価された冒険ゲームです。擬人化されたキャラクターと豊かで雰囲気のある世界が特徴的に融合されています。表現力豊かで感情的なキャラクターと詳細な没入型の環境で特徴付けられるゲームのアートスタイルは、プレイヤーをゲームの世界に引き込み、強い感情的なつながりを呼び起こす能力が称賛されています。"
 image: "https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/nitw/ComfyUI_temp_kpicy_00074_.png"
-imageAlt: "In this charming animated scene, an anthropomorphic white wolf wearing a striking purple witch or wizard hat and matching cape stands in what appears to be a library or study. The wolf has vibrant green eyes and wears a pendant with a blue gem around their neck. Their expression suggests a mix of confidence and curiosity as they stand behind what looks like a wooden counter or desk. Beside the wolf is an anthropomorphic otter character wearing a navy blue garment adorned with yellow diamond shapes. The otter has bright blue eyes and a friendly, eager expression. The setting around them is filled with wooden bookshelves stocked with numerous books in various colors, and through an arched window in the background, there appears to be a turquoise-tinted sky. A magical atmosphere is enhanced by what seems to be a glowing blue magical element or book on one of the shelves."
+imageAlt: "この魅力的なアニメーションシーンでは、鮮やかな紫色の魔女または魔法使いの帽子と同じ色のマントを着た白いオオカミの擬人化キャラクターが、図書館または書斎のような場所に立っています。オオカミは鮮やかな緑色の目を持ち、青い宝石のペンダントを首に掛けています。木製のカウンターまたは机の後ろに立つ姿は、自信と好奇心が混ざった表情を見せています。オオカミの隣には、黄色いダイヤモンド模様が施された紺色の衣装を着たカワウソの擬人化キャラクターがいます。カワウソは明るい青い目と友好的で熱心な表情を持っています。周囲の環境は様々な色の本が並ぶ木製の本棚で満たされており、背景のアーチ型の窓からはターコイズ色がかった空が見えます。魔法的な雰囲気は、棚の上にある青く光る魔法の要素または本によって強調されています。"
 blurhash: "LJEouvr|q@NCO@W@Zhko00R$ofx^"
 ---
 
@@ -15,7 +15,7 @@ blurhash: "LJEouvr|q@NCO@W@Zhko00R$ofx^"
 
 ---
 
-## Example Images
+## サンプル画像
 
 ---
 
@@ -25,7 +25,7 @@ blurhash: "LJEouvr|q@NCO@W@Zhko00R$ofx^"
     blurhash="LJEouvr|q@NCO@W@Zhko00R$ofx^"
     width="1608"
     height="1248"
-    alt="In this charming animated scene, an anthropomorphic white wolf wearing a striking purple witch or wizard hat and matching cape stands in what appears to be a library or study. The wolf has vibrant green eyes and wears a pendant with a blue gem around their neck. Their expression suggests a mix of confidence and curiosity as they stand behind what looks like a wooden counter or desk. Beside the wolf is an anthropomorphic otter character wearing a navy blue garment adorned with yellow diamond shapes. The otter has bright blue eyes and a friendly, eager expression. The setting around them is filled with wooden bookshelves stocked with numerous books in various colors, and through an arched window in the background, there appears to be a turquoise-tinted sky. A magical atmosphere is enhanced by what seems to be a glowing blue magical element or book on one of the shelves."
+    alt="この魅力的なアニメーションシーンでは、鮮やかな紫色の魔女または魔法使いの帽子と同じ色のマントを着た白いオオカミの擬人化キャラクターが、図書館または書斎のような場所に立っています。オオカミは鮮やかな緑色の目を持ち、青い宝石のペンダントを首に掛けています。木製のカウンターまたは机の後ろに立つ姿は、自信と好奇心が混ざった表情を見せています。オオカミの隣には、黄色いダイヤモンド模様が施された紺色の衣装を着たカワウソの擬人化キャラクターがいます。カワウソは明るい青い目と友好的で熱心な表情を持っています。周囲の環境は様々な色の本が並ぶ木製の本棚で満たされており、背景のアーチ型の窓からはターコイズ色がかった空が見えます。魔法的な雰囲気は、棚の上にある青く光る魔法の要素または本によって強調されています。"
     grid="true"
   >}}
 </a>
@@ -38,7 +38,7 @@ blurhash: "LJEouvr|q@NCO@W@Zhko00R$ofx^"
         blurhash="LHDurZM{Hqxa^boz0is8I?V@Nea~"
         width="1608"
         height="1248"
-        alt="In this charming illustration, an anthropomorphic otter is depicted as a scholarly or magical character, standing in what appears to be a library or study. The otter is wearing an elegant dark blue cloak or robe with lighter blue accents, and a navy blue cap or hat. Around its neck is a glowing blue pendant or amulet that seems to be magical in nature, emitting an ethereal light. The setting behind the otter is warm and inviting, featuring wooden arches and floor-to-ceiling bookshelves filled with books of various colors. There's a subtle religious or mystical element suggested by what appears to be a cross or similar symbol illuminated in the background arch. The lighting creates a cozy atmosphere, with warm amber tones contrasting beautifully with the cool blue magical elements. The otter's expression is confident and slightly mischievous, with bright blue eyes and distinctive whiskers that add to its appealing character design."
+        alt="この魅力的なイラストでは、カワウソの擬人化キャラクターが学者または魔法使いとして描かれ、図書館または書斎に立っています。カワウソは明るい青の装飾が施された優雅な濃紺のクロークまたはローブと、紺色の帽子を着用しています。首には魔法的な性質を持つように見える、青く光るペンダントまたはお守りを掛けています。カワウソの背後の環境は温かく魅力的で、木製のアーチと床から天井まで届く様々な色の本が並ぶ本棚が特徴です。背景のアーチに照らされた十字架やそれに類似したシンボルによって、宗教的または神秘的な要素が微かに示唆されています。照明は居心地の良い雰囲気を作り出し、温かいアンバー色の色調が涼しげな青の魔法的な要素と美しく対比しています。カワウソの表情は自信に満ち、少し悪戯っぽく、明るい青い目と特徴的なヒゲが魅力的なキャラクターデザインを引き立てています。"
         grid="true"
       >}}
     </a>
@@ -50,27 +50,27 @@ blurhash: "LJEouvr|q@NCO@W@Zhko00R$ofx^"
         blurhash="LNEK}e0*S#-UNdS2$zEO4==]V[Sd"
         width="1613"
         height="1254"
-        alt="In this stylized illustration, we see a charming yet mischievous-looking cartoon owl dressed as a witch or wizard, standing amid what appears to be a burning library. The owl is wearing a classic black pointed witch's hat with a golden buckle, and a dark cloak decorated with mysterious geometric symbols in gold. The owl's large, glowing yellow eyes give it an intense and perhaps slightly sinister expression, suggesting it might have something to do with the chaos unfolding around it. The environment shows a library in flames, with books and shelves visible in the background as fire consumes them. The color palette effectively captures the destructive scene with deep blues contrasting against bright, animated flames and burning orange embers floating through the air. The owl seems unnervingly calm despite the destruction, standing proudly while the fire rages behind it. The art style uses clean, modern digital illustration techniques that create an interesting juxtaposition between the cute character design and the alarming situation."
+        alt="このスタイライズされたイラストでは、燃えている図書館の中に立つ、魔女または魔法使いの格好をした魅力的でいたずら好きそうな漫画風のフクロウが描かれています。フクロウは金色の留め具が付いた古典的な黒い尖った魔女の帽子と、金色の神秘的な幾何学模様で装飾された黒いマントを着ています。フクロウの大きな黄色く光る目は、周囲で起きている混沌と何か関係があるかもしれないことを示唆するような、強烈でやや不気味な表情を与えています。周囲の環境は炎に包まれた図書館を示しており、背景には本や本棚が見える中、火が燃え広がっています。色使いは、深い青が明るく躍動的な炎や空中を漂う燃えるような橙色の火の粉と対比しながら、破壊的な場面を効果的に捉えています。フクロウは、背後で火が猛威を振るう中、不気味なほど落ち着いて誇らしげに立っています。アートスタイルは、キュートなキャラクターデザインと警戒を要する状況との間に興味深い対比を生み出す、クリーンでモダンなデジタルイラストテクニックを使用しています。"
         grid="true"
       >}}
     </a>
   </div>
 </div>
 
-## Introduction
+## はじめに
 
 ---
 
-“Night in the Woods” is a narrative-driven adventure game that follows the story of Mae Borowski, a college dropout who returns to her hometown of Possum Springs. The game delves into themes of mental health, economic struggles, and the complexities of growing up. What sets “Night in the Woods” apart is its unique art style, which plays a crucial role in conveying its story and atmosphere. The characters are anthropomorphic animals, each designed with a distinct personality that reflects their role in the narrative. Mae and her family are cats, Gregg is a fox, Angus is a bear, and Bea is a crocodile. This choice of character design adds a layer of whimsy and relatability, making the game’s heavy themes more approachable.
+「Night in the Woods」は、大学を中退してポッサムスプリングスという故郷に戻ってきたメイ・ボロウスキーの物語を追うナラティブドリブンの冒険ゲームです。このゲームは、メンタルヘルス、経済的な苦境、成長の複雑さといったテーマを探求します。「Night in the Woods」を特別なものにしているのは、物語と雰囲気を伝えるのに重要な役割を果たすユニークなアートスタイルです。キャラクターは擬人化された動物で、それぞれが物語における役割を反映した独特の個性でデザインされています。メイと彼女の家族は猫、グレッグは狐、アンガスは熊、ベアはワニです。このキャラクターデザインの選択は、遊び心と親しみやすさを加え、ゲームの重いテーマをより取り組みやすいものにしています。
 
-The art style of “Night in the Woods” is characterized by its simplicity and use of geometric shapes, reminiscent of children’s book illustrations. The color palette is predominantly warm, with autumnal hues that evoke a sense of nostalgia and comfort. This is contrasted by the use of cooler colors in more stressful or eerie scenes, effectively setting the mood and reflecting Mae’s emotional journey. The backgrounds are detailed yet stylized, creating a world that feels both familiar and dreamlike. The game’s visual design is not just about aesthetics; it enhances the storytelling by creating an immersive environment that draws players into Mae’s world and her struggles. The combination of simple shapes, warm colors, and anthropomorphic characters makes “Night in the Woods” a visually striking and emotionally resonant experience.
+「Night in the Woods」のアートスタイルは、子供向けの本のイラストを思わせる、シンプルさと幾何学的な形状の使用が特徴です。カラーパレットは主にノスタルジーと安らぎの感覚を呼び起こす、秋めいた暖かい色調が中心です。これは、より緊張感のある不気味なシーンでの寒色の使用と対比され、効果的に雰囲気を設定し、メイの感情的な旅を反映しています。背景は詳細でありながらスタイライズされており、馴染みがありながらも夢のような世界を作り出しています。ゲームのビジュアルデザインは単なる美的なものではありません。プレイヤーをメイの世界と彼女の苦悩に引き込む没入感のある環境を作り出すことで、ストーリーテリングを強化しています。シンプルな形状、暖かい色調、擬人化されたキャラクターの組み合わせは、「Night in the Woods」を視覚的に印象的で感情的に共鳴する体験にしています。
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (44.4MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/night_in_the_woods_sd35-v4s6000.safetensors)
+[⬇️ LoRAのダウンロード (44.4MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/night_in_the_woods_sd35-v4s6000.safetensors)
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/night_in_the_woods)
+[📐 データセット](https://huggingface.co/datasets/k4d3/night_in_the_woods)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/night_in_the_woods_sd35-v4s6000.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/night_in_the_woods_sd35-v4s6000.json)

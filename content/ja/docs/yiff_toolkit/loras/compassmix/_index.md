@@ -2,23 +2,23 @@
 weight: 3
 bookFlatSection: false
 bookToC: false
-title: "CompassMix XL Lightning LoRAs"
-summary: "CompassMix Lightning is a refined SDXL-based model developed by Lodestone for frosting.ai, designed to deliver high-quality image generation in significantly fewer steps than traditional models. Distinguished by its ability to produce detailed outputs in just 8-16 steps while maintaining SDXL's high resolution standards, it strikes an optimal balance between generation speed and image quality. The model features enhanced prompt adherence and supports ControlNet compatibility, making it particularly valuable for users who need quick yet high-quality image generation capabilities. This list contains all the LoRAs I have released for this model."
+title: "CompassMix XL Lightning LoRA"
+summary: "CompassMix Lightningは、frosting.ai向けにLodestoneによって開発された洗練されたSDXLベースのモデルで、従来のモデルよりも大幅に少ないステップで高品質な画像生成を実現するように設計されています。SDXLの高解像度基準を維持しながら、わずか8-16ステップで詳細な出力を生成できる能力が特徴で、生成速度と画質の最適なバランスを実現しています。このモデルは、プロンプトへの忠実性が向上し、ControlNetとの互換性もサポートしており、迅速かつ高品質な画像生成機能を必要とするユーザーにとって特に価値があります。このリストには、このモデル用にリリースした全てのLoRAが含まれています。"
 ---
 
 <!--markdownlint-disable MD025 -->
 
-# CompassMix XL Lightning LoRAs
+# CompassMix XL Lightning LoRA
 
 ---
 
-CompassMix Lightning is a refined SDXL-based model developed by Lodestone for frosting.ai, designed to deliver high-quality image generation in significantly fewer steps than traditional models. Distinguished by its ability to produce detailed outputs in just 8-16 steps while maintaining SDXL's high resolution standards, it strikes an optimal balance between generation speed and image quality. The model features enhanced prompt adherence and supports ControlNet compatibility, making it particularly valuable for users who need quick yet high-quality image generation capabilities.
+CompassMix Lightningは、frosting.ai向けにLodestoneによって開発された洗練されたSDXLベースのモデルで、従来のモデルよりも大幅に少ないステップで高品質な画像生成を実現するように設計されています。SDXLの高解像度基準を維持しながら、わずか8-16ステップで詳細な出力を生成できる能力が特徴で、生成速度と画質の最適なバランスを実現しています。このモデルは、プロンプトへの忠実性が向上し、ControlNetとの互換性もサポートしており、迅速かつ高品質な画像生成機能を必要とするユーザーにとって特に価値があります。
 
-All LoRAs listed here are actually LyCORIS. This might be important in case the software you use makes you put them in separate folders or if you are generating from a cute Python script.
+ここにリストされている全てのLoRAは、実際にはLyCORISです。これは、使用しているソフトウェアで別のフォルダに配置する必要がある場合や、かわいいPythonスクリプトから生成している場合に重要かもしれません。
 
-If you try these LoRAs out, make sure to set the CFG higher as I have diluted the distillation. 😳
+これらのLoRAを試す場合は、蒸留を薄めているため、CFGを高めに設定してください。😳
 
-## LoRAs
+## LoRA
 
 ---
 

@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "less_details"
-summary: "This LoRA is trained on a bunch of screenshots from Minit which turned out to be really useful for reducing the palette and details when generating pixel art in a computationally expensive but pretty impressive way."
+summary: "このLoRAは、Minitのスクリーンショットを多数使用して学習されており、ピクセルアートを生成する際にパレットと詳細を削減するのに非常に便利であることが判明しました。計算コストは高いものの、印象的な結果を生み出します。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -15,27 +15,27 @@ summary: "This LoRA is trained on a bunch of screenshots from Minit which turned
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
         <source src="https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/sd35/less_details/plot3003k_samplea.webm" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザは動画タグをサポートしていません。
     </video>
 </div>
 
-## Introduction
+## はじめに
 
 ---
 
-Trained a LoRA on a bunch of screenshots from Minit which turned out to be really useful for reducing the palette and details when generating pixel art in a computationally expensive but pretty impressive way. I also greatly enjoy the "MMDiT" style dithering it can occasionally produce.
+Minitのスクリーンショットを多数使用してLoRAを学習させました。これは、ピクセルアートを生成する際にパレットと詳細を削減するのに非常に便利であることが判明しました。計算コストは高いものの、印象的な結果を生み出すことができます。また、時々生成される「MMDiT」スタイルのディザリングも非常に気に入っています。
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (87 MB)](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/sd35/less_details/less_details-v1s6000.safetensors)
+[⬇️ LoRAのダウンロード (87 MB)](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/sd35/less_details/less_details-v1s6000.safetensors)
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/minit)
+[📐 データセット](https://huggingface.co/datasets/k4d3/minit)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/sd35/less_details/less_details-v1s6000.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/sd35/less_details/less_details-v1s6000.json)
 
-## Example Images
+## サンプル画像
 
 ---
 
@@ -47,7 +47,7 @@ Trained a LoRA on a bunch of screenshots from Minit which turned out to be reall
       blurhash="LJG+UMxu00IU-;Rj9Ft74nj[M{of"
       width="1024"
       height="1024"
-      alt="This is a pixel art drawing featuring an anthropomorphic white-furred fox with large ears wearing a black wizard hat and cloak. The character stands in front of shelves filled with books that have various spines visible against a solid black background. The fox holds up one paw while speaking through a speech bubble at the top which reads 'I FOUND A WAY TO FIT IN YOUR VARM!'. The style uses monochromatic colors primarily in shades of gray on a black backdrop giving it a retro video game aesthetic."
+      alt="これは、黒い魔法使いの帽子とマントを着た、大きな耳を持つ白い毛皮の人型キツネを特徴とするピクセルアートです。キャラクターは、様々な背表紙が見える本棚の前に立っており、黒い背景に映えています。キツネは片方の前足を上げながら、上部の吹き出しで「あなたの腕の中に収まる方法を見つけました！」と話しています。このスタイルは、黒い背景に主にグレーの色調を使用したモノクロカラーを採用しており、レトロなビデオゲームの美学を感じさせます。"
       grid="true"
     >}}
     </a>
@@ -63,20 +63,20 @@ Trained a LoRA on a bunch of screenshots from Minit which turned out to be reall
       blurhash="LKC@^6k?t6t5-bo$fmWAl:t8t7ba"
       width="3456"
       height="946"
-      alt="This is a digital drawing featuring three side-by-side portraits of an anthropomorphic canine character in different poses against a mystical forest background with tall trees and starry night sky. The character has white fur and wears a large purple wizard hat adorned with intricate patterns. They also don a flowing purple robe that contrasts beautifully with their light-colored fur."
+      alt="これは、神秘的な森の背景と星空の下で、異なるポーズをとる人型の犬のキャラクターの3つの横並びの肖像画を特徴とするデジタル画像です。キャラクターは白い毛皮を持ち、複雑な模様が施された大きな紫の魔法使いの帽子をかぶっています。また、明るい色の毛皮と美しく対照的な、なびく紫のローブを着ています。"
       grid="true"
     >}}
     </a>
   </div>
 </div>
 
-## Training Montage
+## トレーニングの過程
 
 ---
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
         <source src="https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/sd35/less_details/sample_sample00.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザは動画タグをサポートしていません。
     </video>
 </div>

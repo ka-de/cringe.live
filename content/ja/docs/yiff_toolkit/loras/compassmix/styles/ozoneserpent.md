@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "ozoneserpent"
-summary: "Ozoneserpent’s art uniquely blends fantasy and anthropomorphic themes with vibrant colors and detailed backgrounds, featuring dynamic characters in adventurous scenarios."
+summary: "Ozoneserpentのアートは、鮮やかな色彩と詳細な背景を持ち、冒険的なシナリオで動的なキャラクターを特徴とする、ファンタジーとアンスロポモーフィックなテーマを独自にブレンドしています。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,65 +12,65 @@ summary: "Ozoneserpent’s art uniquely blends fantasy and anthropomorphic theme
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-Ozoneserpent’s art style is quite distinctive and engaging. Their work often features a blend of fantasy and anthropomorphic themes, with a focus on ghost, water, and dark elements. The characters are usually depicted in dynamic and expressive poses, often involved in adventurous or whimsical scenarios. The use of vibrant colors and detailed backgrounds adds depth and richness to their artwork.
+Ozoneserpentのアートスタイルは非常に特徴的で魅力的です。彼らの作品は、ゴースト、水、闇の要素に焦点を当てた、ファンタジーとアンスロポモーフィックなテーマのブレンドを特徴としています。キャラクターは通常、冒険的または奇想天外なシナリオで、ダイナミックで表現力豊かなポーズで描かれています。鮮やかな色使いと詳細な背景により、アートワークに深みと豊かさが加わっています。
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (223MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/ozoneserpent-v7e134/ozoneserpent-v7e134.safetensors?download=true)
+[⬇️ LoRAダウンロード (223MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/ozoneserpent-v7e134/ozoneserpent-v7e134.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (52.9MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/ozoneserpent-v7e134/ozoneserpent-v7e134_frockpt1_th-3.55.safetensors)
+[⬇️ 圧縮版LoRAダウンロード (52.9MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/ozoneserpent-v7e134/ozoneserpent-v7e134_frockpt1_th-3.55.safetensors)
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/ozoneserpent)
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/ozoneserpent)
 
 <!--
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/)
 -->
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/ozoneserpent-v7e134/ozoneserpent-v7e134.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/ozoneserpent-v7e134/ozoneserpent-v7e134.json)
 
-## Prompting Guide
+## プロンプトガイド
 
 ---
 
-Keyword:
+キーワード：
 
 - `ozoneserpent`
 
-It will align better with the original style if you use the keyword!
+このキーワードを使用すると、オリジナルのスタイルにより近い結果が得られます！
 
 <!--
 
-### Suggested Tags
+### 推奨タグ
 
 -->
 
-## Example Images
+## サンプル画像
 
 ---
 
-<!-- ⚠️ TODO: Thumbnails -->
+<!-- ⚠️ TODO: サムネイル -->
 
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i_00036_.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i_00036_.png)
+[![AIで生成された画像](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i_00036_.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i_00036_.png)
 
 </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i_00056_.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i_00056_.png)
+[![AIで生成された画像](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i_00056_.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i_00056_.png)
 
   </div>
 </div>
 
 <div style="display: flex; justify-content: space-between;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i/horny-awoo.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i/horny-awoo.png)
+[![AIで生成された画像](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i/horny-awoo.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i/horny-awoo.png)
 
 </div>
