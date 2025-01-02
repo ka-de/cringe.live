@@ -1,0 +1,76 @@
+digraph NeuralNetworks {
+    rankdir=LR;
+    compound=true;
+    node [shape=circle, fixedsize=true, width=0.4];
+    
+    subgraph cluster_standard {
+        label="(a) 標準的なニューラルネット";
+        
+        // Input layer
+        {rank=same; i1; i2; i3; i4; i5;}
+        i1 [label=""];
+        i2 [label=""];
+        i3 [label=""];
+        i4 [label=""];
+        i5 [label=""];
+        
+        // Hidden layer
+        {rank=same; h1; h2; h3; h4; h5;}
+        h1 [label=""];
+        h2 [label=""];
+        h3 [label=""];
+        h4 [label=""];
+        h5 [label=""];
+        
+        // Output layer
+        o1 [label=""];
+        
+        // Connections from input to hidden layer
+        i1 -> {h1; h2; h3; h4; h5};
+        i2 -> {h1; h2; h3; h4; h5};
+        i3 -> {h1; h2; h3; h4; h5};
+        i4 -> {h1; h2; h3; h4; h5};
+        i5 -> {h1; h2; h3; h4; h5};
+        
+        // Connections from hidden to output layer
+        {h1; h2; h3; h4; h5} -> o1;
+    }
+    
+    subgraph cluster_dropout {
+        label="(b) ドロップアウト適用後";
+        
+        // Input layer
+        {rank=same; di1; di2; di3; di4; di5;}
+        di1 [label=""];
+        di2 [label=""];
+        di3 [label=""];
+        di4 [label=""];
+        di5 [label=""];
+        
+        // Hidden layer with dropout
+        {rank=same; dh1; dh2; dh3; dh4; dh5;}
+        dh1 [label=""];
+        dh2 [label="", style=dotted];
+        dh3 [label=""];
+        dh4 [label="", style=dotted];
+        dh5 [label=""];
+        
+        // Output layer
+        do1 [label=""];
+        
+        // Connections from input to hidden layer (excluding dropped out nodes)
+        di1 -> {dh1; dh3; dh5};
+        di2 -> {dh1; dh3; dh5};
+        di3 -> {dh1; dh3; dh5};
+        di4 -> {dh1; dh3; dh5};
+        di5 -> {dh1; dh3; dh5};
+        
+        // Connections from hidden to output layer (excluding dropped out nodes)
+        {dh1; dh3; dh5} -> do1;
+        
+        // Add X marks for dropped out nodes
+        node [shape=circle, label="×", fontsize=14];
+        dx2 [pos="same as dh2"];
+        dx4 [pos="same as dh4"];
+    }
+} 

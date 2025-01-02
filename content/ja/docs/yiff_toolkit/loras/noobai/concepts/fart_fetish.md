@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "fart_fetish"
-summary: "Helps the poor clouds find an orifice to come out of intead of just floating around. 💨"
+summary: "可哀想な雲たちが、ただ浮かんでいるだけでなく、出口を見つけられるようにサポートします。💨"
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->
@@ -12,31 +12,31 @@ summary: "Helps the poor clouds find an orifice to come out of intead of just fl
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-It's a symphony of the body's natural processes, a reminder of our shared roots. It's the body's way of saying, "I'm alive, I'm functioning, and I'm unapologetically me." There's a certain poetry in its spontaneity, a raw honesty that cuts through the pretense. It's a moment of pure, unfiltered existence, a testament to the beauty of being a furry.
+それは体の自然な過程の交響曲であり、私たちの共通のルーツを思い出させるものです。それは体が「私は生きている、機能している、そして謝ることなく私自身である」と言う方法なのです。その自発性には一種の詩情があり、見せかけを突き抜ける率直さがあります。それは純粋で濾過されていない存在の瞬間であり、ファーリーとしての存在の美しさを証明するものです。
 
-## Content
-
----
-
-[⬇️ LoRA Download (30.6 MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/loras/noob/fart_fetish-v2s3000/fart_fetish-v2s3000.safetensors)
-
-[📐 Dataset](https://huggingface.co/datasets/k4d3/fart_fetish)
-
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/loras/noob/fart_fetish-v2s3000/fart_fetish-v2s3000.json)
-
-## Prompting Guide
+## コンテンツ
 
 ---
 
-I am absolutely certain `fart fetish` isn't needed, but that shouldn't stop you from typing it in for CLIP though. It deserves it! `presenting hindquarters`, `brown fart cloud` and `looking back at viewer` is worth a lot more.
+[⬇️ LoRAダウンロード (30.6 MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/loras/noob/fart_fetish-v2s3000/fart_fetish-v2s3000.safetensors)
 
-If you get a nice composition, but the text in the cloud is ruining it, try reinforcing the attention with background elements or character details present in the generation but aren't prompted, instead of changing the seed or even worse, trying to Photoshop it.
+[📐 データセット](https://huggingface.co/datasets/k4d3/fart_fetish)
 
-## Example Images
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/loras/noob/fart_fetish-v2s3000/fart_fetish-v2s3000.json)
+
+## プロンプトガイド
+
+---
+
+`fart fetish`は必要ないことは確実ですが、CLIPに入力することを躊躇う必要はありません。それに値するのです！`presenting hindquarters`、`brown fart cloud`、`looking back at viewer`の方がずっと価値があります。
+
+良い構図が得られたものの、雲の中のテキストが台無しにしている場合は、シードを変更したり、さらに悪いことにPhotoshopを使用したりするのではなく、プロンプトには含まれていないが生成物に存在する背景要素やキャラクターの細部で注意を強化してみてください。
+
+## サンプル画像
 
 ---
 
@@ -46,7 +46,7 @@ If you get a nice composition, but the text in the cloud is ruining it, try rein
     blurhash="LDIOFIRiWAoJ?^RiR*RO^*M|oeIV"
     width="3088"
     height="2194"
-    alt="This is a CGI rendering of an anthropomorphic hyena character dressed as a French maid created with high detail using digital art software. The subject has light brown fur adorned with darker spots typical of a spotted hyena's pattern along with a distinctive mane-like tuft around its neck and head. It stands facing away from us but turns slightly to glance over its shoulder. The outfit consists of a classic black-and-white French maid uniform featuring puffed sleeves ruffled trim on the apron and a large white bow tied at the back. The figure's physique includes humanized features such as pronounced buttocks and muscular limbs indicative of both feline and humanoid characteristics. Its tail is visible peeking out beneath the short skirt of the dress. In terms of background setting it appears to be inside a cozy bedroom bathed in natural sunlight streaming through arched windows draped with sheer curtains. A neatly made bed with white linens occupies the center-left side of the room while framed artwork hangs on muted green walls that add warmth to the scene. Overall the composition blends elements of realism with fantasy emphasizing texture details like fur patterns and fabric folds meticulously rendered in the illustration."
+    alt="これはデジタルアートソフトウェアを使用して高詳細に作成された、フランスメイドの衣装を着た擬人化ハイエナキャラクターのCGレンダリングです。被写体は、ハイエナ特有の暗い斑点のある薄茶色の毛皮を持ち、首と頭の周りに特徴的なたてがみのような房毛があります。背を向けて立っていますが、肩越しに少し振り返っています。衣装は、パフスリーブ、エプロンのフリル装飾、背中に大きな白いリボンが結ばれた古典的な白黒のフランスメイド制服です。体型は、猫科と人型の特徴を示す、強調された臀部と筋肉質な四肢など、人間化された特徴を含んでいます。ドレスの短いスカートの下からしっぽが覗いています。背景の設定は、アーチ型の窓からシアーカーテン越しに自然光が差し込む居心地の良い寝室の中です。白いリネンの整然とベッドメイキングされたベッドが部屋の中央左側を占め、落ち着いたグリーンの壁には額入りのアートワークが掛かっており、シーンに温かみを加えています。全体的な構図は、イラストで丁寧に描かれた毛皮のパターンや布地のひだなどのテクスチャーの細部を強調しながら、リアリズムとファンタジーの要素を融合させています。"
     grid="false"
   >}}
 </a>
@@ -59,7 +59,7 @@ If you get a nice composition, but the text in the cloud is ruining it, try rein
         blurhash="LAIEqhs.EJ9H?wMw4:M_={9ZM{%M"
         width="2252"
         height="3216"
-        alt="This is a digital illustration depicting an anthropomorphic hyena character styled as a maid. The scene takes place indoors with sunlight streaming through large arched windows covered partially by green curtains on the right side of the background. The hyena has light brown fur with dark spots typical to its species. It stands confidently facing away from the viewer but turns its head over its shoulder gazing directly at them. Its body is muscular yet feminine emphasizing broad shoulders and a curvy rear end which is prominently displayed due to the short black dress it wears. The outfit consists of a traditional French maid costume—a short-sleeved black dress trimmed with white lace around the edges including ruffles adorning the sleeves neckline and waistline. A large white bow ties neatly under her bust line while another smaller one rests above her left hip. Her tail peeks out slightly from beneath the skirt's hem adding to the overall aesthetic. In terms of accessories she sports thigh-high stockings that match the dress along with black shoes peeking just below her hemline. On the bed behind her there’s a rumpled blanket suggesting recent activity or rest. Above the bed hangs a framed picture though details about the artwork within aren’t visible. The room features muted pastel tones enhancing the softness of the setting against the vivid colors of her attire. This detailed depiction blends realistic textures and exaggerated proportions characteristic of fantasy art."
+        alt="これはメイドとしてスタイリングされた擬人化ハイエナキャラクターのデジタルイラストです。シーンは室内で、右側の背景には緑のカーテンで部分的に覆われた大きなアーチ型の窓から日光が差し込んでいます。ハイエナは種に特有の暗い斑点のある薄茶色の毛皮を持っています。自信に満ちた姿勢で観察者から背を向けて立っていますが、肩越しに頭を回して直接視線を向けています。体は筋肉質でありながら女性的で、幅広い肩と曲線的な後ろ姿が強調され、着用している短い黒いドレスによって際立っています。衣装は伝統的なフランスメイドの衣装で、袖、襟元、ウエストラインを含む縁に白いレースの装飾が施された半袖の黒いドレスです。胸の下に大きな白いリボンがきれいに結ばれ、左腰の上にはより小さなリボンが配置されています。スカートの裾からしっぽが少し覗いており、全体的な美的効果を高めています。アクセサリーとして、ドレスに合わせたサイハイストッキングを着用し、裾の下からは黒い靴が覗いています。彼女の後ろのベッドには、最近の活動や休息を示唆するしわのある毛布があります。ベッドの上には額入りの絵が掛かっていますが、その中のアートワークの詳細は見えません。部屋は落ち着いたパステルトーンで、彼女の衣装の鮮やかな色との対比を強調しています。この詳細な描写は、ファンタジーアートの特徴である現実的なテクスチャーと誇張されたプロポーションを融合させています。"
         grid="true"
       >}}
     </a>
@@ -69,7 +69,7 @@ If you get a nice composition, but the text in the cloud is ruining it, try rein
         blurhash="LGKc:%4;YNNaK-E2.7WUBqw_?aoc"
         width="2252"
         height="3216"
-        alt="This is a digital illustration featuring an anthropomorphic canine character with exaggerated cartoonish proportions. The subject has tan fur on their face chest belly inner thighs and tail tip contrasting against darker brown or black fur covering most of its body. They have large expressive eyes pointed ears and a fluffy bushy tail raised high. The scene takes place outdoors near what appears to be a small red doghouse with a slanted roof situated within a fenced yard filled with green grass. The ground beneath the doghouse shows a significant amount of yellow liquid splattered around suggesting recent activity. This liquid substance is also visible pooling at the base where the character stands. From behind the character's buttocks dominate the foreground drawn larger than life with detailed shading that highlights curvature and volume. The perspective emphasizes the roundness and size of these features prominently. In terms of clothing there isn't any mentioned; however the focus remains solely on the figure itself without additional context about attire. There’s no indication of gender-specific traits other than general anatomical characteristics typical of canines. Overall the style of art leans towards anime-inspired furry artwork characterized by bold lines vibrant colors and attention-grabbing anatomy. It combines elements of both playful fantasy and explicit content due to the nature of the depicted scenario."
+        alt="これは誇張された漫画的なプロポーションを持つ擬人化された犬科キャラクターのデジタルイラストです。被写体は、体の大部分を覆う暗褐色または黒い毛皮と対照的な、顔、胸、腹、内もも、尾先のタン色の毛皮を持っています。大きな表情豊かな目、尖った耳、高く上がった豊かでふさふさした尾を持っています。シーンは屋外で、緑の草で満たされた囲われた庭の中にある、傾斜した屋根を持つ小さな赤い犬小屋の近くで展開されています。犬小屋の下の地面には、最近の活動を示唆する大量の黄色い液体が飛び散っており、この液体はキャラクターが立っている基部にも溜まっているのが見えます。キャラクターの後ろ姿では、臀部が前景を支配しており、実物以上に大きく描かれ、詳細な陰影付けによって曲線と量感が強調されています。視点はこれらの特徴の丸みと大きさを顕著に強調しています。衣服に関する言及はありませんが、焦点は衣装に関する追加の文脈なしに、図そのものにのみ置かれています。犬科の一般的な解剖学的特徴以外に、性別特有の特徴を示す指標はありません。全体的なアートスタイルは、太い線、鮮やかな色、目を引く解剖学的特徴を特徴とするアニメ風のファーリーアートワークに傾いています。描かれたシナリオの性質により、遊び心のあるファンタジーと露骨なコンテンツの要素を組み合わせています。"
         grid="true"
       >}}
     </a>

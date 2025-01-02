@@ -3,19 +3,19 @@ weight: 1
 bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
-title: "Concepts"
-summary: "Concept LoRAs teach Stable Diffusion models to understand and generate specific objects, creatures, or abstract concepts that weren't well-represented in the original training data. These adaptations modify the model's understanding of semantic relationships and visual features associated with particular subjects. For example, a concept LoRA might help the model better generate specific architectural elements, unique creatures, or particular objects with consistent characteristics. Concept LoRAs typically require more diverse training data than style LoRAs (usually 50-100 images) to capture different angles, contexts, and variations of the subject matter. They work by adjusting both the model's cross-attention and feed-forward layers to better recognize and reproduce the defining features of the target concept."
+title: "コンセプト"
+summary: "コンセプトLoRAは、Stable Diffusionモデルに、元のトレーニングデータでは十分に表現されていなかった特定のオブジェクト、生物、または抽象的な概念を理解し生成することを教えます。これらの適応により、特定の主題に関連する意味的関係と視覚的特徴に対するモデルの理解が修正されます。例えば、コンセプトLoRAは、特定の建築要素、ユニークな生物、または一貫した特徴を持つ特定のオブジェクトをより良く生成するのに役立ちます。コンセプトLoRAは通常、対象となる主題の異なる角度、文脈、バリエーションを捉えるために、スタイルLoRAよりも多様なトレーニングデータ（通常50-100画像）を必要とします。これらは、モデルのクロスアテンションとフィードフォワード層の両方を調整することで、対象となるコンセプトの特徴をより良く認識し再現できるようにします。"
 ---
 
 <!--markdownlint-disable MD025 -->
 
-# Concept LoRAs
+# コンセプトLoRA
 
-Concept LoRAs teach Stable Diffusion models to understand and generate specific objects, creatures, or abstract concepts that weren't well-represented in the original training data. These adaptations modify the model's understanding of semantic relationships and visual features associated with particular subjects. For example, a concept LoRA might help the model better generate specific architectural elements, unique creatures, or particular objects with consistent characteristics. Concept LoRAs typically require more diverse training data than style LoRAs (usually 50-100 images) to capture different angles, contexts, and variations of the subject matter. They work by adjusting both the model's cross-attention and feed-forward layers to better recognize and reproduce the defining features of the target concept.
+コンセプトLoRAは、Stable Diffusionモデルに、元のトレーニングデータでは十分に表現されていなかった特定のオブジェクト、生物、または抽象的な概念を理解し生成することを教えます。これらの適応により、特定の主題に関連する意味的関係と視覚的特徴に対するモデルの理解が修正されます。例えば、コンセプトLoRAは、特定の建築要素、ユニークな生物、または一貫した特徴を持つ特定のオブジェクトをより良く生成するのに役立ちます。コンセプトLoRAは通常、対象となる主題の異なる角度、文脈、バリエーションを捉えるために、スタイルLoRAよりも多様なトレーニングデータ（通常50-100画像）を必要とします。これらは、モデルのクロスアテンションとフィードフォワード層の両方を調整することで、対象となるコンセプトの特徴をより良く認識し再現できるようにします。
 
 ---
 
-## LoRAs
+## LoRA一覧
 
 ---
 

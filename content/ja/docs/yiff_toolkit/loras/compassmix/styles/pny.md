@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "pny"
-summary: "The default styles of Pony Diffusion for CompassMix."
+summary: "CompassMixのPony Diffusionのデフォルトスタイル。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,73 +12,73 @@ summary: "The default styles of Pony Diffusion for CompassMix."
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-Replicate the default styles of Pony Diffusion with CompassMix
+CompassMixでPony Diffusionのデフォルトスタイルを再現します
 
-## Content
+## 内容
 
 ---
 
-[⬇️ LoRA Download (241MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny-v1e200.safetensors?download=true)
+[⬇️ LoRAダウンロード (241MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny-v1e200.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (41.5MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny-v1e200_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 圧縮版LoRAダウンロード (41.5MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny-v1e200_frockpt1_th-3.55.safetensors?download=true)
 
 <!--
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/)
 -->
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny-v1e200.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny-v1e200.json)
 
-## Prompting Guide
+## プロンプトガイド
 
 ---
 
-Keyword:
+キーワード：
 
 - `pny`
-    The style you get with Pony when you figure out how to negative prompt out `source_filmmaker, 3d`
+    `source_filmmaker, 3d`をネガティブプロンプトで除外した時のPonyのスタイル
 - `pny3d`
     3D
 - `pnypht`
-    Photos
+    写真
 - `pnypxl`
-    Pixel Art
+    ピクセルアート
 - `pnyrlsm`
-    Realism
+    リアリズム
 
 <!--
 
-### Suggested Tags
+### 推奨タグ
 
 -->
 
-## Example Images
+## サンプル画像
 
 ---
 
-<!-- ⚠️ TODO: Thumbnails -->
+<!-- ⚠️ TODO: サムネイル -->
 
 <div style="display: flex; justify-content: space-between;">
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_00_20240714135959_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_00_20240714135959_1.png)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_04_20240714140202_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_04_20240714140202_1.png)
+[![AIで生成された画像。](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_00_20240714135959_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_00_20240714135959_1.png)
+[![AIで生成された画像。](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_04_20240714140202_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_04_20240714140202_1.png)
 
 </div>
   <div style="display: flex; justify-content: space-between; width: 45%;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_03_20240714140104_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_03_20240714140104_1.png)
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_02_20240714140101_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_02_20240714140101_1.png)
+[![AIで生成された画像。](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_03_20240714140104_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_03_20240714140104_1.png)
+[![AIで生成された画像。](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_02_20240714140101_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_02_20240714140101_1.png)
 
   </div>
 </div>
 <div style="display: flex; justify-content: center;">
 
-[![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_01_20240714140001_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_01_20240714140001_1.png)
+[![AIで生成された画像。](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_01_20240714140001_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_01_20240714140001_1.png)
 
 </div>

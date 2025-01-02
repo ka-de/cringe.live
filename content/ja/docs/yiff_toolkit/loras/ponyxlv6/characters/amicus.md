@@ -2,15 +2,15 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "amicus"
-summary: "Amicus is a main character in the visual novel Adastra, where he is portrayed as an outgoing and optimistic wolf, the love interest of the protagonist, and the heir to the Wolven imperial throne."
+title: "アミカス"
+summary: "アミカスは、ビジュアルノベル「Adastra」の主要キャラクターで、明るく前向きなオオカミとして描かれ、主人公の恋愛対象であり、オオカミ帝国の王位継承者です。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
 # amicus-v1s3000
 
-## Example Images
+## サンプル画像
 
 ---
 
@@ -20,48 +20,48 @@ summary: "Amicus is a main character in the visual novel Adastra, where he is po
     blurhash="LsJIIS%fSwV@.Tb0kDaepIjEs;f*"
     width="1528"
     height="1528"
-    alt="This is an anthropomorphic digital drawing featuring Amicus a male character with grayish-blue fur and white patches on his face chest inner arms hands feet and tail tip. He has large erect ears and blue eyes standing confidently against a mountainous landscape under a clear sky. His physique is muscular but slightly chubby around the midsection. Amicus wears only minimal clothing; he sports a red cape draped over his shoulders and no other garments except a small pouch hanging between his legs that covers part of his genitals which remain partially exposed. The scene includes lush greenery and rolling hills in the distance with visible mountains behind him. There's also a river winding through the valley below. The style of art leans towards comic or cartoon illustration characterized by bold lines and vibrant colors typical of modern furry fandom artwork. This detailed depiction captures both the subject’s anatomy and the serene natural environment vividly"
+    alt="これは人型のデジタルドローイングで、アミカスという灰青色の毛並みを持つ男性キャラクターが描かれています。顔、胸、腕の内側、手、足、尾の先端に白い斑があります。大きな立ち耳と青い目を持ち、山々が広がる風景の中で自信に満ちた姿勢で立っています。体格は筋肉質ですが、腹部にはややふくよかさが見られます。アミカスは最小限の衣装しか身につけておらず、肩に掛けた赤いマントと、股間に掛けた小さな袋以外は着用していません。背景には豊かな緑と起伏のある丘陵地帯が広がり、遠くには山々が見えます。谷間には川が蛇行しています。アートスタイルはコミックやカートゥーン調のイラストで、現代のファーリーファンダムアートワークに典型的な太い線と鮮やかな色使いが特徴です。この詳細な描写は、被写体の解剖学的特徴と穏やかな自然環境の両方を生き生きと捉えています"
     grid="true"
     >}}
 </a>
 
-## Introduction
+## はじめに
 
 ---
 
-Amicus is a central character in the visual novel Adastra. He is a wolf-like alien from the moon Adastra and the heir to the Wolven imperial throne. Standing at approximately 7 feet tall and weighing around 300lb, Amicus has a large, robust physique typical of his species. He is known for his outgoing and optimistic personality, although his life within the palace walls can often feel suffocating and lonely. Despite this, he maintains a strong sense of duty to his throne and birthright, and is determined to prove himself over his brother, Cassius. Amicus is also known for his impulsive tendencies, which often lead him into trouble. However, he finds joy in making friends, including the protagonist, who he quickly develops a romantic interest in.
+アミカスは、ビジュアルノベル「Adastra」の中心的なキャラクターです。彼はAdastra衛星に住む狼のような宇宙人で、オオカミ帝国の王位継承者です。身長約7フィート（約213cm）、体重約300ポンド（約136kg）と、種族に典型的な大柄で頑健な体格をしています。明るく前向きな性格で知られていますが、宮殿の壁の中での生活は時として息苦しく孤独に感じることもあります。それにもかかわらず、彼は王位と生まれながらの権利に対する強い責任感を持ち、弟のカシウスに対して自分の価値を証明することを決意しています。アミカスは衝動的な傾向があることでも知られており、それがしばしば彼を困難な状況に陥れることもあります。しかし、友人を作ることに喜びを見出しており、特に主人公とはすぐに恋愛感情を抱くようになります。
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (27.8MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/amicus-v1s3000.safetensors)
+[⬇️ LoRAダウンロード (27.8MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/amicus-v1s3000.safetensors)
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/amicus)
+[📐 データセット](https://huggingface.co/datasets/k4d3/amicus)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/amicus-v1s3000.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/amicus-v1s3000.json)
 
-## Training Montage
+## トレーニングモンタージュ
 
 ---
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
         <source src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/amicus/sample_sample00.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザは動画タグをサポートしていません。
     </video>
 </div>
 
-## amicus-v1e200 (old)
+## amicus-v1e200 (旧バージョン)
 
 ---
 
-### Content (old)
+### コンテンツ (旧バージョン)
 
 ---
 
-[⬇️ LoRA Download (149MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/amicus-v1e200.safetensors?download=true)
+[⬇️ LoRAダウンロード (149MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/amicus-v1e200.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (38.9MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/amicus-v1e200_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 軽量版LoRAダウンロード (38.9MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/amicus-v1e200_frockpt1_th-3.55.safetensors?download=true)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/amicus-v1e200.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/amicus-v1e200.json)
