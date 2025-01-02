@@ -2,7 +2,7 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "non-euclidean_sex"
+title: "非ユークリッド性交"
 summary: ""
 ---
 
@@ -12,16 +12,16 @@ summary: ""
 
 ---
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/non-euclidean_sex-v1e400.safetensors?download=true)
+[⬇️ LoRAダウンロード (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/non-euclidean_sex-v1e400.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (43.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/non-euclidean_sex-v1e400_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 圧縮版LoRAダウンロード (43.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/non-euclidean_sex-v1e400_frockpt1_th-3.55.safetensors?download=true)
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/non-euclidean_sex)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/non-euclidean_sex)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/non-euclidean_sex-v1e400.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/non-euclidean_sex-v1e400.json)

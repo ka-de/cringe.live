@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "dagasi"
-summary: "What? Dagasi? What is that? I don't know anything about it!"
+summary: "えっ？Dagasi？それは何？全然知りません！"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,32 +12,32 @@ summary: "What? Dagasi? What is that? I don't know anything about it!"
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-Dagasi is a well-known furry artist whose work is highly regarded in the furry art community. (That just means, they are really good at drawing porn.) Their art style is characterized by a blend of anime and kemono influences, often featuring cute and expressive characters with a focus on vibrant colors and lots of cum.
+Dagasiは、ファーリーアートコミュニティで高く評価されている有名なファーリーアーティストです。（つまり、エロ絵がとても上手いということです。）彼らのアートスタイルは、アニメとケモノの影響を融合させたもので、鮮やかな色使いと大量の精液表現を特徴とし、かわいらしく表情豊かなキャラクターをよく描きます。
 
-## Content
-
----
-
-[⬇️ LoRA Download (234MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/tests/by_dagasi-v2/by_dagasi.safetensors)
-
-[⬇️ Shrunk LoRA Download (57.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/tests/by_dagasi-v2/by_dagasi_frockpt1_th-3.55.safetensors)
-
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/by_dagasi)
-
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_dagasi)
-
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/dagasi-v1e134.json)
-
-## Prompting Guide
+## コンテンツ
 
 ---
 
-Keyword:
+[⬇️ LoRAダウンロード (234MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/tests/by_dagasi-v2/by_dagasi.safetensors)
+
+[⬇️ 軽量版LoRAダウンロード (57.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/tests/by_dagasi-v2/by_dagasi_frockpt1_th-3.55.safetensors)
+
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/by_dagasi)
+
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/by_dagasi)
+
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/dagasi-v1e134.json)
+
+## プロンプトガイド
+
+---
+
+キーワード：
 
 - `by dagasi`
 
-You don't really need to use it.
+特に使用する必要はありません。

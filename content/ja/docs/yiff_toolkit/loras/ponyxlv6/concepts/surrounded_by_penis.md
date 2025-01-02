@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "surrounded_by_penis"
-summary: "This LoRA aims to help generating images where one or more characters are surrounded by penises from multiple sides."
+summary: "このLoRAは、1人以上のキャラクターが複数の方向からペニスに囲まれている画像の生成を支援することを目的としています。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,29 +12,29 @@ summary: "This LoRA aims to help generating images where one or more characters 
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-This LoRA aims to help generating images where one or more characters are surrounded by penises from multiple sides.
+このLoRAは、1人以上のキャラクターが複数の方向からペニスに囲まれている画像の生成を支援することを目的としています。
 
-## Content
-
----
-
-[⬇️ LoRA Download (30.2 MB)](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/surrounded_by_penis/surrounded_by_penis-v10s2048.safetensors)
-
-[📐 Dataset](https://huggingface.co/datasets/k4d3/surrounded_by_penis)
-
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/surrounded_by_penis/surrounded_by_penis-v10s2048.json)
-
-## Prompting Guide
+## コンテンツ
 
 ---
 
-Keyword: `surrounded by penis`
+[⬇️ LoRAダウンロード (30.2 MB)](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/surrounded_by_penis/surrounded_by_penis-v10s2048.safetensors)
 
-## Example Images
+[📐 データセット](https://huggingface.co/datasets/k4d3/surrounded_by_penis)
+
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/surrounded_by_penis/surrounded_by_penis-v10s2048.json)
+
+## プロンプトガイド
+
+---
+
+キーワード: `surrounded by penis`
+
+## サンプル画像
 
 ---
 
@@ -46,7 +46,7 @@ Keyword: `surrounded by penis`
       blurhash="LHL|GoS+ELa0_3-;#+XS*JEk^*o}"
       width="1536"
       height="1536"
-      alt="This is an anime-style digital drawing featuring anthropomorphic characters in an explicit scene. Central to the composition is a young male character with brown hair tan skin and fluffy white facial markings resembling those of an otter or dog. He has large blue eyes blushing cheeks and his mouth open showing small fangs as he sticks out his pink tongue playfully. The central figure appears naked from the waist up revealing toned abs and small perky breasts. His erect penis is prominently displayed at the center bottom of the frame. Surrounding him are three other anthropomorphized animal figures—two muscular males on either side holding their oversized penises close to his face each one larger than average human genitals. Their fur colors include shades of grayish-white and beige. In terms of background details it's minimalistic; just a simple tiled floor that suggests they might be indoors near some kind of bathing area due to the presence of water droplets around them. The art style employs vibrant shading techniques typical of high-quality digital illustrations used within furry fandom circles."
+      alt="これはアニメ調のデジタルアートで、擬人化されたキャラクターが登場する露骨なシーンを描いています。中央には茶色い髪と日焼けした肌、カワウソや犬を思わせるふわふわした白い顔の模様を持つ若い男性キャラクターがいます。大きな青い目と赤らんだ頬を持ち、口を開けて小さな牙を見せながらピンクの舌を遊び心で出しています。中央の人物は腰から上が裸で、引き締まった腹筋と小さな胸が見えています。勃起したペニスがフレームの中央下部に目立って表示されています。彼の周りには3体の擬人化された動物のキャラクターがおり、両側に筋肉質な男性が2人、通常の人間の性器よりも大きな巨大なペニスを彼の顔の近くに持っています。彼らの毛皮の色は灰白色やベージュなどです。背景の詳細は最小限で、水滴の存在から入浴エリアの近くの室内であることを示唆する単純なタイル張りの床だけです。アートスタイルは、ファーリーファンダムサークルで使用される高品質なデジタルイラストに典型的な鮮やかなシェーディング技法を採用しています。"
       grid="true"
     >}}
     </a>
@@ -56,7 +56,7 @@ Keyword: `surrounded by penis`
       blurhash="LaHKeFWV0KR*Iqs.s8bHOYfkRiWB"
       width="1536"
       height="1536"
-      alt="This is an explicit digital drawing in anime style featuring two characters from Pokémon Dawn and Ash Ketchum's mother. The scene shows Dawn kneeling on her knees with ropes around her wrists behind her back indicating she’s restrained. She has blue hair tied under a white headscarf fair skin large breasts exposed without clothes except for red scarf loosely wrapped around her neck. Her face displays exaggerated features typical of anime art—large eyes wide open flushed cheeks (blush) and saliva dripping from her slightly parted lips. Surrounding her are several erect penises drawn in various shades of pink and flesh tones each ejaculating semen onto her body; some droplets land on her chest while others splash near her face and hands. The background consists of dark gray stone-like tiles which contrast starkly against their pale bodies and bright fluids. The artwork focuses heavily on sexual content with no other objects or additional context provided within the frame. This piece is graphic in nature aiming at adult viewers familiar with hentai-style illustrations."
+      alt="これはポケモンのヒカリとサトシの母親が登場する露骨なアニメ調のデジタルアートです。シーンではヒカリが膝をついて、手首が後ろで縛られている様子が描かれています。彼女は青い髪を白いヘッドスカーフで縛り、首に赤いスカーフを緩く巻いている以外は服を着ていません。彼女の顔はアニメアートに典型的な誇張された特徴を示しており、大きな目を見開き、頬を赤らめ（照れ）、少し開いた唇からよだれが垂れています。彼女の周りには複数の勃起したペニスがピンクや肌色の様々な色調で描かれており、それぞれが精液を彼女の体に放出しています。一部の液滴は彼女の胸に落ち、他は顔や手の近くに飛び散っています。背景は暗い灰色の石のようなタイルで構成されており、彼らの淡い体と明るい体液と鮮やかなコントラストを成しています。このアートワークは性的なコンテンツに重点を置いており、フレーム内に他の物体や追加のコンテキストは提供されていません。この作品は成人向けの露骨な性質を持ち、ヘンタイスタイルのイラストに慣れた視聴者を対象としています。"
       grid="true"
     >}}
     </a>
@@ -71,7 +71,7 @@ Keyword: `surrounded by penis`
       blurhash="LHJj-zE*M{Rp^*9GIoNf~qXTM{R*"
       width="3072"
       height="3152"
-      alt="This is a digital drawing featuring anthropomorphic characters in an explicit scene. The top-left panel shows a muscular brown-furred male canine with large genitals standing against blue lockers while being penetrated from behind by another character whose face isn't visible but appears to be wearing orange fur. Both have exaggerated physiques typical of furry art. The bottom-right panel depicts a white-haired female humanoid cat with medium-sized breasts and light skin tone kneeling on gray stone tiles surrounded by several erect penises. She has her eyes closed and wears only a headband emphasizing nudity. Her expression suggests she's experiencing pleasure or arousal. In the center-top right panel there’s a close-up view focusing on two male anthro figures engaging sexually; one appears surprised or overwhelmed shown with flushed cheeks and wide-open mouth. Their bodies display detailed musculature and fur textures common in high-quality furry artwork. All panels share consistent color schemes dominated by earthy tones and bright highlights to accentuate the physical features of each figure suggesting they might belong together as part of a larger narrative within the genre. This content reflects themes often found in adult-oriented furry fandoms."
+      alt="これは擬人化されたキャラクターが登場する露骨なシーンを描いたデジタルアートです。左上のパネルには、青いロッカーを背にして立つ筋肉質な茶色い毛皮のオスの犬型キャラクターが描かれており、オレンジ色の毛皮を着た別のキャラクターに後ろから挿入されています。顔は見えませんが、両者ともファーリーアート特有の誇張された体格をしています。右下のパネルには、灰色の石のタイルの上で膝をついた白髪の人型猫の女性が、複数の勃起したペニスに囲まれている様子が描かれています。彼女は目を閉じ、ヘッドバンドだけを身につけており、裸体が強調されています。彼女の表情は快感や興奮を示唆しています。右上中央のパネルには、性的に関わり合う2匹の擬人化された男性キャラクターのクローズアップビューが描かれており、1匹は驚いたような、あるいは圧倒されたような表情で、頬を赤らめ、口を大きく開いています。彼らの体は高品質なファーリーアートワークによく見られる詳細な筋肉と毛皮のテクスチャを示しています。すべてのパネルは一貫した色彩スキームを共有しており、土色の色調と明るいハイライトが各キャラクターの身体的特徴を強調しており、これらがジャンル内のより大きな物語の一部である可能性を示唆しています。このコンテンツは成人向けのファーリーファンダムでよく見られるテーマを反映しています。"
       grid="true"
     >}}
     </a>

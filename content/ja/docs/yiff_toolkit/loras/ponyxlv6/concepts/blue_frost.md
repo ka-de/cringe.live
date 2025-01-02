@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "blue_frost"
-summary: "A bit of an experiment trying to make generating kitsch winter scenes easier."
+summary: "キッチュな冬景色の生成を容易にすることを目指した実験的な試み。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,22 +12,22 @@ summary: "A bit of an experiment trying to make generating kitsch winter scenes 
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-A bit of an experiment trying to make generating kitsch winter scenes easier. Originally trained for base SDXL, but it seems to work with PonyXL just fine. If you can call kitsch fine, anyway..
+キッチュな冬景色の生成を容易にすることを目指した実験的な試みです。元々はベースSDXL用に学習されましたが、PonyXLでも問題なく動作するようです。キッチュを問題ないと呼べるのであれば、ですが...
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (218MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/blue_frost.safetensors?download=true)
+[⬇️ LoRAダウンロード (218MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/blue_frost.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (183MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/blue_frost_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 圧縮版LoRAダウンロード (183MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/blue_frost_frockpt1_th-3.55.safetensors?download=true)
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/blue_frost)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/blue_frost)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/blue_frost.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/blue_frost.json)

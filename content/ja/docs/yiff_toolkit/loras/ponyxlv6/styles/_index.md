@@ -3,19 +3,19 @@ weight: 1
 bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
-title: "Styles"
-summary: "Style LoRAs for Stable Diffusion models focus on adapting the neural network to replicate specific artistic styles, visual aesthetics, or rendering techniques. These adaptations modify how the model interprets and generates visual elements like brushstrokes, color palettes, shading techniques, and overall artistic presentation. Style LoRAs can transform outputs to match anything from classical art movements (like impressionism or art nouveau) to modern digital art styles (such as anime, pixel art, or watercolor). They work by fine-tuning the model's attention layers to recognize and reproduce distinctive visual patterns and techniques associated with the target style, while requiring relatively few training images (typically 15-50 high-quality examples) to achieve good results."
+title: "スタイル"
+summary: "Stable DiffusionモデルのスタイルLoRAは、特定の芸術スタイル、視覚的な美学、またはレンダリング技法を再現するためにニューラルネットワークを適応させることに焦点を当てています。これらの適応により、ブラシストローク、カラーパレット、シェーディング技法、全体的な芸術的表現など、モデルが視覚要素を解釈し生成する方法が修正されます。スタイルLoRAは、印象派やアールヌーボーなどの古典的な芸術運動から、アニメ、ピクセルアート、水彩画などの現代のデジタルアートスタイルまで、あらゆるものに出力を変換することができます。これらは、対象スタイルに関連する特徴的な視覚パターンと技法を認識し再現するようにモデルの注意層を微調整することで機能し、良好な結果を得るために比較的少ない訓練画像（通常15-50枚の高品質な例）しか必要としません。"
 ---
 
 <!--markdownlint-disable MD025 -->
 
-# Style LoRAs
+# スタイルLoRA
 
 ---
 
-Style LoRAs for Stable Diffusion models focus on adapting the neural network to replicate specific artistic styles, visual aesthetics, or rendering techniques. These adaptations modify how the model interprets and generates visual elements like brushstrokes, color palettes, shading techniques, and overall artistic presentation. Style LoRAs can transform outputs to match anything from classical art movements (like impressionism or art nouveau) to modern digital art styles (such as anime, pixel art, or watercolor). They work by fine-tuning the model's attention layers to recognize and reproduce distinctive visual patterns and techniques associated with the target style, while requiring relatively few training images (typically 15-50 high-quality examples) to achieve good results.
+Stable DiffusionモデルのスタイルLoRAは、特定の芸術スタイル、視覚的な美学、またはレンダリング技法を再現するためにニューラルネットワークを適応させることに焦点を当てています。これらの適応により、ブラシストローク、カラーパレット、シェーディング技法、全体的な芸術的表現など、モデルが視覚要素を解釈し生成する方法が修正されます。スタイルLoRAは、印象派やアールヌーボーなどの古典的な芸術運動から、アニメ、ピクセルアート、水彩画などの現代のデジタルアートスタイルまで、あらゆるものに出力を変換することができます。これらは、対象スタイルに関連する特徴的な視覚パターンと技法を認識し再現するようにモデルの注意層を微調整することで機能し、良好な結果を得るために比較的少ない訓練画像（通常15-50枚の高品質な例）しか必要としません。
 
-## LoRAs
+## LoRA一覧
 
 ---
 

@@ -2,15 +2,15 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "wickerbeast"
-summary: "Wickerbeasts are a unique species in the furry fandom, known for their mythical appearance and rich lore, fostering a creative and passionate community."
+title: "ウィッカービースト"
+summary: "ウィッカービーストは、ファーリーファンダムにおける独特な種族で、神話的な外見と豊かな設定で知られ、創造的で情熱的なコミュニティを育んでいます。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
 # wickerbeast-v1s2000
 
-## Example Images
+## サンプル画像
 
 ---
 
@@ -20,7 +20,7 @@ summary: "Wickerbeasts are a unique species in the furry fandom, known for their
   blurhash="LLGv9rX95pv#KTbwISn#yGog%Koy"
   width="1536"
   height="1536"
-  alt="This digital illustration features an anthropomorphic wickerbeast with both dragon-like and humanoid traits set against a winter landscape backdrop. The subject is a pink-skinned bipedal figure with blue eyes prominent horns curving backward from their head and vibrant purple-blue highlights around the ears and tail tip. They have long flowing magenta-pink hair that cascades down past their shoulders. The character wears a cream-colored turtleneck sweater adorned with intricate knit patterns paired with form-fitting black pants. Their hands rest casually in the pockets of the sweater as they stand confidently amidst snow-covered pine trees flanking either side of them. A narrow stream or river flows through the middle ground between two large mountains capped with pristine white snow under a clear blue sky dotted with fluffy clouds. Their posture exudes confidence highlighted further by their direct gaze towards the viewer which adds a sense of interaction. Snowflakes gently fall around them enhancing the wintry atmosphere. This art piece blends fantasy elements seamlessly into its natural setting creating a visually striking composition rich in detail and color contrast."
+  alt="この冬景色を背景にしたデジタルイラストには、ドラゴンのような特徴と人型の特徴を併せ持つ擬人化されたウィッカービーストが描かれています。被写体は、ピンク色の肌を持つ二足歩行の姿で、青い目、後ろに曲がった目立つ角、そして耳と尾の先端に鮮やかな紫青のハイライトが特徴的です。肩を超えて流れる長いマゼンタピンクの髪を持っています。キャラクターは、複雑な編み模様が施されたクリーム色のタートルネックセーターと、体にフィットした黒いパンツを着用しています。両側に雪に覆われた松の木が立ち並ぶ中、セーターのポケットに手を入れて自信に満ちた姿勢で立っています。純白の雪をかぶった2つの大きな山の間を、小川や河が中景を流れ、ふわふわとした雲が点在する澄んだ青空の下に広がっています。彼らの姿勢は自信に満ち、視聴者への直接的な視線がさらにその印象を強めています。周りに優しく降る雪は冬の雰囲気を引き立てています。このアート作品は、ファンタジー要素を自然な設定に見事に融合させ、細部まで作り込まれた視覚的に印象的な構図を生み出しています。"
     grid="true"
   >}}
 </a>
@@ -33,7 +33,7 @@ summary: "Wickerbeasts are a unique species in the furry fandom, known for their
         blurhash="LHEo7e2T+HOW+JD$NGpIz=bYt+Rj"
         width="1920"
         height="1080"
-        alt="This is an anthropomorphic digital illustration featuring a voluptuous wickerbeast which is a blue dragon-like creature with pink accents lying provocatively on its back against a neon-lit backdrop. The character has large rounded breasts prominent hips visible vulva and thick thighs. Its skin is smooth and glossy reflecting light from the surrounding purple and magenta hues that create a futuristic atmosphere. The character's face displays a playful expression with half-closed eyes and sharp teeth peeking out from slightly parted lips accompanied by a small blush across its cheeks. It wears no clothes or accessories but sports clawed hands and feet. The detailed texture work highlights both the softness of its belly area and the roughness of claws and horns. This stylized depiction blends elements of fantasy and sci-fi art styles commonly found within furry fandom communities."
+        alt="これは擬人化されたデジタルイラストで、ネオンに照らされた背景の中で挑発的に仰向けに横たわる、青いドラゴンのような生き物でピンクのアクセントを持つ豊満なウィッカービーストが特徴です。キャラクターは大きな丸みを帯びた胸、目立つ腰、露出した外陰部、そして太い太ももを持っています。その皮膚は滑らかで光沢があり、未来的な雰囲気を作り出す周囲の紫とマゼンタの色調から光を反射しています。キャラクターの表情は遊び心があり、半開きの目と、少し開いた唇から覗く鋭い歯、頬には小さな赤みが見られます。服や装飾品は着用していませんが、爪のある手足を持っています。詳細なテクスチャーワークは、腹部の柔らかさと爪や角の荒さの両方を強調しています。このスタイル化された描写は、ファーリーファンダムコミュニティでよく見られるファンタジーとSFアートスタイルの要素を融合させています。"
         grid="true"
       >}}
     </a>
@@ -43,56 +43,56 @@ summary: "Wickerbeasts are a unique species in the furry fandom, known for their
         blurhash="LnJ[^vDNXLS]yEt2RibEELtRs;aK"
         width="1536"
         height="1536"
-        alt="This is an anthropomorphic digital drawing depicting a wickerbeast which is a purple-furred dragon-like character with blue accents including claws horns ears and eyes. The character stands confidently atop a grassy cliff edge overlooking a cityscape filled with tall buildings under a clear sky. Its body has a mix of smooth skin tones and fluffy patches around its neck and shoulders. In the foreground yellow flowers bloom near the cliff's base adding color contrast against the greenery. The style combines elements of cartoonish exaggeration with detailed shading. There’s no watermark or artist signature visible. This scene appears serene yet powerful due to the towering figure against the urban backdrop."
+        alt="これは擬人化されたデジタル画で、爪、角、耳、目に青いアクセントを持つ紫色の毛皮のドラゴンのようなキャラクター、ウィッカービーストを描いています。キャラクターは、澄んだ空の下、高層ビルが立ち並ぶ都市景観を見下ろす草の生えた崖の上に自信を持って立っています。体は滑らかな肌の色調と、首と肩周りのふわふわした毛皮のパッチが混在しています。前景では、緑の中に黄色い花が咲き、色のコントラストを生み出しています。スタイルは漫画的な誇張と詳細な陰影を組み合わせています。透かしやアーティストのサインは見当たりません。都市の背景に対して聳え立つ姿により、この場面は穏やかでありながらも力強さを感じさせます。"
         grid="true"
       >}}
     </a>
   </div>
 </div>
 
-## Introduction
+## はじめに
 
 ---
 
-Wickerbeasts are a fascinating and unique species within the furry fandom, created by the artist DaemonLady. These creatures are known for their distinctive appearance, which combines elements of mythical beasts and anthropomorphic animals. Wickerbeasts have a rich lore and backstory, originating from a parallel world called Osova. They are characterized by their robust, muscular bodies, long tails, and elaborate horns. The species has seven subtypes, each with its own unique traits and abilities. This diversity within the species allows for a wide range of creative expression among fans who design their own Wickerbeast characters.
+ウィッカービーストは、アーティストのDaemonLadyによって創作されたファーリーファンダム内の魅力的でユニークな種族です。これらの生き物は、神話の獣と擬人化された動物の要素を組み合わせた特徴的な外見で知られています。ウィッカービーストはオソバと呼ばれる並行世界を起源とし、豊かな設定と背景を持っています。彼らは頑強で筋肉質な体格、長い尾、そして精巧な角が特徴です。この種族には7つのサブタイプがあり、それぞれが独自の特徴と能力を持っています。種族内のこの多様性により、ファンが自身のウィッカービーストキャラクターをデザインする際に、幅広い創造的表現が可能となっています。
 
-The Wickerbeast community is active and well-organized, with dedicated platforms like the Wicker Cave providing resources, merchandise, and social connections for enthusiasts. The species has a history of conflict with humans in their lore, adding depth and intrigue to their story. Fans of Wickerbeasts often engage in creating art, stories, and costumes that bring these creatures to life. The community's creativity and passion for this original species highlight the broader furry fandom's emphasis on imagination and self-expression.
+ウィッカービーストのコミュニティは活発で組織的であり、Wicker Caveのような専用プラットフォームが、愛好家向けのリソース、商品、そして社会的つながりを提供しています。この種族は設定の中で人間との対立の歴史を持ち、それが物語に深みと興味深さを加えています。ウィッカービーストのファンは、これらの生き物に命を吹き込むアート、物語、そしてコスチュームの制作に積極的に取り組んでいます。このオリジナル種族に対するコミュニティの創造性と情熱は、ファーリーファンダム全体の想像力と自己表現の重要性を示しています。
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (27.8MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/wickerbeast-v1s3000.safetensors)
+[⬇️ LoRAダウンロード (27.8MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/wickerbeast-v1s3000.safetensors)
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/wickerbeast)
+[📐 データセット](https://huggingface.co/datasets/k4d3/wickerbeast)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/wickerbeast-v1s3000.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/wickerbeast-v1s3000.json)
 
-## Training Montage
+## トレーニングモンタージュ
 
 ---
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
         <source src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/wickerbeast/sample_sample00.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザは動画タグをサポートしていません。
     </video>
 </div>
 
-## wickerbeast-v1e500 (old)
+## wickerbeast-v1e500 (旧バージョン)
 
 ---
 
-### Content (old)
+### コンテンツ (旧バージョン)
 
 ---
 
-[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/wickerbeast-v1e500.safetensors?download=true)
+[⬇️ LoRAダウンロード (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/wickerbeast-v1e500.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (50.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/wickerbeast-v1e500_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 圧縮版LoRAダウンロード (50.3MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/wickerbeast-v1e500_frockpt1_th-3.55.safetensors?download=true)
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/wickerbeast)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/wickerbeast)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/wickerbeast-v1e500.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/wickerbeast-v1e500.json)

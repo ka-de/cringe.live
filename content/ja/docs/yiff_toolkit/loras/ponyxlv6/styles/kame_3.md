@@ -12,24 +12,24 @@ summary: ""
 
 ---
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (58.4MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/kame_3-v1e80.safetensors?download=true)
+[⬇️ LoRAダウンロード (58.4MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/kame_3-v1e80.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (46.8MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/kame_3-v1e80_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 圧縮版LoRAダウンロード (46.8MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/kame_3-v1e80_frockpt1_th-3.55.safetensors?download=true)
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_kame_3)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/by_kame_3)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/kame_3-v1e80.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/kame_3-v1e80.json)
 
-## Prompting Guide
+## プロンプトガイド
 
 ---
 
-Keyword:
+キーワード:
 
 - `kame_3`

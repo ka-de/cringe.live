@@ -2,17 +2,17 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "maliketh"
-summary: "The second best boy from Elden Ring, Maliketh, the Black Blade, is a fearsome guardian adorned in dark, intricate armor that covers his entire body. His unique blend of human and beastly traits, including dark fur and glowing eyes, makes him a formidable and memorable figure in the game."
+title: "マリケス"
+summary: "エルデンリングの二番目に素晴らしい存在、黒刃のマリケスは、全身を覆う暗く精巧な鎧を纏った恐るべき守護者です。人間と獣の特徴を独特に融合させ、暗い毛皮と輝く目を持つ彼は、ゲーム内で最も印象的で記憶に残る存在の一つとなっています。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# maliketh-v3s2000
+# マリケス-v3s2000
 
 ---
 
-## Example Images
+## サンプル画像
 
 ---
 
@@ -22,55 +22,55 @@ summary: "The second best boy from Elden Ring, Maliketh, the Black Blade, is a f
     blurhash="LGF5dA0ME1WV_2M|V@jY%fRjM|%2"
     width="1440"
     height="1440"
-    alt="This is an intricate digital painting depicting an anthropomorphic lion warrior reclining on sandy beach with rocky cliffs and distant castle ruins in the background under a partly cloudy sky. The muscular lion has dark fur adorned with metal armor plating over his arms and legs; he sports white mane-like hair extending from beneath a black helmet featuring sharp horns. His chest is bare except for some leather straps revealing defined abs. He wears brown leather boots that reach up to mid-thighs. The lion's physique is robust yet lean suggesting strength combined with agility. Notably there's explicit detail of his large erect penis which is prominently displayed between his spread thighs. His testicles hang freely below it also detailed realistically. Behind him lies a large stone block or bench partially covered by sand providing support as he leans back slightly. Textures throughout the artwork include smooth metallic sheen of arm guards contrasted against rough rock textures visible at both ends of the scene. Overall color palette uses warm earth tones enhancing the natural setting while maintaining focus on the character through shading and lighting techniques typical of high-quality fantasy art styles. This vividly captures an intimate moment within a dramatic landscape."
+    alt="これは砂浜で寛ぐ獣人のライオン戦士を描いた精巧なデジタルペインティングです。背景には岩壁と遠くに城の廃墟があり、部分的に曇った空が広がっています。筋肉質なライオンは暗い毛皮を持ち、腕と脚には金属製の鎧を装備しています。鋭い角のある黒いヘルメットの下からは白い鬣のような髪が伸びています。胸は革のストラップ以外は露出しており、引き締まった腹筋が見えます。茶色の革のブーツは太もも中程まで達しています。ライオンの体格は頑丈でありながら引き締まっており、力強さと俊敏さを感じさせます。開いた太もも間には大きな勃起したペニスが露わに描かれ、その下には睾丸が自然に垂れ下がっています。彼の後ろには砂で部分的に覆われた大きな石のブロックまたはベンチがあり、彼が少し後ろに寄りかかる支えとなっています。アートワーク全体を通して、アームガードの滑らかな金属の輝きと、シーンの両端に見える荒々しい岩の質感が対照的です。全体的な色調は暖かみのある土色を使用し、自然な設定を強調しながら、高品質なファンタジーアートスタイルに特有の陰影と照明技法を通じてキャラクターに焦点を当てています。これは劇的な風景の中の親密な瞬間を鮮やかに捉えています。"
   >}}
 </a>
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-Maliketh, the Black Blade, is one of the most striking characters in Elden Ring. His appearance is both fearsome and majestic, embodying the essence of a powerful guardian. Maliketh is adorned in dark, intricate armor that covers his entire body, giving him a menacing and imposing presence. His helmet is particularly notable, with sharp, angular features that resemble the visage of a beast. The armor is not just for show; it signifies his role as a protector and enforcer of the Golden Order, adding layers of depth to his character.
+黒刃のマリケスは、エルデンリングにおいて最も印象的なキャラクターの一人です。その姿は恐ろしくも威厳があり、強力な守護者の本質を体現しています。マリケスは全身を覆う暗く精巧な鎧を纏っており、それは彼に威圧的で不気味な存在感を与えています。特に彼のヘルメットは、獣の面影を思わせる鋭角的な特徴を持ち、際立っています。この鎧は単なる装飾ではなく、黄金律の守護者かつ執行者としての彼の役割を象徴しており、キャラクターに深みを加えています。
 
-What truly sets Maliketh apart is his unique blend of human and beastly traits. His body is covered in dark fur, and his eyes glow with an eerie, otherworldly light. This combination of human and animalistic features makes him a formidable opponent and a memorable figure in the game. His weapon of choice, the Black Blade, complements his fearsome appearance, adding to the aura of danger that surrounds him. Maliketh's design is a testament to the game's rich lore and the creativity of its developers, making him one of the standout characters in Elden Ring.
+マリケスを真に特別な存在たらしめているのは、人間と獣の特徴を独特に融合させている点です。彼の体は暗い毛皮で覆われ、目は不気味な超自然的な光を放っています。この人間と獣の特徴の組み合わせは、彼を手強い対戦相手であり、記憶に残る存在としています。彼の武器である黒刃は、その恐ろしい外見を補完し、彼を取り巻く危険のオーラを一層強めています。マリケスのデザインは、ゲームの豊かな世界観と開発者の創造性を証明するものであり、エルデンリングにおいて最も際立ったキャラクターの一人となっています。
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ Chopped LoRA Download (16.5MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/maliketh-v3s2000c.safetensors)
+[⬇️ 圧縮版LoRAダウンロード (16.5MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/maliketh-v3s2000c.safetensors)
 
-[⬇️ Original LoRA Download (27.8MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/maliketh-v3s2000.safetensors)
+[⬇️ オリジナルLoRAダウンロード (27.8MB)](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/maliketh-v3s2000.safetensors)
 
 <!--
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 -->
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/maliketh)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/maliketh)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/maliketh-v3s2000.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/maliketh-v3s2000.json)
 
-## Training Montage
+## トレーニングモンタージュ
 
 ---
 
-Sponsored by `--sample_every_n_steps=1`, the first video is using `--network_alpha=0.0625` and `"conv_alpha=1"`
+`--sample_every_n_steps=1`提供、最初の動画は`--network_alpha=0.0625`と`"conv_alpha=1"`を使用
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
         <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/maliketh_2_samples.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザは動画タグをサポートしていません。
     </video>
 </div>
 
-and this one is with `--network_alpha=64` and `"conv_alpha=64"`
+そしてこちらは`--network_alpha=64`と`"conv_alpha=64"`を使用
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
         <source src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/maliketh/maliketh_2_samples.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+        お使いのブラウザは動画タグをサポートしていません。
     </video>
 </div>
 
@@ -78,23 +78,23 @@ and this one is with `--network_alpha=64` and `"conv_alpha=64"`
 
 ---
 
-[⬇️ CivitAI Page](https://civitai.com/models/629416?modelVersionId=703779)
+[⬇️ CivitAIページ](https://civitai.com/models/629416?modelVersionId=703779)
 
 ## maliketh-v1e1
 
 ---
 
-[⬇️ LoRA Download (58.4MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/maliketh-v1e1.safetensors?download=true)
+[⬇️ LoRAダウンロード (58.4MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/maliketh-v1e1.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (50.2MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/maliketh-v1e1_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 圧縮版LoRAダウンロード (50.2MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/maliketh-v1e1_frockpt1_th-3.55.safetensors?download=true)
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/maliketh)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/maliketh)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/maliketh-v1e1.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/maliketh-v1e1.json)
 
-Keyword:
+キーワード：
 
 - `maliketh \(elden ring\)`
 
@@ -110,7 +110,7 @@ anthro male maliketh \(elden ring\) with white fur and white hair wearing head a
     blurhash="LGF=~=~qERM{b|IVNIR+DjE29aR-"
     width="1440"
     height="1440"
-    alt="A highly detailed digital painting depicting an anthropomorphic male wolf with muscular physique erect red penis wearing black armor pieces including shoulder pads and wristbands. He has white fur sharp claws and a mane-like tuft of hair flowing down his back. The setting appears ancient Greek or Roman ruins with columns and stone steps leading into a scenic coastal landscape featuring distant rocky islands under a bright blue sky filled with fluffy clouds. The wolf stands confidently gazing off towards the sea. This artwork blends fantasy realism with mythological themes."
+    alt="筋肉質な体格の獣人オオカミの精巧なデジタルペインティングで、赤い勃起したペニスを持ち、肩当てや手首当てなどの黒い鎧を身につけています。白い毛皮と鋭い爪を持ち、背中には鬣のような毛が流れています。背景は古代ギリシャやローマの遺跡で、列柱と石段があり、遠くには岩がちな島々が見える海岸の風景が広がっています。空は明るい青で、ふわふわした雲が浮かんでいます。オオカミは自信に満ちた様子で海の方を見つめています。このアートワークはファンタジーのリアリズムと神話的なテーマを融合させています。"
     grid="true"
   >}}
 </a>
@@ -120,7 +120,7 @@ anthro male maliketh \(elden ring\) with white fur and white hair wearing head a
     blurhash="L5IOLgMc~8%$I.a~-o_4E3IT01_2"
     width="1536"
     height="1536"
-    alt="Digital drawing featuring an anthropomorphic wolf warrior with muscular build standing erect. The character has black armor covering shoulders and forearms with intricate designs; long flowing white hair cascading down his back. He wears no pants exposing large red penis and visible testicles. Background consists of beige stone arches suggesting ancient ruins or castle walls. His face is partially obscured by dark helmet adorned with horns."
+    alt="筋肉質な体格の獣人オオカミ戦士が直立している姿のデジタル画像です。キャラクターは精巧なデザインの黒い鎧を肩と前腕に着用し、背中には長い白い髪が流れています。ズボンは着用しておらず、大きな赤いペニスと睾丸が露出しています。背景は古代の遺跡や城壁を思わせるベージュ色の石のアーチで構成されています。顔は角で飾られた暗いヘルメットで部分的に隠されています。"
     grid="true"
   >}}
 </a>
@@ -130,7 +130,7 @@ anthro male maliketh \(elden ring\) with white fur and white hair wearing head a
     blurhash="LMKw%;%M9t_34.~qRPD*9FWU-;Rj"
     width="1440"
     height="1440"
-    alt="This digital drawing features an anthropomorphic male wolf character with muscular build and prominent chest muscles visible abs erect red penis uncircumcised. He has flowing white hair-like fur extending down his back and arms large claws and wears a dark spiked helmet resembling armor. His eyes glow yellow under the helmet giving him a fierce appearance. The background is solid black which contrasts sharply against his light-colored fur. This artwork appears to be created digitally using bold lines and shading techniques typical of modern furry art styles. There's no additional background or setting details provided."
+    alt="このデジタル画像は、筋肉質な体格と目立つ胸筋、はっきりとした腹筋、赤い勃起した包皮付きのペニスを持つ獣人オオカミのキャラクターを特徴としています。背中と腕には白い毛皮のような毛が流れ、大きな爪を持ち、暗いスパイク付きのヘルメットのような鎧を着用しています。ヘルメットの下からは黄色い目が光り、獰猛な印象を与えています。背景は真っ黒で、彼の明るい色の毛皮と鮮やかなコントラストを形成しています。このアートワークは現代のファーリーアートスタイルに典型的な太い線と陰影技法を用いてデジタルで作成されたように見えます。背景や設定の追加的な詳細は提供されていません。"
     grid="true"
   >}}
 </a>

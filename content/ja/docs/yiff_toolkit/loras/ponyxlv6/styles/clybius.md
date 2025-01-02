@@ -12,27 +12,27 @@ summary: ""
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-An AI artist to bias the dataset towards detailed owls.
+詳細なフクロウの作風にデータセットを傾向付けるAIアーティストです。
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/by_clybius-v1e400.safetensors?download=true)
+[⬇️ LoRAダウンロード (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/by_clybius-v1e400.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (43.1MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_clybius-v1e400_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 圧縮版LoRAダウンロード (43.1MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_clybius-v1e400_frockpt1_th-3.55.safetensors?download=true)
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_clybius)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/by_clybius)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/by_clybius-v1e400.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/by_clybius-v1e400.json)
 
-## Example Images
+## サンプル画像
 
 ---
 <div class="image-grid">
@@ -43,7 +43,7 @@ An AI artist to bias the dataset towards detailed owls.
         blurhash="LLHxTsNK}@r;~WNHMxslMxSis-RQ"
         width="512"
         height="512"
-        alt="Digital art featuring an anthropomorphic owl with human-like physique dressed in a dark blue suit white shirt red tie black gloves and holding glowing purple orbs. The owl has large wings spread behind it against a starry night sky backdrop. It stands confidently with one claw extended forward. Background includes ethereal feathers floating around. Style resembles fantasy or sci-fi anime with high detail and vibrant colors."
+        alt="人間のような体つきの擬人化フクロウが、紺色のスーツ、白いシャツ、赤いネクタイ、黒い手袋を着用し、紫色に光る球体を持っているデジタルアート。フクロウは星空を背景に大きな翼を広げています。自信に満ちた姿勢で、片方の爪を前に伸ばしています。背景には幻想的な羽が漂っています。スタイルは詳細で鮮やかな色彩のファンタジーやSFアニメを思わせます。"
         grid="true"
       >}}
     </a>
@@ -57,7 +57,7 @@ An AI artist to bias the dataset towards detailed owls.
         blurhash="LNH-+7J7-JIV?79bNNjX0L%1Shoa"
         width="512"
         height="512"
-        alt="This digital artwork features an anthropomorphic white-furred canine with bright green eyes wearing a purple wizard hat adorned with blue gemstones and a matching cloak also featuring a large central turquoise pendant. The character stands amidst a sunlit forest backdrop with tall trees and dappled sunlight filtering through leaves. Purple feathers float around him adding a magical element to the scene. This detailed illustration has a fantasy theme."
+        alt="このデジタルアートワークは、青い宝石で飾られた紫の魔法使いの帽子と、大きなターコイズのペンダントが特徴的な同系色のマントを着た、明るい緑の目を持つ白毛の擬人化カナインを描いています。キャラクターは、背の高い木々と木漏れ日が差し込む日当たりの良い森の中に立っています。紫色の羽が周りを漂い、魔法的な雰囲気を演出しています。この詳細なイラストはファンタジーテーマです。"
         grid="true"
       >}}
     </a>

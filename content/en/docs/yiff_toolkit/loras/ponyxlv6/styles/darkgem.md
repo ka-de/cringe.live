@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "darkgem"
-summary: "Fuck you too! x3"
+summary: ""
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

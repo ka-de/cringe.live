@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "bdsm"
-summary: "BDSM is an acronym standing for Bondage, Discipline, Sadism, and Masochism."
+summary: "BDSMは、ボンデージ（緊縛）、ディシプリン（調教）、サディズム（加虐）、マゾヒズム（被虐）の頭文字を取った用語です。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,22 +12,22 @@ summary: "BDSM is an acronym standing for Bondage, Discipline, Sadism, and Masoc
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-BDSM is an acronym standing for Bondage, Discipline, Sadism, and Masochism. Discipline was later expanded to refer to acts of domination, and submission. The LoRA only generates consenting characters... obviously!
+BDSMは、ボンデージ（緊縛）、ディシプリン（調教）、サディズム（加虐）、マゾヒズム（被虐）の頭文字を取った用語です。ディシプリンは後に、支配（ドミネーション）と服従（サブミッション）の行為を指すように拡張されました。このLoRAは同意のある キャラクターのみを生成します...当然ですが！
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/bdsm-v1e400.safetensors?download=true)
+[⬇️ LoRAダウンロード (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/bdsm-v1e400.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (44.4MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/bdsm-v1e400_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 圧縮版LoRAダウンロード (44.4MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/bdsm-v1e400_frockpt1_th-3.55.safetensors?download=true)
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/bdsm)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/bdsm)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/bdsm-v1e400.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/bdsm-v1e400.json)

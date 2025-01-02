@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "blackorbit"
-summary: "Blackorbit's style is best described as 'VRChat'."
+summary: "Blackorbitのスタイルは「VRChat」と表現するのが最適です。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,29 +12,29 @@ summary: "Blackorbit's style is best described as 'VRChat'."
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-Blackorbit's style is best described as 'VRChat'.
+Blackorbitのスタイルは「VRChat」と表現するのが最適です。
 
-## Content
-
----
-
-[⬇️ LoRA Download (30.5 MB)](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/blackorbit/blackorbit-v2s2048.safetensors)
-
-[📐 Dataset](https://huggingface.co/datasets/k4d3/blackorbit)
-
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/blackorbit/blackorbit-v2s2048.json)
-
-## Prompting Guide
+## コンテンツ
 
 ---
 
-Keyword: `blackorbit`, `3d`
+[⬇️ LoRAダウンロード (30.5 MB)](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/blackorbit/blackorbit-v2s2048.safetensors)
 
-## Example Images
+[📐 データセット](https://huggingface.co/datasets/k4d3/blackorbit)
+
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/blackorbit/blackorbit-v2s2048.json)
+
+## プロンプトガイド
+
+---
+
+キーワード: `blackorbit`, `3d`
+
+## サンプル画像
 
 ---
 
@@ -46,7 +46,7 @@ Keyword: `blackorbit`, `3d`
       blurhash="LMG*55?Esy?Jf|RQE2xZ0fIpWWNF"
       width="1536"
       height="1536"
-      alt="This is a digital artwork featuring an anthropomorphic character resembling a cat with distinct features like large ears and whiskers. The subject has white fur with patches of gray on its face and inner ear area. It sports bright green eyes that stand out against its pale complexion. The character wears a tall pointed witch's hat in deep purple complete with a wide brim casting soft shadows over part of its face. A matching dark purple cloak drapes over its shoulders fastened at the neck with a golden ring. This garment appears thickly textured suggesting warmth or heavy material suitable for cooler weather. In terms of body details it possesses small but visible fang-like teeth peeking from under the cloak’s collar adding to the mystical theme. Its hands rest casually on what looks like a wooden desk or table positioned slightly off-center towards the left side of the frame. Background elements include arched windows allowing natural light to flood into the scene creating a warm ambiance. Behind the character stands a bookshelf filled with various colorful books lending depth to the setting. Golden sparkles float around the edges enhancing the magical atmosphere. Overall the illustration combines vibrant colors and detailed textures typical of high-quality fantasy art emphasizing both charm and mystique through meticulous attention to costume design and ambient detail."
+      alt="大きな耳とヒゲを持つ猫のような擬人化キャラクターのデジタルアートワークです。白い毛皮に顔と耳の内側に灰色の斑点があり、淡い肌色に映える鮮やかな緑の目を持っています。深い紫色の幅広つばの魔女の帽子をかぶり、首元には金の輪で留められた同じ紫色のマントを羽織っています。この衣装は厚みのある素材で、寒い天候に適しているように見えます。マントの襟の下からは小さな牙のような歯が覗いており、神秘的な雰囲気を醸し出しています。手は左側に配置された木製の机の上に自然に置かれています。背景には自然光が差し込むアーチ型の窓があり、温かな雰囲気を作り出しています。キャラクターの後ろには様々な色の本が並ぶ本棚があり、空間に奥行きを与えています。周囲には金色の輝きが漂い、魔法的な雰囲気を演出しています。"
       grid="true"
     >}}
     </a>
@@ -56,7 +56,7 @@ Keyword: `blackorbit`, `3d`
       blurhash="LIHB@%--4,Mz?bRQ4oNKDit6xaR*"
       width="1536"
       height="1536"
-      alt="This is an anthropomorphic (furry) digital artwork featuring a male character with features resembling those of both a raccoon and a skunk. The subject has dark brown and white fur pointed ears and striking red eyes that give him a lively appearance. His hair is styled in spiky fashion primarily dark brown but highlighted with white streaks. He wears a casual hoodie predominantly gray with accents of white on the chest area. A small emblem or patch can be seen near his left shoulder. The background consists of lush green foliage typical of a forest setting suggesting he might be outdoors in nature. Sunlight filters through the trees casting dappled light patterns across his face and body. The scene conveys a serene yet vibrant atmosphere as the character stands among tall plants and leafy branches adding depth to the natural environment surrounding him. This detailed illustration showcases realistic textures and shading techniques common in high-quality furry art."
+      alt="アライグマとスカンクの特徴を併せ持つ擬人化された男性キャラクターのデジタルアートワークです。暗褐色と白の毛皮、尖った耳、生き生きとした赤い目が特徴的です。髪は主に暗褐色で白いストライプがハイライトとなった尖った髪型です。グレーを基調とし、胸部に白のアクセントがあるカジュアルなパーカーを着ています。左肩付近に小さな紋章やパッチが見えます。背景は森の設定を思わせる緑豊かな葉が茂っており、木々の間から差し込む日光が顔や体に斑模様の光を落としています。"
       grid="true"
     >}}
     </a>
@@ -71,7 +71,7 @@ Keyword: `blackorbit`, `3d`
       blurhash="LKGHi6bp-L?d%1a$IVoz0fRQIWM{"
       width="1536"
       height="1536"
-      alt="This is a digital artwork depicting an anthropomorphic cat character with white fur standing in what appears to be a library or study room filled with tall bookshelves packed with books. The feline has large green eyes pointed ears and wears a purple robe that resembles a wizard's cloak over a black shirt. He also dons a wide-brimmed hat matching his outfit giving him a magical appearance reminiscent of wizards from fantasy stories. The background features arched windows letting in soft daylight illuminating the space warmly while casting shadows within the cozy environment. There’s a stack of books on either side of the figure suggesting he might have been reading them recently. The detailed textures include the smoothness of the fur the fabric of the clothing and the spines of the numerous hardcover books lining the shelves behind him. Overall the style combines elements of realism with cartoonish characteristics typical of modern furry art creating a vivid scene rich in detail and color contrast between warm light tones and cool purples of the robes."
+      alt="本がびっしりと詰まった高い本棚のある図書館や書斎に立つ白い毛皮の擬人化された猫のキャラクターを描いたデジタルアートワークです。大きな緑の目と尖った耳を持ち、黒いシャツの上に魔法使いのマントを思わせる紫のローブを着ています。衣装に合わせた幅広のつばのある帽子をかぶり、ファンタジー物語に登場する魔法使いを思わせる姿です。背景にはアーチ型の窓があり、柔らかな日光が空間を温かく照らしています。キャラクターの両側には本の山があり、最近読んでいたことを示唆しています。毛皮の滑らかさ、衣服の生地感、背後の本棚に並ぶ多数のハードカバー本の背表紙など、細部まで丁寧に描かれています。"
       grid="true"
     >}}
     </a>

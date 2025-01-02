@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "auroth"
-summary: "Auroth, the Winter Wyvern, is an ancient dragon from Dota 2, known for her icy breath and her passion for scholarship and poetry."
+summary: "Auroth（ウィンターワイバーン）は、Dota 2に登場する古代のドラゴンで、氷の息と学問や詩への情熱で知られています。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,22 +12,22 @@ summary: "Auroth, the Winter Wyvern, is an ancient dragon from Dota 2, known for
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-Auroth, also known as the Winter Wyvern is a character from the game Dota 2. As an Eldwurm, an ancient dragon, she is perhaps the oldest of her kind. Unlike most dragons that breathe fire Auroth breathes an unfathomable cold. She is a scholar and a poet at heart yearning for time to write and add to the Eldwurm Eddas, the epics of her kind, however this LoRA just makes porn with her.
+Auroth（オーロス）は、Dota 2のゲームに登場するウィンターワイバーンとしても知られるキャラクターです。エルドワームと呼ばれる古代のドラゴンとして、彼女は恐らく同族の中で最も古い存在です。火を吐く多くのドラゴンとは異なり、Aurothは計り知れない冷気を吐きます。彼女は学者であり詩人の心を持ち、自分の種族の叙事詩であるエルドワーム・エッダに書き加える時間を切望していますが、このLoRAは単に彼女のアダルトコンテンツを生成するためのものです。
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/auroth-v1e250.safetensors?download=true)
+[⬇️ LoRAダウンロード (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/auroth-v1e250.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (47.7MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/auroth-v1e250_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 圧縮版LoRAダウンロード (47.7MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/auroth-v1e250_frockpt1_th-3.55.safetensors?download=true)
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/auroth_the_winter_wyvern)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/auroth_the_winter_wyvern)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/auroth-v1e250.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/auroth-v1e250.json)

@@ -2,8 +2,8 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "analbeads"
-summary: "Oh my God! A sex toy! 🙀"
+title: "アナルビーズ"
+summary: "なんてこと！ セックストイ！ 🙀"
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->
@@ -12,43 +12,43 @@ summary: "Oh my God! A sex toy! 🙀"
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-Anal beads are sex toys consisting of a number of round beads on a string, which are intended for insertion into the anus, but they may be inserted into other orifices as well. This LoRA aims to help with just that!
+アナルビーズは、紐に通された複数の丸いビーズで構成された性具で、肛門への挿入を目的としていますが、他の穴にも挿入することができます。このLoRAはそれを実現するためのものです！
 
-Keywords:
+キーワード：
 
 - `anal beads in ass`
 
-  > Self explanatory, right where it belongs! In the anus!
+  > 説明不要ですよね！本来あるべき場所、肛門の中に！
   >
-  > You can put `anal beads in ass` in the negative so CLIP doesn't fuck around putting anal beads into every hole!
+  > CLIPがあらゆる穴にアナルビーズを入れないように、`anal beads in ass`をネガティブに設定することもできます！
 
 - `anal beads in pussy`
 
-  > "I can't believe you convinced her!"
+  > 「まさか彼女を説得できるとは！」
   >
-  > Anal beads inserted into the vagina.
+  > アナルビーズを膣に挿入。
 
 ---
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (233MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/analbeads-v1e400.safetensors?download=true)
+[⬇️ LoRAダウンロード (233MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/analbeads-v1e400.safetensors?download=true)
 
 <!--
-[⬇️ Shrunk LoRA Download ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
+[⬇️ 圧縮版LoRAダウンロード ({}MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/{}.safetensors?download=true)
 -->
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/analbeads-v1e400.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/analbeads-v1e400.json)
 
-## 📐 Dataset
+## 📐 データセット
 
 ---
 
@@ -60,7 +60,7 @@ Keywords:
 
 [anal_beads_in_urethra](https://huggingface.co/datasets/k4d3/furry/tree/main/anal_beads_in_urethra)
 
-## Example Images
+## サンプル画像
 
 ---
 
@@ -72,7 +72,7 @@ Keywords:
           blurhash="LIG+Eyrt0K-.6Ct9xYV?M{tmIURi"
           width="1400"
           height="1400"
-          alt="This digital illustration features a feral female wolf with light brown fur standing confidently at the beach. She has striking blue eyes wears a blue collar adorned with small bells and displays sharp white claws. The backdrop includes rocky cliffs lush green trees framing the scene and serene ocean waves under a clear sky dotted with fluffy clouds. Her tail curls playfully behind her and she holds one paw raised as though waving or gesturing."
+          alt="このデジタルイラストは、浜辺で自信に満ちた姿で立つ薄茶色の毛皮を持つ野生のメスオオカミを描いています。彼女は印象的な青い目を持ち、小さな鈴の付いた青い首輪を着用し、鋭い白い爪を見せています。背景には岩の崖、豊かな緑の木々が情景を縁取り、澄んだ空の下には穏やかな海の波が広がっています。彼女の尾は遊び心のある様子でカールし、片方の前足を挙げて手を振るようなジェスチャーをしています。"
           grid="true"
       >}}
     </a>
@@ -82,7 +82,8 @@ Keywords:
           blurhash="LOI|:-NGBgO[E;wcouT10=r?-6jc"
           width="1400"
           height="1400"
-          alt="Anthropomorphic red fox character with orange-red fur kneeling outdoors near a beach; bright blue sky with clouds above. She has large eyes pink paw pads visible under her body. The fox wears no clothes but features cum leaking from her pussy between spread legs. Her tail curls upwards revealing anal beads inserted into anus. Background shows tropical foliage and ocean waves crashing against rocks. Digital art style featuring vibrant colors and detailed textures."
+          alt="浜辺の近くで跪く人型の赤キツネのキャラクター。オレンジ赤の毛皮を持ち、上空には明るい青空と雲が広がっています。大きな目と、体の下に見えるピンクの肉球を持っています。キツネは裸で、開いた足の間の性器から精液が漏れています。尾は上向きにカールし、肛門に挿入されたアナルビーズが見えています。背景には熱帯の植物と岩に打ち付ける海の波が見えます。鮮やかな色彩と詳細なテクスチャを特徴とするデジタルアートスタイルです。"
+          grid="true"
       >}}
     </a>
   </div>
@@ -95,7 +96,7 @@ Keywords:
           blurhash="LTK^{HTbE0rCHDNXnj$jA0adnQI="
           width="1400"
           height="1400"
-          alt="A digital drawing features an anthropomorphic male otter with orange fur sitting on a sandy beach under palm trees beside turquoise waters. He has blue eyes a muscular build erect penis cum-covered body and large testicles. His expression is playful; he's sticking out his tongue. The scene includes seashells scattered around him. The art style is vibrant with bold colors and smooth textures. He has anal beads inserted into his anus."
+          alt="このデジタル画像は、ターコイズブルーの水辺のヤシの木の下の砂浜に座る、オレンジ色の毛皮を持つ人型のオスカワウソを描いています。彼は青い目、筋肉質な体格、勃起したペニス、精液で覆われた体、大きな睾丸を持っています。表情は遊び心があり、舌を出しています。周囲には貝殻が散らばっています。アートスタイルは鮮やかで、大胆な色使いと滑らかなテクスチャが特徴です。肛門にはアナルビーズが挿入されています。"
           grid="true"
       >}}
     </a>
@@ -105,7 +106,7 @@ Keywords:
           blurhash="LQJQvL?F4:IWB@R*ELW?MwaJs:bw"
           width="1400"
           height="1400"
-          alt="Anthropomorphic horse woman with brown fur white underbelly large breasts erect nipples visible vagina blue anal beads inserted into her anus. She has blonde mane and she is sitting provocatively among hay bales inside barn. Background includes wooden beams and open door revealing bright sky and green fields outside. Digital art style highly detailed textures vibrant colors. The setting suggests rural farm environment. The AI's watermark is present in the bottom right corner."
+          alt="茶色の毛皮と白い腹を持つ人型の雌馬で、大きな胸、勃起した乳首、露出した膣、肛門に挿入された青いアナルビーズが特徴です。金髪のたてがみを持ち、納屋の中の干し草の束の間で挑発的に座っています。背景には木製の梁があり、開いたドアからは明るい空と緑の野原が見えます。高度に詳細なテクスチャと鮮やかな色彩を特徴とするデジタルアートスタイルです。設定は田舎の農場環境を示唆しています。右下にはAIのウォーターマークが存在します。"
           grid="true"
       >}}
     </a>
@@ -119,7 +120,7 @@ Keywords:
           blurhash="LREflsWC9FwNqCR*R5RREhs.$jWq"
           width="1400"
           height="1400"
-          alt="A digital painting depicts an anthropomorphic brown-furred wolf with large breasts and blue eyes sitting provocatively in a sunlit forest clearing. She has her legs spread wide apart displaying detailed genitalia with teal anal beads inserted into her pussy. The scene features lush greenery and dappled sunlight filtering through trees creating a serene yet intimate atmosphere. Her expression is playful as she looks directly at the viewer enhancing the seductive nature of the composition."
+          alt="このデジタルペインティングは、日の当たる森の空き地に挑発的に座る、大きな胸と青い目を持つ茶色の毛皮の人型オオカミを描いています。彼女は足を大きく開き、膣に挿入されたティール色のアナルビーズが見える詳細な性器を露出しています。情景には豊かな緑と、木々を通して漏れる斑点状の日光が描かれ、穏やかでありながら親密な雰囲気を作り出しています。彼女は視聴者を直接見つめる遊び心のある表情をしており、構図の誘惑的な性質を強調しています。"
           grid="true"
       >}}
     </a>
