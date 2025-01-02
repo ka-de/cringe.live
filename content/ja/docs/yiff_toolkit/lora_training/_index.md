@@ -2,42 +2,42 @@
 weight: 1
 bookFlatSection: false
 bookToC: true
-title: "LoRA Training Guide"
-summary: "The LoRA Training Guide explains Low-Rank Adaptation (LoRA), a technique for fine-tuning large language and diffusion models efficiently by introducing small, trainable low-rank matrices instead of modifying all model parameters. This approach keeps the original model weights frozen and injects two additional matrices into each layer to learn necessary adjustments. LoRA is lightweight, making it feasible to train multiple adaptations without hefty storage requirements. The guide also compares LoRA with LyCORIS, an advanced extension that offers more control and flexibility, and introduces LoKr, which uses Kronecker products for matrix decomposition, enhancing memory efficiency and control over the adaptation process."
+title: "LoRA トレーニングガイド"
+summary: "LoRAトレーニングガイドでは、大規模な言語モデルや拡散モデルを効率的に微調整するための手法であるLow-Rank Adaptation（LoRA）について説明します。この手法は、すべてのモデルパラメータを変更する代わりに、小さな訓練可能な低ランク行列を導入します。このアプローチでは、元のモデルの重みを固定したまま、各層に2つの追加行列を挿入して必要な調整を学習します。LoRAは軽量で、大容量のストレージを必要とせずに複数の適応を訓練することが可能です。このガイドでは、より多くの制御と柔軟性を提供する高度な拡張であるLyCORISとの比較も行い、行列分解にクロネッカー積を使用して、メモリ効率と適応プロセスの制御を向上させるLoKrについても紹介します。"
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->
 
-# LoRA Training Guide
+# LoRA トレーニングガイド
 
 ---
 
-## What are LoRAs?
+## LoRAとは？
 
 ---
 
-LoRA (Low-Rank Adaptation) is a technique designed to facilitate the fine-tuning of large-scale language and diffusion models efficiently. Instead of overhauling the entire set of model parameters —which can number in the billions— LoRA introduces small, trainable "low-rank" matrices that adapt the model's behavior. This innovative approach was detailed in the paper ["LoRA: Low-Rank Adaptation of Large Language Models"](https://arxiv.org/abs/2106.09685) by researchers at Microsoft.
+LoRA（Low-Rank Adaptation）は、大規模な言語モデルや拡散モデルを効率的に微調整するために設計された手法です。数十億に及ぶモデルパラメータ全体を変更する代わりに、LoRAはモデルの動作を適応させるための小さな訓練可能な「低ランク」行列を導入します。この革新的なアプローチは、Microsoftの研究者による論文["LoRA: Low-Rank Adaptation of Large Language Models"](https://arxiv.org/abs/2106.09685)で詳しく説明されています。
 
-## Subsections
+## サブセクション
 
 ---
 
 {{< section details >}}
 
-## Installation Tips
+## インストール手順
 
 ---
 
-Firstly, download kohya_ss' [sd-scripts](https://github.com/kohya-ss/sd-scripts), you need to set up your environment either like [this](https://github.com/kohya-ss/sd-scripts?tab=readme-ov-file#windows-installation) tells you for Windows, or if you are using Linux or Miniconda on Windows, you are probably smart enough to figure out the installation for it. I recommend always installing the latest [PyTorch](https://pytorch.org/get-started/locally/) in the virtual environment you are going to use, which at the time of writing is `2.2.2`. I hope future me has faster PyTorch!
+まず、kohya_ssの[sd-scripts](https://github.com/kohya-ss/sd-scripts)をダウンロードします。Windowsの場合は[こちら](https://github.com/kohya-ss/sd-scripts?tab=readme-ov-file#windows-installation)の手順に従ってセットアップを行います。LinuxまたはWindows上のMinicondaを使用している場合は、インストール方法を自分で理解できるはずです。仮想環境には常に最新の[PyTorch](https://pytorch.org/get-started/locally/)をインストールすることをお勧めします。執筆時点では`2.2.2`が最新です。将来のPyTorchがより高速になることを期待しています！
 
-Ok, just in case you aren't smart enough how to install the sd-scripts under Miniconda for Windows I actually "guided" someone recently, just so I can tell you about it:
+念のため、Windowsでsd-scriptsをMinicondaにインストールする方法を最近「ガイド」したので、その手順を共有します：
 
 ```bash
-# Installing sd-scripts
+# sd-scriptsのインストール
 git clone https://github.com/kohya-ss/sd-scripts
 cd sd-scripts
 
-# Creating the conda environment and installing requirements
+# conda環境の作成とrequirementsのインストール
 conda create -n sdscripts python=3.10.14
 conda activate sdscripts
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
@@ -46,30 +46,30 @@ python -m pip install --use-pep517 lycoris_lora
 accelerate config
 ```
 
-`accelerate config` will ask you a bunch of questions, you need to actually read each one and reply with the truth. In most cases the truth looks like this: `This machine, No distributed training, no, no, no, all, fp16`.
+`accelerate config`では多くの質問が表示されますが、各質問をよく読んで正直に回答する必要があります。ほとんどの場合、正しい回答は次のようになります：`This machine, No distributed training, no, no, no, all, fp16`
 
-You might also want to install `xformers` or `bitsandbytes`.
+また、`xformers`や`bitsandbytes`のインストールも検討するとよいでしょう。
 
 ```bash
-# Installing xformers
-# Use the same command just replace 'xformers' with any other package you may need.
+# xformersのインストール
+# 他のパッケージをインストールする場合も、'xformers'を置き換えるだけです
 python -m pip install --use-pep517 xformers
 
-# Installing bitsandbytes for windows
+# Windows用bitsandbytesのインストール
 python -m pip install --use-pep517 bitsandbytes --index-url=https://jllllll.github.io/bitsandbytes-windows-webui
 ```
 
 ---
 
-### Pony Training
+### Pony トレーニング
 
 ---
 
-I'm not going to lie, it is a bit complicated to explain everything. But here is my best attempt going through some "basic" stuff and almost all lines in order.
+正直に言うと、すべてを説明するのは少し複雑です。しかし、ここでは「基本的な」内容とほぼすべての行について、最善の説明を試みます。
 
-#### Download Pony in Diffusers Format
+#### Diffusers形式でPonyをダウンロード
 
-I'm using the diffusers version for training I converted, you can download it using `git`.
+トレーニングには私が変換したdiffusersバージョンを使用しています。`git`を使用してダウンロードできます。
 
 ```bash
 git clone https://huggingface.co/k4d3/ponydiffusers
@@ -77,9 +77,9 @@ git clone https://huggingface.co/k4d3/ponydiffusers
 
 ---
 
-#### Sample Prompt File
+#### サンプルプロンプトファイル
 
-A sample prompt file is used during training to sample images. A sample prompt for example might look like this for Pony:
+サンプルプロンプトファイルは、トレーニング中に画像をサンプリングするために使用されます。Ponyの場合、サンプルプロンプトは以下のようになります：
 
 ```py
 # anthro female kindred
@@ -88,25 +88,25 @@ score_9, score_8_up, score_7_up, score_6_up, rating_explicit, source_furry, solo
 score_9, score_8_up, score_7_up, score_6_up, rating_explicit, source_furry, solo, anthro female wolf, sexy pose, standing, gray fur, brown fur, canine pussy, black nose, blue eyes, pink areola, pink nipples, detailed background, amazing_background, realistic, photo --n low quality, worst quality, blurred background, blurry, simple background --w 1024 --h 1024 --d 1 --l 6.0 --s 40
 ```
 
-Please note that sample prompts should not exceed 77 tokens, you can use [Count Tokens in Sample Prompts](https://huggingface.co/k4d3/yiff_toolkit/blob/main/dataset_tools/Count%20Tokens%20in%20Sample%20Prompts.ipynb) from [/dataset_tools](https://huggingface.co/k4d3/yiff_toolkit/tree/main/dataset_tools) to analyze your prompts.
+サンプルプロンプトは77トークンを超えないようにしてください。[/dataset_tools](https://huggingface.co/k4d3/yiff_toolkit/tree/main/dataset_tools)にある[Count Tokens in Sample Prompts](https://huggingface.co/k4d3/yiff_toolkit/blob/main/dataset_tools/Count%20Tokens%20in%20Sample%20Prompts.ipynb)を使用してプロンプトを分析できます。
 
-If you are training with multiple GPUs, ensure that the total number of prompts is divisible by the number of GPUs without any remainder or a card will idle.
+複数のGPUでトレーニングを行う場合は、プロンプトの総数がGPUの数で余りなく割り切れるようにしてください。そうしないと、カードがアイドル状態になってしまいます。
 
 ---
 
-#### Training Commands
+#### トレーニングコマンド
 
 ---
 
 ##### `accelerate launch`
 
-For two GPUs:
+2台のGPUの場合：
 
 ```python
 accelerate launch --num_processes=2 --multi_gpu --num_machines=1 --gpu_ids=0,1 --num_cpu_threads_per_process=2  "./sdxl_train_network.py"
 ```
 
-Single GPU:
+シングルGPUの場合：
 
 ```python
 accelerate launch --num_cpu_threads_per_process=2 "./sdxl_train_network.py"
@@ -116,19 +116,19 @@ accelerate launch --num_cpu_threads_per_process=2 "./sdxl_train_network.py"
 
 &nbsp;
 
-And now lets break down a bunch of arguments we can pass to `sd-scripts`.
+それでは、`sd-scripts`に渡すことができる多くの引数について詳しく見ていきましょう。
 
 &nbsp;
 
 ##### `--lowram`
 
-If you are running running out of system memory like I do with 2 GPUs and a really fat model that gets loaded into it per GPU, this option will help you save a bit of it and might get you out of OOM hell.
+2台のGPUと非常に大きなモデルを使用している場合にシステムメモリが不足する場合、このオプションを使用することで少しメモリを節約でき、OOMエラーから回避できる可能性があります。
 
 ---
 
 ##### `--pretrained_model_name_or_path`
 
-The directory containing the checkpoint you just downloaded. I recommend closing the path if you are using a local diffusers model with a `/`. You can also specify a `.safetensors` or `.ckpt` if that is what you have!
+先ほどダウンロードしたチェックポイントを含むディレクトリです。ローカルのdiffusersモデルを使用している場合は、パスを`/`で閉じることをお勧めします。`.safetensors`や`.ckpt`を指定することもできます！
 
 ```python
     --pretrained_model_name_or_path="/ponydiffusers/"
@@ -138,7 +138,7 @@ The directory containing the checkpoint you just downloaded. I recommend closing
 
 ##### `--output_dir`
 
-This is where all the saved epochs or steps will be saved, including the last one. If y
+すべての保存されたエポックまたはステップが保存される場所です。最後のものも含まれます。
 
 ```python
     --output_dir="/output_dir"
@@ -148,7 +148,7 @@ This is where all the saved epochs or steps will be saved, including the last on
 
 ##### `--train_data_dir`
 
-The directory containing the dataset. We prepared this earlier together.
+データセットを含むディレクトリです。これは先ほど一緒に準備したものです。
 
 ```python
     --train_data_dir="/training_dir"
@@ -158,7 +158,7 @@ The directory containing the dataset. We prepared this earlier together.
 
 ##### `--resolution`
 
-Always set this to match the model's resolution, which in Pony's case it is 1024x1024. If you can't fit into the VRAM, you can decrease it to `512,512` as a last resort.
+常にモデルの解像度に合わせて設定してください。Ponyの場合は1024x1024です。VRAMに収まらない場合は、最後の手段として`512,512`に減らすことができます。
 
 ```python
     --resolution="1024,1024"
@@ -168,27 +168,27 @@ Always set this to match the model's resolution, which in Pony's case it is 1024
 
 ##### `--enable_bucket`
 
-Creates different buckets by pre-categorizing images with different aspect ratios into different buckets. This technique helps to avoid issues like unnatural crops that are common when models are trained to produce square images. This allows the creation of batches where every item has the same size, but the image size of batches may differ.
+異なるアスペクト比の画像を異なるバケットに事前分類することでバケットを作成します。この技術により、モデルが正方形の画像を生成するように訓練される際によく発生する不自然なクロップの問題を回避できます。これにより、各アイテムが同じサイズのバッチを作成できますが、バッチの画像サイズは異なる場合があります。
 
 ---
 
 ##### `--bucket_no_upscale`
 
-Affects the resolution of images processed by the network by disabling any upscaling of images. When this option is set, the network will only downscale images to fit within the maximum area specified by `self.max_area` if the image’s $width \times height$ exceeds this value.
+ネットワークによって処理される画像の解像度に影響を与え、画像のアップスケーリングを無効にします。このオプションが設定されている場合、画像の$width \times height$が`self.max_area`を超える場合にのみ、ネットワークは指定された最大面積に収まるように画像をダウンスケールします。
 
-1. The `select_bucket` function checks if downscaling is needed: If the product of `image_width` and `image_height` is greater than `self.max_area`, the image is too large and must be downscaled while maintaining its aspect ratio.
-2. Then it calculates the width and height that the image should be resized to, such that the resized image’s area does not exceed `self.max_area` and the aspect ratio is preserved.
-3. The `round_to_steps` function is used to round the resized dimensions to the nearest multiple of `self.reso_steps`, which is a parameter that defines the step size for resolution buckets.
-4. The code compares the aspect ratio of the width and height after rounding to decide which dimension to prioritize in order to minimize the error in aspect ratio after resizing.
-5. Based on the smaller aspect ratio error, it chooses the resized dimensions that best maintain the original aspect ratio of the image.
+1. `select_bucket`関数はダウンスケーリングが必要かどうかをチェックします：`image_width`と`image_height`の積が`self.max_area`より大きい場合、画像が大きすぎるためダウンスケールする必要があります。
+2. その後、画像のリサイズ後の面積が`self.max_area`を超えず、アスペクト比が保持されるように、リサイズ後の幅と高さを計算します。
+3. `round_to_steps`関数を使用して、リサイズされた寸法を`self.reso_steps`（解像度バケットのステップサイズを定義するパラメータ）の倍数に丸めます。
+4. コードは、丸め後の幅と高さのアスペクト比を比較して、リサイズ後のアスペクト比の誤差を最小限に抑えるために優先する寸法を決定します。
+5. より小さいアスペクト比の誤差に基づいて、画像の元のアスペクト比を最もよく維持するリサイズ寸法を選択します。
 
-In summary, the `select_bucket` function is ensuring that when downscaling is necessary, the image is resized to dimensions that are multiples of the resolution step size (`self.reso_steps`) and as close as possible to the original aspect ratio, without exceeding the maximum allowed area (`self.max_area`). **Upscaling is not performed when** `--bucket_no_upscale` **is set.**
+まとめると、`select_bucket`関数は、ダウンスケーリングが必要な場合、画像を解像度ステップサイズ（`self.reso_steps`）の倍数の寸法にリサイズし、元のアスペクト比にできるだけ近く、最大許容面積（`self.max_area`）を超えないようにします。**`--bucket_no_upscale`が設定されている場合、アップスケーリングは実行されません。**
 
 ---
 
-##### `--min_bucket_reso` and `--max_bucket_reso`
+##### `--min_bucket_reso` と `--max_bucket_reso`
 
-Specifies the minimum and maximum resolutions used by the buckets. These values are ignored if `--bucket_no_upscale` is set.
+バケットで使用される最小および最大解像度を指定します。これらの値は`--bucket_no_upscale`が設定されている場合は無視されます。
 
 ```python
     --min_bucket_reso=256 --max_bucket_reso=1024
@@ -198,7 +198,7 @@ Specifies the minimum and maximum resolutions used by the buckets. These values 
 
 ##### `--network_alpha`
 
-Specifies how many of the trained Network Ranks are allowed to alter the base model.
+トレーニングされたNetwork Ranksのうち、どれだけがベースモデルを変更できるかを指定します。
 
 ```python
     --network_alpha=4
@@ -208,7 +208,7 @@ Specifies how many of the trained Network Ranks are allowed to alter the base mo
 
 ##### `--save_model_as`
 
-You can use this to specify either `ckpt` or `safetensors` for the file format.
+ファイル形式として`ckpt`または`safetensors`を指定できます。
 
 ```python
     --save_model_as="safetensors"
@@ -218,7 +218,7 @@ You can use this to specify either `ckpt` or `safetensors` for the file format.
 
 ##### `--network_module`
 
-Specifies which network module you are going to train.
+トレーニングに使用するネットワークモジュールを指定します。
 
 ```python
     --network_module="lycoris.kohya"
@@ -228,7 +228,7 @@ Specifies which network module you are going to train.
 
 ##### `--network_args`
 
-The arguments passed down to the network.
+ネットワークに渡される引数です。
 
 ```python
     --network_args \
@@ -245,32 +245,32 @@ The arguments passed down to the network.
                "block_alphas=0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625" \
 ```
 
-**Let's break it down!**
+**詳しく見ていきましょう！**
 
 ---
 
 ###### `preset`
 
-The [Preset](https://github.com/KohakuBlueleaf/LyCORIS/blob/HEAD/docs/Preset.md)/config system added to LyCORIS for more fine-grained control.
+LyCORISに追加された[プリセット](https://github.com/KohakuBlueleaf/LyCORIS/blob/HEAD/docs/Preset.md)/設定システムで、より細かい制御が可能になります。
 
 - `full`
-  - default preset, train all the layers in the UNet and CLIP.
+  - デフォルトのプリセットで、UNetとCLIPのすべての層をトレーニングします。
 - `full-lin`
-  - `full` but skip convolutional layers.
+  - `full`と同じですが、畳み込み層をスキップします。
 - `attn-mlp`
-  - "kohya preset", train all the transformer block.
+  - "kohyaプリセット"で、すべてのトランスフォーマーブロックをトレーニングします。
 - `attn-only`
-  - only attention layer will be trained, lot of papers only do training on attn layer.
+  - 注意層のみがトレーニングされます。多くの論文では注意層のみのトレーニングを行っています。
 - `unet-transformer-only`
-  - as same as kohya_ss/sd_scripts with disabled TE, or, attn-mlp preset with train_unet_only enabled.
+  - TEを無効にしたkohya_ss/sd_scriptsと同じ、または、train_unet_onlyを有効にしたattn-mlpプリセットと同じです。
 - `unet-convblock-only`
-  - only ResBlock, UpSample, DownSample will be trained.
+  - ResBlock、UpSample、DownSampleのみがトレーニングされます。
 
 ---
 
-###### `conv_dim` and `conv_alpha`
+###### `conv_dim` と `conv_alpha`
 
-The convolution dimensions are related to the rank of the convolution in the model, adjusting this value can have a [significant impact](https://ashejunius.com/alpha-and-dimensions-two-wild-settings-of-training-lora-in-stable-diffusion-d7ad3e3a3b0a) and lowering it affected the aesthetic differences between different LoRA samples. and an alpha value of `128` was used for training a specific character's face while Kohaku recommended to set this to `1` for both LoCon and LoHa.
+畳み込みの次元はモデルの畳み込みのランクに関連しており、この値を調整すると[大きな影響](https://ashejunius.com/alpha-and-dimensions-two-wild-settings-of-training-lora-in-stable-diffusion-d7ad3e3a3b0a)を与える可能性があり、値を下げることで異なるLoRAサンプル間の美的な違いに影響を与えました。特定のキャラクターの顔のトレーニングには`128`のアルファ値が使用され、KohakuはLoConとLoHaの両方でこれを`1`に設定することを推奨しています。
 
 ```python
 conv_block_dims = [conv_dim] * num_total_blocks
@@ -279,21 +279,21 @@ conv_block_alphas = [conv_alpha] * num_total_blocks
 
 ---
 
-###### `module_dropout` and `dropout` and `rank_dropout`
+###### `module_dropout` と `dropout` と `rank_dropout`
 
 {{< blurhash
 src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/tutorial/dropout1.png"
 blurhash="LBR:HG4nD%%M?bt7ofWB~q-;xuM{"
 width="848"
 height="462"
-alt="This image illustrates the concept of dropout in neural networks through two diagrams. The first diagram, labeled “Standard Neural Net,” shows a fully connected neural network with three layers: input, hidden, and output, where each node is connected to every node in the subsequent layer. The second diagram, labeled “After applying dropout,” depicts the same network but with several nodes and their connections missing, indicating they have been temporarily “dropped out” during training. This technique helps prevent overfitting by reducing complex co-adaptations on the training data, thereby improving the model’s generalization capabilities."
+alt="この画像は、ニューラルネットワークにおけるドロップアウトの概念を2つの図で説明しています。最初の図は「標準的なニューラルネット」と表示され、入力層、隠れ層、出力層の3層からなる完全結合ニューラルネットワークを示しており、各ノードが次の層のすべてのノードに接続されています。2番目の図は「ドロップアウト適用後」と表示され、同じネットワークですが、いくつかのノードとその接続が欠落しており、トレーニング中に一時的に「ドロップアウト」されたことを示しています。この手法は、トレーニングデータに対する複雑な共適応を減らすことでオーバーフィッティングを防ぎ、モデルの汎化能力を向上させます。"
 >}}
 
-`rank_dropout` is a form of dropout, which is a regularization technique used in neural networks to prevent overfitting and improve generalization. However, unlike traditional dropout which randomly sets a proportion of inputs to zero, `rank_dropout` operates on the rank of the input tensor `lx`. First a binary mask is created with the same rank as `lx` with each element set to `True` with probability `1 - rank_dropout` and `False` otherwise. Then the `mask` is applied to `lx` to randomly set some of its elements to zero. After applying the dropout, a scaling factor is applied to `lx` to compensate for the dropped out elements. This is done to ensure that the expected sum of `lx` remains the same before and after dropout. The scaling factor is `1.0 / (1.0 - self.rank_dropout)`.
+`rank_dropout`はドロップアウトの一形態で、オーバーフィッティングを防ぎ、汎化を改善するためにニューラルネットワークで使用される正則化技術です。ただし、入力の一部をランダムにゼロに設定する従来のドロップアウトとは異なり、`rank_dropout`は入力テンソル`lx`のランクに対して動作します。まず、`lx`と同じランクを持つバイナリマスクが作成され、各要素が確率`1 - rank_dropout`で`True`、それ以外で`False`に設定されます。その後、`mask`が`lx`に適用され、一部の要素がランダムにゼロに設定されます。ドロップアウトを適用した後、ドロップアウトされた要素を補償するために`lx`にスケーリング係数が適用されます。これは、ドロップアウト前後で`lx`の期待値の合計が同じになるようにするためです。スケーリング係数は`1.0 / (1.0 - self.rank_dropout)`です。
 
-It’s called “rank” dropout because it operates on the rank of the input tensor, rather than its individual elements. This can be particularly useful in tasks where the rank of the input is important.
+入力テンソルの個々の要素ではなく、そのランクに対して動作するため、「ランク」ドロップアウトと呼ばれます。これは、入力のランクが重要なタスクで特に有用です。
 
-If `rank_dropout` is set to `0`, it means that no dropout is applied to the rank of the input tensor `lx`. All elements of the mask would be set to `True` and when the mask gets applied to `lx` all of it's elements would be retained and when the scaling factor is applied after dropout it's value would just equal `self.scale` because `1.0 / (1.0 - 0)` is `1`. Basically, setting this to `0` effectively disables the dropout mechanism but it will still do some meaningless calculations, and you can't set it to None, so if you really want to disable dropouts simply don't specify them! 😇
+`rank_dropout`が`0`に設定されている場合、入力テンソル`lx`のランクにドロップアウトは適用されません。マスクのすべての要素が`True`に設定され、マスクが`lx`に適用されるとすべての要素が保持され、ドロップアウト後にスケーリング係数が適用されると、その値は単に`self.scale`と等しくなります（`1.0 / (1.0 - 0)`は`1`であるため）。基本的に、これを`0`に設定するとドロップアウトメカニズムは効果的に無効になりますが、意味のない計算は行われ続けます。Noneには設定できないので、本当にドロップアウトを無効にしたい場合は、単に指定しないでください！ 😇
 
 ```python
 def forward(self, x):
@@ -328,67 +328,67 @@ def forward(self, x):
     return org_forwarded + lx * self.multiplier * scale
 ```
 
-The network you are training needs to support it though! See [PR#545](https://github.com/kohya-ss/sd-scripts/pull/545) for more details.
+トレーニングするネットワークがこれをサポートしている必要があります！詳細については[PR#545](https://github.com/kohya-ss/sd-scripts/pull/545)を参照してください。
 
 ---
 
 ###### `use_tucker`
 
-Can be used for all but `(IA)^3` and native fine-tuning.
+`(IA)^3`とネイティブな微調整を除くすべてに使用できます。
 
-Tucker decomposition is a method in mathematics that decomposes a tensor into a set of matrices and one small core tensor reducing the computational complexity and memory requirements of the model. It is used in various LyCORIS modules on various blocks. In LoCon for example, if `use_tucker` is `True` and the kernel size `k_size` is not `(1, 1)`, then the convolution operation is decomposed into three separate operations.
+タッカー分解は、テンソルを一連の行列と1つの小さなコアテンソルに分解する数学的手法で、モデルの計算複雑性とメモリ要件を削減します。これは様々なLyCORISモジュールで様々なブロックに使用されます。例えばLoConでは、`use_tucker`が`True`でカーネルサイズ`k_size`が`(1, 1)`でない場合、畳み込み演算は3つの別々の演算に分解されます。
 
-1. A 1x1 convolution that reduces the number of channels from `in_dim` to `lora_dim`.
-2. A convolution with the original kernel size `k_size`, stride `stride`, and padding `padding`, but with a reduced number of channels `lora_dim`.
-3. A 1x1 convolution that increases the number of channels back from `lora_dim` to `out_dim`.
+1. チャンネル数を`in_dim`から`lora_dim`に減らす1x1畳み込み。
+2. 元のカーネルサイズ`k_size`、ストライド`stride`、パディング`padding`を持つが、チャンネル数が`lora_dim`に減少した畳み込み。
+3. チャンネル数を`lora_dim`から`out_dim`に戻す1x1畳み込み。
 
-If `use_tucker` is `False` or not set, or if the kernel size k_size is `(1, 1)`, then a standard convolution operation is performed with the original kernel size, stride, and padding, and the number of channels is reduced from `in_dim` to `lora_dim`.
+`use_tucker`が`False`または設定されていない場合、またはカーネルサイズk_sizeが`(1, 1)`の場合、元のカーネルサイズ、ストライド、パディングを使用した標準的な畳み込み演算が実行され、チャンネル数は`in_dim`から`lora_dim`に減少します。
 
 ---
 
 ###### `use_scalar`
 
-An additional learned parameter that scales the contribution of the low-rank weights before they are added to the original weights. This scalar can control the extent to which the low-rank adaptation modifies the original weights. By training this scalar, the model can learn the optimal balance between preserving the original pre-trained weights and allowing for low-rank adaptation.
+低ランクの重みを元の重みに加える前にスケーリングする追加の学習パラメータです。このスカラーは、低ランク適応が元の重みをどの程度修正するかを制御できます。このスカラーを訓練することで、モデルは元の事前訓練された重みを保持することと低ランク適応を許可することのバランスを最適に学習できます。
 
 ```python
-# Check if the 'use_scalar' flag is set to True
+# 'use_scalar'フラグがTrueに設定されているかチェック
 if use_scalar:
-    # If True, initialize a learnable parameter 'scalar' with a starting value of 0.0.
-    # This parameter will be optimized during the training process.
+    # Trueの場合、開始値0.0で学習可能なパラメータ'scalar'を初期化します。
+    # このパラメータはトレーニングプロセス中に最適化されます。
     self.scalar = nn.Parameter(torch.tensor(0.0))
 else:
-    # If the 'use_scalar' flag is False, set 'scalar' to a fixed value of 1.0.
-    # This means the low-rank weights will be added to the original weights without scaling.
+    # 'use_scalar'フラグがFalseの場合、'scalar'を固定値1.0に設定します。
+    # これは低ランクの重みがスケーリングなしで元の重みに加算されることを意味します。
     self.scalar = torch.tensor(1.0)
 ```
 
-The `use_scalar` flag allows the model to determine how much influence the low-rank weights should have on the final weights. If `use_scalar` is `True`, the model can learn the optimal value for `self.scalar` during training, which multiplies the low-rank weights before they are added to the original weights. This provides a way to balance between the original pre-trained weights and the new low-rank adaptations, potentially leading to better performance and more efficient training. The initial value of `0.0` for `self.scalar` suggests that the model starts with no contribution from the low-rank weights and learns the appropriate scale during training.
+`use_scalar`フラグにより、モデルは低ランクの重みが最終的な重みにどの程度影響を与えるべきかを決定できます。`use_scalar`が`True`の場合、モデルはトレーニング中に`self.scalar`の最適値を学習でき、これは低ランクの重みを元の重みに加える前に乗算されます。これにより、元の事前訓練された重みと新しい低ランク適応のバランスを取る方法が提供され、潜在的により良いパフォーマンスとより効率的なトレーニングにつながります。`self.scalar`の初期値が`0.0`であることは、モデルが低ランクの重みからの寄与なしで開始し、トレーニング中に適切なスケールを学習することを示唆しています。
 
 ---
 
 ###### `rank_dropout_scale`
 
-A boolean flag that determines whether to scale the dropout mask to have an average value of `1` or not. This is particularly useful when you want to maintain the original scale of the tensor values after applying dropout, which can be important for the stability of the training process.
+ドロップアウトマスクを平均値1にスケーリングするかどうかを決定するブールフラグです。これは、ドロップアウト適用後にテンソル値の元のスケールを維持したい場合に特に有用で、トレーニングプロセスの安定性にとって重要な場合があります。
 
 ```python
 def forward(self, orig_weight, org_bias, new_weight, new_bias, *args, **kwargs):
-    # Retrieve the device that the 'oft_blocks' tensor is on. This ensures that any new tensors created are on the same device.
+    # 'oft_blocks'テンソルが存在するデバイスを取得します。これにより、新しく作成されるテンソルが同じデバイス上に確実に配置されます。
     device = self.oft_blocks.device
 
-    # Check if rank dropout is enabled and the model is in training mode.
+    # ランクドロップアウトが有効で、モデルがトレーニングモードであるかチェックします。
     if self.rank_dropout and self.training:
-        # Create a random tensor the same shape as 'oft_blocks', with values drawn from a uniform distribution.
-        # Then create a dropout mask by checking if each value is less than 'self.rank_dropout' probability.
+        # 'oft_blocks'と同じ形状のランダムテンソルを作成し、一様分布から値を抽出します。
+        # その後、各値が'self.rank_dropout'確率より小さいかどうかをチェックしてドロップアウトマスクを作成します。
         drop = (torch.rand(self.oft_blocks, device=device) < self.rank_dropout).to(
             self.oft_blocks.dtype
         )
 
-        # If 'rank_dropout_scale' is True, scale the dropout mask to have an average value of 1.
-        # This helps maintain the scale of the tensor's values after dropout is applied.
+        # 'rank_dropout_scale'がTrueの場合、ドロップアウトマスクを平均値1にスケーリングします。
+        # これはドロップアウト適用後もテンソル値のスケールを維持するのに役立ちます。
         if self.rank_dropout_scale:
             drop /= drop.mean()
     else:
-        # If rank dropout is not enabled or the model is not in training mode, set 'drop' to 1 (no dropout).
+        # ランクドロップアウトが有効でないか、モデルがトレーニングモードでない場合、'drop'を1に設定します（ドロップアウトなし）。
         drop = 1
 ```
 
@@ -396,35 +396,35 @@ def forward(self, orig_weight, org_bias, new_weight, new_bias, *args, **kwargs):
 
 ###### `algo`
 
-The LyCORIS algorithm used, you can find a [list](https://github.com/KohakuBlueleaf/LyCORIS/blob/HEAD/docs/Algo-List.md) of the implemented algorithms and an [explanation](https://github.com/KohakuBlueleaf/LyCORIS/blob/HEAD/docs/Algo-Details.md) of them, with a [demo](https://github.com/KohakuBlueleaf/LyCORIS/blob/HEAD/docs/Demo.md) you can also dig into the [research paper](https://arxiv.org/pdf/2309.14859.pdf).
+使用するLyCORISアルゴリズムです。実装されているアルゴリズムの[リスト](https://github.com/KohakuBlueleaf/LyCORIS/blob/HEAD/docs/Algo-List.md)と[説明](https://github.com/KohakuBlueleaf/LyCORIS/blob/HEAD/docs/Algo-Details.md)、[デモ](https://github.com/KohakuBlueleaf/LyCORIS/blob/HEAD/docs/Demo.md)を確認できます。また、[研究論文](https://arxiv.org/pdf/2309.14859.pdf)も参照できます。
 
 ---
 
 ###### `train_norm`
 
-Controls whether to train normalization layers used by all algorithms except `(IA)^3` or not.
+`(IA)^3`を除くすべてのアルゴリズムで使用される正規化層をトレーニングするかどうかを制御します。
 
 ---
 
 ###### `block_dims`
 
-Specify the rank of each block, it takes exactly 25 numbers, that is why this line is so long.
+各ブロックのランクを指定します。正確に25個の数値が必要なため、この行が非常に長くなっています。
 
 ---
 
 ###### `block_alphas`
 
-Specifies the alpha of each block, this too also takes 25 numbers if you don't specify it `network_alpha` will be used instead for the value.
+各ブロックのアルファを指定します。これも25個の数値が必要で、指定しない場合は代わりに`network_alpha`が値として使用されます。
 
 ---
 
-That concludes the `network_args`.
+以上で`network_args`の説明は終わりです。
 
 ---
 
 ##### `--network_dropout`
 
-This float controls the drop of neurons out of training every step, `0` or `None` is default behavior (no dropout), 1 would drop all neurons. Using `weight_decompose=True` will ignore `network_dropout` and only rank and module dropout will be applied.
+このfloatは、トレーニング中にトレーニングするニューロンのドロップアウトを制御します。`0`または`None`はデフォルトの動作（ドロップアウトなし）で、`1`はすべてのニューロンをドロップします。`weight_decompose=True`を使用すると`network_dropout`を無視し、ランクとモジュールのドロップアウトのみが適用されます。
 
 ```python
     --network_dropout=0 \
@@ -434,11 +434,11 @@ This float controls the drop of neurons out of training every step, `0` or `None
 
 ##### `--lr_scheduler`
 
-A learning rate scheduler in PyTorch is a tool that adjusts the learning rate during the training process. It’s used to modulate the learning rate in response to how the model is performing, which can lead to increased performance and reduced training time.
+PyTorchの学習率スケジューラは、トレーニング中に学習率を調整するツールです。これは、モデルのパフォーマンスに応じて学習率を調整することで、トレーニング速度を向上させ、トレーニング時間を短縮するために使用されます。
 
-Possible values: `linear`, `cosine`, `cosine_with_restarts`, `polynomial`, `constant` (default), `constant_with_warmup`, `adafactor`
+可能な値：`linear`, `cosine`, `cosine_with_restarts`, `polynomial`, `constant` (default), `constant_with_warmup`, `adafactor`
 
-Note, `adafactor` scheduler can only be used with the `adafactor` optimizer!
+注意：`adafactor`スケジューラは`adafactor`オプティマイザーでのみ使用できます！
 
 ```python
     --lr_scheduler="cosine" \
@@ -448,7 +448,7 @@ Note, `adafactor` scheduler can only be used with the `adafactor` optimizer!
 
 ##### `--lr_scheduler_num_cycles`
 
-Number of restarts for cosine scheduler with restarts. It isn't used by any other scheduler.
+コサインスケジューラの再スタート回数。他のスケジューラでは使用されません。
 
 ```py
     --lr_scheduler_num_cycles=1 \
@@ -456,11 +456,11 @@ Number of restarts for cosine scheduler with restarts. It isn't used by any othe
 
 ---
 
-##### `--learning_rate` and `--unet_lr` and `--text_encoder_lr`
+##### `--learning_rate` と `--unet_lr` と `--text_encoder_lr`
 
-The learning rate determines how much the weights of the network are updated in response to the estimated error each time the weights are updated. If the learning rate is too large, the weights may overshoot the optimal solution. If it’s too small, the weights may get stuck in a suboptimal solution.
+学習率は、ネットワークの重みを推定誤差に応じて更新する度合いを決定します。学習率が大きすぎる場合、重みは最適解をオーバーシュートする可能性があります。小さすぎる場合、重みはサブオプティマル解にとどまる可能性があります。
 
-For AdamW the optimal LR seems to be `0.0001` or `1e-4` if you want to impress your friends.
+AdamWの場合、最適なLRは`0.0001`または`1e-4`のようになります。
 
 ```py
     --learning_rate=0.0001 --unet_lr=0.0001 --text_encoder_lr=0.0001
@@ -470,7 +470,7 @@ For AdamW the optimal LR seems to be `0.0001` or `1e-4` if you want to impress y
 
 ##### `--network_dim`
 
-The Network Rank (Dimension) is responsible for how many features your LoRA will be training. It is in a close relation with Network Alpha and the Unet + TE learning rates and of course the quality of your dataset. Personal experimentation with these values is strongly recommended.
+ネットワークランク（次元）は、LoRAがトレーニングするフィーチャーの数を決定します。ネットワークアルファとUnet + TE学習率、そしてもちろんデータセットの品質と密接に関連しています。これらの値を個人的に実験することを強くお勧めします。
 
 ```py
     --network_dim=8
@@ -480,9 +480,9 @@ The Network Rank (Dimension) is responsible for how many features your LoRA will
 
 ##### `--output_name`
 
-Specify the output name excluding the file extension.
+出力名を指定します（ファイル拡張子を除く）。
 
-**WARNING**: If for some reason this is ever left empty your last epoch won't be saved!
+**警告**：これが空のままになる場合、最後のエポックが保存されません！
 
 ```py
     --output_name="last"
@@ -492,9 +492,9 @@ Specify the output name excluding the file extension.
 
 ##### `--scale_weight_norms`
 
-Max-norm regularization is a technique that constrains the norm of the incoming weight vector at each hidden unit to be upper bounded by a fixed constant. It prevents the weights from growing too large and helps improve the performance of stochastic gradient descent training of deep neural nets.
+Max-norm正規化は、各隠れユニットに入力ベクトルのノルムを固定された定数に上限する手法です。これにより、ニューラルネットワークの深層学習の安定性を向上させ、モデルのパフォーマンスを向上させます。
 
-Dropout affects the network architecture without changing the weights, while Max-Norm Regularization directly modifies the weights of the network. Both techniques are used to prevent overfitting and improve the generalization of the model. You can learn more about both in this [research paper](https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf).
+Dropoutはネットワークアーキテクチャを変更せずに重みに影響を与えますが、Max-Norm正規化はネットワークの重みを直接変更します。両者ともに、オーバーフィットを防ぎ、モデルの一般化を向上させるために使用されます。これについては[この研究論文](https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf)で詳しく説明されています。
 
 ```py
     --scale_weight_norms=1.0
@@ -504,7 +504,7 @@ Dropout affects the network architecture without changing the weights, while Max
 
 ##### `--max_grad_norm`
 
-Also known as Gradient Clipping, if you notice that gradients are exploding during training (loss becomes NaN or very large), consider adjusting the `--max_grad_norm` parameter, it operates on the gradients during the backpropagation process, while `--scale_weight_norms` operates on the weights of the neural network. This allows them to complement each other and provide a more robust approach to stabilizing the learning process and improving model performance.
+もう知られているように、勾配クリッピングです。トレーニング中に勾配が爆発することに気づいた場合、`--max_grad_norm`パラメータを調整することを検討してください。これはバックプロパゲーション中に勾配に適用されますが、`--scale_weight_norms`はニューラルネットワークの重みに適用されます。これにより、両者が互いに補完し、学習プロセスの安定化とモデルのパフォーマンスの向上に役立ちます。
 
 ```py
     --max_grad_norm=1.0
@@ -514,16 +514,16 @@ Also known as Gradient Clipping, if you notice that gradients are exploding duri
 
 ##### `--no_half_vae`
 
-Disables mixed precision for the SDXL VAE and sets it to `float32`. Very useful if you don't like NaNs.
+SDXL VAEの混合精度を無効にし、`float32`に設定します。非常に有用です。
 
 ---
 
-##### `--save_every_n_epochs` and `--save_last_n_epochs` or `--save_every_n_steps` and `--save_last_n_steps`
+##### `--save_every_n_epochs` と `--save_last_n_epochs` または `--save_every_n_steps` と `--save_last_n_steps`
 
-- `--save_every_n_steps` and `--save_every_n_epochs`: A LoRA file will be created at each n-th step or epoch specified here.
-- `--save_last_n_steps` and `--save_last_n_epochs`: Discards every saved file except for the last `n` you specify here.
+- `--save_every_n_steps` と `--save_every_n_epochs`：ここで指定されたn-thステップまたはエポックでLoRAファイルが作成されます。
+- `--save_last_n_steps` と `--save_last_n_epochs`：ここで指定された最後のn個の保存されたファイルを除くすべての保存されたファイルを破棄します。
 
-Learning will always end with what you specify in `--max_train_epochs` or `--max_train_steps`.
+学習は、`--max_train_epochs`または`--max_train_steps`で指定されたもので終了します。
 
 ```py
     --save_every_n_epochs=50
@@ -533,13 +533,13 @@ Learning will always end with what you specify in `--max_train_epochs` or `--max
 
 ##### `--mixed_precision`
 
-This setting determines the numerical precision used during training computations. Opting for mixed precision can boost training speed and lower memory consumption, but it introduces potential numerical instability. Here's a breakdown of the options and their trade-offs:
+この設定は、トレーニング計算中に使用される数値精度を決定します。混合精度を選択すると、トレーニング速度を向上させ、メモリ使用量を削減できますが、潜在的な数値的不安定性を導入します。ここではオプションとそのトレードオフを分解します：
 
-- "no": Uses full 32-bit precision. It's slower but more stable.
-- "fp16": Uses 16-bit precision where possible, falling back to 32-bit when necessary. This can speed up training and reduce memory usage, but may occasionally lead to numerical instability.
-- "bf16": Uses bfloat16 precision. It offers a good balance between the range of 32-bit floats and the memory savings of 16-bit floats.
+- "no"：完全な32ビット精度を使用します。より遅くなりますが、より安定します。
+- "fp16"：可能な場合は16ビット精度を使用しますが、必要な場合は32ビットにフォールバックします。これにより、トレーニング速度を向上させ、メモリ使用量を削減できますが、時には数値的不安定性につながる可能性があります。
+- "bf16"：bfloat16精度を使用します。fp16とのバランスがとれていますが、fp16よりもメモリ保存の利点があります。
 
-Choose wisely based on your hardware capabilities and stability requirements. If you encounter NaN losses or other numerical issues during training, consider switching to full precision or adjusting other hyperparameters.
+ハードウェアの機能と安定性の要件に基づいて慎重に選択してください。トレーニング中にNaN損失やその他の数値の問題が発生した場合は、完全な精度に切り替えるか、他のハイパーパラメータを調整することを検討してください。
 
 ```py
     --mixed_precision="bf16"
@@ -549,13 +549,13 @@ Choose wisely based on your hardware capabilities and stability requirements. If
 
 ##### `--save_precision`
 
-This parameter determines the precision of the saved model weights. It's a crucial choice that affects both the file size and the accuracy of your trained LoRA. Here's what you need to know:
+このパラメータは保存されたモデルの重みの精度を決定します。これは、LoRAのファイルサイズとトレーニングされたLoRAの精度に影響を与える重要な選択です。ここでは何が必要かを知る必要があります：
 
-- "fp32": Full 32-bit precision. It's the most accurate but takes up more storage space.
-- "fp16": 16-bit precision. A good balance between accuracy and file size, suitable for most use cases.
-- "bf16": bfloat16 precision. Offers a wider range than fp16 but with less precision, useful for certain hardware setups.
+- "fp32"：完全な32ビット精度。最も正確ですが、ストレージスペースを多く使用します。
+- "fp16"：16ビット精度。精度とファイルサイズのバランスがとれていますが、ほとんどの使用例に適しています。
+- "bf16"：bfloat16精度。fp16よりも広い範囲を提供しますが、精度が少なくなりますが、特定のハードウェアセットアップに役立ちます。
 
-Choose based on your storage constraints and accuracy requirements. If you're not sure, "fp16" is a solid default that works well in most situations. It'll keep your LoRA file size reasonable without sacrificing too much precision.
+ストレージの制約と精度の要件に基づいて選択してください。もしわからない場合は、"fp16"が堅牢なデフォルトであり、ほとんどの状況で機能します。LoRAファイルサイズを過度に増加させることなく、精度を犠牲にすることはありません。
 
 ```py
     --save_precision="fp16"
@@ -563,29 +563,29 @@ Choose based on your storage constraints and accuracy requirements. If you're no
 
 ##### `--caption_extension`
 
-The file extension for caption files. Default is `.caption`. These caption files contain text descriptions that are associated with the training images. When you run the training script, it will look for files with this specified extension in the training data folder. The script uses the content of these files as captions to provide context for the images during the training process.
+キャプションファイルのファイル拡張子。デフォルトは`.caption`です。これらのキャプションファイルには、トレーニング画像に関連するテキスト説明が含まれています。トレーニングスクリプトを実行するとき、この指定された拡張子を持つファイルをトレーニングデータフォルダに探します。スクリプトはこれらのファイルの内容を使用して、トレーニング中に画像にキャプションを提供するコンテキストを提供します。
 
-For example, if your images are named `image1.jpg`, `image2.jpg`, and so on, and you use the default .caption extension, the script will expect the caption files to be named `image1.caption`, `image2.caption`, etc. If you want to use a different extension, like `.txt`, you would set the caption_extension parameter to `.txt`, and the script would then look for `image1.txt`, `image2.txt`, and so on.
+例えば、画像が`image1.jpg`, `image2.jpg`, などと命名されている場合、デフォルトの.caption拡張子を使用すると、スクリプトはキャプションファイルを`image1.caption`, `image2.caption`, などと期待します。異なる拡張子を使用したい場合は、例えば`.txt`を使用して、スクリプトは`image1.txt`, `image2.txt`, などを期待します。
 
 ```py
     --caption_extension=".txt"
 ```
 
-##### `--cache_latents` and `--cache_latents_to_disk`
+##### `--cache_latents` と `--cache_latents_to_disk`
 
-These two parameters work together to optimize memory usage and potentially speed up training:
+これら2つのパラメータは、メモリ使用量を最適化し、トレーニングを加速するために連携して機能します：
 
-- `--cache_latents`: This option caches the latent representations of your training images in memory. By doing this, the model doesn't need to re-encode the images into latents at every training step, which can significantly speed up training, especially for larger datasets.
+- `--cache_latents`：このオプションは、トレーニング画像の潜在表現をメモリにキャッシュします。これにより、モデルは各トレーニングステップで画像を再エンコードする必要がなくなり、大規模なデータセットの場合に特にトレーニングを高速化するのに役立ちます。
 
-- `--cache_latents_to_disk`: When used in conjunction with `--cache_latents`, this option allows the cached latents to be stored on disk instead of keeping them all in memory. This is particularly useful if you have a large dataset that exceeds your available RAM.
+- `--cache_latents_to_disk`：このオプションは、`--cache_latents`と組み合わせて使用され、キャッシュされた潜在をディスクに保存する代わりにメモリに保持します。これは、大規模なデータセットが利用可能なRAMを超える場合に特に有用です。
 
-Using these options can provide several benefits:
+これらのオプションは、いくつかの利点を提供します：
 
-1. Faster training: By pre-computing and caching latents, you reduce the computational overhead during each training step.
-2. Reduced VRAM usage: Caching to disk can help manage memory more efficiently, especially for large datasets.
-3. Consistency: Pre-computed latents ensure that the same latent representation is used for each image across epochs, which can lead to more stable training.
+1. トレーニングを高速化する：潜在を事前に計算してキャッシュすることで、各トレーニングステップの計算オーバーヘッドを削減します。
+2. メモリ使用量を削減する：ディスクへのキャッシュは、大規模なデータセットの場合にメモリの管理を容易にします。
+3. 一貫性を確保する：事前に計算された潜在は、各エポックで同じ潜在表現を使用することで、トレーニングの一貫性を確保します。
 
-However, be aware that caching latents may use a significant amount of disk space, especially for large datasets. Make sure you have sufficient storage available when using `--cache_latents_to_disk`.
+ただし、潜在をキャッシュすることは、大規模なデータセットの場合にディスクスペースを大量に使用する可能性があることに注意してください。`--cache_latents_to_disk`を使用する場合は、十分なストレージが利用可能であることを確認してください。
 
 ```py
     --cache_latents --cache_latents_to_disk
@@ -595,7 +595,7 @@ However, be aware that caching latents may use a significant amount of disk spac
 
 ##### `--optimizer_type`
 
-The default optimizer is `AdamW` and there are a bunch of them added every month or so, therefore I'm not listing them all, you can find the list if you really want, but `AdamW` is the best as of this writing so we use that!
+デフォルトのオプティマイザは`AdamW`であり、毎月追加される多くのものがあるため、すべてをリストすることはしません。本当に必要な場合は、リストを確認できますが、`AdamW`はこの時点で最適であるため、それを使用します！
 
 ```py
     --optimizer_type="AdamW"
@@ -605,7 +605,7 @@ The default optimizer is `AdamW` and there are a bunch of them added every month
 
 ##### `--dataset_repeats`
 
-Repeats the dataset when training with captions, by default it is set to `1` so we'll set this to `0` with:
+キャプションでデータセットを繰り返し、デフォルトでは`1`に設定されているため、`0`に設定します。
 
 ```py
     --dataset_repeats=0
@@ -615,7 +615,7 @@ Repeats the dataset when training with captions, by default it is set to `1` so 
 
 ##### `--max_train_steps`
 
-Specify the number of steps or epochs to train. If both `--max_train_steps` and `--max_train_epochs` are specified, the number of epochs takes precedence.
+トレーニングステップまたはエポックの数を指定します。`--max_train_steps`と`--max_train_epochs`が指定されている場合、エポックの数が優先されます。
 
 ```py
     --max_train_steps=400
@@ -625,9 +625,9 @@ Specify the number of steps or epochs to train. If both `--max_train_steps` and 
 
 ##### `--shuffle_caption`
 
-Shuffles the captions set by `--caption_separator`, it is a comma `,` by default which will work perfectly for our case since our captions look like this:
+`--caption_separator`で設定されたキャプションをシャッフルします。デフォルトでは`,`であり、これは私たちのキャプションがこのようになることを確認します：
 
-> rating_questionable, 5 fingers, anthro, bent over, big breasts, blue eyes, blue hair, breasts, butt, claws, curved horn, female, finger claws, fingers, fur, hair, huge breasts, looking at viewer, looking back, looking back at viewer, nipples, nude, pink body, pink hair, pink nipples, rear view, solo, tail, tail tuft, tuft, by lunarii, by x-leon-x, mythology, krystal \(darkmaster781\), dragon, scalie, wickerbeast, The image showcases a pink-scaled wickerbeast a furred dragon creature with blue eyes., She has large breasts and a thick tail., Her blue and pink horns are curved and pointy and she has a slight smiling expression on her face., Her scales are shiny and she has a blue and pink pattern on her body., Her hair is a mix of pink and blue., She is looking back at the viewer with a curious expression., She has a slight blush.,
+> rating_questionable, 5 fingers, anthro, bent over, big breasts, blue eyes, blue hair, breasts, butt, claws, curved horn, female, finger claws, fingers, fur, hair, huge breasts, looking at viewer, looking back, looking back at viewer, nipples, nude, pink body, pink hair, pink nipples, rear view, solo, tail, tail tuft, tuft, by lunarii, by x-leon-x, mythology, krystal (darkmaster781), dragon, scalie, wickerbeast, The image showcases a pink-scaled wickerbeast a furred dragon creature with blue eyes., She has large breasts and a thick tail., Her blue and pink horns are curved and pointy and she has a slight smiling expression on her face., Her scales are shiny and she has a blue and pink pattern on her body., Her hair is a mix of pink and blue., She is looking back at the viewer with a curious expression., She has a slight blush.,
 
 As you can tell, I have separated the caption part not just the tags with a `,` to make sure everything gets shuffled.
 
@@ -635,13 +635,13 @@ NOTE: `--cache_text_encoder_outputs` and `--cache_text_encoder_outputs_to_disk` 
 
 ---
 
-##### `--sdpa` or `--xformers` or `--mem_eff_attn`
+##### `--sdpa` または `--xformers` または `--mem_eff_attn`
 
-Each of these options modifies the attention mechanism used in the model, which can have a significant impact on the model's performance and memory usage. The choice between `--xformers` or `--mem_eff_attn` and `--spda` will depend on your GPU. You can benchmark it by repeating a training with them!
+各オプションはモデルで使用される注意機構に影響を与え、モデルのパフォーマンスとメモリ使用量に大きな影響を与えます。`--xformers`または`--mem_eff_attn`と`--spda`の選択は、GPUに依存します。これをベンチマークするために、繰り返しトレーニングすることをお勧めします！
 
-- `--xformers`: This flag enables the use of XFormers in the model. XFormers is a library developed by Facebook Research that provides a collection of transformer models optimized for different hardware and use-cases. These models are designed to be highly efficient, flexible, and customizable. They offer various types of attention mechanisms and other features that can be beneficial in scenarios where you have limited GPU memory or need to handle large-scale data.
-- `--mem_eff_attn`: This flag enables the use of memory-efficient attention mechanisms in the model. The memory-efficient attention is designed to reduce the memory footprint during the training of transformer models, which can be particularly beneficial when working with large models or datasets.
-- `--sdpa`: This option enables the use of Scaled Dot-Product Attention (SDPA) within the model. SDPA is a fundamental component of transformer models that calculates the attention scores between queries and keys. It scales the dot products by the dimensionality of the keys to stabilize gradients during training. This mechanism is particularly useful for handling long sequences and can potentially improve the model’s ability to capture long-range dependencies.
+- `--xformers`：このフラグはモデルでXFormersを使用することを可能にします。XFormersはFacebook Researchによって開発されたライブラリで、異なるハードウェアとユースケースに最適化されたトランスフォーマーモデルのコレクションを提供します。これらのモデルは、高い効率性、柔軟性、およびカスタマイズ可能な機能を提供します。これらは、限られたGPUメモリや大規模なデータを扱う必要があるシナリオで特に有益です。
+- `--mem_eff_attn`：このフラグはモデルでメモリ効率の高い注意機構を使用することを可能にします。メモリ効率の高い注意は、トランスフォーマーモデルのトレーニング中にメモリフットプリントを削減することを目的として設計されており、大規模なモデルやデータを扱う際に特に有益です。
+- `--sdpa`：このオプションはモデルでScaled Dot-Product Attention (SDPA)を使用することを可能にします。SDPAはトランスフォーマーモデルの基本コンポーネントであり、クエリとキーの間の注意スコアを計算します。これは、ドット積をキーの次元にスケーリングすることで、トレーニング中に勾配の安定化を支援します。この機構は長いシーケンスを処理するのに特に有用であり、潜在的にモデルの長距離依存関係をキャプチャする能力を向上させることができます。
 
 ```python
     --sdpa
@@ -649,25 +649,25 @@ Each of these options modifies the attention mechanism used in the model, which 
 
 ---
 
-##### `--multires_noise_iterations` and `--multires_noise_discount`
+##### `--multires_noise_iterations` と `--multires_noise_discount`
 
-Multi-resolution noise is a new approach that adds noise at multiple resolutions to an image or latent image during the training of diffusion models. A model trained with this technique can generate visually striking images with a distinct aesthetic compared to the usual outputs of diffusion models.
+マルチレゾリューションノイズは、マルチレゾリューションで画像または潜在画像にノイズを追加する新しいアプローチです。この手法を使用してトレーニングされたモデルは、通常の拡散モデルの出力とは異なる視覚的に印象的な画像を生成できます。
 
-A model trained with multi-resolution noise can generate a more diverse range of images than regular stable diffusion, including extremely light or dark images. These have historically been challenging to achieve without resorting to using a large number of sampling steps.
+この手法を使用してトレーニングされたモデルは、通常の拡散モデルの出力とは異なる視覚的に印象的な画像を生成できます。
 
-This technique is particularly beneficial when working with small datasets but you I don't think you should ever not use it.
+この手法は、小規模なデータセットでは特に有益ですが、I don't think you should ever not use it.
 
-The `--multires_noise_discount` parameter controls the extent to which the noise amount at each resolution is weakened. A value of 0.1 is recommended. The `--multires_noise_iterations` parameter determines the number of iterations for adding multi-resolution noise, with a recommended range of 6 to 10.
+`--multires_noise_discount`パラメータは、各レゾリューションでノイズ量を弱める度合いを制御します。0.1の値が推奨されます。`--multires_noise_iterations`パラメータは、マルチレゾリューションノイズを追加するイテレーションの数を決定し、推奨範囲は6から10です。
 
-Please note that `--multires_noise_discount` has no effect without `--multires_noise_iterations`.
+注意：`--multires_noise_discount`は`--multires_noise_iterations`なしでは機能しません。
 
-###### Implementation Details
+###### 実装の詳細
 
-The `get_noise_noisy_latents_and_timesteps` function samples noise that will be added to the latents. If `args.noise_offset` is true, it applies a noise offset. If `args.multires_noise_iterations` is true, it applies multi-resolution noise to the sampled noise.
+`get_noise_noisy_latents_and_timesteps`関数は、ノイズを追加するためにサンプルされます。`args.noise_offset`がTrueの場合、ノイズオフセットを適用します。`args.multires_noise_iterations`がTrueの場合、サンプルされたノイズにマルチレゾリューションノイズを適用します。
 
-The function then samples a random timestep for each image and adds noise to the latents according to the noise magnitude at each timestep. This is the forward diffusion process.
+関数は、各画像のランダムなタイムステップをサンプルし、各タイムステップのノイズの量に基づいてノイズを追加します。これは前方拡散プロセスです。
 
-The `pyramid_noise_like` function generates noise with a pyramid structure. It starts with the original noise and adds upscaled noise at decreasing resolutions. The noise at each level is scaled by a discount factor raised to the power of the level. The noise is then scaled back to roughly unit variance. This function is used to implement the multi-resolution noise.
+`pyramid_noise_like`関数は、ピラミッド構造のノイズを生成します。元のノイズから始め、解像度が低下するにつれてスケーリングされたノイズを追加します。各レベルのノイズは、ディスカウント係数をレベルの指数にしたものでスケーリングされます。ノイズは、概ね単位分散にスケーリングされます。この関数はマルチレゾリューションノイズを実装するために使用されます。
 
 ```python
     --multires_noise_iterations=10 --multires_noise_discount=0.1
@@ -675,19 +675,19 @@ The `pyramid_noise_like` function generates noise with a pyramid structure. It s
 
 ---
 
-##### `--sample_prompts` and `--sample_sampler` and `--sample_every_n_steps`
+##### `--sample_prompts` と `--sample_sampler` と `--sample_every_n_steps`
 
-You have the option of generating images during training so you can check the progress, the argument let's you pick between different samplers, by default it is on `ddim`, so you better change it!
+トレーニング中に画像を生成して進捗を確認するオプションを使用できます。引数を使用して異なるサンプラーを選択できますが、デフォルトでは`ddim`であるため、変更することをお勧めします！
 
-You can also use `--sample_every_n_epochs` instead which will take precedence over steps. The `k_` prefix means karras and the `_a` suffix means ancestral.
+`k_`プレフィックスはkarrasを意味し、`_a`サフィックスはancestralを意味します。
 
 ```py
     --sample_prompts=/training_dir/sample-prompts.txt --sample_sampler="euler_a" --sample_every_n_steps=100
 ```
 
-My recommendation for Pony is to use `euler_a` for toony and for realistic `k_dpm_2`.
+私の推奨は、Ponyには`euler_a`を使用してトーンニールに使用し、リアルなものには`k_dpm_2`を使用することです。
 
-Your sampler options include the following:
+サンプラーオプションには以下が含まれます：
 
 ```bash
 ddim, pndm, lms, euler, euler_a, heun, dpm_2, dpm_2_a, dpmsolver, dpmsolver++, dpmsingle, k_lms, k_euler, k_euler_a, k_dpm_2, k_dpm_2_a
@@ -720,7 +720,7 @@ accelerate launch --num_cpu_threads_per_process=2  "./sdxl_train_network.py" \
                "algo=locon" \
                "train_norm=False" \
                "block_dims=8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8" \
-               "block_alphas=0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625" \
+               "block_alphas=0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625,0.0625" \
     --network_dropout=0 \
     --lr_scheduler="cosine" \
     --learning_rate=0.0001 \
@@ -756,83 +756,83 @@ accelerate launch --num_cpu_threads_per_process=2  "./sdxl_train_network.py" \
     --sample_every_n_steps=100
 ```
 
-## Shrinking
+## 縮小化
 
 ---
 
-Now that your training is done and you have your first LoRA cooked, let's reduce it's size by a large<abbr title="LyCORIS shrinks down a lot by this process but this is less noticeable with regular LoRAs, you will still get less noise though!">\*</abbr> margin. Besides the reduced file size, this also helps your LoRA work better with other models and will greatly help in situations where there are quite a lot of them stacked together for an absolutely negligible difference in the output, which I would not define as _quality_, with the correct settings.
+トレーニングが完了し、最初のLoRAが作成されたので、サイズを大幅に<abbr title="LyCORISはこのプロセスで大幅に縮小されますが、通常のLoRAではこれはあまり目立ちません。ただし、ノイズは少なくなります！">\*</abbr>縮小しましょう。ファイルサイズの削減に加えて、これによりLoRAが他のモデルとより良く連携し、多くのLoRAが積み重ねられている状況で大きく役立ちます。適切な設定を使用すれば、出力の違いは無視できるほどわずかです。
 
-For this process we will be using [resize_lora](https://github.com/elias-gaeros/resize_lora).
+このプロセスには[resize_lora](https://github.com/elias-gaeros/resize_lora)を使用します。
 
 ```bash
 git clone https://github.com/elias-gaeros/resize_lora
 cd resize_lora
 ```
 
-Make sure you have `torch`, `tqdm`, `safetensors` installed in your Python environment. Then run the following command:
+Pythonの環境に`torch`、`tqdm`、`safetensors`がインストールされていることを確認してください。その後、以下のコマンドを実行します：
 
 ```bash
 python resize_lora.py -o {output_directory} -r fro_ckpt=1,thr=-3.55 model.safetensors lora.safetensors
 ```
 
-Just replace `{output_directory}` with your desired output directory and `model.safetensors` with the checkpoint you used to train your LoRA, or the checkpoint you want to use your new LoRA with and `lora.safetensors` with your LoRA that you wish to shrink down.
+`{output_directory}`を希望の出力ディレクトリに、`model.safetensors`をLoRAのトレーニングに使用したチェックポイントまたは新しいLoRAを使用したいチェックポイントに、`lora.safetensors`を縮小したいLoRAに置き換えてください。
 
 Feel free to experiment with any of the SVD recipes, which you can read about in the project's README, my recommendation is obviously just a personal bias, but I did try to [test](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/shrunk/by_beksinski-shrink-plot/beksinski-shrunk-plot.png?download=true), a [lot](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/shrunk), so others won't feel the need to!
 
-## Steps vs Epochs
+## ステップとエポック
 
 ---
 
-When training a model, it's essential to understand the difference between steps and epochs. Both are crucial concepts in the training process, but they serve distinct purposes.
+モデルをトレーニングする際、ステップとエポックの違いを理解することが重要です。両者はトレーニングプロセスにおいて重要な概念ですが、異なる目的を持っています。
 
-### Steps
+### ステップ
 
-A step refers to a single iteration of the training process, where the model processes a batch of data and updates its parameters based on the loss calculated from that batch. The number of steps is typically determined by the batch size and the total amount of training data. In other words, a step is a single update of the model's parameters.
+ステップは、モデルがデータのバッチを処理し、そのバッチから計算された損失に基づいてパラメータを更新する、トレーニングプロセスの単一の反復を指します。ステップの数は通常、バッチサイズとトレーニングデータの総量によって決定されます。つまり、ステップはモデルのパラメータの単一の更新を意味します。
 
-### Epochs
+### エポック
 
-An epoch, on the other hand, represents a complete pass through the entire training dataset. One epoch is equivalent to processing the entire dataset once, with each batch being processed in a sequence of steps. The number of epochs determines how many times the model sees the entire training dataset during training.
+一方、エポックは、トレーニングデータセット全体を1回通過することを表します。1エポックは、各バッチが一連のステップで処理される形で、データセット全体を1回処理することに相当します。エポックの数は、トレーニング中にモデルがデータセット全体を何回見るかを決定します。
 
-To illustrate the difference, consider a training dataset with 1000 images, a batch size of 10, and a total of 10 epochs. In this scenario:
+例として、1000枚の画像を含むトレーニングデータセット、バッチサイズ10、合計10エポックを考えてみましょう：
 
-- The model will process 100 steps per epoch (1000 images / 10 images per batch).
-- The model will see the entire dataset 10 times, with each epoch consisting of 100 steps.
+- モデルは1エポックあたり100ステップを処理します（1000画像 / 10画像）。
+- モデルはデータセット全体を10回見ることになり、各エポックは100ステップで構成されます。
 
-Understanding the distinction between steps and epochs is crucial for configuring training parameters, such as the learning rate schedule, and for monitoring the model's progress during training.
+ステップとエポックの区別を理解することは、学習率スケジュールなどのトレーニングパラメータの設定や、トレーニング中のモデルの進捗モニタリングにとって重要です。
 
-### Gradient Accumulation
+### 勾配累積
 
-Gradient accumulation is a technique used to reduce the memory requirements of training deep neural networks. It works by accumulating the gradients of the loss function with respect to the model's parameters over multiple iterations, rather than computing the gradients at each iteration. This allows for larger batch sizes and more efficient use of GPU memory.
+勾配累積は、深層ニューラルネットワークのトレーニングにおけるメモリ要件を削減するための技術です。各反復で勾配を計算する代わりに、複数の反復にわたってモデルのパラメータに関する損失関数の勾配を累積します。これにより、より大きなバッチサイズとGPUメモリのより効率的な使用が可能になります。
 
-In the context of LoRA training, gradient accumulation can be used to improve the stability and efficiency of the training process. By accumulating gradients over multiple iterations, the model can learn to recognize patterns in the data more effectively, leading to improved performance.
+LoRAトレーニングのコンテキストでは、勾配累積を使用してトレーニングプロセスの安定性と効率性を向上させることができます。複数の反復にわたって勾配を累積することで、モデルはデータのパターンをより効果的に認識できるようになり、パフォーマンスが向上します。
 
-To use gradient accumulation in LoRA training, you can add the following argument to your training command:
+LoRAトレーニングで勾配累積を使用するには、トレーニングコマンドに以下の引数を追加します：
 
 ```bash
 --gradient_accumulation_steps=6
 ```
 
-It's important to note that the number of steps in each epoch is determined by the batch size and the total amount of training data. Therefore, when using gradient accumulation, the number of steps in each epoch will be the number of iterations required to process the entire training dataset, rather than the number of batches. This distinction is important when configuring the learning rate schedule and monitoring the model's progress during training.
+各エポックのステップ数は、バッチサイズとトレーニングデータの総量によって決定されることに注意することが重要です。したがって、勾配累積を使用する場合、各エポックのステップ数は、バッチの数ではなく、トレーニングデータセット全体を処理するために必要な反復回数となります。この区別は、学習率スケジュールの設定やトレーニング中のモデルの進捗モニタリングにおいて重要です。
 
-## Keep Track of Your Changes
+## 変更を追跡する
 
 ---
 
-I like giving the `--output_name` a relevant name to make sure I know exactly what I changed without having to dig through the metadata.
+私は`--output_name`に関連する名前を付けることで、メタデータを掘り下げることなく、変更内容を正確に把握できるようにしています。
 
 {{< blurhash
 src="/images/sd-scripts/keep_track_of_changes.png"
 blurhash="L8SigQ00?b~qxtofs;j]tMoesroN"
 width="522"
 height="261"
-alt="The image shows a screenshot of a computer code interface with various parameters and settings highlighted. The background is white, and the text is in green, and purple. Key parameters include “network_dropout” and “lr” indicating settings for a machine learning model’s training process. The middle sections suggest that the output name is being reviewed. This image is relevant for those configuring neural network training."
+alt="この画像は、コンピュータコードインターフェースのスクリーンショットで、様々なパラメータと設定が強調表示されています。背景は白で、テキストは緑と紫です。主要なパラメータには「network_dropout」と「lr」が含まれており、機械学習モデルのトレーニングプロセスの設定を示しています。中央部分は出力名が確認されていることを示唆しています。この画像はニューラルネットワークトレーニングを設定する人々に関連しています。"
 >}}
 
 ## Tensorboard
 
 ---
 
-You can enable Tensorboard by adding the following to your configuration:
+以下の設定を追加することでTensorboardを有効にできます：
 
 ```bash
     --log_prefix=xl-locon \
@@ -840,10 +840,10 @@ You can enable Tensorboard by adding the following to your configuration:
     --logging_dir=/output_dir/logs \
 ```
 
-You will of course need to [install](https://www.tensorflow.org/install/pip) Tensorboard to actually view your training and after that you just need to use this in your output directory:
+もちろん、実際にトレーニングを表示するにはTensorboardを[インストール](https://www.tensorflow.org/install/pip)する必要があり、その後、出力ディレクトリで以下を使用するだけです：
 
 ```bash
 tensorboard --logdir=logs
 ```
 
-After that you can open it up in your browser at [http://localhost:6006/](http://localhost:6006/) and try and read some tea leaves, uh, sorry! I meant loss curves!
+その後、ブラウザで[http://localhost:6006/](http://localhost:6006/)を開いて、お茶の葉を読むように...申し訳ありません！損失曲線を読むように試みることができます！
