@@ -1,10 +1,25 @@
 baseURL: "https://cringe.live/"
-languageCode: "en-us"
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: true
 title: "CRINGE.LIVE"
 theme: "cringe-theme"
 googleAnalytics: "G-D69NRX5XH6"
 disablePathToLower: true
 enableGitInfo: true
+
+languages:
+  en:
+    languageCode: "en-US"
+    languageName: "English"
+    contentDir: "content/en"
+    title: "CRINGE.LIVE"
+    weight: 1
+  ja:
+    languageCode: "ja-JP"
+    languageName: "日本語"
+    contentDir: "content/ja"
+    title: "CRINGE.LIVE"
+    weight: 2
 
 markup:
   highlight:
