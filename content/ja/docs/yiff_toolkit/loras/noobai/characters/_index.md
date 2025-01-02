@@ -3,19 +3,19 @@ weight: 1
 bookFlatSection: false
 bookCollapseSection: true
 bookToC: false
-title: "Characters"
-summary: "Character LoRAs specialize in teaching Stable Diffusion models to generate consistent representations of specific characters, including their facial features, body proportions, clothing, and distinctive attributes. These adaptations are particularly popular in the AI art community for creating consistent representations of original characters, celebrities, or fictional personalities. Character LoRAs require careful curation of training data (typically 20-50 high-quality images) that clearly show the character's defining features from various angles and expressions. They primarily work by fine-tuning the model's attention mechanisms to maintain consistency in facial features, body proportions, and characteristic details while allowing for natural variations in poses and expressions. The training process often focuses on the upper layers of the model responsible for high-level feature recognition and generation."
+title: "キャラクター"
+summary: "キャラクターLoRAは、Stable Diffusionモデルに特定のキャラクターの一貫した表現を生成することを教える特殊な学習モデルです。これには顔の特徴、体型の比率、衣装、そして特徴的な属性が含まれます。これらの適応は、AIアートコミュニティで、オリジナルキャラクター、有名人、またはフィクションのキャラクターの一貫した表現を作成するために特に人気があります。キャラクターLoRAには、様々な角度や表情からキャラクターの特徴を明確に示す、慎重に選別されたトレーニングデータ（通常20-50枚の高品質な画像）が必要です。主にモデルの注意機構を微調整することで、ポーズや表情の自然な変化を可能にしながら、顔の特徴、体型の比率、特徴的な詳細の一貫性を維持します。トレーニングプロセスは、高レベルの特徴認識と生成を担当するモデルの上位層に焦点を当てています。"
 ---
 
 <!--markdownlint-disable MD025 -->
 
-# Character LoRAs
+# キャラクターLoRA
 
 ---
 
-Character LoRAs specialize in teaching Stable Diffusion models to generate consistent representations of specific characters, including their facial features, body proportions, clothing, and distinctive attributes. These adaptations are particularly popular in the AI art community for creating consistent representations of original characters, celebrities, or fictional personalities. Character LoRAs require careful curation of training data (typically 20-50 high-quality images) that clearly show the character's defining features from various angles and expressions. They primarily work by fine-tuning the model's attention mechanisms to maintain consistency in facial features, body proportions, and characteristic details while allowing for natural variations in poses and expressions. The training process often focuses on the upper layers of the model responsible for high-level feature recognition and generation.
+キャラクターLoRAは、Stable Diffusionモデルに特定のキャラクターの一貫した表現を生成することを教える特殊な学習モデルです。これには顔の特徴、体型の比率、衣装、そして特徴的な属性が含まれます。これらの適応は、AIアートコミュニティで、オリジナルキャラクター、有名人、またはフィクションのキャラクターの一貫した表現を作成するために特に人気があります。キャラクターLoRAには、様々な角度や表情からキャラクターの特徴を明確に示す、慎重に選別されたトレーニングデータ（通常20-50枚の高品質な画像）が必要です。主にモデルの注意機構を微調整することで、ポーズや表情の自然な変化を可能にしながら、顔の特徴、体型の比率、特徴的な詳細の一貫性を維持します。トレーニングプロセスは、高レベルの特徴認識と生成を担当するモデルの上位層に焦点を当てています。
 
-## LoRAs
+## LoRA一覧
 
 ---
 

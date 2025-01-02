@@ -2,23 +2,23 @@
 weight: 2
 bookFlatSection: false
 bookToC: false
-title: "Add Custom Optimizers"
-summary: "This article offers a comprehensive guide to incorporating custom optimizers into the `sd-scripts` library. It covers the process of setting up a new optimizers folder and crafting a custom optimizer class using Python."
+title: "カスタムオプティマイザーの追加"
+summary: "この記事では、`sd-scripts`ライブラリにカスタムオプティマイザーを組み込む包括的なガイドを提供します。新しいオプティマイザーフォルダの設定とPythonを使用したカスタムオプティマイザークラスの作成プロセスについて説明します。"
 ---
 
 <!--markdownlint-disable MD025 -->
 
-# Add Custom Optimizers
+# カスタムオプティマイザーの追加
 
 ---
 
-Let's make sure you start your little experiments with custom optimizers in the `dev` branch of `sd-scripts`! You can skip this step, but then you can't gloat to your friends that you are an experimenting savant!
+まずは`sd-scripts`の`dev`ブランチでカスタムオプティマイザーの実験を始めましょう！このステップはスキップすることもできますが、そうすると実験の達人として友達に自慢できなくなりますよ！
 
 ```bash
 git checkout dev
 ```
 
-Now let's create a new `optimizers` folder in `library` and an empty `__init__.py` file as well!
+次に、`library`に新しい`optimizers`フォルダと空の`__init__.py`ファイルを作成しましょう！
 
 Linux/Mac:
 
@@ -32,7 +32,7 @@ Windows PowerShell:
 ```pwsh
 ```
 
-You can put whatever optimizer you want in this folder, like, let's put `compass.py` in there:
+このフォルダには好きなオプティマイザーを入れることができます。例えば、`compass.py`を入れてみましょう：
 
 ```py
 import torch
@@ -41,24 +41,24 @@ from torch.optim import Optimizer
 
 class Compass(Optimizer):
     r"""
-    Arguments:
+    引数：
         params (iterable):
-            Iterable of parameters to optimize or dicts defining
-            parameter groups.
+            最適化するパラメータまたはパラメータグループを定義する
+            辞書のイテラブル。
         lr (float):
-            Learning rate parameter (default 0.0025)
+            学習率パラメータ（デフォルト：0.0025）
         betas (Tuple[float, float], optional):
-            coefficients used for computing running averages of
-            gradient and its square (default: (0.9, 0.999)).
+            勾配とその二乗の実行平均を計算するために使用される
+            係数（デフォルト：(0.9, 0.999)）。
         amp_fac (float):
-            amplification factor for the first moment filter (default: 2).
+            第一モーメントフィルタの増幅係数（デフォルト：2）。
         eps (float):
-            Term added to the denominator outside of the root operation to
-            improve numerical stability. (default: 1e-8).
+            数値の安定性を改善するために根の演算の外側の
+            分母に追加される項（デフォルト：1e-8）。
         weight_decay (float):
-            Weight decay, i.e. a L2 penalty (default: 0).
+            重み減衰、つまりL2ペナルティ（デフォルト：0）。
         centralization (float):
-            center model grad (default: 0).
+            モデルの勾配を中心化（デフォルト：0）。
     """
 
     def __init__(
@@ -92,16 +92,16 @@ class Compass(Optimizer):
                     continue
                 grad = p.grad.data
                 if grad.is_sparse:
-                    raise RuntimeError("Compass does not support sparse gradients")
+                    raise RuntimeError("Compassはスパース勾配をサポートしていません")
 
                 state = self.state[p]
 
-                # State initialization
+                # 状態の初期化
                 if len(state) == 0:
                     state["step"] = 0
-                    # Exponential moving average of gradient values
+                    # 勾配値の指数移動平均
                     state["ema"] = torch.zeros_like(p.data)
-                    # Exponential moving average of squared gradient values
+                    # 勾配値の二乗の指数移動平均
                     state["ema_squared"] = torch.zeros_like(p.data)
 
                 ema, ema_squared = state["ema"], state["ema_squared"]
@@ -112,7 +112,7 @@ class Compass(Optimizer):
                 centralization = group["centralization"]
                 state["step"] += 1
 
-                # center the gradient vector
+                # 勾配ベクトルを中心化
                 if centralization != 0:
                     grad.sub_(
                         grad.mean(dim=tuple(range(1, grad.dim())), keepdim=True).mul_(
@@ -120,13 +120,13 @@ class Compass(Optimizer):
                         )
                     )
 
-                # bias correction step size
-                # soft warmup
+                # バイアス補正ステップサイズ
+                # ソフトウォームアップ
                 bias_correction = 1 - beta1 ** state["step"]
                 bias_correction_sqrt = (1 - beta2 ** state["step"]) ** (1 / 2)
                 step_size = lr / bias_correction
 
-                # Decay the first and second moment running average coefficient
+                # 第一および第二モーメントの実行平均係数の減衰
                 # ema = ema + (1 - beta1) * grad
                 ema.mul_(beta1).add_(grad, alpha=1 - beta1)
                 # grad = grad + ema * amplification_factor
@@ -134,12 +134,12 @@ class Compass(Optimizer):
                 # ema_squared = ema + (1 - beta2) * grad ** 2
                 ema_squared.mul_(beta2).addcmul_(grad, grad, value=1 - beta2)
 
-                # lr scaler + eps to prevent zero division
+                # ゼロ除算を防ぐためのlrスケーラー + eps
                 # denom = exp_avg_sq.sqrt() + group['eps']
                 denom = (ema_squared.sqrt() / bias_correction_sqrt).add_(group["eps"])
 
                 if weight_decay != 0:
-                    # Perform stepweight decay
+                    # ステップウェイト減衰を実行
                     p.data.mul_(1 - step_size * weight_decay)
 
                 # p = p - lr * grad / denom
@@ -148,7 +148,7 @@ class Compass(Optimizer):
         return loss
 ```
 
-Now all you need to do is add it inside `train_util.py`:
+あとは`train_util.py`の中に追加するだけです：
 
 ```py
     elif optimizer_type == "AdamW".lower():
@@ -172,7 +172,7 @@ Now all you need to do is add it inside `train_util.py`:
         # 任意のoptimizerを使う
 ```
 
-And now you can your new `LodeW` optimizer when training:
+これで、トレーニング時に新しい`LodeW`オプティマイザーを使用できます：
 
 ```bash
 --optimizer_type=LodeW

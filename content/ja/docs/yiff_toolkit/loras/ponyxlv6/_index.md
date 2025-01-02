@@ -2,19 +2,19 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "Pony Diffusion V6 LoRAs"
-summary: "Pony Diffusion V6 XL is a specialized Stable Diffusion XL model optimized for generating anthropomorphic and feral creature artwork, with particular expertise in the 'My Little Pony' aesthetic. Built on the SDXL architecture, it combines high-resolution output capabilities with precise character generation, supporting both SFW and NSFW content creation. The model excels in maintaining consistent character designs while offering flexibility across various artistic styles, making it a valuable tool for both fan artists and general anthropomorphic content creators. This list contains all the LoRAs I have made for this model."
+title: "Pony Diffusion V6 LoRA集"
+summary: "Pony Diffusion V6 XLは、「マイリトルポニー」の美的感覚を特に重視した、擬人化および獣形のクリーチャーアートワークの生成に特化したStable Diffusion XLモデルです。SDXLアーキテクチャをベースに構築され、高解像度の出力機能と精密なキャラクター生成を組み合わせ、SFWとNSFWの両方のコンテンツ作成をサポートしています。このモデルは、一貫性のあるキャラクターデザインを維持しながら、様々なアーティスティックスタイルに対応する柔軟性を備えており、ファンアーティストや一般的な擬人化コンテンツクリエイターにとって価値のあるツールとなっています。このリストには、このモデル用に作成した全てのLoRAが含まれています。"
 ---
 
 <!--markdownlint-disable MD025 -->
 
-# Pony Diffusion V6 LoRAs
+# Pony Diffusion V6 LoRA集
 
 ---
 
-All LoRAs listed here are actually LyCORIS with the exception of `blue_frost` which is just a regular LoRA. This might be important in case the software you use makes you put them in separate folders or if you are generating from a cute Python script.
+`blue_frost`を除く全てのLoRAは実際にはLyCORISです。これは、使用しているソフトウェアで別のフォルダに配置する必要がある場合や、Pythonスクリプトから生成する場合に重要となる可能性があります。
 
-## LoRAs
+## LoRA一覧
 
 ---
 

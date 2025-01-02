@@ -2,21 +2,21 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "NoobAI LoRAs"
-summary: "NoobAI is a finetune of Illustrious using the full Danbooru and e621 datasets. There are two different versions of the model, one with `eps` and one with `v-prediction`. I'm currently training for the v-pred 0.65S version unless otherwise specified."
+title: "NoobAI LoRA"
+summary: "NoobAIはDanbooruとe621の完全なデータセットを使用したIllustriousのファインチューニングモデルです。モデルには`eps`と`v-prediction`の2つのバージョンがあります。特に指定がない限り、現在v-pred 0.65Sバージョンのトレーニングを行っています。"
 ---
 
 <!--markdownlint-disable MD025 -->
 
-# NoobAI LoRAs
+# NoobAI LoRA
 
 ---
 
-All the LoRAs are trained on one of many versions of the v-pred variant of the model. If you want to be sure which one exactly, your best choice is to check the metadata.
+すべてのLoRAは、モデルのv-pred変種の多くのバージョンのいずれかでトレーニングされています。具体的にどのバージョンを使用しているか確認するには、メタデータをチェックすることをお勧めします。
 
-If you are using the EPS variant, you clearly haven't read Appendix D of [Progressive Distillation for Fast Sampling of Diffusion Models](https://arxiv.org/pdf/2202.00512), I mean, just look at that rotation from the noise to the image! Gorgeous!
+EPSバージョンを使用している場合、明らかに[Progressive Distillation for Fast Sampling of Diffusion Models](https://arxiv.org/pdf/2202.00512)の付録Dを読んでいません。ノイズから画像への回転を見てください！素晴らしいですよね！
 
-## LoRAs
+## LoRA一覧
 
 ---
 
