@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "hld"
-summary: "Hyper Light Drifter is a captivating video game with its vibrant, pixel art style that blends retro aesthetics with modern design elements. This LoRA was trained on a bunch of screenshots from the game."
+summary: "Hyper Light Drifterは、レトロな美学と現代的なデザイン要素を融合した鮮やかなピクセルアートスタイルが特徴的な魅力的なビデオゲームです。このLoRAはゲームのスクリーンショットを使用して学習されました。"
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->
@@ -12,31 +12,31 @@ summary: "Hyper Light Drifter is a captivating video game with its vibrant, pixe
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-The art style of Hyper Light Drifter is a vibrant, pixelated masterpiece that evokes nostalgia for classic 16-bit games. It features a rich color palette with neon hues and contrasting shades, creating a visually striking and immersive world. The environments are detailed with intricate pixel art, blending futuristic and natural elements seamlessly. The use of lighting and shadows adds depth and atmosphere, enhancing the overall aesthetic. Characters and creatures are designed with a minimalist yet expressive approach, contributing to the game's unique and memorable visual identity. This LoRA was trained on a bunch of screenshots from the game.
+Hyper Light Drifterのアートスタイルは、クラシックな16ビットゲームへのノスタルジーを呼び起こす、鮮やかなピクセル化された傑作です。ネオンカラーと対照的な色調を特徴とする豊かなカラーパレットを使用し、視覚的に印象的で没入感のある世界を作り出しています。環境は緻密なピクセルアートで描かれ、未来的な要素と自然な要素がシームレスに融合しています。光と影の使用により、深みと雰囲気が加わり、全体的な美的効果が高められています。キャラクターと生物はミニマルでありながら表現力豊かなアプローチでデザインされ、ゲーム独自の印象的な視覚的アイデンティティに貢献しています。このLoRAはゲームのスクリーンショットを使用して学習されました。
 
-## Content
-
----
-
-[⬇️ LoRA Download (241 MB)](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/hld/hld-v1e400.safetensors)
-
-[📐 Dataset](https://huggingface.co/datasets/k4d3/hld)
-
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/hld/hld-v1e400.json)
-
-## Prompting Guide
+## コンテンツ
 
 ---
 
-Keyword: `hld, pixel art`
+[⬇️ LoRAダウンロード (241 MB)](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/hld/hld-v1e400.safetensors)
 
-The score tags might or might not help you!
+[📐 データセット](https://huggingface.co/datasets/k4d3/hld)
 
-## Example Workflow
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit7/resolve/main/pony/hld/hld-v1e400.json)
+
+## プロンプトガイド
+
+---
+
+キーワード: `hld, pixel art`
+
+スコアタグは役立つかもしれませんし、役立たないかもしれません！
+
+## 使用例のワークフロー
 
 ---
 
@@ -49,7 +49,7 @@ The score tags might or might not help you!
   grid="true"
 >}}
 
-## Example Images
+## サンプル画像
 
 ---
 
@@ -61,7 +61,7 @@ The score tags might or might not help you!
       blurhash="LBE2q,%#M[?b^m4.4TwcE1RjR%V?"
       width="832"
       height="1216"
-      alt="This is an anthropomorphic digital drawing featuring a muscular male wolf character with white fur and piercing green eyes. He stands confidently in front of tall wooden bookshelves filled with various colorful books. The background suggests a library setting illuminated by soft purple light streaming through windows. The wolf wears a large dark purple wizard's hat adorned with gold accents complementing his matching robe that has red trimmings and features a prominent golden pendant around its neck. His left paw is extended forward as if casting magic or beckoning someone closer. Claws peek out from under his fingers adding to the magical aura. This vibrant artwork combines elements of fantasy and adventure creating a dynamic scene full of intrigue and mystique."
+      alt="これは白い毛皮と鋭い緑色の目を持つ筋肉質な雄のオオカミのキャラクターを特徴とする人型デジタルドローイングです。彼は様々なカラフルな本が並ぶ背の高い木製の本棚の前に自信を持って立っています。背景は窓から差し込む柔らかい紫色の光に照らされた図書館の設定を示唆しています。オオカミは金色のアクセントで飾られた大きな濃い紫色の魔法使いの帽子をかぶり、赤いトリミングと首の周りに目立つ金色のペンダントが特徴的なマッチングするローブを着ています。左の手は魔法を唱えているか、誰かを近づけるように前に伸ばされています。指の下から爪が覗き、魔法の雰囲気を醸し出しています。この鮮やかなアートワークはファンタジーと冒険の要素を組み合わせ、謎と神秘に満ちたダイナミックなシーンを作り出しています。"
       grid="true"
     >}}
     </a>
@@ -71,7 +71,7 @@ The score tags might or might not help you!
       blurhash="LNEfQxeRMwMe*JM{M^MeBfnUo2sp"
       width="832"
       height="1216"
-      alt="This is a digital drawing featuring an anthropomorphic (anthro) white-furred wolf character in a fantasy setting. The wolf stands upright on two legs with human-like posture. He has sharp green eyes pointed ears and wears a wide-brimmed purple wizard hat adorned with intricate patterns along its brim. His facial expression shows a confident smirk revealing his canine teeth. The wolf dons a dark gray tunic underneath a voluminous flowing magenta cloak that drapes over one shoulder. Around his neck hangs a gold necklace with a large red gemstone pendant. In his right hand he holds a small orange book while his left arm extends outward as if gesturing or casting a spell. He appears to be inside what looks like a grand library filled with tall wooden shelves laden with books. Through large arched windows behind him there's a scenic view of a bright blue sky dotted with fluffy clouds and distant mountains. Outside another smaller figure can be seen walking away from the window adding depth to the scene. The art style features vibrant colors clean lines and detailed shading typical of modern digital illustrations."
+      alt="これはファンタジー設定における人型（アンスロ）の白い毛皮のオオカミキャラクターを特徴とするデジタルドローイングです。オオカミは人間のような姿勢で二本足で立っています。彼は鋭い緑色の目、尖った耳を持ち、縁に複雑な模様が施された幅広の紫色の魔法使いの帽子をかぶっています。彼の表情は犬歯を見せる自信に満ちた笑みを浮かべています。オオカミは片方の肩に流れるようなマゼンタ色のマントの下に濃いグレーのチュニックを着ています。首には大きな赤い宝石のペンダントが付いた金のネックレスをかけています。右手には小さなオレンジ色の本を持ち、左腕は魔法を唱えるかジェスチャーをするように伸ばしています。彼は本で一杯の背の高い木製の棚がある大きな図書館の中にいるように見えます。彼の後ろにある大きなアーチ型の窓からは、ふわふわした雲が浮かぶ明るい青空と遠くの山々の景色が見えます。外には別の小さな人物が窓から離れて歩いているのが見え、シーンに奥行きを加えています。アートスタイルは現代のデジタルイラストに典型的な、鮮やかな色使い、クリーンなライン、詳細な陰影を特徴としています。"
       grid="true"
     >}}
     </a>
@@ -86,7 +86,7 @@ The score tags might or might not help you!
       blurhash="LNGQ|]j[8zsXq,oMO:jb5NayXMbH"
       width="1536"
       height="1536"
-      alt="This is a digital drawing featuring an anthropomorphic white-furred wolf with green eyes standing in front of a vibrant purple forest background. The character has a muscular build and wears a black witch's hat tilted slightly forward over one eye. A dark purple cape drapes around his shoulders billowing behind him like he’s walking through wind. His tongue hangs out playfully from his open-mouthed grin as he looks directly at the viewer. The wolf stands on two legs fully exposing his genitalia—his erect penis is prominently displayed between his parted thighs. His paws rest gently against each other near his chest while his bushy tail curls upwards behind him. Surrounding the central figure tall trees with thick trunks dominate the scene; their foliage forms dense clusters that create a rich tapestry of deep purples and magentas under a soft pinkish sky. The ground beneath the wolf appears lush and grassy adding texture and depth to the setting. Shadows cast by unseen objects frame the lower part of the image contributing to the mystical atmosphere. This piece combines elements of fantasy art with furry fandom aesthetics."
+      alt="これは鮮やかな紫色の森を背景に立つ緑色の目を持つ人型の白い毛皮のオオカミを特徴とするデジタルドローイングです。キャラクターは筋肉質な体格で、片目の上に少し前に傾いた黒い魔女の帽子をかぶっています。濃い紫色のマントが肩の周りにドレープし、風を通り抜けているかのように後ろになびいています。視聴者を直接見つめながら、開いた口から舌が遊び心たっぷりに垂れ下がっています。オオカミは二本足で立ち、股間の間に勃起したペニスを露わにしています。胸の近くで手のひらを優しく合わせ、後ろで尾が上向きにカールしています。中心的な人物の周りには、太い幹を持つ背の高い木々が場面を支配し、その葉は柔らかいピンク色の空の下で深い紫色とマゼンタ色の豊かなタペストリーを形成しています。オオカミの下の地面は豊かで草が生い茂っており、設定に質感と深みを加えています。見えない物体によって投げかけられる影が画像の下部を縁取り、神秘的な雰囲気に貢献しています。この作品はファンタジーアートとファーリーファンダムの美学を組み合わせています。"
       grid="true"
     >}}
     </a>
@@ -96,7 +96,7 @@ The score tags might or might not help you!
       blurhash="LIHTnK}^}v5hnmIU9F%g5OIUE0%M"
       width="1536"
       height="1536"
-      alt="This is a digital drawing in an anime-inspired style featuring an anthropomorphic canine character with predominantly white fur and vibrant purple clothing. The figure stands facing left against a dramatic backdrop of pinkish-purple clouds illuminated by bright lightning bolts cutting through them. The character has striking green eyes and wears a large pointed wizard hat that matches their cloak. Their right hand extends outward as if casting magic or summoning something from thin air. The cloaked garment appears flowing due to some wind effect suggesting movement even though there's no visible breeze. The background depicts silhouettes of tall pine trees at the bottom edge of the scene adding depth to the setting which seems like a magical forest during twilight or early evening. There’s an overall pixelated texture overlay across the entire artwork giving it a retro video game aesthetic reminiscent of classic RPGs or adventure games. This stylistic choice enhances the mystical atmosphere further. No other characters or objects are present within the frame. The composition focuses on the central figure emphasizing its majestic posture and fantastical elements."
+      alt="これはアニメ風のスタイルで描かれたデジタルドローイングで、主に白い毛皮と鮮やかな紫色の衣装を特徴とする人型の犬のキャラクターを描いています。人物は、それらを貫く明るい稲妻で照らされたピンクがかった紫色の雲の劇的な背景に向かって左向きに立っています。キャラクターは印象的な緑色の目を持ち、マントと同じ色の大きな尖った魔法使いの帽子をかぶっています。右手は魔法を唱えているか、空中から何かを召喚しているかのように伸ばされています。マントのような衣装は、目に見える風がないにもかかわらず、動きを示唆するような風効果で流れているように見えます。背景には、シーンの下端に背の高い松の木のシルエットが描かれており、黄昏時か夕方早くの魔法の森のような設定に深みを加えています。アートワーク全体にピクセル化されたテクスチャのオーバーレイがあり、クラシックなRPGやアドベンチャーゲームを思わせるレトロなビデオゲームの美学を与えています。このスタイルの選択は神秘的な雰囲気をさらに高めています。フレーム内に他のキャラクターや物体は存在しません。構図は中心的な人物に焦点を当て、その威厳のある姿勢とファンタジックな要素を強調しています。"
       grid="true"
     >}}
     </a>
@@ -111,7 +111,7 @@ The score tags might or might not help you!
       blurhash="LIEMh8Xl8yVFUZWBj;ogngozXMR6"
       width="1536"
       height="1536"
-      alt="This is a digital drawing in an anime-inspired style featuring an anthropomorphic Arctic Fox character with striking features. The subject has pristine white fur large expressive green eyes and wears a dark purple wizard hat adorned with a small golden band around its base. A matching deep purple cloak drapes over his shoulders adding a sense of mystique and adventure. The background consists of a vibrant gradient transitioning from teal to cyan hues interspersed with abstract geometric shapes resembling diamonds or crystals that add depth and visual interest without detracting attention from the central figure. On either side of the fox's head there are vertical structures made up of similar diamond patterns in darker shades of blue and violet enhancing the magical theme. The overall color palette is rich and saturated contributing to a fantastical atmosphere. Textures within the drawing include smooth shading on the fox’s fur and more detailed brushstrokes on the clothing folds creating a dynamic yet harmonious composition. This artwork captures both whimsy and charm through meticulous detail and bold use of colors and forms."
+      alt="これはアニメ風のスタイルで描かれた印象的な特徴を持つ人型のホッキョクギツネのキャラクターを特徴とするデジタルドローイングです。主人公は純白の毛皮、大きな表情豊かな緑色の目を持ち、基部に小さな金のバンドで飾られた濃い紫色の魔法使いの帽子をかぶっています。マッチする深い紫色のマントが肩にかかり、神秘と冒険の感覚を加えています。背景は、ティールからシアンの色調へのグラデーションで構成され、ダイヤモンドや結晶に似た抽象的な幾何学的形状が散りばめられており、中心的な人物から注意をそらすことなく深みと視覚的な興味を加えています。キツネの頭の両側には、青と紫の暗い色調で同様のダイヤモンドパターンで構成された垂直の構造があり、魔法的なテーマを強調しています。全体的なカラーパレットは豊かで彩度が高く、ファンタジックな雰囲気に貢献しています。描画内のテクスチャには、キツネの毛皮の滑らかな陰影と、衣服の襞のより詳細なブラシストロークが含まれ、ダイナミックでありながら調和のとれた構図を作り出しています。このアートワークは、緻密なディテールと大胆な色と形の使用を通じて、遊び心と魅力の両方を捉えています。"
       grid="true"
     >}}
     </a>
@@ -121,7 +121,7 @@ The score tags might or might not help you!
       blurhash="LME1wLoe-qoeI=j[EMay4mWBE1ay"
       width="1536"
       height="1536"
-      alt="This is a digital illustration featuring an anthropomorphic dark grey wolf with piercing red eyes gazing directly forward towards the viewer. The character has sharp white fangs visible in its open mouth contributing to a menacing appearance. A glowing halo floats above its head adding a surreal element to the scene. The wolf's physique is highly muscular emphasizing power and strength. Its ears stand erect against a backdrop that transitions from deep purples and pinks near the horizon to darker shades as it rises upwards. Below the creature’s outstretched arms float numerous small pink boats on what appears to be a reflective body of water or mirror-like surface which creates ripples around them. In terms of style the artwork employs bold lines and vibrant colors typical of modern graphic art likely inspired by anime or video game aesthetics. The sky features fluffy clouds scattered across a gradient sunset-colored sky enhancing the dramatic atmosphere. This piece captures both the ethereal and intimidating aspects of the subject through meticulous attention to detail and contrasting color schemes. There are no other objects or characters present in the image."
+      alt="これは視聴者に向かって直接見つめる鋭い赤い目を持つ人型の濃いグレーのオオカミを特徴とするデジタルイラストです。キャラクターは開いた口に白い牙が見え、威圧的な外見に貢献しています。頭上には光る後光が浮かび、シーンにシュールな要素を加えています。オオカミの体格は非常に筋肉質で、力強さと強さを強調しています。その耳は、地平線付近の深い紫色とピンク色から上に向かってより暗い色調に移行する背景に対して直立しています。生き物の伸ばされた腕の下には、反射する水面や鏡のような表面に多数の小さなピンク色のボートが浮かんでおり、それらの周りに波紋を作り出しています。スタイルの面では、アートワークはアニメやビデオゲームの美学に影響を受けた現代のグラフィックアートに典型的な太い線と鮮やかな色を採用しています。空にはグラデーションの夕暮れ色の空に散りばめられたふわふわした雲があり、劇的な雰囲気を高めています。この作品は、緻密なディテールと対照的な配色を通じて、主題の神秘的で威圧的な側面の両方を捉えています。画像には他の物体やキャラクターは存在しません。"
       grid="true"
     >}}
     </a>
@@ -136,7 +136,7 @@ The score tags might or might not help you!
       blurhash="LPF=F2_N,]9sLJpbE0m-yCaeMdIA"
       width="2704"
       height="896"
-      alt="This is an anime-style digital drawing featuring an anthropomorphic character with a dark blue-black skin tone and white claws on their hands and feet. The figure has sharp fangs protruding from its mouth and wears a futuristic armor-like outfit in shades of grey and navy-blue with glowing accents. A prominent feature is two large horns curving back from the head. In one hand it holds up a massive sword emitting bright cyan energy sparks along the blade's length; the other arm extends outward as if ready for battle. The background showcases a vividly colored sky transitioning from deep purple at the top to pinkish hues near the horizon dotted with stylized clouds that resemble puffy cotton candy. This contrasts sharply against the intense scene presented by the character. There’s no visible ground or landscape beneath the character suggesting they might be floating or standing atop something unseen. Overall the artwork combines elements of fantasy and sci-fi genres creating a dynamic and visually striking composition."
+      alt="これは濃い青黒い肌色と手足に白い爪を持つ人型キャラクターを特徴とするアニメ風のデジタルドローイングです。人物は口から鋭い牙が突き出ており、グレーとネイビーブルーの色調で光るアクセントが特徴的な未来的なアーマーのような衣装を着ています。目立つ特徴として、頭から後ろに曲がる2本の大きな角があります。片手には刃に沿って明るいシアン色のエネルギーの火花を放つ巨大な剣を掲げ、もう一方の腕は戦闘準備のように伸ばされています。背景は、上部の深い紫色から地平線付近のピンクがかった色調へと移行する鮮やかな色の空を示し、綿あめのような様式化された雲が点在しています。これはキャラクターが表現する激しいシーンと鋭いコントラストを成しています。キャラクターの下に見える地面や風景がないことは、彼らが浮いているか、見えない何かの上に立っていることを示唆しています。全体として、このアートワークはファンタジーとSFのジャンルの要素を組み合わせ、ダイナミックで視覚的に印象的な構図を作り出しています。"
       grid="true"
     >}}
     </a>

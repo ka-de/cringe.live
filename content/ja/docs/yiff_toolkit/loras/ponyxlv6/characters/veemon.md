@@ -2,30 +2,30 @@
 weight: 1
 bookFlatSection: false
 bookToC: false
-title: "veemon"
-summary: "Veemon is a small, blue, dragon-like Digimon with a white belly, a horn on its nose, and a yellow “V”-shaped mark on its forehead."
+title: "ブイモン"
+summary: "ブイモンは、白い腹部、鼻に角、額に黄色い「V」字型のマークがある小さな青いドラゴン型デジモンです。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
 
-# veemon-v1e400
+# ブイモン-v1e400
 
 ---
 
-## Introduction
+## はじめに
 
-Veemon is a humanoid, lizard-like creature standing about 2-feet tall. It has predominantly blue skin, contrasted by a white belly and mouth. Veemon's head is large and roughly spherical, with two conical, fleshy appendages attached to the back, possibly serving as ears. A distinctive feature of Veemon is a small horn that protrudes where its nose would be. It also has red eyes and a yellow "V"-shaped mark on its forehead. This unique appearance contributes to Veemon's charm and recognizability in the Digimon universe.
+ブイモンは、身長約60センチメートルの人型トカゲのような生物です。主に青い肌をしており、腹部と口は白色です。ブイモンの頭は大きく球形で、後ろには耳として機能する可能性のある2つの円錐形の肉質の付属物があります。ブイモンの特徴的な点は、鼻の位置に突き出た小さな角です。また、赤い目と額には黄色い「V」字型のマークがあります。このユニークな外見が、デジモンの世界におけるブイモンの魅力と認識性に貢献しています。
 
-## Content
+## コンテンツ
 
 ---
 
-[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/veemon-v1e400.safetensors?download=true)
+[⬇️ LoRAダウンロード (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/veemon-v1e400.safetensors?download=true)
 
-[⬇️ Shrunk LoRA Download (45.7MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/veemon-v1e400_frockpt1_th-3.55.safetensors?download=true)
+[⬇️ 縮小版LoRAダウンロード (45.7MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/veemon-v1e400_frockpt1_th-3.55.safetensors?download=true)
 
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/veemon)
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/veemon)
 
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/veemon-v1e400.json)
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/veemon-v1e400.json)

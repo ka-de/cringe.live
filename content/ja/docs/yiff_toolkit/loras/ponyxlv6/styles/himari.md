@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "himari"
-summary: "A tiny LoRA trained on 4 images by [@147Penguinmw](https://twitter.com/147Penguinmw)."
+summary: "[@147Penguinmw](https://twitter.com/147Penguinmw)による4枚の画像で学習した小規模なLoRA。"
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
@@ -12,47 +12,47 @@ summary: "A tiny LoRA trained on 4 images by [@147Penguinmw](https://twitter.com
 
 ---
 
-## Introduction
+## はじめに
 
 ---
 
-A tiny LoRA trained on 4 images by [@147Penguinmw](https://twitter.com/147Penguinmw).
+[@147Penguinmw](https://twitter.com/147Penguinmw)による4枚の画像で学習した小規模なLoRAです。
 
-Himari’s art style is a captivating blend of anime influences with plenty of cultural touches ranging from Japanese attires to the setting. Combined with an excellent shading technique and clean lines and the use of vibrant colors.
+ひまりのアートスタイルは、日本の衣装や背景など、文化的な要素を豊富に取り入れたアニメの影響を受けた魅力的なブレンドです。優れたシェーディング技法、クリーンな線、鮮やかな色使いが特徴です。
 
-## Content
-
----
-
-[⬇️ LoRA Download (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/by_himari-v1e400.safetensors?download=true)
-
-[⬇️ Shrunk LoRA Download (48.2MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_himari-v1e400_frockpt1_th-3.55.safetensors?download=true)
-
-[🖼️ Sample Images with Metadata](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
-
-[📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_himari)
-
-[📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/by_himari-v1e400.json)
-
-## Prompting Guide
+## コンテンツ
 
 ---
 
-Keyword:
+[⬇️ LoRAダウンロード (229MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras/by_himari-v1e400.safetensors?download=true)
+
+[⬇️ 圧縮版LoRAダウンロード (48.2MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/by_himari-v1e400_frockpt1_th-3.55.safetensors?download=true)
+
+[🖼️ メタデータ付きサンプル画像](https://huggingface.co/k4d3/yiff_toolkit/tree/main/static/{})
+
+[📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/by_himari)
+
+[📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/by_himari-v1e400.json)
+
+## プロンプトガイド
+
+---
+
+キーワード：
 
 - `by himari`
 
-I recommend starting `1024x1024` at `11.0` CFG with `Euler a` and then do a second pass on it at `1536x1536` with CFG at `6.0` with the denoise between `0.60` and `0.69` either with `Euler a` or `DPM++ 2M Karras`.
+推奨設定として、まず`1024x1024`でCFG `11.0`、`Euler a`で生成し、その後`1536x1536`でCFG `6.0`、デノイズを`0.60`から`0.69`の間で設定し、`Euler a`または`DPM++ 2M Karras`を使用して二度目の生成を行うことをお勧めします。
 
-### Example Prompt
+### プロンプト例
 
 > `score_9, score_8_up, score_7_up, score_6_up, source_furry, rating_explicit, on back, sexy pose, full-length portrait, pussy, solo, reptile, scalie, anthro female lizard, scales, blush, blue eyes, white body, blue body, plant, blue scales, white scales, detailed background, looking at viewer, furniture, digital media \(artwork\), This digital artwork image presents a solo anthropomorphic female reptile specifically a lizard with a white body adorned with detailed blue scales.,`
 
-### Suggested Negative
+### 推奨ネガティブプロンプト
 
-The LoRA is extremely biased towards `blurry background` and `two tone body`.
+このLoRAは`blurry background`（ぼやけた背景）と`two tone body`（二色の体）に強いバイアスがかかっています。
 
-## Example Images
+## サンプル画像
 
 ---
 
@@ -64,7 +64,7 @@ The LoRA is extremely biased towards `blurry background` and `two tone body`.
         blurhash="LIJ%Xu$QSz5QF?M|S}tQ~oM{E2-o"
         width="1024"
         height="1024"
-        alt="Anthropomorphic pink-scaled female dragon with large horns lounging on couch wearing loose blue plaid shirt draped off shoulder black thigh-high socks holding a small book with both hands. Background features green houseplants against light-colored walls. The character has visible vulva medium-sized breasts blushing expression while gazing directly at the viewer. Digital art style with detailed shading and textures."
+        alt="ソファーでくつろぐピンクの鱗を持つ人型ドラゴンの女性。大きな角があり、肩から緩く垂れ下がった青いチェックシャツと黒いニーハイソックスを着用。両手で小さな本を持っている。背景には明るい壁に緑の観葉植物。キャラクターは外陰部と中程度の大きさの胸が見え、頬を赤らめて視聴者を直接見つめている。詳細なシェーディングとテクスチャーを持つデジタルアート。"
         grid="true"
       >}}
     </a>
@@ -74,7 +74,7 @@ The LoRA is extremely biased towards `blurry background` and `two tone body`.
         blurhash="LGD,fY_2m,S}~A%L%#NG$i%1IVH?"
         width="1536"
         height="1536"
-        alt="This digital illustration depicts an anthropomorphic turquoise-scaled dragon woman lounging seductively on a red couch with white cushions. She has light green hair styled into twin tails wears casual beige shirt and dark pants which she's pulling down slightly revealing her genitals. Her tail curls around her body while one hand rests suggestively over her exposed vulva. The setting includes large windows framed by lush greenery outside creating a serene backdrop. The art style is detailed with smooth shading and highlights typical of high-quality fantasy illustrations. This piece appears inspired by furry or anthro genres often found within online artistic communities."
+        alt="白いクッションが置かれた赤いソファーで誘惑的にくつろぐターコイズ色の鱗を持つドラゴンの女性。ツインテールの薄緑色の髪で、カジュアルなベージュのシャツと暗色のパンツを着用。パンツを少し下げて性器を露出している。尾は体の周りに巻きつき、片手は露出した外陰部の上に置かれている。背景には大きな窓があり、外には豊かな緑が見える。滑らかなシェーディングとハイライトが特徴的な詳細なアートスタイル。"
         grid="true"
       >}}
     </a>
@@ -88,7 +88,7 @@ The LoRA is extremely biased towards `blurry background` and `two tone body`.
         blurhash="LMJ7q9^jD$~o$d-Pr;-p9GM{%2My"
         width="1400"
         height="1400"
-        alt="Anthropomorphic Samoyed character with white fur wearing a purple wizard hat adorned with a gold star emblem and matching cloak lined with brown trimmings. The character has striking green eyes and wears an amulet around their neck. They're posing playfully against a backdrop of wooden bookshelves filled with colorful books suggesting a magical or library setting. This digital artwork features vibrant colors and detailed shading."
+        alt="金色の星の紋章が付いた紫の魔法使いの帽子と茶色の縁取りのある同色のマントを着た白毛のサモエド。鮮やかな緑の目をしており、首にはアミュレットを着用。カラフルな本が並ぶ木製の本棚を背景に、遊び心のあるポーズをとっている。鮮やかな色使いと詳細なシェーディングが特徴的なデジタルアートワーク。"
         grid="true"
       >}}
     </a>
@@ -98,7 +98,7 @@ The LoRA is extremely biased towards `blurry background` and `two tone body`.
         blurhash="LSH_MIsk%KxZ_MM}I=Rl~ARkM|Rj"
         width="1536"
         height="1536"
-        alt="This digital artwork features an anthropomorphic otter character sitting among lush green foliage with hanging vines. The otter has light brown fur short spiky hair bright blue eyes and wears a black hoodie over a white T-shirt paired with blue jeans and sneakers. He sits cross-legged one hand adjusting his glasses while gazing directly at the viewer. His expression is friendly and relaxed. The scene appears to be set outdoors under soft sunlight filtering through leaves above him. This piece showcases detailed textures and shading characteristic of modern furry art styles."
+        alt="豊かな緑の葉と垂れ下がるつるに囲まれて座る人型カワウソのキャラクター。薄茶色の毛皮と短い尖った髪、明るい青い目をしており、白いTシャツの上に黒いパーカー、青いジーンズとスニーカーを着用。あぐらをかいて座り、片手で眼鏡を調整しながら視聴者を直接見つめている。表情はフレンドリーでリラックスしている。上からの柔らかな日差しが葉を通して差し込む屋外のシーン。現代のファーリーアートスタイルの特徴である詳細なテクスチャーとシェーディングが見られる。"
         grid="true"
       >}}
     </a>
@@ -112,7 +112,7 @@ The LoRA is extremely biased towards `blurry background` and `two tone body`.
         blurhash="LPJ%RA}=0gD*$~JAOYt6Y5s.#RoI"
         width="1400"
         height="1400"
-        alt="A digital illustration depicting an anthropomorphic male fox with orange and white fur reclining seductively on a bed. He has muscular arms legs crossed showcasing his erect penis and visible testicles. His expression is inviting as he looks directly at the viewer. The room features green potted plants on shelves against beige walls. The bedding includes teal stripes. This artwork combines eroticism with detailed character design focusing on the fox's anatomy and pose."
+        alt="ベッドで誘惑的に横たわるオレンジと白の毛皮を持つ人型オスのキツネを描いたデジタルイラスト。筋肉質な腕を持ち、足を組んで勃起したペニスと睾丸を見せている。視聴者を直接見つめる誘うような表情。部屋にはベージュの壁に棚があり、緑の鉢植えが置かれている。ベッドリネンには青緑のストライプが入っている。このアートワークは、キツネの解剖学的特徴とポーズに焦点を当てたエロティシズムと詳細なキャラクターデザインを組み合わせている。"
         grid="true"
       >}}
     </a>
