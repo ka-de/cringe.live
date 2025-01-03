@@ -4,10 +4,10 @@ bookCollapseSection: false
 bookToC: false
 title: Bevezetés
 type: docs
-summary: "Dokumentációk"
+summary: "Dokumentációim"
 aliases:
-  - /docs/
-  - /docs
+  - /hu/docs/
+  - /hu/docs
 ---
 
 <!-- markdownlint-disable MD025 -->
@@ -16,7 +16,7 @@ aliases:
 
 ---
 
-Üdv a Yiff Toolkit dokumentációjában! Itt megtalálsz mindent, amire szükséged lehet. Használd a menüt a különböző részek közötti navigáláshoz.
+Ez a dokumentációs oldalak gyökere. Kérlek, használd a menüt a megfelelő szekcióhoz való navigáláshoz.
 
 ## Kategóriák
 

@@ -7,6 +7,10 @@ outputs: [HTML, RSS, JSON]
 aliases:
   - /about/
   - /about
+  - /en/about/
+  - /en/about
+  - /en/
+  - /en
 ---
 
 <!-- markdownlint-disable MD009 MD025 MD033 -->

@@ -3,6 +3,15 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "LyCORIS Darabolás"
+aliases:
+  - /hu/docs/yiff_toolkit/lora_training/LyCORIS Darabolás
+  - /hu/docs/yiff_toolkit/lora_training/LyCORIS Darabolás/
+  - /docs/yiff_toolkit/lora_training/LyCORIS Darabolás
+  - /docs/yiff_toolkit/lora_training/LyCORIS Darabolás/
+  - /hu/docs/yiff_toolkit/lora_training/LyCORIS_Chopping
+  - /hu/docs/yiff_toolkit/lora_training/LyCORIS_Chopping/
+  - /hu/docs/yiff_toolkit/lora_training/LyCORIS-Chopping
+  - /hu/docs/yiff_toolkit/lora_training/LyCORIS-Chopping/
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -66,4 +75,4 @@ A vektor karakterláncok 0-tól 1-ig terjedő értékekkel szabályozzák, hogy 
 | Stílus Átvitel | `1,0,0,0,0,0,0,0,1,0,0,0,1,1,1,0,0,0,0,0,0` |
 | Ringdingding (Stoat) | `1,0,0,0,0,0,0,0,1,0,0,1,1,1,1,0,0,0,0,0,0` |
 | Garfield (Karakter+Stílus) | `1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0` |
-| Rutkowski | `1,1,1,1,1,1,0,1,1,0,0,0,1,1,1,1,1,1,1,1,1` | 
+| Rutkowski | `1,1,1,1,1,1,0,1,1,0,0,0,1,1,1,1,1,1,1,1,1` |

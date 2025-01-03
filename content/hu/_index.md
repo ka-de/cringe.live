@@ -5,11 +5,13 @@ layout: home
 bookToC: false
 outputs: [HTML, RSS, JSON]
 aliases:
-  - /about/
-  - /about
+  - /hu/about/
+  - /hu/about
+  - /hu/
+  - /hu
 ---
 
-<!-- markdownlint-disable MD009 MD025 MD033 -->
+<!-- markdownlint-disable MD009 MD025 MD033 MD026 -->
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
   <div style="flex: 1 1 300px; min-width: 0;">
@@ -173,4 +175,4 @@ aliases:
 
 **Oldal Hírek:**
 
-- Írtam a [ComfyUI Betöltési Idejének Optimalizálásáról](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times) is. 
+- Írtam a [ComfyUI Betöltési Idejének Optimalizálásáról](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times) is.

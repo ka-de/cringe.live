@@ -5,12 +5,12 @@ bookToC: true
 title: "ComfyUI-Custom-Scripts"
 summary: ""
 aliases:
-  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/
-  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts
-  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI Custom Scripts/
-  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI Custom Scripts
-  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_Custom_Scripts/
-  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_Custom_Scripts
+  - /hu/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/
+  - /hu/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts
+  - /hu/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI Custom Scripts/
+  - /hu/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI Custom Scripts
+  - /hu/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_Custom_Scripts/
+  - /hu/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_Custom_Scripts
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->
