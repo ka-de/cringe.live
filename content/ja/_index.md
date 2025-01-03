@@ -1,7 +1,9 @@
 ---
 title: サイトについて
 type: docs
+layout: home
 bookToC: false
+outputs: [HTML, RSS, JSON]
 ---
 
 <!-- markdownlint-disable MD009 MD025 MD033 -->

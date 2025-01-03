@@ -1,7 +1,9 @@
 ---
 title: About
 type: docs
+layout: home
 bookToC: false
+outputs: [HTML, RSS, JSON]
 aliases:
   - /about/
   - /about

@@ -30,6 +30,12 @@ languages:
     contentDir: "content/ja"
     title: "CRINGE.LIVE"
     weight: 2
+  hu:
+    languageCode: "hu-HU"
+    languageName: "Magyar"
+    contentDir: "content/hu"
+    title: "CRINGE.LIVE"
+    weight: 3
 
 markup:
   highlight:
