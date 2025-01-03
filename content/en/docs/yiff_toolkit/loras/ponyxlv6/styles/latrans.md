@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "latrans"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/latrans/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/latrans
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

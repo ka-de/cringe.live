@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "eldritch"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/flux/styles/eldritch/
+  - /docs/yiff_toolkit/loras/flux/styles/eldritch
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

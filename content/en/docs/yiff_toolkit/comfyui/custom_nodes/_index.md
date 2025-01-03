@@ -3,6 +3,9 @@ weight: 1
 bookFlatSection: false
 bookToC: true
 title: "Custom Nodes"
+aliases:
+  - /docs/yiff_toolkit/comfyui/custom_nodes/
+  - /docs/yiff_toolkit/comfyui/custom_nodes
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->

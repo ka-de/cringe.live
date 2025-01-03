@@ -2,6 +2,10 @@
 title: About
 type: docs
 bookToC: false
+aliases:
+  - /about/
+  - /about
+  - /
 ---
 
 <!-- markdownlint-disable MD009 MD025 MD033 -->
