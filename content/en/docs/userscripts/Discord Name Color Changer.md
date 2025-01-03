@@ -5,6 +5,9 @@ bookCollapseSection: false
 bookToC: false
 title: "Discord Name Color Changer"
 summary: "Replaces specific username colors with new ones on a Discord channel by observing and modifying the DOM."
+aliases:
+  - /docs/userscripts/Discord Name Color Changer/
+  - /docs/userscripts/Discord Name Color Changer
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
