@@ -76,7 +76,7 @@ aliases:
 
 <div id="quote-container"></div>
 
-<script src="js/quotes.js"></script>
+<script src="/js/quotes.js"></script>
 
 ## Site News
 
