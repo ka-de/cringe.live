@@ -28,7 +28,7 @@ aliases:
 ```json
 {
     "name": "Horváth Balázs",
-    "birthDay": "1990-05-17",
+    "birthDay": "1990.05.17",
     "❤️": [
       "🧠 Gépi Tanulás",
       "🎮 Videójáték Fejlesztés",

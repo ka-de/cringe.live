@@ -25,7 +25,7 @@ outputs: [HTML, RSS, JSON]
 ```json
 {
     "name": "Balazs Horvath",
-    "birthDay": "1990-05-17",
+    "birthDay": "1990年5月17日",
     "❤️": [
       "🧠 機械学習",
       "🎮 ゲーム開発",
