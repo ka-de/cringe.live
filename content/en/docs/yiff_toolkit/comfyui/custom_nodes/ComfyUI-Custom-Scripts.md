@@ -7,6 +7,10 @@ summary: ""
 aliases:
   - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/
   - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI Custom Scripts/
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI Custom Scripts
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_Custom_Scripts/
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_Custom_Scripts
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->
@@ -20,7 +24,6 @@ A bunch of useful and less useful custom nodes and features by pythongosssss.
 ## Text Autocomplete
 
 ---
-
 
 <div style="text-align: center;">
     <video style="width: 100%;" autoplay loop muted playsinline>
