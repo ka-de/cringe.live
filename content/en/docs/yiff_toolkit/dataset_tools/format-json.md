@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🦀 format-json"
 summary: "Formats JSON files from single-line to multi-line format using `serde_json`."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/format-json
+  - /docs/yiff_toolkit/dataset_tools/format-json/
+  - /docs/yiff_toolkit/dataset_tools/Format JSON/
+  - /docs/yiff_toolkit/dataset_tools/Format JSON
 ---
 
 <!--markdownlint-disable MD025 -->

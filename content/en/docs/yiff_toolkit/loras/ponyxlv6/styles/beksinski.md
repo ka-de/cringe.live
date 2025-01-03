@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "beksinski"
 summary: "Zdzisław Beksiński’s art style is characterized by its hauntingly surreal landscapes, filled with eerie, dystopian imagery and a profound sense of desolation."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/beksinski/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/beksinski
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

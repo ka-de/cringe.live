@@ -5,6 +5,11 @@ bookToC: false
 bookHidden: true
 title: "⚡ Get-Seed"
 summary: "Retrieves the `ss_seed` value from the metadata of a `.safetensors` file."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/get-seed
+  - /docs/yiff_toolkit/dataset_tools/get-seed/
+  - /docs/yiff_toolkit/dataset_tools/Get Seed/
+  - /docs/yiff_toolkit/dataset_tools/Get Seed
 ---
 
 <!--markdownlint-disable MD025 -->

@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "melak"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/melak
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/melak/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

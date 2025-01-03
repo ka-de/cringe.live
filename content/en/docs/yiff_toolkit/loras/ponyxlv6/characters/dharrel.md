@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "dharrel"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

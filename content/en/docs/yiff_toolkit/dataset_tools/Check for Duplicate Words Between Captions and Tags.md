@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🐍 Check for Duplicate Words Between Captions and Tags"
 summary: "This script traverses through a directory, searches for text files, processes each file to extract tags and captions, and highlights occurrences of tags within captions using random colors, displaying the results in a visually rich format in the terminal."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/Check for Duplicate Words Between Captions and Tags/
+  - /docs/yiff_toolkit/dataset_tools/Check for Duplicate Words Between Captions and Tags
+  - /docs/yiff_toolkit/dataset_tools/check-for-duplicate-words-between-captions-and-tags
+  - /docs/yiff_toolkit/dataset_tools/check-for-duplicate-words-between-captions-and-tags/
 ---
 
 <!--markdownlint-disable MD025 -->

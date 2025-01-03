@@ -8,6 +8,14 @@ summary: "This userscript customizes the arXiv website by hiding specific header
 aliases:
   - /docs/userscripts/Customize arXiv Header/
   - /docs/userscripts/Customize arXiv Header
+  - /docs/userscripts/customize-arxiv-header/
+  - /docs/userscripts/customize-arxiv-header
+  - /docs/userscripts/customize-arxiv-header-script/
+  - /docs/userscripts/customize-arxiv-header-script
+  - /docs/userscripts/customize_arxiv_header
+  - /docs/userscripts/customize_arxiv_header/
+  - /docs/userscripts/Customize_arXiv_Header
+  - /docs/userscripts/Customize_arXiv_Header/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "gren_art"
 summary: "gRen_art is using AI to create realistic furry art, with this LoRA you can also achieve it."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/gren_art
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/gren_art/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

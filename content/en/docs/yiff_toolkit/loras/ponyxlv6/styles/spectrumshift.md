@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "spectrumshift"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "ozoneserpent"
 summary: "Ozoneserpent’s art uniquely blends fantasy and anthropomorphic themes with vibrant colors and detailed backgrounds, featuring dynamic characters in adventurous scenarios."
+aliases:
+  - /docs/yiff_toolkit/loras/compassmix/styles/ozoneserpent/
+  - /docs/yiff_toolkit/loras/compassmix/styles/ozoneserpent
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

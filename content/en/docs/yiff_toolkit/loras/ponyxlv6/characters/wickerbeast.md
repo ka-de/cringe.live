@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "wickerbeast"
 summary: "Wickerbeasts are a unique species in the furry fandom, known for their mythical appearance and rich lore, fostering a creative and passionate community."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/wickerbeast/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/wickerbeast
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

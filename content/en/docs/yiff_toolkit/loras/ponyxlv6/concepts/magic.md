@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "magic"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/magic/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/magic
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

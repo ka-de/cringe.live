@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "surrounded_by_penis"
 summary: "This LoRA aims to help generating images where one or more characters are surrounded by penises from multiple sides."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/surrounded_by_penis/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/surrounded_by_penis
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

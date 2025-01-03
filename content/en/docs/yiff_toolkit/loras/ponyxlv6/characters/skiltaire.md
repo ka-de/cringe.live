@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "skiltaire"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

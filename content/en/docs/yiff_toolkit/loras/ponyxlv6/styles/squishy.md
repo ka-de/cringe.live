@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "squishy"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/squishy
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/squishy/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

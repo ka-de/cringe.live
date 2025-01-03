@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "kousen"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/kousen
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/kousen/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

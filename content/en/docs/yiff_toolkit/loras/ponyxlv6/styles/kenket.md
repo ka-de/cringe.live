@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "kenket"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/kenket
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/kenket/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

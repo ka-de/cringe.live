@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "pup_mask"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/pup_mask/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/pup_mask
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

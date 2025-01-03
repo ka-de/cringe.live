@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🐍 Search for Tag"
 summary: 'This script is used to search for the word "anthrofied" in all .txt files within a specified directory and its subdirectories. It uses multiprocessing to speed up the search by checking multiple files simultaneously.'
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/search-for-tag
+  - /docs/yiff_toolkit/dataset_tools/search-for-tag/
+  - /docs/yiff_toolkit/dataset_tools/Search for Tag/
+  - /docs/yiff_toolkit/dataset_tools/Search for Tag
 ---
 
 <!--markdownlint-disable MD025 -->

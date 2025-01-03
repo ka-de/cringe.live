@@ -3,7 +3,12 @@ weight: 10
 bookFlatSection: false
 bookToC: false
 title: "🐍 Check for Large Images"
-summary: "This script checks the resolution of all images in a specified directory and its subdirectories. If the resolution of an image exceeds a certain limit, the path of the image is written to an output file. The script uses multiprocessing to speed up the process."
+summary: "This script scans a directory for images and checks their dimensions. If an image's dimensions exceed specified thresholds, the script logs the image's path and dimensions to a file."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/Check for Large Images/
+  - /docs/yiff_toolkit/dataset_tools/Check for Large Images
+  - /docs/yiff_toolkit/dataset_tools/check-for-large-images
+  - /docs/yiff_toolkit/dataset_tools/check-for-large-images/
 ---
 
 <!--markdownlint-disable MD025 -->

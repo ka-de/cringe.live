@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "whisperingfornothing"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/whisperingfornothing
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/whisperingfornothing/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

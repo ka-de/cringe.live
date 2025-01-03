@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "dagasi"
 summary: "What? Dagasi? What is that? I don't know anything about it!"
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/dagasi/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/dagasi
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

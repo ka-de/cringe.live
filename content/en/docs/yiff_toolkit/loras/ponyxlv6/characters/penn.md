@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "penn"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/penn/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/penn
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

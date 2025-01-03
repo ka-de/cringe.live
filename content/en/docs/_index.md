@@ -7,6 +7,7 @@ type: docs
 summary: "My Documents"
 aliases:
   - /docs/
+  - /docs
 ---
 
 <!-- markdownlint-disable MD025 -->

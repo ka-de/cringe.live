@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "furry_sticker"
 summary: "Generate an infinite amount of furry stickers for your infinite amount of telegram accounts!"
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/furry_sticker/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/furry_sticker
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

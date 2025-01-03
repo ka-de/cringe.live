@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "matrix"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/flux/styles/matrix/
+  - /docs/yiff_toolkit/loras/flux/styles/matrix
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

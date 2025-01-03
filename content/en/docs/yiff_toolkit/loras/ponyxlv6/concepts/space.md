@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "space"
 summary: "Space is a vast and mysterious expanse explored by the Hubble and James Webb Spaces Space Telescopes."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/space/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/space
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

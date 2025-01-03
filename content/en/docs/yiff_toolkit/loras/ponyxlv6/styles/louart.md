@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "louart"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/louart
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/louart/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

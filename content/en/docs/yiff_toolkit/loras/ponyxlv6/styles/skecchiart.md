@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "skecchiart"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

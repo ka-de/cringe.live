@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "wjs07"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/wjs07
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/wjs07/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

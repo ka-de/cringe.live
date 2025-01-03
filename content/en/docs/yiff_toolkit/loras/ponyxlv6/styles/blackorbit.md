@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "blackorbit"
 summary: "Blackorbit's style is best described as 'VRChat'."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/blackorbit/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/blackorbit
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🦀 remove-extra-file-extensions"
 summary: "This Rust script renames text files in a specified directory by removing any extra image extensions (`.jpeg`, `.png`, or `.jpg`) from their names."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/remove-extra-file-extensions
+  - /docs/yiff_toolkit/dataset_tools/remove-extra-file-extensions/
+  - /docs/yiff_toolkit/dataset_tools/Remove Extra File Extensions/
+  - /docs/yiff_toolkit/dataset_tools/Remove Extra File Extensions
 ---
 
 <!--markdownlint-disable MD025 -->

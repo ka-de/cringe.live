@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🐍 Count Images in Folder"
 summary: "This script counts the total number of JPEG and PNG images in a specified directory."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/count-images-in-folder
+  - /docs/yiff_toolkit/dataset_tools/Count Images in Folder
+  - /docs/yiff_toolkit/dataset_tools/count-images-in-folder/
+  - /docs/yiff_toolkit/dataset_tools/Count Images in Folder/
 ---
 
 <!--markdownlint-disable MD025 -->

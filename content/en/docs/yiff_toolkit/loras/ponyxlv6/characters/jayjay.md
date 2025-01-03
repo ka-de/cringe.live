@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "jayjay"
 summary: "A blue werewolf from Zoophobia."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/jayjay/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/jayjay 
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

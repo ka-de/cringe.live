@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "ramona"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/ramona/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/ramona
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

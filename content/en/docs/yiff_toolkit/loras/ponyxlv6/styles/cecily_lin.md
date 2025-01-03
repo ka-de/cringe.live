@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "cecily_lin"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

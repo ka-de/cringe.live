@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "amalia"
 summary: "Loli cat girl OC from butterchalk."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/amalia/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/amalia
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

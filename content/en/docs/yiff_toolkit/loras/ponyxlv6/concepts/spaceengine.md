@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "spaceengine"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/spaceengine/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/spaceengine
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

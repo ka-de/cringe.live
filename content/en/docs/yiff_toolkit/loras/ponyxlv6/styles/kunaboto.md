@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "kunaboto"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/kunaboto
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/kunaboto/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

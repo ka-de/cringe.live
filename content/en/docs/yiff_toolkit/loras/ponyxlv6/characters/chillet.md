@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "chillet"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/chillet
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

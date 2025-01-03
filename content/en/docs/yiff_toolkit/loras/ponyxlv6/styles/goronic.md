@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "goronic"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/goronic
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/goronic/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

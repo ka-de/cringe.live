@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "greg_rutkowski"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/greg_rutkowski
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/greg_rutkowski/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

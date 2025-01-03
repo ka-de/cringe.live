@@ -8,6 +8,12 @@ aliases:
   - /docs/yiff_toolkit/lora_training/Stepweight-Decay
   - /docs/yiff_toolkit/lora_training/Stepweight Decay/
   - /docs/yiff_toolkit/lora_training/Stepweight Decay
+  - /docs/yiff_toolkit/lora_training/stepweight-decay/
+  - /docs/yiff_toolkit/lora_training/stepweight-decay
+  - /docs/yiff_toolkit/lora_training/stepweight_decay
+  - /docs/yiff_toolkit/lora_training/stepweight_decay
+  - /docs/yiff_toolkit/lora_training/Stepweight_Decay
+  - /docs/yiff_toolkit/lora_training/Stepweight_Decay/
 ---
 
 <!--markdownlint-disable MD025 -->

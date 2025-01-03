@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "less_details"
 summary: "This LoRA is trained on a bunch of screenshots from Minit which turned out to be really useful for reducing the palette and details when generating pixel art in a computationally expensive but pretty impressive way."
+aliases:
+  - /docs/yiff_toolkit/loras/3.5-large/styles/less_details/
+  - /docs/yiff_toolkit/loras/3.5-large/styles/less_details
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

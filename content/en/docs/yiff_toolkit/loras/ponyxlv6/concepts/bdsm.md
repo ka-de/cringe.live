@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "bdsm"
 summary: "BDSM is an acronym standing for Bondage, Discipline, Sadism, and Masochism."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/bdsm/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/bdsm
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

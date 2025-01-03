@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "blaidd"
 summary: "**Half-wolf Blaidd!** Bestest boy of Elden Ring! He's a very good boy! Can be a naughty boy though as well, if you like.."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/blaidd/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/blaidd
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

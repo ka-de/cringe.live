@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "veemon"
 summary: "Veemon is a small, blue, dragon-like Digimon with a white belly, a horn on its nose, and a yellow “V”-shaped mark on its forehead."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/veemon/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/veemon
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

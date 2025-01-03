@@ -5,6 +5,11 @@ bookFlatSection: false
 bookToC: false
 title: "⚡ Inspect-Lora"
 summary: "Takes a file path as input and uses Python to read the metadata from a `.safetensors` file. It then pretty-prints the metadata contents to the console and saves it next to the LoRA."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/inspect-lora
+  - /docs/yiff_toolkit/dataset_tools/inspect-lora/
+  - /docs/yiff_toolkit/dataset_tools/Inspect Lora/
+  - /docs/yiff_toolkit/dataset_tools/Inspect Lora
 ---
 
 <!--markdownlint-disable MD025 -->

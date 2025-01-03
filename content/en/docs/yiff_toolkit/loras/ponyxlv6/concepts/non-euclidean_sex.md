@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "non-euclidean_sex"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/non-euclidean_sex/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/non-euclidean_sex
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

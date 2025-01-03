@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "maliketh"
 summary: "The second best boy from Elden Ring, Maliketh, the Black Blade, is a fearsome guardian adorned in dark, intricate armor that covers his entire body. His unique blend of human and beastly traits, including dark fur and glowing eyes, makes him a formidable and memorable figure in the game."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

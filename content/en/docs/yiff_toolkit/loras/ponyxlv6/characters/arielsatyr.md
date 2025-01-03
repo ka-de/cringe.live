@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "arielsatyr"
 summary: "Someone's satyr character."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/arielsatyr/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/arielsatyr
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

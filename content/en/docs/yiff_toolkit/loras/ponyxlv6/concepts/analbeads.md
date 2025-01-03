@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "analbeads"
 summary: "Oh my God! A sex toy! 🙀"
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/analbeads/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/analbeads
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->

@@ -5,6 +5,11 @@ bookToC: false
 bookHidden: true
 title: "⚡ Format-JSONFilesToSingleLine"
 summary: "Formats JSON files to a single-line format using the `jq` utility."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/format-json-files-to-single-line
+  - /docs/yiff_toolkit/dataset_tools/format-json-files-to-single-line/
+  - /docs/yiff_toolkit/dataset_tools/Format JSON Files to Single Line/
+  - /docs/yiff_toolkit/dataset_tools/Format JSON Files to Single Line
 ---
 
 <!--markdownlint-disable MD025 -->

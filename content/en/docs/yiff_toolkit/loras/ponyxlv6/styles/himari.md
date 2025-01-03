@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "himari"
 summary: "A tiny LoRA trained on 4 images by [@147Penguinmw](https://twitter.com/147Penguinmw)."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/himari
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/himari/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

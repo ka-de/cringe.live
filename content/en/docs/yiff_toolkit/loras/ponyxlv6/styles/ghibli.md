@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "ghibli"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/ghibli
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/ghibli/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

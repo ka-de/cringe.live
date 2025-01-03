@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "halloween_cattiva"
 summary: "A halloween themed Cattiva from Palworld with a pumpkin head."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/halloween_cattiva/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/halloween_cattiva
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

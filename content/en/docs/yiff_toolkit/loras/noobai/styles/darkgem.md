@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "darkgem"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/noobai/styles/darkgem/
+  - /docs/yiff_toolkit/loras/noobai/styles/darkgem
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

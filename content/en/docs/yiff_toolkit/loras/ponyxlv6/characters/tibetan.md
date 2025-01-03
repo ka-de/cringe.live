@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "tibetan"
 summary: "The Tibetan Sand Fox is a unique fox species known for its square head and dense coat, inhabiting the high Tibetan Plateau with an unamused expression."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/tibetan/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/tibetan
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

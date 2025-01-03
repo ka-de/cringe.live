@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "small_dom_big_sub"
 summary: "When a smaller character being the dominant partner in a sexual relationship with a larger character."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/small_dom_big_sub/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/small_dom_big_sub
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

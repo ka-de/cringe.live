@@ -3,7 +3,12 @@ weight: 10
 bookFlatSection: false
 bookToC: false
 title: "🐍 Check for Transparency"
-summary: "This script recursively traverses a specified directory, identifying image files with extension `.png`. For each identified image, it checks if it contains transparency by examining its mode with PIL."
+summary: "This script checks for transparency in PNG images within a specified directory and its subdirectories."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/Check for Transparency/
+  - /docs/yiff_toolkit/dataset_tools/Check for Transparency
+  - /docs/yiff_toolkit/dataset_tools/check-for-transparency
+  - /docs/yiff_toolkit/dataset_tools/check-for-transparency/
 ---
 
 <!--markdownlint-disable MD025 -->

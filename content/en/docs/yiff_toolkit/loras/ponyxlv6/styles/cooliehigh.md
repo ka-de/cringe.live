@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "cooliehigh"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/cooliehigh/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/cooliehigh
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

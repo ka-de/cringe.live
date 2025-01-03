@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "serpent_x"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/serpent_x
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/serpent_x/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

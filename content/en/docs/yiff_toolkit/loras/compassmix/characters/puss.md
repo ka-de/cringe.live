@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "puss"
 summary: "Puss in Boots, often referred to as just Puss, is a smooth-talking, swashbuckling ginger-striped cat with a Spanish accent, skilled with a sword, and known for his charming personality and his ability to distract enemies with his \"cute eyes\"."
+aliases:
+  - /docs/yiff_toolkit/loras/compassmix/characters/puss/
+  - /docs/yiff_toolkit/loras/compassmix/characters/puss
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

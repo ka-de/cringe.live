@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "hoodwink"
 summary: "A squirrel from DOTA 2 with a massive crossbow."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/hoodwink/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/hoodwink
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

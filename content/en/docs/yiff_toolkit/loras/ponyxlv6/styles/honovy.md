@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "honovy"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/honovy
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/honovy/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

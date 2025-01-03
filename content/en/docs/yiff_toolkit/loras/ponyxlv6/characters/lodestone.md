@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "lodestone"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

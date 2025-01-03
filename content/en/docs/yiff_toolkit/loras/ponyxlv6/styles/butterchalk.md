@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "butterchalk"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/butterchalk/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/butterchalk
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

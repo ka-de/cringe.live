@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "forefront-foot_perspective"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

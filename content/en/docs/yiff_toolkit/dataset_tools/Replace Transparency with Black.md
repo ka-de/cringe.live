@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🐍 Replace Transparency with Black"
 summary: "This Python script processes all `.png` images in a specified directory by adding a black layer to each, utilizing multiprocessing to handle the images in parallel for efficiency."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/replace-transparency-with-black
+  - /docs/yiff_toolkit/dataset_tools/replace-transparency-with-black/
+  - /docs/yiff_toolkit/dataset_tools/Replace Transparency with Black/
+  - /docs/yiff_toolkit/dataset_tools/Replace Transparency with Black
 ---
 
 <!--markdownlint-disable MD025 -->

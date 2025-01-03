@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🐍 Create Empty Captions for Images"
 summary: "This Python script creates an empty text file with the same name as each image file (.jpg, .png, or .jpeg) present in a specified directory. The script checks if the directory exists, and then iterates through all the image files in the directory."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/create-empty-captions-for-images
+  - /docs/yiff_toolkit/dataset_tools/create-empty-captions-for-images/
+  - /docs/yiff_toolkit/dataset_tools/Create Empty Captions for Images/
+  - /docs/yiff_toolkit/dataset_tools/Create Empty Captions for Images
 ---
 
 <!--markdownlint-disable MD025 -->

@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🦀 extract-metadata"
 summary: "Processes `safetensors` files, extracts their metadata, converts it into a JSON object, and writes the JSON to a new file. It can process individual files or all `safetensors` files in a directory."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/extract-metadata
+  - /docs/yiff_toolkit/dataset_tools/extract-metadata/
+  - /docs/yiff_toolkit/dataset_tools/Extract Metadata/
+  - /docs/yiff_toolkit/dataset_tools/Extract Metadata
 ---
 
 <!--markdownlint-disable MD025 -->

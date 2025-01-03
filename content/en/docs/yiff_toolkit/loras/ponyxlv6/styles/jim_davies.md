@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "jim_davies"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/jim_davies
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/jim_davies/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "realistic"
 summary: "My take on photorealistic furries. Highly experimental and extremely fun!"
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/realistic
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/realistic/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

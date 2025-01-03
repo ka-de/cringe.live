@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "spooky"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/flux/styles/spooky/
+  - /docs/yiff_toolkit/loras/flux/styles/spooky
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

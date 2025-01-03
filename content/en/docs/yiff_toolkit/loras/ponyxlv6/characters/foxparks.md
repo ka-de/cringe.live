@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "foxparks"
 summary: "Foxparks is a fiery, fox-like creature from Palworld, known for its flame-covered tail and its unintentional fire-breathing."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/foxparks/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/foxparks
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

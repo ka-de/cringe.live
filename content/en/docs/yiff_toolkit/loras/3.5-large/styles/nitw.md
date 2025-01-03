@@ -7,6 +7,9 @@ summary: "Night in the Woods is a critically acclaimed adventure game known for 
 image: "https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/nitw/ComfyUI_temp_kpicy_00074_.png"
 imageAlt: "In this charming animated scene, an anthropomorphic white wolf wearing a striking purple witch or wizard hat and matching cape stands in what appears to be a library or study. The wolf has vibrant green eyes and wears a pendant with a blue gem around their neck. Their expression suggests a mix of confidence and curiosity as they stand behind what looks like a wooden counter or desk. Beside the wolf is an anthropomorphic otter character wearing a navy blue garment adorned with yellow diamond shapes. The otter has bright blue eyes and a friendly, eager expression. The setting around them is filled with wooden bookshelves stocked with numerous books in various colors, and through an arched window in the background, there appears to be a turquoise-tinted sky. A magical atmosphere is enhanced by what seems to be a glowing blue magical element or book on one of the shelves."
 blurhash: "LJEouvr|q@NCO@W@Zhko00R$ofx^"
+aliases:
+  - /docs/yiff_toolkit/loras/3.5-large/styles/nitw/
+  - /docs/yiff_toolkit/loras/3.5-large/styles/nitw
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->

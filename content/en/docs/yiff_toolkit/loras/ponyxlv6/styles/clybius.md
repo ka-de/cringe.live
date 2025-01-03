@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "clybius"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/clybius/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/clybius
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

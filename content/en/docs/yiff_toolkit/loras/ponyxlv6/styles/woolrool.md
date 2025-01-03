@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "woolrool"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/woolrool
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/woolrool/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

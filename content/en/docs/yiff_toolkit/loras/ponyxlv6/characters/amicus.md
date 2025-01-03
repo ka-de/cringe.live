@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "amicus"
 summary: "Amicus is a main character in the visual novel Adastra, where he is portrayed as an outgoing and optimistic wolf, the love interest of the protagonist, and the heir to the Wolven imperial throne."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/amicus/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/amicus
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

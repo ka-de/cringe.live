@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "hibbary"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/hibbary
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/hibbary/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

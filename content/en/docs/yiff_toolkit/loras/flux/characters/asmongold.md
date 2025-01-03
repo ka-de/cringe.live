@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "asmongold"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/flux/characters/asmongold/
+  - /docs/yiff_toolkit/loras/flux/characters/asmongold
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

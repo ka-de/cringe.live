@@ -5,6 +5,7 @@ bookHidden: true
 bookToC: false
 bookFlatSection: true
 aliases:
+  - /docs/yiff_toolkit/ponyxlv6_loras
   - /docs/yiff_toolkit/ponyxlv6_loras/
   - /docs/yiff_toolkit/ponyxlv6_loras/index.html
 ---

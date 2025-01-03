@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "Pony Diffusion V6 LoRAs"
 summary: "Pony Diffusion V6 XL is a specialized Stable Diffusion XL model optimized for generating anthropomorphic and feral creature artwork, with particular expertise in the 'My Little Pony' aesthetic. Built on the SDXL architecture, it combines high-resolution output capabilities with precise character generation, supporting both SFW and NSFW content creation. The model excels in maintaining consistent character designs while offering flexibility across various artistic styles, making it a valuable tool for both fan artists and general anthropomorphic content creators. This list contains all the LoRAs I have made for this model."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6
+  - /docs/yiff_toolkit/loras/ponyxlv6/
 ---
 
 <!--markdownlint-disable MD025 -->

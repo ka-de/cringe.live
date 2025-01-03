@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "auroth"
 summary: "Auroth, the Winter Wyvern, is an ancient dragon from Dota 2, known for her icy breath and her passion for scholarship and poetry."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/auroth/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/auroth
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "space"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/flux/concepts/space/
+  - /docs/yiff_toolkit/loras/flux/concepts/space
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

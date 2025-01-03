@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "blue_frost"
 summary: "A bit of an experiment trying to make generating kitsch winter scenes easier."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/blue_frost/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/blue_frost
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

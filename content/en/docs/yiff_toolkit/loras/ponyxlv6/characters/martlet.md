@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "martlet"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/martlet/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/martlet
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

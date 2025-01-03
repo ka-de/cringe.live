@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "blp"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/blp/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/blp
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

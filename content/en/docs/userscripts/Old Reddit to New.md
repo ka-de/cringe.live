@@ -8,6 +8,10 @@ summary: "The opposite of New Reddit to Old."
 aliases:
   - /docs/userscripts/Old Reddit to New/
   - /docs/userscripts/Old Reddit to New
+  - /docs/userscripts/old-reddit-to-new/
+  - /docs/userscripts/old-reddit-to-new
+  - /docs/userscripts/Old_Reddit_to_New
+  - /docs/userscripts/Old_Reddit_to_New/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

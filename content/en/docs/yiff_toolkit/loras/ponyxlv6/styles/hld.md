@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "hld"
 summary: "Hyper Light Drifter is a captivating video game with its vibrant, pixel art style that blends retro aesthetics with modern design elements. This LoRA was trained on a bunch of screenshots from the game."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/hld
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/hld/
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->

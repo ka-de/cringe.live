@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "cervine_penis"
 summary: "Anatomically correct penises for antlered friends!"
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/cervine_penis/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/cervine_penis
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

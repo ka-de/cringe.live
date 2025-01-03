@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "jinxit"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/jinxit
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/jinxit/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

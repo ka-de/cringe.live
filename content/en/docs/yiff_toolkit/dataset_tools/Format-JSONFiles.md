@@ -5,6 +5,11 @@ bookToC: false
 bookHidden: true
 title: "⚡ Format-JSONFiles"
 summary: "Formats JSON files from single-line to multi-line format using the `jq` command-line JSON processor."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/format-json-files
+  - /docs/yiff_toolkit/dataset_tools/format-json-files/
+  - /docs/yiff_toolkit/dataset_tools/Format JSON Files/
+  - /docs/yiff_toolkit/dataset_tools/Format JSON Files
 ---
 
 <!--markdownlint-disable MD025 -->

@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "wolf_link"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/wolf_link/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/wolf_link
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

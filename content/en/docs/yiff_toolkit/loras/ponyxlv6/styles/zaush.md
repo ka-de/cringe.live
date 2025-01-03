@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "zaush"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/zaush
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/zaush/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

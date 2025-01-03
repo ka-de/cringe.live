@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🐍 FurryTagger"
 summary: "Loads `eva02-vit-large-448-8046`, applies it to a set of images in a specified directory, and write the model’s output tags to a text file for each image."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/furrytagger
+  - /docs/yiff_toolkit/dataset_tools/furrytagger/
+  - /docs/yiff_toolkit/dataset_tools/FurryTagger/
+  - /docs/yiff_toolkit/dataset_tools/FurryTagger
 ---
 
 <!--markdownlint-disable MD025 -->

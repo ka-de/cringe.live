@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "bill_watterson"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/bill_watterson/
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/bill_watterson
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

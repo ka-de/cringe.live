@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🐍 Newlines to Commas"
 summary: "Recursively modify the content of `.txt` files in the specified directory and its subdirectories by replacing newlines with commas and spaces."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/newlines-to-commas
+  - /docs/yiff_toolkit/dataset_tools/newlines-to-commas/
+  - /docs/yiff_toolkit/dataset_tools/Newlines to Commas/
+  - /docs/yiff_toolkit/dataset_tools/Newlines to Commas
 ---
 
 <!--markdownlint-disable MD025 -->

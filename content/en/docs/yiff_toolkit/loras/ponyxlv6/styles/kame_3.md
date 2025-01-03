@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "kame_3"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/kame_3
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/kame_3/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

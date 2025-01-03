@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "hev_suit"
 summary: "The HEV suit from Half-Life is an iconic armor Gordon Freeman wears throughout the series. This LoRA is trained on a bunch of fan art and screenshots featuring it."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/hev_suit/
+  - /docs/yiff_toolkit/loras/ponyxlv6/concepts/hev_suit
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "randitawu"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/randitawu
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/randitawu/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

@@ -8,6 +8,10 @@ summary: "Replaces specific username colors with new ones on a Discord channel b
 aliases:
   - /docs/userscripts/Discord Name Color Changer/
   - /docs/userscripts/Discord Name Color Changer
+  - /docs/userscripts/discord-name-color-changer/
+  - /docs/userscripts/discord-name-color-changer
+  - /docs/userscripts/Discord_Name_Color_Changer
+  - /docs/userscripts/Discord_Name_Color_Changer/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

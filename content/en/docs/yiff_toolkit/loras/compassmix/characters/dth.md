@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "dth"
 summary: "The character Death in “Puss in Boots” is a grim figure who, despite his menacing appearance and ominous role, displays a surprising sense of humor and unexpected compassion."
+aliases:
+  - /docs/yiff_toolkit/loras/compassmix/characters/dth/
+  - /docs/yiff_toolkit/loras/compassmix/characters/dth
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

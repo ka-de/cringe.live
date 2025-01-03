@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "wolfy-nail"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/wolfy-nail
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/wolfy-nail/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

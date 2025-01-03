@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "hamgas"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/hamgas
+  - /docs/yiff_toolkit/loras/ponyxlv6/styles/hamgas/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

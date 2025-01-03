@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "lovander"
 summary: "A sexy salamander from Palworld."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/lovander/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/lovander
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

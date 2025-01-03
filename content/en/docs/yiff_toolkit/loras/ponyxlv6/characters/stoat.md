@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "stoat"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/stoat/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/stoat
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->

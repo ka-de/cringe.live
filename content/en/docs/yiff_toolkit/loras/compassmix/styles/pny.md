@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "pny"
 summary: "The default styles of Pony Diffusion for CompassMix."
+aliases:
+  - /docs/yiff_toolkit/loras/compassmix/styles/pny/
+  - /docs/yiff_toolkit/loras/compassmix/styles/pny
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

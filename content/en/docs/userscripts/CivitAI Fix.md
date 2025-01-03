@@ -8,6 +8,10 @@ summary: "Modifies the CSS of civitai.com to change the `flex-wrap` properties o
 aliases:
   - /docs/userscripts/CivitAI Fix/
   - /docs/userscripts/CivitAI Fix
+  - /docs/userscripts/civitai-fix/
+  - /docs/userscripts/civitai-fix
+  - /docs/userscripts/CivitAI_Fix
+  - /docs/userscripts/CivitAI_Fix/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

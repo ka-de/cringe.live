@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "skunk"
 summary: "Skunks are small, nocturnal mammals known for their distinctive black-and-white coloration and their ability to spray a foul-smelling liquid as a defense mechanism."
+aliases:
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/skunk/
+  - /docs/yiff_toolkit/loras/ponyxlv6/characters/skunk
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->

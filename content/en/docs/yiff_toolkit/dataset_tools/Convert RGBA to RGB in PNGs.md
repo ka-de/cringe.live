@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "🐍 Convert RGBA to RGB in PNGs"
 summary: "This script automates the process of converting `.png` images from RGBA to RGB format in a specified directory, utilizing multiprocessing to enhance efficiency."
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/Convert RGBA to RGB in PNGs/
+  - /docs/yiff_toolkit/dataset_tools/Convert RGBA to RGB in PNGs
+  - /docs/yiff_toolkit/dataset_tools/convert-rgba-to-rgb-in-pngs
+  - /docs/yiff_toolkit/dataset_tools/convert-rgba-to-rgb-in-pngs/
 ---
 
 <!--markdownlint-disable MD025 -->
