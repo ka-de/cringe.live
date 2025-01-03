@@ -7,6 +7,16 @@ googleAnalytics: "G-D69NRX5XH6"
 disablePathToLower: true
 enableGitInfo: true
 
+# SEO Configuration
+sitemap:
+  changefreq: "weekly"
+  priority: 0.5
+  filename: "sitemap.xml"
+
+outputs:
+  home: ["HTML", "RSS", "JSON", "SITEMAP"]
+  section: ["HTML", "RSS", "JSON"]
+
 languages:
   en:
     languageCode: "en-US"
@@ -58,6 +68,12 @@ params:
   BookSearch: true
   BookComments: false
   BookServiceWorker: true
+  
+  # SEO Parameters
+  Keywords: ["documentation", "yiff toolkit", "loras", "AI", "machine learning"]
+  Description: "Documentation and resources for AI tools and Lora models"
+  Images: ["logo.png"]  # Default social sharing image
+  Author: "ka-de"
 
 menu:
   after:
