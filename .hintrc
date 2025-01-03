@@ -23,6 +23,15 @@
       {
         "definition-list": "off"
       }
+    ],
+    "apple-touch-icons": "off",
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "meta[name=theme-color]"
+        ]
+      }
     ]
   }
 }
