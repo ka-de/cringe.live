@@ -16,6 +16,14 @@ sitemap:
 outputs:
   home: ["HTML", "RSS", "JSON", "SITEMAP"]
   section: ["HTML", "RSS", "JSON"]
+  page: ["HTML", "JSON"]
+
+outputFormats:
+  JSON:
+    mediaType: "application/json"
+    baseName: "index"
+    isPlainText: true
+    notAlternative: true
 
 languages:
   en:
@@ -43,8 +51,14 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+    parser:
+      attribute:
+        block: true
+        title: true
+      autoHeadingID: true
     extensions:
       passthrough:
+        enable: true
         delimiters:
           block:
             - - \[
@@ -56,7 +70,6 @@ markup:
               - \)
             - - $
               - $
-        enable: true
   tableOfContents:
     startLevel: 1
     endLevel: 6
