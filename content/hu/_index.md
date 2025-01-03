@@ -78,7 +78,7 @@ aliases:
 
 <div id="quote-container"></div>
 
-<script src="/js/quotes.js"></script>
+<script src="/js/quotes.hu.js"></script>
 
 ## Oldal Hírek
 
