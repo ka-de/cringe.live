@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "Custom ComfyUI Workflow with the Krita AI Plugin"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/
+  - /docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin
+  - /docs/yiff_toolkit/comfyui/Custom ComfyUI Workflow with the Krita AI Plugin/
+  - /docs/yiff_toolkit/comfyui/Custom ComfyUI Workflow with the Krita AI Plugin
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

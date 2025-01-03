@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "ControlNet"
 summary: "We learn about `union`, no, not onion, `union`!"
+aliases:
+  - /docs/yiff_toolkit/comfyui/ControlNet/
+  - /docs/yiff_toolkit/comfyui/ControlNet
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

@@ -3,6 +3,8 @@ weight: 2
 bookFlatSection: false
 bookToC: true
 title: "The ComfyUI Bible"
+aliases:
+  - /docs/yiff_toolkit/comfyui/
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->

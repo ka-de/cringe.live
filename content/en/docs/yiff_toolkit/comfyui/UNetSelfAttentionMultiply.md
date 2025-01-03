@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "UNetSelfAttentionMultiply"
 summary: "The `UNetSelfAttentionMultiply` function enhances the network’s focus on important image features, leading to more accurate and detailed image generation."
+aliases:
+  - /docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply/
+  - /docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->

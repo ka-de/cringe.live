@@ -5,6 +5,8 @@ bookCollapseSection: true
 bookToC: false
 title: "Dataset Tools"
 summary: 'A "small" collection of Python and PowerShell scripts that dataset curators might find handy.'
+aliases:
+  - /docs/yiff_toolkit/dataset_tools/
 ---
 
 <!--markdownlint-disable MD025 -->

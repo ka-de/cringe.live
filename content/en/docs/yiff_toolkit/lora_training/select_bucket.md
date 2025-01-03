@@ -3,6 +3,11 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "select_bucket"
+aliases:
+  - /docs/yiff_toolkit/lora_training/select-bucket/
+  - /docs/yiff_toolkit/lora_training/select-bucket
+  - /docs/yiff_toolkit/lora_training/select_bucket/
+  - /docs/yiff_toolkit/lora_training/select_bucket
 ---
 
 <!--markdownlint-disable MD025 -->

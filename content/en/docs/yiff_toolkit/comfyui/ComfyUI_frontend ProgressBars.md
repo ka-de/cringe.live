@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: true
 title: "ComfyUI_frontend Progress Bars"
 description: "A frontend enhancement for ComfyUI that adds two sleek progress bars to track workflow and node execution. The bars are designed to be non-intrusive with minimal heights and automatic theme adaptation, providing real-time visual feedback during processing."
+aliases:
+    - /docs/yiff_toolkit/comfyui/ComfyUI_frontend-ProgressBars/
+    - /docs/yiff_toolkit/comfyui/ComfyUI_frontend-ProgressBars
+    - /docs/yiff_toolkit/comfyui/ComfyUI_frontend ProgressBars/
+    - /docs/yiff_toolkit/comfyui/ComfyUI_frontend ProgressBars
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->

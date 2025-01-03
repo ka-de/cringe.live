@@ -3,6 +3,13 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "NoobAI Notes"
+aliases:
+    - /docs/yiff_toolkit/lora_training/NoobAI/
+    - /docs/yiff_toolkit/lora_training/NoobAI
+    - /docs/yiff_toolkit/lora_training/NoobAI-Notes/
+    - /docs/yiff_toolkit/lora_training/NoobAI-Notes
+    - /docs/yiff_toolkit/lora_training/NoobAI Notes/
+    - /docs/yiff_toolkit/lora_training/NoobAI Notes
 ---
 
 <!--markdownlint-disable MD025 -->
@@ -159,7 +166,6 @@ index faf4430..818056c 100644
 +    logger.info(f"zero terminal SNR enabled. / ゼロ終端SNR有効化")
 
      def enforce_zero_terminal_snr(betas):
-         # Convert betas to alphas_bar_sqrt
 ```
 
 Lastly, I have no idea why there is a new line here:

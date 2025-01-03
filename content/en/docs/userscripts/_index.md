@@ -5,6 +5,8 @@ bookCollapseSection: true
 bookToC: false
 title: "📜 - Userscripts"
 summary: "Userscripts are small programs written in JavaScript that can alter the appearance and behavior of web pages on the client side."
+aliases:
+  - /docs/userscripts
 ---
 
 <!--markdownlint-disable MD025  -->

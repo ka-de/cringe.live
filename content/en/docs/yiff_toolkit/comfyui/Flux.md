@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "Flux"
 summary: ""
+aliases:
+    - /docs/yiff_toolkit/comfyui/flux/
+    - /docs/yiff_toolkit/comfyui/flux
+    - /docs/yiff_toolkit/comfyui/Flux/
+    - /docs/yiff_toolkit/comfyui/Flux
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

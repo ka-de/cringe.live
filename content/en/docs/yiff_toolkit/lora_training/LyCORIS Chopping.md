@@ -3,6 +3,12 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "LyCORIS Chopping"
+aliases: [
+    "/docs/yiff_toolkit/lora_training/LyCORIS-Chopping/",
+    "/docs/yiff_toolkit/lora_training/LyCORIS-Chopping",
+    "/docs/yiff_toolkit/lora_training/LyCORIS Chopping/",
+    "/docs/yiff_toolkit/lora_training/LyCORIS Chopping"
+]
 ---
 
 <!--markdownlint-disable MD025 -->

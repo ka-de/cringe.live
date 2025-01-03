@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: true
 title: "Splines vs Straight"
 summary: "An internal monologue about link render modes."
+aliases:
+    - /docs/yiff_toolkit/comfyui/Splines-vs-Straight/
+    - /docs/yiff_toolkit/comfyui/Splines-vs-Straight
+    - /docs/yiff_toolkit/comfyui/Splines vs Straight/
+    - /docs/yiff_toolkit/comfyui/Splines vs Straight
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->

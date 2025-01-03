@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: true
 title: "Experimental Stuff"
 summary: "This document contains information that might get outdated before you finish reading it! So make sure you have your glasses on!"
+aliases:
+  - /docs/yiff_toolkit/comfyui/Experimental-Stuff/
+  - /docs/yiff_toolkit/comfyui/Experimental-Stuff
+  - /docs/yiff_toolkit/comfyui/Experimental Stuff/
+  - /docs/yiff_toolkit/comfyui/Experimental Stuff
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->

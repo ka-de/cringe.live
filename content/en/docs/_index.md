@@ -5,6 +5,8 @@ bookToC: false
 title: Introduction
 type: docs
 summary: "My Documents"
+aliases:
+  - /docs/
 ---
 
 <!-- markdownlint-disable MD025 -->

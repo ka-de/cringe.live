@@ -4,6 +4,11 @@ bookFlatSection: false
 bookToC: false
 title: "Add Custom Optimizers"
 summary: "This article offers a comprehensive guide to incorporating custom optimizers into the `sd-scripts` library. It covers the process of setting up a new optimizers folder and crafting a custom optimizer class using Python."
+aliases:
+  - /docs/yiff_toolkit/lora_training/Add-Custom-Optimizers/
+  - /docs/yiff_toolkit/lora_training/Add-Custom-Optimizers
+  - /docs/yiff_toolkit/lora_training/Add Custom Optimizers/
+  - /docs/yiff_toolkit/lora_training/Add Custom Optimizers
 ---
 
 <!--markdownlint-disable MD025 -->

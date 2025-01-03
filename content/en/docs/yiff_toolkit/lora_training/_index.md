@@ -4,6 +4,8 @@ bookFlatSection: false
 bookToC: true
 title: "LoRA Training Guide"
 summary: "The LoRA Training Guide explains Low-Rank Adaptation (LoRA), a technique for fine-tuning large language and diffusion models efficiently by introducing small, trainable low-rank matrices instead of modifying all model parameters. This approach keeps the original model weights frozen and injects two additional matrices into each layer to learn necessary adjustments. LoRA is lightweight, making it feasible to train multiple adaptations without hefty storage requirements. The guide also compares LoRA with LyCORIS, an advanced extension that offers more control and flexibility, and introduces LoKr, which uses Kronecker products for matrix decomposition, enhancing memory efficiency and control over the adaptation process."
+aliases:
+  - /docs/yiff_toolkit/lora_training/
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->

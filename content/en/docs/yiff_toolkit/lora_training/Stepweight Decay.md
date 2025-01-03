@@ -3,6 +3,11 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "Stepweight Decay"
+aliases:
+  - /docs/yiff_toolkit/lora_training/Stepweight-Decay/
+  - /docs/yiff_toolkit/lora_training/Stepweight-Decay
+  - /docs/yiff_toolkit/lora_training/Stepweight Decay/
+  - /docs/yiff_toolkit/lora_training/Stepweight Decay
 ---
 
 <!--markdownlint-disable MD025 -->
