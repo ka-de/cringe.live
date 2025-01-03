@@ -212,4 +212,3 @@ Az időszak címkékhez lásd a következő táblázatot:
 | 2014-2017  | mid         |
 | 2018-2020  | recent      |
 | 2021-2024  | newest      |
-</code_block_to_apply_changes_from> 

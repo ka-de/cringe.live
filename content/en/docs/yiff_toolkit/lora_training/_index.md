@@ -292,13 +292,7 @@ conv_block_alphas = [conv_alpha] * num_total_blocks
 
 ###### `module_dropout` and `dropout` and `rank_dropout`
 
-{{< blurhash
-src="https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/tutorial/dropout1.png"
-blurhash="LBR:HG4nD%%M?bt7ofWB~q-;xuM{"
-width="848"
-height="462"
-alt="This image illustrates the concept of dropout in neural networks through two diagrams. The first diagram, labeled “Standard Neural Net,” shows a fully connected neural network with three layers: input, hidden, and output, where each node is connected to every node in the subsequent layer. The second diagram, labeled “After applying dropout,” depicts the same network but with several nodes and their connections missing, indicating they have been temporarily “dropped out” during training. This technique helps prevent overfitting by reducing complex co-adaptations on the training data, thereby improving the model’s generalization capabilities."
->}}
+{{< responsive-svg src="/svg/dropout.svg" alt="Dropout in neural networks" >}}
 
 `rank_dropout` is a form of dropout, which is a regularization technique used in neural networks to prevent overfitting and improve generalization. However, unlike traditional dropout which randomly sets a proportion of inputs to zero, `rank_dropout` operates on the rank of the input tensor `lx`. First a binary mask is created with the same rank as `lx` with each element set to `True` with probability `1 - rank_dropout` and `False` otherwise. Then the `mask` is applied to `lx` to randomly set some of its elements to zero. After applying the dropout, a scaling factor is applied to `lx` to compensate for the dropped out elements. This is done to ensure that the expected sum of `lx` remains the same before and after dropout. The scaling factor is `1.0 / (1.0 - self.rank_dropout)`.
 
