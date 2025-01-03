@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "momowaaai"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/noobai/styles/momowaaai/
+  - /docs/yiff_toolkit/loras/noobai/styles/momowaaai
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

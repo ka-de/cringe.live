@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "butterchalk"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/noobai/styles/butterchalk/
+  - /docs/yiff_toolkit/loras/noobai/styles/butterchalk
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

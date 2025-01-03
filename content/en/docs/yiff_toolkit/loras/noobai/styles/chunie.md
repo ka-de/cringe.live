@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "chunie"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/noobai/styles/chunie/
+  - /docs/yiff_toolkit/loras/noobai/styles/chunie
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

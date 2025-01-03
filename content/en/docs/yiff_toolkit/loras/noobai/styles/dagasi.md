@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "dagasi"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/noobai/styles/dagasi/
+  - /docs/yiff_toolkit/loras/noobai/styles/dagasi
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "forsburn"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/loras/noobai/characters/forsburn/
+  - /docs/yiff_toolkit/loras/noobai/characters/forsburn
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

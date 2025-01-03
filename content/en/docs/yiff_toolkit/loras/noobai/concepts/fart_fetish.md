@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "fart_fetish"
 summary: "Helps the poor clouds find an orifice to come out of intead of just floating around. 💨"
+aliases:
+  - /docs/yiff_toolkit/loras/noobai/concepts/fart_fetish/
+  - /docs/yiff_toolkit/loras/noobai/concepts/fart_fetish
 ---
 
 <!--markdownlint-disable MD025 MD033 MD034 -->
