@@ -16,7 +16,7 @@ aliases:
 
 ---
 
-Ez a dokumentációs oldalak gyökere. Kérlek, használd a menüt a megfelelő szekcióhoz való navigáláshoz.
+Ez a dokumentációs oldalak gyökere. Használd az oldalsávot a neked megfelelő szekcióhoz való navigáláshoz.
 
 ## Kategóriák
 
