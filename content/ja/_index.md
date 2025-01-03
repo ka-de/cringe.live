@@ -12,7 +12,7 @@ outputs: [HTML, RSS, JSON]
   <div style="flex: 1 1 300px; min-width: 0;">
 
 {{< blurhash
-    src="/images/kade-point-up-not-a-furry.png"
+    src="/images/kade-point-up-not-a-furry-jp.png"
     blurhash="LIK-Xz010LkoM|t6_2IV%gM{xu-;"
     width="512"
     height="512"
@@ -58,7 +58,7 @@ outputs: [HTML, RSS, JSON]
 > 
 > ビジネスに関するお問い合わせは[メール](mailto:acsipont@gmail.com)でお願いします。
 > 
-> **[Yiff Toolkit](/docs/yiff_toolkit)**と[ComfyUI](/docs/comfyui)もチェックしてみてください！
+> **[Yiff Toolkit](/docs/yiff_toolkit)** と **[ComfyUI](/docs/comfyui)** もチェックしてみてください！
 
 <div style="display: flex; justify-content: center;">
   <a href="/docs/yiff_toolkit">

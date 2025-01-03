@@ -3,7 +3,15 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "ComfyUIの読み込み時間の最適化"
+image: "https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/make_it_fast.png"
 summary: "このドキュメントでは、サーバースクリプトで圧縮を有効にし、gzipとbrotliを使用してファイルを圧縮することで、ComfyUIの読み込み時間を最適化する手順を説明します。"
+aliases:
+    - /ja/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/
+    - /ja/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times
+    - /ja/docs/yiff_toolkit/comfyui/Optimizing ComfyUI Load Times/
+    - /ja/docs/yiff_toolkit/comfyui/Optimizing ComfyUI Load Times
+    - /ja/docs/yiff_toolkit/comfyui/Optimizing_ComfyUI_Load_Times/
+    - /ja/docs/yiff_toolkit/comfyui/Optimizing_ComfyUI_Load_Times
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

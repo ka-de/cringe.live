@@ -17,7 +17,7 @@ aliases:
   <div style="flex: 1 1 300px; min-width: 0;">
 
 {{< blurhash
-    src="/images/kade-point-up-not-a-furry.png"
+    src="/images/kade-point-up-not-a-furry-hu.png"
     blurhash="LIK-Xz010LkoM|t6_2IV%gM{xu-;"
     width="512"
     height="512"

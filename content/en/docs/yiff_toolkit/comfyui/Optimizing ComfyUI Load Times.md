@@ -4,6 +4,7 @@ bookFlatSection: false
 bookToC: false
 title: "Optimizing ComfyUI Load Times"
 summary: "The document provides steps to optimize ComfyUI load times by enabling compression in the server script and compressing files using gzip and brotli."
+image: "https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/make_it_fast.png"
 aliases:
     - /docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/
     - /docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times

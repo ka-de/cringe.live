@@ -4,6 +4,7 @@ bookFlatSection: false
 bookToC: false
 title: "ComfyUI Betöltési Idők Optimalizálása"
 summary: "A dokumentum lépéseket tartalmaz a ComfyUI betöltési idejének optimalizálásához a szerver szkriptben történő tömörítés engedélyezésével és a fájlok gzip és brotli tömörítésével."
+image: "https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/make_it_fast.png"
 aliases:
     - /hu/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/
     - /hu/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times
@@ -15,6 +16,12 @@ aliases:
     - /hu/docs/yiff_toolkit/comfyui/ComfyUI-Betöltési-Idők-Optimalizálása/
     - /hu/docs/yiff_toolkit/comfyui/ComfyUI_Betöltési_Idők_Optimalizálása
     - /hu/docs/yiff_toolkit/comfyui/ComfyUI_Betöltési_Idők_Optimalizálása/
+    - /docs/yiff_toolkit/comfyui/ComfyUI_Betöltési_Idők_Optimalizálása
+    - /docs/yiff_toolkit/comfyui/ComfyUI_Betöltési_Idők_Optimalizálása/
+    - /docs/yiff_toolkit/comfyui/ComfyUI Betöltési Idők Optimalizálása
+    - /docs/yiff_toolkit/comfyui/ComfyUI Betöltési Idők Optimalizálása/
+    - /docs/yiff_toolkit/comfyui/ComfyUI-Betöltési-Idők-Optimalizálása
+    - /docs/yiff_toolkit/comfyui/ComfyUI-Betöltési-Idők-Optimalizálása/
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
