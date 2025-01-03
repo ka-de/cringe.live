@@ -6,6 +6,7 @@ theme: "cringe-theme"
 googleAnalytics: "G-D69NRX5XH6"
 disablePathToLower: true
 enableGitInfo: true
+enableLastMod: true
 
 # SEO Configuration
 sitemap:

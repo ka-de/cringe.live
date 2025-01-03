@@ -1,0 +1,7 @@
+{{- dict 
+    "title" .Title
+    "description" .Params.summary
+    "permalink" .Permalink
+    "date" (.GitInfo.AuthorDate | default now | time.Format "2006-01-02")
+    "content" .Content
+| jsonify -}} 

@@ -2,7 +2,7 @@
 bookFlatSection: false
 bookCollapseSection: false
 bookToC: false
-title: Introduction
+title: "docs"
 type: docs
 summary: "My Documents"
 aliases:
@@ -12,7 +12,7 @@ aliases:
 
 <!-- markdownlint-disable MD025 -->
 
-# Introduction
+# ~
 
 ---
 

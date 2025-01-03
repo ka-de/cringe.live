@@ -23,7 +23,7 @@ If you need help installing ComfyUI, you didn't come to the right place. If you 
 
 ---
 
-{{< section details >}}
+{{< section-noimg details >}}
 
 ## Installing Models and LoRAs
 

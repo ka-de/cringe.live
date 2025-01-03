@@ -1,2 +1,19 @@
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://cringe.live/sitemap.xml
+
+# Optimize crawling rate
+Crawl-delay: 10
+
+# Prevent duplicate content indexing
+Disallow: /*/index.json
+Disallow: /*/*.json
+Disallow: /search/
+
+# Allow all bots to all content
+Allow: /en/
+Allow: /ja/
+Allow: /hu/
+Allow: /docs/
+Allow: /posts/

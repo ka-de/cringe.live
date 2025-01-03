@@ -1,0 +1,7 @@
+# Rules
+
+- In Markdown, fenced code blocks should be surrounded by blank lines
+
+   ```bash
+   echo "Like this!"
+   ```

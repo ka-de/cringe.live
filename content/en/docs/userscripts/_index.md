@@ -1,9 +1,10 @@
 ---
-weight: 10
+weight: 2
 bookFlatSection: false
 bookCollapseSection: true
-bookToC: false
+bookToC: true
 title: "📜 - Userscripts"
+date: 2024-01-03
 summary: "Userscripts are small programs written in JavaScript that can alter the appearance and behavior of web pages on the client side."
 aliases:
   - /docs/userscripts

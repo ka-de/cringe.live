@@ -1,0 +1,19 @@
+{{- $pages := slice -}}
+{{- range .Pages -}}
+    {{- $page := dict 
+        "title" .Title
+        "description" .Params.summary
+        "permalink" .Permalink
+        "date" (.Date.Format "2006-01-02")
+    -}}
+    {{- $pages = $pages | append $page -}}
+{{- end -}}
+{{- $root := dict 
+    "title" .Title
+    "description" .Params.summary
+    "permalink" .Permalink
+    "pages" $pages
+-}}
+{{- $json := $root | jsonify -}}
+{{- $json = replace $json "\"description\":" "\"summary\":" -}}
+{{- $json -}} 

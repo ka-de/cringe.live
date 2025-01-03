@@ -21,7 +21,7 @@ ComfyUIのインストール方法についてお探しの場合、ここは適�
 
 ---
 
-{{< section details >}}
+{{< section-noimg details >}}
 
 ## モデルとLoRAのインストール
 
