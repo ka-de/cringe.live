@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: true
 title: "ComfyUI-Manager"
 summary: "The first custom node you should install!"
+aliases:
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager/
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->

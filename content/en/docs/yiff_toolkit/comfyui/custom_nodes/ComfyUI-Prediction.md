@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: true
 title: "ComfyUI-Prediction"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Prediction/
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Prediction
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->

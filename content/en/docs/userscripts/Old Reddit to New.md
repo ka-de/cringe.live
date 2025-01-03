@@ -5,6 +5,9 @@ bookCollapseSection: false
 bookToC: false
 title: "Old Reddit to New"
 summary: "The opposite of New Reddit to Old."
+aliases:
+  - /docs/userscripts/Old Reddit to New/
+  - /docs/userscripts/Old Reddit to New
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

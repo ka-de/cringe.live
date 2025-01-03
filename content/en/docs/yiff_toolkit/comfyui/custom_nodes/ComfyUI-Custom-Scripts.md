@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: true
 title: "ComfyUI-Custom-Scripts"
 summary: ""
+aliases:
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->

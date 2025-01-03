@@ -4,6 +4,9 @@ bookFlatSection: false
 bookToC: false
 title: "ComfyUI_bitsandbytes_NF4"
 summary: "A custom node just for a flux model."
+aliases:
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_bitsandbytes_NF4/
+  - /docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_bitsandbytes_NF4
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

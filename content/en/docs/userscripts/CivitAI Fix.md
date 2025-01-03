@@ -5,6 +5,9 @@ bookCollapseSection: false
 bookToC: false
 title: "CivitAI Fix"
 summary: "Modifies the CSS of civitai.com to change the `flex-wrap` properties of a specific class."
+aliases:
+  - /docs/userscripts/CivitAI Fix/
+  - /docs/userscripts/CivitAI Fix
 ---
 
 <!--markdownlint-disable MD025 MD033 -->

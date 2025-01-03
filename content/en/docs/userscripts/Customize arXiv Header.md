@@ -5,6 +5,9 @@ bookCollapseSection: false
 bookToC: false
 title: "Customize arXiv Header"
 summary: "This userscript customizes the arXiv website by hiding specific header elements, resizing the header, and removing 'Report Issue' buttons."
+aliases:
+  - /docs/userscripts/Customize arXiv Header/
+  - /docs/userscripts/Customize arXiv Header
 ---
 
 <!--markdownlint-disable MD025 MD033 -->
