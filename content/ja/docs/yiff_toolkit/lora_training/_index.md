@@ -22,7 +22,7 @@ LoRA（Low-Rank Adaptation）は、大規模な言語モデルや拡散モデル
 
 ---
 
-{{< section details >}}
+{{< section-noimg details >}}
 
 ## インストール手順
 

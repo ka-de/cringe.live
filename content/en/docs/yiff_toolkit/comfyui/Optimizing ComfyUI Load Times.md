@@ -5,6 +5,8 @@ bookToC: false
 title: "Optimizing ComfyUI Load Times"
 summary: "The document provides steps to optimize ComfyUI load times by enabling compression in the server script and compressing files using gzip and brotli."
 image: "https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/make_it_fast.png"
+image_alt: "The image shows an anime girl with long blonde hair and fennec ears running through a snowy landscape. The setting appears to be during day time with a sky that transitions from a dark blue to white. The individual is captured mid-stride, with one foot touching the ground and the other lifted behind them, conveying a sense of motion. Streaks of white give an impression of speed or wind rushing past. The foreground shows patches of snow on uneven terrain with exposed earth, while the background features silhouettes of coniferous trees against the sky."
+blurhash: "LVJ[9VRkRkaeOFofoeay02oej?of"
 aliases:
     - /docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/
     - /docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times
@@ -17,12 +19,6 @@ aliases:
 # Optimizing ComfyUI Load Times
 
 ---
-
-<div style="display: flex; justify-content: center;">
-
-[![The image shows an anime girl with long blonde hair and fennec ears running through a snowy landscape. The setting appears to be during day time with a sky that transitions from a dark blue to white. The individual is captured mid-stride, with one foot touching the ground and the other lifted behind them, conveying a sense of motion. Streaks of white give an impression of speed or wind rushing past. The foreground shows patches of snow on uneven terrain with exposed earth, while the background features silhouettes of coniferous trees against the sky.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/make_it_fast_small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/make_it_fast.png)
-
-</div>
 
 With the caveat that over the local network this might actually be slower, however, over an internet cable, or worse, the Wi-Fi and mobile networks, this will greatly improve your loading times every time you decide to fire up ComfyUI.
 

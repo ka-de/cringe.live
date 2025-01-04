@@ -4,6 +4,8 @@ bookFlatSection: false
 bookToC: false
 title: "ComfyUIの読み込み時間の最適化"
 image: "https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/make_it_fast.png"
+image_alt: "この画像は、雪景色の中を走る長い金髪とフェネックの耳を持つアニメの少女を示しています。昼間の設定で、空は濃い青から白へと変化しています。人物は走っている最中で、片足が地面に触れ、もう片方の足が後ろに上がっており、動きの感覚を伝えています。白いストリークが速度や風が吹き抜ける印象を与えています。前景には起伏のある地形に雪のパッチと露出した土が見られ、背景には空を背景に針葉樹のシルエットが見えます。]"
+blurhash: "LVJ[9VRkRkaeOFofoeay02oej?of"
 summary: "このドキュメントでは、サーバースクリプトで圧縮を有効にし、gzipとbrotliを使用してファイルを圧縮することで、ComfyUIの読み込み時間を最適化する手順を説明します。"
 aliases:
     - /ja/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/
@@ -19,12 +21,6 @@ aliases:
 # ComfyUIの読み込み時間の最適化
 
 ---
-
-<div style="display: flex; justify-content: center;">
-
-[![この画像は、雪景色の中を走る長い金髪とフェネックの耳を持つアニメの少女を示しています。昼間の設定で、空は濃い青から白へと変化しています。人物は走っている最中で、片足が地面に触れ、もう片方の足が後ろに上がっており、動きの感覚を伝えています。白いストリークが速度や風が吹き抜ける印象を与えています。前景には起伏のある地形に雪のパッチと露出した土が見られ、背景には空を背景に針葉樹のシルエットが見えます。](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/make_it_fast_small.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/make_it_fast.png)
-
-</div>
 
 ローカルネットワーク上では実際にはより遅くなる可能性がありますが、インターネットケーブル、さらには悪条件のWi-Fiやモバイルネットワーク上では、ComfyUIを起動するたびに読み込み時間が大幅に改善されます。
 

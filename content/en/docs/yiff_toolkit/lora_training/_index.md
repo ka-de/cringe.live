@@ -33,7 +33,7 @@ LoRA (Low-Rank Adaptation) is a technique designed to facilitate the fine-tuning
 
 ---
 
-{{< section details >}}
+{{< section-noimg details >}}
 
 ## Installation Tips
 

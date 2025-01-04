@@ -33,7 +33,7 @@ A LoRA (Low-Rank Adaptation - Alacsony Rangú Adaptáció) egy olyan technika, a
 
 ---
 
-{{< section details >}}
+{{< section-noimg details >}}
 
 ## Telepítési Tippek
 
