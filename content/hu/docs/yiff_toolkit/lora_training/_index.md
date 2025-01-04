@@ -845,7 +845,7 @@ A Tensorboard-ot engedélyezheted a következők konfigurációdhoz adásával:
     --logging_dir=/output_dir/logs \
 ```
 
-You will of course need to [install](https://www.tensorflow.org/install/pip) Tensorboard to actually view your training and after that you just need to use this in your output directory:
+Természetesen először [telepítened](https://www.tensorflow.org/install/pip) kell a Tensorboard-ot, hogy ténylegesen meg tudd nézni a tanítást, és ezután csak ezt kell használnod a kimeneti könyvtáradban:
 
 ```bash
 tensorboard --logdir=logs
