@@ -800,7 +800,7 @@ Egy epocha ezzel szemben a teljes tanítási adatkészleten való egy teljes át
 
 Az illusztráláshoz vegyünk egy példát, ahol a tanítási adatkészlet 1000 képből áll, az adagméret 10, és összesen 10 epocha van. Ebben az esetben:
 
-- A modell 100 lépést fog feldolgozni epochánként (1000 kép / 10 kép adagonként).
+- A modell 100 lépést fog feldolgozni epochonként (1000 kép / 10 kép adagonként).
 - A modell 10-szer fogja látni az egész adatkészletet, ahol minden epocha 100 lépésből áll.
 
 A lépések és epochák közötti különbség megértése kulcsfontosságú a tanítási paraméterek, például a tanulási ráta ütemezés beállításához, és a modell haladásának nyomon követéséhez a tanítás során.
@@ -817,7 +817,7 @@ A gradiens akkumuláció használatához a LoRA tanításban a következő argum
 --gradient_accumulation_steps=6
 ```
 
-Fontos megjegyezni, hogy az epochánkénti lépések számát az adagméret és a teljes tanítási adatmennyiség határozza meg. Ezért gradiens akkumuláció használatakor az epochánkénti lépések száma a teljes tanítási adatkészlet feldolgozásához szükséges iterációk száma lesz, nem pedig az adagok száma. Ez a különbség fontos a tanulási ráta ütemezés beállításakor és a modell haladásának nyomon követésekor a tanítás során.
+Fontos megjegyezni, hogy az epochonkénti lépések számát az adagméret és a teljes tanítási adatmennyiség határozza meg. Ezért gradiens akkumuláció használatakor az epochonkénti lépések száma a teljes tanítási adatkészlet feldolgozásához szükséges iterációk száma lesz, nem pedig az adagok száma. Ez a különbség fontos a tanulási ráta ütemezés beállításakor és a modell haladásának nyomon követésekor a tanítás során.
 
 ## Változások Nyomon Követése
 
