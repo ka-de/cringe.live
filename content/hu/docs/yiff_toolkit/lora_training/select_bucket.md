@@ -142,4 +142,4 @@ class BucketBatchIndex(NamedTuple):
     bucket_index: int
     bucket_batch_size: int
     batch_index: int
-``` 
+```

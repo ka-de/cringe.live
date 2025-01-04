@@ -8,6 +8,12 @@ aliases:
   - /docs/yiff_toolkit/lora_training/select-bucket
   - /docs/yiff_toolkit/lora_training/select_bucket/
   - /docs/yiff_toolkit/lora_training/select_bucket
+  - /en/docs/yiff_toolkit/lora_training/select_bucket/
+  - /en/docs/yiff_toolkit/lora_training/select_bucket
+  - /en/docs/yiff_toolkit/lora_training/select-bucket/
+  - /en/docs/yiff_toolkit/lora_training/select-bucket
+  - /en/docs/yiff_toolkit/lora_training/select bucket
+  - /en/docs/yiff_toolkit/lora_training/select bucket
 ---
 
 <!--markdownlint-disable MD025 -->

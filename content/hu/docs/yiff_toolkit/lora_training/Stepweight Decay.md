@@ -52,4 +52,4 @@ A lépésenkénti súlycsökkentés, más néven tanulási ráta csökkentés va
 6. **Adaptív Jellemző**:
    - Mivel a `step_size`-t használja, a csökkentés alkalmazkodik az aktuális effektív tanulási rátához, így stabilabb a különböző tanulási fázisokban.
 
-A "lépésenkénti súly" kifejezés ebben a kontextusban azt hangsúlyozza, hogy a csökkentést minden optimalizációs lépésben alkalmazzák, beépítve a súlyfrissítési folyamatba, ahelyett, hogy egy külön regularizációs tag lenne a veszteségfüggvényben. 
+A "lépésenkénti súly" kifejezés ebben a kontextusban azt hangsúlyozza, hogy a csökkentést minden optimalizációs lépésben alkalmazzák, beépítve a súlyfrissítési folyamatba, ahelyett, hogy egy külön regularizációs tag lenne a veszteségfüggvényben.
