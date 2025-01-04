@@ -819,20 +819,6 @@ To use gradient accumulation in LoRA training, you can add the following argumen
 
 It's important to note that the number of steps in each epoch is determined by the batch size and the total amount of training data. Therefore, when using gradient accumulation, the number of steps in each epoch will be the number of iterations required to process the entire training dataset, rather than the number of batches. This distinction is important when configuring the learning rate schedule and monitoring the model's progress during training.
 
-## Keep Track of Your Changes
-
----
-
-I like giving the `--output_name` a relevant name to make sure I know exactly what I changed without having to dig through the metadata.
-
-{{< blurhash
-src="/images/sd-scripts/keep_track_of_changes.png"
-blurhash="L8SigQ00?b~qxtofs;j]tMoesroN"
-width="522"
-height="261"
-alt="The image shows a screenshot of a computer code interface with various parameters and settings highlighted. The background is white, and the text is in green, and purple. Key parameters include “network_dropout” and “lr” indicating settings for a machine learning model’s training process. The middle sections suggest that the output name is being reviewed. This image is relevant for those configuring neural network training."
->}}
-
 ## Tensorboard
 
 ---

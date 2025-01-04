@@ -39,7 +39,7 @@ A LoRA (Low-Rank Adaptation - Alacsony Rangú Adaptáció) egy olyan technika, a
 
 ---
 
-Először töltsd le kohya_ss [sd-scripts](https://github.com/kohya-ss/sd-scripts) csomagját. A környezetet vagy úgy kell beállítanod, ahogy [itt](https://github.com/kohya-ss/sd-scripts?tab=readme-ov-file#windows-installation) le van írva Windows esetén, vagy ha Linuxot vagy Minicondát használsz Windowson, valószínűleg elég okos vagy, hogy magadtól is rájöjj a telepítésre. Mindig ajánlott a legújabb [PyTorch](https://pytorch.org/get-started/locally/) verziót telepíteni abba a virtuális környezetbe, amit használni fogsz - ami jelenleg a `2.2.2`. Remélem a jövőbeli énemnek gyorsabb PyTorch-a lesz!
+Először töltsd le kohya_ss [sd-scripts](https://github.com/kohya-ss/sd-scripts) csomagját. A környezetet vagy úgy kell beállítanod, ahogy [itt](https://github.com/kohya-ss/sd-scripts?tab=readme-ov-file#windows-installation) le van írva Windows esetén, vagy ha Linuxot vagy Minicondát használsz Windowson, valószínűleg elég okos vagy, hogy magadtól is rájöjj a telepítésre. Mindig ajánlott a legújabb [PyTorch](https://pytorch.org/get-started/locally/) verziót telepíteni abba a virtuális környezetbe, amit használni fogsz - ami jelenleg a `2.5.1`.
 
 Na jó, arra az esetre, ha mégsem lennél elég okos az sd-scripts Miniconda alatti telepítéséhez Windowson, nemrég "segítettem" valakinek, így el tudom mondani:
 
@@ -63,7 +63,7 @@ Lehet, hogy telepíteni szeretnéd az `xformers`-t vagy a `bitsandbytes`-t is.
 
 ```bash
 # xformers telepítése
-# Használd ugyanezt a parancsot, csak cseréld ki az 'xformers'-t bármilyen más csomagra, amire szükséged van
+# Mindig figyelj arra hogy a megfelelő virtuális környezetben legyél!
 python -m pip install --use-pep517 xformers
 
 # bitsandbytes telepítése windowsra
@@ -818,20 +818,6 @@ A gradiens akkumuláció használatához a LoRA tanításban a következő argum
 ```
 
 Fontos megjegyezni, hogy az epochonkénti lépések számát az adagméret és a teljes tanítási adatmennyiség határozza meg. Ezért gradiens akkumuláció használatakor az epochonkénti lépések száma a teljes tanítási adatkészlet feldolgozásához szükséges iterációk száma lesz, nem pedig az adagok száma. Ez a különbség fontos a tanulási ráta ütemezés beállításakor és a modell haladásának nyomon követésekor a tanítás során.
-
-## Változások Nyomon Követése
-
----
-
-Szeretem az `--output_name`-nek egy releváns nevet adni, hogy biztosan tudjam, pontosan mit változtattam anélkül, hogy át kellene néznem a metaadatokat.
-
-{{< blurhash
-src="/images/sd-scripts/keep_track_of_changes.png"
-blurhash="L8SigQ00?b~qxtofs;j]tMoesroN"
-width="522"
-height="261"
-alt="A kép egy számítógépes kódfelület képernyőképét mutatja különböző paraméterekkel és beállításokkal kiemelve. A háttér fehér, a szöveg zöld és lila színű. A kulcsfontosságú paraméterek között szerepel a 'network_dropout' és az 'lr', amelyek egy gépi tanulási modell tanítási folyamatának beállításait jelzik. A középső részek azt sugallják, hogy a kimeneti név felülvizsgálat alatt áll. Ez a kép releváns azok számára, akik neurális hálózatok tanítását konfigurálják."
->}}
 
 ## Tensorboard
 
