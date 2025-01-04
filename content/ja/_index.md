@@ -81,6 +81,14 @@ outputs: [HTML, RSS, JSON]
 
 ---
 
+### 2025年1月4日
+
+**サイトニュース:**
+
+- DoRA（Weight-Decomposed Low-Rank Adaptation）に関する2つの新しい記事を追加しました：
+  - メインの[DoRA](/docs/yiff_toolkit/lora_training/DoRA)記事では、Gaerosによって書かれた、重みを大きさと方向成分に分解することでLoRAを改良した、この新しいパラメーター効率の良い微調整手法の包括的な概要を提供しています。
+  - [重み分解の方向](/docs/yiff_toolkit/lora_training/Weight_Decomposition_Direction)に関する補足記事では、DoRAの重み分解における入力次元と出力次元の正規化に関する重要な実装の詳細に特に焦点を当てています。
+
 ### 12/27/2024
 
 **サイトニュース:**

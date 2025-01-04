@@ -86,6 +86,14 @@ aliases:
 
 ---
 
+### 2025. január 4.
+
+**Oldal Hírek:**
+
+- Két új cikk került hozzáadásra a DoRA-ról (Weight-Decomposed Low-Rank Adaptation):
+  - A fő [DoRA](/docs/yiff_toolkit/lora_training/DoRA) cikk átfogó áttekintést nyújt erről az új, paraméter-hatékony finomhangolási módszerről, amelyet Gaeros írt, és amely továbbfejleszti a LoRA-t a súlyok nagyság és irány komponensekre való felbontásával.
+  - A kiegészítő cikk a [Súlyfelbontás Irányáról](/docs/yiff_toolkit/lora_training/Weight_Decomposition_Direction) kifejezetten a DoRA súlyfelbontásának egy fontos implementációs részletére összpontosít, amely a bemeneti és kimeneti dimenzió normalizálását érinti.
+
 ### 2024.12.27.
 
 **Oldal Hírek:**

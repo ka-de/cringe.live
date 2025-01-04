@@ -88,6 +88,14 @@ aliases:
 
 ---
 
+### 1/4/2025
+
+**Site News:**
+
+- Added two new articles about DoRA (Weight-Decomposed Low-Rank Adaptation):
+  - The main [DoRA](/docs/yiff_toolkit/lora_training/DoRA) article provides a comprehensive overview of this novel parameter-efficient fine-tuning method written by Gaeros, which improves upon LoRA by decomposing weights into magnitude and directional components.
+  - A supplementary article on [Weight Decomposition Direction](/docs/yiff_toolkit/lora_training/Weight_Decomposition_Direction) specifically focuses on an important implementation detail regarding input vs output dimension normalization in DoRA's weight decomposition.
+
 ### 12/27/2024
 
 **Site News:**
