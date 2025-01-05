@@ -73,9 +73,7 @@ outputs: [HTML, RSS, JSON]
   </a>
 </div>
 
-<div id="quote-container"></div>
-
-<script src="/js/quotes.ja.js"></script>
+{{< quotes >}}
 
 ## サイトニュース
 
@@ -178,4 +176,4 @@ outputs: [HTML, RSS, JSON]
 
 **サイトニュース:**
 
-- [ComfyUIの読み込み時間の最適化](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times)についても書きました。 
+- [ComfyUIの読み込み時間の最適化](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times)についても書きました。

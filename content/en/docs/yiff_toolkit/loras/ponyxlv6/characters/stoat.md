@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: false
 bookToC: false
 title: "stoat"
-summary: ""
+summary: "Stoats are small, agile carnivorous mammals known for their slender bodies, short legs, and distinctive reddish-brown summer coat that turns pure white in winter. These fierce hunters, also known as ermines, are members of the weasel family and are renowned for their ability to prey on animals larger than themselves."
 aliases:
   - /docs/yiff_toolkit/loras/ponyxlv6/characters/stoat/
   - /docs/yiff_toolkit/loras/ponyxlv6/characters/stoat
@@ -15,36 +15,15 @@ aliases:
 
 ---
 
-## Example Images
-
----
-
-<a href="">
-</a>
-
-<div class="image-grid">
-  <div class="image-grid-container">
-    <a href="">
-    </a>
-  </div>
-  <div class="image-grid-container">
-    <a href="">
-    </a>
-  </div>
-  <div class="image-grid-container">
-    <a href="">
-    </a>
-  </div>
-  <div class="image-grid-container">
-    <a href="">
-    </a>
-  </div>
-</div>
-
 ## Introduction
 
 ---
 
+The stoat (Mustela erminea) is a remarkable small predator that exemplifies nature's perfect balance of agility and hunting prowess. These mustelids typically measure 20-30 cm in length, with males being notably larger than females. Their most striking feature is their seasonal dimorphism - sporting a rich brown coat with a cream underbelly in summer, transforming to pure white in winter with only their distinctive black-tipped tail remaining constant.
+
+Stoats are incredibly athletic, capable of running, swimming, and climbing with exceptional skill. Their slender bodies allow them to pursue prey into burrows, while their keen senses and quick reflexes make them formidable hunters. Despite their small size, they're known to successfully hunt rabbits and hares many times their own weight, using a combination of stealth and a precise bite to the base of the skull.
+
+These adaptable creatures can be found across North America, Europe, and Asia, thriving in various habitats from woodlands to tundra. Their presence in an ecosystem often helps control rodent populations, making them an important part of the natural food chain. Scientists have also found proof that they are really cute.
 
 ## Content
 
@@ -54,17 +33,4 @@ aliases:
 
 [⬇️ LoRA Download (?MB)]()
 
-[📐 Dataset](https://huggingface.co/datasets/k4d3/stoat)
-
-[📊 Metadata]()
-
-## Training Montage
-
----
-
-<div style="text-align: center;">
-    <video style="width: 100%;" autoplay loop muted playsinline>
-        <source src="" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
+[📐 Dataset](https://huggingface.co/datasets/k4d3/anthro_stoat)

@@ -337,34 +337,3 @@ const quotesJson = [
     quote: "Isten vagy, viselkedj úgy, gondolkodj úgy, vállald a felelősséget.",
   },
 ];
-
-// Function to get a random quote from the JSON data in HTML format
-function getRandomQuoteHtml() {
-  // Generate a random index within the length of the JSON array
-  const randomIndex = Math.floor(Math.random() * quotesJson.length);
-
-  // Get the random quote and author using the random index
-  const randomQuote = quotesJson[randomIndex];
-
-  // Format the quote and author in HTML
-  const formattedHtml = `
-    <blockquote>
-      <p><em>${randomQuote.quote}</em></p>
-      <footer>&mdash; ${randomQuote.author}</footer>
-    </blockquote>
-  `;
-
-  return formattedHtml;
-}
-
-// Function to update the quote-container element with a random quote
-function updateQuoteContainer() {
-  const quoteContainer = document.getElementById("quote-container");
-  const randomQuoteHtml = getRandomQuoteHtml();
-
-  // Set the content of the quote-container element to the random quote HTML
-  quoteContainer.innerHTML = randomQuoteHtml;
-}
-
-// Call the updateQuoteContainer function to initially display a random quote
-updateQuoteContainer(); 

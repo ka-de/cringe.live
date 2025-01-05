@@ -276,28 +276,3 @@ const quotesJson = [
     quote: "あなたは神なのです。神のように行動し、神のように考え、責任を持ちなさい。",
   }
 ];
-
-function getRandomQuoteHtml() {
-  const randomQuote = quotesJson[Math.floor(Math.random() * quotesJson.length)];
-  return `
-    <blockquote>
-      <p>${randomQuote.quote}</p>
-      <footer>
-        <cite>— ${randomQuote.author}</cite>
-      </footer>
-    </blockquote>
-  `;
-}
-
-function updateQuoteContainer() {
-  const container = document.getElementById("quote-container");
-  if (container) {
-    container.innerHTML = getRandomQuoteHtml();
-  }
-}
-
-// Initial update
-updateQuoteContainer();
-
-// Update every 10 seconds
-setInterval(updateQuoteContainer, 10000); 
