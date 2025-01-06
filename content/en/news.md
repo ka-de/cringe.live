@@ -114,4 +114,4 @@ aliases:
 
 **Site News:**
 
-- I also wrote about [Optimizing ComfyUI Load Times](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times). 
+- I also wrote about [Optimizing ComfyUI Load Times](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times).

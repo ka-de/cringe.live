@@ -11,6 +11,8 @@ aliases:
   - /hu/news
 ---
 
+<!--markdownlint-disable MD026-->
+
 ## Oldal Hírek
 
 ---
@@ -112,4 +114,4 @@ aliases:
 
 **Oldal Hírek:**
 
-- Írtam a [ComfyUI Betöltési Idejének Optimalizálásáról](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times) is. 
+- Írtam a [ComfyUI Betöltési Idejének Optimalizálásáról](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times) is.
