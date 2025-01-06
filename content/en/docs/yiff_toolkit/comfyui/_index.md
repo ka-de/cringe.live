@@ -3,8 +3,12 @@ weight: 2
 bookFlatSection: false
 bookToC: true
 title: "The ComfyUI Bible"
+summary: "A comprehensive guide to using ComfyUI, covering everything from basic node workflows to advanced techniques for AI image generation."
 aliases:
   - /docs/yiff_toolkit/comfyui/
+  - /docs/yiff_toolkit/comfyui
+  - /en/docs/yiff_toolkit/comfyui/
+  - /en/docs/yiff_toolkit/comfyui
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->

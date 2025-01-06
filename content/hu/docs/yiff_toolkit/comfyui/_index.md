@@ -3,6 +3,7 @@ weight: 2
 bookFlatSection: false
 bookToC: true
 title: "A ComfyUI Biblia"
+summary: "Átfogó útmutató a ComfyUI használatához, az alapvető node-alapú munkafolyamatoktól a fejlett AI képgenerálási technikákig."
 aliases:
   - /hu/docs/yiff_toolkit/comfyui/
   - /hu/docs/yiff_toolkit/comfyui

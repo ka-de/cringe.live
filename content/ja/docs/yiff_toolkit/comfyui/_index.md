@@ -3,6 +3,10 @@ weight: 2
 bookFlatSection: false
 bookToC: true
 title: "ComfyUIバイブル"
+summary: "ComfyUIの使用方法を包括的に解説するガイド。基本的なノードワークフローから高度なAI画像生成テクニックまでをカバー。"
+aliases:
+  - /ja/docs/yiff_toolkit/comfyui/
+  - /ja/docs/yiff_toolkit/comfyui
 ---
 
 <!--markdownlint-disable MD025 MD033 MD038 -->
