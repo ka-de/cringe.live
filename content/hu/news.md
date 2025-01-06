@@ -2,10 +2,10 @@
 title: Oldal Hírek
 type: docs
 bookToC: false
-weight: 20
+weight: 10
 menu:
   after:
-    weight: 20
+    weight: 10
 aliases:
   - /hu/news/
   - /hu/news

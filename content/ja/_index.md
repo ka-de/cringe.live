@@ -58,7 +58,7 @@ outputs: [HTML, RSS, JSON]
 > 
 > ビジネスに関するお問い合わせは[メール](mailto:acsipont@gmail.com)でお願いします。
 > 
-> **[Yiff Toolkit](/docs/yiff_toolkit)** と **[ComfyUI](/docs/comfyui)** もチェックしてみてください！
+> **[イフツールキット](/docs/yiff_toolkit)** と **[ComfyUI](/docs/comfyui)** もチェックしてみてください！
 >
 > 最新の更新情報は[サイトニュース](/news)をご覧ください！
 

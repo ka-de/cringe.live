@@ -2,10 +2,10 @@
 title: Site News
 type: docs
 bookToC: false
-weight: 20
+weight: 10
 menu:
   after:
-    weight: 20
+    weight: 10
 aliases:
   - /en/news/
   - /en/news
