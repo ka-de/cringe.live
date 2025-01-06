@@ -1,6 +1,7 @@
 ---
 title: "Tanítási Változások Követése"
 description: "Útmutató a LoRA tanítás során történő változások követéséhez automatizált szkriptek segítségével"
+summary: "Ismerje meg, hogyan használhat automatizált szkripteket a LoRA tanítási folyamat rendszerezéséhez és követéséhez, beleértve a modellverziók kezelését, a konfigurációk biztonsági mentését és a tiszta tanítási munkakörnyezet fenntartását."
 weight: 8
 bookToC: false
 bookFlatSection: false
@@ -85,7 +86,7 @@ Ez a tisztító függvény segít a munkaterület rendezettségének fenntartás
 1. **Elnevezési Konvenció**: Használj következetes névformátumot:
 
    ```bash
-   {dataset}-{variant}-v{version}s{steps}
+   {model}-{dataset}--v{version}s{steps}
    ```
 
    Példa: `noob-surrounded_by_penis-v1s2400`

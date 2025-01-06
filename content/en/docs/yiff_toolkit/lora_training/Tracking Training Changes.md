@@ -1,7 +1,23 @@
 ---
 title: "Tracking Training Changes"
 description: "Guide to keeping track of changes during LoRA training using automated scripts"
+summary: "Learn how to use automated scripts to organize and track your LoRA training process, including managing model versions, backing up configurations, and maintaining clean training workspaces."
 weight: 8
+bookToC: false
+bookFlatSection: false
+aliases:
+  - /en/docs/yiff_toolkit/lora_training/Tracking-Training-Changes/
+  - /en/docs/yiff_toolkit/lora_training/Tracking-Training-Changes
+  - /en/docs/yiff_toolkit/lora_training/Tracking_Training_Changes/
+  - /en/docs/yiff_toolkit/lora_training/Tracking_Training_Changes
+  - /en/docs/yiff_toolkit/lora_training/Tracking Training Changes/
+  - /en/docs/yiff_toolkit/lora_training/Tracking Training Changes
+  - /docs/yiff_toolkit/lora_training/Tracking-Training-Changes/
+  - /docs/yiff_toolkit/lora_training/Tracking-Training-Changes
+  - /docs/yiff_toolkit/lora_training/Tracking_Training_Changes/
+  - /docs/yiff_toolkit/lora_training/Tracking_Training_Changes
+  - /docs/yiff_toolkit/lora_training/Tracking Training Changes/
+  - /docs/yiff_toolkit/lora_training/Tracking Training Changes
 ---
 
 ## Overview
@@ -76,7 +92,7 @@ This cleanup function helps maintain a tidy workspace by removing output directo
 1. **Naming Convention**: Use a consistent naming format:
 
    ```bash
-   {dataset}-{variant}-v{version}s{steps}
+   {model}-{dataset}-v{version}s{steps}
    ```
 
    Example: `noob-surrounded_by_penis-v1s2400`

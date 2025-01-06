@@ -1,6 +1,7 @@
 ---
 title: "トレーニングの変更を追跡する"
 description: "自動化スクリプトを使用してLoRAトレーニング中の変更を追跡するガイド"
+summary: "自動化スクリプトを使用してLoRAトレーニングプロセスを整理し追跡する方法を学びます。モデルバージョンの管理、設定のバックアップ、クリーンなトレーニング作業環境の維持が含まれています。"
 weight: 8
 bookToC: false
 bookFlatSection: false
@@ -85,7 +86,7 @@ run_training_script "/path/to/train_network.py" "${args[@]}"
 1. **命名規則**: 一貫した命名形式を使用：
 
    ```bash
-   {dataset}-{variant}-v{version}s{steps}
+   {model}-{dataset}-v{version}s{steps}
    ```
 
    例：`noob-surrounded_by_penis-v1s2400`
