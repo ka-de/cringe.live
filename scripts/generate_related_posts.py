@@ -66,6 +66,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import re
 import numpy as np
+import networkx as nx
+import matplotlib.pyplot as plt
+import argparse
 
 # Download required NLTK data
 nltk.download('punkt')
@@ -348,13 +351,26 @@ def add_related_posts_shortcode(file_path, related_paths):
         print(f"\nFormatted paths for {file_path}:")
         for ref in related_refs:
             print(f"  {ref}")
-        shortcode = '{{< related-posts related="' + ' | '.join(related_refs) + '" >}}'
         
-        # Remove any existing related-posts shortcode
+        # Create shortcode with search exclusion comments
+        shortcode = '\n<!--\n' + \
+                   'HUGO_SEARCH_EXCLUDE_START\n' + \
+                   '-->\n' + \
+                   '{{< related-posts related="' + ' | '.join(related_refs) + '" >}}' + \
+                   '\n<!--\n' + \
+                   'HUGO_SEARCH_EXCLUDE_END\n' + \
+                   '-->\n'
+        
+        # Remove any existing related-posts shortcode and its exclusion comments
+        content = re.sub(r'\n*<!--\s*HUGO_SEARCH_EXCLUDE_START\s*-->\s*{{< related-posts.*?>}}\s*<!--\s*HUGO_SEARCH_EXCLUDE_END\s*-->\s*', '\n', content)
         content = re.sub(r'\n*{{< related-posts.*?>}}\n*', '\n', content)
         
-        # Add new shortcode at the end of the content
-        content = content.rstrip() + '\n\n---\n\n' + shortcode + '\n'
+        # Clean up multiple consecutive '---' separators
+        content = re.sub(r'(\n---\n)\s*---\n*', r'\1', content)
+        
+        # Ensure content ends with exactly one '---' before adding shortcode
+        content = re.sub(r'\n*---\s*$', '', content.rstrip())
+        content = content.rstrip() + '\n\n---\n' + shortcode
         
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
@@ -362,7 +378,242 @@ def add_related_posts_shortcode(file_path, related_paths):
     except Exception as e:
         print(f"Error updating {file_path}: {str(e)}")
 
+def create_relationship_graph(related_posts, content_files):
+    """Create and display a graph visualization of related articles."""
+    G = nx.Graph()
+    
+    # Create a mapping of file paths to readable names and track categories
+    path_to_name = {}
+    path_to_category = {}
+    path_to_subcategory = {}
+    
+    for file_path in content_files:
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                post = frontmatter.parse(f.read())
+                metadata = post[0] if isinstance(post[0], dict) else {}
+                title = metadata.get('title', os.path.basename(file_path))
+                # Truncate very long titles
+                if len(title) > 40:
+                    title = title[:37] + "..."
+                rel_path = os.path.relpath(file_path, 'content')
+                path_to_name[rel_path] = title
+                
+                # Extract category and subcategory from path
+                parts = rel_path.split(os.sep)
+                if len(parts) > 2:  # e.g. ['en', 'docs', 'yiff_toolkit', 'loras', ...]
+                    if parts[2] == 'yiff_toolkit':
+                        path_to_category[rel_path] = 'yiff_toolkit'
+                        if len(parts) > 3:
+                            path_to_subcategory[rel_path] = parts[3]
+                        else:
+                            path_to_subcategory[rel_path] = 'root'
+                    else:
+                        path_to_category[rel_path] = parts[2]
+                        path_to_subcategory[rel_path] = 'root'
+                else:
+                    path_to_category[rel_path] = 'other'
+                    path_to_subcategory[rel_path] = 'root'
+        except Exception:
+            rel_path = os.path.relpath(file_path, 'content')
+            path_to_name[rel_path] = os.path.basename(file_path)
+            path_to_category[rel_path] = 'other'
+            path_to_subcategory[rel_path] = 'root'
+
+    # Add nodes and edges with category information
+    categories = set()
+    subcategories = set()
+    for source, targets in related_posts.items():
+        source_name = path_to_name.get(source, os.path.basename(source))
+        source_category = path_to_category.get(source, 'other')
+        source_subcategory = path_to_subcategory.get(source, 'root')
+        categories.add(source_category)
+        subcategories.add((source_category, source_subcategory))
+        G.add_node(source_name, category=source_category, subcategory=source_subcategory)
+        
+        for target in targets:
+            target_name = path_to_name.get(target, os.path.basename(target))
+            target_category = path_to_category.get(target, 'other')
+            target_subcategory = path_to_subcategory.get(target, 'root')
+            categories.add(target_category)
+            subcategories.add((target_category, target_subcategory))
+            G.add_node(target_name, category=target_category, subcategory=target_subcategory)
+            G.add_edge(source_name, target_name)
+
+    # Set up the visualization with a larger figure
+    plt.figure(figsize=(50, 40), facecolor='white')
+    
+    # Create subgraphs for each subcategory
+    subcategory_subgraphs = {subcat: nx.Graph() for subcat in subcategories}
+    for node in G.nodes():
+        cat = G.nodes[node]['category']
+        subcat = G.nodes[node]['subcategory']
+        subcategory_subgraphs[(cat, subcat)].add_node(node)
+    
+    # Add edges within subgraphs
+    for edge in G.edges():
+        source_cat = G.nodes[edge[0]]['category']
+        source_subcat = G.nodes[edge[0]]['subcategory']
+        target_cat = G.nodes[edge[1]]['category']
+        target_subcat = G.nodes[edge[1]]['subcategory']
+        if (source_cat, source_subcat) == (target_cat, target_subcat):
+            subcategory_subgraphs[(source_cat, source_subcat)].add_edge(*edge)
+    
+    # Position nodes using a combination of layouts
+    pos = {}
+    categories = sorted(list(categories))
+    subcategories = sorted(list(subcategories))
+    
+    # Calculate optimal grid dimensions based on number of subcategories
+    total_subcats = len(subcategories)
+    grid_size = int(np.ceil(np.sqrt(total_subcats)))
+    spacing = 10  # Large spacing between subcategories
+    
+    # First, position each subcategory cluster
+    for idx, (category, subcategory) in enumerate(subcategories):
+        subgraph = subcategory_subgraphs[(category, subcategory)]
+        if len(subgraph) == 0:
+            continue
+        
+        # Calculate grid position with offset based on category
+        row = idx // grid_size
+        col = idx % grid_size
+        
+        # Use specialized layout for subcategory clusters
+        if len(subgraph) > 1:
+            try:
+                # Try force-directed layout first
+                sub_pos = nx.spring_layout(subgraph, k=3.0, iterations=200)
+            except:
+                # Fallback to circular layout
+                sub_pos = nx.circular_layout(subgraph)
+        else:
+            sub_pos = nx.random_layout(subgraph)
+        
+        # Add positions with grid offset
+        base_x = col * spacing
+        base_y = row * spacing
+        
+        for node in subgraph.nodes():
+            if node in sub_pos:
+                x, y = sub_pos[node]
+                pos[node] = np.array([x + base_x, y + base_y])
+    
+    # Create color maps for categories and subcategories
+    category_colors = plt.cm.Set3(np.linspace(0, 1, len(categories)))
+    category_color_map = dict(zip(categories, category_colors))
+    
+    # Get node colors based on categories
+    node_colors = [category_color_map[G.nodes[node]['category']] for node in G.nodes()]
+    
+    # Clear the figure
+    plt.clf()
+    plt.figure(figsize=(50, 40), facecolor='white')
+    
+    # Draw edges with curves and varying colors based on relationship type
+    edge_colors = []
+    curved_edges = []
+    
+    for (u, v) in G.edges():
+        # Determine edge properties based on category and subcategory relationships
+        source_cat = G.nodes[u]['category']
+        source_subcat = G.nodes[u]['subcategory']
+        target_cat = G.nodes[v]['category']
+        target_subcat = G.nodes[v]['subcategory']
+        
+        # Calculate curve parameters
+        pos_u = pos[u]
+        pos_v = pos[v]
+        
+        if source_cat != target_cat:
+            # Inter-category edges (darkest, most curved)
+            edge_colors.append('#202020')
+            rad = 0.8
+        elif source_subcat != target_subcat:
+            # Inter-subcategory edges (medium dark, medium curve)
+            edge_colors.append('#404040')
+            rad = 0.5
+        else:
+            # Intra-subcategory edges (light, slight curve)
+            edge_colors.append('#808080')
+            rad = 0.2
+        
+        # Calculate curve
+        mid = (pos_u + pos_v) / 2
+        diff = pos_v - pos_u
+        normal = np.array([-diff[1], diff[0]]) / np.linalg.norm(diff)
+        control = mid + rad * normal
+        
+        curved_edges.append((pos_u, control, pos_v))
+    
+    # Draw edges
+    for edge, color in zip(curved_edges, edge_colors):
+        start, control, end = edge
+        path = plt.matplotlib.path.Path([start, control, end],
+                                      [plt.matplotlib.path.Path.MOVETO,
+                                       plt.matplotlib.path.Path.CURVE3,
+                                       plt.matplotlib.path.Path.CURVE3])
+        patch = plt.matplotlib.patches.PathPatch(path, facecolor='none',
+                                               edgecolor=color, alpha=0.5,
+                                               linewidth=1.0)
+        plt.gca().add_patch(patch)
+    
+    # Draw nodes
+    nx.draw_networkx_nodes(G, pos,
+                          node_color=node_colors,
+                          node_size=3000,
+                          alpha=0.9)
+    
+    # Draw labels with smaller font for better fit
+    nx.draw_networkx_labels(G, pos,
+                           font_size=9,
+                           font_weight='bold',
+                           font_family='sans-serif')
+    
+    # Create legend
+    legend_elements = []
+    
+    # Add category colors to legend
+    for cat in sorted(categories):
+        legend_elements.append(
+            plt.Line2D([0], [0], marker='o', color='w',
+                      markerfacecolor=category_color_map[cat],
+                      label=f'Category: {cat}', markersize=15)
+        )
+    
+    # Add edge type indicators
+    legend_elements.extend([
+        plt.Line2D([0], [0], color='#202020', label='Inter-category connection', linewidth=2),
+        plt.Line2D([0], [0], color='#404040', label='Inter-subcategory connection', linewidth=2),
+        plt.Line2D([0], [0], color='#808080', label='Intra-subcategory connection', linewidth=2)
+    ])
+    
+    plt.legend(handles=legend_elements,
+              loc='center left',
+              bbox_to_anchor=(1, 0.5),
+              fontsize=12,
+              title='Categories & Connections',
+              title_fontsize=14)
+    
+    # Ensure proper scaling and margins
+    plt.gca().set_aspect('equal')
+    plt.margins(0.2)
+    
+    # Save the graph
+    plt.savefig('related_articles_graph.png',
+                bbox_inches='tight',
+                dpi=300,
+                pad_inches=0.5,
+                facecolor='white')
+    plt.close()
+    print("\nGraph visualization saved as 'related_articles_graph.png'")
+
 def main():
+    # Set up argument parser
+    parser = argparse.ArgumentParser(description='Generate related posts and visualize relationships')
+    parser.add_argument('--graph', action='store_true', help='Only regenerate the graph visualization without updating shortcodes')
+    args = parser.parse_args()
+    
     # Initialize TF-IDF vectorizer
     vectorizer = TfidfVectorizer(
         stop_words='english',
@@ -381,23 +632,29 @@ def main():
         print("No related posts found!")
         return
     
-    print("\nAdding related posts shortcodes...")
-    # Add related posts shortcode to files
-    for file_path, related in related_posts.items():
-        # Process English version
-        en_path = os.path.join('content', file_path)
-        if os.path.exists(en_path):
-            add_related_posts_shortcode(en_path, related)
-        
-        # Process Japanese version
-        ja_path = os.path.join('content/ja', file_path[3:])  # Remove 'en/' prefix
-        if os.path.exists(ja_path):
-            add_related_posts_shortcode(ja_path, related)
-        
-        # Process Hungarian version
-        hu_path = os.path.join('content/hu', file_path[3:])  # Remove 'en/' prefix
-        if os.path.exists(hu_path):
-            add_related_posts_shortcode(hu_path, related)
+    if not args.graph:
+        print("\nAdding related posts shortcodes...")
+        # Add related posts shortcode to files
+        for file_path, related in related_posts.items():
+            # Process English version
+            en_path = os.path.join('content', file_path)
+            if os.path.exists(en_path):
+                add_related_posts_shortcode(en_path, related)
+            
+            # Process Japanese version
+            ja_path = os.path.join('content/ja', file_path[3:])  # Remove 'en/' prefix
+            if os.path.exists(ja_path):
+                add_related_posts_shortcode(ja_path, related)
+            
+            # Process Hungarian version
+            hu_path = os.path.join('content/hu', file_path[3:])  # Remove 'en/' prefix
+            if os.path.exists(hu_path):
+                add_related_posts_shortcode(hu_path, related)
+    else:
+        print("\nSkipping shortcode updates, only generating graph...")
+    
+    # Create and save the relationship graph
+    create_relationship_graph(related_posts, content_files)
     
     print("\nDone!")
 
