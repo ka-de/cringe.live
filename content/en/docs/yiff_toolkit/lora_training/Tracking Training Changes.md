@@ -10,14 +10,14 @@ aliases:
   - /en/docs/yiff_toolkit/lora_training/Tracking-Training-Changes
   - /en/docs/yiff_toolkit/lora_training/Tracking_Training_Changes/
   - /en/docs/yiff_toolkit/lora_training/Tracking_Training_Changes
-  - /en/docs/yiff_toolkit/lora_training/Tracking Training Changes/
-  - /en/docs/yiff_toolkit/lora_training/Tracking Training Changes
+  - "/en/docs/yiff_toolkit/lora_training/Tracking Training Changes/"
+  - "/en/docs/yiff_toolkit/lora_training/Tracking Training Changes"
   - /docs/yiff_toolkit/lora_training/Tracking-Training-Changes/
   - /docs/yiff_toolkit/lora_training/Tracking-Training-Changes
   - /docs/yiff_toolkit/lora_training/Tracking_Training_Changes/
   - /docs/yiff_toolkit/lora_training/Tracking_Training_Changes
-  - /docs/yiff_toolkit/lora_training/Tracking Training Changes/
-  - /docs/yiff_toolkit/lora_training/Tracking Training Changes
+  - "/docs/yiff_toolkit/lora_training/Tracking Training Changes/"
+  - "/docs/yiff_toolkit/lora_training/Tracking Training Changes"
 ---
 
 ## Overview

@@ -32,21 +32,6 @@ The `yiff_toolkit` is a comprehensive set of tools designed to enhance your crea
 
 {{< section details >}}
 
-## Dataset Tools
-
----
-
-I have uploaded all of the little handy Python and Rust scripts I use to [/dataset_tools](/docs/yiff_toolkit/dataset_tools/). They are pretty self explanatory by just the file name but almost all of them contain an AI generated descriptions. If you want to use them you will need to edit the path to your `training_dir` folder, the variable will be called `path` or `directory` and look something like this:
-
-```py
-def main():
-    path = 'C:\\Users\\kade\\Desktop\\training_dir_staging'
-```
-
-Don't be afraid of editing Python scripts, unlike the real snake, these won't bite! In the worst case they'll just delete your files!
-
-I also have this [thing](https://github.com/ka-de/dataset-tools)
-
 ## Dataset Preparation
 
 ---

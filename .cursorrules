@@ -1,7 +1,72 @@
 # Rules
 
+---
+
+## Writing Markdown
+
+---
+
 - In Markdown, fenced code blocks should be surrounded by blank lines
 
-   ```bash
-   echo "Like this!"
+### Example of a properly formatted fenced code block
+
+   ```md
+   1. Example of a properly formatted fenced code block
+
+      ```bash
+      echo "Like this!"
+      ```
+
    ```
+
+## Frontmatter
+
+### Aliases
+
+- For translated content, only the English (en) version should have `/docs` root aliases. Other language versions should only have their language-specific aliases (e.g. `/ja/docs` for Japanese)
+
+#### Example of a properly formatted aliases in the frontmatter
+
+```yaml
+<!-- For the English version -->
+
+---
+title: "Tracking Training Changes"
+description: "Guide to keeping track of changes during LoRA training using automated scripts"
+summary: "Learn how to use automated scripts to organize and track your LoRA training process, including managing model versions, backing up configurations, and maintaining clean training workspaces."
+weight: 8
+bookToC: false
+bookFlatSection: false
+aliases:
+  - /en/docs/yiff_toolkit/lora_training/Tracking-Training-Changes/
+  - /en/docs/yiff_toolkit/lora_training/Tracking-Training-Changes
+  - /en/docs/yiff_toolkit/lora_training/Tracking_Training_Changes/
+  - /en/docs/yiff_toolkit/lora_training/Tracking_Training_Changes
+  - "/en/docs/yiff_toolkit/lora_training/Tracking Training Changes/"
+  - "/en/docs/yiff_toolkit/lora_training/Tracking Training Changes"
+  - /docs/yiff_toolkit/lora_training/Tracking-Training-Changes/
+  - /docs/yiff_toolkit/lora_training/Tracking-Training-Changes
+  - /docs/yiff_toolkit/lora_training/Tracking_Training_Changes/
+  - /docs/yiff_toolkit/lora_training/Tracking_Training_Changes
+  - "/docs/yiff_toolkit/lora_training/Tracking Training Changes/"
+  - "/docs/yiff_toolkit/lora_training/Tracking Training Changes"
+---
+
+<!-- For the Hungarian version -->
+
+---
+title: "Tanítási Változások Követése"
+description: "Útmutató a LoRA tanítás során történő változások követéséhez automatizált szkriptek segítségével"
+summary: "Ismerje meg, hogyan használhat automatizált szkripteket a LoRA tanítási folyamat rendszerezéséhez és követéséhez, beleértve a modellverziók kezelését, a konfigurációk biztonsági mentését és a tiszta tanítási munkakörnyezet fenntartását."
+weight: 8
+bookToC: false
+bookFlatSection: false
+aliases:
+  - /hu/docs/yiff_toolkit/lora_training/Tracking-Training-Changes/
+  - /hu/docs/yiff_toolkit/lora_training/Tracking-Training-Changes
+  - /hu/docs/yiff_toolkit/lora_training/Tracking_Training_Changes/
+  - /hu/docs/yiff_toolkit/lora_training/Tracking_Training_Changes
+  - "/hu/docs/yiff_toolkit/lora_training/Tracking Training Changes/"
+  - "/hu/docs/yiff_toolkit/lora_training/Tracking Training Changes"
+---
+```

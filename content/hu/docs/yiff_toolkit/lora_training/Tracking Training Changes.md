@@ -10,8 +10,8 @@ aliases:
   - /hu/docs/yiff_toolkit/lora_training/Tracking-Training-Changes
   - /hu/docs/yiff_toolkit/lora_training/Tracking_Training_Changes/
   - /hu/docs/yiff_toolkit/lora_training/Tracking_Training_Changes
-  - /hu/docs/yiff_toolkit/lora_training/Tracking Training Changes/
-  - /hu/docs/yiff_toolkit/lora_training/Tracking Training Changes
+  - "/hu/docs/yiff_toolkit/lora_training/Tracking Training Changes/"
+  - "/hu/docs/yiff_toolkit/lora_training/Tracking Training Changes"
 ---
 
 ## Áttekintés
@@ -86,7 +86,7 @@ Ez a tisztító függvény segít a munkaterület rendezettségének fenntartás
 1. **Elnevezési Konvenció**: Használj következetes névformátumot:
 
    ```bash
-   {model}-{dataset}--v{version}s{steps}
+   {model}-{dataset}-v{version}s{steps}
    ```
 
    Példa: `noob-surrounded_by_penis-v1s2400`
@@ -105,6 +105,16 @@ Ez a tisztító függvény segít a munkaterület rendezettségének fenntartás
        ├── sample-prompts.txt
        └── training_script.sh
    ```
+
+3. **Verziókezelés**: Mindig Git repository-ban dolgozz:
+   - Tanítási szkriptek
+   - Adatkészlet konfigurációk
+   - Egyedi tanítási kód
+
+4. **Dokumentáció**: Tartsd nyilván:
+   - A jól működő tanítási paramétereket
+   - A sikertelen kísérleteket és azok okait
+   - A modell teljesítményével kapcsolatos megfigyeléseket
 
 A hibakeresési kimenet engedélyezhető:
 

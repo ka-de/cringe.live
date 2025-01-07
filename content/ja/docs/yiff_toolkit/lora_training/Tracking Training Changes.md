@@ -10,8 +10,8 @@ aliases:
   - /ja/docs/yiff_toolkit/lora_training/Tracking-Training-Changes
   - /ja/docs/yiff_toolkit/lora_training/Tracking_Training_Changes/
   - /ja/docs/yiff_toolkit/lora_training/Tracking_Training_Changes
-  - /ja/docs/yiff_toolkit/lora_training/Tracking Training Changes/
-  - /ja/docs/yiff_toolkit/lora_training/Tracking Training Changes
+  - "/ja/docs/yiff_toolkit/lora_training/Tracking Training Changes/"
+  - "/ja/docs/yiff_toolkit/lora_training/Tracking Training Changes"
 ---
 
 ## 概要
