@@ -838,3 +838,7 @@ tensorboard --logdir=logs
 ```
 
 After that you can open it up in your browser at [http://localhost:6006/](http://localhost:6006/) and try and read some tea leaves, uh, sorry! I meant loss curves!
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/Tracking-Training-Changes/ | docs/audio/Audiogen Medium/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/" >}}

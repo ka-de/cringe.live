@@ -107,3 +107,7 @@ Ezzel exportálhatod a workflow-dat SVG vagy PNG formátumban. Nagyon praktikus!
 ![Workflow Kép](/images/comfyui/workflow_image.png)
 
 </div>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/Experimental-Stuff/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager/" >}}

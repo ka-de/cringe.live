@@ -31,3 +31,7 @@ summary: "角を持つ友達のための解剖学的に正確なペニス！"
 [📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/cervine_penis)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/cervine_penis-v1e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

@@ -34,3 +34,7 @@ These adaptable creatures can be found across North America, Europe, and Asia, t
 [⬇️ LoRA Download (?MB)]()
 
 [📐 Dataset](https://huggingface.co/datasets/k4d3/anthro_stoat)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cooliehigh/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

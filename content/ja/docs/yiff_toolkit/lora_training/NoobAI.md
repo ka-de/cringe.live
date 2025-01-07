@@ -205,3 +205,7 @@ xxxx年の形式を使用します。例：`2021`。
 | 2014-2017  | mid         |
 | 2018-2020  | recent      |
 | 2021-2024  | newest      |
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/dataset_tools/e621-json-to-caption | docs/yiff_toolkit/dataset_tools/furrytagger" >}}

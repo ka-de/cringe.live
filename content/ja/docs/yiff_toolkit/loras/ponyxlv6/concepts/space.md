@@ -133,3 +133,7 @@ blurry, wtf, old art, where is your god now, abstract background, simple backgro
     </a>
   </div>
 </div>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/beksinski/ | docs/yiff_toolkit/loras/ponyxlv6/styles/realistic | docs/yiff_toolkit/loras/ponyxlv6/styles/hld" >}}

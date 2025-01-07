@@ -15,3 +15,7 @@ summary: "LoRA（Low-Rank Adaptation）は、特定のスタイルやコンセ�
 LoRA（Low-Rank Adaptation）は、特定のスタイルやコンセプトでモデルを微調整するための技術です。ここでは私が作成したLoRAを紹介します。
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/ | docs/audio/" >}}

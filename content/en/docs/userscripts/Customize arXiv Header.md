@@ -80,3 +80,7 @@ This userscript is designed to customize the arXiv website's appearance by selec
   document.head.appendChild(styleElement);
 })();
 ```
+
+---
+
+{{< related-posts related="docs/userscripts/CivitAI Fix/ | docs/userscripts | docs/yiff_toolkit/ponyxlv6_loras" >}}

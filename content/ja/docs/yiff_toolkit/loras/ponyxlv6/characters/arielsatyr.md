@@ -31,3 +31,7 @@ summary: "誰かのサテュロス（山羊人）キャラクター。"
 [📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/{})
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/arielsatyr-v2e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/ | docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/" >}}

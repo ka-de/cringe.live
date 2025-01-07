@@ -65,3 +65,7 @@ summary: "アミカスは、ビジュアルノベル「Adastra」の主要キャ
 [⬇️ 軽量版LoRAダウンロード (38.9MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/amicus-v1e200_frockpt1_th-3.55.safetensors?download=true)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/amicus-v1e200.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/wickerbeast/ | docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skunk/" >}}

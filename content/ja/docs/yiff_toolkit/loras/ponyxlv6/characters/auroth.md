@@ -31,3 +31,7 @@ Auroth（オーロス）は、Dota 2のゲームに登場するウィンター�
 [📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/auroth_the_winter_wyvern)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/auroth-v1e250.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/" >}}

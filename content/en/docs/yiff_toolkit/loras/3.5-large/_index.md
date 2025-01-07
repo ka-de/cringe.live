@@ -23,3 +23,7 @@ Stable Diffusion 3.5 Large represents a significant advancement in the Stable Di
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/3.5-large/styles/ | docs/yiff_toolkit/loras/3.5-large/styles/less_details/ | docs/yiff_toolkit/loras/3.5-large/styles/nitw/" >}}

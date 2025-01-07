@@ -93,3 +93,7 @@ fn get_json_metadata(buffer: &[u8]) -> Result<Value> {
     Ok(Value::Object(kv))
 }
 ```
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/e621-json-to-caption | docs/yiff_toolkit/dataset_tools/format-json-files | docs/yiff_toolkit/dataset_tools/format-json" >}}

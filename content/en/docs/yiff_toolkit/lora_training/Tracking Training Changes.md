@@ -135,3 +135,7 @@ For effective version control, always work with training scripts, dataset config
 Keep detailed notes about your training process, including training parameters that worked well, failed experiments and their reasons, and model performance observations. This helps with future optimization and avoiding mistakes.
 
 For long-term preservation, regularly backup your training configurations, sample prompts, and Git repositories. For efficient experiment tracking, consider using additional tools like TensorBoard for visualizing training metrics, Git LFS for large file storage, or external experiment tracking platforms for documenting the entire process.
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/audio/Audiogen Medium/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/" >}}

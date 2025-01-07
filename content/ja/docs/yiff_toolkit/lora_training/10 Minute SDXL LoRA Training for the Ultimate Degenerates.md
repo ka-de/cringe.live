@@ -181,3 +181,7 @@ python chop_blocks.py {⚠️縮小済み⚠️_lora_path} 1,0,0,0,0,0,0,0,0,0,0
 プリセットを使用してすべてのIN、OUT、またはMIDブロックを確認することもできますが、重要な情報のほとんどはOUT1にあります。<!-- ⚠️ TODO: もっとLoRAをトレーニングする必要があります -->
 
 保持したいブロックを決定したら、先ほど縮小したLoRAをチョップして、Nitroを支払わずにDiscordで友達に小さなLoRAを送信しましょう！😹
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/Experimental-Stuff/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/" >}}

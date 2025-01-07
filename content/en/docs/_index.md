@@ -23,3 +23,7 @@ This is the root of the documentation pages. Please use the menu to navigate to 
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ | docs/yiff_toolkit/dataset_tools/ | docs/yiff_toolkit/loras" >}}

@@ -34,3 +34,7 @@ BDSM is an acronym standing for Bondage, Discipline, Sadism, and Masochism. Disc
 [📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/bdsm)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/bdsm-v1e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/" >}}

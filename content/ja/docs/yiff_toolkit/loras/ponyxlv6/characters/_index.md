@@ -20,3 +20,7 @@ summary: "キャラクターLoRAは、Stable Diffusionモデルに特定のキ�
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/concepts/ | docs/yiff_toolkit/loras/ponyxlv6/styles/ | docs/yiff_toolkit/loras/ponyxlv6" >}}

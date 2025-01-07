@@ -16,3 +16,7 @@ aliases:
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/flux/ | docs/yiff_toolkit/loras/flux/styles/ | docs/yiff_toolkit/loras/flux/characters/" >}}

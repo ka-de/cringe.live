@@ -22,3 +22,7 @@ title: "カスタムノード"
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager/ | docs/yiff_toolkit/lora_training/Add-Custom-Optimizers/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/" >}}

@@ -96,3 +96,7 @@ Chunieのアートスタイルは、擬人化キャラクターの鮮やかで�
     </a>
   </div>
 </div>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/himari | docs/yiff_toolkit/loras/ponyxlv6/styles/hld | docs/yiff_toolkit/loras/ponyxlv6/styles/beksinski/" >}}

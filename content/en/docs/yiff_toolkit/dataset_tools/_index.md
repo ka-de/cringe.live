@@ -37,3 +37,7 @@ I also have [dataset-tools](https://github.com/ka-de/dataset-tools) which is a h
 My [gists](https://gist.github.com/ka-de) are also a graveyard of useful snippets and Jupyter notebooks I have at some point used.
 
 But to make it even more complicated, I also stashed my most often used scripts and training scripts in [k4d3/toolkit](https://huggingface.co/k4d3/toolkit) on huggingface.
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/lora_training/Tracking-Training-Changes/ | docs/yiff_toolkit/lora_training/" >}}

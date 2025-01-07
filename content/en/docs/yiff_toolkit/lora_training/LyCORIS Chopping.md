@@ -73,3 +73,7 @@ Vector strings control which layers are kept or removed using values from 0 to 1
 | Ringdingding (Stoat) | `1,0,0,0,0,0,0,0,1,0,0,1,1,1,1,0,0,0,0,0,0` |
 | Garfield (Character+Style) | `1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0` |
 | Rutkowski | `1,1,1,1,1,1,0,1,1,0,0,0,1,1,1,1,1,1,1,1,1` |
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/" >}}

@@ -827,3 +827,7 @@ tensorboard --logdir=logs
 ```
 
 その後、ブラウザで[http://localhost:6006/](http://localhost:6006/)を開いて、お茶の葉を読むように...申し訳ありません！損失曲線を読むように試みることができます！
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/Tracking-Training-Changes/ | docs/audio/Audiogen Medium/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/" >}}

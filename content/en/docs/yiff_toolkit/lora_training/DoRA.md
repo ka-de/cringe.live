@@ -186,3 +186,7 @@ This modification preserves the gradient with respect to $m$ while reducing trai
 
 - LLaVA-1.5-7B model
 - DoRA: 67.6% vs LoRA: 66.9% vs FT: 66.5%
+
+---
+
+{{< related-posts related="en/docs/yiff_toolkit/lora_training/Weight Decomposition Direction | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/" >}}

@@ -32,3 +32,7 @@ This setting is considered by some to be the more "correct" interpretation of th
 The choice of normalization direction impacts several aspects of the model: it affects how the magnitude and direction components are decomposed, influences the learning dynamics during the fine-tuning process, and ultimately determines the final adaptation behavior of the model.
 
 While both approaches can work, using output dimension normalization (`wd_on_output=True`) may better align with the mathematical formulation intended in the original paper. However, empirical evaluation on your specific task and architecture is recommended to determine which approach works better in practice.
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/dora/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/" >}}

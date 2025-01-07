@@ -65,3 +65,7 @@ ComfyUIを初めて開くと、複雑に見えるユニークなインターフ�
 これで白紙の状態になったので、ノードを追加してみましょう。ノードを追加するには2つの方法があります。1つはワークフローの空いている部分を右クリックする方法です。もう1つは、より直感的な方法で、ワークフローの空いている部分を左クリックで2回クリックする方法です。
 
 ![右クリックで追加する方法](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/right_click_add.png)
+
+---
+
+{{< related-posts related="docs/audio/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/" >}}

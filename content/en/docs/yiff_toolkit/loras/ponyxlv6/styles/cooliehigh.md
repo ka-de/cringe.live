@@ -28,3 +28,7 @@ aliases:
 [📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/by_cooliehigh)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/cooliehigh-v1e45.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

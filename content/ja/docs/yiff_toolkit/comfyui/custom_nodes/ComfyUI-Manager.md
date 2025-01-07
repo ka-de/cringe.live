@@ -46,3 +46,7 @@ ComfyUIを再起動すると、すぐに気になる共有ボタンが目に入�
 ![カスタムスクリプトの作者](/images/comfyui/custom_scripts_author.png)
 
 インストールしたものについての詳細はこちらで確認できます：[Custom Scripts](/docs/yiff_toolkit/comfyui/ComfyUI-Custom-Scripts/)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/" >}}

@@ -34,3 +34,7 @@ Blaidd is a fascinating character from the game Elden Ring. He is a half man, ha
 [📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/blaidd)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/blaidd-v1e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/ | docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic" >}}

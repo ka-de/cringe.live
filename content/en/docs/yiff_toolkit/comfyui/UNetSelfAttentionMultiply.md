@@ -28,3 +28,7 @@ In simpler terms, this function acts like a fine-tuning knob for the network's a
 ![A plot between different values of UNetSelfAttentionMultiply](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/plot2.png)
 
 ![A plot between different values of UNetSelfAttentionMultiply](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/plot.png)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/" >}}

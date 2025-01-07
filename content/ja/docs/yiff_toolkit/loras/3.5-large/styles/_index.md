@@ -20,3 +20,7 @@ Stable DiffusionモデルのスタイルLoRAは、特定の芸術的スタイル
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/3.5-large/ | docs/yiff_toolkit/loras/3.5-large/styles/nitw/ | docs/yiff_toolkit/loras/3.5-large/styles/less_details/" >}}

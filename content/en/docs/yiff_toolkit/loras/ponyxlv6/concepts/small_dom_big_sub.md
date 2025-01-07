@@ -34,3 +34,7 @@ Finally, the small guy gets to be on top! A LoRA trained on images depicting a s
 [📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/{})
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/small_dom_big_sub-v2e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

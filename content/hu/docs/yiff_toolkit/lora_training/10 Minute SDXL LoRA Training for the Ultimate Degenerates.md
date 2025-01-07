@@ -200,3 +200,7 @@ Győződj meg róla, hogy a `control_after_generate` értéke `fixed` legyen!
 Használhatod az itt található előbeállításokat is az összes IN, OUT vagy MID blokk ellenőrzéséhez, de a lényeges dolgok többnyire az OUT1-ben lesznek. <!-- ⚠️ TODO: Tényleg több LoRA-t kell tréningelnem -->
 
 Miután kitaláltad, mely blokkokat szeretnéd megtartani, darabold fel az imént átméretezett LoRA-t, és küldd el a pici LoRA-dat a barátaidnak Discordon Nitro előfizetés nélkül! 😹
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/Experimental-Stuff/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/" >}}

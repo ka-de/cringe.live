@@ -64,3 +64,7 @@ summary: "DOMを監視・変更することで、Discordチャンネル上の特
   replaceColorStyles();
 })();
 ```
+
+---
+
+{{< related-posts related="docs/userscripts/Old Reddit to New/ | docs/userscripts | docs/userscripts/CivitAI Fix/" >}}

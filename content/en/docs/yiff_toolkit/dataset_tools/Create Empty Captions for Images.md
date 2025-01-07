@@ -74,3 +74,7 @@ image_directory = r'C:\Users\kade\Desktop\training_dir_staging\1_by_spaceengine'
 # Call the function to create empty txt files
 create_empty_txt_files(image_directory)
 ```
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/furrytagger | docs/yiff_toolkit/dataset_tools/Check for Transparency/ | docs/yiff_toolkit/dataset_tools/count-images-in-folder" >}}

@@ -99,3 +99,7 @@ The Wickerbeast community is active and well-organized, with dedicated platforms
 [📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/wickerbeast)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/wickerbeast-v1e500.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/hld | docs/yiff_toolkit/loras/ponyxlv6/styles/realistic | docs/yiff_toolkit/loras/ponyxlv6/characters/skunk/" >}}

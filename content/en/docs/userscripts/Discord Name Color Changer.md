@@ -71,3 +71,7 @@ This userscript, designed for a specific Discord channel, automatically replaces
   replaceColorStyles();
 })();
 ```
+
+---
+
+{{< related-posts related="docs/userscripts/Old Reddit to New/ | docs/userscripts | docs/userscripts/CivitAI Fix/" >}}

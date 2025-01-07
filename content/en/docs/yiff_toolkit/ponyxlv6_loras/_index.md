@@ -62,3 +62,7 @@ aliases:
     This page has been moved to <a href="/docs/yiff_toolkit/loras/ponyxlv6/">/docs/yiff_toolkit/loras/ponyxlv6/</a>!
   </div>
 </div>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/ComfyUI_frontend-ProgressBars/ | docs/userscripts/Customize arXiv Header/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/" >}}

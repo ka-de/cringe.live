@@ -34,3 +34,7 @@ Anatomically correct penises for antlered friends!
 [📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/cervine_penis)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/cervine_penis-v1e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

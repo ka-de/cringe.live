@@ -121,4 +121,8 @@ Ez egy linket helyez el a JSON-hoz a letöltés gomb mellett az e621.net és e6a
 
 Használhatod a címkéző szkriptemet, csak tedd be a 2. verzió mappájába és hívd meg egy képekkel teli könyvtáron, hogy mindent felcímkézzen.
 
-Szükséged lesz a `torch`, `safetensors`, Pillow és `timm` csomagokra is, hogy ez a dolog működjön! 
+Szükséged lesz a `torch`, `safetensors`, Pillow és `timm` csomagokra is, hogy ez a dolog működjön!
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/ | docs/yiff_toolkit/dataset_tools/" >}}

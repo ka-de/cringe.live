@@ -41,3 +41,7 @@ Dagasiは、ファーリーアートコミュニティで高く評価されて�
 - `by dagasi`
 
 特に使用する必要はありません。
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/greg_rutkowski | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/" >}}

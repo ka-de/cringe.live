@@ -85,3 +85,7 @@ git merge origin/master
 ノードは実行時に複数の他のノードに展開できるようになりました。`Advanced Prompt`ノードはその一例です。`anthro male wolf, [full-length portrait:cute fangs:0.4]`を使用すると、サンプリングの最初の40%で`anthro male wolf, full-length portrait`というプロンプトを使用し、最後の60%で`anthro male wolf, cute fangs`を使用します。このノードでは、`<lora:blp-v1e400.safetensors:0.2>`と入力するだけで、20%の強度でLoRAを読み込むこともできます。
 
 これは、サブグラフを使用する明るい未来への大きな一歩です！
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/" >}}

@@ -65,3 +65,7 @@ A cikk empirikus elemzése feltárja, hogy a hatékony finomhangolás (ahogy az 
 
 1. A skálázási tényezők ($m_j$) módosítását a kimeneti tér irányainak ($v_j$) megőrzése mellett, vagy
 2. A kimeneti tér irányainak ($v_j$) finomítását relatív skáláik ($m_j$) megtartása mellett
+
+---
+
+{{< related-posts related="en/docs/yiff_toolkit/lora_training/Weight Decomposition Direction | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/" >}}

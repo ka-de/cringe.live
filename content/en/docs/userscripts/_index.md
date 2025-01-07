@@ -232,3 +232,7 @@ var bodyText = document.body.innerHTML;
 bodyText = bodyText.replace(/Old Text/g, 'New Text');
 document.body.innerHTML = bodyText;
 ```
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/ | docs/userscripts/e621.net JSON Button/ | docs/userscripts/Customize arXiv Header/" >}}

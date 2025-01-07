@@ -44,3 +44,7 @@ directory_path = 'E:\\training_dir'
 # 関数を呼び出して結果を出力
 print(f'画像の総数: {count_images(directory_path)}')
 ```
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/Check for Large Images/ | docs/yiff_toolkit/dataset_tools/remove-extra-file-extensions | docs/yiff_toolkit/dataset_tools/create-empty-captions-for-images" >}}

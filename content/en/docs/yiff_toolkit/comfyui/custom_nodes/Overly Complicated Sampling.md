@@ -15,3 +15,7 @@ aliases:
 ---
 
 <https://github.com/blepping/comfyui_overly_complicated_sampling>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-AnimateDiff-Evolved/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_IPAdapter_plus/ | docs/yiff_toolkit/comfyui/ControlNet/" >}}

@@ -18,3 +18,7 @@ aliases:
 LoRAs (Low-Rank Adaptations) are a technique used to fine-tune models with specific styles or concepts. Here are some of mine.
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/ | docs/audio/" >}}

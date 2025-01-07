@@ -118,3 +118,7 @@ summary: "[@147Penguinmw](https://twitter.com/147Penguinmw)による4枚の画�
     </a>
   </div>
 </div>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/chunie/ | docs/yiff_toolkit/loras/ponyxlv6/styles/hld | docs/yiff_toolkit/loras/ponyxlv6/styles/realistic" >}}

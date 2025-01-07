@@ -159,3 +159,7 @@ for image_filename in image_files:
     with open(text_path, "w", encoding="utf8") as text_file:
         text_file.write(", ".join(tags_to_write_escaped))
 ```
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/create-empty-captions-for-images | docs/yiff_toolkit/dataset_tools/e621-json-to-caption | docs/yiff_toolkit/dataset_tools/Check for Large Images/" >}}

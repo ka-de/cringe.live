@@ -453,3 +453,7 @@ Yep, that's all it takes.
 ![[An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/tutorial/predicted_normal_18_00024_.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/tutorial/predicted_normal_18_00024_.png)
 
 > Thanks to OCPik4chu on Discord for the tip!
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/ | docs/yiff_toolkit/dataset_tools/" >}}

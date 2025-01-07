@@ -31,3 +31,7 @@ summary: "Zoophobiaに登場する青いウェアウルフ。"
 [📐 データセット](<https://huggingface.co/datasets/k4d3/furry/tree/main/jayjay_(zoophobia)>)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/jayjay-v1e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/ | docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic" >}}

@@ -77,3 +77,7 @@ The art style of “Night in the Woods” is characterized by its simplicity and
 [📐 Dataset](https://huggingface.co/datasets/k4d3/night_in_the_woods)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/night_in_the_woods_sd35-v4s6000.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/3.5-large/styles/less_details/ | docs/yiff_toolkit/loras/3.5-large/styles/ | docs/yiff_toolkit/loras/3.5-large/" >}}

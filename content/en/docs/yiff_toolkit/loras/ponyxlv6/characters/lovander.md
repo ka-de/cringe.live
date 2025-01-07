@@ -34,3 +34,7 @@ Lovander is a sexy salamander from Palworld. It stands tall with a primarily lig
 [📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/lovander)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/lovander-v3e10.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/" >}}

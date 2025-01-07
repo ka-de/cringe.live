@@ -42,3 +42,7 @@ title: "ステップウェイト減衰"
    - `step_size`を使用するため、減衰は現在の有効学習率に適応し、異なるトレーニングフェーズ間でより安定した動作を実現します。
 
 この文脈での「ステップウェイト」という用語は、損失関数内の別個の正則化項ではなく、重み更新プロセスに統合されて各最適化ステップで減衰が適用されることを強調しています。
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/audio/Audiogen Medium/ | docs/yiff_toolkit/lora_training/dora/" >}}

@@ -29,3 +29,7 @@ summary: "ブイモンは、白い腹部、鼻に角、額に黄色い「V」字
 [📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/veemon)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/veemon-v1e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/ | docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/" >}}

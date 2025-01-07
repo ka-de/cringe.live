@@ -52,3 +52,7 @@ You can also build it out like this:
 And here is yet another weird prediction model you can build out, which results in pretty awesome images:
 
 ![Another Weird Prediction](/images/comfyui/another_weird_prediction.png)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_bitsandbytes_NF4/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager/" >}}

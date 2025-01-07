@@ -41,3 +41,7 @@ wd_on_output=True
 正規化の方向の選択は、モデルのいくつかの側面に影響を与えます：大きさと方向の成分の分解方法に影響を与え、微調整プロセス中の学習ダイナミクスに影響を与え、最終的にモデルの適応行動を決定します。
 
 両方のアプローチが機能する可能性がありますが、出力次元正規化（`wd_on_output=True`）を使用することで、原論文で意図された数学的定式化とより良く一致する可能性があります。ただし、特定のタスクとアーキテクチャに対してどちらのアプローチがより良く機能するかを判断するには、実証的な評価が推奨されます。
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/dora/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/" >}}

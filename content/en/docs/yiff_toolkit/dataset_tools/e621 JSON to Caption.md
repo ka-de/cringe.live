@@ -188,3 +188,7 @@ if __name__ == "__main__":
     root_directory = r"C:\Users\kade\Desktop\training_dir_staging"
     recursive_process(root_directory)
 ```
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/format-json-files | docs/yiff_toolkit/dataset_tools/extract-metadata | docs/yiff_toolkit/dataset_tools/furrytagger" >}}

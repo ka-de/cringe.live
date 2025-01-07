@@ -49,3 +49,7 @@ CFG Predictionを使用したい場合は、モデルパッチなどの恩恵を
 そして、これは素晴らしい画像を生成する、もう一つの変わった予測モデルの構築例です：
 
 ![もう一つの変わったPrediction](/images/comfyui/another_weird_prediction.png)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_bitsandbytes_NF4/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager/" >}}

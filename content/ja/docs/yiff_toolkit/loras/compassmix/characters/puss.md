@@ -55,3 +55,7 @@ puss, cloak, hat, hat feather, boots,
 [![AI生成画像](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/puss-v1e400/puss_000400_01_20240709175442_1.png?download=true)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/puss-v1e400/puss_000400_01_20240709175442_1.png?download=true)
 
 </div>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/compassmix/characters/dth/ | docs/yiff_toolkit/loras/compassmix/styles/pny/ | docs/yiff_toolkit/loras/compassmix/styles/ozoneserpent/" >}}

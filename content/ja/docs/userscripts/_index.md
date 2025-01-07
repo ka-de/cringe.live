@@ -229,3 +229,7 @@ var bodyText = document.body.innerHTML;
 bodyText = bodyText.replace(/古いテキスト/g, '新しいテキスト');
 document.body.innerHTML = bodyText;
 ```
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/ | docs/userscripts/e621.net JSON Button/ | docs/userscripts/Customize arXiv Header/" >}}

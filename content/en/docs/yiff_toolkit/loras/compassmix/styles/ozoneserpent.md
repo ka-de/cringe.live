@@ -77,3 +77,7 @@ It will align better with the original style if you use the keyword!
 [![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i/horny-awoo.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/ozoneserpent/i2i/horny-awoo.png)
 
 </div>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/compassmix/styles/pny/ | docs/yiff_toolkit/loras/compassmix/characters/dth/ | docs/yiff_toolkit/loras/compassmix/styles/hax/" >}}

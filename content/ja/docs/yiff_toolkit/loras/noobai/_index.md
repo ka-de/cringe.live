@@ -21,3 +21,7 @@ EPSバージョンを使用している場合、明らかに[Progressive Distill
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/noobai/concepts/ | docs/yiff_toolkit/loras/noobai/characters/ | docs/yiff_toolkit/loras/noobai/styles/" >}}

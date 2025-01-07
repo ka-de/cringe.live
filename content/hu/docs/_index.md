@@ -23,3 +23,7 @@ Ez a dokumentációs oldalak gyökere. Használd az oldalsávot a neked megfelel
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ | docs/yiff_toolkit/dataset_tools/ | docs/yiff_toolkit/loras" >}}

@@ -34,3 +34,7 @@ A squirrel from DOTA 2. Hoodwink is known for toting a massive crossbow, which s
 [📐 Dataset](<https://huggingface.co/datasets/k4d3/furry/tree/main/hoodwink_(dota)>)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/hoodwink-v1e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

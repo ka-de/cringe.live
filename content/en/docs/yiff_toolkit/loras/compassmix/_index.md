@@ -26,3 +26,7 @@ If you try these LoRAs out, make sure to set the CFG higher as I have diluted th
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/compassmix/characters/ | docs/yiff_toolkit/loras/compassmix/styles/ | docs/yiff_toolkit/loras/compassmix/styles/pny/" >}}

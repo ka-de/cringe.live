@@ -96,3 +96,7 @@ summary: "ウィッカービーストは、ファーリーファンダムにお�
 [📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/wickerbeast)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/wickerbeast-v1e500.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/hld | docs/yiff_toolkit/loras/ponyxlv6/styles/realistic | docs/yiff_toolkit/loras/ponyxlv6/characters/skunk/" >}}

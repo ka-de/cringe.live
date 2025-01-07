@@ -19,3 +19,7 @@ summary: "Pony Diffusion V6 XLは、「マイリトルポニー」の美的感�
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/concepts/ | docs/yiff_toolkit/loras/ponyxlv6/styles/ | docs/yiff_toolkit/loras/ponyxlv6/characters/" >}}

@@ -65,3 +65,7 @@ Liuらによる["DoRA: Weight-Decomposed Low-Rank Adaptation"](https://arxiv.org
 
 1. 出力空間の方向（$v_j$）を保持しながらスケーリング係数（$m_j$）を調整する
 2. それらの相対的なスケール（$m_j$）を維持しながら出力空間の方向（$v_j$）を改良する
+
+---
+
+{{< related-posts related="en/docs/yiff_toolkit/lora_training/Weight Decomposition Direction | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/" >}}

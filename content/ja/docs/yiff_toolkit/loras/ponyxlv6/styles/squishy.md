@@ -25,3 +25,7 @@ summary: ""
 [📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/by_squishy)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/squishy-v1e10.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

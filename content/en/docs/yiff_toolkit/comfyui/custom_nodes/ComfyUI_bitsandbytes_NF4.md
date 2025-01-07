@@ -31,3 +31,7 @@ You will want to use the `CheckpointLoaderNF4` node to load in the models.
 Here is an example workflow:
 
 ![Example NF4 Workflow](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/nf4_workflow.png)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/flux/ | docs/yiff_toolkit/comfyui/Experimental-Stuff/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Prediction/" >}}

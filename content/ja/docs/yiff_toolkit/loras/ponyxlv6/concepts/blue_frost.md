@@ -31,3 +31,7 @@ summary: "キッチュな冬景色の生成を容易にすることを目指し�
 [📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/blue_frost)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/blue_frost.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/" >}}

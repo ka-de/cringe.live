@@ -19,3 +19,7 @@ aliases:
 Egy "kis" gyűjtemény Python és PowerShell szkriptekből, amelyeket az adathalmaz kurátorok hasznosnak találhatnak. A címben a ⚡ azt jelenti, hogy PowerShell szkript, a 🐍 azt jelenti, hogy Python, és a 🦀 természetesen azt jelenti, hogy Rust!
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/lora_training/Tracking-Training-Changes/ | docs/yiff_toolkit/lora_training/" >}}

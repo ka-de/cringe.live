@@ -31,3 +31,7 @@ summary: "チベットスナギツネは、四角い頭と密な毛皮が特徴�
 [📐 データセット - feral_tibetan_sand_fox](https://huggingface.co/datasets/k4d3/furry/tree/main/feral_tibetan_sand_fox)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/tibetan-v2e500.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/" >}}

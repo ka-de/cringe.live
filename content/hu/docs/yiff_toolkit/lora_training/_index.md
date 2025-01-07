@@ -838,3 +838,7 @@ tensorboard --logdir=logs
 ```
 
 Ezután megnyithatod a böngésződben a [http://localhost:6006/](http://localhost:6006/) címen, és próbálhatsz teafüvet olvasni, ööö, bocsánat! Úgy értettem, veszteségi görbéket!
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/Tracking-Training-Changes/ | docs/audio/Audiogen Medium/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/" >}}

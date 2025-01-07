@@ -49,3 +49,7 @@ directory_path = 'E:\\training_dir'
 # Call the function and print the result
 print(f'Total number of images: {count_images(directory_path)}')
 ```
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/Check for Large Images/ | docs/yiff_toolkit/dataset_tools/remove-extra-file-extensions | docs/yiff_toolkit/dataset_tools/create-empty-captions-for-images" >}}

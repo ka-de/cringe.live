@@ -41,3 +41,7 @@ Ezt a beállítást néhányan a tanulmány megfogalmazásának "helyesebb" ért
 A normalizálási irány választása több szempontból is befolyásolja a modellt: hatással van a nagyság és irány komponensek felbontására, befolyásolja a tanulási dinamikát a finomhangolási folyamat során, és végül meghatározza a modell végső adaptációs viselkedését.
 
 Bár mindkét megközelítés működhet, a kimeneti dimenzió normalizálása (`wd_on_output=True`) jobban illeszkedhet az eredeti tanulmányban szándékolt matematikai megfogalmazáshoz. Azonban az ajánlott az empirikus értékelés az adott feladaton és architektúrán annak meghatározására, hogy melyik megközelítés működik jobban a gyakorlatban.
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/dora/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/" >}}

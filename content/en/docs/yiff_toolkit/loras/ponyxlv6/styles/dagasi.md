@@ -44,3 +44,7 @@ Keyword:
 - `by dagasi`
 
 You don't really need to use it.
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/greg_rutkowski | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/" >}}

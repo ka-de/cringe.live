@@ -20,3 +20,7 @@ Stable DiffusionモデルのスタイルLoRAは、特定の芸術的スタイル
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/compassmix/characters/ | docs/yiff_toolkit/loras/compassmix/ | docs/yiff_toolkit/loras/compassmix/styles/pny/" >}}

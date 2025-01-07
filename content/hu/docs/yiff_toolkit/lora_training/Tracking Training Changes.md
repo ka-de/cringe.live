@@ -129,3 +129,7 @@ A hatékony verziókezelés érdekében mindig Git repository-ban dolgozz a tan�
 Vezess részletes jegyzeteket a tanítási folyamatról, beleértve a jól működő paramétereket, a sikertelen kísérleteket és azok okait, valamint a modell teljesítményével kapcsolatos megfigyeléseket. Ez segít a későbbi optimalizálásban és a hibák elkerülésében.
 
 A hosszú távú megőrzés érdekében rendszeresen készíts biztonsági mentést a tanítási konfigurációkról, minta promptokról és Git repository-król. A kísérletek hatékony követéséhez érdemes további eszközöket is használni, mint például a TensorBoard a tanítási metrikák vizualizálásához, a Git LFS a nagy fájlok kezeléséhez, vagy külső kísérlet követő platformokat a teljes folyamat dokumentálásához.
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/audio/Audiogen Medium/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/" >}}

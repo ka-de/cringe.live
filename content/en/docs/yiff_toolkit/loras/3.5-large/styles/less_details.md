@@ -83,3 +83,7 @@ Trained a LoRA on a bunch of screenshots from Minit which turned out to be reall
         Your browser does not support the video tag.
     </video>
 </div>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/3.5-large/styles/nitw/ | docs/yiff_toolkit/loras/3.5-large/styles/ | docs/yiff_toolkit/loras/3.5-large/" >}}

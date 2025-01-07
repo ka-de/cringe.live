@@ -33,3 +33,7 @@ Foxparksは、ゲーム「Palworld」に登場するキャラクターです。�
 [📐 データセット - feral_foxparks](https://huggingface.co/datasets/k4d3/furry/tree/main/feral_foxparks)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/foxparks-v2e134.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

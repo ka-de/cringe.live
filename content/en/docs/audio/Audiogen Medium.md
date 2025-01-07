@@ -242,3 +242,7 @@ def evaluate_model(model, prompts):
         for i, wav in enumerate(wavs):
             audio_write(f"sample_{i}", wav.cpu(), model.sample_rate)
 ```
+
+---
+
+{{< related-posts related="docs/audio/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/Tracking-Training-Changes/" >}}

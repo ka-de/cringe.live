@@ -85,3 +85,7 @@ Keyword:
 [![An AI generated image.](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_01_20240714140001_1.png)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/compass_loras/pny-v1e200/pny_000200_01_20240714140001_1.png)
 
 </div>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/compassmix/styles/ozoneserpent/ | docs/yiff_toolkit/loras/compassmix/characters/dth/ | docs/yiff_toolkit/loras/compassmix/characters/puss/" >}}

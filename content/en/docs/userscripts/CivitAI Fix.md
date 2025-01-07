@@ -65,3 +65,7 @@ Designed to fix a layout issue on civitai.com by adding custom CSS to the page. 
   addGlobalStyle(customCSS);
 })();
 ```
+
+---
+
+{{< related-posts related="docs/userscripts/Customize arXiv Header/ | docs/userscripts/Discord Name Color Changer/ | docs/yiff_toolkit/lora_training/Add-Custom-Optimizers/" >}}

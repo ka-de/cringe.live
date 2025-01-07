@@ -69,3 +69,7 @@ dth, cloak, red eyes
 [![AIで生成された画像](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000168-07091524.png?download=true)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/dth-compass/00000168-07091524.png?download=true)
 
 </div>
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/compassmix/styles/pny/ | docs/yiff_toolkit/loras/compassmix/styles/ozoneserpent/ | docs/yiff_toolkit/loras/compassmix/characters/puss/" >}}

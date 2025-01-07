@@ -108,3 +108,7 @@ function Format-JSONFileToSingleLine {
 # Format all JSON files in a directory to single-line format
 # Format-JSONFilesToSingleLine -Path "C:\path\to\your\directory"
 ```
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/format-json-files | docs/yiff_toolkit/dataset_tools/format-json | docs/yiff_toolkit/dataset_tools/e621-json-to-caption" >}}

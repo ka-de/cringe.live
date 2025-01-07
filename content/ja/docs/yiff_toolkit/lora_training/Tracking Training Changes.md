@@ -129,3 +129,7 @@ DEBUG=1 ./your_training_script.sh
 トレーニングプロセスについて、うまく機能したトレーニングパラメータ、失敗した実験とその理由、モデルのパフォーマンス観察を含む詳細なメモを取ってください。これは将来の最適化とエラーの回避に役立ちます。
 
 長期保存のために、トレーニング設定、サンプルプロンプト、Gitリポジトリを定期的にバックアップしてください。効率的な実験追跡のために、トレーニングメトリクスの視覚化にはTensorBoard、大きなファイルの保存にはGit LFS、プロセス全体の文書化には外部の実験追跡プラットフォームなどの追加ツールの使用を検討してください。
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/audio/Audiogen Medium/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/" >}}

@@ -186,3 +186,7 @@ Make sure you set `control_after_generate` to `fixed`!
 You can also use the presets in there to check all IN, OUT or MID blocks, but the juicy stuff is mostly going to be in OUT1. <!-- ⚠️ TODO: I really need to train more LoRAs -->
 
 Once you have figured out which blocks you want to keep, chop up the LoRA you just resized, and send your teeny-tiny LoRA to your friends on Discord without paying for Nitro! 😹
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/Experimental-Stuff/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/" >}}

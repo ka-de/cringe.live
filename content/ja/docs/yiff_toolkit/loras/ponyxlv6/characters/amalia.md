@@ -31,3 +31,7 @@ summary: "バターチョークによって作られたロリ猫娘のオリジ�
 [📐 データセット](<https://huggingface.co/datasets/k4d3/furry/tree/main/amalia_(claralaine)>)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/amalia-v2e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/butterchalk/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cooliehigh/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

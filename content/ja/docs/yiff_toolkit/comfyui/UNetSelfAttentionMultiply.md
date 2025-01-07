@@ -25,3 +25,7 @@ U-Netなどの画像拡散ネットワークにおける`UNetSelfAttentionMultip
 ![UNetSelfAttentionMultiplyの異なる値間のプロット](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/plot2.png)
 
 ![UNetSelfAttentionMultiplyの異なる値間のプロット](https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/plot.png)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/" >}}

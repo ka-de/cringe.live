@@ -68,3 +68,7 @@ Amicus is a central character in the visual novel Adastra. He is a wolf-like ali
 [⬇️ Shrunk LoRA Download (38.9MB)](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/ponyxl_loras_shrunk_2/amicus-v1e200_frockpt1_th-3.55.safetensors?download=true)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/amicus-v1e200.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/wickerbeast/ | docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skunk/" >}}

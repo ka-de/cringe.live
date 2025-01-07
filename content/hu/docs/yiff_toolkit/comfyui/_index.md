@@ -65,3 +65,7 @@ Most kezdjük az alapoktól és egyszerűsítsük le a munkafolyamatot. Íme, ho
 Most, hogy tiszta lappal indulsz, adjunk hozzá egy node-ot. Ezt kétféleképpen teheted meg. Az egyik mód, hogy jobb klikkel kattintasz a munkafolyamat egy üres részére. A másik mód, ami kicsit intuitívabb, hogy bal klikkel duplán kattintasz egy üres részre.
 
 ![Jobb Klikk Hozzáadási Módszer](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/right_click_add.png)
+
+---
+
+{{< related-posts related="docs/audio/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/" >}}

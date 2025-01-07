@@ -67,3 +67,7 @@ python chop_blocks.py --model input.safetensors --save_to output.safetensors --v
 | Ringdingding（Stoat） | `1,0,0,0,0,0,0,0,1,0,0,1,1,1,1,0,0,0,0,0,0` |
 | Garfield（キャラクター＋スタイル） | `1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,1,0,0,0` |
 | Rutkowski | `1,1,1,1,1,1,0,1,1,0,0,0,1,1,1,1,1,1,1,1,1` |
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/" >}}

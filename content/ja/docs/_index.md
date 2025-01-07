@@ -20,3 +20,7 @@ summary: "ドキュメント"
 ---
 
 {{< section details >}}
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ | docs/yiff_toolkit/dataset_tools/ | docs/yiff_toolkit/loras" >}}

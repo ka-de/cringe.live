@@ -162,3 +162,7 @@ To begin experimenting with these concepts, you can clear your workflow:
 You can add nodes by either right-clicking or double-clicking on an empty area:
 
 ![Right Click Add Method](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/comfyui/right_click_add.png)
+
+---
+
+{{< related-posts related="docs/audio/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/" >}}

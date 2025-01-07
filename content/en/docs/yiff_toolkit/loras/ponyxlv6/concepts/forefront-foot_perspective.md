@@ -28,3 +28,7 @@ aliases:
 [📐 Dataset](https://huggingface.co/datasets/k4d3/furry/tree/main/forefront-foot_perspective)
 
 [📊 Metadata](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/forefront-foot_perspective-v1e400.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

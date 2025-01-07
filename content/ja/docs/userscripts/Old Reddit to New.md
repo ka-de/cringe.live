@@ -31,3 +31,7 @@ window.location.replace(
   "https://reddit.com" + window.location.pathname + window.location.search,
 );
 ```
+
+---
+
+{{< related-posts related="docs/userscripts/e621.net JSON Button/ | docs/userscripts | docs/userscripts/Discord Name Color Changer/" >}}

@@ -25,3 +25,7 @@ summary: ""
 [📐 データセット](https://huggingface.co/datasets/k4d3/furry/tree/main/by_cecily_lin)
 
 [📊 メタデータ](https://huggingface.co/k4d3/yiff_toolkit/raw/main/ponyxl_loras/cecily_lin-v1e37.json)
+
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}
