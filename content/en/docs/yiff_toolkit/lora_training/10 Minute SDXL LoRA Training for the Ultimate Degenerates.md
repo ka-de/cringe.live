@@ -4,6 +4,7 @@ bookFlatSection: false
 bookToC: false
 title: "10 Minute LoRA Training for the Ultimate Degenerates"
 summary: "An offensive, unethical and biased guide on how to poop out awesome LoRAs with the bare minimal of effort and compute time."
+tags: ["lora", "training", "sdxl", "optimization", "quick-start"]
 aliases:
   - /docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/
   - /docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates

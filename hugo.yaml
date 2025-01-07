@@ -8,15 +8,26 @@ disablePathToLower: true
 enableGitInfo: true
 enableLastMod: true
 
+# Taxonomies
+taxonomies:
+  tags: tags
+
+# Taxonomy settings
+permalinks:
+  tags: /tags/:slug
+
 # SEO Configuration
 sitemap:
   changefreq: "weekly"
   priority: 0.5
   filename: "sitemap.xml"
 
+# Output settings
 outputs:
   home: ["HTML", "RSS", "JSON", "SITEMAP"]
   section: ["HTML", "RSS", "JSON"]
+  taxonomy: ["HTML", "RSS", "JSON"]
+  term: ["HTML", "RSS", "JSON"]
   page: ["HTML", "JSON"]
 
 outputFormats:
