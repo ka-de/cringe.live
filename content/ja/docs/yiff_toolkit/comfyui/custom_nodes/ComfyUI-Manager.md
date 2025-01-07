@@ -45,7 +45,7 @@ ComfyUIを再起動すると、すぐに気になる共有ボタンが目に入�
 
 ![カスタムスクリプトの作者](/images/comfyui/custom_scripts_author.png)
 
-インストールしたものについての詳細はこちらで確認できます：[Custom Scripts](/docs/yiff_toolkit/comfyui/ComfyUI-Custom-Scripts/)
+インストールしたものについての詳細はこちらで確認できます：{{< i18n-link "/docs/yiff_toolkit/comfyui/ComfyUI-Custom-Scripts" "Custom Scripts" >}}
 
 ---
 

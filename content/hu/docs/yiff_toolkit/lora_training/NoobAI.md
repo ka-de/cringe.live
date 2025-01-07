@@ -113,7 +113,7 @@ args=(
 )
 ```
 
-A batch méret és/vagy a felbontás 768x-ra vagy 512x-re csökkentésével bármilyen GPU-ba beilleszthető. Ha még mindig gondod van, használj 8-bites optimalizálót. [Itt](https://github.com/ka-de/sd-scripts/blob/dev/library/optimizers/clybius.py) található az az optimalizáló, amit jelenleg előnyben részesítek, és [itt](/docs/yiff_toolkit/lora_training/Add-Custom-Optimizers/) található egy útmutató arról, hogyan lehet egyéni optimalizálókat integrálni az sd-scripts-be.
+A kötegméretet csökkentheted, vagy a felbontást 768x vagy 512x értékre állíthatod, hogy bármilyen GPU-ra illeszkedjen. Ha még mindig gondod van, használj 8-bites optimalizálót. [Itt](https://github.com/ka-de/sd-scripts/blob/dev/library/optimizers/clybius.py) található az az optimalizáló, amit jelenleg előnyben részesítek, és {{< i18n-link "/docs/yiff_toolkit/lora_training/Add-Custom-Optimizers" "itt" >}} található egy útmutató arról, hogyan integrálhatsz egyéni optimalizálókat az sd-scripts-be.
 
 {{% /details %}}
 

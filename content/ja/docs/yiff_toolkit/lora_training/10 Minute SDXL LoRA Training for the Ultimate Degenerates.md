@@ -33,7 +33,7 @@ summary: "最小限の労力と計算時間で素晴らしいLoRAを生み出す
 
 ---
 
-まず、私のsd-scriptsのフォークを入手するか、あなたのフォークに最適化関連の変更を加える必要があります。その方法は[ここ](/docs/yiff_toolkit/lora_training_guide/Add-Custom-Optimizers/)で説明されていますが、そのページの最適化ではなく、[これ](https://raw.githubusercontent.com/ka-de/sd-scripts/lodew/library/optimizers/clybius.py)を使用します。
+まず、私のsd-scriptsのフォークを入手するか、あなたのフォークに最適化関連の変更を加える必要があります。その方法は{{< i18n-link "/docs/yiff_toolkit/lora_training_guide/Add-Custom-Optimizers" "ここ" >}}で説明されていますが、そのページの最適化ではなく、[これ](https://raw.githubusercontent.com/ka-de/sd-scripts/lodew/library/optimizers/clybius.py)を使用します。
 
 ```bash
 git clone https://github.com/ka-de/sd-scripts -b dev

@@ -69,7 +69,7 @@ aliases:
 
 **新しいLoRA:**
 
-- Stable Diffusion 3.5 Large用の[Night in the Woods](/docs/yiff_toolkit/loras/3.5-large/styles/nitw)スタイル。
+- {{< i18n-link "/docs/yiff_toolkit/loras/3.5-large/styles/nitw" "Night in the Woods" >}}スタイル。
 
 **サイトニュース:**
 
@@ -79,24 +79,24 @@ aliases:
 
 **新しいLoRA:**
 
-- [Amicus](/docs/yiff_toolkit/loras/ponyxlv6/characters/amicus)がPony Diffusion V6 XL用に待望のアップデートを受けました！
-- [wickerbeast](/docs/yiff_toolkit/loras/ponyxlv6/characters/wickerbeast) LoRAがPonyのリストに追加されました！
+- {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/characters/amicus" "Amicus" >}}がPony Diffusion V6 XL用に待望のアップデートを受けました！
+- {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/characters/wickerbeast" "wickerbeast" >}} LoRAがPonyのリストに追加されました！
 
 **サイトニュース:**
 
-- ComfyUI用の[`UNetSelfAttentionMultiply`](/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply)についての小さな記事で目を覚ましましょう。
+- ComfyUI用の{{< i18n-link "/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply" "UNetSelfAttentionMultiply" >}}についての小さな記事で目を覚ましましょう。
 
 ### 2024年10月31日
 
 **新しいLoRA:**
 
-- ハッピーハロウィン！🎃 Pony Diffusion V6 XL用の[skunk](/docs/yiff_toolkit/loras/ponyxlv6/characters/skunk) LoRAをプレゼントとしてお受け取りください！🦨
+- ハッピーハロウィン！🎃 Pony Diffusion V6 XL用の{{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/characters/skunk" "skunk" >}} LoRAをプレゼントとしてお受け取りください！🦨
 
 ### 2024年10月28日
 
 **新しいLoRA:**
 
-- Pony Diffusion V6 XL用の[Maliketh](/docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh)が素晴らしいアップデートを受けました。
+- Pony Diffusion V6 XL用の{{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh" "Maliketh" >}}が素晴らしいアップデートを受けました。
 
 ### 2024年10月24日
 

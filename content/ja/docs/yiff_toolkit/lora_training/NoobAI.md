@@ -111,7 +111,7 @@ args=(
 )
 ```
 
-バッチサイズを減らすか、解像度を768xまたは512xに下げることで、任意のGPUに収めることができます。それでも問題がある場合は、8ビットオプティマイザを使用してください。現在私が好んで使用している[オプティマイザ](https://github.com/ka-de/sd-scripts/blob/dev/library/optimizers/clybius.py)はこちらです。sd-scriptsにカスタムオプティマイザを統合する方法については[こちら](/docs/yiff_toolkit/lora_training/Add-Custom-Optimizers/)のガイドを参照してください。
+バッチサイズを減らすか、解像度を768xまたは512xに下げることで、任意のGPUに収めることができます。それでも問題がある場合は、8ビットオプティマイザを使用してください。現在私が好んで使用している[オプティマイザ](https://github.com/ka-de/sd-scripts/blob/dev/library/optimizers/clybius.py)はこちらです。sd-scriptsにカスタムオプティマイザを統合する方法については{{< i18n-link "/docs/yiff_toolkit/lora_training/Add-Custom-Optimizers" "こちら" >}}のガイドを参照してください。
 
 {{% /details %}}
 

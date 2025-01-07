@@ -300,7 +300,7 @@ pip install timm
 
 タガーの推論スクリプトにはフォルダを入力する必要があることに注意してください。警告として、WebP画像をPNGに変換し、タグを無視している他のものもあります。これを読んで必要な変更を加えることをお勧めします。
 
-[スクリプトへのリンク](/docs/yiff_toolkit/dataset_tools/FurryTagger/)
+{{< i18n-link "/docs/yiff_toolkit/dataset_tools/FurryTagger" "スクリプトへのリンク" >}}
 
 [Colab Notebook](https://colab.research.google.com/drive/1gIB2fGjLAuh6s_hrNlIPCkw_3jodoFP0?usp=sharing)
 

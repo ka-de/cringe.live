@@ -75,7 +75,7 @@ find web* custom_nodes/**/{js,web} -type f \( -name "*.css" -o -name "*.html" -o
 
 Újra kell tömörítened őket minden alkalommal, amikor a frontend frissül, mert a ComfyUI fejlesztői úgy döntöttek, hogy nem használnak verzió stringeket a frontend szkriptekhez, ehelyett csak `no-cache`-t használnak, mint a majmok! 🐺
 
-A [ComfyUI-Custom-Scripts](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/) `autocomplete` fájlját is tömörítheted, de először javítanod kell az `autocomplete.py`-t:
+A {{< i18n-link "/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts" "ComfyUI-Custom-Scripts" >}} `autocomplete` fájlját is tömörítheted, de először javítanod kell az `autocomplete.py`-t:
 
 ```diff
 diff --git a/py/autocomplete.py b/py/autocomplete.py

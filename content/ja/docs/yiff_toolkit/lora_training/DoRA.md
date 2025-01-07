@@ -8,10 +8,6 @@ image: "https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/phoenix.jp
 image_alt: "この画像は、デジタル風景から立ち上がる鮮やかでダイナミックなフェニックスを描いています。フェニックスは、再生と更新に関連する神話上の鳥であり、燃えるような赤とオレンジの羽が、外側に広がるにつれて青と白のデジタルマトリックスに変わっていく様子が描かれています。背景には、デジタルコード、グリッド、回路の複雑な配列があり、フェニックスの有機的な形と構造化された技術的要素が融合しています。この対比は、自然と技術の融合を象徴する印象的な視覚的メタファーを生み出し、デジタル領域から新しい可能性が生まれることを示しています。この画像は、視覚的に魅力的であり、現代技術の文脈における革新と再生のテーマを強調しています。"
 blurhash: "LFA^F9M|00pJIoxZWAM|9FxW%MRQ"
 aliases:
-  - /docs/yiff_toolkit/lora_training/dora/
-  - /docs/yiff_toolkit/lora_training/dora
-  - /docs/yiff_toolkit/lora_training/DoRA/
-  - /docs/yiff_toolkit/lora_training/DoRA
   - /ja/docs/yiff_toolkit/lora_training/dora/
   - /ja/docs/yiff_toolkit/lora_training/dora
   - /ja/docs/yiff_toolkit/lora_training/DoRA/

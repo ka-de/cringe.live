@@ -93,9 +93,9 @@ Now you are ready to right-click on each group and download the images.
 
 ---
 
-This method requires a browser extension like [ViolentMonkey](https://violentmonkey.github.io/) and [this](/docs/userscripts/e621.net-JSON-Button/) UserScript.
+This method requires a browser extension like [ViolentMonkey](https://violentmonkey.github.io/) and {{< i18n-link "/docs/userscripts/e621.net-JSON-Button" "this" >}} UserScript.
 
-This will put a link to the JSON next to the download button on e621.net and e6ai.net and you can use [this](/docs/yiff_toolkit/dataset_tools/e621-JSON-to-Caption/) Python script to convert them to caption files, it uses the `rating_` prefix before `safe/questionable/explicit` because.. you've guessed it, Pony! It also lets you ignore the tags you add into `ignored_tags` using the `r"\btag\b",` syntax, just replace `tag` with the tag you want it to skip.
+This will put a link to the JSON next to the download button on e621.net and e6ai.net and you can use {{< i18n-link "/docs/yiff_toolkit/dataset_tools/e621-JSON-to-Caption" "this" >}} Python script to convert them to caption files, it uses the `rating_` prefix before `safe/questionable/explicit` because.. you've guessed it, Pony! It also lets you ignore the tags you add into `ignored_tags` using the `r"\btag\b",` syntax, just replace `tag` with the tag you want it to skip.
 
 ## Auto Taggers
 
@@ -293,7 +293,7 @@ pip install timm
 
 The inference script for the tagger needs a folder as input, be warned that it also converts WebP images to PNG and you can specify tags to be ignored and some other stuff! I recommend reading through it and changing whatever you need.
 
-[Link to the Script](/docs/yiff_toolkit/dataset_tools/FurryTagger/)
+{{< i18n-link "/docs/yiff_toolkit/dataset_tools/FurryTagger" "Link to the Script" >}}
 
 [Colab Notebook](https://colab.research.google.com/drive/1gIB2fGjLAuh6s_hrNlIPCkw_3jodoFP0?usp=sharing)
 
@@ -373,7 +373,7 @@ Just don't forget to turn it off every now and then so you can compare the resul
 
 ---
 
-The new kid on the block, based on SeaArt Furry with some GAN magic by Lodestone, this mix tried to improve upon the original model and succeeded! My recommendation for training a LoRA for usage with it is to not treat it as a regular mix. My experiments ([[#1](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/compassmix_training/plot1.png)] [[Dataset Reference](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/compassmix_training/obra_dataset_reference.png)], [[#2](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/compassmix_training/plot2.png)] [[Example Output](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/compassmix_training/ComfyUI_00606_.png)]) show that LoRAs trained directly on Compass produces much better result, add the new [compass_optimizer](https://github.com/lodestone-rock/compass_optimizer) to your training script instead of AdamW while you are there, which will help with generalization and overall training, if you set it up [correctly](https://github.com/ka-de/sd-scripts/tree/lodew/library/optimizers), (I can highly recommend the one with normalization using the default parameters I left in it's `__init__`) and don't forget to [shrink](/docs/yiff_toolkit/lora_training_guide/#shrinking) it down a notch.
+The new kid on the block, based on SeaArt Furry with some GAN magic by Lodestone, this mix tried to improve upon the original model and succeeded! My recommendation for training a LoRA for usage with it is to not treat it as a regular mix. My experiments ([[#1](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/compassmix_training/plot1.png)] [[Dataset Reference](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/compassmix_training/obra_dataset_reference.png)], [[#2](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/compassmix_training/plot2.png)] [[Example Output](https://huggingface.co/k4d3/yiff_toolkit/resolve/main/static/compassmix_training/ComfyUI_00606_.png)]) show that LoRAs trained directly on Compass produces much better result, add the new [compass_optimizer](https://github.com/lodestone-rock/compass_optimizer) to your training script instead of AdamW while you are there, which will help with generalization and overall training, if you set it up [correctly](https://github.com/ka-de/sd-scripts/tree/lodew/library/optimizers), (I can highly recommend the one with normalization using the default parameters I left in it's `__init__`) and don't forget to {{< i18n-link "/docs/yiff_toolkit/lora_training_guide/#shrinking" "shrink" >}} it down a notch.
 
 ### SeaArt Furry
 

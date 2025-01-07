@@ -52,7 +52,7 @@ Ez a módszer egy rövid, kézen nem fogó "útmutató", amely egy szuper-kísé
 
 ---
 
-Először is szükséged lesz az sd-scripts forkomra, vagy csak az optimalizáló-specifikus változtatásokra a saját forkodban. Ennek módját [itt](/docs/yiff_toolkit/lora_training_guide/Add-Custom-Optimizers/) találod leírva, de az ottani optimalizáló helyett [ezt](https://raw.githubusercontent.com/ka-de/sd-scripts/lodew/library/optimizers/clybius.py) fogjuk használni.
+Először is szükséged lesz az sd-scripts forkomra, vagy csak az optimalizáló-specifikus változtatásokra a saját forkodban. Ennek módját {{< i18n-link "/docs/yiff_toolkit/lora_training_guide/Add-Custom-Optimizers" "itt" >}} találod leírva, de az ottani optimalizáló helyett [ezt](https://raw.githubusercontent.com/ka-de/sd-scripts/lodew/library/optimizers/clybius.py) fogjuk használni.
 
 ```bash
 git clone https://github.com/ka-de/sd-scripts -b dev

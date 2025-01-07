@@ -7,7 +7,6 @@ import frontmatter
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import re
-from collections import Counter
 import numpy as np
 
 # Download required NLTK data

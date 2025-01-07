@@ -67,7 +67,7 @@ find web* custom_nodes/**/{js,web} -type f \( -name "*.css" -o -name "*.html" -o
 
 ComfyUIの開発者がフロントエンドスクリプトのバージョン文字列を含めることを決めず、代わりにサルのように`no-cache`を使用しているため、フロントエンドが更新されるたびに再圧縮する必要があります！🐺
 
-[ComfyUI-Custom-Scripts](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/)の`autocomplete`ファイルも圧縮できますが、まず`autocomplete.py`にパッチを適用する必要があります：
+{{< i18n-link "/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts" "ComfyUI-Custom-Scripts" >}}の`autocomplete`ファイルも圧縮できますが、まず`autocomplete.py`にパッチを適用する必要があります：
 
 ```diff
 diff --git a/py/autocomplete.py b/py/autocomplete.py

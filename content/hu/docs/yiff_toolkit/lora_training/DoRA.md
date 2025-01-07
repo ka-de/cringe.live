@@ -8,10 +8,6 @@ image: "https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/phoenix.jp
 image_alt: "A kép egy élénk és dinamikus főnixet ábrázol, amely egy digitális tájból emelkedik ki. A főnix, egy mitikus madár, amelyet gyakran az újjászületéssel és megújulással társítanak, tüzes vörös és narancssárga tollakkal van ábrázolva, amelyek kék és fehér digitális mátrixba olvadnak, ahogy kifelé terjednek. A háttérben egy összetett digitális kódok, rácsok és áramkörök sora látható, amely a főnix organikus formáját a strukturált, technológiai elemekkel ötvözi. Ez az ellentét egy lenyűgöző vizuális metaforát hoz létre a természet és a technológia fúziójára, szimbolizálva az átalakulást és az új lehetőségek megjelenését a digitális világban. A kép vizuálisan lenyűgöző és fogalmilag érdekes, kiemelve az innováció és a megújulás témáit a modern technológia kontextusában."
 blurhash: "LFA^F9M|00pJIoxZWAM|9FxW%MRQ"
 aliases:
-  - /docs/yiff_toolkit/lora_training/dora/
-  - /docs/yiff_toolkit/lora_training/dora
-  - /docs/yiff_toolkit/lora_training/DoRA/
-  - /docs/yiff_toolkit/lora_training/DoRA
   - /hu/docs/yiff_toolkit/lora_training/dora/
   - /hu/docs/yiff_toolkit/lora_training/dora
   - /hu/docs/yiff_toolkit/lora_training/DoRA/

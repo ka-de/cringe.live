@@ -73,7 +73,7 @@ find web* custom_nodes/**/{js,web} -type f \( -name "*.css" -o -name "*.html" -o
 
 You will need to recompress them every time the frontend gets updated because ComfyUI developers decided not to include version strings for the frontend scripts, instead, they just use `no-cache` like monkeys! 🐺
 
-You can also compress your `autocomplete` file for [ComfyUI-Custom-Scripts](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/) but first you need to patch `autocomplete.py`:
+You can also compress your `autocomplete` file for {{< i18n-link "/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts" "ComfyUI-Custom-Scripts" >}} but first you need to patch `autocomplete.py`:
 
 ```diff
 diff --git a/py/autocomplete.py b/py/autocomplete.py

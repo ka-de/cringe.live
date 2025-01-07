@@ -111,7 +111,7 @@ args=(
 )
 ```
 
-By decreasing the batch size and/or the resolution to 768x or 512x you can fit into any GPU. If you still struggle, use an 8-bit optimizer. [Here](https://github.com/ka-de/sd-scripts/blob/dev/library/optimizers/clybius.py) is the optimizer I prefer currently, there is a guide on how to integrate custom optimizers to sd-scripts [here](/docs/yiff_toolkit/lora_training/Add-Custom-Optimizers/).
+You can reduce the batch size and/or resolution to 768x or 512x to fit any GPU. If you still struggle, use an 8-bit optimizer. [Here](https://github.com/ka-de/sd-scripts/blob/dev/library/optimizers/clybius.py) is the optimizer I prefer currently, there is a guide on how to integrate custom optimizers to sd-scripts {{< i18n-link "/docs/yiff_toolkit/lora_training/Add-Custom-Optimizers" "here" >}}.
 
 {{% /details %}}
 
