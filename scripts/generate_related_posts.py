@@ -55,14 +55,16 @@ def process_content(file_path):
             content = f.read()
             post = frontmatter.parse(content)
             
-        # Combine title, description, and content for better matching
+        # Combine title, description, summary and content for better matching
         metadata = post[0] if isinstance(post[0], dict) else {}
         title = metadata.get('title', '')
         description = metadata.get('description', '')
-        text = f"{title} {description} {post[1]}"
+        summary = metadata.get('summary', '')
+        text = f"{title} {description} {summary} {post[1]}"
         return {
             'title': title,
             'description': description,
+            'summary': summary,
             'content': post[1],
             'cleaned_text': clean_text(text)
         }
