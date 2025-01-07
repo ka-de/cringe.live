@@ -19,7 +19,7 @@ aliases:
 
 ---
 
-Ha segítségre van szükséged a ComfyUI telepítéséhez, nem jó helyen jársz. Ha Windowst használsz, használhatod az [előre összeállított](https://docs.comfy.org/get_started/pre_package) csomagot, vagy [manuálisan](https://docs.comfy.org/get_started/manual_install) is telepítheted.
+Ha segítségre van szükséged a ComfyUI telepítéséhez, nem jó helyen jársz. Ha Windowst használsz, használhatod az {{< i18n-link "https://docs.comfy.org/get_started/pre_package" "előre összeállított" >}} csomagot, vagy {{< i18n-link "https://docs.comfy.org/get_started/manual_install" "manuálisan" >}} is telepítheted.
 
 ## Alszekciók
 
@@ -51,7 +51,7 @@ Amikor először megnyitod a ComfyUI-t, egy egyedi felületet fogsz látni, ami 
 
 Ha új vagy a node-alapú munkafolyamatokban, normális, ha kicsit elveszettnek érzed magad. De egy kis gyakorlással profi módon fogod navigálni. Lehetnek kérdéseid, és ez rendben van. A cél az, hogy tanulj és szórakozz a ComfyUI-val.
 
-A munkafolyamat a teljes beállítás, amit a képernyőképen látsz, beleértve az összes node-ot, csoportot és kapcsolatot, amit létrehozol. Amikor valaki arra kér, hogy oszd meg a munkafolyamatodat, a JSON fájlra gondolnak, amit letölthetsz, miután elmentetted a munkafolyamatot egy értelmes névvel. Használhatod a [Workflow Image](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/#workflow-image) funkciót is a Custom-Scripts egyéni node-ból, hogy beágyazd a munkafolyamatodat egy képbe.
+A munkafolyamat a teljes beállítás, amit a képernyőképen látsz, beleértve az összes node-ot, csoportot és kapcsolatot, amit létrehozol. Amikor valaki arra kér, hogy oszd meg a munkafolyamatodat, a JSON fájlra gondolnak, amit letölthetsz, miután elmentetted a munkafolyamatot egy értelmes névvel. Használhatod a {{< i18n-link "/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/#workflow-image" "Workflow Image" >}} funkciót is a Custom-Scripts egyéni node-ból, hogy beágyazd a munkafolyamatodat egy képbe.
 
 Most kezdjük az alapoktól és egyszerűsítsük le a munkafolyamatot. Íme, hogyan törölheted a munkafolyamatot mind az új, mind a régi felületeken:
 

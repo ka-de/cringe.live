@@ -11,6 +11,12 @@ aliases:
   - /hu/docs/yiff_toolkit/lora_training/Weight_Decomposition_Direction
   - "/hu/docs/yiff_toolkit/lora_training/Weight Decomposition Direction/"
   - "/hu/docs/yiff_toolkit/lora_training/Weight Decomposition Direction"
+  - /docs/yiff_toolkit/lora_training/Weight-Decomposition-Direction/
+  - /docs/yiff_toolkit/lora_training/Weight-Decomposition-Direction
+  - /docs/yiff_toolkit/lora_training/Weight_Decomposition_Direction/
+  - /docs/yiff_toolkit/lora_training/Weight_Decomposition_Direction
+  - "/docs/yiff_toolkit/lora_training/Weight Decomposition Direction/"
+  - "/docs/yiff_toolkit/lora_training/Weight Decomposition Direction"
 ---
 
 A DoRA (Weight-Decomposed Low-Rank Adaptation) módszer súlyfelbontást vezet be a paraméter-hatékony finomhangoláshoz. Egy fontos implementációs részlet a normalizálás irányával kapcsolatban különös figyelmet érdemel, különösen a LyCORIS implementációval való munka során.

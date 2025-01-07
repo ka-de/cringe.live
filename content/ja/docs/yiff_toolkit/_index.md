@@ -28,7 +28,7 @@ summary: "AIを使用してファーリーアートワークを作成するた�
 
 ---
 
-私が使用している便利なPythonとRustのスクリプトをすべて[/dataset_tools](/docs/yiff_toolkit/dataset_tools/)にアップロードしました。ファイル名を見るだけでほとんど説明は不要ですが、ほぼすべてのスクリプトにAIが生成した説明が含まれています。使用する場合は、`training_dir`フォルダへのパスを編集する必要があります。変数は`path`または`directory`という名前で、以下のような形式になっています：
+私が使用している便利なPythonとRustのスクリプトをすべて{{< i18n-link "/docs/yiff_toolkit/dataset_tools/" "/dataset_tools" >}}にアップロードしました。ファイル名を見るだけでほとんど説明は不要ですが、ほぼすべてのスクリプトにAIが生成した説明が含まれています。使用する場合は、`training_dir`フォルダへのパスを編集する必要があります。変数は`path`または`directory`という名前で、以下のような形式になっています：
 
 ```py
 def main():
@@ -100,9 +100,9 @@ Pony用に、テキストファイルの内容を`rating_%rating%, %all:separato
 
 ---
 
-この方法には[ViolentMonkey](https://violentmonkey.github.io/)のようなブラウザ拡張機能と[この](/docs/userscripts/e621.net-JSON-Button/)UserScriptが必要です。
+この方法には[ViolentMonkey](https://violentmonkey.github.io/)のようなブラウザ拡張機能と{{< i18n-link "/docs/userscripts/e621.net-JSON-Button/" "この" >}}UserScriptが必要です。
 
-これによりe621.netとe6ai.netのダウンロードボタンの横にJSONへのリンクが追加され、[この](/docs/yiff_toolkit/dataset_tools/e621-JSON-to-Caption/)Pythonスクリプトを使用してキャプションファイルに変換できます。`safe/questionable/explicit`の前に`rating_`プレフィックスを使用しているのは...そう、Ponyのためです！また、`r"\btag\b",`構文を使用して`ignored_tags`に追加したタグを無視することもできます。`tag`をスキップしたいタグに置き換えるだけです。
+これによりe621.netとe6ai.netのダウンロードボタンの横にJSONへのリンクが追加され、{{< i18n-link "/docs/yiff_toolkit/dataset_tools/e621-JSON-to-Caption/" "この" >}}Pythonスクリプトを使用してキャプションファイルに変換できます。`safe/questionable/explicit`の前に`rating_`プレフィックスを使用しているのは...そう、Ponyのためです！また、`r"\btag\b",`構文を使用して`ignored_tags`に追加したタグを無視することもできます。`tag`をスキップしたいタグに置き換えるだけです。
 
 ## 自動タグ付けツール
 

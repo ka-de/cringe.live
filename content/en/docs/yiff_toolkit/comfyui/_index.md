@@ -27,7 +27,7 @@ If you need help installing ComfyUI, you didn't come to the right place. If you 
 
 ---
 
-Before diving into ComfyUI's practical aspects, let's understand the mathematical foundations of diffusion models that power modern AI image generation. Unless you are allergic to math, in which case you should [skip](#introduction-to-comfyui) this section in it's entirety.
+Before diving into ComfyUI's practical aspects, let's understand the mathematical foundations of diffusion models that power modern AI image generation.
 
 ### The Diffusion Process
 

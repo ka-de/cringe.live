@@ -22,37 +22,37 @@ aliases:
 **Oldal Hírek:**
 
 - Két új cikk került hozzáadásra a DoRA-ról (Weight-Decomposed Low-Rank Adaptation):
-  - A fő [DoRA](/docs/yiff_toolkit/lora_training/DoRA) cikk átfogó áttekintést nyújt erről az új, paraméter-hatékony finomhangolási módszerről, amelyet Gaeros írt, és amely továbbfejleszti a LoRA-t a súlyok nagyság és irány komponensekre való felbontásával.
-  - A kiegészítő cikk a [Súlyfelbontás Irányáról](/docs/yiff_toolkit/lora_training/Weight_Decomposition_Direction) kifejezetten a DoRA súlyfelbontásának egy fontos implementációs részletére összpontosít, amely a bemeneti és kimeneti dimenzió normalizálását érinti.
+  - A fő {{< i18n-link "/docs/yiff_toolkit/lora_training/DoRA/" "DoRA" >}} cikk átfogó áttekintést nyújt erről az új, paraméter-hatékony finomhangolási módszerről, amelyet Gaeros írt, és amely továbbfejleszti a LoRA-t a súlyok nagyságra és irányra való felbontásával.
+  - A kiegészítő cikk a {{< i18n-link "/docs/yiff_toolkit/lora_training/Weight-Decomposition-Direction/" "Súlyfelbontás Irányáról" >}} kifejezetten a DoRA súlyfelbontásának egy fontos implementációs részletére összpontosít.
 
 ### 2024.12.27.
 
 **Oldal Hírek:**
 
-- Új [szekció](/docs/yiff_toolkit/comfyui/ComfyUI_frontend-ProgressBars) került fel arról, hogyan lehet folyamatjelzőket hozzáadni a ComfyUI felületéhez.
+- Új {{< i18n-link "/docs/yiff_toolkit/comfyui/ComfyUI_frontend-ProgressBars" "szekció" >}} került fel arról, hogyan lehet folyamatjelzőket hozzáadni a ComfyUI felületéhez.
 
 ### 2024.12.25.
 
 **Új LoRA:**
 
-- [fart_fetish](/docs/yiff_toolkit/loras/noobai/concepts/fart_fetish) a NoobAI-hoz.
+- {{< i18n-link "/docs/yiff_toolkit/loras/noobai/concepts/fart_fetish/" "fart_fetish" >}} a NoobAI-hoz.
 
 ### 2024.12.21.
 
 **Oldal Hírek:**
 
-- A nem működő letöltési linkek a [chunie](/docs/yiff_toolkit/loras/ponyxlv6/styles/chunie) LoRA oldalon javítva lettek. 😳
+- A nem működő letöltési linkek a {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/styles/chunie/" "chunie" >}} LoRA oldalon javítva lettek. 😳
 
 ### 2024.12.05.
 
 **Új LoRA-k:**
 
-- [hld](/docs/yiff_toolkit/loras/ponyxlv6/styles/hld) a Pony Diffusion V6 XL-hez, ami a Hyper Light Drifter videójáték stílusát másolja.
-- [surrounded_by_penis](/docs/yiff_toolkit/loras/ponyxlv6/concepts/surrounded_by_penis) a Pony Diffusion V6 XL-hez, ami segít olyan képeket generálni, ahol egy vagy több karaktert péniszek vesznek körül több oldalról.
-- [halloween_cattiva](/docs/yiff_toolkit/loras/ponyxlv6/characters/halloween_cattiva) a Pony Diffusion V6 XL-hez, egy halloween témájú Cattiva a Palworldből tökfejjel.
-- [blackorbit](/docs/yiff_toolkit/loras/ponyxlv6/styles/blackorbit) a Pony Diffusion V6 XL-hez, ami egy VRChat által inspirált 3D stílus.
-- [gren_art](/docs/yiff_toolkit/loras/ponyxlv6/styles/gren_art) a Pony Diffusion V6 XL-hez, ami egy realisztikus stílus.
-- [less_details](/docs/yiff_toolkit/loras/3.5-large/styles/less_details) a Stable Diffusion 3.5 Large-hoz, ami hasznos a színpaletta, részletek és nem pixeles részek csökkentésére generálás közben.
+- {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/styles/hld/" "hld" >}} a Pony Diffusion V6 XL-hez, ami a Hyper Light Drifter videójáték stílusát másolja.
+- {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/concepts/surrounded_by_penis/" "surrounded_by_penis" >}} a Pony Diffusion V6 XL-hez, ami segít olyan képeket generálni, ahol egy vagy több karaktert péniszek vesznek körül.
+- {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/characters/halloween_cattiva/" "halloween_cattiva" >}} a Pony Diffusion V6 XL-hez, egy halloween témájú Cattiva a Palworldből tökfejjel.
+- {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/styles/blackorbit/" "blackorbit" >}} a Pony Diffusion V6 XL-hez, ami egy VRChat által inspirált 3D stílus.
+- {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/styles/gren_art/" "gren_art" >}} a Pony Diffusion V6 XL-hez, ami egy realisztikus stílus.
+- {{< i18n-link "/docs/yiff_toolkit/loras/3.5-large/styles/less_details/" "less_details" >}} a Stable Diffusion 3.5 Large-hoz, ami hasznos a színpaletta, részletek és nem pixeles részek csökkentésére generálás közben.
 
 ### 2024.11.16.
 
@@ -110,8 +110,8 @@ aliases:
 
 **Új LoRA:**
 
-- [chunie](/docs/yiff_toolkit/loras/ponyxlv6/styles/by_chunie) a Pony Diffusion V6 XL-hez kapott egy frissítést.
+- {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/styles/by_chunie/" "chunie" >}} a Pony Diffusion V6 XL-hez kapott egy frissítést.
 
 **Oldal Hírek:**
 
-- Írtam a [ComfyUI Betöltési Idejének Optimalizálásáról](/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times) is.
+- Írtam a {{< i18n-link "/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times" "ComfyUI Betöltési Idejének Optimalizálásáról" >}} is.

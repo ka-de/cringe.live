@@ -33,7 +33,7 @@ A `yiff_toolkit` egy átfogó eszközkészlet, amelyet a furry művészet terül
 
 ---
 
-Az összes hasznos Python és Rust szkriptet feltöltöttem a [/dataset_tools](/docs/yiff_toolkit/dataset_tools/) oldalra. A legtöbb önmagáért beszél már csak a fájlnév alapján is, de szinte mindegyik tartalmaz AI által generált leírást. Ha használni szeretnéd őket, módosítanod kell a `training_dir` mappához vezető útvonalat, a változó neve `path` vagy `directory` lesz, és valahogy így néz ki:
+Az összes hasznos Python és Rust szkriptet feltöltöttem a {{< i18n-link "/docs/yiff_toolkit/dataset_tools/" "/dataset_tools" >}} oldalra. A legtöbb önmagáért beszél már csak a fájlnév alapján is, de szinte mindegyik tartalmaz AI által generált leírást. Ha használni szeretnéd őket, szerkesztened kell a `training_dir` mappához vezető útvonalat. A változó neve általában `path` vagy `directory`, és így néz ki:
 
 ```py
 def main():
@@ -54,7 +54,7 @@ Most képzeljük el, hogy _wickerbeast_-eket szeretnél tanítani a modellednek,
 
 ### A `training_dir` Könyvtár Létrehozása
 
-Mielőtt elkezdenénk, szükségünk van egy könyvtárra, ahol rendszerezzük az adatkészleteinket. Nyiss meg egy terminált a `Win + R` megnyomásával és a `pwsh` beírásával. A [git](https://git-scm.com/download/win) és a [huggingface](https://huggingface.co/) segítségével fogjuk verziókezelni a dolgainkat. A rövidség kedvéért nem adok mindkettőről részletes útmutatót, de szerencsére a 🤗 írt [egyet](https://huggingface.co/docs/hub/repositories-getting-started). Miután elkészítetted az új adatkészletedet a HF-en, klónozzuk le. Győződj meg róla, hogy az első sorban lecseréled a `user`-t a HF felhasználónevedre!
+Mielőtt elkezdenénk, szükségünk van egy könyvtárra, ahol rendszerezzük az adatkészleteinket. Nyiss meg egy terminált a `Win + R` megnyomásával és a `pwsh` beírásával. A [git](https://git-scm.com/download/win) és a [huggingface](https://huggingface.co/) segítségével fogjuk verziókezelni a dolgainkat. A rövidség kedvéért nem adok mindkettőről részletes útmutatót, de szerencsére a 🤗 írt {{< i18n-link "https://huggingface.co/docs/hub/repositories-getting-started" "egyet" >}}. Miután elkészítetted az új adatkészletedet a HF-en, klónozzuk le. Győződj meg róla, hogy az első sorban lecseréled a `user`-t a HF felhasználónevedre!
 
 ```bat
 git clone git@hf.co:/datasets/user/training_dir C:\training_dir
@@ -105,9 +105,9 @@ Most készen állsz arra, hogy jobb klikkel rákattints minden csoportra és let
 
 ---
 
-Ez a módszer egy böngésző kiegészítőt igényel, mint például a [ViolentMonkey](https://violentmonkey.github.io/) és [ezt](/docs/userscripts/e621.net-JSON-Button/) a UserScriptet.
+Ez a módszer egy böngésző kiegészítőt igényel, mint például a [ViolentMonkey](https://violentmonkey.github.io/) és {{< i18n-link "/docs/userscripts/e621.net-JSON-Button/" "ezt" >}} a UserScriptet.
 
-Ez egy linket helyez el a JSON-hoz a letöltés gomb mellett az e621.net és e6ai.net oldalakon, és használhatod [ezt](/docs/yiff_toolkit/dataset_tools/e621-JSON-to-Caption/) a Python szkriptet a feliratfájlokká való konvertáláshoz. A `rating_` előtagot használja a `safe/questionable/explicit` előtt, mert... igen, kitaláltad, Pony! Lehetővé teszi azt is, hogy figyelmen kívül hagyd az `ignored_tags`-be hozzáadott címkéket az `r"\btag\b",` szintaxis használatával, csak cseréld ki a `tag`-et arra a címkére, amit ki szeretnél hagyni.
+Ez egy linket helyez el a JSON-hoz a letöltés gomb mellett az e621.net és e6ai.net oldalakon, és használhatod {{< i18n-link "/docs/yiff_toolkit/dataset_tools/e621-JSON-to-Caption/" "ezt" >}} a Python szkriptet a feliratfájlokká való konvertáláshoz. A `rating_` előtagot használja a `safe/questionable/explicit` előtt, mert... igen, kitaláltad, Pony! Lehetővé teszi azt is, hogy figyelmen kívül hagyd az `ignored_tags`-be hozzáadott címkéket az `r"\btag\b",` szintaxis használatával, csak cseréld ki a `tag`-et arra a címkére, amit ki szeretnél hagyni.
 
 ## Automatikus Címkézők
 
