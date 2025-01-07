@@ -103,63 +103,147 @@ def explain_similarity(source_text, target_text, vectorizer, feature_names, simi
     
     return explanation
 
+def get_model_category(file_path):
+    """Determine which model category a lora belongs to."""
+    parts = file_path.split(os.sep)
+    if 'loras' not in parts:
+        return None
+        
+    # Find the index after 'loras' in the path
+    loras_idx = parts.index('loras')
+    if len(parts) <= loras_idx + 1:
+        return None
+        
+    model = parts[loras_idx + 1]
+    
+    # Map specific model directories to their categories
+    model_categories = {
+        'flux': 'flux',
+        'noobai': 'noobai',
+        'ponyxlv6': 'ponyxl',
+        '3.5-large': 'sd3.5',
+        'compassmix': 'compassmix'
+    }
+    
+    return model_categories.get(model)
+
 def find_related_posts(content_files, vectorizer):
     """Find related posts for each content file and explain relationships."""
     related_posts = {}
     
-    # Process all content
-    contents = [process_content(f) for f in content_files]
-    valid_data = [(f, c) for f, c in zip(content_files, contents) if c]  # Filter out failed files
+    # Group files by model category
+    model_groups = {}
+    for file_path in content_files:
+        model = get_model_category(file_path)
+        if model:
+            if model not in model_groups:
+                model_groups[model] = []
+            model_groups[model].append(file_path)
     
-    if not valid_data:
-        print("No valid content files found!")
-        return {}
-    
-    content_files, contents = zip(*valid_data)
-    print(f"Successfully processed {len(contents)} files")
-    
-    # Get cleaned texts for vectorization
-    cleaned_texts = [c['cleaned_text'] for c in contents]
-    
-    # Calculate TF-IDF matrix
-    tfidf_matrix = vectorizer.fit_transform(cleaned_texts)
-    feature_names = vectorizer.get_feature_names_out()
-    
-    # Calculate similarity between all documents
-    cosine_sim = cosine_similarity(tfidf_matrix)
-    
-    for idx, (file_path, content) in enumerate(zip(content_files, contents)):
-        # Get top 3 similar documents (excluding self)
-        similar_indices = cosine_sim[idx].argsort()[-4:-1][::-1]
-        related = []
+    # Process each model group separately
+    for model, model_files in model_groups.items():
+        print(f"\nProcessing {model} model files...")
         
-        print(f"\nAnalyzing related posts for: {os.path.basename(file_path)}")
-        print(f"Title: {content['title']}")
+        # Process content for this model group
+        contents = [process_content(f) for f in model_files]
+        valid_data = [(f, c) for f, c in zip(model_files, contents) if c]
         
-        for similar_idx in similar_indices:
-            similar_file = content_files[similar_idx]
-            similar_content = contents[similar_idx]
-            similarity_score = cosine_sim[idx][similar_idx]
-            
-            explanation = explain_similarity(
-                content['cleaned_text'],
-                similar_content['cleaned_text'],
-                vectorizer,
-                feature_names,
-                similarity_score
-            )
-            
-            print(f"\nRelated article: {os.path.basename(similar_file)}")
-            print(f"Title: {similar_content['title']}")
-            print(explanation)
-            
-            # Convert to relative path
-            related.append(os.path.relpath(similar_file, 'content'))
+        if not valid_data:
+            print(f"No valid content files found for {model}!")
+            continue
         
-        # Store the related posts
-        file_path = os.path.relpath(file_path, 'content')
-        related_posts[file_path] = related
-        print("-" * 80)
+        model_files, contents = zip(*valid_data)
+        print(f"Successfully processed {len(contents)} files for {model}")
+        
+        # Get cleaned texts for vectorization
+        cleaned_texts = [c['cleaned_text'] for c in contents]
+        
+        # Calculate TF-IDF matrix for this group
+        tfidf_matrix = vectorizer.fit_transform(cleaned_texts)
+        feature_names = vectorizer.get_feature_names_out()
+        
+        # Calculate similarity between documents in this group
+        cosine_sim = cosine_similarity(tfidf_matrix)
+        
+        for idx, (file_path, content) in enumerate(zip(model_files, contents)):
+            # Get top 3 similar documents (excluding self)
+            similar_indices = cosine_sim[idx].argsort()[-4:-1][::-1]
+            related = []
+            
+            print(f"\nAnalyzing related posts for: {os.path.basename(file_path)}")
+            print(f"Title: {content['title']}")
+            print(f"Model: {model}")
+            
+            for similar_idx in similar_indices:
+                similar_file = model_files[similar_idx]
+                similar_content = contents[similar_idx]
+                similarity_score = cosine_sim[idx][similar_idx]
+                
+                explanation = explain_similarity(
+                    content['cleaned_text'],
+                    similar_content['cleaned_text'],
+                    vectorizer,
+                    feature_names,
+                    similarity_score
+                )
+                
+                print(f"\nRelated article: {os.path.basename(similar_file)}")
+                print(f"Title: {similar_content['title']}")
+                print(explanation)
+                
+                # Convert to relative path
+                related.append(os.path.relpath(similar_file, 'content'))
+            
+            # Store the related posts
+            file_path = os.path.relpath(file_path, 'content')
+            related_posts[file_path] = related
+            print("-" * 80)
+    
+    # Process non-lora files separately
+    other_files = [f for f in content_files if not get_model_category(f)]
+    if other_files:
+        print("\nProcessing non-lora files...")
+        contents = [process_content(f) for f in other_files]
+        valid_data = [(f, c) for f, c in zip(other_files, contents) if c]
+        
+        if valid_data:
+            other_files, contents = zip(*valid_data)
+            print(f"Successfully processed {len(contents)} non-lora files")
+            
+            cleaned_texts = [c['cleaned_text'] for c in contents]
+            tfidf_matrix = vectorizer.fit_transform(cleaned_texts)
+            feature_names = vectorizer.get_feature_names_out()
+            cosine_sim = cosine_similarity(tfidf_matrix)
+            
+            for idx, (file_path, content) in enumerate(zip(other_files, contents)):
+                similar_indices = cosine_sim[idx].argsort()[-4:-1][::-1]
+                related = []
+                
+                print(f"\nAnalyzing related posts for: {os.path.basename(file_path)}")
+                print(f"Title: {content['title']}")
+                
+                for similar_idx in similar_indices:
+                    similar_file = other_files[similar_idx]
+                    similar_content = contents[similar_idx]
+                    similarity_score = cosine_sim[idx][similar_idx]
+                    
+                    explanation = explain_similarity(
+                        content['cleaned_text'],
+                        similar_content['cleaned_text'],
+                        vectorizer,
+                        feature_names,
+                        similarity_score
+                    )
+                    
+                    print(f"\nRelated article: {os.path.basename(similar_file)}")
+                    print(f"Title: {similar_content['title']}")
+                    print(explanation)
+                    
+                    related.append(os.path.relpath(similar_file, 'content'))
+                
+                file_path = os.path.relpath(file_path, 'content')
+                related_posts[file_path] = related
+                print("-" * 80)
     
     return related_posts
 
