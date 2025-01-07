@@ -9,7 +9,7 @@
 <div class="image-grid-container">
 {{ end }}
 
-<div class="image-container" style="aspect-ratio: {{ $width }}/{{ $height }};">
+<div class="image-container" data-width="{{ $width }}" data-height="{{ $height }}">
     <canvas 
         class="blur-hash" 
         data-blurhash="{{ $blurhash }}" 
@@ -23,6 +23,7 @@
         height="{{ $height }}"
         alt="{{ $alt }}"
         onload="this.previousElementSibling.style.display = 'none'; this.style.opacity = 1;"
+        onerror="this.previousElementSibling.style.filter = 'brightness(0.8) contrast(1.2)';"
     >
 </div>
 
