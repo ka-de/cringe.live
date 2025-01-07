@@ -61,6 +61,10 @@ process_directory(directory_path)
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/dataset_tools/search-for-tag | docs/yiff_toolkit/dataset_tools/Check for Transparency/ | docs/yiff_toolkit/dataset_tools/remove-extra-file-extensions" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/search-for-tag | docs/yiff_toolkit/dataset_tools/Check for Transparency/ | docs/yiff_toolkit/dataset_tools/count-images-in-folder" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

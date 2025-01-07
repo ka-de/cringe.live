@@ -37,6 +37,10 @@ Anatomically correct penises for antlered friends!
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift | docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

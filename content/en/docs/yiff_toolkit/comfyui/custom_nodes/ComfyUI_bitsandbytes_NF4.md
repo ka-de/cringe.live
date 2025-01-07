@@ -34,6 +34,10 @@ Here is an example workflow:
 
 ---
 
----
-
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
 {{< related-posts related="docs/yiff_toolkit/comfyui/flux/ | docs/yiff_toolkit/comfyui/Experimental-Stuff/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Prediction/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

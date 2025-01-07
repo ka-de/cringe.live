@@ -61,6 +61,10 @@ civitai.comのレイアウトの問題を修正するために、ページにカ
 
 ---
 
----
-
-{{< related-posts related="docs/userscripts/Customize arXiv Header/ | docs/userscripts/Discord Name Color Changer/ | docs/yiff_toolkit/comfyui/custom_nodes/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/userscripts/Customize arXiv Header/ | docs/userscripts/Discord Name Color Changer/ | docs/yiff_toolkit/lora_training/Add-Custom-Optimizers/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

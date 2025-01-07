@@ -47,6 +47,10 @@ You don't really need to use it.
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/louart | docs/yiff_toolkit/loras/ponyxlv6/styles/kenket | docs/yiff_toolkit/loras/ponyxlv6/styles/hibbary" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/greg_rutkowski | docs/yiff_toolkit/loras/ponyxlv6/styles/honovy | docs/yiff_toolkit/loras/ponyxlv6/styles/kame_3" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

@@ -31,6 +31,10 @@ aliases:
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

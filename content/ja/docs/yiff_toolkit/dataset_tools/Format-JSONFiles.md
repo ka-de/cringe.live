@@ -64,6 +64,10 @@ function Format-JSONFiles {
 
 ---
 
----
-
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
 {{< related-posts related="docs/yiff_toolkit/dataset_tools/format-json-files-to-single-line | docs/yiff_toolkit/dataset_tools/format-json | docs/yiff_toolkit/dataset_tools/e621-json-to-caption" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

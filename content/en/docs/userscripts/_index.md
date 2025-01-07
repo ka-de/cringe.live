@@ -235,6 +235,10 @@ document.body.innerHTML = bodyText;
 
 ---
 
----
-
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
 {{< related-posts related="docs/userscripts/e621.net JSON Button/ | docs/userscripts/Customize arXiv Header/ | docs/yiff_toolkit/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

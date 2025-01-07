@@ -35,6 +35,10 @@ Veemon is a humanoid, lizard-like creature standing about 2-feet tall. It has pr
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart | docs/yiff_toolkit/loras/ponyxlv6/styles/greg_rutkowski" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

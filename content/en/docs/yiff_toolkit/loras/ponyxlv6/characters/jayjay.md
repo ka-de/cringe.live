@@ -37,6 +37,10 @@ JayJay, also known as “BlueJay” Burdell, is a character from the webcomic Zo
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cooliehigh/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/ | docs/yiff_toolkit/loras/ponyxlv6/styles/greg_rutkowski | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

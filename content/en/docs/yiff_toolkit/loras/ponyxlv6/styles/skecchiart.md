@@ -31,6 +31,10 @@ aliases:
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/ | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

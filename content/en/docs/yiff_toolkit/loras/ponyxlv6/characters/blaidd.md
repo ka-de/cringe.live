@@ -37,6 +37,10 @@ Blaidd is a fascinating character from the game Elden Ring. He is a half man, ha
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh/ | docs/yiff_toolkit/loras/ponyxlv6/styles/greg_rutkowski | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

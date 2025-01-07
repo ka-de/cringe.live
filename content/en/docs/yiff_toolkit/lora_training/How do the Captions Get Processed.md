@@ -228,6 +228,10 @@ def process_caption(self, subset: BaseSubset, caption: str) -> str:
 
 ---
 
----
-
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
 {{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/dataset_tools/e621-json-to-caption | docs/yiff_toolkit/comfyui/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

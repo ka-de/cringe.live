@@ -74,6 +74,10 @@ This userscript, designed for a specific Discord channel, automatically replaces
 
 ---
 
----
-
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
 {{< related-posts related="docs/userscripts/Old Reddit to New/ | docs/userscripts/CivitAI Fix/ | docs/userscripts/Customize arXiv Header/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

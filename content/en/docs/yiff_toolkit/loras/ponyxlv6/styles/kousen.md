@@ -60,6 +60,10 @@ Keyword: `by kousen`
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/bill_watterson/ | docs/yiff_toolkit/loras/ponyxlv6/styles/kunaboto | docs/yiff_toolkit/loras/ponyxlv6/styles/latrans/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/jim_davies | docs/yiff_toolkit/loras/ponyxlv6/styles/bill_watterson/ | docs/yiff_toolkit/loras/ponyxlv6/styles/serpent_x" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

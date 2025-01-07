@@ -40,6 +40,10 @@ But to make it even more complicated, I also stashed my most often used scripts 
 
 ---
 
----
-
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
 {{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/lora_training/Tracking-Training-Changes/ | docs/yiff_toolkit/lora_training/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

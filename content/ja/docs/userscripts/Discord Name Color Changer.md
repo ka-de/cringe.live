@@ -67,6 +67,10 @@ summary: "DOMを監視・変更することで、Discordチャンネル上の特
 
 ---
 
----
-
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
 {{< related-posts related="docs/userscripts/Old Reddit to New/ | docs/userscripts/CivitAI Fix/ | docs/userscripts/Customize arXiv Header/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

@@ -26,6 +26,10 @@ This is the root of the documentation pages. Please use the menu to navigate to 
 
 ---
 
----
-
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
 {{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ | docs/yiff_toolkit/loras | docs/yiff_toolkit/dataset_tools/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

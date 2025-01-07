@@ -52,6 +52,10 @@ print(f'Total number of images: {count_images(directory_path)}')
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/dataset_tools/Check for Large Images/ | docs/yiff_toolkit/dataset_tools/Check for Transparency/ | docs/yiff_toolkit/dataset_tools/remove-extra-file-extensions" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/Check for Large Images/ | docs/yiff_toolkit/dataset_tools/Check for Transparency/ | docs/yiff_toolkit/dataset_tools/create-empty-captions-for-images" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

@@ -34,6 +34,10 @@ summary: "誰かのサテュロス（山羊人）キャラクター。"
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift | docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart | docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/ | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

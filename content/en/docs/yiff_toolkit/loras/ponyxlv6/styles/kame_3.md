@@ -39,6 +39,10 @@ Keyword:
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/hibbary | docs/yiff_toolkit/loras/ponyxlv6/styles/hamgas | docs/yiff_toolkit/loras/ponyxlv6/styles/honovy" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/louart | docs/yiff_toolkit/loras/ponyxlv6/styles/jinxit | docs/yiff_toolkit/loras/ponyxlv6/styles/kenket" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

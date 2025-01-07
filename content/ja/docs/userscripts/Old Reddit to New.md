@@ -34,6 +34,10 @@ window.location.replace(
 
 ---
 
----
-
-{{< related-posts related="docs/userscripts/Discord Name Color Changer/ | docs/userscripts/e621.net JSON Button/ | docs/userscripts" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/userscripts/e621.net JSON Button/ | docs/userscripts/Discord Name Color Changer/ | docs/userscripts" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

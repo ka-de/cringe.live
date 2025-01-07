@@ -60,6 +60,10 @@ Keyword: `by jim davies`
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/bill_watterson/ | docs/yiff_toolkit/loras/ponyxlv6/styles/kousen | docs/yiff_toolkit/loras/ponyxlv6/styles/kunaboto" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/bill_watterson/ | docs/yiff_toolkit/loras/ponyxlv6/styles/kousen | docs/yiff_toolkit/loras/ponyxlv6/styles/latrans/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

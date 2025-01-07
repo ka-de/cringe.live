@@ -56,6 +56,10 @@ The term "stepweight" in this context highlights that the decay is applied at ea
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/dora/ | en/docs/yiff_toolkit/lora_training/Weight Decomposition Direction" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | en/docs/yiff_toolkit/lora_training/Weight Decomposition Direction | docs/yiff_toolkit/lora_training/dora/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

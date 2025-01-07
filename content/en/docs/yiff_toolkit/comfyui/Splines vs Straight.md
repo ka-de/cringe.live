@@ -23,6 +23,10 @@ When building I tend to switch to `Splines` but while I'm generating, I usually 
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Prediction/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_bitsandbytes_NF4/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_IPAdapter_plus/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Prediction/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_bitsandbytes_NF4/ | docs/yiff_toolkit/comfyui/custom_nodes/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

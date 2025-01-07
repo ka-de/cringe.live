@@ -132,6 +132,10 @@ A hosszú távú megőrzés érdekében rendszeresen készíts biztonsági ment�
 
 ---
 
----
-
-{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/ | docs/yiff_toolkit/lora_training_guide/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/ | docs/yiff_toolkit/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->

@@ -83,6 +83,10 @@ This userscript is designed to customize the arXiv website's appearance by selec
 
 ---
 
----
-
-{{< related-posts related="docs/userscripts/CivitAI Fix/ | docs/yiff_toolkit/ponyxlv6_loras | docs/userscripts" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_START
+-->
+{{< related-posts related="docs/userscripts/CivitAI Fix/ | docs/userscripts | docs/userscripts/Discord Name Color Changer/" >}}
+<!--
+HUGO_SEARCH_EXCLUDE_END
+-->
