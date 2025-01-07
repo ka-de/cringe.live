@@ -1,5 +1,8 @@
 public/
 
+# Graphs
+scripts/related_articles_graph.png
+
 # Logs
 logs
 *.log

@@ -392,6 +392,8 @@ def create_relationship_graph(related_posts, content_files):
                 post = frontmatter.parse(f.read())
                 metadata = post[0] if isinstance(post[0], dict) else {}
                 title = metadata.get('title', os.path.basename(file_path))
+                # Clean title of emojis and special characters
+                title = re.sub(r'[^\x00-\x7F]+', '', title)
                 # Truncate very long titles
                 if len(title) > 40:
                     title = title[:37] + "..."
@@ -427,17 +429,17 @@ def create_relationship_graph(related_posts, content_files):
     # Set up the visualization
     plt.figure(figsize=(40, 30), facecolor='white')
     
-    # Get initial positions using spectral layout (PCA-based)
-    init_pos = nx.spectral_layout(G)
-    
-    # Refine the layout using spring layout with the spectral layout as initialization
-    pos = nx.spring_layout(
-        G,
-        pos=init_pos,     # Initialize with spectral layout
-        k=2.0,           # Optimal distance between nodes
-        iterations=200,   # More iterations for better convergence
-        seed=42          # For reproducibility
-    )
+    # Use kamada_kawai_layout for better node distribution
+    try:
+        pos = nx.kamada_kawai_layout(G)
+    except:
+        # Fallback to spring layout if kamada_kawai fails
+        pos = nx.spring_layout(
+            G,
+            k=2.0,
+            iterations=100,
+            seed=42
+        )
     
     # Create color maps for categories
     category_colors = plt.cm.Set3(np.linspace(0, 1, len(categories)))
@@ -446,19 +448,31 @@ def create_relationship_graph(related_posts, content_files):
     # Get node colors based on categories
     node_colors = [category_color_map[G.nodes[node]['category']] for node in G.nodes()]
     
-    # Draw the graph with improved visual settings
-    nx.draw(
+    # Draw edges with arrows to fix the connectionstyle warning
+    nx.draw_networkx_edges(
+        G, pos,
+        edge_color='lightgray',
+        width=0.5,
+        alpha=0.5,
+        arrows=True,  # Enable arrows to use FancyArrowPatch
+        arrowsize=10,
+        connectionstyle='arc3,rad=0.2'
+    )
+    
+    # Draw nodes
+    nx.draw_networkx_nodes(
         G, pos,
         node_color=node_colors,
         node_size=3000,
-        with_labels=True,
+        alpha=0.7
+    )
+    
+    # Draw labels with ASCII-only text
+    nx.draw_networkx_labels(
+        G, pos,
         font_size=10,
         font_weight='bold',
-        font_family='sans-serif',
-        edge_color='gray',
-        width=0.5,
-        alpha=0.7,
-        connectionstyle='arc3,rad=0.2'  # Curved edges
+        font_family='DejaVu Sans'
     )
     
     # Create legend
@@ -482,14 +496,36 @@ def create_relationship_graph(related_posts, content_files):
     # Ensure proper scaling and margins
     plt.margins(0.2)
     
-    # Save the graph
-    plt.savefig('related_articles_graph.png',
-                bbox_inches='tight',
-                dpi=300,
-                pad_inches=0.5,
-                facecolor='white')
-    plt.close()
-    print("\nGraph visualization saved as 'related_articles_graph.png'")
+    # Save the graph with a properly formatted path
+    try:
+        # Get the script's directory
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        # Create output path relative to script directory
+        output_path = os.path.join(script_dir, 'related_articles_graph.png')
+        # Normalize path
+        output_path = os.path.normpath(output_path)
+        
+        plt.savefig(output_path,
+                    bbox_inches='tight',
+                    dpi=300,
+                    pad_inches=0.5,
+                    facecolor='white')
+        plt.close()
+        print(f"\nGraph visualization saved as '{output_path}'")
+    except Exception as e:
+        print(f"Error saving graph: {str(e)}")
+        # Try saving in current working directory as fallback
+        try:
+            plt.savefig('related_articles_graph.png',
+                        bbox_inches='tight',
+                        dpi=300,
+                        pad_inches=0.5,
+                        facecolor='white')
+            plt.close()
+            print("\nGraph visualization saved in current directory as 'related_articles_graph.png'")
+        except Exception as e2:
+            print(f"Failed to save graph in fallback location: {str(e2)}")
+            plt.close()
 
 def main():
     # Set up argument parser
