@@ -255,8 +255,23 @@ def format_hugo_path(path):
     path = path.replace('content/', '')
     # Remove .md extension
     path = path.replace('.md', '')
-    # Replace spaces with hyphens
-    path = path.replace(' ', '-')
+    # Get the first alias path from the frontmatter
+    try:
+        with open(os.path.join('content', path + '.md'), 'r', encoding='utf-8') as f:
+            post = frontmatter.parse(f.read())
+            metadata = post[0] if isinstance(post[0], dict) else {}
+            aliases = metadata.get('aliases', [])
+            if aliases:
+                # Get the first alias that starts with /docs/
+                for alias in aliases:
+                    if alias.startswith('/docs/'):
+                        return alias.lstrip('/')
+                # If no /docs/ alias found, use the first one
+                return aliases[0].lstrip('/')
+    except Exception:
+        pass
+    
+    # Fallback to the original path if no aliases found
     return path
 
 def add_related_posts_shortcode(file_path, related_paths):
