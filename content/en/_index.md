@@ -59,18 +59,18 @@ aliases:
 >
 > You have entered the lair of a delinquent, born at precisely the right time.
 >
-> Here you will find a plethora of awkward notes for [Low-Rank Adaptations](/docs/yiff_toolkit/lora_training/) related to image diffusion, mostly for Pony Diffusion V6 XL, but with some modifications can be easily adopted to work with any SDXL model, I also offer a selection of LoRAs I have trained myself for [Pony Diffusion](/docs/yiff_toolkit/loras/ponyxlv6/), [Stable Diffusion 3.5 Large](/docs/yiff_toolkit/loras/3.5-large/), [NoobAI](/docs/yiff_toolkit/loras/noobai/) and [CompassMix](/docs/yiff_toolkit/loras/compassmix/). While I'm not a furry.. 😹.. I do like wolves and anthropomorphic characters and I happen to like sharing `.safetensors`.
+> Here you will find a plethora of awkward notes for {{< i18n-link "/docs/yiff_toolkit/lora_training/" "Low-Rank Adaptations" >}} related to image diffusion, mostly for Pony Diffusion V6 XL, but with some modifications can be easily adopted to work with any SDXL model, I also offer a selection of LoRAs I have trained myself for {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/" "Pony Diffusion" >}}, {{< i18n-link "/docs/yiff_toolkit/loras/3.5-large/" "Stable Diffusion 3.5 Large" >}}, {{< i18n-link "/docs/yiff_toolkit/loras/noobai/" "NoobAI" >}} and {{< i18n-link "/docs/yiff_toolkit/loras/compassmix/" "CompassMix" >}}. While I'm not a furry.. 😹.. I do like wolves and anthropomorphic characters and I happen to like sharing `.safetensors`.
 > 
 > Do whatever you want with these floating point byproducts, just don't sell them or upload them to an image generation service! 🐺
 > 
 > Send me an [e-mail](mailto:acsipont@gmail.com) for business inquiries.
 > 
-> You should also check out **[Yiff Toolkit](/docs/yiff_toolkit)** and [ComfyUI](/docs/comfyui) for more content!
+> You should also check out **{{< i18n-link "/docs/yiff_toolkit" "Yiff Toolkit" >}}** and {{< i18n-link "/docs/yiff_toolkit/comfyui" "ComfyUI" >}} for more content!
 >
-> For the latest updates, check out the [Site News](/news)!
+> For the latest updates, check out the {{< i18n-link "/news" "Site News" >}}!
 
 <div style="display: flex; justify-content: center;">
-  <a href="/docs/yiff_toolkit">
+  <a href="{{< i18n-link "/docs/yiff_toolkit" "" true >}}">
     {{< blurhash
       src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/realistic/fur_and_loathing_small.png"
       blurhash="LOE.qnE2bbkX_4t6kC-pOtxZWBxu"

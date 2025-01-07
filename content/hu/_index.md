@@ -57,18 +57,18 @@ aliases:
 >
 > Egy csibész barlangjába tévedtél, aki pont a megfelelő időben született.
 >
-> Itt találsz egy rakás kínosan részletes jegyzetet a [Low-Rank Adaptációkról](/docs/yiff_toolkit/lora_training/), főleg a Pony Diffusion V6 XL-hez kapcsolódóan, de némi módosítással könnyen használhatók bármely SDXL modellhez. Kínálok még egy válogatást az általam betanított LoRA-kból a [Pony Diffusion](/docs/yiff_toolkit/loras/ponyxlv6/), [Stable Diffusion 3.5 Large](/docs/yiff_toolkit/loras/3.5-large/), [NoobAI](/docs/yiff_toolkit/loras/noobai/) és [CompassMix](/docs/yiff_toolkit/loras/compassmix) modellekhez. Bár nem vagyok furry.. 😹.. szeretem a farkasokat és az antropomorf karaktereket, és szeretek `.safetensors` fájlokat megosztani.
+> Itt találsz egy rakás kínosan részletes jegyzetet az {{< i18n-link "/docs/yiff_toolkit/lora_training" "Alacsony Rangú Adaptációkról" >}}, főleg a Pony Diffusion V6 XL modellhez kapcsolódóan, de némi módosítással könnyen használhatók bármely SDXL modellhez. Kínálok még egy válogatást az általam betanított LoRA-kból a {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6" "Pony Diffusion" >}}, {{< i18n-link "/docs/yiff_toolkit/loras/3.5-large" "Stable Diffusion 3.5 Large" >}}, {{< i18n-link "/docs/yiff_toolkit/loras/noobai" "NoobAI" >}} és {{< i18n-link "/docs/yiff_toolkit/loras/compassmix" "CompassMix" >}} modellekhez. Bár nem vagyok furry.. 😹.. szeretem a farkasokat és az antropomorf karaktereket, és szeretek `.safetensors` fájlokat megosztani.
 > 
 > Azt csinálsz ezekkel a lebegőpontos melléktermékekkel, amit akarsz, csak ne add el őket és ne töltsd fel őket képgeneráló szolgáltatásokba! 🐺
 > 
 > Üzleti megkeresésekkel írj [e-mailt](mailto:acsipont@gmail.com).
 > 
-> Nézd meg a **[Yiff Toolkit](/docs/yiff_toolkit)** és [ComfyUI](/docs/comfyui) oldalakat is több tartalomért!
+> Nézd meg a **{{< i18n-link "/docs/yiff_toolkit" "Yiff Toolkit" >}}** és {{< i18n-link "/docs/yiff_toolkit/comfyui" "ComfyUI" >}} oldalakat is több tartalomért!
 >
-> A legfrissebb hírekért nézd meg az [Oldal Híreket](/news)!
+> A legfrissebb hírekért nézd meg az {{< i18n-link "/news" "Oldal Híreket" >}}!
 
 <div style="display: flex; justify-content: center;">
-  <a href="/docs/yiff_toolkit">
+  <a href="{{< i18n-link "/docs/yiff_toolkit" "" true >}}">
     {{< blurhash
       src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/realistic/fur_and_loathing_small.png"
       blurhash="LOE.qnE2bbkX_4t6kC-pOtxZWBxu"

@@ -52,18 +52,18 @@ outputs: [HTML, RSS, JSON]
 >
 > ちょうど良いタイミングで生まれた不良のねぐらへようこそ。
 >
-> ここでは、主にPony Diffusion V6 XLのための[Low-Rank Adaptations](/docs/yiff_toolkit/lora_training/)に関する不器用なメモを見つけることができます。これらは少し修正すれば、どのSDXLモデルでも簡単に使えるようになります。また、[Pony Diffusion](/docs/yiff_toolkit/loras/ponyxlv6/)、[Stable Diffusion 3.5 Large](/docs/yiff_toolkit/loras/3.5-large/)、[NoobAI](/docs/yiff_toolkit/loras/noobai/)、[CompassMix](/docs/yiff_toolkit/loras/compassmix)用に自分で訓練したLoRAも提供しています。ファーリーではありませんが...😹...オオカミと擬人化キャラクターが好きで、`.safetensors`を共有するのが好きなんです。
+> ここでは、主にPony Diffusion V6 XLのための{{< i18n-link "/docs/yiff_toolkit/lora_training/" "Low-Rank Adaptations" >}}に関する不器用なメモを見つけることができます。これらは少し修正すれば、どのSDXLモデルでも簡単に使えるようになります。また、{{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/" "Pony Diffusion" >}}、{{< i18n-link "/docs/yiff_toolkit/loras/3.5-large/" "Stable Diffusion 3.5 Large" >}}、{{< i18n-link "/docs/yiff_toolkit/loras/noobai/" "NoobAI" >}}、{{< i18n-link "/docs/yiff_toolkit/loras/compassmix/" "CompassMix" >}}用に自分で訓練したLoRAも提供しています。ファーリーではありませんが...😹...オオカミと擬人化キャラクターが好きで、`.safetensors`を共有するのが好きなんです。
 > 
 > これらの浮動小数点の副産物は好きに使ってください。ただし、販売したり、画像生成サービスにアップロードしたりしないでください！🐺
 > 
 > ビジネスに関するお問い合わせは[メール](mailto:acsipont@gmail.com)でお願いします。
 > 
-> **[イフツールキット](/docs/yiff_toolkit)** と **[ComfyUI](/docs/comfyui)** もチェックしてみてください！
+> **{{< i18n-link "/docs/yiff_toolkit" "イフツールキット" >}}** と **{{< i18n-link "/docs/yiff_toolkit/comfyui" "ComfyUI" >}}** もチェックしてみてください！
 >
-> 最新の更新情報は[サイトニュース](/news)をご覧ください！
+> 最新の更新情報は{{< i18n-link "/news" "サイトニュース" >}}をご覧ください！
 
 <div style="display: flex; justify-content: center;">
-  <a href="/docs/yiff_toolkit">
+  <a href="{{< i18n-link "/docs/yiff_toolkit" "" true >}}">
     {{< blurhash
       src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/realistic/fur_and_loathing_small.png"
       blurhash="LOE.qnE2bbkX_4t6kC-pOtxZWBxu"
