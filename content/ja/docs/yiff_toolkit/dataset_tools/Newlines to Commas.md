@@ -61,4 +61,6 @@ process_directory(directory_path)
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/dataset_tools/search-for-tag | docs/yiff_toolkit/dataset_tools/Check for Transparency/ | docs/yiff_toolkit/dataset_tools/e621-json-to-caption" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/search-for-tag | docs/yiff_toolkit/dataset_tools/Check for Transparency/ | docs/yiff_toolkit/dataset_tools/remove-extra-file-extensions" >}}

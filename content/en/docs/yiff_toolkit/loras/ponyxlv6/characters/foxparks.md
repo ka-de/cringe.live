@@ -39,4 +39,6 @@ Foxparks is from the game Palworld. It resembles a red fox, with its long ears m
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/styles/skecchiart | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cooliehigh/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/" >}}

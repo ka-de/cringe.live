@@ -34,4 +34,6 @@ BDSMは、ボンデージ（緊縛）、ディシプリン（調教）、サデ�
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift | docs/yiff_toolkit/loras/ponyxlv6/concepts/magic/ | docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/" >}}

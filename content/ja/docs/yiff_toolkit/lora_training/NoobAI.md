@@ -216,4 +216,6 @@ xxxx年の形式を使用します。例：`2021`。
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/dataset_tools/e621-json-to-caption | docs/yiff_toolkit/dataset_tools/furrytagger" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/dataset_tools/furrytagger | docs/yiff_toolkit/lora_training/" >}}

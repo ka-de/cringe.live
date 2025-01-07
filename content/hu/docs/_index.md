@@ -26,4 +26,6 @@ Ez a dokumentációs oldalak gyökere. Használd az oldalsávot a neked megfelel
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ | docs/yiff_toolkit/dataset_tools/ | docs/yiff_toolkit/loras" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ | docs/yiff_toolkit/loras | docs/yiff_toolkit/dataset_tools/" >}}

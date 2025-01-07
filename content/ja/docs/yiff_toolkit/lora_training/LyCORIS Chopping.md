@@ -70,4 +70,6 @@ python chop_blocks.py --model input.safetensors --save_to output.safetensors --v
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/10-Minute-SDXL-LoRA-Training-for-the-Ultimate-Degenerates/ | docs/yiff_toolkit/lora_training_guide/ | docs/yiff_toolkit/lora_training/" >}}

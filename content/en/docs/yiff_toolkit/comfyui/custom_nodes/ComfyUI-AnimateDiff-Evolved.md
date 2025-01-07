@@ -17,4 +17,6 @@ aliases:
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_IPAdapter_plus/ | docs/yiff_toolkit/comfyui/custom_nodes/Overly Complicated Sampling/ | docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI_IPAdapter_plus/ | docs/yiff_toolkit/comfyui/custom_nodes/Overly Complicated Sampling/ | docs/yiff_toolkit/comfyui/ControlNet/" >}}

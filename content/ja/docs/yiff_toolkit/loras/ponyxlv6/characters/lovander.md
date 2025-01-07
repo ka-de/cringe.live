@@ -34,4 +34,6 @@ Lovanderは、Palworldに登場する魅力的なサラマンダーです。主�
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/ | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift | docs/yiff_toolkit/loras/ponyxlv6/concepts/magic/ | docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/" >}}

@@ -235,4 +235,6 @@ document.body.innerHTML = bodyText;
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/ | docs/userscripts/e621.net JSON Button/ | docs/userscripts/Customize arXiv Header/" >}}
+---
+
+{{< related-posts related="docs/userscripts/e621.net JSON Button/ | docs/userscripts/Customize arXiv Header/ | docs/yiff_toolkit/" >}}

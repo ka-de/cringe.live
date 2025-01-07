@@ -34,4 +34,6 @@ summary: "バターチョークによって作られたロリ猫娘のオリジ�
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/butterchalk/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cooliehigh/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/butterchalk/ | docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/" >}}

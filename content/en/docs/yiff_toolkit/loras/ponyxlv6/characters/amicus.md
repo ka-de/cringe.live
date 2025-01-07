@@ -71,4 +71,6 @@ Amicus is a central character in the visual novel Adastra. He is a wolf-like ali
 
 ---
 
+---
+
 {{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/wickerbeast/ | docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh/ | docs/yiff_toolkit/loras/ponyxlv6/characters/skunk/" >}}

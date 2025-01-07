@@ -37,4 +37,6 @@ Finally, the small guy gets to be on top! A LoRA trained on images depicting a s
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift | docs/yiff_toolkit/loras/ponyxlv6/characters/dharrel/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cooliehigh/" >}}

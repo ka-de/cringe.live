@@ -21,4 +21,6 @@ LoRAs (Low-Rank Adaptations) are a technique used to fine-tune models with speci
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/ | docs/audio/" >}}
+---
+
+{{< related-posts related="docs/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/custom_nodes/" >}}

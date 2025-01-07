@@ -56,4 +56,6 @@ A "lépésenkénti súly" kifejezés ebben a kontextusban azt hangsúlyozza, hog
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/audio/Audiogen Medium/ | docs/yiff_toolkit/lora_training/dora/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/dora/ | en/docs/yiff_toolkit/lora_training/Weight Decomposition Direction" >}}

@@ -22,4 +22,6 @@ Egy "kis" gyűjtemény Python és PowerShell szkriptekből, amelyeket az adathal
 
 ---
 
+---
+
 {{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/lora_training/Tracking-Training-Changes/ | docs/yiff_toolkit/lora_training/" >}}

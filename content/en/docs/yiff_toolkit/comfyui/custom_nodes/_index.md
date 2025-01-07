@@ -40,4 +40,6 @@ The `custom_nodes` folder is where all the custom nodes are stored.
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager/ | docs/yiff_toolkit/lora_training/Add-Custom-Optimizers/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager/ | docs/ | docs/yiff_toolkit/lora_training/Add-Custom-Optimizers/" >}}

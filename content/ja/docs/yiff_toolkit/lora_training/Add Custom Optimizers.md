@@ -180,4 +180,6 @@ class Compass(Optimizer):
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager/ | docs/yiff_toolkit/lora_training/NoobAI/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager/ | docs/yiff_toolkit/lora_training/NoobAI/ | docs/yiff_toolkit/comfyui/custom_nodes/" >}}

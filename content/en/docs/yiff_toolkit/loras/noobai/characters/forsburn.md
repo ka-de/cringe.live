@@ -64,4 +64,6 @@ Keyword: `forsburn`, `hyena`, `canis`
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/noobai/styles/momowaaai/ | docs/yiff_toolkit/loras/noobai/styles/darkgem/ | docs/yiff_toolkit/loras/noobai/styles/dagasi/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/noobai/styles/chunie/ | docs/yiff_toolkit/loras/noobai/styles/butterchalk/ | docs/yiff_toolkit/loras/noobai/styles/dagasi/" >}}

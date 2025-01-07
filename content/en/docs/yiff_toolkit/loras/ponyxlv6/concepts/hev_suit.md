@@ -58,4 +58,6 @@ Keyword: `hev suit`, `armor`, `lambda`
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/jim_davies | docs/yiff_toolkit/loras/ponyxlv6/styles/bill_watterson/ | docs/yiff_toolkit/loras/ponyxlv6/styles/latrans/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/kousen | docs/yiff_toolkit/loras/ponyxlv6/styles/latrans/ | docs/yiff_toolkit/loras/ponyxlv6/styles/kunaboto" >}}

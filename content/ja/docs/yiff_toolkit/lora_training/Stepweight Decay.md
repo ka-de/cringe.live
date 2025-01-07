@@ -45,4 +45,6 @@ title: "ステップウェイト減衰"
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/audio/Audiogen Medium/ | docs/yiff_toolkit/lora_training/dora/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/lora_training/dora/ | en/docs/yiff_toolkit/lora_training/Weight Decomposition Direction" >}}

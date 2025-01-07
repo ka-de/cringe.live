@@ -189,4 +189,6 @@ Once you have figured out which blocks you want to keep, chop up the LoRA you ju
 
 ---
 
+---
+
 {{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/Experimental-Stuff/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/" >}}

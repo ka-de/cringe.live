@@ -157,4 +157,6 @@ for image_filename in image_files:
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/dataset_tools/create-empty-captions-for-images | docs/yiff_toolkit/dataset_tools/e621-json-to-caption | docs/yiff_toolkit/dataset_tools/Check for Large Images/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/create-empty-captions-for-images | docs/yiff_toolkit/dataset_tools/Check for Large Images/ | docs/yiff_toolkit/dataset_tools/e621-json-to-caption" >}}

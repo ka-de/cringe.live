@@ -44,4 +44,6 @@ Dagasiは、ファーリーアートコミュニティで高く評価されて�
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/greg_rutkowski | docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/louart | docs/yiff_toolkit/loras/ponyxlv6/styles/kenket | docs/yiff_toolkit/loras/ponyxlv6/styles/hibbary" >}}

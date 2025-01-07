@@ -60,4 +60,6 @@ Keyword: `by kunaboto`
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/jim_davies | docs/yiff_toolkit/loras/ponyxlv6/styles/bill_watterson/ | docs/yiff_toolkit/loras/ponyxlv6/styles/kousen" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/latrans/ | docs/yiff_toolkit/loras/ponyxlv6/styles/serpent_x | docs/yiff_toolkit/loras/ponyxlv6/characters/wolf_link/" >}}

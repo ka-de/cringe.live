@@ -74,4 +74,6 @@ This userscript, designed for a specific Discord channel, automatically replaces
 
 ---
 
-{{< related-posts related="docs/userscripts/Old Reddit to New/ | docs/userscripts | docs/userscripts/CivitAI Fix/" >}}
+---
+
+{{< related-posts related="docs/userscripts/Old Reddit to New/ | docs/userscripts/CivitAI Fix/ | docs/userscripts/Customize arXiv Header/" >}}

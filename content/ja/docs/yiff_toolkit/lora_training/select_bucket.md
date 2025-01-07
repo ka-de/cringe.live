@@ -141,4 +141,6 @@ class BucketBatchIndex(NamedTuple):
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/dataset_tools/Check for Large Images/ | docs/yiff_toolkit/lora_training/dora/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/dataset_tools/Check for Large Images/ | docs/yiff_toolkit/dataset_tools/furrytagger" >}}

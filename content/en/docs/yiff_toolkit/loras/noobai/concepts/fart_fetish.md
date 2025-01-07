@@ -81,4 +81,6 @@ If you get a nice composition, but the text in the cloud is ruining it, try rein
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/noobai/styles/momowaaai/ | docs/yiff_toolkit/loras/noobai/styles/darkgem/ | docs/yiff_toolkit/loras/noobai/styles/dagasi/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/noobai/styles/chunie/ | docs/yiff_toolkit/loras/noobai/styles/butterchalk/ | docs/yiff_toolkit/loras/noobai/styles/dagasi/" >}}

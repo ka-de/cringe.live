@@ -39,4 +39,6 @@ Keyword:
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/cooliehigh/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/ | docs/yiff_toolkit/loras/ponyxlv6/styles/goronic" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/ | docs/yiff_toolkit/loras/ponyxlv6/styles/honovy | docs/yiff_toolkit/loras/ponyxlv6/styles/kenket" >}}

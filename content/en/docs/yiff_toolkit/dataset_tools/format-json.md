@@ -80,4 +80,6 @@ fn format_json_file(path: &Path) -> Result<(), Box<dyn std::error::Error>> {
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/dataset_tools/format-json-files | docs/yiff_toolkit/dataset_tools/format-json-files-to-single-line | docs/yiff_toolkit/dataset_tools/extract-metadata" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/format-json-files-to-single-line | docs/yiff_toolkit/dataset_tools/format-json-files | docs/yiff_toolkit/dataset_tools/extract-metadata" >}}

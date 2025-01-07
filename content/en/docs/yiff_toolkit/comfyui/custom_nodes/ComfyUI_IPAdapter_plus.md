@@ -17,4 +17,6 @@ aliases:
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-AnimateDiff-Evolved/ | docs/yiff_toolkit/comfyui/custom_nodes/Overly Complicated Sampling/ | docs/yiff_toolkit/comfyui/custom_nodes/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/comfyui/custom_nodes/Overly Complicated Sampling/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-AnimateDiff-Evolved/ | docs/yiff_toolkit/comfyui/ControlNet/" >}}

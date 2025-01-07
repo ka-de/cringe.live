@@ -66,4 +66,6 @@ if __name__ == "__main__":
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/dataset_tools/Check for Large Images/ | docs/yiff_toolkit/dataset_tools/replace-transparency-with-black | docs/yiff_toolkit/dataset_tools/create-empty-captions-for-images" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/dataset_tools/Check for Large Images/ | docs/yiff_toolkit/dataset_tools/count-images-in-folder | docs/yiff_toolkit/dataset_tools/replace-transparency-with-black" >}}

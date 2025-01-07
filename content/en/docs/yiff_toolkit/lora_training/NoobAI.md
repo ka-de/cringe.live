@@ -215,4 +215,6 @@ For period tags, please refer to the following table:
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/dataset_tools/e621-json-to-caption | docs/yiff_toolkit/dataset_tools/furrytagger" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/ | docs/yiff_toolkit/dataset_tools/furrytagger | docs/yiff_toolkit/lora_training/" >}}

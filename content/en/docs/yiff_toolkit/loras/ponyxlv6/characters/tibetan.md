@@ -37,4 +37,6 @@ The Tibetan Sand Fox (Vulpes ferrilata) is a unique species of true fox endemic 
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/concepts/forefront-foot_perspective/ | docs/yiff_toolkit/loras/ponyxlv6/characters/chillet/ | docs/yiff_toolkit/loras/ponyxlv6/styles/cecily_lin/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/characters/lodestone/ | docs/yiff_toolkit/loras/ponyxlv6/styles/spectrumshift | docs/yiff_toolkit/loras/ponyxlv6/characters/skiltaire/" >}}

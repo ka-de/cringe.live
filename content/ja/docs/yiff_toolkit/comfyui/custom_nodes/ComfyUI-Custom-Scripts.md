@@ -103,4 +103,6 @@ https://raw.githubusercontent.com/ka-de/sacred_words/refs/heads/main/spellbook.c
 
 ---
 
+---
+
 {{< related-posts related="docs/yiff_toolkit/comfyui/Experimental-Stuff/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/ | docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Manager/" >}}

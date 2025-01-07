@@ -60,4 +60,6 @@ Keyword: `Keanu Reeves`, `Agent Smith`, `Carrie-Anne Moss`, `Bald African-Americ
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/flux/styles/spooky/ | docs/yiff_toolkit/loras/flux/styles/eldritch/ | docs/yiff_toolkit/loras/flux/characters/asmongold/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/flux/characters/asmongold/ | docs/yiff_toolkit/loras/flux/concepts/space/ | docs/yiff_toolkit/loras/flux/styles/spooky/" >}}

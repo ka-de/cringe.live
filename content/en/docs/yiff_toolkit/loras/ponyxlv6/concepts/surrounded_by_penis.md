@@ -83,4 +83,6 @@ Keyword: `surrounded by penis`
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/hld | docs/yiff_toolkit/loras/ponyxlv6/styles/chunie/ | docs/yiff_toolkit/loras/ponyxlv6/styles/himari" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/hld | docs/yiff_toolkit/loras/ponyxlv6/styles/chunie/ | docs/yiff_toolkit/loras/ponyxlv6/styles/furry_sticker/" >}}

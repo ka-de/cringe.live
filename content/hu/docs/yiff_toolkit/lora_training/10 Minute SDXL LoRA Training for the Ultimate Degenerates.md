@@ -203,4 +203,6 @@ Miután kitaláltad, mely blokkokat szeretnéd megtartani, darabold fel az imén
 
 ---
 
+---
+
 {{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/Experimental-Stuff/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/" >}}

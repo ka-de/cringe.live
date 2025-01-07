@@ -18,4 +18,6 @@ LoRA（Low-Rank Adaptation）は、特定のスタイルやコンセプトでモ
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/ | docs/audio/" >}}
+---
+
+{{< related-posts related="docs/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/comfyui/custom_nodes/" >}}

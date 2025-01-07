@@ -68,4 +68,6 @@ Most, hogy tiszta lappal indulsz, adjunk hozzá egy node-ot. Ezt kétféleképpe
 
 ---
 
-{{< related-posts related="docs/audio/ | docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/lora_training/ | docs/yiff_toolkit/ | docs/yiff_toolkit/comfyui/Custom-ComfyUI-Workflow-with-the-Krita-AI-Plugin/" >}}

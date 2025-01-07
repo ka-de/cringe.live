@@ -99,4 +99,6 @@ summary: "ウィッカービーストは、ファーリーファンダムにお�
 
 ---
 
-{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/hld | docs/yiff_toolkit/loras/ponyxlv6/styles/realistic | docs/yiff_toolkit/loras/ponyxlv6/characters/skunk/" >}}
+---
+
+{{< related-posts related="docs/yiff_toolkit/loras/ponyxlv6/styles/hld | docs/yiff_toolkit/loras/ponyxlv6/characters/skunk/ | docs/yiff_toolkit/loras/ponyxlv6/styles/realistic" >}}
