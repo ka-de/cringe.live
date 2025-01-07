@@ -10,8 +10,6 @@ blurhash: "LVJ[9VRkRkaeOFofoeay02oej?of"
 aliases:
     - /hu/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/
     - /hu/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times
-    - /hu/docs/yiff_toolkit/comfyui/Optimizing ComfyUI Load Times/
-    - /hu/docs/yiff_toolkit/comfyui/Optimizing ComfyUI Load Times
     - /hu/docs/yiff_toolkit/comfyui/ComfyUI Betöltési Idők Optimalizálása
     - /hu/docs/yiff_toolkit/comfyui/ComfyUI Betöltési Idők Optimalizálása/
     - /hu/docs/yiff_toolkit/comfyui/ComfyUI-Betöltési-Idők-Optimalizálása

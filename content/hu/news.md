@@ -58,20 +58,20 @@ aliases:
 
 **Oldal Hírek:**
 
-- Új [szekció](/docs/yiff_toolkit/lora_training/#lokr) került a [LoRA Tréning](/docs/yiff_toolkit/lora_training/) oldalra a LoKr-ról, és most már van egy hosszú bevezető is, ami nagyjából elmagyarázza, mik azok a LoRA-k és hogyan működnek.
+- Új {{< i18n-link "/docs/yiff_toolkit/lora_training/#lokr" "szekció" >}} került a {{< i18n-link "/docs/yiff_toolkit/lora_training/" "LoRA Tréning" >}} oldalra a LoKr-ról, és most már van egy hosszú bevezető is, ami nagyjából elmagyarázza, mik azok a LoRA-k és hogyan működnek.
 
 ### 2024.11.11.
 
 **Oldal Hírek:**
 
-- Új [szekció](/docs/yiff_toolkit/lora_training/#steps-vs-epochs) került a [LoRA Tréning](/docs/yiff_toolkit/lora_training/) oldalra a lépések és epochák közötti különbségről, és hogy hogyan működik a gradiens akkumuláció.
-- A [Szöveg Automatikus Kiegészítés](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/#text-autocomplete) szekció a [ComfyUI Custom Scripts](/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/) oldalon újra lett írva.
+- Új {{< i18n-link "/docs/yiff_toolkit/lora_training/#steps-vs-epochs" "szekció" >}} került a {{< i18n-link "/docs/yiff_toolkit/lora_training/" "LoRA Tréning" >}} oldalra a lépések és epochák közötti különbségről, és hogy hogyan működik a gradiens akkumuláció.
+- A {{< i18n-link "/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/#text-autocomplete" "Szöveg Automatikus Kiegészítés" >}} szekció a {{< i18n-link "/docs/yiff_toolkit/comfyui/custom_nodes/ComfyUI-Custom-Scripts/" "ComfyUI Custom Scripts" >}} oldalon újra lett írva.
 
 ### 2024.11.03.
 
 **Új LoRA:**
 
-- [Night in the Woods](/docs/yiff_toolkit/loras/3.5-large/styles/nitw) stílus a Stable Diffusion 3.5 Large-hoz.
+- {{< i18n-link "/docs/yiff_toolkit/loras/3.5-large/styles/nitw/" "Night in the Woods" >}} stílus a Stable Diffusion 3.5 Large-hoz.
 
 **Oldal Hírek:**
 
@@ -81,24 +81,24 @@ aliases:
 
 **Új LoRA-k:**
 
-- [Amicus](/docs/yiff_toolkit/loras/ponyxlv6/characters/amicus) megkapta a megérdemelt frissítését a Pony Diffusion V6 XL-hez!
-- A [wickerbeast](/docs/yiff_toolkit/loras/ponyxlv6/characters/wickerbeast) LoRA felkerült a Pony listájára!
+- {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/characters/amicus/" "Amicus" >}} megkapta a megérdemelt frissítését a Pony Diffusion V6 XL-hez!
+- A {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/characters/wickerbeast/" "wickerbeast" >}} LoRA felkerült a Pony listájára!
 
 **Oldal Hírek:**
 
-- Józanodj ki ezzel a rövid cikkel a [`UNetSelfAttentionMultiply`](/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply)-ról a ComfyUI-hoz.
+- Józanodj ki ezzel a rövid cikkel a {{< i18n-link "/docs/yiff_toolkit/comfyui/UNetSelfAttentionMultiply/" "UNetSelfAttentionMultiply" >}}-ról a ComfyUI-hoz.
 
 ### 2024.10.31.
 
 **Új LoRA:**
 
-- Boldog Halloweent! 🎃 Fogadd szeretettel ezt a [skunk](/docs/yiff_toolkit/loras/ponyxlv6/characters/skunk) LoRA-t a Pony Diffusion V6 XL-hez ajándékba! 🦨
+- Boldog Halloweent! 🎃 Fogadd szeretettel ezt a {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/characters/skunk/" "skunk" >}} LoRA-t a Pony Diffusion V6 XL-hez ajándékba! 🦨
 
 ### 2024.10.28.
 
 **Új LoRA:**
 
-- [Maliketh](/docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh) a Pony Diffusion V6 XL-hez kapott egy szép frissítést.
+- {{< i18n-link "/docs/yiff_toolkit/loras/ponyxlv6/characters/maliketh/" "Maliketh" >}} a Pony Diffusion V6 XL-hez kapott egy szép frissítést.
 
 ### 2024.10.24.
 
@@ -114,4 +114,4 @@ aliases:
 
 **Oldal Hírek:**
 
-- Írtam a {{< i18n-link "/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times" "ComfyUI Betöltési Idejének Optimalizálásáról" >}} is.
+- Írtam a {{< i18n-link "/docs/yiff_toolkit/comfyui/Optimizing-ComfyUI-Load-Times/" "ComfyUI Betöltési Idejének Optimalizálásáról" >}} is.
