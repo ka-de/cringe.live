@@ -113,10 +113,17 @@ def process_content(file_path):
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-            post = frontmatter.parse(content)
+            # Parse frontmatter manually since the API is inconsistent
+            if content.startswith('---'):
+                _, fm, content = content.split('---', 2)
+                try:
+                    import yaml
+                    metadata = yaml.safe_load(fm)
+                except:
+                    metadata = {}
+            else:
+                metadata = {}
             
-        # Combine title, description, summary and content for better matching
-        metadata = post[0] if isinstance(post[0], dict) else {}
         title = metadata.get('title', '')
         
         # Skip redirect pages
@@ -124,11 +131,11 @@ def process_content(file_path):
             return None
             
         summary = metadata.get('summary', '')
-        text = f"{title} {summary} {post[1]}"
+        text = f"{title} {summary} {content}"
         return {
             'title': title,
             'summary': summary,
-            'content': post[1],
+            'content': content,
             'cleaned_text': clean_text(text)
         }
     except Exception as e:
@@ -233,7 +240,7 @@ def find_related_posts(content_files, vectorizer):
         for idx, (file_path, content) in enumerate(zip(model_files, contents)):
             # Get top 3 similar documents (excluding self)
             similar_indices = cosine_sim[idx].argsort()[-4:-1][::-1]
-            related = []
+            related = {}  # Changed to dict to store similarity scores
             
             print(f"\nAnalyzing related posts for: {os.path.basename(file_path)}")
             print(f"Title: {content['title']}")
@@ -256,10 +263,11 @@ def find_related_posts(content_files, vectorizer):
                 print(f"Title: {similar_content['title']}")
                 print(explanation)
                 
-                # Convert to relative path
-                related.append(os.path.relpath(similar_file, 'content'))
+                # Store relative path and similarity score
+                rel_path = os.path.relpath(similar_file, 'content')
+                related[rel_path] = similarity_score
             
-            # Store the related posts
+            # Store the related posts with similarity scores
             file_path = os.path.relpath(file_path, 'content')
             related_posts[file_path] = related
             print("-" * 80)
@@ -282,7 +290,7 @@ def find_related_posts(content_files, vectorizer):
             
             for idx, (file_path, content) in enumerate(zip(other_files, contents)):
                 similar_indices = cosine_sim[idx].argsort()[-4:-1][::-1]
-                related = []
+                related = {}  # Changed to dict to store similarity scores
                 
                 print(f"\nAnalyzing related posts for: {os.path.basename(file_path)}")
                 print(f"Title: {content['title']}")
@@ -304,7 +312,9 @@ def find_related_posts(content_files, vectorizer):
                     print(f"Title: {similar_content['title']}")
                     print(explanation)
                     
-                    related.append(os.path.relpath(similar_file, 'content'))
+                    # Store relative path and similarity score
+                    rel_path = os.path.relpath(similar_file, 'content')
+                    related[rel_path] = similarity_score
                 
                 file_path = os.path.relpath(file_path, 'content')
                 related_posts[file_path] = related
@@ -389,8 +399,18 @@ def create_relationship_graph(related_posts, content_files):
     for file_path in content_files:
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
-                post = frontmatter.parse(f.read())
-                metadata = post[0] if isinstance(post[0], dict) else {}
+                content = f.read()
+                # Parse frontmatter manually
+                if content.startswith('---'):
+                    _, fm, _ = content.split('---', 2)
+                    try:
+                        import yaml
+                        metadata = yaml.safe_load(fm)
+                    except:
+                        metadata = {}
+                else:
+                    metadata = {}
+                
                 title = metadata.get('title', os.path.basename(file_path))
                 # Clean title of emojis and special characters
                 title = re.sub(r'[^\x00-\x7F]+', '', title)
@@ -411,35 +431,120 @@ def create_relationship_graph(related_posts, content_files):
             path_to_name[rel_path] = os.path.basename(file_path)
             path_to_category[rel_path] = 'other'
 
-    # Add nodes and edges with category information
+    # Add nodes and edges with category information and weights
     categories = set()
+    
+    # First pass: collect all nodes and find similarity threshold
+    all_similarities = []
+    for source, targets in related_posts.items():
+        for target, similarity in targets.items():
+            all_similarities.append(similarity)
+    
+    # Calculate threshold as 50th percentile (median) of similarities
+    similarity_threshold = np.percentile(all_similarities, 50) if all_similarities else 0.3
+    print(f"\nSimilarity threshold: {similarity_threshold:.3f}")
+    
+    # Second pass: add nodes and filtered edges
     for source, targets in related_posts.items():
         source_name = path_to_name.get(source, os.path.basename(source))
         source_category = path_to_category.get(source, 'other')
         categories.add(source_category)
         G.add_node(source_name, category=source_category)
         
-        for target in targets:
+        # Sort targets by similarity and keep top connections that meet threshold
+        sorted_targets = sorted(targets.items(), key=lambda x: x[1], reverse=True)
+        
+        # Keep top 3 connections if they meet minimum threshold
+        min_similarity = max(similarity_threshold * 0.8, 0.2)  # Allow slightly lower threshold but not too low
+        top_targets = [t for t in sorted_targets[:3] if t[1] >= min_similarity]
+        
+        # If node would be isolated, keep at least one strongest connection
+        if not top_targets and sorted_targets:
+            top_targets = [sorted_targets[0]]
+        
+        for target, similarity in top_targets:
             target_name = path_to_name.get(target, os.path.basename(target))
             target_category = path_to_category.get(target, 'other')
             categories.add(target_category)
             G.add_node(target_name, category=target_category)
-            G.add_edge(source_name, target_name)
+            
+            # Adjust weight calculation for better visual distribution
+            # Using modified sigmoid function with smoother transition
+            normalized_sim = (similarity - min_similarity) / (1.0 - min_similarity)
+            weight = 1.0 / (1.0 + np.exp(-8 * (normalized_sim - 0.5)))
+            G.add_edge(source_name, target_name, weight=weight)
 
     # Set up the visualization
     plt.figure(figsize=(40, 30), facecolor='white')
     
-    # Use kamada_kawai_layout for better node distribution
-    try:
-        pos = nx.kamada_kawai_layout(G)
-    except:
-        # Fallback to spring layout if kamada_kawai fails
-        pos = nx.spring_layout(
-            G,
-            k=2.0,
-            iterations=100,
-            seed=42
-        )
+    # Get connected components
+    components = list(nx.connected_components(G))
+    num_components = len(components)
+    
+    # Calculate grid dimensions for components
+    grid_cols = int(np.ceil(np.sqrt(num_components)))
+    grid_rows = int(np.ceil(num_components / grid_cols))
+    
+    # Initialize positions dictionary
+    pos = {}
+    
+    # Space between components
+    spacing_x = 5.0
+    spacing_y = 5.0
+    
+    # Layout each component separately
+    for idx, component in enumerate(components):
+        # Create subgraph for this component
+        subgraph = G.subgraph(component)
+        
+        # Calculate grid position for this component
+        grid_x = idx % grid_cols
+        grid_y = idx // grid_cols
+        
+        # Get layout for this component
+        try:
+            # Calculate optimal k (distance) based on number of nodes in component
+            n_nodes = len(subgraph)
+            # Default k is 1/sqrt(n), we'll scale it up based on component size
+            base_k = 1.0 / np.sqrt(n_nodes)
+            # Scale factor increases with component size
+            scale_factor = 4.0 + np.log(n_nodes)  # Logarithmic scaling
+            k = base_k * scale_factor
+            
+            print(f"Component {idx}: {n_nodes} nodes, k={k:.2f}")
+            
+            # Try spring layout with size-adjusted parameters
+            component_pos = nx.spring_layout(
+                subgraph,
+                k=k,              # Dynamic node spacing
+                iterations=200,    # More iterations for better convergence
+                seed=42+idx,      # Different seed for each component
+                weight='weight',
+                scale=2.0         # Additional scaling factor
+            )
+            
+            # Scale and shift the component positions
+            for node in component_pos:
+                x, y = component_pos[node]
+                # Scale positions to prevent overlap
+                x = x * (0.5 + 0.2 * np.log(n_nodes))  # Scale factor increases with component size
+                y = y * (0.5 + 0.2 * np.log(n_nodes))
+                # Shift to grid position
+                x += grid_x * spacing_x
+                y += grid_y * spacing_y
+                pos[node] = np.array([x, y])
+                
+        except Exception as e:
+            print(f"Spring layout failed for component {idx}: {str(e)}")
+            # Fallback to circular layout
+            component_pos = nx.circular_layout(subgraph)
+            
+            # Scale and shift the component positions
+            for node in component_pos:
+                x, y = component_pos[node]
+                x = x * 1.5 + grid_x * spacing_x
+                y = y * 1.5 + grid_y * spacing_y
+                pos[node] = np.array([x, y])
     
     # Create color maps for categories
     category_colors = plt.cm.Set3(np.linspace(0, 1, len(categories)))
@@ -448,28 +553,41 @@ def create_relationship_graph(related_posts, content_files):
     # Get node colors based on categories
     node_colors = [category_color_map[G.nodes[node]['category']] for node in G.nodes()]
     
-    # Draw edges with arrows to fix the connectionstyle warning
-    nx.draw_networkx_edges(
-        G, pos,
-        edge_color='lightgray',
-        width=0.5,
-        alpha=0.5,
-        arrows=True,  # Enable arrows to use FancyArrowPatch
-        arrowsize=10,
-        connectionstyle='arc3,rad=0.2'
-    )
+    # Get edge weights for visualization
+    edge_weights = [G[u][v]['weight'] for u, v in G.edges()]
+    max_weight = max(edge_weights) if edge_weights else 1.0
+    min_weight = min(edge_weights) if edge_weights else 0.0
+    normalized_weights = [(w - min_weight) / (max_weight - min_weight) for w in edge_weights]
+    
+    # Clear the figure and set up the plot
+    plt.clf()
+    plt.figure(figsize=(40, 30), facecolor='white')
+    
+    # Draw edges with varying width based on weight
+    for (u, v), width in zip(G.edges(), normalized_weights):
+        nx.draw_networkx_edges(
+            G, pos,
+            edgelist=[(u, v)],
+            edge_color='gray',
+            width=2.0 + width * 8.0,  # Much thicker edges (2.0-10.0)
+            alpha=0.3 + width * 0.4,  # Scale opacity with weight
+            arrows=True,
+            arrowsize=10 + width * 10,  # Scale arrow size with weight
+            connectionstyle='arc3,rad=0.2'
+        )
     
     # Draw nodes
     nx.draw_networkx_nodes(
         G, pos,
         node_color=node_colors,
-        node_size=3000,
-        alpha=0.7
+        node_size=500,
+        alpha=0.8
     )
     
-    # Draw labels with ASCII-only text
+    # Draw labels with adjusted position
+    label_pos = {node: (pos[node][0], pos[node][1] + 0.05) for node in pos}
     nx.draw_networkx_labels(
-        G, pos,
+        G, label_pos,
         font_size=10,
         font_weight='bold',
         font_family='DejaVu Sans'
@@ -486,15 +604,22 @@ def create_relationship_graph(related_posts, content_files):
                       label=f'Category: {cat}', markersize=15)
         )
     
+    # Add edge weight legend with thicker lines
+    legend_elements.extend([
+        plt.Line2D([0], [0], color='gray', linewidth=2.0, alpha=0.3, label='Low Similarity'),
+        plt.Line2D([0], [0], color='gray', linewidth=10.0, alpha=0.7, label='High Similarity')
+    ])
+    
     plt.legend(handles=legend_elements,
               loc='center left',
               bbox_to_anchor=(1, 0.5),
               fontsize=12,
-              title='Categories',
+              title='Categories & Similarity',
               title_fontsize=14)
     
     # Ensure proper scaling and margins
     plt.margins(0.2)
+    plt.gca().set_aspect('equal')  # Restore aspect ratio control
     
     # Save the graph with a properly formatted path
     try:
