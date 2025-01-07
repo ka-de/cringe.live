@@ -1,5 +1,63 @@
 #!/usr/bin/env python3
 
+"""
+Generate and update related posts for Hugo markdown content files.
+
+This script analyzes markdown content files in a Hugo website structure and automatically
+generates "related posts" recommendations based on content similarity. It uses TF-IDF
+vectorization and cosine similarity to find semantically related content.
+
+Algorithm Details:
+The text processing phase begins by extracting content and metadata from markdown frontmatter,
+including titles and summaries. Pages with titles starting with "(redirect)" are automatically
+excluded. The text is then cleaned by removing code blocks, URLs, special characters, and digits.
+To ensure comprehensive similarity analysis, the metadata is combined with the main content.
+NLTK provides tokenization and stopword removal capabilities for enhanced text processing.
+
+The vectorization process implements TF-IDF (Term Frequency-Inverse Document Frequency) using
+scikit-learn's TfidfVectorizer. The vectorizer is configured to use both unigrams and bigrams
+with an n-gram range of (1, 2), while removing English stopwords. To control dimensionality,
+a maximum of 5000 features is enforced. This creates a sparse matrix representation of
+document-term frequencies that efficiently captures the semantic relationships between documents.
+
+Similarity computation starts by grouping documents by model category to ensure relevant
+comparisons. The script then calculates pairwise cosine similarity between document vectors
+to identify the top three most similar documents for each file. To provide transparency,
+the system generates similarity explanations based on shared important terms, which are
+selected by analyzing the highest TF-IDF scores.
+
+Content organization maintains language-specific hierarchies for English, Japanese, and
+Hungarian content. The system implements special case handling by excluding news.md files
+and skipping root _index.md files. LoRA-related content receives special treatment by
+being grouped by model type. All file paths are converted to Hugo-compatible references
+to ensure proper integration with the website structure.
+
+The output generation phase creates Hugo shortcodes containing related post references.
+When updating existing files, the system preserves the original content while adding or
+updating the related posts section. Path formatting follows Hugo's content organization
+conventions, and the system handles multilingual content synchronization to maintain
+consistency across different language versions.
+
+The script provides several key capabilities: processing content in multiple languages
+(English, Japanese, Hungarian), grouping content by model category for more relevant
+recommendations, analyzing comprehensive document metadata including title, description,
+and summary, explaining relationships between posts through shared important terms,
+automatically updating Hugo shortcodes, and handling special cases like news pages
+and root index files.
+
+Usage:
+    python generate_related_posts.py
+
+Requirements:
+    - nltk: For text processing and tokenization
+    - scikit-learn: For TF-IDF vectorization and similarity calculations
+    - python-frontmatter: For markdown metadata parsing
+    - numpy: For numerical operations
+
+The script expects a Hugo website structure with content organized in language-specific
+directories (en, ja, hu) and properly formatted frontmatter in markdown files.
+"""
+
 import os
 import glob
 import nltk
@@ -57,12 +115,15 @@ def process_content(file_path):
         # Combine title, description, summary and content for better matching
         metadata = post[0] if isinstance(post[0], dict) else {}
         title = metadata.get('title', '')
-        description = metadata.get('description', '')
+        
+        # Skip redirect pages
+        if title.startswith('(redirect)'):
+            return None
+            
         summary = metadata.get('summary', '')
-        text = f"{title} {description} {summary} {post[1]}"
+        text = f"{title} {summary} {post[1]}"
         return {
             'title': title,
-            'description': description,
             'summary': summary,
             'content': post[1],
             'cleaned_text': clean_text(text)
