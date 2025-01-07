@@ -3,6 +3,7 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "NoobAI Notes"
+summary: "Comprehensive guide for training with NoobAI SDXL model, including optimal VRAM settings, training parameters, and prompting techniques with period-specific tags."
 aliases:
     - /docs/yiff_toolkit/lora_training/NoobAI/
     - /docs/yiff_toolkit/lora_training/NoobAI

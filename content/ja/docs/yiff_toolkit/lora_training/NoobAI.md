@@ -2,12 +2,20 @@
 weight: 2
 bookFlatSection: false
 bookToC: false
-title: "NoobAIに関するメモ"
+title: "NoobAIノート"
+summary: "NoobAI SDXLモデルのトレーニングに関する包括的なガイド。最適なVRAM設定、トレーニングパラメータ、および時期特定のタグを使用したプロンプト技術を含みます。"
+aliases:
+    - /ja/docs/yiff_toolkit/lora_training/NoobAI/
+    - /ja/docs/yiff_toolkit/lora_training/NoobAI
+    - /ja/docs/yiff_toolkit/lora_training/NoobAI-Notes/
+    - /ja/docs/yiff_toolkit/lora_training/NoobAI-Notes
+    - /ja/docs/yiff_toolkit/lora_training/NoobAI Notes/
+    - /ja/docs/yiff_toolkit/lora_training/NoobAI Notes
 ---
 
 <!--markdownlint-disable MD025 -->
 
-# NoobAIに関するメモ
+# NoobAIノート
 
 ---
 

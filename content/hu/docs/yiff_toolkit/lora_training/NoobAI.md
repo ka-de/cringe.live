@@ -3,12 +3,14 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "NoobAI Jegyzetek"
+summary: "Átfogó útmutató a NoobAI SDXL modellel való tanításhoz, beleértve az optimális VRAM beállításokat, tanítási paramétereket és címkézési technikákat időszak-specifikus címkékkel."
 aliases:
     - /hu/docs/yiff_toolkit/lora_training/NoobAI/
     - /hu/docs/yiff_toolkit/lora_training/NoobAI
     - /hu/docs/yiff_toolkit/lora_training/NoobAI-Notes/
     - /hu/docs/yiff_toolkit/lora_training/NoobAI-Notes
-    - /hu/docs/yiff_toolkit/lora_training/NoobAI Notes/
+    - "/hu/docs/yiff_toolkit/lora_training/NoobAI Notes/"
+    - "/hu/docs/yiff_toolkit/lora_training/NoobAI Notes"
     - /hu/docs/yiff_toolkit/lora_training/NoobAI_Notes
     - /hu/docs/yiff_toolkit/lora_training/NoobAI_Notes/
 ---

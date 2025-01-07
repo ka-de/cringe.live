@@ -3,7 +3,7 @@ weight: 2
 bookFlatSection: false
 bookToC: false
 title: "DoRA"
-description: "A novel parameter-efficient fine-tuning method that decomposes pre-trained weights into magnitude and directional components for more effective adaptation"
+summary: "A novel parameter-efficient fine-tuning method that decomposes pre-trained weights into magnitude and directional components for more effective adaptation"
 image: "https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/phoenix.jpg"
 image_alt: "The image depicts a vibrant and dynamic phoenix rising from a digital landscape. The phoenix, a mythical bird often associated with rebirth and renewal, is illustrated with fiery red and orange feathers that transition into a digital matrix of blue and white as they extend outward. The background features a complex array of digital codes, grids, and circuitry, blending the organic form of the phoenix with the structured, technological elements. This juxtaposition creates a striking visual metaphor for the fusion of nature and technology, symbolizing transformation and the emergence of new possibilities from the digital realm. The image is both visually captivating and conceptually intriguing, highlighting themes of innovation and regeneration in the context of modern technology."
 blurhash: "LFA^F9M|00pJIoxZWAM|9FxW%MRQ"
