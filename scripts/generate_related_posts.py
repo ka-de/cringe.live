@@ -277,15 +277,10 @@ def format_hugo_path(path):
     return path
 
 def add_related_posts_shortcode(file_path, related_paths):
-    """Add related posts shortcode to the file if it doesn't already exist."""
+    """Add or update related posts shortcode in the file."""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
-        
-        # Check if the file already has a related-posts shortcode
-        if '{{< related-posts' in content:
-            print(f"Skipping {file_path} - already has related posts shortcode")
-            return
         
         # Convert paths to Hugo references and join with pipe
         related_refs = [format_hugo_path(p) for p in related_paths]
@@ -295,12 +290,15 @@ def add_related_posts_shortcode(file_path, related_paths):
             print(f"  {ref}")
         shortcode = '{{< related-posts related="' + ' | '.join(related_refs) + '" >}}'
         
-        # Add shortcode at the end of the content
+        # Remove any existing related-posts shortcode
+        content = re.sub(r'\n*{{< related-posts.*?>}}\n*', '\n', content)
+        
+        # Add new shortcode at the end of the content
         content = content.rstrip() + '\n\n---\n\n' + shortcode + '\n'
         
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
-        print(f"Successfully added related posts to {file_path}")
+        print(f"Successfully updated related posts in {file_path}")
     except Exception as e:
         print(f"Error updating {file_path}: {str(e)}")
 
