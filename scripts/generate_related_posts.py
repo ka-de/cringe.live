@@ -249,11 +249,12 @@ def find_related_posts(content_files, vectorizer):
 
 def format_hugo_path(path):
     """Format a path for use in Hugo shortcodes."""
-    # Convert Windows backslashes to forward slashes and ensure proper format
+    # Convert Windows backslashes to forward slashes
     path = path.replace('\\', '/')
-    # Ensure the path starts with the language prefix
-    if not path.startswith(('en/', 'ja/', 'hu/')):
-        path = 'en/' + path
+    # Remove content/ prefix if present
+    path = path.replace('content/', '')
+    # Remove .md extension
+    path = path.replace('.md', '')
     return path
 
 def add_related_posts_shortcode(file_path, related_paths):
