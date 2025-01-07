@@ -70,3 +70,7 @@ aliases:
   - "/hu/docs/yiff_toolkit/lora_training/Tracking Training Changes"
 ---
 ```
+
+## Hugo Templates
+
+- Ignore linter errors for Hugo template syntax like `{{ . | safeJS }}` within `<script>` tags - these are valid Hugo template expressions

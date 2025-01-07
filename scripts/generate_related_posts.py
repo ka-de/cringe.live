@@ -255,6 +255,8 @@ def format_hugo_path(path):
     path = path.replace('content/', '')
     # Remove .md extension
     path = path.replace('.md', '')
+    # Replace spaces with hyphens
+    path = path.replace(' ', '-')
     return path
 
 def add_related_posts_shortcode(file_path, related_paths):
@@ -270,6 +272,10 @@ def add_related_posts_shortcode(file_path, related_paths):
         
         # Convert paths to Hugo references and join with pipe
         related_refs = [format_hugo_path(p) for p in related_paths]
+        # Print debug info
+        print(f"\nFormatted paths for {file_path}:")
+        for ref in related_refs:
+            print(f"  {ref}")
         shortcode = '{{< related-posts related="' + ' | '.join(related_refs) + '" >}}'
         
         # Add shortcode at the end of the content
