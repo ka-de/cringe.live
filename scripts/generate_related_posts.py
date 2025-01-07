@@ -249,10 +249,12 @@ def find_related_posts(content_files, vectorizer):
 
 def format_hugo_path(path):
     """Format a path for use in Hugo shortcodes."""
-    # Convert Windows backslashes to forward slashes
+    # Convert Windows backslashes to forward slashes and ensure proper format
     path = path.replace('\\', '/')
+    # Ensure the path starts with the language prefix
+    if not path.startswith(('en/', 'ja/', 'hu/')):
+        path = 'en/' + path
     return path
-
 
 def add_related_posts_shortcode(file_path, related_paths):
     """Add related posts shortcode to the file if it doesn't already exist."""
@@ -260,17 +262,13 @@ def add_related_posts_shortcode(file_path, related_paths):
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
-        
         # Check if the file already has a related-posts shortcode
         if '{{< related-posts' in content:
             print(f"Skipping {file_path} - already has related posts shortcode")
-            # Still write the file in case we fixed any shortcodes
-            with open(file_path, 'w', encoding='utf-8') as f:
-                f.write(content)
             return
         
         # Convert paths to Hugo references and join with pipe
-        related_refs = [f'"{format_hugo_path(p)}"' for p in related_paths]
+        related_refs = [format_hugo_path(p) for p in related_paths]
         shortcode = '{{< related-posts related="' + ' | '.join(related_refs) + '" >}}'
         
         # Add shortcode at the end of the content
