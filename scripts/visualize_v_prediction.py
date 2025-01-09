@@ -1,9 +1,74 @@
+"""
+Visualize the v-prediction parameterization of the diffusion process.
+
+This script creates a side-by-side visualization showing how an image is gradually
+corrupted with noise using the v-prediction formulation, which represents the diffusion
+process as a rotation in a 2D space.
+
+The visualization shows:
+LEFT: The noisy image (z_φ)
+    - Starts with the original image at φ = 0
+    - Gradually becomes noisier as φ increases
+    - Ends with pure noise at φ ≈ π/2
+    - Shows how the image content smoothly transitions to noise
+
+RIGHT: The velocity field (v_φ)
+    - Shows the instantaneous rate of change at each point
+    - Computed as the derivative of z_φ with respect to φ:
+      v_φ = d(z_φ)/d(φ) = cos(φ)ε - sin(φ)x
+    - Brighter areas indicate stronger change
+    - Interpretation:
+        * At φ = 0: v_φ ≈ ε (pure noise)
+        * At φ = π/4: Equal mix of noise and negative image
+        * At φ = π/2: v_φ ≈ -x (negative of original image)
+    - The pattern reveals:
+        * Which parts of the image are changing fastest
+        * The direction of change at each point
+        * How the noise interacts with image features
+
+The text overlay shows:
+    t: Current timestep
+    φ: Angle in radians (0 → π/2)
+    ᾱ: Cumulative scaling factor (1 → 0)
+
+Mathematical formulation:
+    z_φ = cos(φ)x + sin(φ)ε      (noisy image)
+    v_φ = cos(φ)ε - sin(φ)x      (velocity field)
+    where:
+        x is the original image
+        ε is random Gaussian noise
+        φ is the angle representing diffusion progress
+
+The velocity field is key to v-prediction because:
+1. It represents the direction of optimal denoising
+2. The model learns to predict v_φ instead of ε
+3. It provides a more natural parameterization of the diffusion process
+4. The magnitude of v_φ indicates where the image is changing most rapidly
+
+Usage:
+    python visualize_v_prediction.py --image path/to/image.png [options]
+
+Options:
+    --steps: Number of diffusion steps (default: 10)
+    --fps: Frames per second in output video (default: 30)
+    --vae: VAE model to use (default: stabilityai/sd-vae-ft-mse)
+
+Requirements:
+    - torch
+    - torchvision
+    - PIL
+    - numpy
+    - diffusers
+    - ffmpeg (system command)
+"""
+
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 import torch
 import torchvision.transforms as transforms
 from pathlib import Path
 import argparse
+import cv2
 import os
 from diffusers import AutoencoderKL
 
@@ -44,27 +109,56 @@ def decode_from_latents(vae, latents):
 def v_prediction_step(x_0, t, betas):
     """
     Implement v-prediction step as described in the theory section.
-    x_0: Original image in image space (not latent space)
-    t: Current timestep
-    betas: Complete noise schedule
+    
+    The function computes both the noisy image z_φ and its velocity field v_φ.
+    The velocity field represents the instantaneous rate of change of z_φ with
+    respect to the angle φ.
+    
+    Args:
+        x_0: Original image in image space (not latent space)
+        t: Current timestep
+        betas: Complete noise schedule
+    
+    The process:
+    1. Calculate α_t (signal scaling) and σ_t (noise scaling) from the noise schedule
+    2. Compute angle φ = arctan(σ_t/α_t) representing progress through diffusion
+    3. Generate random noise ε
+    4. Compute noisy image z_φ = cos(φ)x + sin(φ)ε
+    5. Compute velocity field v_φ = d(z_φ)/d(φ) = cos(φ)ε - sin(φ)x
+    
+    The velocity field v_φ shows:
+    - At φ = 0: Mostly noise (cos(0)ε ≈ ε)
+    - At φ = π/4: Equal mix of noise and negative image
+    - At φ = π/2: Mostly negative image (-sin(π/2)x ≈ -x)
+    
+    Returns:
+        z_phi: Noisy version of the image at angle φ
+        v_phi: Velocity field showing direction of change
+        phi_t: Current angle in radians
     """
-    # Calculate alphas and sigma
+    # Calculate alphas (signal scaling) and sigma (noise level)
     alphas = 1 - betas
     alphas_cumprod = torch.cumprod(alphas, dim=0)
-    alpha_t = torch.sqrt(alphas_cumprod[t])
-    sigma_t = torch.sqrt(1 - alphas_cumprod[t])
+    alpha_t = torch.sqrt(alphas_cumprod[t])  # Signal scaling factor
+    sigma_t = torch.sqrt(1 - alphas_cumprod[t])  # Noise scaling factor
     
     # Calculate phi (angle) from alpha and sigma
+    # φ = arctan(σ_t/α_t) represents progress through diffusion
     phi_t = torch.arctan2(sigma_t, alpha_t)
     
     # Generate noise with same dimensions as input image
     epsilon = torch.randn_like(x_0)
     
     # Calculate noisy image z_phi using angular parameterization
+    # z_φ = cos(φ)x + sin(φ)ε
+    # - At φ = 0: z_φ ≈ x (original image)
+    # - At φ = π/4: z_φ = equal mix of image and noise
+    # - At φ = π/2: z_φ ≈ ε (pure noise)
     z_phi = torch.cos(phi_t) * x_0 + torch.sin(phi_t) * epsilon
     
-    # Calculate velocity v_phi (direction of change)
-    # v_phi = d(z_phi)/d(phi) = cos(phi)ε - sin(phi)x
+    # Calculate velocity field v_phi (direction of change)
+    # v_φ = d(z_φ)/d(φ) = cos(φ)ε - sin(φ)x
+    # This shows the instantaneous rate of change at each point
     v_phi = torch.cos(phi_t) * epsilon - torch.sin(phi_t) * x_0
     
     return z_phi, v_phi, phi_t
@@ -81,9 +175,14 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
     canvas_width = width * 2 + 20  # Add 20px padding between images
     canvas_height = height + 60  # Add 60px for text
     
-    # Create temporary directory for frames
-    temp_dir = Path('temp_frames')
-    temp_dir.mkdir(exist_ok=True)
+    # Initialize video writer
+    temp_output = str(output_path).replace('.mp4', '_temp.avi')
+    fourcc = cv2.VideoWriter_fourcc(*'MJPG')
+    video = cv2.VideoWriter(temp_output, fourcc, fps, 
+                           (canvas_width, canvas_height), isColor=True)
+    
+    if not video.isOpened():
+        raise RuntimeError("Failed to create video writer")
     
     # Calculate alphas for overlay text
     alphas = 1 - betas
@@ -105,7 +204,7 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
         # Process v_phi
         if i > 0 and i <= len(v_phis):
             v_frame = v_phis[i-1].squeeze().permute(1, 2, 0).numpy()
-            # Normalize v_phi for visualization while preserving spatial dimensions
+            # Normalize v_phi for visualization
             v_frame = (v_frame - v_frame.min()) / (v_frame.max() - v_frame.min())
             v_frame = (v_frame * 255).astype(np.uint8)
             v_pil = Image.fromarray(v_frame)
@@ -137,13 +236,17 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
         # Draw text
         draw.text((text_x, 20), text, fill='black', font=font)
         
-        # Save frame
-        frame_path = temp_dir / f'frame_{i:04d}.png'
-        canvas.save(frame_path, 'PNG')
+        # Convert to OpenCV format and write
+        canvas_np = np.array(canvas)
+        canvas_cv = cv2.cvtColor(canvas_np, cv2.COLOR_RGB2BGR)
+        video.write(canvas_cv)
     
-    # Convert frames to video using ffmpeg
+    # Release video writer
+    video.release()
+    
+    # Convert to high-quality MP4
     ffmpeg_cmd = (
-        f'ffmpeg -y -framerate {fps} -i "{temp_dir}/frame_%04d.png" '
+        f'ffmpeg -y -i "{temp_output}" '
         f'-c:v libx264 -preset veryslow '
         f'-crf 15 '
         f'-x264-params "aq-mode=3:aq-strength=0.8" '
@@ -158,10 +261,8 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
     if ret != 0:
         raise RuntimeError(f"FFmpeg conversion failed with return code {ret}")
     
-    # Clean up temporary files
-    for frame in temp_dir.glob('*.png'):
-        frame.unlink()
-    temp_dir.rmdir()
+    if os.path.exists(temp_output):
+        os.remove(temp_output)
 
 def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", num_steps=10, beta_min=1e-4, beta_max=0.02, fps=30):
     """
@@ -175,6 +276,9 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
     # Load and preprocess image
     x_0 = load_and_preprocess_image(image_path).to(device)
     
+    # Encode image to latent space
+    z_0 = encode_to_latents(vae, x_0)
+    
     # Create linear noise schedule
     betas = torch.linspace(beta_min, beta_max, num_steps)
     
@@ -183,10 +287,12 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
     v_phis = []
     phis = []
     
-    # Perform v-prediction steps in image space for better visualization
+    # Perform v-prediction steps
     for t in range(num_steps):
-        z_phi, v_phi, phi_t = v_prediction_step(x_0, t, betas)
-        z_phis.append(z_phi.cpu())
+        z_phi, v_phi, phi_t = v_prediction_step(z_0, t, betas)
+        # Decode latents back to image space for visualization
+        x_t = decode_from_latents(vae, z_phi)
+        z_phis.append(x_t.cpu())
         v_phis.append(v_phi.cpu())
         phis.append(phi_t.item())
     
