@@ -82,14 +82,9 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
     canvas_width = width * 2 + 20  # Add 20px padding between images
     canvas_height = height + 60  # Add 60px for text
     
-    # Initialize video writer
-    temp_output = str(output_path).replace('.mp4', '_temp.avi')
-    fourcc = cv2.VideoWriter_fourcc(*'MJPG')
-    video = cv2.VideoWriter(temp_output, fourcc, fps, 
-                           (canvas_width, canvas_height), isColor=True)
-    
-    if not video.isOpened():
-        raise RuntimeError("Failed to create video writer")
+    # Create temporary directory for frames
+    temp_dir = Path('temp_frames')
+    temp_dir.mkdir(exist_ok=True)
     
     # Calculate alphas for overlay text
     alphas = 1 - betas
@@ -97,15 +92,16 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
     
     # Process each frame
     for i in range(len(z_phis)):
-        # Create canvas as numpy array directly
-        canvas = np.full((canvas_height, canvas_width, 3), 255, dtype=np.uint8)
+        # Create canvas
+        canvas = Image.new('RGB', (canvas_width, canvas_height), 'white')
         
         # Process z_phi
         if i < len(z_phis):
             z_frame = z_phis[i].squeeze().permute(1, 2, 0).numpy()
             z_frame = np.clip(z_frame, 0, 1)
             z_frame = (z_frame * 255).astype(np.uint8)
-            canvas[60:60+height, 0:width] = z_frame
+            z_pil = Image.fromarray(z_frame)
+            canvas.paste(z_pil, (0, 60))
         
         # Process v_phi
         if i > 0 and i <= len(v_phis):
@@ -113,12 +109,11 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
             # Normalize v_phi for visualization while preserving spatial dimensions
             v_frame = (v_frame - v_frame.min()) / (v_frame.max() - v_frame.min())
             v_frame = (v_frame * 255).astype(np.uint8)
-            canvas[60:60+height, width+20:width*2+20] = v_frame
+            v_pil = Image.fromarray(v_frame)
+            canvas.paste(v_pil, (width + 20, 60))
         
-        # Create a temporary PIL image for text rendering
-        canvas_pil = Image.fromarray(canvas.copy())
-        draw = ImageDraw.Draw(canvas_pil)
-        
+        # Add text
+        draw = ImageDraw.Draw(canvas)
         try:
             font = ImageFont.truetype("segoeui.ttf", 32)
         except:
@@ -143,23 +138,13 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
         # Draw text
         draw.text((text_x, 20), text, fill='black', font=font)
         
-        # Convert back to numpy array for OpenCV
-        canvas = np.array(canvas_pil, dtype=np.uint8)
-        
-        # Ensure the array is contiguous and in the correct format
-        if not canvas.flags['C_CONTIGUOUS']:
-            canvas = np.ascontiguousarray(canvas)
-        
-        # Convert to BGR for OpenCV
-        canvas_cv = cv2.cvtColor(canvas, cv2.COLOR_RGB2BGR)
-        video.write(canvas_cv)
+        # Save frame
+        frame_path = temp_dir / f'frame_{i:04d}.png'
+        canvas.save(frame_path, 'PNG')
     
-    # Release video writer
-    video.release()
-    
-    # Convert to high-quality MP4
+    # Convert frames to video using ffmpeg
     ffmpeg_cmd = (
-        f'ffmpeg -y -i "{temp_output}" '
+        f'ffmpeg -y -framerate {fps} -i "{temp_dir}/frame_%04d.png" '
         f'-c:v libx264 -preset veryslow '
         f'-crf 15 '
         f'-x264-params "aq-mode=3:aq-strength=0.8" '
@@ -174,8 +159,10 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
     if ret != 0:
         raise RuntimeError(f"FFmpeg conversion failed with return code {ret}")
     
-    if os.path.exists(temp_output):
-        os.remove(temp_output)
+    # Clean up temporary files
+    for frame in temp_dir.glob('*.png'):
+        frame.unlink()
+    temp_dir.rmdir()
 
 def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", num_steps=10, beta_min=1e-4, beta_max=0.02, fps=30):
     """
