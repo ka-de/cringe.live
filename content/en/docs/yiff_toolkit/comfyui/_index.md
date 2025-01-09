@@ -103,6 +103,19 @@ The process of adding noise can be described mathematically with the following e
 
 $$q(x_t|x_{t-1}) = \mathcal{N}(x_t; \sqrt{1-\beta_t}x_{t-1}, \beta_tI)$$
 
+<!--
+
+<div style="text-align: center;">
+    <video style="width: 100%;" autoplay loop muted playsinline>
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+This is a visual demonstration of how noise is progressively added to an image in the diffusion process, in pixel-space, showing four key components side by side: the original image at each timestep ($x_{t-1}$), the scaled-down version of that image ($\sqrt{1-\beta_t}x_{t-1}$), the random Gaussian noise being added ($\mathcal{N}(0, \beta_tI)$), and the resulting noisy image ($x_t$). The visualization includes the mathematical equation at the bottom, updating in real-time to show how the scaling factor ($\sqrt{1-\beta_t}$) decreases while the noise intensity ($\beta_t$) increases over time, making it clear how the image gradually transitions from its original state to becoming increasingly noisy.
+
+-->
+
 Let's break down each component of this equation:
 
 1. **Core Variables**

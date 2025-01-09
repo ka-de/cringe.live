@@ -1,18 +1,23 @@
 """
-Visualize the noise addition equation from the diffusion process:
-q(x_t|x_{t-1}) = N(x_t; √(1-β_t)x_{t-1}, β_tI)
+Visualize the noise addition equation in latent space:
+q(z_t|z_{t-1}) = N(z_t; √(1-β_t)z_{t-1}, β_tI)
 
 This script creates a visualization showing four panels:
-1. Original/Previous Image (x_{t-1})
-2. Scaled Previous Image (√(1-β_t)x_{t-1})
-3. Random Noise (sampled from N(0, β_tI))
-4. Resulting Noisy Image (x_t)
+1. Original/Previous Latent decoded to Image (VAE(z_{t-1}))
+2. Scaled Previous Latent decoded to Image (VAE(√(1-β_t)z_{t-1}))
+3. Random Noise in Latent Space decoded to Image (VAE(N(0, β_tI)))
+4. Resulting Noisy Latent decoded to Image (VAE(z_t))
 
 The visualization includes overlays showing:
 - Current timestep (t)
 - Beta value (β_t)
 - Scaling factor (√(1-β_t))
 - Mathematical equation
+
+Key differences from pixel-space version:
+- All operations happen in VAE's latent space
+- Images shown are decoded from latents
+- Noise patterns are more structured due to VAE decoding
 """
 
 import numpy as np
@@ -24,6 +29,7 @@ import argparse
 import cv2
 import os
 import subprocess
+from diffusers import AutoencoderKL
 
 def load_and_preprocess_image(image_path):
     """Load and preprocess an image to tensor."""
@@ -33,30 +39,65 @@ def load_and_preprocess_image(image_path):
     ])
     return transform(image).unsqueeze(0)  # Add batch dimension
 
+def encode_to_latents(vae, image):
+    """Encode image to latent space using VAE."""
+    with torch.no_grad():
+        # Scale image to [-1, 1] as expected by VAE
+        image = 2 * image - 1
+        
+        # Updated to handle newer VAE API
+        latent_dist = vae.encode(image)
+        if hasattr(latent_dist, 'latent_dist'):
+            latents = latent_dist.latent_dist.sample()
+            latents = latents * vae.config.scaling_factor
+        else:
+            # For newer versions that return the distribution directly
+            latents = latent_dist.sample()
+            latents = latents * 0.18215  # Standard SD scaling factor
+    return latents
+
+def decode_from_latents(vae, latents):
+    """Decode latents back to image space using VAE."""
+    with torch.no_grad():
+        # Handle both older and newer VAE versions
+        if hasattr(vae.config, 'scaling_factor'):
+            latents = latents / vae.config.scaling_factor
+        else:
+            latents = latents / 0.18215
+        
+        # Decode to image space
+        image = vae.decode(latents).sample
+        
+        # Scale from [-1, 1] to [0, 1] range
+        image = (image + 1) * 0.5
+        image = torch.clamp(image, 0, 1)
+    
+    return image
+
 def create_beta_schedule(num_steps, beta_min=1e-4, beta_max=0.02):
     """Create a linear noise schedule."""
     return torch.linspace(beta_min, beta_max, num_steps)
 
-def apply_noise_equation(x_prev, beta_t):
+def apply_noise_equation_latent(z_prev, beta_t):
     """
-    Apply the noise equation: q(x_t|x_{t-1}) = N(x_t; √(1-β_t)x_{t-1}, β_tI)
+    Apply the noise equation in latent space: q(z_t|z_{t-1}) = N(z_t; √(1-β_t)z_{t-1}, β_tI)
     Returns intermediate components for visualization.
     """
     # Calculate scaling factor
     alpha_t = 1 - beta_t
     scaling_factor = torch.sqrt(alpha_t)
     
-    # Scale previous image
-    scaled_prev = scaling_factor * x_prev
+    # Scale previous latent
+    scaled_prev = scaling_factor * z_prev
     
-    # Generate random noise
-    noise = torch.randn_like(x_prev)
+    # Generate random noise in latent space
+    noise = torch.randn_like(z_prev)
     scaled_noise = torch.sqrt(beta_t) * noise
     
-    # Combine to get final noisy image
-    x_t = scaled_prev + scaled_noise
+    # Combine to get final noisy latent
+    z_t = scaled_prev + scaled_noise
     
-    return x_t, scaled_prev, scaled_noise
+    return z_t, scaled_prev, scaled_noise
 
 def tensor_to_image(tensor):
     """Convert a tensor to a numpy image array."""
@@ -83,8 +124,8 @@ def create_equation_image(beta_t, scaling_factor, height=100):
             except:
                 font = ImageFont.load_default()
     
-    # Draw the equation and values
-    equation = f"q(x_t|x_{{t-1}}) = N(x_t; {scaling_factor:.4f}x_{{t-1}}, {beta_t:.4f}I)"
+    # Draw the equation and values with z instead of x to indicate latent space
+    equation = f"q(z_t|z_{{t-1}}) = N(z_t; {scaling_factor:.4f}z_{{t-1}}, {beta_t:.4f}I)"
     
     # Get text size for centering
     text_bbox = draw.textbbox((0, 0), equation, font=font)
@@ -97,13 +138,13 @@ def create_equation_image(beta_t, scaling_factor, height=100):
     
     return img
 
-def create_visualization_frame(x_prev, scaled_prev, noise, x_t, beta_t, t, num_steps):
-    """Create a single frame showing all components of the noise equation."""
+def create_visualization_frame(prev_decoded, scaled_decoded, noise_decoded, noisy_decoded, beta_t, t, num_steps):
+    """Create a single frame showing all components of the noise equation in decoded image space."""
     # Convert tensors to images
-    prev_img = tensor_to_image(x_prev)
-    scaled_img = tensor_to_image(scaled_prev)
-    noise_img = tensor_to_image(noise + 0.5)  # Shift noise to [0,1] range for visualization
-    noisy_img = tensor_to_image(x_t)
+    prev_img = tensor_to_image(prev_decoded)
+    scaled_img = tensor_to_image(scaled_decoded)
+    noise_img = tensor_to_image(noise_decoded)
+    noisy_img = tensor_to_image(noisy_decoded)
     
     # Get dimensions
     height, width = prev_img.shape[:2]
@@ -122,13 +163,13 @@ def create_visualization_frame(x_prev, scaled_prev, noise, x_t, beta_t, t, num_s
     canvas = Image.new('RGB', (canvas_width, canvas_height), 'white')
     
     # Paste images with offset for top padding
-    # Original image (top left)
+    # Original decoded latent (top left)
     canvas.paste(Image.fromarray(prev_img), (0, padding_top))
-    # Scaled image (top right)
+    # Scaled decoded latent (top right)
     canvas.paste(Image.fromarray(scaled_img), (width + 20, padding_top))
-    # Noise (bottom left)
+    # Decoded noise (bottom left)
     canvas.paste(Image.fromarray(noise_img), (0, height + padding_top + 20))
-    # Noisy image (bottom right)
+    # Decoded noisy latent (bottom right)
     canvas.paste(Image.fromarray(noisy_img), (width + 20, height + padding_top + 20))
     # Equation
     canvas.paste(equation_img, (0, height * 2 + padding_top + 40))
@@ -148,10 +189,10 @@ def create_visualization_frame(x_prev, scaled_prev, noise, x_t, beta_t, t, num_s
     
     # Draw labels with proper positioning
     labels = [
-        (0, 10, f"Original Image (x_{{{t-1}}})"),
-        (width + 20, 10, f"Scaled Image (√(1-β_{t})x_{{{t-1}}})"),
-        (0, height + padding_top - 10, f"Noise (N(0, β_{t}I))"),
-        (width + 20, height + padding_top - 10, f"Noisy Image (x_{t})")
+        (0, 10, f"Decoded Latent (VAE(z_{{{t-1}}}))"),
+        (width + 20, 10, f"Decoded Scaled Latent (VAE(√(1-β_{t})z_{{{t-1}}}))"),
+        (0, height + padding_top - 10, f"Decoded Noise (VAE(N(0, β_{t}I)))"),
+        (width + 20, height + padding_top - 10, f"Decoded Noisy Latent (VAE(z_{t}))")
     ]
     
     for x, y, text in labels:
@@ -234,14 +275,20 @@ def create_animation(frames, output_path, fps=30):
         if os.path.exists(temp_output):
             os.remove(temp_output)
 
-def visualize_noise_equation(image_path, num_steps=10, fps=30):
+def visualize_latent_noise_equation(image_path, vae_model="stabilityai/sd-vae-ft-mse", num_steps=10, fps=30):
     """
-    Create a visualization of the noise equation process.
+    Create a visualization of the noise equation process in latent space.
     """
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    # Load image
+    # Load VAE model
+    vae = AutoencoderKL.from_pretrained(vae_model, torch_dtype=torch.float32).to(device)
+    
+    # Load and preprocess image
     x_0 = load_and_preprocess_image(image_path).to(device)
+    
+    # Encode image to latent space
+    z_0 = encode_to_latents(vae, x_0)
     
     # Create noise schedule
     betas = create_beta_schedule(num_steps).to(device)
@@ -251,19 +298,22 @@ def visualize_noise_equation(image_path, num_steps=10, fps=30):
     
     # Create frames for each step
     for t in range(1, num_steps):
-        # Apply noise equation to original image
-        x_t, scaled_prev, scaled_noise = apply_noise_equation(x_0, betas[t])
+        # Apply noise equation to original latent
+        z_t, scaled_prev, scaled_noise = apply_noise_equation_latent(z_0, betas[t])
         
-        # Create visualization frame showing:
-        # 1. Original image (x_0)
-        # 2. Scaled original image (√(1-β_t)x_0)
-        # 3. Random noise (N(0, β_tI))
-        # 4. Resulting noisy image (x_t)
+        # Decode all latents back to image space for visualization
+        prev_decoded = decode_from_latents(vae, z_0)
+        scaled_decoded = decode_from_latents(vae, scaled_prev)
+        # For noise visualization, we need to normalize it to a reasonable range
+        noise_decoded = decode_from_latents(vae, scaled_noise)
+        noisy_decoded = decode_from_latents(vae, z_t)
+        
+        # Create visualization frame
         frame = create_visualization_frame(
-            x_0.cpu(),  # Original image stays constant
-            scaled_prev.cpu(),  # Scaled version of original
-            scaled_noise.cpu(),  # Random noise
-            x_t.cpu(),  # Resulting noisy image
+            prev_decoded.cpu(),
+            scaled_decoded.cpu(),
+            noise_decoded.cpu(),
+            noisy_decoded.cpu(),
             betas[t].cpu(), t, num_steps
         )
         frames.append(frame)
@@ -273,16 +323,22 @@ def visualize_noise_equation(image_path, num_steps=10, fps=30):
     output_dir.mkdir(parents=True, exist_ok=True)
     
     # Create animation
-    create_animation(frames, output_dir / 'noise_equation.mp4', fps=fps)
+    create_animation(frames, output_dir / 'latent_noise_equation.mp4', fps=fps)
 
 def main():
-    parser = argparse.ArgumentParser(description='Visualize the noise equation process')
+    parser = argparse.ArgumentParser(description='Visualize the noise equation process in latent space')
     parser.add_argument('--image', type=str, required=True, help='Path to input image')
+    parser.add_argument('--vae', type=str, default="stabilityai/sd-vae-ft-mse", help='VAE model to use')
     parser.add_argument('--steps', type=int, default=10, help='Number of diffusion steps')
     parser.add_argument('--fps', type=int, default=30, help='Frames per second for the animation')
     args = parser.parse_args()
     
-    visualize_noise_equation(args.image, num_steps=args.steps, fps=args.fps)
+    visualize_latent_noise_equation(
+        args.image,
+        vae_model=args.vae,
+        num_steps=args.steps,
+        fps=args.fps
+    )
 
 if __name__ == '__main__':
     main() 
