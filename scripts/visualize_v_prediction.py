@@ -4,7 +4,6 @@ import torch
 import torchvision.transforms as transforms
 from pathlib import Path
 import argparse
-import cv2
 import os
 from diffusers import AutoencoderKL
 
