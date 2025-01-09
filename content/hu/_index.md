@@ -76,6 +76,7 @@ aliases:
       height="595"
       alt="Ez egy nagy felbontású CGI digitális műalkotás, amely két antropomorf karaktert ábrázol, amint egy száraz sivatagi tájon autóznak keresztül, a háttérben hegyekkel és tiszta kék éggel. A bal oldali karakter sötétbarna szőrű, napszemüveget visel és egy piros dobozos italból kortyol, miközben egy bézs színű kabrió utasülésén ül. Ez a karakter izmos felépítése alapján férfinak tűnik. A jobb oldalon ülő sofőr egy fehér szőrű kutya, fekete pilóta szemüveggel és világos színű szafari kalappal. Szürke inget és khaki rövidnadrágot visel, és lazán tartja mindkét kezét a kormányon. Mindkét karakter a szabadság és kaland érzését sugározza, mint két útitárs, akik együtt élvezik az utazást. Az autó belsejében látható a bőr ülések gyűrött textúrája, ami realizmust ad a képnek. Kívül a hatalmas sivatag terül el vörösesbarna árnyalataival és gyér növényzetével, hangsúlyozva az elszigeteltséget és a szabadságot. A művészet stílusa realisztikus, de megtartja a furry fandom közösségekben megszokott rajzfilmszerű jellemzőket. Az árnyékok és tükröződések mélységet adnak, fokozva a jelenet háromdimenziós hatását."
       grid="false"
+      lazy="false"
     >}}
   </a>
 </div>

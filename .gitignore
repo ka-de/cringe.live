@@ -1,5 +1,8 @@
 public/
 
+# High resolution images from Huggingface
+static/huggingface_images/
+
 # Graphs
 scripts/related_articles_graph.png
 

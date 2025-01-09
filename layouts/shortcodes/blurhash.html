@@ -4,6 +4,7 @@
 {{- $src := .Get "src" -}}
 {{- $blurhash := .Get "blurhash" -}}
 {{- $grid := .Get "grid" | default "false" -}}
+{{- $lazy := .Get "lazy" | default "true" -}}
 
 {{ if eq $grid "true" }}
 <div class="image-grid-container">
@@ -15,14 +16,18 @@
         data-blurhash="{{ $blurhash }}" 
         width="{{ $width }}" 
         height="{{ $height }}"
+        aria-hidden="true"
     ></canvas>
     <img 
         src="{{ $src }}" 
-        loading="lazy" 
+        {{ if eq $lazy "true" }}loading="lazy"{{ end }}
         width="{{ $width }}" 
         height="{{ $height }}"
         alt="{{ $alt }}"
-        onload="this.previousElementSibling.style.display = 'none'; this.style.opacity = 1;"
+        decoding="async"
+        fetchpriority="{{ if eq $lazy "true" }}auto{{ else }}high{{ end }}"
+        class="{{ if eq $lazy "true" }}lazy{{ end }}"
+        onload="if(this.complete) { this.classList.add('loaded'); this.previousElementSibling.style.display = 'none'; }"
         onerror="this.previousElementSibling.style.filter = 'brightness(0.8) contrast(1.2)';"
     >
 </div>

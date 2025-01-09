@@ -74,3 +74,128 @@ aliases:
 ## Hugo Templates
 
 - Ignore linter errors for Hugo template syntax like `{{ . | safeJS }}` within `<script>` tags - these are valid Hugo template expressions
+
+## SCSS/CSS Styling
+
+### File Organization
+
+- SCSS partials should be prefixed with an underscore (e.g. `_blurhash.scss`)
+- All SCSS partials should be imported in `_main.scss`
+- Each component should have its own SCSS partial file
+- Global styles and variables should be in `_main.scss`
+
+### Import Order
+
+The import order in `_main.scss` should be:
+
+1. Variables and mixins
+2. Base styles
+3. Components
+4. Utilities
+5. Third-party styles
+
+Example:
+
+```scss
+// Variables and mixins first
+@import "variables";
+@import "mixins";
+
+// Base styles
+@import "defaults";
+@import "fonts";
+
+// Components
+@import "markdown";
+@import "shortcodes";
+@import "images";
+
+// Utilities
+@import "utils";
+@import "print";
+
+// Third-party
+@import "blurhash";
+```
+
+### Naming Conventions
+
+- Use kebab-case for class names (e.g. `image-container`)
+- Prefix classes with component name for scoping (e.g. `book-menu`, `book-toc`)
+- Use BEM-like naming for modifiers (e.g. `book-menu--collapsed`)
+
+### Media Queries
+
+- Define breakpoints as variables in `_main.scss`
+- Use mobile-first approach
+- Include media queries within the component styles
+
+Example:
+
+```scss
+.component {
+  // Mobile styles first
+  width: 100%;
+  
+  // Then tablet
+  @media screen and (min-width: $tablet-breakpoint) {
+    width: 50%;
+  }
+  
+  // Then desktop
+  @media screen and (min-width: $desktop-breakpoint) {
+    width: 33.33%;
+  }
+}
+```
+
+### Performance
+
+- Avoid deeply nested selectors (max 3 levels)
+- Use CSS Grid and Flexbox for layouts
+- Minimize use of `!important`
+- Use CSS variables for theme colors and values that change with user preferences
+
+Example:
+
+```scss
+// Good
+.image-container {
+  .blur-hash {
+    width: 100%;
+  }
+}
+
+// Bad - too deeply nested
+.container {
+  .wrapper {
+    .image {
+      .blur-hash {
+        width: 100%;
+      }
+    }
+  }
+}
+```
+
+### Theme Variables
+
+- Define theme variables in `:root`
+- Use semantic naming for variables
+- Include both light and dark theme values
+
+Example:
+
+```scss
+:root {
+  // Light theme
+  --body-background: #ffffff;
+  --body-font-color: #000000;
+  
+  // Dark theme
+  @media (prefers-color-scheme: dark) {
+    --body-background: #1a1a1a;
+    --body-font-color: #ffffff;
+  }
+}
+```
