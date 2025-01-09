@@ -149,20 +149,22 @@ def decode_from_latents(vae, latents, to_numpy=True):
     """
     Decode latents back to image space using VAE and handle all scaling/normalization.
     
-    The VAE decoder should map the zero latent to a neutral gray value.
-    We achieve this by:
-    1. Properly scaling the latents
-    2. Adding a learned bias term (or approximating it)
-    3. Ensuring the output is centered around 0.5 (middle gray)
-    
     Args:
-        vae: VAE model
-        latents: Latent tensor to decode
-        to_numpy: If True, convert to numpy array scaled to [0,255] for visualization
+        vae: AutoencoderKL model instance
+        latents: Latent tensor to decode, shape [B,4,H/8,W/8]
+        to_numpy: If True, convert output to numpy array in [0,255] range
         
     Returns:
-        If to_numpy=True: Numpy array in [0,255] range ready for PIL
-        If to_numpy=False: Tensor in [0,1] range
+        If to_numpy=True:
+            numpy.ndarray: RGB image array with shape [H,W,3] in [0,255] range
+        If to_numpy=False:
+            torch.Tensor: RGB image tensor with shape [B,3,H,W] in [0,1] range
+    
+    Processing steps:
+        1. Scale latents by appropriate factor (1/0.18215 or 1/scaling_factor)
+        2. Decode through VAE
+        3. Scale from [-1,1] to [0,1] range
+        4. Optionally convert to numpy array and scale to [0,255]
     """
     with torch.no_grad():
         # Handle both older and newer VAE versions
@@ -240,29 +242,27 @@ def create_v_prediction_animation(z_phis, v_phis, decoded_v_phis, phis, betas, o
     """
     Create an MP4 animation showing the three views of the v-prediction process.
     
-    Creates a canvas with:
-    - Left: Full resolution noisy image progression
-    - Middle: Raw latent velocity field (1/8 resolution)
-    - Right: Decoded velocity field (full resolution)
-    
-    Adds text overlay showing:
-    - Current timestep t
-    - Angle φ in radians
-    - Cumulative scaling factor ᾱ
-    
     Args:
-        z_phis: List of decoded noisy images
-        v_phis: List of raw velocity fields
-        decoded_v_phis: List of decoded velocity fields
-        phis: List of angles
-        betas: Noise schedule
-        output_path: Where to save the MP4
-        fps: Frames per second
+        z_phis: List of numpy arrays, each [H,W,3] in [0,255] range (decoded noisy images)
+        v_phis: List of torch.Tensors, each [B,4,H/8,W/8] (raw velocity fields)
+        decoded_v_phis: List of numpy arrays, each [H,W,3] in [0,255] range (decoded velocities)
+        phis: List of float values (angles in radians)
+        betas: torch.Tensor of noise schedule values
+        output_path: Path to save the MP4 file
+        fps: Frames per second for the video
+    
+    The function creates a canvas with:
+        - Left: Full resolution noisy image progression
+        - Middle: Raw latent velocity field (1/8 resolution)
+        - Right: Decoded velocity field (full resolution)
+    
+    Text overlay shows:
+        - Current timestep t
+        - Angle φ in radians
+        - Cumulative scaling factor ᾱ
     """
-    # Convert first tensor to numpy to get dimensions
-    first_frame = z_phis[0].squeeze().permute(1, 2, 0).numpy()
-    first_frame = np.clip(first_frame, 0, 1)
-    first_frame = (first_frame * 255).astype(np.uint8)
+    # Convert first array to get dimensions
+    first_frame = z_phis[0]  # Already numpy array in [0,255] range
     height, width = first_frame.shape[:2]
     
     # Calculate latent dimensions (1/8 of original)
@@ -293,14 +293,14 @@ def create_v_prediction_animation(z_phis, v_phis, decoded_v_phis, phis, betas, o
         
         # Process v_phi (latent resolution)
         if i > 0 and i <= len(v_phis):
-            # Raw latent velocity field
-            v_frame = v_phis[i-1].squeeze().permute(1, 2, 0).numpy()
+            # Raw latent velocity field - convert tensor to numpy
+            v_frame = v_phis[i-1].cpu().squeeze().permute(1, 2, 0).numpy()
             v_frame = (v_frame - v_frame.min()) / (v_frame.max() - v_frame.min())
             v_frame = (v_frame * 255).astype(np.uint8)
             v_pil = Image.fromarray(v_frame)
             canvas.paste(v_pil, (width + 20, 60))
             
-            # Decoded velocity field
+            # Decoded velocity field (already numpy array)
             decoded_v_pil = Image.fromarray(decoded_v_phis[i-1])
             canvas.paste(decoded_v_pil, (width + latent_width + 40, 60))
         
