@@ -369,9 +369,16 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
         z_phi, v_phi, phi_t = v_prediction_step(z_0, t, betas)
         x_t = decode_from_latents(vae, z_phi)
         
-        # Normalize and decode velocity field
+        # Normalize velocity field to a reasonable range for VAE decoding
+        # First normalize to [0, 1]
         v_phi_norm = (v_phi - v_phi.min()) / (v_phi.max() - v_phi.min())
+        # Then scale to [-1, 1] which is what the VAE expects
         v_phi_norm = v_phi_norm * 2 - 1
+        # Scale down to avoid saturation
+        v_phi_norm = v_phi_norm * 0.5
+        # Add a small offset to center around gray
+        v_phi_norm = v_phi_norm + 0.5
+        # Decode normalized velocity field
         decoded_v_phi = decode_from_latents(vae, v_phi_norm)
         
         # Create output directory
@@ -399,8 +406,13 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
         x_t = decode_from_latents(vae, z_phi)
         z_phis.append(x_t.cpu())
         v_phis.append(v_phi.cpu())
+        
+        # Normalize velocity field with same process as single frame
         v_phi_norm = (v_phi - v_phi.min()) / (v_phi.max() - v_phi.min())
         v_phi_norm = v_phi_norm * 2 - 1
+        v_phi_norm = v_phi_norm * 0.5
+        v_phi_norm = v_phi_norm + 0.5
+        
         decoded_v_phi = decode_from_latents(vae, v_phi_norm)
         decoded_v_phis.append(decoded_v_phi.cpu())
         phis.append(phi_t.item())
