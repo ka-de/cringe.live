@@ -414,15 +414,6 @@ def normalize_velocity_field(v_phi, print_stats=False, timestep=None):
     # Clip to reasonable range (±3 standard deviations)
     v_phi_norm = torch.clamp(v_phi_norm, -3, 3)
     
-    # Scale to [-1, 1]
-    v_phi_norm = v_phi_norm / 3
-    
-    # Scale down to avoid saturation
-    v_phi_norm = v_phi_norm * 0.5
-    
-    # Center around gray
-    v_phi_norm = v_phi_norm + 0.5
-    
     if print_stats:
         print(f"\n{prefix}Normalized velocity field stats (before decoding):")
         print(f"Mean: {v_phi_norm.mean().item():.4f}")
