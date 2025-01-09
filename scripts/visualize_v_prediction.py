@@ -144,7 +144,7 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
         draw.text((text_x, 20), text, fill='black', font=font)
         
         # Convert back to numpy array for OpenCV
-        canvas = np.array(canvas_pil)
+        canvas = np.asarray(canvas_pil, dtype=np.uint8)
         
         # Convert to BGR for OpenCV
         canvas_cv = cv2.cvtColor(canvas, cv2.COLOR_RGB2BGR)
