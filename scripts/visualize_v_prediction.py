@@ -406,7 +406,7 @@ def normalize_velocity_field(v_phi, print_stats=False, timestep=None):
         print(f"Max: {v_phi.max().item():.4f}")
     
     # Center the data
-    v_phi_centered = v_phi #- v_phi.mean()
+    v_phi_centered = v_phi - v_phi.mean()
     
     # Scale to unit standard deviation
     v_phi_norm = v_phi_centered / v_phi.std()
