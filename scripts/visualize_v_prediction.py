@@ -331,28 +331,16 @@ def save_single_frame(z_phi, v_phi, decoded_v_phi, phi, alpha_cumprod, output_pa
     """
     Save a single frame showing all three views of the v-prediction process.
     
-    Creates a side-by-side visualization with:
-    - Left: Full resolution noisy image
-    - Middle: Raw latent velocity field (1/8 resolution)
-    - Right: Decoded velocity field (full resolution)
-    
-    Adds text overlay showing:
-    - Current angle φ in radians
-    - Cumulative scaling factor ᾱ
-    
     Args:
-        z_phi: Decoded noisy image tensor
+        z_phi: Decoded noisy image (numpy array in [0,255] range)
         v_phi: Raw velocity field tensor
-        decoded_v_phi: Decoded velocity field tensor
+        decoded_v_phi: Decoded velocity field (numpy array in [0,255] range)
         phi: Current angle in radians
         alpha_cumprod: Cumulative scaling factor
         output_path: Where to save the PNG
     """
-    # Convert image to numpy
-    z_frame = z_phi.squeeze().permute(1, 2, 0).numpy()
-    z_frame = np.clip(z_frame, 0, 1)
-    z_frame = (z_frame * 255).astype(np.uint8)
-    height, width = z_frame.shape[:2]
+    # Get dimensions from noisy image
+    height, width = z_phi.shape[:2]
     
     # Calculate latent dimensions
     latent_height = height // 8
@@ -363,7 +351,7 @@ def save_single_frame(z_phi, v_phi, decoded_v_phi, phi, alpha_cumprod, output_pa
     canvas_height = max(height, latent_height) + 60
     canvas = Image.new('RGB', (canvas_width, canvas_height), 'white')
     
-    # Paste noisy image
+    # Paste noisy image (already in correct format)
     z_pil = Image.fromarray(z_phi)
     canvas.paste(z_pil, (0, 60))
     
@@ -374,7 +362,7 @@ def save_single_frame(z_phi, v_phi, decoded_v_phi, phi, alpha_cumprod, output_pa
     v_pil = Image.fromarray(v_frame)
     canvas.paste(v_pil, (width + 20, 60))
     
-    # Process decoded velocity field
+    # Paste decoded velocity field (already in correct format)
     decoded_v_pil = Image.fromarray(decoded_v_phi)
     canvas.paste(decoded_v_pil, (width + latent_width + 40, 60))
     
