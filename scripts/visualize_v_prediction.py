@@ -274,12 +274,78 @@ def create_v_prediction_animation(z_phis, v_phis, decoded_v_phis, phis, betas, o
         frame.unlink()
     temp_dir.rmdir()
 
-def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", num_steps=10, beta_min=1e-4, beta_max=0.02, fps=30):
+def save_single_frame(z_phi, v_phi, decoded_v_phi, phi, alpha_cumprod, output_path):
+    """Save a single frame showing all three views side by side."""
+    # Convert image to numpy
+    z_frame = z_phi.squeeze().permute(1, 2, 0).numpy()
+    z_frame = np.clip(z_frame, 0, 1)
+    z_frame = (z_frame * 255).astype(np.uint8)
+    height, width = z_frame.shape[:2]
+    
+    # Calculate latent dimensions
+    latent_height = height // 8
+    latent_width = width // 8
+    
+    # Create canvas
+    canvas_width = width * 2 + latent_width + 40
+    canvas_height = max(height, latent_height) + 60
+    canvas = Image.new('RGB', (canvas_width, canvas_height), 'white')
+    
+    # Paste noisy image
+    z_pil = Image.fromarray(z_frame)
+    canvas.paste(z_pil, (0, 60))
+    
+    # Process raw latent velocity field
+    v_frame = v_phi.squeeze().permute(1, 2, 0).numpy()
+    v_frame = (v_frame - v_frame.min()) / (v_frame.max() - v_frame.min())
+    v_frame = (v_frame * 255).astype(np.uint8)
+    v_pil = Image.fromarray(v_frame)
+    canvas.paste(v_pil, (width + 20, 60))
+    
+    # Process decoded velocity field
+    decoded_v_frame = decoded_v_phi.squeeze().permute(1, 2, 0).numpy()
+    decoded_v_frame = np.clip(decoded_v_frame, 0, 1)
+    decoded_v_frame = (decoded_v_frame * 255).astype(np.uint8)
+    decoded_v_pil = Image.fromarray(decoded_v_frame)
+    canvas.paste(decoded_v_pil, (width + latent_width + 40, 60))
+    
+    # Add text
+    draw = ImageDraw.Draw(canvas)
+    try:
+        font = ImageFont.truetype("segoeui.ttf", 32)
+    except:
+        try:
+            font = ImageFont.truetype("DejaVuSans.ttf", 32)
+        except:
+            try:
+                font = ImageFont.truetype("Arial Unicode.ttf", 32)
+            except:
+                font = ImageFont.load_default()
+    
+    text = f'φ = {phi:.4f}    ᾱ = {alpha_cumprod:.4f}'
+    text_bbox = draw.textbbox((0, 0), text, font=font)
+    text_width = text_bbox[2] - text_bbox[0]
+    text_x = (canvas_width - text_width) // 2
+    draw.text((text_x, 20), text, fill='black', font=font)
+    
+    # Save frame
+    canvas.save(output_path, 'PNG')
+
+def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", num_steps=10, beta_min=1e-4, beta_max=0.02, fps=30, single_frame=False):
     """
     Visualize the v-prediction process showing:
     1. Decoded noisy image (z_φ)
     2. Raw latent velocity field (v_φ)
     3. Decoded velocity field (decoded v_φ)
+    
+    Args:
+        image_path: Path to input image
+        vae_model: VAE model to use
+        num_steps: Number of diffusion steps
+        beta_min: Minimum noise level
+        beta_max: Maximum noise level
+        fps: Frames per second for video
+        single_frame: If True, render only one frame from the middle
     """
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
@@ -292,25 +358,50 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
     # Encode image to latent space
     z_0 = encode_to_latents(vae, x_0)
     
-    # Create linear noise schedule
+    if single_frame:
+        # Use middle timestep for single frame
+        t = num_steps // 2
+        betas = torch.linspace(beta_min, beta_max, num_steps)
+        alphas = 1 - betas
+        alphas_cumprod = torch.cumprod(alphas, dim=0)
+        
+        # Get single frame
+        z_phi, v_phi, phi_t = v_prediction_step(z_0, t, betas)
+        x_t = decode_from_latents(vae, z_phi)
+        
+        # Normalize and decode velocity field
+        v_phi_norm = (v_phi - v_phi.min()) / (v_phi.max() - v_phi.min())
+        v_phi_norm = v_phi_norm * 2 - 1
+        decoded_v_phi = decode_from_latents(vae, v_phi_norm)
+        
+        # Create output directory
+        output_dir = Path('static/comfyui')
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Save single frame
+        save_single_frame(x_t.cpu(), v_phi.cpu(), decoded_v_phi.cpu(), 
+                         phi_t.item(), alphas_cumprod[t].item(),
+                         output_dir / 'v_prediction_frame.png')
+        return
+    
+    # Rest of the animation code...
     betas = torch.linspace(beta_min, beta_max, num_steps)
     
     # Store decoded images and velocities
-    z_phis = [x_0.cpu()]  # Start with original image
-    v_phis = []  # Will store raw latent velocities
-    decoded_v_phis = []  # Will store decoded velocities
+    z_phis = [x_0.cpu()]
+    v_phis = []
+    decoded_v_phis = []
     phis = []
     
     # Perform v-prediction steps in latent space
     for t in range(num_steps):
         z_phi, v_phi, phi_t = v_prediction_step(z_0, t, betas)
-        # Decode noisy latents to image space for visualization
         x_t = decode_from_latents(vae, z_phi)
         z_phis.append(x_t.cpu())
-        # Store raw latent velocity
         v_phis.append(v_phi.cpu())
-        # Decode velocity field
-        decoded_v_phi = decode_from_latents(vae, v_phi)
+        v_phi_norm = (v_phi - v_phi.min()) / (v_phi.max() - v_phi.min())
+        v_phi_norm = v_phi_norm * 2 - 1
+        decoded_v_phi = decode_from_latents(vae, v_phi_norm)
         decoded_v_phis.append(decoded_v_phi.cpu())
         phis.append(phi_t.item())
     
@@ -318,7 +409,7 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
     output_dir = Path('static/comfyui')
     output_dir.mkdir(parents=True, exist_ok=True)
     
-    # Create animation showing all three views side by side
+    # Create animation
     create_v_prediction_animation(z_phis, v_phis, decoded_v_phis, phis, betas, 
                                 output_dir / 'v_prediction.mp4', fps=fps)
 
@@ -328,13 +419,15 @@ def main():
     parser.add_argument('--vae', type=str, default="stabilityai/sd-vae-ft-mse", help='VAE model to use')
     parser.add_argument('--steps', type=int, default=10, help='Number of diffusion steps')
     parser.add_argument('--fps', type=int, default=30, help='Frames per second for the animation')
+    parser.add_argument('--1step', action='store_true', help='Render only one frame from the middle')
     args = parser.parse_args()
     
     visualize_v_prediction(
         args.image,
         vae_model=args.vae,
         num_steps=args.steps,
-        fps=args.fps
+        fps=args.fps,
+        single_frame=getattr(args, '1step', False)
     )
 
 if __name__ == '__main__':
