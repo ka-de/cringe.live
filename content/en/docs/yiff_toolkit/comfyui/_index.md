@@ -27,25 +27,144 @@ If you need help installing ComfyUI, you didn't come to the right place. If you 
 
 ---
 
-Before diving into ComfyUI's practical aspects, let's understand the mathematical foundations of diffusion models that power modern AI image generation.
+Before diving into ComfyUI's practical aspects, let's understand the mathematical foundations of diffusion models that power modern AI image generation. You can [skip](#latents) most, but not all of the intimidating equations.
 
 ### The Diffusion Process
 
-Diffusion models work by gradually adding Gaussian noise to images and then learning to reverse this process. The forward diffusion process can be described mathematically as:
+Diffusion models work through a process that's similar to gradually adding static noise to a TV signal, and then learning to remove that noise to recover the original picture.
+
+#### Forward Diffusion
+
+The forward diffusion process systematically transforms a clear image into pure random noise through a series of precise mathematical steps. Here's how it works:
+
+1. We start with an original image $x_0$ containing clear, detailed information
+2. At each timestep $t$, we apply a carefully controlled amount of Gaussian noise
+3. The noise intensity follows a schedule $\beta_t$ that gradually increases over time
+4. Each step slightly {{<zalgo strength=15 >}}corrupts{{</zalgo>}} the previous image state according to our diffusion equation
+5. After $T$ timesteps, we reach $x_T$ which is effectively pure Gaussian noise
+
+This process is deterministic given a specific noise schedule, meaning we can precisely control how the image degrades over time. The amount of corruption at each step is carefully calibrated - early timesteps preserve most image structure while later steps increasingly destroy fine details until no recognizable features remain.
+
+What makes this process particularly powerful is that it's differentiable - we can mathematically track exactly how the image changes at each step. This property is crucial because it allows us to train a neural network to learn the reverse process.
+
+The forward process serves as the foundation for training our AI models. By understanding exactly how images are corrupted, we can teach the model to reverse this corruption during the generation process.
+
+#### The Mathematics
+
+The process of adding noise can be described mathematically with the following equation:
 
 $$q(x_t|x_{t-1}) = \mathcal{N}(x_t; \sqrt{1-\beta_t}x_{t-1}, \beta_tI)$$
 
-where:
+Let's break down each component of this equation:
 
-- $x_t$ is the image at timestep $t$
-- $\beta_t$ is the noise schedule
-- $\mathcal{N}$ represents a normal distribution</div>
+1. **Core Variables**
+   - $x_t$ - The image state at the current timestep
+   - $x_{t-1}$ - The image state at the previous timestep
+   - $\beta_t$ - The noise schedule parameter that controls noise intensity
+   - $I$ - The identity matrix (ensures noise is applied uniformly)
 
-The reverse process, which is what we use for generation, is learned through:
+2. **Distribution Components**
+   - $q(x_t|x_{t-1})$ - The probability distribution of the current state given the previous state
+   - $\mathcal{N}$ - Denotes a normal (Gaussian) distribution
+   - $\sqrt{1-\beta_t}x_{t-1}$ - The mean of the distribution
+   - $\beta_tI$ - The variance of the distribution
 
-$$p_\theta(x_{t-1}|x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \Sigma_\theta(x_t, t))$$
+The equation describes a carefully controlled process of gradually corrupting an image with noise. At each timestep:
 
-This process is guided by the U-Net architecture in stable diffusion models, which learns to predict the noise that was added at each step.
+- The previous image is scaled down by $\sqrt{1-\beta_t}$, which decreases as more noise is added
+- Random Gaussian noise with variance $\beta_tI$ is added to this scaled image
+- The process creates a smooth transition from the original image to pure noise
+- The noise schedule $\beta_t$ ensures this happens in a controlled, predictable way
+
+This mathematical foundation is crucial because it allows the model to learn the reverse process - taking a noisy image and progressively removing noise to generate the final output.
+
+#### Reverse Diffusion
+
+Something cool happens when the AI learns to reverse this process. It learns to:
+
+1. Start with pure noise
+2. Gradually remove the noise
+3. Eventually recover a clear image
+
+This is what happens every time you generate an image with Stable Diffusion or similar AI models. The model has learned to take random noise and progressively "denoise" it into a clear image that matches your prompt.
+
+#### Latents
+
+Before we dive into the `KSampler` node, it's important to understand that AI models don't work directly with regular images. Instead, they work with something called "latents" - a compressed representation of images that's more efficient for the AI to process.
+
+Think of latents like a blueprint of an image:
+
+- A regular image stores exact colors for each pixel (like a detailed painting)
+- A latent stores abstract patterns and features (like an architect's blueprint)
+
+In ComfyUI, you'll encounter latents in three main ways:
+
+##### Empty Latent Image
+
+When you want to generate an image from scratch, referred to as text-to-image (t2i).
+
+- Creates a blank canvas of random noise in latent space
+- Size: 8x smaller than your target image (e.g., 512x512 image = 64x64 latents)
+- This is your starting point for pure text-to-image generation
+
+##### Load Image → VAE Encode
+
+When you want to modify an existing image, referred to as image-to-image (i2i).
+
+- Load Image: Brings your regular image into ComfyUI
+- VAE Encode: Converts it into latents.
+- This is your starting point for image-to-image generation
+
+1. **VAE Decode**: The final step in any workflow
+   - Converts latents back into a regular image
+   - Like turning the blueprint back into a detailed painting
+   - This is how you get your final output image
+
+The beauty of working with latents is that they're much more efficient:
+
+- Takes less memory (8x smaller than regular images)
+- Easier for the AI to manipulate
+- Contains the essential "structure" of images without unnecessary details
+
+**The KSampler Node**
+The `KSampler` node in ComfyUI implements the reverse diffusion process. It takes the noisy latent $x_T$ and progressively denoises it using the model's predictions. The node's parameters directly control this process:
+
+1. **Steps**: Controls the number of $t$ steps in the reverse process
+   - More steps = finer granularity but slower
+   - Mathematically: divides $[0,T]$ into this many intervals
+
+2. **CFG Scale**: Implements Classifier-Free Guidance
+   $$\epsilon_\text{CFG} = \epsilon_\theta(x_t, t) + w[\epsilon_\theta(x_t, t, c) - \epsilon_\theta(x_t, t)]$$
+   - Higher values follow the prompt more strictly
+   - Lower values (1-4) allow more creative freedom
+
+3. **Scheduler**: Controls $\beta_t$ schedule
+   - `Karras`: $\beta_t$ follows the schedule from [Karras et al.](https://arxiv.org/abs/2206.00364)
+   $$\sigma_i = \sigma_\text{min}^{1-f(i)} \sigma_\text{max}^{f(i)}$$
+   - `Normal`: Linear schedule
+   $$\beta_t = \beta_\text{min} + t(\beta_\text{max} - \beta_\text{min})$$
+
+4. **Sampler**: Determines how to use model predictions
+   - `Euler`: Simple first-order method
+   $$x_{t-1} = x_t - \eta \nabla \log p(x_t)$$
+   - `DPM++ 2M`: Second-order method with momentum
+   $$v_t = \mu v_{t-1} + \epsilon_t$$
+   $$x_{t-1} = x_t + \eta v_t$$
+
+5. **Seed**: Controls the initial noise
+   - Same seed + same parameters = reproducible results
+   - Mathematically: initializes the random state for $x_T$
+
+**The Noise Node**
+The optional `Noise` node lets you directly manipulate the initial noise $x_T$. It implements:
+
+$$x_T = \mathcal{N}(0, I)$$
+
+You can:
+
+- Set a specific seed for reproducibility
+- Control noise dimensions (width, height)
+- Mix different noise patterns
 
 ### V-Prediction and Angular Parameterization
 
@@ -71,6 +190,62 @@ $$\mathbf{z}_{\phi_{t-\delta}} = \cos(\delta)\mathbf{z}_{\phi_t} - \sin(\delta)\
 
 This formulation offers several key advantages: it provides a more natural parameterization of the diffusion trajectory, simplifies the sampling process into a straightforward rotation operation, and can potentially lead to improved sample quality in certain scenarios.
 
+**Implementation in ComfyUI: V-Prediction Samplers**
+ComfyUI implements v-prediction through several specialized samplers in the `KSampler` node:
+
+1. **DPM++ 2M Karras**
+   - Most advanced v-prediction implementation
+   - Uses momentum-based updates
+   - Best for detailed, high-quality images
+   - Recommended settings:
+     - Steps: 25-30
+     - CFG: 7-8
+     - Scheduler: Karras
+
+2. **DPM++ SDE Karras**
+   - Stochastic differential equation variant
+   - Good balance of speed and quality
+   - Recommended settings:
+     - Steps: 20-25
+     - CFG: 7-8
+     - Scheduler: Karras
+
+3. **UniPC**
+   - Unified predictor-corrector method
+   - Fastest v-prediction sampler
+   - Great for quick iterations
+   - Recommended settings:
+     - Steps: 20-23
+     - CFG: 7-8
+     - Scheduler: Karras
+
+**Advanced V-Prediction Control**
+For more control over the v-prediction process, you can use:
+
+1. **Advanced KSampler**
+   - Exposes additional v-prediction parameters
+   - Allows fine-tuning of the angle calculations
+   - Parameters:
+
+     ```json
+     start_at_step: 0.0
+     end_at_step: 1.0
+     add_noise: true
+     return_with_leftover_noise: false
+     ```
+
+2. **Sampling Refinement**
+   The velocity prediction can be refined using:
+   - `VAEEncode` → `KSampler` → `VAEDecode` chain
+   - Multiple sampling passes with decreasing step counts
+   - Example workflow:
+
+     ```json
+     First Pass: 30 steps, CFG 8
+     Refine: 15 steps, CFG 4
+     Final: 10 steps, CFG 2
+     ```
+
 ### Conditioning and Control
 
 Text-to-image generation involves conditioning the diffusion process on text embeddings. The mathematical formulation becomes:
@@ -85,9 +260,60 @@ CLIP (Contrastive Language-Image Pre-training) is a neural network trained to le
 
 The text encoder first tokenizes the input text into a sequence of tokens, then processes these through a transformer to produce a sequence of token embeddings $\text{CLIP}_\text{text}(\text{text}) \rightarrow [\mathbf{z}_1, ..., \mathbf{z}_n] \in \mathbb{R}^{n \times d}$, where $n$ is the sequence length and $d$ is the embedding dimension. Unlike traditional transformer architectures that use pooling layers, CLIP simply takes the final token's embedding (corresponding to the [EOS] token) after layer normalization. The image encoder maps images to a similar high-dimensional representation $\text{CLIP}_\text{image}(\text{image}) \rightarrow \mathbf{z} \in \mathbb{R}^d$.
 
+**Implementation in ComfyUI: The CLIPTextEncode Node**
+ComfyUI exposes this CLIP architecture through the `CLIPTextEncode` node. When you input a prompt, the node:
+
+1. Tokenizes your text into subwords using CLIP's tokenizer
+2. Processes tokens through the transformer layers
+3. Produces the conditioning vectors that guide the diffusion process
+
+The node comes in two variants that expose different levels of control over the embedding process:
+
+1. **Basic CLIPTextEncode**
+   - Implements the standard CLIP text encoding: $\text{CLIP}_\text{text}(\text{text})$
+   - Single text input field for the entire prompt
+   - Handles the full sequence of tokens as one unit
+   - Example usage:
+
+     ```json
+     prompt: "a beautiful sunset over mountains, high quality"
+     negative prompt: "blurry, low quality, distorted"
+     ```
+
+2. **CLIPTextEncode (Advanced)**
+   - Extends the basic encoding with token-level control
+   - Supports weight adjustment per token: (word:1.2)
+   - Mathematical operation on token embeddings:
+     $$z_\text{weighted} = \sum_i w_i \cdot z_i$$
+     where $w_i$ are the per-token weights
+
 The sequence of token embeddings plays a crucial role in steering the diffusion process. Through cross-attention layers in the U-Net, the model can attend to different parts of the text representation as it generates the image. This mechanism enables the model to understand and incorporate multiple concepts and their relationships from the prompt.
 
 Consider what happens when you input a prompt like "a red cat sitting on a blue chair". The text is first split into tokens, and each token (or subword) gets its own embedding. The model can then attend differently to "red", "cat", "blue", and "chair" during different stages of the generation process, allowing it to properly place and render each concept in the final image.
+
+**Advanced CLIP Operations: The ConditioningCombine Node**
+To support complex prompting scenarios, ComfyUI provides the `ConditioningCombine` node that implements mathematical operations on conditioning vectors:
+
+1. **Concatenation Mode**
+   $$c_\text{combined} = [c_1; c_2]$$
+   - Preserves both conditions fully
+   - Useful for regional prompting
+
+2. **Average Mode**
+   $$c_\text{combined} = \alpha c_1 + (1-\alpha) c_2$$
+   - Blends multiple conditions
+   - $\alpha$ controls the mixing ratio
+
+**Image-Based Conditioning: The CLIPVisionEncode Node**
+This node implements the image encoder part of CLIP:
+
+$$\text{CLIP}_\text{image}(\text{image}) \rightarrow \mathbf{z} \in \mathbb{R}^d$$
+
+The complete pipeline for image-guided generation becomes:
+
+$$z_\text{image} = \text{CLIP}_\text{image}(\text{image})$$
+$$z_\text{text} = \text{CLIP}_\text{text}(\text{prompt})$$
+$$c_\text{combined} = \text{Combine}(z_\text{text}, z_\text{image})$$
 
 Beyond simple text conditioning, modern diffusion models support various forms of guidance. Image conditioning (img2img) allows existing images to influence the generation process. Control signals through ControlNet provide fine-grained control over structural elements. Style vectors extracted from reference images can guide aesthetic qualities, while structural guidance through depth maps or pose estimation can enforce specific spatial arrangements. Each of these conditioning methods can provide additional context to guide the generation process.
 
@@ -106,7 +332,77 @@ $$\epsilon_\text{CFG} = \epsilon_\theta(x_t, t) + w[\epsilon_\theta(x_t, t, \mat
 
 The guidance scale $w$ controls how strongly the conditioning influences the generation. A higher value of $w$ (typically 7-12) results in images that more closely match the prompt but may be less realistic, while lower values (1-4) produce more natural images that follow the prompt more loosely. When $w = 0$, we get purely unconditional generation, and as $w \to \infty$, the model becomes increasingly deterministic in following the conditioning.
 
-This is why in ComfyUI, you'll often see a "CFG Scale" parameter in sampling nodes. It directly controls this weighting between unconditional and conditional predictions, allowing you to balance prompt adherence against image quality.
+This is why in ComfyUI, you'll often see a "CFG Scale" parameter in sampling nodes. It directly controls this  weighting between unconditional and conditional predictions, allowing you to balance prompt adherence against image quality.
+
+#### Implementation in ComfyUI: CFG Control
+
+1. **Basic CFG Control**
+   The `KSampler` node provides direct control over CFG through its parameters:
+   - CFG Scale: The $w$ parameter in the equation
+   - Recommended ranges:
+
+     ```json
+     Photorealistic: 4-7
+     Artistic: 7-12
+     Strong stylization: 12-15
+     ```
+
+2. **Advanced CFG Techniques**
+   ComfyUI offers several nodes for fine-tuning CFG behavior:
+
+   a) **CFGScheduler Node**
+   - Dynamically adjusts CFG during sampling
+   - Mathematical operation:
+     $$w_t = w_\text{start} + t(w_\text{end} - w_\text{start})$$
+   - Example schedule:
+
+     ```json
+     Start CFG: 12 (for initial structure)
+     End CFG: 7 (for natural details)
+     ```
+
+   b) **CFGDenoiser Node**
+   - Provides manual control over the denoising process
+   - Allows separate CFG for different regions
+   - Useful for:
+     - Regional prompt strength
+     - Selective detail enhancement
+     - Balancing multiple conditions
+
+3. **Practical CFG Workflows**
+
+   a) **Basic Text-to-Image**
+
+   ```json
+   CLIPTextEncode [positive] → KSampler (CFG: 7)
+   CLIPTextEncode [negative] → KSampler
+   ```
+
+   b) **Dynamic CFG**
+
+   ```json
+   CLIPTextEncode → CFGScheduler → KSampler
+   Parameters:
+   - Start: 12 (0-25% steps)
+   - Middle: 8 (25-75% steps)
+   - End: 6 (75-100% steps)
+   ```
+
+   c) **Regional CFG**
+
+   ```json
+   CLIPTextEncode → ConditioningSetArea → CFGDenoiser
+   Multiple regions with different CFG values:
+   - Focus area: CFG 12
+   - Background: CFG 7
+   ```
+
+4. **CFG Troubleshooting**
+   Common issues and solutions:
+   - Over-saturation: Reduce CFG or use scheduling
+   - Loss of details: Increase CFG in final steps
+   - Unrealistic results: Lower CFG, especially in early steps
+   - Inconsistent style: Use CFG scheduling to balance
 
 ## Introduction to ComfyUI
 
@@ -127,12 +423,58 @@ Before starting with ComfyUI, you need to understand the different types of mode
    - Implement the full diffusion process: $p_\theta(x_{0:T})$
    - Examples: CompassMix XL Lightning, Pony Diffusion V6 XL
 
+   **The Load Checkpoint Node**
+   The `Load Checkpoint` node in ComfyUI is your interface to the base diffusion model. It loads the model weights ($\theta$) and initializes the U-Net architecture that performs the reverse diffusion process. When you connect this node, you're essentially preparing the neural network that will implement:
+
+   $$p_\theta(x_{t-1}|x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \Sigma_\theta(x_t, t))$$
+
+   The node outputs three crucial components:
+   - `MODEL`: The U-Net that predicts noise or velocity
+   - `CLIP`: The text encoder for conditioning
+   - `VAE`: The encoder/decoder for image latents
+
+   These outputs correspond to the three main mathematical operations in the diffusion process:
+   1. MODEL: Implements $p_\theta(x_{t-1}|x_t)$
+   2. CLIP: Provides conditioning $c$ for $p_\theta(x_{t-1}|x_t, c)$
+   3. VAE: Handles the mapping between image space $x$ and latent space $z$
+
 2. **LoRAs (Low-Rank Adaptation)**
    - Stored in `models\loras`
    - Mathematically represented as: $W = W_0 + BA$ where:
      - $W_0$ is the original weight matrix
      - $B$ and $A$ are low-rank matrices
    - Reduces parameter count while maintaining model quality
+
+   **The LoRA Loader Node**
+   The `LoRA Loader` node implements the low-rank adaptation by modifying the base model's weights according to the equation:
+
+   $$W_{\text{final}} = W_0 + \alpha \cdot (BA)$$
+
+   where $\alpha$ is the weight parameter in the node (typically 0.5-1.0). The node:
+   - Takes a MODEL input from Load Checkpoint
+   - Applies the LoRA weights ($BA$) with scaling $\alpha$
+   - Outputs the modified model
+
+   When you adjust the weight parameter, you're directly controlling the influence of the low-rank matrices on the original weights.
+
+3. **VAE (Variational Autoencoder)**
+   - Stored in `models\vae`
+   - Implements the encoding $q_\phi(z|x)$ and decoding $p_\psi(x|z)$
+   - Works in a lower-dimensional latent space for efficiency
+
+   **The VAE Encode/Decode Nodes**
+   These nodes implement the probabilistic encoding and decoding:
+
+   $$z \sim q_\phi(z|x)$$
+   $$x \sim p_\psi(x|z)$$
+
+   - `VAE Encode`: Converts images to latents (mean + variance)
+   - `VAE Decode`: Converts latents back to images
+
+   The latent space operations are crucial because:
+   1. They reduce memory usage (latents are 4x smaller)
+   2. They provide a more stable space for diffusion
+   3. They help maintain semantic consistency
 
 ## Node Based Workflow
 

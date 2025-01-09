@@ -5,3 +5,7 @@ python-frontmatter==1.1.0
 networkx==3.4.2
 matplotlib==3.10.0
 jsmin==3.0.1
+torch==2.5.1
+torchvision==0.20.1
+Pillow==11.1.0
+numpy==2.2.1
