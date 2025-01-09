@@ -73,10 +73,16 @@ import os
 from diffusers import AutoencoderKL
 
 def load_and_preprocess_image(image_path):
-    """Load and preprocess an image to tensor."""
+    """Load and preprocess an image to tensor, maintaining original resolution."""
     image = Image.open(image_path).convert('RGB')
+    # Ensure dimensions are multiples of 8 (VAE requirement) while keeping aspect ratio
+    width, height = image.size
+    new_width = (width // 8) * 8
+    new_height = (height // 8) * 8
+    if new_width != width or new_height != height:
+        image = image.resize((new_width, new_height), Image.Resampling.LANCZOS)
+    
     transform = transforms.Compose([
-        transforms.Resize((512, 512)),  # VAE typically expects 512x512
         transforms.ToTensor(),
     ])
     return transform(image).unsqueeze(0)  # Add batch dimension
@@ -175,14 +181,9 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
     canvas_width = width * 2 + 20  # Add 20px padding between images
     canvas_height = height + 60  # Add 60px for text
     
-    # Initialize video writer
-    temp_output = str(output_path).replace('.mp4', '_temp.avi')
-    fourcc = cv2.VideoWriter_fourcc(*'MJPG')
-    video = cv2.VideoWriter(temp_output, fourcc, fps, 
-                           (canvas_width, canvas_height), isColor=True)
-    
-    if not video.isOpened():
-        raise RuntimeError("Failed to create video writer")
+    # Create temporary directory for frames
+    temp_dir = Path('temp_frames')
+    temp_dir.mkdir(exist_ok=True)
     
     # Calculate alphas for overlay text
     alphas = 1 - betas
@@ -204,7 +205,7 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
         # Process v_phi
         if i > 0 and i <= len(v_phis):
             v_frame = v_phis[i-1].squeeze().permute(1, 2, 0).numpy()
-            # Normalize v_phi for visualization
+            # Normalize v_phi for visualization while preserving spatial dimensions
             v_frame = (v_frame - v_frame.min()) / (v_frame.max() - v_frame.min())
             v_frame = (v_frame * 255).astype(np.uint8)
             v_pil = Image.fromarray(v_frame)
@@ -236,17 +237,13 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
         # Draw text
         draw.text((text_x, 20), text, fill='black', font=font)
         
-        # Convert to OpenCV format and write
-        canvas_np = np.array(canvas)
-        canvas_cv = cv2.cvtColor(canvas_np, cv2.COLOR_RGB2BGR)
-        video.write(canvas_cv)
+        # Save frame
+        frame_path = temp_dir / f'frame_{i:04d}.png'
+        canvas.save(frame_path, 'PNG')
     
-    # Release video writer
-    video.release()
-    
-    # Convert to high-quality MP4
+    # Convert frames to video using ffmpeg
     ffmpeg_cmd = (
-        f'ffmpeg -y -i "{temp_output}" '
+        f'ffmpeg -y -framerate {fps} -i "{temp_dir}/frame_%04d.png" '
         f'-c:v libx264 -preset veryslow '
         f'-crf 15 '
         f'-x264-params "aq-mode=3:aq-strength=0.8" '
@@ -261,8 +258,10 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
     if ret != 0:
         raise RuntimeError(f"FFmpeg conversion failed with return code {ret}")
     
-    if os.path.exists(temp_output):
-        os.remove(temp_output)
+    # Clean up temporary files
+    for frame in temp_dir.glob('*.png'):
+        frame.unlink()
+    temp_dir.rmdir()
 
 def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", num_steps=10, beta_min=1e-4, beta_max=0.02, fps=30):
     """
@@ -273,7 +272,7 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
     # Load VAE model
     vae = AutoencoderKL.from_pretrained(vae_model, torch_dtype=torch.float32).to(device)
     
-    # Load and preprocess image
+    # Load and preprocess image at original resolution (adjusted to multiple of 8)
     x_0 = load_and_preprocess_image(image_path).to(device)
     
     # Encode image to latent space
@@ -287,7 +286,7 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
     v_phis = []
     phis = []
     
-    # Perform v-prediction steps
+    # Perform v-prediction steps in latent space
     for t in range(num_steps):
         z_phi, v_phi, phi_t = v_prediction_step(z_0, t, betas)
         # Decode latents back to image space for visualization
