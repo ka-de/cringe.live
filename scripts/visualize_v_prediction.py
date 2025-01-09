@@ -97,35 +97,28 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
     
     # Process each frame
     for i in range(len(z_phis)):
-        # Create canvas
-        canvas = Image.new('RGB', (canvas_width, canvas_height), 'white')
+        # Create canvas as numpy array directly
+        canvas = np.full((canvas_height, canvas_width, 3), 255, dtype=np.uint8)
         
         # Process z_phi
         if i < len(z_phis):
             z_frame = z_phis[i].squeeze().permute(1, 2, 0).numpy()
             z_frame = np.clip(z_frame, 0, 1)
             z_frame = (z_frame * 255).astype(np.uint8)
-            z_pil = Image.fromarray(z_frame)
-            canvas.paste(z_pil, (0, 60))
+            canvas[60:60+height, 0:width] = z_frame
         
         # Process v_phi
         if i > 0 and i <= len(v_phis):
             v_frame = v_phis[i-1].squeeze().permute(1, 2, 0).numpy()
             # Normalize v_phi for visualization while preserving spatial dimensions
             v_frame = (v_frame - v_frame.min()) / (v_frame.max() - v_frame.min())
-            
-            # Convert to RGB image with same dimensions as input
             v_frame = (v_frame * 255).astype(np.uint8)
-            
-            # Resize if dimensions don't match (they should, but just in case)
-            v_pil = Image.fromarray(v_frame)
-            if v_pil.size != (width, height):
-                v_pil = v_pil.resize((width, height), Image.Resampling.LANCZOS)
-            
-            canvas.paste(v_pil, (width + 20, 60))
+            canvas[60:60+height, width+20:width*2+20] = v_frame
         
-        # Add text
-        draw = ImageDraw.Draw(canvas)
+        # Convert to PIL for text rendering
+        canvas_pil = Image.fromarray(canvas)
+        draw = ImageDraw.Draw(canvas_pil)
+        
         try:
             font = ImageFont.truetype("segoeui.ttf", 32)
         except:
@@ -150,9 +143,11 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
         # Draw text
         draw.text((text_x, 20), text, fill='black', font=font)
         
-        # Convert to OpenCV format and write
-        canvas_np = np.array(canvas)
-        canvas_cv = cv2.cvtColor(canvas_np, cv2.COLOR_RGB2BGR)
+        # Convert back to numpy array for OpenCV
+        canvas = np.array(canvas_pil)
+        
+        # Convert to BGR for OpenCV
+        canvas_cv = cv2.cvtColor(canvas, cv2.COLOR_RGB2BGR)
         video.write(canvas_cv)
     
     # Release video writer
