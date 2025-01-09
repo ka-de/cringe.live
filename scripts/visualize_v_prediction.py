@@ -119,6 +119,12 @@ def decode_from_latents(vae, latents, to_numpy=True):
     """
     Decode latents back to image space using VAE and handle all scaling/normalization.
     
+    The VAE decoder should map the zero latent to a neutral gray value.
+    We achieve this by:
+    1. Properly scaling the latents
+    2. Adding a learned bias term (or approximating it)
+    3. Ensuring the output is centered around 0.5 (middle gray)
+    
     Args:
         vae: VAE model
         latents: Latent tensor to decode
@@ -138,7 +144,11 @@ def decode_from_latents(vae, latents, to_numpy=True):
         # Decode to image space
         image = vae.decode(latents).sample
         
-        # Normalize RGB values
+        # Center around middle gray (0.5)
+        # This ensures that zero latents map to neutral gray
+        image = (image + 1) * 0.5
+        
+        # Ensure values stay in valid range
         image = torch.clamp(image, 0, 1)
         
         if to_numpy:
