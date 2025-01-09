@@ -21,13 +21,29 @@ aliases:
 
 ---
 
-If you need help installing ComfyUI, you didn't come to the right place. If you are using Windows, you can use the  [prebuilt](https://docs.comfy.org/get_started/pre_package) package, or you can install it [manually](https://docs.comfy.org/get_started/manual_install) otherwise.
+If you need help installing ComfyUI, you didn't come to the right place. If you are using Windows, you can use the [prebuilt](https://docs.comfy.org/get_started/pre_package) package, or you can install it [manually](https://docs.comfy.org/get_started/manual_install) otherwise.
+
+{{% details "Requirements for running the code examples on this page." %}}
+
+To run the supplied visualization codes in this document, you'll need the following Python packages:
+
+```bash
+torchvision
+numpy
+Pillow
+opencv-python
+diffusers
+```
+
+Additionally, you'll need FFmpeg installed on your system for the video conversion. The code assumes FFmpeg is available in your system PATH.
+
+{{% /details %}}
 
 ## Understanding Diffusion Models
 
 ---
 
-Before diving into ComfyUI's practical aspects, let's understand the mathematical foundations of diffusion models that power modern AI image generation. You can [skip](#latents) most, but not all of the intimidating equations.
+Before diving into ComfyUI's practical aspects, let's understand the mathematical foundations of diffusion models that power modern AI image generation. You can [skip](#latents) most, but not all of the intimidating equations, and jump to the practical part, but your brain *will* thank you for it!
 
 ### The Diffusion Process
 
@@ -43,13 +59,429 @@ The forward diffusion process systematically transforms a clear image into pure 
 4. Each step slightly {{<zalgo strength=15 >}}corrupts{{</zalgo>}} the previous image state according to our diffusion equation
 5. After $T$ timesteps, we reach $x_T$ which is effectively pure Gaussian noise
 
-This process is deterministic given a specific noise schedule, meaning we can precisely control how the image degrades over time. The amount of corruption at each step is carefully calibrated - early timesteps preserve most image structure while later steps increasingly destroy fine details until no recognizable features remain.
+<div style="text-align: center;">
+    <video style="width: 100%;" autoplay loop muted playsinline>
+        <source src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/forward_diffusion.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
-What makes this process particularly powerful is that it's differentiable - we can mathematically track exactly how the image changes at each step. This property is crucial because it allows us to train a neural network to learn the reverse process.
+{{% details "Click to show code used to generate the video."  %}}
 
-The forward process serves as the foundation for training our AI models. By understanding exactly how images are corrupted, we can teach the model to reverse this corruption during the generation process.
+```python
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+import torch
+import torchvision.transforms as transforms
+from pathlib import Path
+import argparse
+import cv2
+import os
 
-#### The Mathematics
+def load_and_preprocess_image(image_path):
+    """Load and preprocess an image to tensor."""
+    image = Image.open(image_path).convert('RGB')
+    transform = transforms.Compose([
+        transforms.ToTensor(),
+    ])
+    return transform(image).unsqueeze(0)  # Add batch dimension
+
+def forward_diffusion_step(x_0, t, betas):
+    """
+    Perform forward diffusion to get noisy image at timestep t.
+    x_0: Original image
+    t: Current timestep
+    betas: Complete noise schedule
+    """
+    # Calculate alphas and cumulative products
+    alphas = 1 - betas
+    alphas_cumprod = torch.cumprod(alphas, dim=0)
+    alpha_t = alphas_cumprod[t]
+    
+    # Generate random noise
+    noise = torch.randn_like(x_0)
+    
+    # Apply the forward diffusion equation
+    # x_t = √(ᾱt)x_0 + √(1-ᾱt)ε
+    x_t = torch.sqrt(alpha_t) * x_0 + torch.sqrt(1 - alpha_t) * noise
+    
+    return x_t, noise
+
+def create_animation(images, betas, output_path, fps=30):
+    """Create an MP4 animation from a list of images with timestep and beta overlay."""
+    # Convert first tensor to numpy to get dimensions
+    first_frame = images[0].squeeze().permute(1, 2, 0).numpy()
+    first_frame = np.clip(first_frame, 0, 1)
+    first_frame = (first_frame * 255).astype(np.uint8)
+    height, width = first_frame.shape[:2]
+    
+    # Create a larger canvas to accommodate text above the image
+    canvas_height = height + 60  # Add 60 pixels for text
+    
+    # Initialize video writer with higher quality settings
+    temp_output = str(output_path).replace('.mp4', '_temp.avi')  # Use AVI for temp file
+    fourcc = cv2.VideoWriter_fourcc(*'MJPG')  # Use MJPG codec
+    video = cv2.VideoWriter(temp_output, fourcc, fps, (width, canvas_height), isColor=True)
+    
+    if not video.isOpened():
+        raise RuntimeError("Failed to create video writer")
+    
+    # Calculate alphas and cumulative products for overlay text
+    alphas = 1 - betas
+    alphas_cumprod = torch.cumprod(alphas, dim=0)
+    
+    # Process each frame
+    for i, img in enumerate(images):
+        # Convert tensor to numpy array
+        frame = img.squeeze().permute(1, 2, 0).numpy()
+        frame = np.clip(frame, 0, 1)
+        frame = (frame * 255).astype(np.uint8)
+        
+        # Create PIL Image for text rendering
+        canvas = Image.new('RGB', (width, canvas_height), 'white')
+        # Convert frame to PIL Image and paste it onto canvas
+        frame_pil = Image.fromarray(frame)
+        canvas.paste(frame_pil, (0, 60))
+        
+        # Add text using PIL
+        draw = ImageDraw.Draw(canvas)
+        try:
+            font = ImageFont.truetype("segoeui.ttf", 32)  # Try Segoe UI first (Windows)
+        except:
+            try:
+                font = ImageFont.truetype("DejaVuSans.ttf", 32)  # Try DejaVu Sans (Linux)
+            except:
+                try:
+                    font = ImageFont.truetype("Arial Unicode.ttf", 32)  # Try Arial Unicode
+                except:
+                    font = ImageFont.load_default()
+            
+        if i == 0:
+            text = "Original Image"
+        else:
+            # Show both beta and cumulative alpha
+            text = f't = {i}    β = {betas[i-1]:.4f}    ᾱ = {alphas_cumprod[i-1]:.4f}'
+        
+        # Get text size for centering
+        text_bbox = draw.textbbox((0, 0), text, font=font)
+        text_width = text_bbox[2] - text_bbox[0]
+        text_x = (width - text_width) // 2
+        
+        # Draw text
+        draw.text((text_x, 20), text, fill='black', font=font)
+        
+        # Convert to numpy array and BGR for OpenCV
+        canvas_np = np.array(canvas)
+        canvas_cv = cv2.cvtColor(canvas_np, cv2.COLOR_RGB2BGR)
+        video.write(canvas_cv)
+    
+    # Release video writer
+    video.release()
+    
+    # Convert to high-quality MP4
+    ffmpeg_cmd = (
+        f'ffmpeg -y -i "{temp_output}" '
+        f'-c:v libx264 -preset veryslow '
+        f'-crf 15 '
+        f'-x264-params "aq-mode=3:aq-strength=0.8" '
+        f'-b:v 30M -maxrate 40M -bufsize 60M '
+        f'-pix_fmt yuv420p '
+        f'-movflags +faststart '
+        f'-color_range 1 -colorspace 1 -color_primaries 1 -color_trc 1 '
+        f'"{output_path}"'
+    )
+    
+    ret = os.system(ffmpeg_cmd)
+    if ret != 0:
+        raise RuntimeError(f"FFmpeg conversion failed with return code {ret}")
+    
+    if os.path.exists(temp_output):
+        os.remove(temp_output)
+
+def visualize_diffusion_process(image_path, num_steps=10, beta_min=1e-4, beta_max=0.02, fps=30):
+    """
+    Visualize the forward diffusion process on an image.
+    """
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    
+    # Load and preprocess image
+    x_0 = load_and_preprocess_image(image_path).to(device)
+    
+    # Create linear noise schedule
+    betas = torch.linspace(beta_min, beta_max, num_steps)
+    
+    # Initialize lists to store images
+    images = [x_0.cpu()]
+    
+    # Perform forward diffusion for each timestep
+    for t in range(num_steps):
+        x_t, noise = forward_diffusion_step(x_0, t, betas)
+        images.append(x_t.cpu())
+    
+    # Create output directory
+    output_dir = Path('static/comfyui')
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Create animation
+    create_animation(images, betas, output_dir / 'forward_diffusion.mp4', fps=fps)
+
+def main():
+    parser = argparse.ArgumentParser(description='Visualize the forward diffusion process')
+    parser.add_argument('--image', type=str, required=True, help='Path to input image')
+    parser.add_argument('--steps', type=int, default=10, help='Number of diffusion steps')
+    parser.add_argument('--fps', type=int, default=30, help='Frames per second for the animation')
+    args = parser.parse_args()
+    
+    visualize_diffusion_process(args.image, num_steps=args.steps, fps=args.fps)
+
+if __name__ == '__main__':
+    main()
+```
+
+{{% /details %}}
+
+This demonstrates pixel-space diffusion, just to give you an idea of what's happening.
+
+To actually see the diffusion process in latent space, first we have to learn about latent space..
+
+##### Latent Space
+
+it's important to understand that AI models don't work directly with regular images. Instead, they work with something called "latents" - a compressed representation of images that's more efficient for the AI to process.
+
+Think of them like a blueprint of an image:
+
+- A regular image stores exact colors for each pixel (like a detailed painting)
+- A latent stores abstract patterns and features (like an architect's blueprint)
+
+Here is a video showing the forward diffusion process in latent space:
+
+<div style="text-align: center;">
+    <video style="width: 100%;" autoplay loop muted playsinline>
+        <source src="https://huggingface.co/k4d3/yiff_toolkit6/resolve/main/static/comfyui/latent_forward_diffusion.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+{{% details "Click to show code used to generate the video."  %}}
+
+```python
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+import torch
+import torchvision.transforms as transforms
+from pathlib import Path
+import argparse
+import cv2
+import os
+from diffusers import AutoencoderKL
+
+def load_and_preprocess_image(image_path):
+    """Load and preprocess an image to tensor."""
+    image = Image.open(image_path).convert('RGB')
+    transform = transforms.Compose([
+        transforms.Resize((512, 512)),  # VAE typically expects 512x512
+        transforms.ToTensor(),
+    ])
+    return transform(image).unsqueeze(0)  # Add batch dimension
+
+def encode_to_latents(vae, image):
+    """Encode image to latent space using VAE."""
+    with torch.no_grad():
+        # Updated to handle newer VAE API
+        latent_dist = vae.encode(image)
+        if hasattr(latent_dist, 'latent_dist'):
+            latents = latent_dist.latent_dist.sample()
+            latents = latents * vae.config.scaling_factor
+        else:
+            # For newer versions that return the distribution directly
+            latents = latent_dist.sample()
+            latents = latents * 0.18215  # Standard SD scaling factor
+    return latents
+
+def decode_from_latents(vae, latents):
+    """Decode latents back to image space using VAE."""
+    with torch.no_grad():
+        # Handle both older and newer VAE versions
+        if hasattr(vae.config, 'scaling_factor'):
+            latents = latents / vae.config.scaling_factor
+        else:
+            latents = latents / 0.18215
+        image = vae.decode(latents).sample
+    return image
+
+def forward_diffusion_step(z_0, t, betas):
+    """
+    Perform forward diffusion in latent space.
+    z_0: Original latent representation
+    t: Current timestep
+    betas: Complete noise schedule
+    """
+    # Calculate alphas and cumulative products
+    alphas = 1 - betas
+    alphas_cumprod = torch.cumprod(alphas, dim=0)
+    alpha_t = alphas_cumprod[t]
+    
+    # Generate random noise in latent space
+    noise = torch.randn_like(z_0)
+    
+    # Apply the forward diffusion equation in latent space
+    # z_t = √(ᾱt)z_0 + √(1-ᾱt)ε
+    z_t = torch.sqrt(alpha_t) * z_0 + torch.sqrt(1 - alpha_t) * noise
+    
+    return z_t, noise
+
+def create_animation(images, betas, output_path, fps=30):
+    """Create an MP4 animation from a list of images with timestep and beta overlay."""
+    # Convert first tensor to numpy to get dimensions
+    first_frame = images[0].squeeze().permute(1, 2, 0).numpy()
+    first_frame = np.clip(first_frame, 0, 1)
+    first_frame = (first_frame * 255).astype(np.uint8)
+    height, width = first_frame.shape[:2]
+    
+    # Create a larger canvas to accommodate text above the image
+    canvas_height = height + 60  # Add 60 pixels for text
+    
+    # Initialize video writer with higher quality settings
+    temp_output = str(output_path).replace('.mp4', '_temp.avi')
+    fourcc = cv2.VideoWriter_fourcc(*'MJPG')
+    video = cv2.VideoWriter(temp_output, fourcc, fps, (width, canvas_height), isColor=True)
+    
+    if not video.isOpened():
+        raise RuntimeError("Failed to create video writer")
+    
+    # Calculate alphas and cumulative products for overlay text
+    alphas = 1 - betas
+    alphas_cumprod = torch.cumprod(alphas, dim=0)
+    
+    # Process each frame
+    for i, img in enumerate(images):
+        # Convert tensor to numpy array
+        frame = img.squeeze().permute(1, 2, 0).numpy()
+        frame = np.clip(frame, 0, 1)
+        frame = (frame * 255).astype(np.uint8)
+        
+        # Create PIL Image for text rendering
+        canvas = Image.new('RGB', (width, canvas_height), 'white')
+        frame_pil = Image.fromarray(frame)
+        canvas.paste(frame_pil, (0, 60))
+        
+        # Add text using PIL
+        draw = ImageDraw.Draw(canvas)
+        try:
+            font = ImageFont.truetype("segoeui.ttf", 32)  # Try Segoe UI first (Windows)
+        except:
+            try:
+                font = ImageFont.truetype("DejaVuSans.ttf", 32)  # Try DejaVu Sans (Linux)
+            except:
+                try:
+                    font = ImageFont.truetype("Arial Unicode.ttf", 32)  # Try Arial Unicode
+                except:
+                    font = ImageFont.load_default()
+        
+        if i == 0:
+            text = "Original Image"
+        else:
+            # Show both beta and cumulative alpha
+            text = f't = {i}    β = {betas[i-1]:.4f}    ᾱ = {alphas_cumprod[i-1]:.4f}'
+        
+        # Get text size for centering
+        text_bbox = draw.textbbox((0, 0), text, font=font)
+        text_width = text_bbox[2] - text_bbox[0]
+        text_x = (width - text_width) // 2
+        
+        # Draw text
+        draw.text((text_x, 20), text, fill='black', font=font)
+        
+        # Convert to numpy array and BGR for OpenCV
+        canvas_np = np.array(canvas)
+        canvas_cv = cv2.cvtColor(canvas_np, cv2.COLOR_RGB2BGR)
+        video.write(canvas_cv)
+    
+    # Release video writer
+    video.release()
+    
+    # Convert to high-quality MP4
+    ffmpeg_cmd = (
+        f'ffmpeg -y -i "{temp_output}" '
+        f'-c:v libx264 -preset veryslow '
+        f'-crf 15 '
+        f'-x264-params "aq-mode=3:aq-strength=0.8" '
+        f'-b:v 30M -maxrate 40M -bufsize 60M '
+        f'-pix_fmt yuv420p '
+        f'-movflags +faststart '
+        f'-color_range 1 -colorspace 1 -color_primaries 1 -color_trc 1 '
+        f'"{output_path}"'
+    )
+    
+    ret = os.system(ffmpeg_cmd)
+    if ret != 0:
+        raise RuntimeError(f"FFmpeg conversion failed with return code {ret}")
+    
+    if os.path.exists(temp_output):
+        os.remove(temp_output)
+
+def visualize_latent_diffusion_process(image_path, vae_model="stabilityai/sd-vae-ft-mse", num_steps=10, beta_min=1e-4, beta_max=0.02, fps=30):
+    """
+    Visualize the forward diffusion process in latent space.
+    """
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    
+    # Load VAE model
+    vae = AutoencoderKL.from_pretrained(vae_model, torch_dtype=torch.float32).to(device)
+    
+    # Load and preprocess image
+    x_0 = load_and_preprocess_image(image_path).to(device)
+    
+    # Encode image to latent space
+    z_0 = encode_to_latents(vae, x_0)
+    
+    # Create linear noise schedule
+    betas = torch.linspace(beta_min, beta_max, num_steps)
+    
+    # Initialize lists to store images
+    images = [x_0.cpu()]  # Start with original image
+    
+    # Perform forward diffusion in latent space for each timestep
+    for t in range(num_steps):
+        z_t, noise = forward_diffusion_step(z_0, t, betas)
+        # Decode latents back to image space for visualization
+        x_t = decode_from_latents(vae, z_t)
+        images.append(x_t.cpu())
+    
+    # Create output directory
+    output_dir = Path('static/comfyui')
+    output_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Create animation
+    create_animation(images, betas, output_dir / 'latent_forward_diffusion.mp4', fps=fps)
+
+def main():
+    parser = argparse.ArgumentParser(description='Visualize the forward diffusion process in latent space')
+    parser.add_argument('--image', type=str, required=True, help='Path to input image')
+    parser.add_argument('--vae', type=str, default="stabilityai/sd-vae-ft-mse", help='VAE model to use')
+    parser.add_argument('--steps', type=int, default=10, help='Number of diffusion steps')
+    parser.add_argument('--fps', type=int, default=30, help='Frames per second for the animation')
+    args = parser.parse_args()
+    
+    visualize_latent_diffusion_process(
+        args.image,
+        vae_model=args.vae,
+        num_steps=args.steps,
+        fps=args.fps
+    )
+
+if __name__ == '__main__':
+    main() 
+```
+
+{{% /details %}}
+
+The main differences you'll notice to pixel-space diffusion are:
+
+- The noise patterns will look more structured due to the VAE's learned latent space.
+- The degradation process might preserve more semantic information.
+
+##### The Mathematics
 
 The process of adding noise can be described mathematically with the following equation:
 
@@ -78,6 +510,38 @@ The equation describes a carefully controlled process of gradually corrupting an
 
 This mathematical foundation is crucial because it allows the model to learn the reverse process - taking a noisy image and progressively removing noise to generate the final output.
 
+##### Alpha Bar
+
+Alpha bar ($\bar{\alpha}$) is a crucial concept in diffusion models that represents the cumulative product of the signal scaling factors. Here's how it works:
+
+1. At each timestep $t$, we have:
+   - $\beta_t$ (beta): the noise schedule parameter
+   - $\alpha_t$ (alpha): $1 - \beta_t$, the signal scaling factor
+
+2. Alpha bar is then defined as:
+   $$\bar{\alpha}_t = \prod_{i=1}^t \alpha_i$$
+
+This means:
+
+- $\bar{\alpha}$ starts at 1 (no noise) and decreases over time
+- It represents how much of the original signal remains at time $t$
+- At the end of diffusion, $\bar{\alpha}$ approaches 0 (pure noise)
+
+The complete forward process can be written in terms of $\bar{\alpha}$:
+$$x_t = \sqrt{\bar{\alpha}_t}x_0 + \sqrt{1-\bar{\alpha}_t}\epsilon$$
+
+where:
+
+- $x_t$ is the noisy image at time t
+- $x_0$ is the original image
+- $\epsilon$ is random Gaussian noise
+- $\sqrt{\bar{\alpha}_t}$ controls how much original signal remains
+- $\sqrt{1-\bar{\alpha}_t}$ controls how much noise is added
+
+This formulation proves to be particularly powerful for several key reasons. First, it enables us to directly sample any timestep from the original image $x_0$ without having to calculate all intermediate steps. Additionally, it provides precise visibility into the ratio between signal and noise at each point in the process. Finally, this formulation makes the reverse process mathematically tractable, which is essential for training the model to denoise images effectively.
+
+The process serves as the foundation for training our AI models. By understanding exactly how images are corrupted, we can teach the model to reverse this corruption during the generation process.
+
 #### Reverse Diffusion
 
 Something cool happens when the AI learns to reverse this process. It learns to:
@@ -89,13 +553,6 @@ Something cool happens when the AI learns to reverse this process. It learns to:
 This is what happens every time you generate an image with Stable Diffusion or similar AI models. The model has learned to take random noise and progressively "denoise" it into a clear image that matches your prompt.
 
 #### Latents
-
-Before we dive into the `KSampler` node, it's important to understand that AI models don't work directly with regular images. Instead, they work with something called "latents" - a compressed representation of images that's more efficient for the AI to process.
-
-Think of latents like a blueprint of an image:
-
-- A regular image stores exact colors for each pixel (like a detailed painting)
-- A latent stores abstract patterns and features (like an architect's blueprint)
 
 In ComfyUI, you'll encounter latents in three main ways:
 
@@ -167,6 +624,19 @@ You can:
 - Mix different noise patterns
 
 ### V-Prediction and Angular Parameterization
+
+The core of v-prediction is representing the diffusion process as a rotation in a 2D space.
+
+```python
+# Calculate phi (angle) from alpha and sigma
+phi_t = torch.arctan2(sigma_t, alpha_t)
+```
+
+This calculates the angle $\phi_t$ that represents how far along we are in the diffusion process.
+
+- At $phi_t = 0$, we have the original image
+- At $phi_t = \pi/2$, we have pure noise
+- The angle smoothly interpolates between these states
 
 While the standard formulation predicts noise $\epsilon$, an alternative approach called v-prediction parameterizes the diffusion process in terms of velocity. In this formulation, we define an angle $\phi_t = \text{arctan}(\sigma_t/\alpha_t)$ that represents the progression through the diffusion process. For a variance-preserving process, we have:
 
