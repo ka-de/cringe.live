@@ -115,8 +115,8 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
             v_frame = (v_frame * 255).astype(np.uint8)
             canvas[60:60+height, width+20:width*2+20] = v_frame
         
-        # Convert to PIL for text rendering
-        canvas_pil = Image.fromarray(canvas)
+        # Create a temporary PIL image for text rendering
+        canvas_pil = Image.fromarray(canvas.copy())
         draw = ImageDraw.Draw(canvas_pil)
         
         try:
@@ -144,7 +144,11 @@ def create_v_prediction_animation(z_phis, v_phis, phis, betas, output_path, fps=
         draw.text((text_x, 20), text, fill='black', font=font)
         
         # Convert back to numpy array for OpenCV
-        canvas = np.asarray(canvas_pil, dtype=np.uint8)
+        canvas = np.array(canvas_pil, dtype=np.uint8)
+        
+        # Ensure the array is contiguous and in the correct format
+        if not canvas.flags['C_CONTIGUOUS']:
+            canvas = np.ascontiguousarray(canvas)
         
         # Convert to BGR for OpenCV
         canvas_cv = cv2.cvtColor(canvas, cv2.COLOR_RGB2BGR)
