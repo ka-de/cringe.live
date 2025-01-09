@@ -1,7 +1,7 @@
 """
 Visualize the v-prediction parameterization of the diffusion process.
 
-This script creates a three-panel visualization showing:
+This script creates a visualization showing three views of the diffusion process:
 
 1. LEFT: The noisy image (x_t)
     - Shows how the original image is corrupted with noise over time
@@ -22,7 +22,7 @@ This script creates a three-panel visualization showing:
     - Helps interpret the meaning of the velocity predictions
 
 The visualization includes an overlay showing:
-    t: Current timestep
+    t: Current timestep (when in animation mode)
     φ: Angle in radians (controls noise level)
     ᾱ: Cumulative signal scaling factor
 
@@ -42,10 +42,16 @@ The v-prediction formulation is important because:
 3. Models can learn to predict v_φ instead of the noise ε
 4. The angle φ provides a natural way to control noise levels
 
+Output:
+    The script saves its output to the 'static/comfyui' directory:
+    - In animation mode: 'v_prediction.mp4'
+    - In single frame mode: 'v_prediction_frame.png'
+
 Usage:
     python visualize_v_prediction.py --image path/to/image.png [options]
 
 Options:
+    --image: Path to input image (required)
     --steps: Number of diffusion steps (default: 10)
     --fps: Frames per second in output video (default: 30)
     --vae: VAE model to use (default: stabilityai/sd-vae-ft-mse)
@@ -70,7 +76,24 @@ import os
 from diffusers import AutoencoderKL
 
 def load_and_preprocess_image(image_path):
-    """Load and preprocess an image to tensor, maintaining original resolution."""
+    """
+    Load and preprocess an image to tensor format for VAE processing.
+    
+    Args:
+        image_path: Path to the input image file
+        
+    Returns:
+        torch.Tensor: Preprocessed image tensor with shape [1,3,H,W] where:
+            - H and W are adjusted to be multiples of 8 (VAE requirement)
+            - Values are scaled to [0,1] range
+            - RGB color channels
+            - Includes batch dimension
+            
+    Processing steps:
+        1. Load image and convert to RGB
+        2. Resize to ensure dimensions are multiples of 8 (VAE requirement)
+        3. Convert to tensor and add batch dimension
+    """
     image = Image.open(image_path).convert('RGB')
     # Ensure dimensions are multiples of 8 (VAE requirement) while keeping aspect ratio
     width, height = image.size
@@ -86,24 +109,31 @@ def load_and_preprocess_image(image_path):
 
 def encode_to_latents(vae, image):
     """
-    Encode image to latent space using VAE.
-    
-    Handles both older and newer VAE model versions by checking for different API patterns:
-    - Older versions return a LatentDistribution object with latent_dist
-    - Newer versions return the distribution directly
-    
-    The latents are scaled by the appropriate scaling factor:
-    - Uses vae.config.scaling_factor if available
-    - Falls back to 0.18215 (standard SD scaling) if not
+    Encode image to latent space using VAE with proper scaling.
     
     Args:
-        vae: The VAE model to use for encoding
-        image: Input image tensor in [0,1] range, shape [B,C,H,W]
+        vae: AutoencoderKL model instance
+        image: Input image tensor in [0,1] range with shape [B,3,H,W]
         
     Returns:
-        Scaled latent tensor with shape [B,C,H/8,W/8]
+        torch.Tensor: Scaled latent tensor with shape [B,4,H/8,W/8]
+        
+    Processing steps:
+        1. Scale input from [0,1] to [-1,1] range for VAE
+        2. Encode using VAE model
+        3. Sample from latent distribution
+        4. Apply appropriate scaling factor:
+           - Uses vae.config.scaling_factor if available
+           - Falls back to 0.18215 (standard SD scaling) if not
+           
+    Note:
+        Handles both older VAE versions (with latent_dist attribute) and
+        newer versions (returning distribution directly) for compatibility.
     """
     with torch.no_grad():
+        # Scale image to [-1, 1] range as expected by VAE
+        image = 2 * image - 1
+        
         # Updated to handle newer VAE API
         latent_dist = vae.encode(image)
         if hasattr(latent_dist, 'latent_dist'):
@@ -144,8 +174,7 @@ def decode_from_latents(vae, latents, to_numpy=True):
         # Decode to image space
         image = vae.decode(latents).sample
         
-        # Center around middle gray (0.5)
-        # This ensures that zero latents map to neutral gray
+        # Scale from [-1, 1] to [0, 1] range
         image = (image + 1) * 0.5
         
         # Ensure values stay in valid range
@@ -495,7 +524,9 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
     betas = torch.linspace(beta_min, beta_max, num_steps)
     
     # Store decoded images and velocities
-    z_phis = [decode_from_latents(vae, x_0, to_numpy=True)]
+    # First frame is the original image decoded back from latent space
+    x_0_decoded = decode_from_latents(vae, z_0, to_numpy=True)
+    z_phis = [x_0_decoded]
     v_phis = []
     decoded_v_phis = []
     phis = []
