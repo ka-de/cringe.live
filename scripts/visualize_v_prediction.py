@@ -377,6 +377,61 @@ def save_single_frame(z_phi, v_phi, decoded_v_phi, phi, alpha_cumprod, output_pa
     # Save frame
     canvas.save(output_path, 'PNG')
 
+def normalize_velocity_field(v_phi, print_stats=False, timestep=None):
+    """
+    Normalize velocity field to prepare it for VAE decoding.
+    
+    The normalization process:
+    1. Center the data by subtracting mean
+    2. Scale to unit standard deviation
+    3. Clip to reasonable range to avoid extreme values
+    4. Scale to [-1, 1] range (VAE expected input range)
+    5. Scale down by 0.5 to reduce saturation
+    6. Add 0.5 offset to center around gray
+    
+    Args:
+        v_phi: Raw velocity field tensor
+        print_stats: Whether to print normalization statistics
+        timestep: Optional timestep for stats printing
+        
+    Returns:
+        Normalized velocity field tensor in [0, 1] range
+    """
+    if print_stats:
+        prefix = f"(t={timestep}) " if timestep is not None else ""
+        print(f"\n{prefix}Raw velocity field stats:")
+        print(f"Mean: {v_phi.mean().item():.4f}")
+        print(f"Std: {v_phi.std().item():.4f}")
+        print(f"Min: {v_phi.min().item():.4f}")
+        print(f"Max: {v_phi.max().item():.4f}")
+    
+    # Center the data
+    v_phi_centered = v_phi #- v_phi.mean()
+    
+    # Scale to unit standard deviation
+    v_phi_norm = v_phi_centered / v_phi.std()
+    
+    # Clip to reasonable range (±3 standard deviations)
+    v_phi_norm = torch.clamp(v_phi_norm, -3, 3)
+    
+    # Scale to [-1, 1]
+    v_phi_norm = v_phi_norm / 3
+    
+    # Scale down to avoid saturation
+    v_phi_norm = v_phi_norm * 0.5
+    
+    # Center around gray
+    v_phi_norm = v_phi_norm + 0.5
+    
+    if print_stats:
+        print(f"\n{prefix}Normalized velocity field stats (before decoding):")
+        print(f"Mean: {v_phi_norm.mean().item():.4f}")
+        print(f"Std: {v_phi_norm.std().item():.4f}")
+        print(f"Min: {v_phi_norm.min().item():.4f}")
+        print(f"Max: {v_phi_norm.max().item():.4f}")
+    
+    return v_phi_norm
+
 def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", num_steps=10, beta_min=1e-4, beta_max=0.02, fps=30, single_frame=False):
     """
     Create a visualization of the v-prediction diffusion process.
@@ -424,31 +479,8 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
         z_phi, v_phi, phi_t = v_prediction_step(z_0, t, betas)
         x_t = decode_from_latents(vae, z_phi)
         
-        # Print statistics about raw velocity field
-        print(f"\nRaw velocity field stats:")
-        print(f"Mean: {v_phi.mean().item():.4f}")
-        print(f"Std: {v_phi.std().item():.4f}")
-        print(f"Min: {v_phi.min().item():.4f}")
-        print(f"Max: {v_phi.max().item():.4f}")
-        
-        # Normalize velocity field to a reasonable range for VAE decoding
-        # First normalize to [0, 1]
-        v_phi_norm = (v_phi - v_phi.min()) / (v_phi.max() - v_phi.min())
-        # Then scale to [-1, 1] which is what the VAE expects
-        v_phi_norm = v_phi_norm * 2 - 1
-        # Scale down to avoid saturation
-        v_phi_norm = v_phi_norm * 0.5
-        # Add a small offset to center around gray
-        v_phi_norm = v_phi_norm + 0.5
-        
-        # Print statistics about normalized velocity field
-        print(f"\nNormalized velocity field stats (before decoding):")
-        print(f"Mean: {v_phi_norm.mean().item():.4f}")
-        print(f"Std: {v_phi_norm.std().item():.4f}")
-        print(f"Min: {v_phi_norm.min().item():.4f}")
-        print(f"Max: {v_phi_norm.max().item():.4f}")
-        
-        # Decode normalized velocity field
+        # Normalize and decode velocity field
+        v_phi_norm = normalize_velocity_field(v_phi, print_stats=True)
         decoded_v_phi = decode_from_latents(vae, v_phi_norm)
         
         # Create output directory
@@ -476,28 +508,9 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
         z_phis.append(x_t.cpu())
         v_phis.append(v_phi.cpu())
         
-        # Print statistics about raw velocity field
-        if t == num_steps // 2:  # Print stats for middle frame
-            print(f"\nRaw velocity field stats (t={t}):")
-            print(f"Mean: {v_phi.mean().item():.4f}")
-            print(f"Std: {v_phi.std().item():.4f}")
-            print(f"Min: {v_phi.min().item():.4f}")
-            print(f"Max: {v_phi.max().item():.4f}")
-        
-        # Normalize velocity field with same process as single frame
-        v_phi_norm = (v_phi - v_phi.min()) / (v_phi.max() - v_phi.min())
-        v_phi_norm = v_phi_norm * 2 - 1
-        v_phi_norm = v_phi_norm * 0.5
-        v_phi_norm = v_phi_norm + 0.5
-        
-        # Print statistics about normalized velocity field
-        if t == num_steps // 2:  # Print stats for middle frame
-            print(f"\nNormalized velocity field stats (t={t}, before decoding):")
-            print(f"Mean: {v_phi_norm.mean().item():.4f}")
-            print(f"Std: {v_phi_norm.std().item():.4f}")
-            print(f"Min: {v_phi_norm.min().item():.4f}")
-            print(f"Max: {v_phi_norm.max().item():.4f}")
-        
+        # Normalize and decode velocity field
+        print_stats = (t == num_steps // 2)  # Only print stats for middle frame
+        v_phi_norm = normalize_velocity_field(v_phi, print_stats=print_stats, timestep=t)
         decoded_v_phi = decode_from_latents(vae, v_phi_norm)
         decoded_v_phis.append(decoded_v_phi.cpu())
         phis.append(phi_t.item())
