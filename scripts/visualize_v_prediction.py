@@ -115,15 +115,37 @@ def encode_to_latents(vae, image):
             latents = latents * 0.18215  # Standard SD scaling factor
     return latents
 
-def decode_from_latents(vae, latents):
-    """Decode latents back to image space using VAE."""
+def decode_from_latents(vae, latents, to_numpy=True):
+    """
+    Decode latents back to image space using VAE and handle all scaling/normalization.
+    
+    Args:
+        vae: VAE model
+        latents: Latent tensor to decode
+        to_numpy: If True, convert to numpy array scaled to [0,255] for visualization
+        
+    Returns:
+        If to_numpy=True: Numpy array in [0,255] range ready for PIL
+        If to_numpy=False: Tensor in [0,1] range
+    """
     with torch.no_grad():
         # Handle both older and newer VAE versions
         if hasattr(vae.config, 'scaling_factor'):
             latents = latents / vae.config.scaling_factor
         else:
             latents = latents / 0.18215
+        
+        # Decode to image space
         image = vae.decode(latents).sample
+        
+        # Normalize RGB values
+        image = torch.clamp(image, 0, 1)
+        
+        if to_numpy:
+            # Convert to numpy and scale to [0,255] for visualization
+            image = image.cpu().squeeze().permute(1, 2, 0).numpy()
+            image = (image * 255).astype(np.uint8)
+    
     return image
 
 def v_prediction_step(z_0, t, betas):
@@ -227,10 +249,7 @@ def create_v_prediction_animation(z_phis, v_phis, decoded_v_phis, phis, betas, o
         
         # Process z_phi (full resolution image)
         if i < len(z_phis):
-            z_frame = z_phis[i].squeeze().permute(1, 2, 0).numpy()
-            z_frame = np.clip(z_frame, 0, 1)
-            z_frame = (z_frame * 255).astype(np.uint8)
-            z_pil = Image.fromarray(z_frame)
+            z_pil = Image.fromarray(z_phis[i])
             canvas.paste(z_pil, (0, 60))
         
         # Process v_phi (latent resolution)
@@ -243,10 +262,7 @@ def create_v_prediction_animation(z_phis, v_phis, decoded_v_phis, phis, betas, o
             canvas.paste(v_pil, (width + 20, 60))
             
             # Decoded velocity field
-            decoded_v_frame = decoded_v_phis[i-1].squeeze().permute(1, 2, 0).numpy()
-            decoded_v_frame = np.clip(decoded_v_frame, 0, 1)
-            decoded_v_frame = (decoded_v_frame * 255).astype(np.uint8)
-            decoded_v_pil = Image.fromarray(decoded_v_frame)
+            decoded_v_pil = Image.fromarray(decoded_v_phis[i-1])
             canvas.paste(decoded_v_pil, (width + latent_width + 40, 60))
         
         # Add text
@@ -338,7 +354,7 @@ def save_single_frame(z_phi, v_phi, decoded_v_phi, phi, alpha_cumprod, output_pa
     canvas = Image.new('RGB', (canvas_width, canvas_height), 'white')
     
     # Paste noisy image
-    z_pil = Image.fromarray(z_frame)
+    z_pil = Image.fromarray(z_phi)
     canvas.paste(z_pil, (0, 60))
     
     # Process raw latent velocity field
@@ -349,10 +365,7 @@ def save_single_frame(z_phi, v_phi, decoded_v_phi, phi, alpha_cumprod, output_pa
     canvas.paste(v_pil, (width + 20, 60))
     
     # Process decoded velocity field
-    decoded_v_frame = decoded_v_phi.squeeze().permute(1, 2, 0).numpy()
-    decoded_v_frame = np.clip(decoded_v_frame, 0, 1)
-    decoded_v_frame = (decoded_v_frame * 255).astype(np.uint8)
-    decoded_v_pil = Image.fromarray(decoded_v_frame)
+    decoded_v_pil = Image.fromarray(decoded_v_phi)
     canvas.paste(decoded_v_pil, (width + latent_width + 40, 60))
     
     # Add text
@@ -385,9 +398,6 @@ def normalize_velocity_field(v_phi, print_stats=False, timestep=None):
     1. Center the data by subtracting mean
     2. Scale to unit standard deviation
     3. Clip to reasonable range to avoid extreme values
-    4. Scale to [-1, 1] range (VAE expected input range)
-    5. Scale down by 0.5 to reduce saturation
-    6. Add 0.5 offset to center around gray
     
     Args:
         v_phi: Raw velocity field tensor
@@ -395,7 +405,7 @@ def normalize_velocity_field(v_phi, print_stats=False, timestep=None):
         timestep: Optional timestep for stats printing
         
     Returns:
-        Normalized velocity field tensor in [0, 1] range
+        Normalized velocity field tensor
     """
     if print_stats:
         prefix = f"(t={timestep}) " if timestep is not None else ""
@@ -409,7 +419,7 @@ def normalize_velocity_field(v_phi, print_stats=False, timestep=None):
     v_phi_centered = v_phi - v_phi.mean()
     
     # Scale to unit standard deviation
-    v_phi_norm = v_phi_centered / v_phi.std()
+    v_phi_norm = 0.1 * v_phi_centered / v_phi.std()
     
     # Clip to reasonable range (±3 standard deviations)
     v_phi_norm = torch.clamp(v_phi_norm, -3, 3)
@@ -468,18 +478,18 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
         
         # Get single frame
         z_phi, v_phi, phi_t = v_prediction_step(z_0, t, betas)
-        x_t = decode_from_latents(vae, z_phi)
+        x_t = decode_from_latents(vae, z_phi, to_numpy=True)
         
         # Normalize and decode velocity field
         v_phi_norm = normalize_velocity_field(v_phi, print_stats=True)
-        decoded_v_phi = decode_from_latents(vae, v_phi_norm)
+        decoded_v_phi = decode_from_latents(vae, v_phi_norm, to_numpy=True)
         
         # Create output directory
         output_dir = Path('static/comfyui')
         output_dir.mkdir(parents=True, exist_ok=True)
         
         # Save single frame
-        save_single_frame(x_t.cpu(), v_phi.cpu(), decoded_v_phi.cpu(), 
+        save_single_frame(x_t, v_phi.cpu(), decoded_v_phi, 
                          phi_t.item(), alphas_cumprod[t].item(),
                          output_dir / 'v_prediction_frame.png')
         return
@@ -487,7 +497,7 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
     betas = torch.linspace(beta_min, beta_max, num_steps)
     
     # Store decoded images and velocities
-    z_phis = [x_0.cpu()]
+    z_phis = [decode_from_latents(vae, x_0, to_numpy=True)]
     v_phis = []
     decoded_v_phis = []
     phis = []
@@ -495,15 +505,15 @@ def visualize_v_prediction(image_path, vae_model="stabilityai/sd-vae-ft-mse", nu
     # Perform v-prediction steps in latent space
     for t in range(num_steps):
         z_phi, v_phi, phi_t = v_prediction_step(z_0, t, betas)
-        x_t = decode_from_latents(vae, z_phi)
-        z_phis.append(x_t.cpu())
+        x_t = decode_from_latents(vae, z_phi, to_numpy=True)
+        z_phis.append(x_t)
         v_phis.append(v_phi.cpu())
         
         # Normalize and decode velocity field
         print_stats = (t == num_steps // 2)  # Only print stats for middle frame
         v_phi_norm = normalize_velocity_field(v_phi, print_stats=print_stats, timestep=t)
-        decoded_v_phi = decode_from_latents(vae, v_phi_norm)
-        decoded_v_phis.append(decoded_v_phi.cpu())
+        decoded_v_phi = decode_from_latents(vae, v_phi_norm, to_numpy=True)
+        decoded_v_phis.append(decoded_v_phi)
         phis.append(phi_t.item())
     
     # Create output directory
