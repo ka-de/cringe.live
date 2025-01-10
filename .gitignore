@@ -1,4 +1,5 @@
 public/
+*.pyc
 
 # High resolution images from Huggingface
 static/huggingface_images/
