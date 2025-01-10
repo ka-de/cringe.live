@@ -209,13 +209,9 @@ def create_scheduler_comparison_animation(frames_data, output_path, fps=30):
     # Convert frames to video using ffmpeg
     ffmpeg_cmd = (
         f'ffmpeg -y -framerate {fps} -i "{temp_dir}/frame_%04d.png" '
-        f'-c:v libx264 -preset veryslow '
-        f'-crf 15 '
-        f'-x264-params "aq-mode=3:aq-strength=0.8" '
-        f'-b:v 30M -maxrate 40M -bufsize 60M '
+        f'-c:v libx264 '
+        f'-crf 23 '
         f'-pix_fmt yuv420p '
-        f'-movflags +faststart '
-        f'-color_range 1 -colorspace 1 -color_primaries 1 -color_trc 1 '
         f'"{output_path}"'
     )
     
