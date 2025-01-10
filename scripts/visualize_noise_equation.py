@@ -251,17 +251,28 @@ def visualize_noise_equation(image_path, num_steps=10, fps=30):
     
     # Create frames for each step
     for t in range(1, num_steps):
-        # Apply noise equation to original image
-        x_t, scaled_prev, scaled_noise = apply_noise_equation(x_0, betas[t])
+        # Calculate scaling factor for this step
+        alpha_t = 1 - betas[t]
+        scaling_factor = torch.sqrt(alpha_t)
+        
+        # Scale original image
+        scaled_x0 = scaling_factor * x_0
+        
+        # Generate random noise
+        noise = torch.randn_like(x_0)
+        scaled_noise = torch.sqrt(betas[t]) * noise
+        
+        # Combine to get noisy image
+        x_t = scaled_x0 + scaled_noise
         
         # Create visualization frame showing:
-        # 1. Original image (x_0)
-        # 2. Scaled original image (√(1-β_t)x_0)
-        # 3. Random noise (N(0, β_tI))
-        # 4. Resulting noisy image (x_t)
+        # 1. Original image (constant)
+        # 2. Scaled original image (gets dimmer)
+        # 3. Random noise (gets stronger)
+        # 4. Resulting noisy image (gets noisier)
         frame = create_visualization_frame(
             x_0.cpu(),  # Original image stays constant
-            scaled_prev.cpu(),  # Scaled version of original
+            scaled_x0.cpu(),  # Scaled version of original
             scaled_noise.cpu(),  # Random noise
             x_t.cpu(),  # Resulting noisy image
             betas[t].cpu(), t, num_steps

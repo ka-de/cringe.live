@@ -298,19 +298,33 @@ def visualize_latent_noise_equation(image_path, vae_model="stabilityai/sd-vae-ft
     
     # Create frames for each step
     for t in range(1, num_steps):
-        # Apply noise equation to original latent
-        z_t, scaled_prev, scaled_noise = apply_noise_equation_latent(z_0, betas[t])
+        # Calculate scaling factor for this step
+        alpha_t = 1 - betas[t]
+        scaling_factor = torch.sqrt(alpha_t)
+        
+        # Scale original latent
+        scaled_z0 = scaling_factor * z_0
+        
+        # Generate random noise in latent space
+        noise = torch.randn_like(z_0)
+        scaled_noise = torch.sqrt(betas[t]) * noise
+        
+        # Combine to get noisy latent
+        z_t = scaled_z0 + scaled_noise
         
         # Decode all latents back to image space for visualization
-        prev_decoded = decode_from_latents(vae, z_0)
-        scaled_decoded = decode_from_latents(vae, scaled_prev)
-        # For noise visualization, we need to normalize it to a reasonable range
+        orig_decoded = decode_from_latents(vae, z_0)
+        scaled_decoded = decode_from_latents(vae, scaled_z0)
         noise_decoded = decode_from_latents(vae, scaled_noise)
         noisy_decoded = decode_from_latents(vae, z_t)
         
-        # Create visualization frame
+        # Create visualization frame showing:
+        # 1. Original latent decoded (constant)
+        # 2. Scaled original latent decoded (gets dimmer)
+        # 3. Random noise decoded (gets stronger)
+        # 4. Resulting noisy latent decoded (gets noisier)
         frame = create_visualization_frame(
-            prev_decoded.cpu(),
+            orig_decoded.cpu(),
             scaled_decoded.cpu(),
             noise_decoded.cpu(),
             noisy_decoded.cpu(),
