@@ -78,26 +78,23 @@ def create_beta_schedule(num_steps, beta_min=1e-4, beta_max=0.02):
     """Create a linear noise schedule."""
     return torch.linspace(beta_min, beta_max, num_steps)
 
-def apply_noise_equation_latent(z_prev, beta_t):
-    """
-    Apply the noise equation in latent space: q(z_t|z_{t-1}) = N(z_t; √(1-β_t)z_{t-1}, β_tI)
-    Returns intermediate components for visualization.
-    """
-    # Calculate scaling factor
-    alpha_t = 1 - beta_t
-    scaling_factor = torch.sqrt(alpha_t)
-    
-    # Scale previous latent
-    scaled_prev = scaling_factor * z_prev
-    
-    # Generate random noise in latent space
-    noise = torch.randn_like(z_prev)
-    scaled_noise = torch.sqrt(beta_t) * noise
-    
-    # Combine to get final noisy latent
-    z_t = scaled_prev + scaled_noise
-    
-    return z_t, scaled_prev, scaled_noise
+def apply_noise_equation_latent(z_prev, beta_t, device):
+    """Apply noise equation in latent space with proper memory handling"""
+    with torch.amp.autocast('cuda' if torch.cuda.is_available() else 'cpu'):
+        alpha_t = 1 - beta_t
+        scaling_factor = torch.sqrt(alpha_t)
+        
+        # Scale previous latent
+        scaled_prev = scaling_factor * z_prev
+        
+        # Generate noise in latent space
+        noise = torch.randn_like(z_prev, device=device)
+        scaled_noise = torch.sqrt(beta_t) * noise
+        
+        # Combine for final noisy latent
+        z_t = scaled_prev + scaled_noise
+        
+        return z_t, scaled_prev, scaled_noise
 
 def tensor_to_image(tensor):
     """Convert a tensor to a numpy image array."""
@@ -275,54 +272,50 @@ def create_animation(frames, output_path, fps=30):
         if os.path.exists(temp_output):
             os.remove(temp_output)
 
+def process_input(image):
+    """Scale input to [-1, 1] range as expected by VAE"""
+    return image * 2.0 - 1.0
+
+def process_output(image):
+    """Scale VAE output from [-1, 1] to [0, 1] range"""
+    return torch.clamp((image + 1.0) / 2.0, min=0.0, max=1.0)
+
 def visualize_latent_noise_equation(image_path, vae_model="stabilityai/sd-vae-ft-mse", num_steps=10, fps=30):
-    """
-    Create a visualization of the noise equation process in latent space.
-    """
+    """Create visualization of noise equation process matching ComfyUI's implementation"""
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    # Load VAE model
-    vae = AutoencoderKL.from_pretrained(vae_model, torch_dtype=torch.float32).to(device)
+    # Load VAE with proper memory management
+    vae = AutoencoderKL.from_pretrained(vae_model, torch_dtype=torch.float32)
+    vae.to(device)
     
     # Load and preprocess image
     x_0 = load_and_preprocess_image(image_path).to(device)
+    x_0 = process_input(x_0)  # Scale to [-1, 1]
     
-    # Encode image to latent space
-    z_0 = encode_to_latents(vae, x_0)
+    # Encode to latent space
+    with torch.no_grad():
+        z_0 = vae.encode(x_0).latent_dist.sample()
+        z_0 = z_0 * 0.18215  # Standard SD scaling factor
     
     # Create noise schedule
     betas = create_beta_schedule(num_steps).to(device)
     
-    # Initialize list to store frames
+    # Initialize frames list and current latent
     frames = []
+    z_t = z_0  # Start with original latent
     
-    # Create frames for each step
     for t in range(1, num_steps):
-        # Calculate scaling factor for this step
-        alpha_t = 1 - betas[t]
-        scaling_factor = torch.sqrt(alpha_t)
+        # Apply noise equation with proper memory handling using previous timestep
+        next_z_t, scaled_z_t, scaled_noise = apply_noise_equation_latent(z_t, betas[t], device)
         
-        # Scale original latent
-        scaled_z0 = scaling_factor * z_0
+        # Decode all latents with proper scaling
+        with torch.no_grad():
+            orig_decoded = process_output(vae.decode(z_0 / 0.18215).sample)  # Original stays constant
+            scaled_decoded = process_output(vae.decode(scaled_z_t / 0.18215).sample)  # Scaled version of current
+            noise_decoded = process_output(vae.decode(scaled_noise / 0.18215).sample)
+            noisy_decoded = process_output(vae.decode(next_z_t / 0.18215).sample)
         
-        # Generate random noise in latent space
-        noise = torch.randn_like(z_0)
-        scaled_noise = torch.sqrt(betas[t]) * noise
-        
-        # Combine to get noisy latent
-        z_t = scaled_z0 + scaled_noise
-        
-        # Decode all latents back to image space for visualization
-        orig_decoded = decode_from_latents(vae, z_0)
-        scaled_decoded = decode_from_latents(vae, scaled_z0)
-        noise_decoded = decode_from_latents(vae, scaled_noise)
-        noisy_decoded = decode_from_latents(vae, z_t)
-        
-        # Create visualization frame showing:
-        # 1. Original latent decoded (constant)
-        # 2. Scaled original latent decoded (gets dimmer)
-        # 3. Random noise decoded (gets stronger)
-        # 4. Resulting noisy latent decoded (gets noisier)
+        # Create visualization frame
         frame = create_visualization_frame(
             orig_decoded.cpu(),
             scaled_decoded.cpu(),
@@ -331,13 +324,14 @@ def visualize_latent_noise_equation(image_path, vae_model="stabilityai/sd-vae-ft
             betas[t].cpu(), t, num_steps
         )
         frames.append(frame)
+        
+        # Update current latent for next iteration
+        z_t = next_z_t
+        
+        # Clear GPU memory
+        torch.cuda.empty_cache()
     
-    # Create output directory
-    output_dir = Path('static/comfyui')
-    output_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Create animation
-    create_animation(frames, output_dir / 'latent_noise_equation.mp4', fps=fps)
+    return create_animation(frames)
 
 def main():
     parser = argparse.ArgumentParser(description='Visualize the noise equation process in latent space')
