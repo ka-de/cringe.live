@@ -17,6 +17,12 @@ aliases:
 
 ---
 
+### 1/17/2025
+
+**Site News:**
+
+- Added a page with a list of ways you can {{< i18n-link "/support" "💖 Support" >}} me.
+
 ### 1/4/2025
 
 **Site News:**

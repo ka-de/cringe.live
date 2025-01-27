@@ -23,7 +23,7 @@ aliases:
 
 ---
 
-## What are LoRAs?
+## What is LoRA?
 
 ---
 

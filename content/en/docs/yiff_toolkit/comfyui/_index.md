@@ -51,7 +51,7 @@ Diffusion models work through a process that's similar to gradually adding stati
 
 #### Forward Diffusion
 
-The forward diffusion process systematically transforms a clear image into pure random noise through a series of precise mathematical steps. Here's how it works:
+The forward diffusion process systematically transforms a clear image into pure random noise through a series of precise mathematical steps.
 
 1. We start with an original image $x_0$ containing clear, detailed information
 2. At each timestep $t$, we apply a carefully controlled amount of Gaussian noise
@@ -568,9 +568,15 @@ Before starting with ComfyUI, you need to understand the different types of mode
    When you adjust the weight parameter, you're directly controlling the influence of the low-rank matrices on the original weights.
 
 3. **VAE (Variational Autoencoder)**
+
+    The VAE (Variational Autoencoder) is a type of neural network that learns to:
+
+    1. Encode images into a low-dimensional latent space representation using a neural encoder.
+    2. Decode these latent vectors back into images during generation.
+    3. Learn to generate new images by sampling from a lower-dimensional latent space for efficiency.
+
    - Stored in `models\vae`
    - Implements the encoding $q_\phi(z|x)$ and decoding $p_\psi(x|z)$
-   - Works in a lower-dimensional latent space for efficiency
 
    **The VAE Encode/Decode Nodes**
    These nodes implement the probabilistic encoding and decoding:
